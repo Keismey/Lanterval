@@ -51,36 +51,60 @@ const EVENEMENTS = {
   async degats([spec]) { appliquerEffet('degats ' + spec); },
   async revele([spec]) { const [id, el] = spec.split(/\s+/); if (el) { reveal(id, el); seen(id); } else revealAll(id); },
   async position([pos]) { S.loc = pos; },
-  async traversee([vers, o], ctx) {
+  async traversee([vers, o], ctx, suite, id) {
     if (ctx.silencieux) { S.loc = vers; return; }
-    await traverse(lieuActuel(), coteActuel(), vers.split('.')[1], { milieu: o && o.milieu ? () => jouer(o.milieu, ctx) : null });
+    const milieu = o && o.milieu ? () => jouer(o.milieu, ctx, id + '.') : null;
+    // reprise au milieu de la traversée : on ne refait pas le trajet
+    if (ctx.reprise && ctx.reprise.fait.some(f => f.startsWith(id + '.'))) { if (milieu) await milieu(); }
+    else await traverse(lieuActuel(), coteActuel(), vers.split('.')[1], { milieu });
     S.loc = vers;
   },
-  async choix([cle, branches], ctx) {
-    const k = ctx.silencieux ? Object.keys(branches).find(x => x !== 'non') : await dialogue(cle, ctx);
-    if (branches[k]) await jouer(branches[k], ctx);
+  async choix([cle, branches], ctx, suite, id) {
+    const r = ctx.reprise, k = ctx.silencieux ? Object.keys(branches).find(x => x !== 'non') : r && r.choix[id] ? r.choix[id] : await dialogue(cle, ctx);
+    if (r) r.choix[id] = k;
+    if (branches[k]) await jouer(branches[k], ctx, id + '.');
   },
   async stop(a, ctx) { ctx.stop = true; },
   async message([cle], ctx) { if (!ctx.silencieux) S.msg = tx(cle); },
   async fin_version(a, ctx) { S.fins = (S.fins || 0) + 1; if (!ctx.silencieux) S.screen = 'fin'; }
 };
 
-async function jouer(evts, ctx) {
+/* Point de reprise : chaque événement joué est noté dans S.reprise (sauvegardé avec la partie).
+   Si la page est fermée en pleine étape, l'étape reprend après le dernier événement joué :
+   un combat gagné n'est pas rejoué, un objet reçu n'est pas redonné. Les décors sont toujours rejoués. */
+const VISUELS = ['panorama', 'decor'];
+function pointDeReprise(k) {
+  if (!S.reprise || S.reprise.k !== k) S.reprise = { k, fait: [], choix: {} };
+  return S.reprise;
+}
+async function jouer(evts, ctx, chemin = '') {
   for (let i = 0; i < evts.length; i++) {
     if (ctx.stop) return;
-    const [type, ...args] = evts[i];
+    const [type, ...args] = evts[i], id = chemin + i, r = ctx.reprise;
     if (!EVENEMENTS[type]) { console.warn('Événement inconnu :', type); continue; }
+    if (r && r.fait.includes(id)) continue;
     // un dialogue suivi d'un combat (sans conseil) se termine par le bouton « Combattre »
     const n = evts[i + 1], suite = n && n[0] === 'combat' && !(n[2] && n[2].conseil) ? 'combat' : null;
-    await EVENEMENTS[type](args, ctx, suite);
+    await EVENEMENTS[type](args, ctx, suite, id);
+    if (r && !VISUELS.includes(type)) { r.fait.push(id); save(); }
   }
+}
+// à l'ouverture d'une partie : relance l'étape interrompue, s'il y en a une
+function reprendre() {
+  const r = S.reprise; if (!r) return null;
+  const [type, id, n] = r.k.split(':'), e = type === 'e' && toutesEtapes().find(x => x.id === id);
+  if (e && !fini(id) && etapeCourante() === e) return () => jouerEtape(e);
+  if (type === 'a' && ANNEXES[id] && annexeEtat(id) === +n) return () => jouerAnnexe(id);
+  if (type === 'o' && ANNEXES[id] && !annexeEtat(id)) return () => jouerOffre(id);
+  S.reprise = null; return null;
 }
 
 function titreEtape(e) { return existe(e.id + '.bouton') ? t(e.id + '.bouton') : t(e.id + '.titre'); }
 
 async function jouerEtape(e, silencieux) {
-  const ctx = { titre: titreEtape(e), silencieux };
+  const ctx = { titre: titreEtape(e), silencieux, reprise: silencieux ? null : pointDeReprise('e:' + e.id) };
   await jouer(e.evenements, ctx);
+  if (!silencieux) S.reprise = null;
   if (ctx.stop) return false;
   if (!fini(e.id)) S.etapes.push(e.id);
   if (!silencieux) logR('journal.log.etape', { titre: e.id + '.titre' });
@@ -89,16 +113,18 @@ async function jouerEtape(e, silencieux) {
 
 // Quête annexe : l'offre au donneur, puis chaque étape
 async function jouerOffre(id) {
-  const ctx = { titre: t(id + '.titre'), style: 'side' };
+  const ctx = { titre: t(id + '.titre'), style: 'side', reprise: pointDeReprise('o:' + id) };
   await jouer(ANNEXES[id].offre, ctx);
+  S.reprise = null;
   if (ctx.stop) return;
   S.annexes[id] = 1;
   logR('journal.log.annexe', { titre: id + '.titre' });
 }
 async function jouerAnnexe(id, silencieux) {
   const n = annexeEtat(id), e = ANNEXES[id].etapes[n - 1];
-  const ctx = { titre: t(id + '.titre'), style: 'side', silencieux };
+  const ctx = { titre: t(id + '.titre'), style: 'side', silencieux, reprise: silencieux ? null : pointDeReprise(`a:${id}:${n}`) };
   await jouer(e.evenements, ctx);
+  if (!silencieux) S.reprise = null;
   if (ctx.stop) return;
   S.annexes[id] = n + 1;
   if (annexeFinie(id) && !silencieux) logR('journal.log.annexeFinie', { titre: id + '.titre' });

@@ -14,10 +14,12 @@ function openParty() {
     const h = char(cur), s = stats(h), el = HEROS[cur].el, nom = t('parle.' + cur);
     let body = '';
     if (vue === 'main') {
-      body = `<div class="join">${av(cur, 'lg')}<div><div class="jn">${esc(nom)} <small class="niv">${esc(t('equipe.niveau', { n: h.lvl, xp: h.xp, max: need(h.lvl) }))}</small></div>
+      body = `<div class="join">${av(cur, 'lg')}<div><div class="jn">${esc(nom)} <small class="niv">${esc(t('equipe.niveau', { n: h.lvl }))}</small></div>
         <div class="chips">${elChip(el)}<span class="pill">${esc(t('element.' + el))}</span><span class="pill">${esc(t('classe.' + h.job))}</span><span class="pill">${esc(t('heros.' + cur + '.age'))}</span></div><p class="note">${tx('heros.' + cur + '.bio')}</p></div></div>
       ${note ? `<div class="msgline">${note}</div>` : ''}
-      <div class="statg">${['hp', 'pp', 'spd', 'atk', 'mag', 'def'].map(k => `<div class="st"><span>${esc(t('stat.' + k))}</span><b>${k === 'hp' ? h.hp + '/' + s.hp : k === 'pp' ? h.pp + '/' + s.pp : s[k]}</b></div>`).join('')}</div>
+      <div class="jauges">${[['hp', t('stat.hp'), h.hp, s.hp], ['pp', t('stat.pp'), h.pp, s.pp], ['xp', t('equipe.xp'), h.xp, need(h.lvl)]].map(([k, n, v, m]) => `<div class="jauge" data-st="${k}"><div class="pc-v"><span>${esc(n)}</span><b>${v}/${m}</b></div><div class="bar ${k} ${k === 'hp' && v / m < .3 ? 'low' : ''}"><i style="width:${v / m * 100}%"></i></div></div>`).join('')}</div>
+      <div class="statg q4">${['atk', 'mag', 'def', 'spd'].map(k => `<div class="st" data-st="${k}"><span>${esc(t('stat.' + k))}</span><b>${s[k]}</b></div>`).join('')}</div>
+      <p class="note" id="m-stinfo">${esc(t('equipe.stat.toucher'))}</p>
       <h3 class="sec">${esc(t('equipe.classe'))}</h3><div class="acts" id="m-job"></div>
       <h3 class="sec">${esc(t('equipe.equipement'))}</h3><div class="acts" id="m-eq"></div>
       <h3 class="sec">${esc(t('equipe.techniques'))}</h3><div class="list">${CLASSES[h.job].tech.map(id => `<p class="note"><b class="clair">${esc(t('tech.' + id))}</b> · ${TECHNIQUES[id].pp} ${esc(t('stat.pp'))} · ${tx('tech.' + id + '.desc')}</p>`).join('')}</div>
@@ -25,12 +27,16 @@ function openParty() {
     } else body = `<p class="note">${vue === 'job' ? tx('equipe.classe.aide', { nom, el: t('element.' + el) }) : tx('equipe.place.aide', { place: t('place.' + place), nom, classe: t('classe.' + h.job) })}</p><div class="acts" id="m-list"></div>
       <div class="acts"><button class="btn ghost wide" id="m-back"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('retour'))}</span></span></button></div>`;
     const titre = vue === 'main' ? t('menu.equipe') : vue === 'job' ? t('equipe.changer.classe') : t('equipe.changer', { place: t('place.' + place) });
-    const sh = modal(sheetHead(titre) + `<div class="tabs">${T.map(x => `<button class="tab ${x.id === cur ? 'on' : ''}" data-c="${x.id}">${av(x.id, 'sm')}${esc(t('parle.' + x.id))}</button>`).join('')}</div>` + body);
+    const sh = modal('grand', sheetHead(titre) + `<div class="tabs">${T.map(x => `<button class="tab ${x.id === cur ? 'on' : ''}" data-c="${x.id}">${av(x.id, 'sm')}${esc(t('parle.' + x.id))}</button>`).join('')}</div>` + body);
     note = '';
     sh.querySelector('#mclose').onclick = fermerFenetre;
     sh.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { cur = b.dataset.c; draw(); });
     if (vue !== 'main') sh.querySelector('#m-back').onclick = () => { vue = 'main'; draw(); };
     if (vue === 'main') {
+      sh.querySelectorAll('[data-st]').forEach(x => x.onclick = () => {
+        sh.querySelectorAll('[data-st]').forEach(y => y.classList.toggle('on', y === x));
+        sh.querySelector('#m-stinfo').innerHTML = `<b class="clair">${esc(t(x.dataset.st === 'xp' ? 'equipe.xp' : 'stat.' + x.dataset.st))}</b> : ${esc(t('stat.' + x.dataset.st + '.aide'))}`;
+      });
       const jo = [{ k: 'job', ic: 'star', label: esc(t('classe.' + h.job)), sub: esc(t('classe.' + h.job + '.desc') + ' ' + t('equipe.toucher')), cls: 'wide' }];
       const mj = sh.querySelector('#m-job'); mj.innerHTML = btns(jo); bind(mj, jo, () => { vue = 'job'; draw(); });
       const eo = PLACES_EQ.map(p => { const id = h.eq[p]; return { k: p, ic: icPlace(p), label: esc(id ? nomEq(id) : t('equipe.rien')), sub: esc(t('place.' + p) + (id ? ' · ' + stTxt(EQUIPEMENT[id].st, EQUIPEMENT[id].el) : '')) }; });
@@ -95,7 +101,7 @@ function openInv(tab) {
       const k = importants();
       body = `<div class="list">${k.length ? k.map(([n, d]) => irow('star', esc(n), html(d), '', 'key')).join('') : `<p class="note">${esc(t('inventaire.imp.vide'))}</p>`}</div>`;
     }
-    const sh = modal(sheetHead(t('menu.inventaire')) + `<div class="tabs">${[['obj', 'inventaire.objets'], ['eq', 'inventaire.equipement'], ['key', 'inventaire.importants']].map(([k, c]) => `<button class="tab txt ${tab === k ? 'on' : ''}" data-t="${k}">${esc(t(c))}</button>`).join('')}</div>
+    const sh = modal('grand', sheetHead(t('menu.inventaire')) + `<div class="tabs">${[['obj', 'inventaire.objets'], ['eq', 'inventaire.equipement'], ['key', 'inventaire.importants']].map(([k, c]) => `<button class="tab txt ${tab === k ? 'on' : ''}" data-t="${k}">${esc(t(c))}</button>`).join('')}</div>
       <div class="row bourse"><span class="note">${esc(t('inventaire.bourse'))}</span><b>${S.gold} ${esc(t('po'))}</b></div>` + body);
     note = '';
     sh.querySelector('#mclose').onclick = fermerFenetre;
@@ -123,12 +129,30 @@ function openCodex(tab) {
       const w = d.faible.map(el => b.weak.includes(el) ? elChip(el) : '<span class="elc unk">?</span>').join(''), r = b.res.map(el => `<span class="elc ${el} res">${el}</span>`).join('');
       return `<div class="bst"><img alt="" src="${imgSrc('monstre.' + id)}"><div><h4>${esc(t('monstre.' + id))}</h4><p>${tx('monstre.' + id + '.desc')} ${esc(t('codex.vaincus', { n: c.kills }))}</p><div class="erow"><span class="note">${esc(t('codex.faiblesses'))}</span>${w}${r ? `<span class="note gauche">${esc(t('codex.resiste'))}</span>${r}` : ''}</div></div></div>`;
     }).join('')}</div>`;
+    else if (tab === 'classes') body = classesHtml();
     else body = helpHtml();
-    const sh = modal(sheetHead(t('menu.codex')) + `<div class="tabs"><button class="tab txt ${tab === 'best' ? 'on' : ''}" data-t="best">${esc(t('codex.bestiaire'))}</button><button class="tab txt ${tab === 'help' ? 'on' : ''}" data-t="help">${esc(t('aide.titre'))}</button></div>` + body);
+    const onglet = (k, nom) => `<button class="tab txt ${tab === k ? 'on' : ''}" data-t="${k}">${esc(nom)}</button>`;
+    const sh = modal('grand', sheetHead(t('menu.codex')) + `<div class="tabs">${onglet('best', t('codex.bestiaire'))}${onglet('classes', t('codex.classes'))}${onglet('help', t('aide.titre'))}</div>` + body);
     sh.querySelector('#mclose').onclick = closeModal;
     sh.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { tab = b.dataset.t; draw(); });
   };
   draw();
+}
+// classes débloquées, leurs armes, leurs statistiques et leurs techniques ; les autres restent verrouillées
+function classesHtml() {
+  const pct = (k, v) => t('codex.pct', { stat: t('stat.' + k), v: (v > 1 ? '+' : '−') + Math.round(Math.abs(v - 1) * 100) });
+  const elTxt = el => el === 'X' ? t('codex.el.X') : el === 'LX' ? t('element.L') + ' + ' + t('codex.el.X') : el ? t('element.' + el) : '';
+  return `<p class="note">${esc(t('codex.classes.aide'))}</p><div class="list">${Object.keys(CLASSES).map(j => {
+    const J = CLASSES[j];
+    if (!S.jobs.includes(j)) return `<div class="cls unseen"><h4>???</h4><p>${esc(t('codex.classe.inconnue'))}</p></div>`;
+    const qui = team().filter(h => h.job === j).map(nomH), mods = Object.entries(J.mod).filter(([, v]) => v !== 1);
+    const techs = J.tech.map(id => {
+      const x = TECHNIQUES[id], el = elTxt(x.el), c = x.el ? ' el-' + x.el.slice(-1) : '';
+      return `<div class="ctech${c}"><span class="ic">${ic(icTech(x))}</span><div><b>${esc(t('tech.' + id))}</b><small>${esc(`${x.pp} ${t('stat.pp')}${el ? ' · ' + el : ''} · ${t('tech.' + id + '.desc')}`)}</small></div></div>`;
+    }).join('');
+    return `<div class="cls"><h4>${esc(t('classe.' + j))}${qui.length ? ` <span class="note">· ${esc(qui.join(', '))}</span>` : ''}</h4><p>${esc(t('classe.' + j + '.desc'))}</p>
+      <p>${esc(t('codex.armes', { liste: J.armes.map(a => t('codex.arme.' + a)).join(', ') }))}<br>${esc(mods.length ? mods.map(([k, v]) => pct(k, v)).join(', ') : t('codex.equilibre'))}</p>${techs}</div>`;
+  }).join('')}</div>`;
 }
 function helpHtml() {
   const L = k => tx('aide.' + k);
@@ -141,7 +165,8 @@ function helpHtml() {
   <span><span class="elc F res">F</span></span><span>${L('resistance')}</span>
   <span><span class="pips"><b class="on"></b><b class="on"></b><b></b></span></span><span>${L('union')}</span>
   <span class="chain grasse">+</span><span>${L('chaine')}</span>
-  <span class="vert">${ic('play').replace('<svg', '<svg width="18" height="18"')}</span><span>${L('auto')}</span></div>`;
+  <span class="vert">${ic('play').replace('<svg', '<svg width="18" height="18"')}</span><span>${L('auto')}</span></div>
+  <h3 class="sec">${esc(t('aide.stats'))}</h3><div class="list">${[...STATS, 'xp'].map(k => `<p class="note"><b class="clair">${esc(t(k === 'xp' ? 'equipe.xp' : 'stat.' + k))}</b> : ${esc(t('stat.' + k + '.aide'))}</p>`).join('')}</div>`;
 }
 function openHelp(premier) {
   return new Promise(res => {
@@ -160,23 +185,27 @@ function ligneJournal([temps, cle, v]) {
   if (v) for (const k in v) o[k] = typeof v[k] === 'string' && existe(v[k]) ? t(v[k]) : v[k];
   return `<div><span>${fmt(temps)}</span>${tx(cle, o)}</div>`;
 }
+// une quête repliable : son nom, puis ses étapes une fois dépliée
+function queteRepliable(nom, etapes, fini) {
+  return `<details class="quete ${fini ? 'finie' : ''}"><summary>${esc(nom)}</summary><ul class="qlist">${etapes.map(([titre, ok]) => `<li class="${ok ? 'done' : 'cur'}">${esc(titre)}</li>`).join('')}</ul></details>`;
+}
 function openJournal() {
-  const st = S.st, cur = etapeCourante();
-  let quetes = '';
+  const st = S.st, cur = etapeCourante(), enCours = [], finies = [];
   for (const a of ACTES) {
     const vus = a.etapes.filter(e => fini(e.id) || e === cur);
     if (!vus.length) continue;
-    quetes += `<h3 class="sec">${esc(t('journal.acte', { n: ACTES.indexOf(a) + 1, titre: t(a.id + '.titre') }))}</h3><ul class="qlist">${vus.map(e => `<li class="${fini(e.id) ? 'done' : 'cur'}">${esc(t(e.id + '.titre'))}</li>`).join('')}</ul>`;
+    const toutes = a.etapes.every(e => fini(e.id));
+    (toutes ? finies : enCours).push(queteRepliable(t('journal.acte', { n: ACTES.indexOf(a) + 1, titre: t(a.id + '.titre') }), vus.map(e => [t(e.id + '.titre'), fini(e.id)]), toutes));
   }
-  if (!cur) quetes += `<p class="note">${esc(t('journal.tout.fini'))}</p>`;
   for (const id in ANNEXES) {
     const n = annexeEtat(id); if (!n) continue;
-    const E = ANNEXES[id].etapes;
-    quetes += `<h3 class="sec">${esc(t('journal.annexe', { titre: t(id + '.titre') }))}</h3><ul class="qlist">${E.slice(0, n).map((e, i) => `<li class="${i + 1 < n ? 'done' : 'cur'}">${esc(t(`${id}.e${i + 1}.titre`))}</li>`).join('')}</ul>`;
+    const ok = annexeFinie(id);
+    (ok ? finies : enCours).push(queteRepliable(t('journal.annexe', { titre: t(id + '.titre') }), ANNEXES[id].etapes.slice(0, n).map((e, i) => [t(`${id}.e${i + 1}.titre`), i + 1 < n]), ok));
   }
+  let quetes = `<h3 class="sec">${esc(t('journal.encours'))}</h3>${enCours.join('') || `<p class="note">${esc(t(cur ? 'journal.aucune' : 'journal.tout.fini'))}</p>`}`;
+  if (finies.length) quetes += `<details class="terminees"><summary>${esc(t('journal.terminees', { n: finies.length }))}</summary><div class="list">${finies.join('')}</div></details>`;
   const zones = Object.keys(S.z).filter(id => lieuVisible(id) && S.z[id].visits).map(id => `${nomLieu(id)} ${pct(id)} %`).join(' · ');
-  const sh = modal(sheetHead(t('menu.journal')) + quetes + `
-   <h3 class="sec">${esc(t('journal.classes'))}</h3><p class="note">${Object.keys(CLASSES).map(j => S.jobs.includes(j) ? `<b class="clair">${esc(t('classe.' + j))}</b>` : CLASSES[j].cachee ? esc(t('journal.secrete')) : esc(t('journal.verrouillee', { nom: t('classe.' + j) }))).join(' · ')}</p>
+  const sh = modal('grand', sheetHead(t('menu.journal')) + quetes + `
    <h3 class="sec">${esc(t('journal.bilan'))}</h3><div class="stats"><div class="stat"><b>${fmt(st.time)}</b><span>${esc(t('stats.temps'))}</span></div><div class="stat"><b>${st.fights}</b><span>${esc(t('stats.combats'))}</span></div><div class="stat"><b>${st.explores}</b><span>${esc(t('stats.explorations'))}</span></div><div class="stat"><b>${S.plus ? '+' + S.plus : '–'}</b><span>${esc(t('stats.plus'))}</span></div></div>
    ${zones ? `<p class="note">${esc(zones)}</p>` : ''}
    <div class="log">${st.log.slice().reverse().map(ligneJournal).join('') || esc(t('journal.vide'))}</div>`);
@@ -189,7 +218,7 @@ function openOptions(vue) {
   let confirmer = false;
   const draw = () => {
     if (vue === 'notes') {
-      const sh = modal(sheetHead(t('options.notes')) + `<div class="notes">${lignes('notes.version').map(l => l.startsWith('##') ? `<h3 class="sec">${html(l.replace(/^##\s*/, ''))}</h3>` : `<p class="note">${html(l)}</p>`).join('')}</div>
+      const sh = modal('grand', sheetHead(t('options.notes')) + `<div class="notes">${lignes('notes.version').map(l => l.startsWith('##') ? `<h3 class="sec">${html(l.replace(/^##\s*/, ''))}</h3>` : `<p class="note">${html(l)}</p>`).join('')}</div>
         <div class="acts"><button class="btn ghost wide" id="m-back"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('retour'))}</span></span></button></div>`);
       sh.querySelector('#mclose').onclick = closeModal; sh.querySelector('#m-back').onclick = () => { vue = null; draw(); };
       return;
@@ -207,7 +236,7 @@ function openOptions(vue) {
     if (enJeu) o.push({ k: 'titre', ic: 'home', label: esc(t('options.titre')), sub: esc(t('options.titre.sous')), dis: !libre });
     if (S && (enJeu || loadSave())) o.push({ k: 'reset', ic: 'x', label: esc(t(confirmer ? 'options.reset.confirmer' : 'options.reset')), sub: esc(t(confirmer ? 'options.reset.confirmer.sous' : 'options.reset.sous')), dis: !libre, cls: confirmer ? 'danger' : '' });
     if (DEBUG) o.push({ k: 'debug', ic: 'bug', label: esc(t('debug.titre')), sub: esc(t('debug.sous')), cls: 'ghost', dis: !libre });
-    const sh = modal(sheetHead(t('menu.options')) + `<div class="acts" id="o-list"></div><p class="note centre">Lanterval ${esc(VERSION)} · Keismey Studio</p>`);
+    const sh = modal('grand', sheetHead(t('menu.options')) + `<div class="acts" id="o-list"></div><p class="note centre">Lanterval ${esc(VERSION)} · Keismey Studio</p>`);
     sh.querySelector('#mclose').onclick = fermerFenetre;
     const el = sh.querySelector('#o-list'); el.innerHTML = btns(o);
     bind(el, o, k => {

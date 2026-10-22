@@ -14,7 +14,7 @@ const EQUIPEMENT = {
   dague: { place: 'arme', type: 'dague', v: 6, st: { atk: 3 } },
   baton: { place: 'arme', type: 'baton', v: 6, st: { atk: 1, mag: 3 } },
   epee: { place: 'arme', type: 'epee', prix: 60, st: { atk: 7 } },
-  braise: { place: 'arme', type: 'baton', prix: 65, el: 'F', st: { atk: 2, mag: 7 } },
+  braise: { place: 'arme', type: 'baton', prix: 65, st: { atk: 2, mag: 7 } },
   arc: { place: 'arme', type: 'arc', cadeau: true, st: { atk: 9, spd: 1 } },
   tunique: { place: 'armure', v: 5, st: { def: 2 } },
   cuir: { place: 'armure', v: 20, st: { def: 4, hp: 5 } },

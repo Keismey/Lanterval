@@ -549,7 +549,7 @@ Compris, au combat !
 Garde à 0 : l'ennemi perd son prochain tour et subit +50 % de dégâts. Une attaque chargée est annulée.
 
 == aide.elements
-*Éléments* : Lame, Terre, Feu, Eau. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau) ; l'Attaque normale est Lame, sauf avec une arme élémentaire (comme le Bâton de braise, Feu).
+*Éléments* : Lame, Terre, Feu, Eau. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau) ; l'Attaque normale est toujours Lame.
 
 == aide.inconnue
 Faiblesse pas encore découverte. Touche-la une fois et elle reste affichée, ici et dans le bestiaire.
@@ -566,10 +566,40 @@ Résistance : dégâts divisés par 2.
 == aide.auto
 *Auto* : attaques normales automatiques. Se coupe si un héros passe sous 30 % de PV. Indisponible contre les boss et en quête.
 
+== equipe.stat.toucher
+Touche une statistique pour savoir à quoi elle sert.
+
+== aide.stats
+Statistiques
+
+== stat.hp.aide
+Points de vie. À 0, le héros est K.O. jusqu'à la fin du combat.
+
+== stat.pp.aide
+Points de pouvoir. Chaque technique en coûte ; ils remontent au repos.
+
+== stat.atk.aide
+Force des coups : l'Attaque, la Frappe élémentaire, la Lame sacrée, le Double tir.
+
+== stat.mag.aide
+Force des sorts (Sort élémentaire, Déluge) et des soins.
+
+== stat.def.aide
+Réduit les dégâts reçus.
+
+== stat.spd.aide
+Plus elle est haute, plus le héros joue souvent dans l'ordre des tours.
+
+== stat.xp.aide
+Expérience gagnée en combat. La jauge pleine, le héros monte d'un niveau et toutes ses statistiques augmentent.
+
 # ================= Équipe =================
 
 == equipe.niveau
-niv. {n} · {xp}/{max} XP
+niv. {n}
+
+== equipe.xp
+XP
 
 == equipe.classe
 Classe
@@ -698,6 +728,39 @@ Faiblesses
 == codex.resiste
 Résiste
 
+== codex.classe.inconnue
+Classe pas encore débloquée.
+
+== codex.classes
+Classes
+
+== codex.classes.aide
+Les classes débloquées et leurs techniques. Une technique de « l'élément du héros » prend l'élément de celui qui l'utilise.
+
+== codex.armes
+Armes : {liste}.
+
+== codex.pct
+{stat} {v} %
+
+== codex.arme.dague
+Dague
+
+== codex.arme.epee
+Épée
+
+== codex.arme.baton
+Bâton
+
+== codex.arme.arc
+Arc
+
+== codex.equilibre
+Statistiques équilibrées.
+
+== codex.el.X
+élément du héros
+
 # ================= Journal =================
 
 == journal.acte
@@ -706,17 +769,17 @@ Acte {n} · {titre}
 == journal.annexe
 Quête annexe · {titre}
 
+== journal.encours
+Quêtes en cours
+
+== journal.aucune
+Aucune quête en cours.
+
+== journal.terminees
+Quêtes terminées ({n})
+
 == journal.tout.fini
 Toute l'histoire de cette version est terminée.
-
-== journal.classes
-Classes
-
-== journal.secrete
-??? (secrète)
-
-== journal.verrouillee
-{nom} (verrouillée)
 
 == journal.bilan
 Bilan
@@ -912,11 +975,19 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.1.2
+Le Codex a un onglet Classes : les classes débloquées, leurs armes, leurs statistiques et leurs techniques.
+Le Bâton de braise n'est plus une arme de Feu : l'Attaque normale reste Lame, sans couleur ; seules les techniques prennent la couleur de leur élément.
+Le menu Équipe montre des jauges de PV, PP et XP avec les chiffres.
+Toucher une statistique dans l'Équipe explique à quoi elle sert ; l'aide du Codex les explique toutes.
+Le Journal range les quêtes en cours et terminées dans des listes repliables ; les classes sont dans le Codex, celles pas encore débloquées en ???.
+Les fenêtres de menu gardent la même taille quel que soit l'onglet.
+Correction : si la page est fermée en pleine étape, l'étape reprend où elle en était (un combat gagné n'est plus rejoué).
 ## Version 0.1.1
 Le texte s'écrit sans faire bouger l'écran ni les boutons.
 Un appui n'importe où passe à la suite d'un dialogue.
 Les monstres sont deux fois plus petits en combat.
-Les icônes de combat prennent la couleur de leur élément ; le Bâton de braise donne une Attaque de Feu.
+Les icônes de combat prennent la couleur de leur élément.
 ## Version 0.1.0
 Premier vrai jeu, construit à partir de la maquette.
 L'acte 1 se joue jusqu'à la fête de la lanterne, avec la quête annexe du loup alpha.

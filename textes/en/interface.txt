@@ -530,7 +530,7 @@ The enemy's *guard*. Each hit on a weakness removes 1 point.
 Guard at 0: the enemy loses its next turn and takes +50 % damage. A charged attack is cancelled.
 
 == aide.elements
-*Elements*: Blade, Earth, Fire, Water. Each hero has their own (Kael Earth, Mira Fire, Sol Water); the normal Attack is Blade, unless you hold an elemental weapon (like the Ember staff, Fire).
+*Elements*: Blade, Earth, Fire, Water. Each hero has their own (Kael Earth, Mira Fire, Sol Water); the normal Attack is always Blade.
 
 == aide.inconnue
 Weakness not discovered yet. Hit it once and it stays shown, here and in the bestiary.
@@ -547,8 +547,38 @@ Resistance: damage halved.
 == aide.auto
 *Auto*: automatic normal attacks. Turns off if a hero drops below 30 % HP. Not available against bosses or in quests.
 
+== equipe.stat.toucher
+Tap a stat to see what it does.
+
+== aide.stats
+Stats
+
+== stat.hp.aide
+Hit points. At 0, the hero is KO until the end of the fight.
+
+== stat.pp.aide
+Power points. Each technique costs some; they come back when you rest.
+
+== stat.atk.aide
+Strength of blows: Attack, Elemental strike, Sacred blade, Double shot.
+
+== stat.mag.aide
+Strength of spells (Elemental spell, Deluge) and of heals.
+
+== stat.def.aide
+Reduces damage taken.
+
+== stat.spd.aide
+The higher it is, the more often the hero acts in the turn order.
+
+== stat.xp.aide
+Experience earned in combat. When the gauge is full, the hero gains a level and all their stats go up.
+
 == equipe.niveau
-lv. {n} · {xp}/{max} XP
+lv. {n}
+
+== equipe.xp
+XP
 
 == equipe.classe
 Class
@@ -673,23 +703,56 @@ Weaknesses
 == codex.resiste
 Resists
 
+== codex.classe.inconnue
+Class not unlocked yet.
+
+== codex.classes
+Classes
+
+== codex.classes.aide
+Unlocked classes and their techniques. A technique of “the hero's element” takes the element of whoever uses it.
+
+== codex.armes
+Weapons: {liste}.
+
+== codex.pct
+{stat} {v}%
+
+== codex.arme.dague
+Dagger
+
+== codex.arme.epee
+Sword
+
+== codex.arme.baton
+Staff
+
+== codex.arme.arc
+Bow
+
+== codex.equilibre
+Balanced stats.
+
+== codex.el.X
+hero's element
+
 == journal.acte
 Act {n} · {titre}
 
 == journal.annexe
 Side quest · {titre}
 
+== journal.encours
+Current quests
+
+== journal.aucune
+No current quest.
+
+== journal.terminees
+Completed quests ({n})
+
 == journal.tout.fini
 The whole story of this version is complete.
-
-== journal.classes
-Classes
-
-== journal.secrete
-??? (secret)
-
-== journal.verrouillee
-{nom} (locked)
 
 == journal.bilan
 Summary
@@ -878,11 +941,19 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.1.2
+The Codex has a Classes tab: unlocked classes, their weapons, stats and techniques.
+The Ember staff is no longer a Fire weapon: the normal Attack stays Blade, with no colour; only techniques take the colour of their element.
+The Team menu shows HP, PP and XP gauges with numbers.
+Tap a stat in the Team menu to see what it does; the Codex help explains them all.
+The Journal sorts current and completed quests into folding lists; classes are in the Codex, locked ones shown as ???.
+Menu windows keep the same size whatever the tab.
+Fix: if the page is closed in the middle of a step, the step resumes where it was (a won fight is no longer replayed).
 ## Version 0.1.1
 Text now appears without moving the screen or the buttons.
 Tap anywhere to move on in a dialogue.
 Monsters are half the size in combat.
-Combat icons take the colour of their element; the Ember staff gives a Fire Attack.
+Combat icons take the colour of their element.
 ## Version 0.1.0
 First real game, built from the prototype.
 Act 1 plays up to the lantern festival, with the alpha wolf side quest.

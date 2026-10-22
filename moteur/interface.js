@@ -46,5 +46,6 @@ async function joinCard(id, titre) {
 /* ---------- Fenêtres ---------- */
 function closeModal() { $('#modal').innerHTML = ''; }
 function modalOuverte() { return !!$('#modal .modal'); }
-function modal(html) { $('#modal').innerHTML = `<div class="modal"><div class="sheet">${html}</div></div>`; return $('#modal .sheet'); }
+// modal(html) s'adapte au contenu ; modal('grand', html) garde la même taille quel que soit l'onglet
+function modal(taille, html) { if (html === undefined) { html = taille; taille = ''; } $('#modal').innerHTML = `<div class="modal"><div class="sheet ${taille}">${html}</div></div>`; return $('#modal .sheet'); }
 function sheetHead(titre) { return `<div class="sheet-h"><div class="ptitle">${esc(titre)}</div><button class="ibtn" id="mclose" aria-label="${esc(t('fermer'))}">${ic('x')}</button></div>`; }

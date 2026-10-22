@@ -10,6 +10,7 @@ async function run(fn) {
   renderStable();
 }
 async function defaite() {
+  S.reprise = null; // l'étape perdue se rejoue depuis le début
   S.gold = Math.floor(S.gold / 2); healAll(); restorePP();
   S.loc = 'lanterval'; S.screen = 'village';
   logR('journal.log.retour');
@@ -46,7 +47,7 @@ function renderTitle() {
     const p = $('#panel');
     p.innerHTML = `<p class="ptext">${tx('titre.texte')}</p><div class="acts">${btns(opts)}</div><p class="note centre">${esc(t('titre.version', { v: VERSION }))}</p>`;
     bind(p, opts, k => {
-      if (k === 'go') { const ici = LIEUX[lieuActuel()]; S.screen = ici.type === 'village' ? 'village' : 'zone'; renderStable(); return; }
+      if (k === 'go') { const ici = LIEUX[lieuActuel()]; S.screen = ici.type === 'village' ? 'village' : 'zone'; renderStable(); const f = reprendre(); if (f) run(f); return; }
       if (partieEnCours() && !confirmer) { confirmer = true; draw(); return; }
       effacerPartie(); S = newState(); run(commencer);
     });
