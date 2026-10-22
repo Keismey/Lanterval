@@ -115,6 +115,18 @@ Side quest
 == boutique.objet
 {prix} g · {effet} · you have {n}
 
+== boutique.onglet.arme
+Weapons
+
+== boutique.onglet.armure
+Armour
+
+== boutique.onglet.acc
+Accessories
+
+== boutique.onglet.conso
+Consumables
+
 == boutique.vendre
 Sell
 
@@ -506,7 +518,7 @@ The Union hits every enemy.
 Back to the inn
 
 == defaite.texte
-You wake up at the inn, healed. While fleeing, you lost half your purse: you have *{or} g* left.
+You wake up at the inn in {lieu}, healed. While fleeing, you lost half your purse: you have *{or} g* left.
 
 == aide.titre
 Combat help
@@ -815,7 +827,7 @@ Defeated by {noms}
 Crushed by {noms}
 
 == journal.log.retour
-Back to the inn
+Back to the inn in {lieu}
 
 == stats.temps
 play time
@@ -845,7 +857,7 @@ side quests done
 new game+
 
 == fin.titre
-End of version 0.2
+End of version 0.3
 
 == fin.continuer
 Keep playing
@@ -944,6 +956,17 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.3.0
+Act 2, “The town that forgets”, is playable: the Salt Marsh, Salvent, the Lantern Marsh, the Sunken Wreck and the Drowned Lighthouse.
+The Salvent Coast has its own map. The Salt Marsh links the valley and the coast, and the map menu also offers to go back to Lanterval.
+Three bosses (the Marsh Wyvern, the Abyssal Mother, the Herald of the Eyelid), seven new monsters and two side-quest bosses.
+New classes: Monk, Thief and Bard, granted by the sea-foam crystal. Secret class: Corsair.
+New techniques: Flurry, Meditation, Steal, Dodge, Song of courage, Lullaby, Boarding strike.
+Side quests: “The forgotten ship” and “The lost prices”; “The lullaby” begins (it continues in act 3).
+At Gaspard's, prices change on every visit: in red when inflated, in green when reduced, until his ledger is found.
+Shops have tabs: Weapons, Armour, Accessories and Consumables (when buying and when selling).
+After a defeat, the team wakes up at the inn of the last village visited.
+Images: everything new is provisional.
 ## Version 0.2.2
 No more buttons that take the team to the quest automatically: a yellow (main quest) or blue (side quest) “!” marks the Map button, the Cross button and the place on the map.
 ## Version 0.2.1
@@ -974,3 +997,75 @@ Autosave, backup copy and game export in the Options.
 New game+: start the story over while keeping classes, levels, gear and codex.
 The game works offline and in English.
 Images: the village, Kael, the wolf and the festival are final; the rest is temporary.
+
+== boutique.fous
+Prices change on every visit: *in red* when inflated, *in green* when reduced.
+
+== boutique.remise
+The real prices, with a 10% discount.
+
+== combat.dort.court
+Zzz
+
+== combat.courage.court
+Courage
+
+== combat.esquive.court
+Dodge
+
+== combat.vol.rien
+{nom} has nothing left to steal.
+
+== combat.vol.rate
+Missed! {nom} keeps what it has.
+
+== combat.vol.objet
+Stolen from {nom}: *{objet}*!
+
+== combat.vol.or
+Stolen from {nom}: *{n} g*!
+
+== combat.meditation
+{nom} meditates: +{n} HP, +{p} PP.
+
+== combat.esquive
+{nom} gets ready to dodge the next blow.
+
+== combat.courage
+{nom} sings the *Song of courage*: the team's Attack and Magic go up!
+
+== combat.dort
+{nom} *falls asleep*. It will only wake up when hit.
+
+== combat.dort.rate
+{nom} yawns… but stays awake.
+
+== combat.dort.resiste
+{nom} will not be lulled to sleep.
+
+== combat.dort.tour
+{nom} is fast asleep.
+
+== combat.reveil
+{nom} wakes up!
+
+== combat.esquive.coup
+{nom} dodges the blow!
+
+== combat.drain
+{nom} recovers {n} HP.
+
+== combat.double
+{nom} strikes twice!
+
+== combat.mord
+{nom} bites.
+
+== codex.arme.poing
+Fists
+
+== codex.arme.harpe
+Harp
+
+== codex.arme.sabre
+Sabre

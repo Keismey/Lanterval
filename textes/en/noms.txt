@@ -390,3 +390,317 @@ The Nameless raises his mace… *he is about to strike the whole team*.
 
 == monstre.sansnom.special
 *Giant's blow!* The mace crashes down on the whole team.
+
+# ================= Act 2 =================
+
+== parle.maelle
+Maëlle
+
+== parle.gaspard
+Gaspard
+
+== parle.loic
+Loïc
+
+== parle.pecheur
+Fisherman
+
+== parle.rosal
+Rosal
+
+== parle.naia
+Naïa
+
+== parle.nev
+Nev
+
+== parle.heraut
+Herald
+
+== parle.erwan
+Erwan
+
+== parle.bosco
+Bosun
+
+== classe.moine
+Monk
+
+== classe.moine.desc
+Strikes fast and often, and self-heals.
+
+== classe.moine.verrou
+Unlocked by the sea-foam crystal
+
+== classe.voleur
+Thief
+
+== classe.voleur.desc
+Very fast: steals items and dodges blows.
+
+== classe.voleur.verrou
+Unlocked by the sea-foam crystal
+
+== classe.barde
+Bard
+
+== classe.barde.desc
+Strengthens the team with songs, puts enemies to sleep.
+
+== classe.barde.verrou
+Unlocked by the sea-foam crystal
+
+== classe.corsaire
+Corsair
+
+== classe.corsaire.desc
+Sometimes steals when striking, double damage on a broken guard.
+
+== classe.corsaire.verrou
+Secret class: hidden in a side quest
+
+== tech.rafale
+Flurry
+
+== tech.rafale.desc
+Three quick blows on one enemy: ideal to break a guard.
+
+== tech.meditation
+Meditation
+
+== tech.meditation.desc
+Restores 30% HP and 8 PP to the hero. Free.
+
+== tech.vol
+Steal
+
+== tech.vol.desc
+Takes an item from the enemy, or gold instead. Always works on a broken guard.
+
+== tech.esquive
+Dodge
+
+== tech.esquive.desc
+Avoids the next blow completely. Very fast.
+
+== tech.courage
+Song of courage
+
+== tech.courage.desc
+Team Attack and Magic +25% for 3 actions.
+
+== tech.berceuse
+Lullaby
+
+== tech.berceuse.desc
+Puts an enemy to sleep until it is hit. No effect on bosses.
+
+== tech.abordage
+Boarding strike
+
+== tech.abordage.desc
+A powerful sabre blow.
+
+== equip.bandes
+Linen wraps
+
+== equip.griffes
+Pearl claws
+
+== equip.coutelas
+Harbour cutlass
+
+== equip.harpe
+Sailor's harp
+
+== equip.corail
+Coral sword
+
+== equip.flots
+Tide staff
+
+== equip.sabre
+Rosal's sabre
+
+== equip.veste
+Sailor's jacket
+
+== equip.nacre
+Mother-of-pearl cuirass
+
+== equip.houle
+Swell robe
+
+== equip.perle
+Grey pearl
+
+== equip.ecaille
+Wyvern scale
+
+== equip.rose
+Compass rose
+
+== equip.dent
+Shark tooth
+
+== equip.cloche
+Fog bell
+
+== important.journal-bord
+Logbook
+
+== important.journal-bord.desc
+The logbook of the ship Sol was shipwrecked on. A little girl was taken in at Salvent.
+
+== important.lettre-orvan
+Orvan's letter
+
+== important.lettre-orvan.desc
+Orvan admits he founded the Order with Ysold. The amber crystal is at the forges of Cendre.
+
+== important.journal-salicorne
+Salicorne's log
+
+== important.journal-salicorne.desc
+Rosal's logbook. Her ship is hidden in the lighthouse cove.
+
+== important.pages-registre
+Ledger pages
+
+== important.pages-registre.desc
+The pages of Gaspard's ledger. The cover is missing.
+
+== important.registre
+Gaspard's ledger
+
+== important.registre.desc
+All the prices of the Salvent shop, together at last.
+
+== important.boite
+Music box
+
+== important.boite.desc
+Naïa's box, painted with a seagull. Broken: it will need repairing.
+
+== monstre.crabe
+Salt crab
+
+== monstre.crabe.court
+Crab
+
+== monstre.crabe.desc
+Its salt-crusted shell stops blades.
+
+== monstre.sangsue
+Grey leech
+
+== monstre.sangsue.court
+Leech
+
+== monstre.sangsue.desc
+It bites and heals itself with what it takes.
+
+== monstre.follet
+Will-o'-wisp
+
+== monstre.follet.court
+Wisp
+
+== monstre.follet.desc
+A cold flame that eats the light of the lanterns.
+
+== monstre.follet.special
+{nom} bursts into blue sparks: the whole team is burnt!
+
+== monstre.crapaud
+Mist toad
+
+== monstre.crapaud.court
+Toad
+
+== monstre.crapaud.desc
+Huge and lazy, it spits burning slime.
+
+== monstre.crapaud.special
+{nom} spits burning slime over the whole team!
+
+== monstre.noye
+Drowned one
+
+== monstre.noye.desc
+A sailor the sea never gave back. He strikes with his dead lantern.
+
+== monstre.noye.special
+Lantern blow
+
+== monstre.poisson
+Bladefish
+
+== monstre.poisson.court
+Fish
+
+== monstre.poisson.desc
+Its fins cut like razors. Very fast.
+
+== monstre.soldat
+Order soldier
+
+== monstre.soldat.court
+Soldier
+
+== monstre.soldat.desc
+A soldier of the Order of the Eyelid, with a spear and grey armour.
+
+== monstre.soldat.special
+Spear charge
+
+== monstre.vouivre
+Marsh Wyvern
+
+== monstre.vouivre.desc
+A winged serpent covered in moss, guardian of the marsh mist.
+
+== monstre.vouivre.charge
+The Wyvern swells her throat… *she will breathe on the whole team next turn*, unless you break her guard first.
+
+== monstre.vouivre.special
+*Marsh breath!* A scalding vapour hits the whole team.
+
+== monstre.mere
+Abyssal Mother
+
+== monstre.mere.desc
+A giant crab covered in shells. She guards her nest deep in the wreck.
+
+== monstre.mere.special
+Crushing claw
+
+== monstre.mere.appel
+{nom} bangs on the hull: *{renfort}* comes out of a hole!
+
+== monstre.heraut
+Herald of the Eyelid
+
+== monstre.heraut.desc
+An officer of the Order. He sincerely believes he is offering peace.
+
+== monstre.heraut.charge
+The Herald raises his mace… *“Closed eyelid” next turn*, unless you break his guard first.
+
+== monstre.heraut.special
+*Closed eyelid!* A dark wave hits the whole team.
+
+== monstre.pie
+Mist magpie
+
+== monstre.pie.desc
+A giant magpie that steals everything shiny, even ledgers.
+
+== monstre.bosco
+The Bosun
+
+== monstre.bosco.desc
+The leader of the Order's smugglers. He stole the Salicorne.
+
+== monstre.bosco.special
+Bosun's hook

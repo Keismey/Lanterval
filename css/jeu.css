@@ -220,6 +220,7 @@ button{font:inherit;color:inherit}
 .sheet-h{display:flex;align-items:center;gap:10px}
 .sheet-h .ptitle{flex:1}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}
+.ptabs{margin:10px 0 2px}
 .tab{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 5px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);cursor:pointer;font-weight:600;font-size:13.5px}
 .tab.txt{padding:7px 14px}
 .tab.on{background:var(--gold);color:var(--ink-gold);border-color:transparent}
@@ -309,3 +310,5 @@ img[src^="img/"]{image-rendering:auto!important}
 .btn.el-T .ic,.ctech.el-T .ic{color:var(--el-T);background:color-mix(in srgb,var(--el-T) 22%,transparent)}
 .btn.el-F .ic,.ctech.el-F .ic{color:var(--el-F);background:color-mix(in srgb,var(--el-F) 22%,transparent)}
 .btn.el-E .ic,.ctech.el-E .ic{color:var(--el-E);background:color-mix(in srgb,var(--el-E) 22%,transparent)}
+.zz{color:#151a33;background:#b9d8ff;border-radius:6px;padding:1px 5px;font-size:10px;font-weight:800}
+.cher{color:var(--danger);font-weight:800}.bon{color:var(--hp);font-weight:800}

@@ -1,0 +1,373 @@
+# Lanterval · Act 2: The Town That Forgets (English texts)
+# Same format as acte1.txt (see the help at the top of that file).
+
+== a2.titre
+The Town That Forgets
+
+# ---------- Step 1: Salt Marsh ----------
+
+== a2.e1.titre
+Cross the Salt Marsh
+
+== a2.e1.bouton
+Follow the lost fisherman
+
+== a2.e1.pecheur
+## Act 2 · The Town That Forgets
+By the salt pans, a man walks in circles, an empty net over his shoulder.
+Fisherman: “Hello… I think I was heading home. But I no longer know where that is, or what my name is.”
+Sol: “The mist. It takes the little things first, then the rest.”
+Mira: “We're going to Salvent. Come with us, someone will recognise you.” [Cross the marsh]
+
+== a2.e1.crabes
+## Salt Marsh
+Salt crunches underfoot. White shells rise out of the mud. [Fight]
+
+== a2.e1.nom
+## Salt Marsh
+Fisherman: “Thank you! You know, I feel like my name starts with an L. Or a B.”
+Kael: “That's progress.”
+
+== a2.e1.cote
+## The coast
+At the end of the marsh, the land slopes down to the sea. A harbour shows through the mist, and further out a dark lighthouse on its rock.
+Sol stops. He stares at the lighthouse for a long time, without a word.
+Fisherman: “Salvent! That one I remember. I think.”
+
+== a2.e1.message
+*Salvent* appears on the Coast map. The fisherman follows you.
+
+# ---------- Step 2: Salvent ----------
+
+== a2.e2.titre
+Discover Salvent
+
+== a2.e2.bouton
+Enter Maëlle's inn
+
+== a2.e2.arrivee
+## Salvent
+Salvent runs down to the harbour in steps. The boats are moored, the nets are drying, and nobody seems to know why.
+A woman drops her basket when she sees the fisherman.
+“Loïc! I've been looking for you for three days!”
+Loïc: “Loïc… Yes! That's me!”
+Loïc: “And you are… my wife? Sorry, it's the mist.”
+
+== a2.e2.gaspard
+## Salvent
+On the square, a merchant shouts his prices at the crowd.
+Gaspard: “Healing herbs, four coins! No, four hundred! Or eighty?”
+Mira: “At least we might land a bargain.”
+
+== a2.e2.maelle
+## The inn
+At the inn, an old woman is drying glasses. She freezes when she sees Sol.
+Maëlle: “Those eyes… You're the little one from the shipwreck. The one we thought the sea had taken.”
+Sol: “You remember me?”
+Maëlle: “I'm too old for the mist to find room in my head. Sit down, little one.”
+
+== a2.e2.lanternes
+## The inn
+Maëlle: “Three small lanterns used to shine in the marsh to the north. They kept the mist away from the harbour.”
+Maëlle: “They went out the day those people with the closed eye took the lighthouse.”
+Kael: “The Order. They're here too.”
+Maëlle: “Light the lanterns again, and the town will hold for a few days. Then we'll talk about the lighthouse.”
+
+== a2.e2.message
+Light the three lanterns of the *Lantern Marsh* again, north of Salvent.
+
+# ---------- Step 3: Lantern Marsh ----------
+
+== a2.e3.titre
+Light the three lanterns
+
+== a2.e3.bouton
+Light the lanterns
+
+== a2.e3.berge
+## Lantern Marsh
+The first lantern stands on a post at the edge of the black water. Blue flames dance around it.
+Mira: “Will-o'-wisps. They've eaten all the light.” [Fight]
+
+== a2.e3.premiere
+## Lantern Marsh
+Mira breathes on the wick. *The first lantern lights up* and the mist draws back a few steps.
+Sol: “The second one is further on, towards the heart of the marsh.” [Go deeper into the marsh]
+
+== a2.e3.deuxieme
+## Lantern Marsh
+The second lantern leans among the reeds. Enormous toads stand guard. [Fight]
+
+== a2.e3.deuxieme.fin
+## Lantern Marsh
+*The second lantern shines.* A path of light opens towards the heart of the marsh.
+
+== a2.e3.coeur
+## The heart of the marsh
+The last lantern is bent, half in the water. Something long slides around the post.
+The water rises. A wyvern spreads wings of moss and hisses.
+Kael: “She's the one keeping the mist here.”
+
+== a2.e3.conseil
+The *Marsh Wyvern* prepares a breath that hits the whole team. Break her guard with *Earth* (Kael) to stop it. She resists Fire and Water.
+
+== a2.e3.troisieme
+## The heart of the marsh
+The Wyvern sinks into the mud and does not come back up. Kael straightens the post; Mira lights the wick.
+*All three lanterns shine.* In the distance, the harbour of Salvent comes out of the mist.
+Sol looks out to sea, towards an old hull run aground.
+Sol: “The ship I was wrecked on is out there, under the water. I have to go back.”
+
+== a2.e3.message
+The lanterns protect the harbour. The *Sunken Wreck* appears on the map, south of Salvent.
+
+# ---------- Step 4: Sunken Wreck ----------
+
+== a2.e4.titre
+Dive into the wreck
+
+== a2.e4.bouton
+Dive with Sol
+
+== a2.e4.plongee
+## Sunken Wreck
+Sol walks into the water without hesitating. A bubble of air forms around the group, held by his power.
+Sol: “I never came back. I was six. My sister was two.”
+Mira: “We're with you.” [Enter the hull]
+
+== a2.e4.coursive
+## Sunken Wreck
+The gangway is overgrown with seaweed. Pale shapes move between the cabins. [Fight]
+
+== a2.e4.cabine
+## Sunken Wreck
+At the end of the gangway, the captain's cabin. The logbook floats, sealed in a copper box.
+
+== a2.e4.journal
+## The logbook
+“Night of storm. Hull torn open on the lighthouse rocks. A boy swept away by the current, never found.”
+“A girl of two saved from the water and taken in at Salvent.”
+Sol holds the logbook close.
+Sol: “She's alive. She's been in Salvent all along.”
+
+== a2.e4.mere
+## The hold
+The floor shakes. In the hold, a shell covered in barnacles rises: the Abyssal Mother guards her nest.
+
+== a2.e4.conseil
+The *Abyssal Mother* has a huge guard and calls crabs to help. Hit her with *Earth* or *Fire*; Blade and Water slide off her shell.
+
+== a2.e4.fin
+## The hold
+The Abyssal Mother backs into a hole in the hull and disappears.
+Kael: “Let's go back. Maëlle will know who took your sister in.”
+
+== a2.e4.message
+Go back to *Maëlle* at the inn in Salvent.
+
+# ---------- Step 5: Naïa ----------
+
+== a2.e5.titre
+Find Sol's sister
+
+== a2.e5.bouton
+Show the logbook to Maëlle
+
+== a2.e5.maelle
+## The inn
+Maëlle reads the logbook page. Her hands tremble a little.
+Maëlle: “The little girl was taken in by Erwan. The lighthouse keeper. He named her Naïa.”
+Maëlle: “The Order is holding Erwan in the lighthouse. Naïa waits for him on the quay every evening.” [Go to the quay]
+
+== a2.e5.naia
+## The quay
+A girl in a yellow oilskin looks at the dark lighthouse. She has the same blue hair as Sol.
+Naïa: “Are you travellers? My father is over there. Those people locked him up to keep the light.”
+Naïa: “They told me I had a family, before. But I don't remember anything. The mist, I suppose.”
+Sol opens his mouth, then closes it.
+
+== a2.e5.sol
+## The quay
+Mira: “You're not telling her?”
+Sol: “Not now. She has a father, and he's a prisoner. I won't give her a brother and one more sorrow.”
+Sol: “We free Erwan first. The lighthouse is on the rock, to the west.”
+
+== a2.e5.message
+The *Drowned Lighthouse* appears on the map. The Order holds it.
+
+# ---------- Step 6: Drowned Lighthouse, the cove ----------
+
+== a2.e6.titre
+Get into the lighthouse
+
+== a2.e6.bouton
+Reach the lighthouse stairs
+
+== a2.e6.crique
+## Drowned Lighthouse
+The sea comes up to the lighthouse door. Banners with a closed eye snap in the wind.
+Soldiers of the Order guard the entrance. [Fight]
+
+== a2.e6.nev
+## The stairs
+On the first steps, a novice of the Order raises her spear. She isn't even sixteen.
+Nev: “Halt! I have to… I have to raise the alarm.”
+She looks at Sol, then at the harbour, then at her own hands.
+Nev: “They said we came to save Salvent from its memories. But people don't even know their children's names any more.”
+Nev: “I didn't see you. The Herald is at the top. Hurry.”
+
+== a2.e6.escalier
+## The stairs
+Halfway up, two soldiers come down the steps. They didn't pass Nev. [Fight]
+
+== a2.e6.escalier.fin
+## The stairs
+The steps keep turning. At the very top, a cold light seeps under a door.
+
+== a2.e6.sommet
+## The top
+The lighthouse lamp is covered by a black cage. Inside, a sea-foam coloured crystal beats like a heart.
+An old man is tied to the railing: Erwan, the keeper.
+
+== a2.e6.message
+The *Herald of the Eyelid* awaits you at the top of the lighthouse.
+
+# ---------- Step 7: Drowned Lighthouse, the top ----------
+
+== a2.e7.titre
+Face the Herald
+
+== a2.e7.bouton
+Challenge the Herald
+
+== a2.e7.heraut
+## The Herald of the Eyelid
+Herald: “The children of the lantern. Varen told me about you.”
+Herald: “Look at this harbour. No one here mourns their dead any more. We offer it peace, and you want to give it back its grief.”
+Kael: “You're taking their memories. That isn't peace, it's emptiness.”
+Herald: “Then close your eyes with them.”
+
+== a2.e7.conseil
+The *Herald* prepares “Eyelid Shut”, a blow on the whole team. Break his guard with *Water* (Sol) or *Earth* (Kael) to cancel it. He resists Fire.
+
+== a2.e7.cristal
+## The sea-foam crystal
+The Herald falls to his knees, then flees through the window, into a boat of the Order.
+Kael breaks the cage. The sea-foam crystal lights up, and the lighthouse casts its beam over the sea.
+As in Lanterval, the crystal answers the lantern shard. It teaches you new ways to fight.
+
+== a2.e7.classes
+## Classes
+*New classes: Monk, Thief and Bard.*
+Monk: fists or staff, Flurry (three blows) and Meditate. Thief: very fast, steals items and dodges. Bard: harp, songs that boost the team or put an enemy to sleep.
+Change class in the Team menu. The Codex describes each class.
+
+== a2.e7.gardien
+## The top
+Erwan: “Thank you, children. My little Naïa must be worried sick.”
+Sol unties him without a word. His hands are shaking a little.
+Erwan: “Let's go back to Salvent. Tonight, the lighthouse keeps watch again.”
+
+== a2.e7.message
+The lighthouse shines. Go back to *Maëlle*'s inn in Salvent.
+
+# ---------- Step 8: Salvent, Orvan's letter ----------
+
+== a2.e8.titre
+Return to Salvent
+
+== a2.e8.bouton
+Celebrate the return of the light
+
+== a2.e8.ville
+## Salvent
+Three days have passed. The mist no longer gets past the rocks, and the fishermen remember their first names.
+Loïc: “I've found my boat, my wife and my children. In that order, but I won't tell them.”
+Erwan and Naïa sit at a table in the inn. Maëlle has brought out her best soup.
+
+== a2.e8.berceuse
+## The inn
+Naïa hums as she stirs her soup. Sol freezes.
+Sol: “That song… Where did you learn it?”
+Naïa: “I don't know. It's always been in my head. Nobody else knows it.”
+Sol smiles without answering. Their mother sang it every night.
+
+== a2.e8.vision
+## A vision
+That night, under the lighthouse beam, the lantern shard starts to glow in your hand.
+A vision: a woman with a calm gaze, and beside her a smiling young man. Behind them, a huge eye carved in stone.
+Kael: “That young man… it's Orvan. Orvan, at twenty.”
+The next day, you hand a letter for Orvan to the valley coach.
+
+== a2.e8.lettre
+## The inn
+Maëlle: “Kael! The valley coach brought a letter for you. The handwriting shakes a little.”
+
+== a2.e8.aveu
+## Orvan's letter
+“Kael, you saw right. Fifty years ago, I founded the Order of the Eyelid with Ysold. We wanted no one to suffer ever again.”
+“Ysold lost her whole family in the war. She wanted to close the Eye, the source of the world's memory.”
+“I was afraid, and I left. I never told you. Forgive me.”
+“Brann's scouts are certain: the amber crystal from the pass was taken to the forges of Cendre, in the east.”
+Mira: “Cendre… My mother's town.”
+
+== a2.e8.est
+## Heading east
+Sol: “I'm staying with you. Naïa has Erwan, and the lighthouse. I'll come back to talk to her when the mist is gone.”
+Kael: “Then we set off again. The forges of Cendre, in the east.”
+
+== a2.e8.message
+Act 2 is over! The sea-foam crystal protects Salvent, and the road to Cendre goes through Lanterval.
+
+# ---------- What people say as the story moves on ----------
+
+== pnj.loic
+Loïc: “My name is Loïc. Loïc! I say it a hundred times a day, just in case.”
+
+== pnj.loic.a2.e4
+Loïc: “The lanterns are shining and my wife recognised me twice today. That's a record!”
+
+== pnj.loic.a2.e7
+Loïc: “You're going up to the lighthouse? Say hello to Erwan for me. If he remembers me, that is.”
+
+== pnj.loic.fin
+Loïc: “I'm back at sea! And this time, I wrote my name on my boat.”
+
+== pnj.rosal
+Rosal: “Another glass, Maëlle. Of what? I don't remember. Same again.”
+
+== pnj.naia
+Naïa: “My father says the sea keeps everything you give it. Even memories.”
+
+== pnj.naia.a2.e7
+Naïa: “If you see my father up there, tell him I'm waiting. Every evening.”
+
+== pnj.naia.fin
+Naïa: “Sol, is it? You look at me as if you knew me. Funny, I feel the same way.”
+
+# Lanterval during act 2 (the “a2.e1” texts in acte1.txt are used at the start)
+
+== pnj.orvan.a2.e3
+Orvan: “Salvent forgets, you say? Then the Order is already there. Be careful.”
+
+== pnj.orvan.fin
+Orvan: “You got my letter. I have no excuse, Kael. Only the hope of mending what I started.”
+
+== pnj.tilo.a2.e3
+Tilo: “Is it true that in Salvent people forget their names? My name is Tilo. Tilo!”
+
+== pnj.tilo.fin
+Tilo: “Did you bring me a shell? No? Well, next time.”
+
+== pnj.hilde.accueil.a2.e3
+Hilde: “Any news from the coast? Is Mira at least eating? Take what you need, and bring her back in one piece.”
+
+== pnj.hilde.accueil.fin
+Hilde: “Cendre… If you're going there, I'm coming. Don't argue.”
+
+# ---------- End of version 0.3 ----------
+
+== fin.version
+## End of version 0.3
+Act 2 is over! The sea-foam crystal protects Salvent, Naïa hums the lullaby, and Orvan has confessed his past.
+Act 3 is coming in a future version. Until then, you can finish the side quests and explore every area to 100%.

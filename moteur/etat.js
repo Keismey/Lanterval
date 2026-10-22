@@ -20,7 +20,7 @@ function mkC(id) { const h = HEROS[id]; const c = { id, lvl: 1, xp: 0, hp: 0, pp
 function newState() {
   const s = { v: FORMAT, version: VERSION, gold: 40, inv: { herbe: 3, tonique: 1 }, bag: {}, imp: [],
     etapes: [], annexes: {}, f: {}, jobs: ['apprenti'], chars: {}, z: {}, loc: 'lanterval', screen: 'title',
-    best: {}, codex: {}, vus: {}, auto: false, msg: '', plus: 0, fins: 0,
+    best: {}, codex: {}, vus: {}, auto: false, msg: '', plus: 0, fins: 0, auberge: 'lanterval',
     st: { time: 0, fights: 0, qfights: 0, explores: 0, trav: 0, taps: 0, autoTurns: 0, log: [] } };
   for (const id of ORDRE_HEROS) s.chars[id] = mkC(id);
   for (const id in LIEUX) if (LIEUX[id].type === 'zone' && LIEUX[id].tresors) s.z[id] = mkZ();
@@ -39,6 +39,7 @@ function migrer(s) {
   for (const id in LIEUX) if (LIEUX[id].type === 'zone' && LIEUX[id].tresors && !s.z[id]) s.z[id] = mkZ();
   for (const id of ORDRE_HEROS) if (!s.chars[id]) s.chars[id] = mkC(id);
   if (!s.vus) s.vus = {};
+  if (!s.auberge) s.auberge = 'lanterval';
   s.v = FORMAT; s.version = VERSION;
   return s;
 }
@@ -144,6 +145,13 @@ function annexeEtat(id) { return S.annexes[id] || 0; }
 function annexeOuverte(id) { return cond(ANNEXES[id].ouvre); }
 function annexeFinie(id) { return annexeEtat(id) > ANNEXES[id].etapes.length; }
 function annexeEtape(id) { const n = annexeEtat(id); return n >= 1 && !annexeFinie(id) ? ANNEXES[id].etapes[n - 1] : null; }
+// l'étape en cours, seulement si elle peut se jouer maintenant (lieu ouvert, condition si remplie) : sinon pas de « ! »
+function annexeDispo(id) {
+  const x = annexeEtape(id); if (!x) return null;
+  if (x.si && !cond(x.si)) return null;
+  const l = villageDuPnj(x.lieu) || x.lieu.split('.')[0];
+  return lieuOuvert(l) ? x : null;
+}
 
 // où se trouve l'équipe : « lanterval » (village) ou « foret.v » (une zone et son côté)
 function lieuActuel() { return S.loc.split('.')[0]; }
@@ -151,3 +159,10 @@ function coteActuel() { return S.loc.split('.')[1] || null; }
 // un lieu d'étape (« foret », « grotte.f », « orvan ») correspond-il à la position ?
 function estIci(lieu) { return lieu === S.loc || lieu === lieuActuel(); }
 function villageDuPnj(pnj) { return Object.keys(LIEUX).find(k => LIEUX[k].type === 'village' && LIEUX[k].pnj.some(p => p.id === pnj)) || null; }
+
+// Régions : chaque région a sa carte (vallee, cote…). Une zone à deux côtés peut être à cheval sur deux régions.
+function regionsDu(id) { const r = LIEUX[id].region; return !r ? ['vallee'] : typeof r === 'string' ? [r] : [...new Set(Object.values(r))]; }
+function regionDe(pos) {
+  const [id, c] = pos.split('.'), r = LIEUX[id].region;
+  return !r ? 'vallee' : typeof r === 'string' ? r : r[c] || Object.values(r)[0];
+}

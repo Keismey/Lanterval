@@ -15,7 +15,7 @@ function questBtns(id) {
   const o = [], e = etapeCourante();
   if (e && estIci(e.lieu)) o.push({ k: 'q:main', ic: 'star', label: esc(titreEtape(e)), sub: esc(t('zone.quete.principale')), cls: 'main wide' });
   for (const a in ANNEXES) {
-    const x = annexeEtape(a); if (!x || !estIci(x.lieu)) continue;
+    const x = annexeDispo(a); if (!x || !estIci(x.lieu)) continue;
     const n = annexeEtat(a), cle = existe(`${a}.e${n}.bouton`) ? `${a}.e${n}.bouton` : `${a}.e${n}.titre`;
     o.push({ k: 'a:' + a, ic: 'paw', label: esc(t(cle)), sub: esc(t('zone.quete.annexe') + (team().length < 2 ? ' · ' + t('zone.conseil.equipe') : '')), cls: 'side wide' });
   }
@@ -25,7 +25,7 @@ function questBtns(id) {
 function marqueTraversee(id) {
   const autreCote = l => l && lieuDe(l) === id && l.includes('.') && !estIci(l);
   const e = etapeCourante(); if (e && autreCote(e.lieu)) return 'main';
-  for (const a in ANNEXES) { const x = annexeEtape(a); if (x && autreCote(x.lieu)) return 'side'; }
+  for (const a in ANNEXES) { const x = annexeDispo(a); if (x && autreCote(x.lieu)) return 'side'; }
   return '';
 }
 

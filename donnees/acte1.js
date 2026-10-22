@@ -148,8 +148,7 @@ ACTES.push({
       ['dialogue', 'a1.e10.epee'],
       ['decor'],
       ['dialogue', 'a1.e10.depart'],
-      ['message', 'a1.e10.message'],
-      ['fin_version']
+      ['message', 'a1.e10.message']
     ] }
   ]
 });

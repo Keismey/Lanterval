@@ -3,7 +3,7 @@
    Format d'un fichier : « == repère » ouvre un texte, chaque ligne suivante est une bulle,
    « # » en début de ligne est une note ignorée. Voir l'aide en tête de textes/fr/acte1.txt. */
 
-const FICHIERS_TEXTES = ['interface', 'noms', 'lieux', 'acte1', 'annexes'];
+const FICHIERS_TEXTES = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'annexes'];
 const LANGUES = ['fr', 'en'];
 const TXT = { fr: {}, en: {} };
 let LANG = 'fr';

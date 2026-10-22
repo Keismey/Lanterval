@@ -43,6 +43,36 @@ Varen
 == parle.sansnom
 Sans-Nom
 
+== parle.maelle
+Maëlle
+
+== parle.gaspard
+Gaspard
+
+== parle.loic
+Loïc
+
+== parle.pecheur
+Pêcheur
+
+== parle.rosal
+Rosal
+
+== parle.naia
+Naïa
+
+== parle.nev
+Nev
+
+== parle.heraut
+Héraut
+
+== parle.erwan
+Erwan
+
+== parle.bosco
+Bosco
+
 # ================= Héros =================
 
 == heros.kael.age
@@ -112,6 +142,33 @@ Protège tout le groupe.
 == classe.chevalier.verrou
 Débloquée par le cœur de cristal
 
+== classe.moine
+Moine
+
+== classe.moine.desc
+Frappe vite et souvent, se soigne seul.
+
+== classe.moine.verrou
+Débloquée par le cristal d'écume
+
+== classe.voleur
+Voleur
+
+== classe.voleur.desc
+Très rapide : vole des objets et esquive les coups.
+
+== classe.voleur.verrou
+Débloquée par le cristal d'écume
+
+== classe.barde
+Barde
+
+== classe.barde.desc
+Renforce l'équipe par ses chants, endort l'ennemi.
+
+== classe.barde.verrou
+Débloquée par le cristal d'écume
+
 == classe.rodeur
 Rôdeur
 
@@ -119,6 +176,15 @@ Rôdeur
 Très rapide, idéal pour briser les gardes.
 
 == classe.rodeur.verrou
+Classe secrète : cachée dans une quête annexe
+
+== classe.corsaire
+Corsaire
+
+== classe.corsaire.desc
+Vole parfois en frappant, dégâts doublés sur une garde brisée.
+
+== classe.corsaire.verrou
 Classe secrète : cachée dans une quête annexe
 
 # ================= Techniques =================
@@ -185,6 +251,49 @@ Deux flèches sur des ennemis au hasard.
 
 == tech.lynx.desc
 Révèle les faiblesses d'un ennemi. Très rapide.
+
+
+== tech.rafale
+Rafale
+
+== tech.rafale.desc
+Trois coups rapides sur un ennemi : idéal pour briser une garde.
+
+== tech.meditation
+Méditation
+
+== tech.meditation.desc
+Rend 30 % des PV et 8 PP au héros. Gratuite.
+
+== tech.vol
+Vol
+
+== tech.vol.desc
+Prend un objet à l'ennemi, sinon de l'or. Réussit toujours sur une garde brisée.
+
+== tech.esquive
+Esquive
+
+== tech.esquive.desc
+Évite complètement le prochain coup. Très rapide.
+
+== tech.courage
+Chant de courage
+
+== tech.courage.desc
+Attaque et Magie de l'équipe +25 % pendant 3 actions.
+
+== tech.berceuse
+Berceuse
+
+== tech.berceuse.desc
+Endort un ennemi jusqu'à ce qu'on le frappe. Sans effet sur les boss.
+
+== tech.abordage
+Abordage
+
+== tech.abordage.desc
+Un coup de sabre puissant.
 
 # ================= Objets de soin =================
 
@@ -265,6 +374,52 @@ Talisman de pierre
 == equip.corne
 Corne de bélier
 
+
+== equip.bandes
+Bandes de lin
+
+== equip.griffes
+Griffes de nacre
+
+== equip.coutelas
+Coutelas du port
+
+== equip.harpe
+Harpe de marin
+
+== equip.corail
+Épée de corail
+
+== equip.flots
+Bâton des flots
+
+== equip.sabre
+Sabre de Rosal
+
+== equip.veste
+Veste de marin
+
+== equip.nacre
+Cuirasse de nacre
+
+== equip.houle
+Robe de houle
+
+== equip.perle
+Perle grise
+
+== equip.ecaille
+Écaille de vouivre
+
+== equip.rose
+Rose des vents
+
+== equip.dent
+Dent de requin
+
+== equip.cloche
+Cloche de brume
+
 # ================= Objets importants =================
 
 == important.eclat-lanterne
@@ -296,6 +451,43 @@ La preuve pour Brann que le loup alpha est vaincu.
 
 == important.epee-pere.desc
 L'épée de garde du père de Kael, ébréchée. Brann la gardait depuis dix ans.
+
+
+== important.journal-bord
+Journal de bord
+
+== important.journal-bord.desc
+Le journal du navire du naufrage de Sol. Une fillette a été recueillie à Salvent.
+
+== important.lettre-orvan
+Lettre d'Orvan
+
+== important.lettre-orvan.desc
+Orvan avoue avoir fondé l'Ordre avec Ysold. Le cristal d'ambre est aux forges de Cendre.
+
+== important.journal-salicorne
+Journal de la Salicorne
+
+== important.journal-salicorne.desc
+Le journal de bord de Rosal. Son navire est caché dans la crique du phare.
+
+== important.pages-registre
+Pages du registre
+
+== important.pages-registre.desc
+Les pages du registre de Gaspard. Il manque la couverture.
+
+== important.registre
+Registre de Gaspard
+
+== important.registre.desc
+Tous les prix de la boutique de Salvent, enfin réunis.
+
+== important.boite
+Boîte à musique
+
+== important.boite.desc
+La boîte de Naïa, peinte d'une mouette. Cassée : il faudra la faire réparer.
 
 # ================= Monstres =================
 
@@ -409,3 +601,126 @@ Le Sans-Nom lève sa masse… *il va frapper toute l'équipe*.
 
 == monstre.sansnom.special
 *Coup du colosse !* La masse s'abat sur toute l'équipe.
+
+== monstre.crabe
+Crabe de sel
+
+== monstre.crabe.court
+Crabe
+
+== monstre.crabe.desc
+Sa carapace couverte de sel arrête les lames.
+
+== monstre.sangsue
+Sangsue grise
+
+== monstre.sangsue.court
+Sangsue
+
+== monstre.sangsue.desc
+Elle mord et se soigne avec ce qu'elle prend.
+
+== monstre.follet
+Feu follet
+
+== monstre.follet.court
+Follet
+
+== monstre.follet.desc
+Une flamme froide qui mange la lumière des lanternes.
+
+== monstre.follet.special
+{nom} éclate en étincelles bleues : toute l'équipe est brûlée !
+
+== monstre.crapaud
+Crapaud des brumes
+
+== monstre.crapaud.court
+Crapaud
+
+== monstre.crapaud.desc
+Énorme et paresseux, il crache une bave brûlante.
+
+== monstre.crapaud.special
+{nom} crache une bave brûlante sur toute l'équipe !
+
+== monstre.noye
+Noyé
+
+== monstre.noye.desc
+Un marin que la mer n'a jamais rendu. Il frappe avec sa lanterne éteinte.
+
+== monstre.noye.special
+Coup de lanterne
+
+== monstre.poisson
+Poisson-lame
+
+== monstre.poisson.court
+Poisson
+
+== monstre.poisson.desc
+Ses nageoires coupent comme des rasoirs. Très rapide.
+
+== monstre.soldat
+Soldat de l'Ordre
+
+== monstre.soldat.court
+Soldat
+
+== monstre.soldat.desc
+Un soldat de l'Ordre de la Paupière, lance et armure grise.
+
+== monstre.soldat.special
+Charge de lance
+
+== monstre.vouivre
+Vouivre des marais
+
+== monstre.vouivre.desc
+Un serpent ailé couvert de mousse, gardienne de la brume du marais.
+
+== monstre.vouivre.charge
+La Vouivre gonfle sa gorge… *souffle sur toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.vouivre.special
+*Souffle des marais !* Une vapeur brûlante frappe toute l'équipe.
+
+== monstre.mere
+Mère-des-abysses
+
+== monstre.mere.desc
+Un crabe géant couvert de coquillages. Elle protège son nid au fond de l'épave.
+
+== monstre.mere.special
+Pince broyeuse
+
+== monstre.mere.appel
+{nom} frappe la coque : *{renfort}* sort d'un trou !
+
+== monstre.heraut
+Héraut de la Paupière
+
+== monstre.heraut.desc
+Un officier de l'Ordre. Il croit sincèrement offrir la paix.
+
+== monstre.heraut.charge
+Le Héraut lève sa masse… *« Paupière close » à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.heraut.special
+*Paupière close !* Une onde sombre frappe toute l'équipe.
+
+== monstre.pie
+Pie-brume
+
+== monstre.pie.desc
+Une pie géante qui vole tout ce qui brille, même les registres.
+
+== monstre.bosco
+Le Bosco
+
+== monstre.bosco.desc
+Le chef des contrebandiers de l'Ordre. Il a volé la Salicorne.
+
+== monstre.bosco.special
+Crochet du Bosco

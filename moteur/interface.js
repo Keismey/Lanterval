@@ -20,10 +20,12 @@ function show(text, o = {}) {
     const p = $('#panel');
     const ch = (o.choices || [{ label: esc(t('continuer')), k: 0, ic: 'run' }]).map(x => typeof x === 'string' ? { label: x, ic: 'run' } : x);
     p.innerHTML = `${o.title ? `<div class="ptitle">${esc(o.title)}</div>` : ''}${o.who ? `<div class="who">${av(o.portrait)}<b>${esc(o.who)}</b></div>` : ''}
-      <div class="ptext">${text}</div>${o.note ? `<p class="note">${o.note}</p>` : ''}<div class="acts">${btns(ch)}</div>`;
+      <div class="ptext">${text}</div>${o.note ? `<p class="note">${o.note}</p>` : ''}${o.tabs ? `<div class="tabs ptabs">${o.tabs.map(x => `<button class="tab txt ${x.k === o.tab ? 'on' : ''}" data-t="${x.k}">${esc(x.label)}</button>`).join('')}</div>` : ''}<div class="acts">${btns(ch)}</div>`;
     let fini = false;
     const choisir = k => { if (fini) return; fini = true; document.removeEventListener('click', partout); res(k); };
-    bind(p, ch, choisir); p.scrollTop = 0; hud(); typeIn(p);
+    bind(p, ch, choisir);
+    // onglets (boutiques) : renvoie 'tab:<clé>'
+    p.querySelectorAll('.ptabs .tab').forEach(b => b.onclick = () => choisir('tab:' + b.dataset.t)); p.scrollTop = 0; hud(); typeIn(p);
     // un seul bouton (« Continuer », « Combattre »…) : un appui n'importe où dans la scène ou le texte suffit
     const t0 = performance.now();
     const partout = e => {

@@ -302,7 +302,7 @@ Orvan : « Reposez-vous. Le Col des Pierres vous attend, au nord de la forêt, m
 == pnj.orvan.a1.e10
 Orvan : « Je n'aurais jamais dû vous envoyer seuls là-haut. Va voir Brann, il t'attend. »
 
-== pnj.orvan.fin
+== pnj.orvan.a2.e1
 Orvan : « Le cœur tiendra la saison. D'ici là, retrouvez le cristal d'ambre, où que l'Ordre l'emporte. »
 
 == pnj.brann
@@ -326,7 +326,7 @@ Tilo : « Les lucioles sont revenues dans la forêt ! Et au col, maman dit que l
 == pnj.tilo.a1.e10
 Tilo : « Vous êtes revenus sur une charrette, tout pâles… J'ai eu peur, tu sais. »
 
-== pnj.tilo.fin
+== pnj.tilo.a2.e1
 Tilo : « Tu vas voir la mer ? Rapporte-moi un coquillage ! »
 
 # Hilde, à la forge : son accueil change avec l'avancée (pnj.hilde.accueil.<étape>)
@@ -346,12 +346,5 @@ Hilde : « Le col, déjà ? J'ai sorti de nouvelles pièces du feu. Prenez ce qu
 == pnj.hilde.accueil.a1.e10
 Hilde : « Tu es debout, c'est bien. Mira dort encore, laisse-la se reposer. »
 
-== pnj.hilde.accueil.fin
+== pnj.hilde.accueil.a2.e1
 Hilde : « Salvent… » Elle reste un moment sans rien dire. « Prends soin d'elle, Kael. »
-
-# ---------- Fin de la version 0.2 ----------
-
-== fin.version
-## Fin de la version 0.2
-L'acte 1 est terminé ! L'Ordre emporte le cristal d'ambre vers la côte, et la route de Salvent passe par le Marais salant.
-L'acte 2 arrive dans une prochaine version. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.

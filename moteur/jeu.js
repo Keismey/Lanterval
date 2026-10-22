@@ -12,10 +12,11 @@ async function run(fn) {
 async function defaite() {
   S.reprise = null; // l'étape perdue se rejoue depuis le début
   S.gold = Math.floor(S.gold / 2); healAll(); restorePP();
-  S.loc = 'lanterval'; S.screen = 'village';
-  logR('journal.log.retour');
-  setDecor(decorDuLieu('lanterval'), { lueur: lueurDuLieu('lanterval') }); ovc().innerHTML = '';
-  await show(tx('defaite.texte', { or: S.gold }), { title: t('defaite.titre') });
+  const v = S.auberge && LIEUX[S.auberge] ? S.auberge : 'lanterval';   // l'auberge du dernier village visité
+  S.loc = v; S.screen = 'village';
+  logR('journal.log.retour', { lieu: 'lieu.' + v + '.nom' });
+  setDecor(decorDuLieu(v), { lueur: lueurDuLieu(v) }); ovc().innerHTML = '';
+  await show(tx('defaite.texte', { or: S.gold, lieu: nomLieu(v) }), { title: t('defaite.titre') });
 }
 
 // affiche l'écran stable de la partie (là où le joueur choisit quoi faire)
@@ -63,8 +64,9 @@ async function commencer() {
 
 /* ---------- Fin de la version ---------- */
 function renderFin() {
-  setDecor(decorDuLieu('lanterval'), { lueur: lueurDuLieu('lanterval') });
-  ovc().innerHTML = lbl(nomLieu('lanterval'), t(varianteLieu('lanterval', 'sous')));
+  const v = LIEUX[lieuActuel()].type === 'village' ? lieuActuel() : 'lanterval';
+  setDecor(decorDuLieu(v), { lueur: lueurDuLieu(v) });
+  ovc().innerHTML = lbl(nomLieu(v), t(varianteLieu(v, 'sous')));
   const st = S.st, zones = Object.keys(S.z).filter(lieuVisible);
   const annexes = Object.keys(ANNEXES), finies = annexes.filter(annexeFinie).length;
   const opts = [

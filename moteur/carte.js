@@ -1,6 +1,7 @@
-/* Lanterval · la carte de la vallée et les déplacements.
+/* Lanterval · les cartes des régions et les déplacements.
    Une position est un village (« lanterval ») ou un côté de zone (« foret.v »). Les chemins de LIENS
-   sont directs ; pour passer d'un côté à l'autre d'une zone, il faut la traverser (combats au hasard). */
+   sont directs ; pour passer d'un côté à l'autre d'une zone, il faut la traverser (combats au hasard).
+   Chaque région (vallee, cote…) a sa carte : on y voit ses lieux ; le Marais salant relie la vallée et la côte. */
 
 // toutes les positions d'un lieu : ses côtés pour une zone qui en a, sinon le lieu lui-même
 function positions(id) { const L = LIEUX[id]; return L.cotes ? L.cotes.map(c => id + '.' + c) : [id]; }
@@ -44,7 +45,7 @@ function ouSuisJe() { const c = coteActuel(); return nomLieu(lieuActuel()) + (c 
 function queteSur(id) {
   const e = etapeCourante(), lieux = [];
   if (e) lieux.push([e.lieu, 'main']);
-  for (const a in ANNEXES) { const x = annexeEtape(a); if (x) lieux.push([x.lieu, 'side']); }
+  for (const a in ANNEXES) { const x = annexeDispo(a); if (x) lieux.push([x.lieu, 'side']); }
   for (const [l, k] of lieux) {
     const v = villageDuPnj(l);
     if ((v || lieuDe(l)) === id) return k;
@@ -56,16 +57,21 @@ function queteSur(id) {
 function marqueCarte(ici) {
   const lieuQ = l => villageDuPnj(l) || lieuDe(l);
   const e = etapeCourante(); if (e && lieuQ(e.lieu) !== ici) return 'main';
-  for (const a in ANNEXES) { const x = annexeEtape(a); if (x && lieuQ(x.lieu) !== ici) return 'side'; }
+  for (const a in ANNEXES) { const x = annexeDispo(a); if (x && lieuQ(x.lieu) !== ici) return 'side'; }
   return '';
 }
 
+const nomCarte = reg => t(reg === 'vallee' ? 'carte.titre' : 'carte.titre.' + reg);
+// place d'un lieu sur la carte d'une région
+function surCarte(id, reg) { const L = LIEUX[id], c = L.carte && L.carte[reg]; return c ? { x: c[0], y: c[1] } : { x: L.x, y: L.y }; }
+
 function renderMap() {
-  setDecor('decor.carte');
-  const ici = lieuActuel(), ids = Object.keys(LIEUX).filter(lieuVisible), R = {};
-  for (const id of ids) if (id !== ici && lieuOuvert(id) && !LIEUX[id].bientot) { const r = route(id); if (r) R[id] = r; }
-  const pos = id => LIEUX[id];
-  const traits = LIENS.map(([a, b]) => [lieuDe(a), lieuDe(b)]).filter(([a, b]) => ids.includes(a) && ids.includes(b)).map(([a, b]) => {
+  const reg = regionDe(S.loc);
+  setDecor(reg === 'vallee' ? 'decor.carte' : 'decor.carte.' + reg);
+  const ici = lieuActuel(), tous = Object.keys(LIEUX).filter(lieuVisible), ids = tous.filter(id => regionsDu(id).includes(reg)), R = {};
+  for (const id of tous) if (id !== ici && lieuOuvert(id) && !LIEUX[id].bientot) { const r = route(id); if (r) R[id] = r; }
+  const pos = id => surCarte(id, reg);
+  const traits = LIENS.filter(([a, b]) => regionDe(a) === reg && regionDe(b) === reg).map(([a, b]) => [lieuDe(a), lieuDe(b)]).filter(([a, b]) => ids.includes(a) && ids.includes(b)).map(([a, b]) => {
     const ferme = !lieuOuvert(a) || !lieuOuvert(b) || LIEUX[a].bientot || LIEUX[b].bientot;
     return `<line x1="${pos(a).x * 100}" y1="${pos(a).y * 100}" x2="${pos(b).x * 100}" y2="${pos(b).y * 100}" stroke="${ferme ? '#aab0c8' : '#fff1c0'}" stroke-width="${ferme ? 2 : 3}" stroke-dasharray="${ferme ? '3 5' : '7 5'}" vector-effect="non-scaling-stroke" opacity="${ferme ? .6 : .95}"/>`;
   }).join('');
@@ -83,10 +89,11 @@ function renderMap() {
     renderMap();
   };
   ovc().querySelectorAll('.node').forEach(b => b.onclick = () => clic(b.dataset.n));
-  const opts = Object.entries(R).map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)), sub: esc(viaTxt(r.via)), bang: queteSur(id) }));
+  // boutons : les lieux de cette carte, et les villages des autres régions
+  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(viaTxt(r.via)), bang: queteSur(id) }));
   opts.push({ k: 'back', ic: 'back', label: esc(t('carte.rester')), sub: esc(ouSuisJe()), cls: 'ghost' });
   const p = $('#panel');
-  p.innerHTML = `<div class="ptitle">${esc(t('carte.titre'))}</div><p class="ptext">${tx('carte.ici', { lieu: ouSuisJe() })}</p>
+  p.innerHTML = `<div class="ptitle">${esc(nomCarte(reg))}</div><p class="ptext">${tx('carte.ici', { lieu: ouSuisJe() })}</p>
     ${fermes.length ? `<p class="note">${tx('carte.fermes', { lieux: fermes.map(nomLieu).join(', ') })}</p>` : ''}<div class="msgline">${S.msg || ''}</div><div class="acts">${btns(opts)}</div>`;
   S.msg = '';
   bind(p, opts, k => { if (k === 'back') { S.screen = LIEUX[ici].type === 'village' ? 'village' : 'zone'; renderStable(); } else run(() => voyager(k)); });

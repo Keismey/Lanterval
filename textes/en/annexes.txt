@@ -50,3 +50,189 @@ Brann: “You got it! Your father would have been proud. Take my old bow, I'll s
 
 == loup.apres
 Brann: “The sheep sleep soundly thanks to you. If you come across other strange beasts, you know where to find me.”
+
+# ---------- 5. The forgotten ship (Rosal) ----------
+
+== navire.titre
+The forgotten ship
+
+== navire.offre
+Rosal: “I had a ship, I think. The Gull, or was it the Cormorant?”
+Rosal: “My head is full of mist, but my hands remember the helm.”
+Rosal: “There was a logbook, always kept in the holds. If someone found it, I'd at least know her name.”
+> oui : Accept | Side quest
+> non : Later
+
+== navire.message
+Side quest: look for a logbook in the *holds of the Sunken Wreck*.
+
+== navire.e1.titre
+Search the holds of the wreck
+
+== navire.e1.bouton
+Search the holds
+
+== navire.e1.attente
+Rosal: “The holds, kid. What matters is always stowed in the holds.”
+
+== navire.e1.cales
+## The forgotten ship
+Deep in the holds, burst crates and rotten ropes. Two drowned ones rise from the water, their dead lanterns in hand. [Fight]
+
+== navire.e1.journal
+## The forgotten ship
+In a watertight crate, a second logbook: “The Salicorne, captain Rosal. Hidden in the lighthouse cove, in case of trouble.”
+Mira: “The Salicorne! So she never sank.”
+
+== navire.e1.message
+Side quest: look for the *Salicorne* in the cove of the *Drowned Lighthouse*.
+
+== navire.e2.titre
+Find the Salicorne in the lighthouse cove
+
+== navire.e2.bouton
+Board the Salicorne
+
+== navire.e2.attente
+Rosal: “The lighthouse cove… Of course. I hid my ship there whenever the customs men were prowling.”
+
+== navire.e2.crique
+## The Salicorne
+In the cove, a three-master with grey sails. Smugglers of the Order are loading black cages onto her.
+Bosun: “This tub is ours now. Nobody remembers her captain!” [Fight]
+
+== navire.e2.fin
+## The Salicorne
+The Bosun jumps into the water and swims out to sea. The Salicorne is free, her holds empty of cages.
+
+== navire.e2.message
+Side quest: bring the news to *Rosal*, at the Salvent inn.
+
+== navire.e3.titre
+Give the Salicorne back to Rosal
+
+== navire.e3.barre
+## The Salicorne
+Rosal climbs aboard and puts her hands on the helm. Her eyes light up all at once.
+Rosal: “The Salicorne! I remember everything. My voyages, my loves, and even my debts.”
+
+== navire.e3.scene
+Rosal: “Come here, I'll teach you to fight like a corsair. You strike, you take, and you strike twice as hard when the other one drops their guard.”
+## Side quest complete
+*Secret class unlocked: Corsair*, who sometimes steals an item when striking and deals double damage on a broken guard. You receive *Rosal's sabre* (for the Corsair) and *100 gold*.
+
+== navire.apres
+Rosal: “When the mist is gone, I'll take you to see the other end of the world. My head remembers it very well now.”
+
+# ---------- 7. The lost prices (Gaspard) ----------
+
+== prix.titre
+The lost prices
+
+== prix.offre
+Gaspard: “How much is a potion? Three coins, three hundred? My ledger has vanished, and my memory with it.”
+Gaspard: “I had it on me coming back from the marsh. A magpie jumped on me, and whoosh! No more ledger.”
+> oui : Accept | Side quest
+> non : Later
+
+== prix.message
+Side quest: look for Gaspard's ledger in the *Salt Marsh*.
+
+== prix.e1.titre
+Look for the ledger in the Salt Marsh
+
+== prix.e1.bouton
+Pick up the pages
+
+== prix.e1.attente
+Gaspard: “The Salt Marsh, I think. Or was that yesterday? Anyway, the marsh.”
+
+== prix.e1.pages
+## The lost prices
+Pages covered in figures lie in the mud between the salt pans. Crabs are using them as a nest. [Fight]
+
+== prix.e1.pie
+## The lost prices
+You pick up the pages that are left. Above you, a big grey magpie flies off with the ledger's cover in its beak.
+Mira: “It's heading north. Towards the Lantern Marsh.”
+
+== prix.e1.message
+Side quest: follow the *Mist magpie* to the *Lantern Marsh*.
+
+== prix.e2.titre
+Find the Mist magpie's nest
+
+== prix.e2.bouton
+Find the magpie's nest
+
+== prix.e2.attente
+Gaspard: “A magpie stole my ledger? That explains everything. Well, almost everything.”
+
+== prix.e2.nid
+## The lost prices
+At the top of a dead tree, a huge nest full of spoons, buckles and coins. The Mist magpie defends its treasure. [Fight]
+
+== prix.e2.fin
+## The lost prices
+In the nest, the ledger's cover, spoons and three rings nobody will ever claim. You glue the pages back: the ledger is complete.
+
+== prix.e2.message
+Side quest: bring the ledger back to *Gaspard*, in Salvent.
+
+== prix.e3.titre
+Give Gaspard his ledger back
+
+== prix.e3.scene
+Gaspard: “My ledger! A potion is twenty coins. For you, eighteen.”
+Gaspard: “And I'd forgotten a whole shelf at the back of the shop. Pearl claws, no less!”
+## Side quest complete
+Gaspard's shop shows the real prices again, with a *10% discount* for you, and sells *Pearl claws* (Monk fists).
+
+== prix.apres
+Gaspard: “Twenty coins a potion, not one more. It's written down now!”
+
+# ---------- 6. The lullaby (Maëlle; Sol and Naïa) ----------
+
+== berceuse.titre
+The lullaby
+
+== berceuse.offre
+Maëlle: “Kid, your sister could only fall asleep with her music box. She had it on the boat.”
+Maëlle: “If she heard it one more time… maybe she'd remember you.”
+> oui : Accept | Side quest
+> non : Later
+
+== berceuse.message
+Side quest: look for Naïa's music box in the *holds of the Sunken Wreck*.
+
+== berceuse.e1.titre
+Find the children's cabin in the wreck
+
+== berceuse.e1.bouton
+Find the children's cabin
+
+== berceuse.e1.attente
+Maëlle: “A little wooden box with a seagull painted on it. I saw it a hundred times on the quay.”
+
+== berceuse.e1.cabine
+## The lullaby
+At the end of the holds, a tiny cabin with two bunks, one above the other. Sol stays on the threshold for a moment.
+A school of bladefish circles the door. [Fight]
+
+== berceuse.e1.boite
+## The lullaby
+Under the lower bunk, a small wooden box painted with a seagull. The lid is cracked and the mechanism no longer turns.
+Sol: “It would take a blacksmith's fingers to fix this.”
+Mira: “My mother has a blacksmith's fingers.”
+
+== berceuse.e1.message
+Side quest: the music box is broken. *To be continued in act 3*, when someone can repair it.
+
+== berceuse.e2.titre
+Get the music box repaired (act 3)
+
+== berceuse.e2.scene
+Hilde: “Springs are like swords. You need patience, and fingers finer than mine. Mira, help me.”
+
+== berceuse.e2.attente
+Maëlle: “Take care of that box, kid. One day, it will sing again.”

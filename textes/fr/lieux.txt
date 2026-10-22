@@ -83,11 +83,14 @@ Rumeurs du village
 == carte.titre
 Carte de la vallée
 
+== carte.titre.cote
+Carte de la Côte
+
 == lieu.col.nom
 Col des Pierres
 
-== lieu.marais.nom
-Marais salant
+== lieu.champs.nom
+Champs brûlés
 
 == lieu.prof.nom
 Profondeurs
@@ -337,3 +340,406 @@ Un pèlerin redescend du col. Il te donne *25 po* « pour la lanterne ».
 
 == col.ev.vent
 Une bourrasque glacée balaie la brume et l'esprit s'éclaircit : *+6 PP* pour tous.
+
+# ================= Marais salant (entre la vallée et la côte) =================
+
+== lieu.marais.nom
+Marais salant
+
+== lieu.marais.le
+le marais salant
+
+== lieu.marais.v
+côté vallée
+
+== lieu.marais.c
+côté côte
+
+== lieu.marais.sous
+Le sel craque sous les pas
+
+== lieu.marais.desc
+Des bassins de sel blanc à perte de vue, des roseaux et une brume basse qui sent la mer. Le chemin de la côte passe par ici.
+
+== lieu.marais.intro
+## Marais salant
+Le marais relie la vallée à la Côte de Salvent. De l'autre côté, une nouvelle carte t'attend.
+
+== marais.m1.nom
+Barque échouée
+
+== marais.m1.texte
+Sous une barque retournée, une bourse de pêcheur : *60 po*.
+
+== marais.m2.nom
+Carapaces vides
+
+== marais.m2.texte
+Des carapaces fendues, brûlées ou écrasées à coups de pierre. *Faiblesses du Crabe de sel ajoutées au codex.*
+
+== marais.m3.nom
+Cabane du saunier
+
+== marais.m3.texte
+Une cabane de planches au toit de chaume, un poêle encore chaud. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== marais.m4.nom
+Panier de saunier
+
+== marais.m4.texte
+Oublié sur un muret : *2 herbes et 1 tonique*.
+
+== marais.m5.nom
+Tas de sel
+
+== marais.m5.texte
+Sous un tas de sel, une cassette de fer : *80 po*.
+
+== marais.m6.nom
+Mare aux sangsues
+
+== marais.m6.texte
+Un saunier a laissé une torche plantée au bord de l'eau, pour éloigner les sangsues. *Faiblesses de la Sangsue grise ajoutées au codex.*
+
+== marais.m50
+## Palier 50 % atteint
+Dans la remise du saunier : *2 toniques*.
+
+== marais.m100
+## Palier 100 % atteint
+Le marais n'a plus de secret pour toi. Tu trouves une *Rose des vents* (accessoire, Vitesse +3). Marais maîtrisé : sa traversée ne donnera plus que 0 à 2 combats.
+
+== marais.ev.combat
+La vase bouillonne…
+
+== marais.ev.sel
+Des cristaux de sel très purs, bons à vendre : *+20 po*.
+
+== marais.ev.vase
+Une jambe s'enfonce, puis deux ! *Tout le monde perd 9 PV.*
+
+== marais.ev.heron
+Un héron s'envole devant vous. Le calme revient : *+15 PV* pour tous.
+
+== marais.ev.brise
+Une brise de mer chasse la brume : *+6 PP* pour tous.
+
+# ================= Salvent =================
+
+== lieu.salvent.nom
+Salvent
+
+== lieu.salvent.sous
+La ville qui oublie
+
+== lieu.salvent.sous.libre
+Le phare veille sur le port
+
+== lieu.salvent.desc
+Un port de pêche en escaliers. Les gens se saluent sans savoir pourquoi, et les barques restent à quai.
+
+== lieu.salvent.desc.libre
+La lumière du phare balaie le port. Les pêcheurs ont repris la mer et les enfants courent sur les quais.
+
+== pnj.maelle.nom
+Auberge de Maëlle
+
+== pnj.maelle.sous
+Repos complet · {prix} po
+
+== pnj.maelle.accueil
+Maëlle : « Une nuit, {prix} po, soupe de poisson comprise. Pour Sol, ce serait gratuit, mais il ne voudrait pas. »
+
+== pnj.gaspard.nom
+Boutique de Gaspard
+
+== pnj.gaspard.sous
+Objets et équipement
+
+== pnj.gaspard.accueil
+Gaspard : « Bienvenue ! Tout est à vendre, mais à quel prix ? Bonne question. »
+
+== pnj.gaspard.accueil.fous
+Gaspard : « Les prix ? Je les invente au fur et à mesure, comme tout le monde ici. Revenez demain, ils auront changé ! »
+
+== pnj.gaspard.accueil.remise
+Gaspard : « Mon client préféré ! Les vrais prix, moins dix pour cent. C'est écrit dans le registre. »
+
+== pnj.naia.nom
+Naïa
+
+== pnj.naia.sous
+Sur le quai
+
+== pnj.rosal.nom
+Rosal, la capitaine
+
+== pnj.rosal.sous
+À l'auberge
+
+== pnj.loic.nom
+Loïc, le pêcheur
+
+== pnj.loic.sous
+Sur les quais
+
+# ================= Marais des Lanternes =================
+
+== lieu.lanternes.nom
+Marais des Lanternes
+
+== lieu.lanternes.le
+le marais des Lanternes
+
+== lieu.lanternes.b
+berge
+
+== lieu.lanternes.c
+cœur du marais
+
+== lieu.lanternes.sous
+Les lanternes sont éteintes
+
+== lieu.lanternes.sous.allume
+Les trois lanternes brillent
+
+== lieu.lanternes.desc
+De l'eau noire, des arbres morts et des flammes bleues qui dansent sans réchauffer personne.
+
+== lieu.lanternes.desc.allume
+Les trois lanternes brillent sur leurs pieux. La brume reste à distance, dorée par leur lumière.
+
+== lieu.lanternes.intro
+## Marais des Lanternes
+Trois petites lanternes protégeaient Salvent. Les feux follets ont mangé leur lumière.
+
+== lanternes.l1.nom
+Caisse flottante
+
+== lanternes.l1.texte
+Coincée dans les roseaux, une caisse de contrebande : *2 élixirs*.
+
+== lanternes.l2.nom
+Seaux renversés
+
+== lanternes.l2.texte
+Des seaux d'eau et des lanternes brisées : quelqu'un s'est battu contre les feux follets. *Faiblesses du Feu follet ajoutées au codex.*
+
+== lanternes.l3.nom
+Ponton du passeur
+
+== lanternes.l3.texte
+Un ponton sec sous un auvent de roseaux. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== lanternes.l4.nom
+Coffre englouti
+
+== lanternes.l4.texte
+Un coffre à moitié dans la vase : *120 po*.
+
+== lanternes.l5.nom
+Mare aux crapauds
+
+== lanternes.l5.texte
+Des crapauds fuient devant une épée plantée dans la berge. *Faiblesses du Crapaud des brumes ajoutées au codex.*
+
+== lanternes.l6.nom
+Huître géante
+
+== lanternes.l6.texte
+Une huître grande comme un bouclier, entrouverte. Dedans, une *Perle grise* (accessoire, Magie +4, PP +6).
+
+== lanternes.m50
+## Palier 50 % atteint
+Dans la barque du passeur : *2 herbes et 2 toniques*.
+
+== lanternes.m100
+## Palier 100 % atteint
+Tu connais chaque pieu du marais. Tu trouves une *Écaille de vouivre* (accessoire, Défense +4, PV +12). Marais maîtrisé : sa traversée ne donnera plus que 0 à 2 combats.
+
+== lanternes.ev.combat
+Une lueur bleue s'approche au ras de l'eau…
+
+== lanternes.ev.lueur
+Une lanterne lointaine brille un instant et l'esprit s'éclaircit : *+8 PP* pour tous.
+
+== lanternes.ev.lucioles
+Des lucioles se posent sur les blessures, douces et tièdes : *+18 PV* pour tous.
+
+== lanternes.ev.vase
+Le sol cède sous le groupe ! *Tout le monde perd 10 PV.*
+
+== lanternes.ev.barque
+Une barque dérive, vide. Sous le banc : *30 po*.
+
+# ================= Épave engloutie =================
+
+== lieu.epave.nom
+Épave engloutie
+
+== lieu.epave.le
+l'épave
+
+== lieu.epave.p
+plage
+
+== lieu.epave.c
+cales
+
+== lieu.epave.sous
+Sous la mer, au pied des rochers
+
+== lieu.epave.desc
+La coque d'un grand navire repose sous l'eau claire. Grâce à Sol, une bulle d'air accompagne le groupe.
+
+== lieu.epave.intro
+## Épave engloutie
+Sol garde une bulle d'air autour du groupe. Plus on descend vers les cales, plus les bêtes sont dangereuses.
+
+== epave.e1.nom
+Caisse de la cambuse
+
+== epave.e1.texte
+Une caisse étanche, bien fermée : *2 élixirs*.
+
+== epave.e2.nom
+Cabine du médecin
+
+== epave.e2.texte
+Dans son carnet, le médecin du bord : « Les noyés craignent le feu et le fer. » *Faiblesses du Noyé ajoutées au codex.*
+
+== epave.e3.nom
+Poche d'air
+
+== epave.e3.texte
+Une poche d'air sous le pont, sèche et calme. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== epave.e4.nom
+Coffre du quartier-maître
+
+== epave.e4.texte
+Dans un coffre rouillé : *3 toniques*.
+
+== epave.e5.nom
+Filet déchiré
+
+== epave.e5.texte
+Un filet tranché net, et des pierres de lest au fond. Les poissons-lames ne savent pas nager sous un poids. *Faiblesses du Poisson-lame ajoutées au codex.*
+
+== epave.e6.nom
+Trésor du capitaine
+
+== epave.e6.texte
+Sous le plancher de la cabine du capitaine : *150 po*.
+
+== epave.m50
+## Palier 50 % atteint
+Dans la soute à voiles : *2 toniques et 1 élixir*.
+
+== epave.m100
+## Palier 100 % atteint
+Tu connais chaque planche de l'épave. Tu trouves une *Dent de requin* (accessoire, Attaque +6). Épave maîtrisée : sa traversée ne donnera plus que 0 à 2 combats.
+
+== epave.ev.combat
+Une ombre passe entre les mâts…
+
+== epave.ev.courant
+Un courant violent secoue la bulle ! *Tout le monde perd 10 PV.*
+
+== epave.ev.bulle
+Une bulle d'air frais remonte du fond : *+8 PP* pour tous.
+
+== epave.ev.coquillage
+Dans un coquillage, des pièces d'or : *+40 po*.
+
+== epave.ev.algue
+Des algues douces s'enroulent autour des blessures : *+18 PV* pour tous.
+
+# ================= Phare noyé =================
+
+== lieu.phare.nom
+Phare noyé
+
+== lieu.phare.le
+le phare
+
+== lieu.phare.c
+crique
+
+== lieu.phare.s
+sommet
+
+== lieu.phare.sous
+Aux mains de l'Ordre
+
+== lieu.phare.sous.libre
+Le phare brille de nouveau
+
+== lieu.phare.desc
+Un phare rayé de rouge sur un rocher battu par la mer. Des bannières à l'œil fermé claquent au vent.
+
+== lieu.phare.desc.libre
+La lumière du phare tourne au-dessus de la mer. Dans la crique, seules les vagues font du bruit.
+
+== lieu.phare.intro
+## Phare noyé
+On monte du pied du rocher jusqu'au sommet par un long escalier. L'Ordre garde chaque palier.
+
+== phare.p1.nom
+Réserve de l'Ordre
+
+== phare.p1.texte
+Dans une caisse marquée d'un œil fermé : *2 élixirs*.
+
+== phare.p2.nom
+Râtelier d'armes
+
+== phare.p2.texte
+Des armures marquées de brûlures et de rouille d'eau salée. *Faiblesses du Soldat de l'Ordre ajoutées au codex.*
+
+== phare.p3.nom
+Chambre du gardien
+
+== phare.p3.texte
+La petite chambre d'Erwan, un lit fait au carré. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== phare.p4.nom
+Placard à huile
+
+== phare.p4.texte
+Entre les bidons d'huile : *3 toniques*.
+
+== phare.p5.nom
+Coffre de la solde
+
+== phare.p5.texte
+La solde des soldats de l'Ordre : *200 po*. Ils n'en auront plus besoin.
+
+== phare.p6.nom
+Cloche de brume
+
+== phare.p6.texte
+Une petite cloche de bronze qu'on sonnait par temps de brume : *Cloche de brume* (accessoire, Défense +3, Magie +3, Vitesse +1).
+
+== phare.m50
+## Palier 50 % atteint
+Dans la caisse de secours du gardien : *2 élixirs*.
+
+== phare.m100
+## Palier 100 % atteint
+Tu connais chaque marche du phare. Tu trouves une *Perle grise* (accessoire, Magie +4, PP +6). Phare maîtrisé : sa traversée ne donnera plus que 0 à 2 combats.
+
+== phare.ev.combat
+Des bottes résonnent dans l'escalier…
+
+== phare.ev.vague
+Une vague énorme frappe le rocher ! *Tout le monde perd 11 PV.*
+
+== phare.ev.provisions
+Un sac de provisions oublié par l'Ordre : *+45 po*.
+
+== phare.ev.phare
+La lumière passe sur le groupe et réchauffe le cœur : *+8 PP* pour tous.
+
+== phare.ev.embruns
+Les embruns fouettent le visage et réveillent : *+20 PV* pour tous.

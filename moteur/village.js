@@ -8,7 +8,7 @@ function quetesDuPnj(pnj) {
   const e = etapeCourante();
   if (e && e.lieu === pnj) return { type: 'etape', etape: e };
   for (const id in ANNEXES) {
-    const a = annexeEtape(id);
+    const a = annexeDispo(id);
     if (a && a.lieu === pnj) return { type: 'annexe', id };
     if (ANNEXES[id].donneur === pnj && annexeEtat(id) === 0 && annexeOuverte(id)) return { type: 'offre', id };
   }
@@ -17,15 +17,16 @@ function quetesDuPnj(pnj) {
 
 function renderVillage() {
   const vid = lieuActuel(), V = LIEUX[vid];
+  S.auberge = vid;
   setDecor(decorDuLieu(vid), { lueur: lueurDuLieu(vid) });
   ovc().innerHTML = lbl(nomLieu(vid), t(varianteLieu(vid, 'sous')));
   saveSecours();
-  const opts = V.pnj.map(p => {
+  const opts = V.pnj.filter(p => cond(p.si)).map(p => {
     const q = quetesDuPnj(p.id), main = q && q.type === 'etape';
     const sub = main ? t(q.etape.id + '.titre') : q && q.type === 'offre' ? t('village.annexe') : q ? t(`${q.id}.e${annexeEtat(q.id)}.titre`) : t(`pnj.${p.id}.sous`, { prix: p.prix });
     return { k: p.id, img: imgSrc('pnj.' + p.portrait), label: esc(t(`pnj.${p.id}.nom`)), sub: esc(sub), bang: q ? (main ? 'main' : 'side') : '', cls: (main ? 'main ' : q ? 'side ' : '') + (p.large ? 'wide' : '') };
   });
-  opts.push({ k: 'map', ic: 'map', label: esc(t('village.partir')), sub: esc(t('carte.titre')), cls: 'ghost', bang: marqueCarte(vid) });
+  opts.push({ k: 'map', ic: 'map', label: esc(t('village.partir')), sub: esc(nomCarte(regionDe(vid))), cls: 'ghost', bang: marqueCarte(vid) });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomLieu(vid))} <small>${esc(t('village'))}</small></div><p class="ptext">${tx(varianteLieu(vid, 'desc'))}</p>
     <div class="msgline">${S.msg || ''}</div><div class="acts">${btns(opts)}</div>`;
@@ -40,7 +41,8 @@ async function parler(pnj) {
   const q = quetesDuPnj(pnj.id);
   if (q && q.type === 'etape') return jouerEtape(q.etape);
   if (q && q.type === 'annexe') return jouerAnnexe(q.id);
-  if (q && q.type === 'offre') return jouerOffre(q.id);
+  // une offre refusée laisse la place au métier du personnage (boutique, auberge)
+  if (q && q.type === 'offre') { await jouerOffre(q.id); if (annexeEtat(q.id) || !pnj.role) return; }
   if (pnj.role === 'auberge') return auberge(pnj);
   if (pnj.role === 'boutique') return boutique(pnj);
   for (const id in ANNEXES) if (ANNEXES[id].donneur === pnj.id) {
@@ -61,8 +63,8 @@ function repliqueAttente(id, quoi = '') {
 }
 
 async function auberge(pnj) {
-  const v = { prix: pnj.prix };
-  const k = await show(html(bulle(t('pnj.auberge.accueil', v)).texte), { who: t('parle.aubergiste'), portrait: 'aubergiste',
+  const v = { prix: pnj.prix }, qui = pnj.portrait === 'aubergiste' ? 'auberge' : pnj.id;
+  const k = await show(html(bulle(t(`pnj.${qui}.accueil`, v)).texte), { who: t('parle.' + pnj.portrait), portrait: pnj.portrait,
     choices: [{ k: 'y', label: esc(t('pnj.auberge.dormir')), sub: esc(t('pnj.auberge.dormir.sous', v)), ic: 'bed', dis: S.gold < pnj.prix }, { k: 'n', label: esc(t('retour')), ic: 'back', cls: 'ghost' }] });
   if (k === 'y') { S.gold -= pnj.prix; healAll(); restorePP(); logR('journal.log.auberge'); S.msg = tx('pnj.auberge.message'); }
 }
@@ -80,35 +82,62 @@ function icEq(id) { const p = EQUIPEMENT[id].place; return p === 'arme' ? 'sword
 // pièces en vente : 'epee', ou ['acier', 'fini a1.e7'] qui n'arrive qu'avec la condition
 function enRayon(pnj) { return pnj.equipement.filter(x => typeof x === 'string' || cond(x[1])).map(x => typeof x === 'string' ? x : x[0]); }
 
+// Prix d'une visite : déréglés (tirés au hasard) tant que la condition fous est vraie, remisés de 10 % avec remise.
+const PRIX_FOUS = [.5, .75, 1, 1.5, 2, 3];
+function prixVisite(pnj) {
+  const fous = pnj.fous && cond(pnj.fous), m = pnj.remise && cond(pnj.remise) ? .9 : 1, P = {}, N = {};
+  for (const [k, prix] of pnj.objets) { N['i:' + k] = prix; P['i:' + k] = Math.max(1, Math.round(prix * (fous ? pick(PRIX_FOUS) : m))); }
+  for (const k of enRayon(pnj)) { N['e:' + k] = EQUIPEMENT[k].prix; P['e:' + k] = Math.max(1, Math.round(EQUIPEMENT[k].prix * (fous ? pick(PRIX_FOUS) : m) / (fous ? 5 : 1)) * (fous ? 5 : 1)); }
+  // tant que les prix sont déréglés : prix gonflé en rouge, prix réduit en vert
+  const aff = k => !fous || P[k] === N[k] ? String(P[k]) : `<span class="${P[k] > N[k] ? 'cher' : 'bon'}">${P[k]}</span>`;
+  return { P, fous, remise: m < 1, aff };
+}
+
+// Onglets des boutiques : Armes, Armures, Accessoires, Consommables (seulement ceux qui ont quelque chose)
+const RAYONS = ['arme', 'armure', 'acc', 'conso'];
+function rayonDe(k) { const [ty, id] = k.split(':'); return ty === 'i' ? 'conso' : EQUIPEMENT[id].place; }
+function ongletsDe(opts, tab) {
+  const pris = RAYONS.filter(r => opts.some(o => rayonDe(o.k) === r));
+  if (pris.length < 2) return { tabs: null, tab: pris[0], liste: opts };
+  if (!pris.includes(tab)) tab = pris[0];
+  return { tabs: pris.map(r => ({ k: r, label: t('boutique.onglet.' + r) })), tab, liste: opts.filter(o => rayonDe(o.k) === tab) };
+}
+
 async function boutique(pnj) {
-  const qui = t('parle.' + pnj.portrait);
-  let line = html(bulle(t(repliqueAttente(pnj.id, '.accueil'))).texte);
+  const qui = t('parle.' + pnj.portrait), V = prixVisite(pnj), P = V.P;
+  const accueil = V.fous && existe(`pnj.${pnj.id}.accueil.fous`) ? `pnj.${pnj.id}.accueil.fous` : V.remise && existe(`pnj.${pnj.id}.accueil.remise`) ? `pnj.${pnj.id}.accueil.remise` : repliqueAttente(pnj.id, '.accueil');
+  let line = html(bulle(t(accueil)).texte), tab = null;
   while (true) {
-    const opts = pnj.objets.map(([k, prix]) => ({ k: 'i:' + k, ic: 'heart', label: esc(t('objet.' + k)), sub: esc(t('boutique.objet', { prix, effet: t('objet.' + k + '.desc'), n: S.inv[k] || 0 })), dis: S.gold < prix }));
-    for (const k of enRayon(pnj)) opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(nomEq(k)), sub: esc(`${EQUIPEMENT[k].prix} ${t('po')} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)} · ${wearers(k)}`), dis: S.gold < EQUIPEMENT[k].prix });
+    const tout = pnj.objets.map(([k]) => ({ k: 'i:' + k, ic: 'heart', label: esc(t('objet.' + k)), sub: esc(t('boutique.objet', { prix: '§', effet: t('objet.' + k + '.desc'), n: S.inv[k] || 0 })).replace('§', V.aff('i:' + k)), dis: S.gold < P['i:' + k] }));
+    for (const k of enRayon(pnj)) tout.push({ k: 'e:' + k, ic: icEq(k), label: esc(nomEq(k)), sub: V.aff('e:' + k) + esc(` ${t('po')} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)} · ${wearers(k)}`), dis: S.gold < P['e:' + k] });
+    const O = ongletsDe(tout, tab), opts = O.liste.slice(); tab = O.tab;
     opts.push({ k: 'sell', ic: 'coin', label: esc(t('boutique.vendre')), sub: esc(t('boutique.vendre.sous')), cls: 'side' });
     opts.push({ k: 'x', label: esc(t('retour')), ic: 'back', cls: 'ghost' });
-    const k = await show(line, { who: qui, portrait: pnj.portrait, choices: opts, note: tx('boutique.bourse', { or: S.gold }) + (enRayon(pnj).length ? ' ' + tx('boutique.equiper') : '') });
+    const k = await show(line, { who: qui, portrait: pnj.portrait, choices: opts, tabs: O.tabs, tab, note: tx('boutique.bourse', { or: S.gold }) + (V.fous ? ' ' + tx('boutique.fous') : V.remise ? ' ' + tx('boutique.remise') : '') + (tab !== 'conso' && enRayon(pnj).length ? ' ' + tx('boutique.equiper') : '') });
     if (k === 'x') return;
+    if (k.startsWith('tab:')) { tab = k.slice(4); continue; }
     if (k === 'sell') { line = await vendre(pnj); continue; }
     const [ty, id] = k.split(':');
-    if (ty === 'i') { const prix = pnj.objets.find(x => x[0] === id)[1]; S.gold -= prix; addItem(id, 1); line = tx('boutique.achete', { nom: t('objet.' + id) }); }
-    else { S.gold -= EQUIPEMENT[id].prix; addEq(id); line = tx('boutique.achete.eq', { nom: nomEq(id) }); logR('journal.log.achat', { nom: 'equip.' + id }); }
+    S.gold -= P[k];
+    if (ty === 'i') { addItem(id, 1); line = tx('boutique.achete', { nom: t('objet.' + id) }); }
+    else { addEq(id); line = tx('boutique.achete.eq', { nom: nomEq(id) }); logR('journal.log.achat', { nom: 'equip.' + id }); }
   }
 }
 
 async function vendre(pnj) {
   const qui = t('parle.' + pnj.portrait);
-  let line = tx('boutique.vente.accueil');
+  let line = tx('boutique.vente.accueil'), tab = null;
   while (true) {
-    const opts = Object.keys(OBJETS).filter(k => S.inv[k] > 0).map(k => ({ k: 'i:' + k, ic: 'heart', label: esc(`${t('objet.' + k)} ×${S.inv[k]}`), sub: esc(`+${OBJETS[k].v} ${t('po')} · ${t('objet.' + k + '.desc')}`) }));
+    const tout = Object.keys(OBJETS).filter(k => S.inv[k] > 0).map(k => ({ k: 'i:' + k, ic: 'heart', label: esc(`${t('objet.' + k)} ×${S.inv[k]}`), sub: esc(`+${OBJETS[k].v} ${t('po')} · ${t('objet.' + k + '.desc')}`) }));
     for (const k of Object.keys(S.bag).filter(k => S.bag[k] > 0)) {
       const v = eqVal(k);
-      opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(`${nomEq(k)} ×${S.bag[k]}`), sub: esc(v ? `+${v} ${t('po')} · ${t('place.' + EQUIPEMENT[k].place)} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)}` : t('boutique.cadeau')), dis: !v });
+      tout.push({ k: 'e:' + k, ic: icEq(k), label: esc(`${nomEq(k)} ×${S.bag[k]}`), sub: esc(v ? `+${v} ${t('po')} · ${t('place.' + EQUIPEMENT[k].place)} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)}` : t('boutique.cadeau')), dis: !v });
     }
+    const O = ongletsDe(tout, tab), opts = O.liste.slice(); tab = O.tab;
     opts.push({ k: 'x', label: esc(t('boutique.fini')), ic: 'back', cls: 'ghost' });
-    const k = await show(line, { who: qui, portrait: pnj.portrait, title: t('boutique.vendre'), choices: opts, note: tx('boutique.bourse', { or: S.gold }) + ' ' + tx('boutique.porte') + (opts.length === 1 ? ' ' + tx('boutique.vide') : '') });
+    const k = await show(line, { who: qui, portrait: pnj.portrait, title: t('boutique.vendre'), choices: opts, tabs: O.tabs, tab, note: tx('boutique.bourse', { or: S.gold }) + ' ' + tx('boutique.porte') + (opts.length === 1 ? ' ' + tx('boutique.vide') : '') });
     if (k === 'x') return tx('boutique.autre');
+    if (k.startsWith('tab:')) { tab = k.slice(4); continue; }
     const [ty, id] = k.split(':');
     if (ty === 'i') { S.inv[id]--; S.gold += OBJETS[id].v; line = tx('boutique.vendu', { nom: t('objet.' + id), prix: OBJETS[id].v }); }
     else { const v = eqVal(id); S.bag[id]--; S.gold += v; line = tx('boutique.vendu', { nom: nomEq(id), prix: v }); logR('journal.log.vente', { nom: 'equip.' + id }); }
