@@ -42,6 +42,10 @@ LISTE = [
     ('decor-col-vide.jpg', 'decors/col-vide.webp', 'decor', {'largeur': 1376}),
     ('monstre-belier-roches.jpg', 'monstres/belier.webp', 'detoure', {'largeur': 640}),
     ('monstre-harpie-col.jpg', 'monstres/harpie.webp', 'detoure', {'largeur': 640, 'trous': 400}),
+    ('perso-varen.jpg', 'monstres/varen.webp', 'detoure', {'hauteur': 520}),
+    ('perso-varen.jpg', 'pnj/varen.webp', 'portrait', {'boite': (640, 25, 150, 150), 'cote': 192}),
+    ('perso-sansnom.jpg', 'monstres/sansnom.webp', 'detoure', {'hauteur': 520, 'trous': 60}),
+    ('perso-sansnom.jpg', 'pnj/sansnom.webp', 'portrait', {'boite': (665, 30, 160, 160), 'cote': 192}),
 ]
 
 
