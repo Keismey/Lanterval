@@ -24,6 +24,11 @@ LISTE = [
     ('perso-kael.jpg', 'heros/kael.webp', 'detoure', {'hauteur': 420}),
     ('perso-kael.jpg', 'heros/kael-portrait.webp', 'portrait', {'boite': (612, 38, 186, 186), 'cote': 192}),
     ('monstre-loup-des-brumes.jpg', 'monstres/loup.webp', 'detoure', {'largeur': 640}),
+    ('perso-mira.jpg', 'heros/mira.webp', 'detoure', {'hauteur': 420}),
+    ('perso-mira.jpg', 'heros/mira-portrait.webp', 'portrait', {'boite': (594, 42, 170, 170), 'cote': 192}),
+    ('perso-sol.jpg', 'heros/sol.webp', 'detoure', {'hauteur': 420}),
+    ('perso-sol.jpg', 'heros/sol-portrait.webp', 'portrait', {'boite': (620, 42, 180, 180), 'cote': 192}),
+    ('decor-foret-murmures.jpg', 'decors/foret.webp', 'decor', {'largeur': 1376}),
 ]
 
 
