@@ -34,13 +34,13 @@ const IMAGES = {
   'heros.sol': { fichier: 'img/heros/sol.webp', portrait: 'img/heros/sol-portrait.webp', provisoire: 'sol', sujet: 'Sol, 20 ans, cheveux bleus, bâton' },
 
   // ---------- Personnages du village (portraits) ----------
-  'pnj.orvan': { provisoire: 'f_orvan', sujet: 'L\'Ancien Orvan, vieil homme à barbe blanche' },
-  'pnj.brann': { provisoire: 'f_brann', sujet: 'Brann, le garde, casque et moustache' },
+  'pnj.orvan': { fichier: 'img/pnj/orvan.webp', portrait: 'img/pnj/orvan.webp', provisoire: 'f_orvan', sujet: 'L\'Ancien Orvan, vieil homme à barbe blanche' },
+  'pnj.brann': { fichier: 'img/pnj/brann.webp', portrait: 'img/pnj/brann.webp', provisoire: 'f_brann', sujet: 'Brann, le garde, casque et moustache' },
   'pnj.aubergiste': { provisoire: 'f_aub', sujet: 'L\'aubergiste du Chaudron' },
-  'pnj.berthe': { provisoire: 'f_berthe', sujet: 'Berthe, marchande rousse au foulard jaune' },
+  'pnj.berthe': { fichier: 'img/pnj/berthe.webp', portrait: 'img/pnj/berthe.webp', provisoire: 'f_berthe', sujet: 'Berthe, marchande rousse au foulard jaune' },
   'pnj.nell': { provisoire: 'f_nell', sujet: 'Nell, herboriste à capuche verte' },
   'pnj.tilo': { provisoire: 'f_tilo', sujet: 'Tilo, petit garçon du village' },
-  'pnj.hilde': { provisoire: 'f_hilde', sujet: 'Hilde, forgeronne, cheveux roux tressés, tablier de cuir' },
+  'pnj.hilde': { fichier: 'img/pnj/hilde.webp', portrait: 'img/pnj/hilde.webp', provisoire: 'f_hilde', sujet: 'Hilde, forgeronne, cheveux roux tressés, tablier de cuir' },
   'pnj.varen': { fichier: 'img/pnj/varen.webp', portrait: 'img/pnj/varen.webp', provisoire: 'f_varen', sujet: 'Varen, jeune homme de l\'Ordre, cheveux argentés, sourire arrogant' },
   'pnj.sansnom': { fichier: 'img/pnj/sansnom.webp', portrait: 'img/pnj/sansnom.webp', provisoire: 'f_sansnom', sujet: 'Le Sans-Nom, colosse au masque d\'acier à l\'œil fermé' },
   'pnj.silhouette': { provisoire: 'f_inconnu', sujet: 'Silhouette encapuchonnée de l\'Ordre, yeux rouges' },
