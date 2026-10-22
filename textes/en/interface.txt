@@ -878,6 +878,11 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.1.1
+Text now appears without moving the screen or the buttons.
+Tap anywhere to move on in a dialogue.
+Monsters are half the size in combat.
+Combat icons take the colour of their element; the Ember staff gives a Fire Attack.
 ## Version 0.1.0
 First real game, built from the prototype.
 Act 1 plays up to the lantern festival, with the alpha wolf side quest.

@@ -1,7 +1,7 @@
 /* Lanterval · service worker : le jeu marche hors ligne après la première visite.
    La page passe par le réseau d'abord (mises à jour) ; tout le reste vient du cache.
    VERSION et FICHIERS sont réécrits par outils/construire.js à chaque publication. */
-var VERSION = '0.1.0-3ef2a6ef';
+var VERSION = '0.1.1-2f13d87f';
 var FICHIERS = ["./","manifest.webmanifest","icon-192.png","icon-512.png","icon-maskable.png","css/jeu.css","commun/ks-back.js","commun/ks-studio.js","moteur/base.js","moteur/carte.js","moteur/combat.js","moteur/debug.js","moteur/etat.js","moteur/interface.js","moteur/jeu.js","moteur/menus.js","moteur/provisoire.js","moteur/recit.js","moteur/scene.js","moteur/textes.js","moteur/village.js","moteur/zone.js","donnees/acte1.js","donnees/annexes.js","donnees/heros.js","donnees/images.js","donnees/monde.js","donnees/monstres.js","donnees/objets.js","textes/en/acte1.txt","textes/en/annexes.txt","textes/en/interface.txt","textes/en/lieux.txt","textes/en/noms.txt","textes/fr/acte1.txt","textes/fr/annexes.txt","textes/fr/interface.txt","textes/fr/lieux.txt","textes/fr/noms.txt","polices/cinzel-600.woff2","polices/cinzel-700.woff2","polices/figtree-400.woff2","polices/figtree-500.woff2","polices/figtree-600.woff2","polices/figtree-700.woff2","img/decors/lanterval.webp","img/heros/kael-portrait.webp","img/heros/kael.webp","img/monstres/loup.webp","img/panoramas/fete-lanterne.webp"];
 var CACHE = 'lanterval-' + VERSION;
 

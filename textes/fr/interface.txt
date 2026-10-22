@@ -912,6 +912,11 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.1.1
+Le texte s'écrit sans faire bouger l'écran ni les boutons.
+Un appui n'importe où passe à la suite d'un dialogue.
+Les monstres sont deux fois plus petits en combat.
+Les icônes de combat prennent la couleur de leur élément ; le Bâton de braise donne une Attaque de Feu.
 ## Version 0.1.0
 Premier vrai jeu, construit à partir de la maquette.
 L'acte 1 se joue jusqu'à la fête de la lanterne, avec la quête annexe du loup alpha.

@@ -1,6 +1,8 @@
 # État du projet
 
-## Version 0.1.0 (2026-10-22)
+## Version 0.1.1 (2026-10-22)
+
+- 0.1.1 : texte stable, appui n'importe où pour continuer, monstres deux fois plus petits, icônes de combat colorées par élément, Bâton de braise de Feu (armes élémentaires possibles avec `el` dans donnees/objets.js).
 
 - Acte 1 jouable de l'Ancien Orvan à la fête de la lanterne (étapes 1 à 7 de la bible), quête annexe du loup alpha.
 - Le Col des Pierres apparaît sur la carte, marqué « prochaine version ».
