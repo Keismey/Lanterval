@@ -13,6 +13,8 @@ const IMAGES = {
   'decor.foret.calme': { provisoire: 'foret-calme', sujet: 'Forêt des Murmures, brume levée, lucioles' },
   'decor.grotte': { provisoire: 'grotte', sujet: 'Grotte de Cristal, cristaux bleus lumineux' },
   'decor.grotte.sombre': { provisoire: 'grotte-sombre', sujet: 'Grotte de Cristal, cristaux éteints, yeux rouges dans le noir' },
+  'decor.col': { provisoire: 'col', sujet: 'Col des Pierres, sentier entre des menhirs, neige et ciel ambré' },
+  'decor.col.vide': { provisoire: 'col-vide', sujet: 'Col des Pierres, socle vide du cristal, ciel gris' },
   'decor.carte': { provisoire: 'carte', sujet: 'Carte de la Vallée de Lanterval' },
 
   // ---------- Panoramas (format large ~2,4:1) ----------
@@ -22,6 +24,8 @@ const IMAGES = {
   'pano.lac-sol': { sujet: 'Le lac souterrain, Sol de dos' },
   'pano.gardien': { sujet: 'Le Gardien de cristal se dresse' },
   'pano.fete': { fichier: 'img/panoramas/fete-lanterne.webp', sujet: 'La lanterne rallumée, fête sur la place' },
+  'pano.cage': { sujet: 'Varen et le Sans-Nom encagent le cristal d\'ambre au sommet du col' },
+  'pano.epee': { sujet: 'Brann tend l\'épée du père à Kael, au poste de garde' },
   'pano.loup-alpha': { sujet: 'Le Loup alpha sur un rocher, sous la lune et la brume' },
 
   // ---------- Héros (tournés vers la gauche) ----------
@@ -36,6 +40,9 @@ const IMAGES = {
   'pnj.berthe': { provisoire: 'f_berthe', sujet: 'Berthe, marchande rousse au foulard jaune' },
   'pnj.nell': { provisoire: 'f_nell', sujet: 'Nell, herboriste à capuche verte' },
   'pnj.tilo': { provisoire: 'f_tilo', sujet: 'Tilo, petit garçon du village' },
+  'pnj.hilde': { provisoire: 'f_hilde', sujet: 'Hilde, forgeronne, cheveux roux tressés, tablier de cuir' },
+  'pnj.varen': { provisoire: 'f_varen', sujet: 'Varen, jeune homme de l\'Ordre, cheveux argentés, sourire arrogant' },
+  'pnj.sansnom': { provisoire: 'f_sansnom', sujet: 'Le Sans-Nom, colosse au masque d\'acier à l\'œil fermé' },
   'pnj.silhouette': { provisoire: 'f_inconnu', sujet: 'Silhouette encapuchonnée de l\'Ordre, yeux rouges' },
 
   // ---------- Monstres (tournés vers la droite) ----------
@@ -45,5 +52,9 @@ const IMAGES = {
   'monstre.gelee': { provisoire: 'gelee', sujet: 'Gelée de quartz' },
   'monstre.ombre': { provisoire: 'ombre', sujet: 'Ombre voleuse de l\'Ordre' },
   'monstre.alpha': { provisoire: 'alpha', sujet: 'Loup alpha à la cicatrice' },
+  'monstre.belier': { provisoire: 'belier', sujet: 'Bélier des roches, cornes de pierre' },
+  'monstre.harpie': { provisoire: 'harpie', sujet: 'Harpie du col, ailes grises, serres' },
+  'monstre.varen': { provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre' },
+  'monstre.sansnom': { provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse' },
   'monstre.golem': { provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' }
 };

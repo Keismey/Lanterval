@@ -373,6 +373,12 @@ Chain in progress: this hit will do ×{m}.
 == combat.defaite
 The team is down…
 
+== combat.ecrasant
+*Overwhelming strength.* Your blows glance off the giant's armour…
+
+== combat.perdu
+The team is down…
+
 == combat.victoire
 *Victory!* +{xp} XP, +{or} g.
 
@@ -635,7 +641,7 @@ Not for the {classe} class · {qui}
 Remove
 
 == equipe.place.vide
-Nothing in the bag for this slot. Buy gear from Berthe or explore the zones.
+Nothing in the bag for this slot. Buy gear at Hilde's forge or explore the zones.
 
 == equipe.pareil
 No change
@@ -677,7 +683,7 @@ Nothing in the bag.
 Worn
 
 == inventaire.eq.aide
-To change gear, go to the Team screen. You can sell what's in your bag to Berthe or Nell.
+To change gear, go to the Team screen. You can sell what's in your bag at the village shops.
 
 == inventaire.imp.vide
 No key items yet.
@@ -811,6 +817,9 @@ Fled ({noms})
 == journal.log.defaite
 Defeated by {noms}
 
+== journal.log.perdu
+Crushed by {noms}
+
 == journal.log.retour
 Back to the inn
 
@@ -842,7 +851,7 @@ side quests done
 new game+
 
 == fin.titre
-End of version 0.1
+End of version 0.2
 
 == fin.continuer
 Keep playing
@@ -941,6 +950,12 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.2.0
+Act 1 is complete: the Stone Pass is open, with its treasures, events and two new monsters.
+At the top of the pass, a duel against Varen, then an encounter with the Nameless that cannot be won (no gold lost).
+Kael wakes up at the inn, Brann gives him his father's sword, and the Salt Marsh appears on the map.
+Hilde, Mira's mother, runs the village forge: she sells weapons and armour, and new pieces arrive after the celebration.
+Berthe now sells herbs and tonics.
 ## Version 0.1.2
 The Codex has a Classes tab: unlocked classes, their weapons, stats and techniques.
 The Ember staff is no longer a Fire weapon: the normal Attack stays Blade, with no colour; only techniques with an element keep their colour.

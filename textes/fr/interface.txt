@@ -388,6 +388,12 @@ Enchaînement en cours : ce coup fera ×{m}.
 == combat.defaite
 L'équipe est à terre…
 
+== combat.ecrasant
+*Une force écrasante.* Tes coups glissent sur l'armure du colosse…
+
+== combat.perdu
+L'équipe est à terre…
+
 == combat.victoire
 *Victoire !* +{xp} XP, +{or} po.
 
@@ -656,7 +662,7 @@ Pas pour la classe {classe} · {qui}
 Retirer
 
 == equipe.place.vide
-Rien dans le sac pour cet emplacement. Achète de l'équipement chez Berthe ou explore les zones.
+Rien dans le sac pour cet emplacement. Achète de l'équipement à la forge de Hilde ou explore les zones.
 
 == equipe.pareil
 Aucun changement
@@ -700,7 +706,7 @@ Rien dans le sac.
 Porté
 
 == inventaire.eq.aide
-Pour changer l'équipement, passe par l'écran Équipe. Tu peux vendre ce qui est dans le sac chez Berthe ou Nell.
+Pour changer l'équipement, passe par l'écran Équipe. Tu peux vendre ce qui est dans le sac dans les boutiques du village.
 
 == inventaire.imp.vide
 Aucun objet important pour l'instant.
@@ -838,6 +844,9 @@ Fuite ({noms})
 == journal.log.defaite
 Défaite contre {noms}
 
+== journal.log.perdu
+Écrasés par {noms}
+
 == journal.log.retour
 Retour à l'auberge
 
@@ -871,7 +880,7 @@ quêtes annexes finies
 partie+
 
 == fin.titre
-Fin de la version 0.1
+Fin de la version 0.2
 
 == fin.continuer
 Continuer à jouer
@@ -975,6 +984,12 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.2.0
+L'acte 1 est complet : le Col des Pierres est ouvert, avec ses trésors, ses événements et deux nouveaux monstres.
+Au sommet du col, un duel contre Varen, puis une rencontre avec le Sans-Nom qui ne peut pas être gagnée (sans perte d'or).
+Kael se réveille à l'auberge, Brann lui confie l'épée de son père, et le Marais salant apparaît sur la carte.
+Hilde, la mère de Mira, tient la forge du village : elle vend les armes et les armures, et de nouvelles pièces arrivent après la fête.
+Berthe vend désormais les herbes et les toniques.
 ## Version 0.1.2
 Le Codex a un onglet Classes : les classes débloquées, leurs armes, leurs statistiques et leurs techniques.
 Le Bâton de braise n'est plus une arme de Feu : l'Attaque normale reste Lame, sans couleur ; seules les techniques à élément gardent leur couleur.

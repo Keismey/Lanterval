@@ -48,14 +48,20 @@ Dormir
 == pnj.auberge.message
 L'équipe a dormi à l'auberge : PV et PP au maximum.
 
+== pnj.hilde.nom
+Forge de Hilde
+
+== pnj.hilde.sous
+Armes et armures
+
 == pnj.berthe.nom
 Échoppe de Berthe
 
 == pnj.berthe.sous
-Équipement et objets
+Herbes et toniques
 
 == pnj.berthe.accueil
-Berthe : « Bienvenue ! Des herbes, des toniques, et quelques bonnes pièces pour les aventuriers. »
+Berthe : « Bienvenue ! Des herbes et des toniques pour la route. Pour les lames et les armures, va voir Hilde à la forge. »
 
 == pnj.nell.nom
 Herboristerie de Nell
@@ -245,3 +251,89 @@ Des pierres tombent du plafond ! *Tout le monde perd 6 PV.*
 
 == grotte.ev.goutte
 Une eau très pure goutte d'une stalactite : *+6 PP* pour tous.
+
+# ================= Col des Pierres =================
+
+== lieu.col.le
+le col
+
+== lieu.col.p
+pied du col
+
+== lieu.col.s
+sommet
+
+== lieu.col.sous
+Le vent siffle entre les pierres
+
+== lieu.col.sous.vide
+Le cristal a disparu
+
+== lieu.col.desc
+Un sentier taillé dans la roche grimpe entre des menhirs couverts de givre. Tout en haut brille une lueur ambrée.
+
+== lieu.col.desc.vide
+Au sommet, le socle du cristal est vide. Le vent pousse la brume vers le sud, vers la côte.
+
+== lieu.col.intro
+## Col des Pierres
+Le sentier monte jusqu'au sommet, où brille le cristal d'ambre. Les bêtes du col sont plus coriaces que celles de la forêt.
+
+== col.c1.nom
+Cairn des voyageurs
+
+== col.c1.texte
+Sous un tas de pierres, une bourse oubliée : *60 po*.
+
+== col.c2.nom
+Gravure des bergers
+
+== col.c2.texte
+Des bergers repoussent un bélier avec des seaux d'eau et des torches. *Faiblesses du Bélier des roches ajoutées au codex.*
+
+== col.c3.nom
+Refuge de berger
+
+== col.c3.texte
+Une cabane de pierre sèche, un foyer encore tiède. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== col.c4.nom
+Sacoche gelée
+
+== col.c4.texte
+Prise dans la glace, la sacoche d'un colporteur : *2 toniques et 1 élixir*.
+
+== col.c5.nom
+Nid de harpies
+
+== col.c5.texte
+Un nid de branches et d'os, marqué de coups de lame et d'éboulis. *Faiblesses de la Harpie ajoutées au codex.*
+
+== col.c6.nom
+Menhir fendu
+
+== col.c6.texte
+Dans la fente du menhir, un *Talisman de pierre* (accessoire, Défense +3, PV +8).
+
+== col.m50
+## Palier 50 % atteint
+Dans un ancien poste de guet : *2 herbes et 1 tonique*.
+
+== col.m100
+## Palier 100 % atteint
+Tu connais chaque pierre du col. Tu trouves une *Corne de bélier* (accessoire, Attaque +3, Défense +2). Col maîtrisé : sa traversée ne donnera plus que 0 à 2 combats.
+
+== col.ev.combat
+Des sabots claquent sur la roche…
+
+== col.ev.eboulis
+Un pan de rocher se détache ! *Tout le monde perd 8 PV.*
+
+== col.ev.edelweiss
+Des fleurs blanches poussent dans une faille. Leur parfum réchauffe : *+15 PV* pour tous.
+
+== col.ev.pelerin
+Un pèlerin redescend du col. Il te donne *25 po* « pour la lanterne ».
+
+== col.ev.vent
+Une bourrasque glacée balaie la brume et l'esprit s'éclaircit : *+6 PP* pour tous.

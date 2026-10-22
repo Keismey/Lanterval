@@ -48,14 +48,20 @@ Sleep
 == pnj.auberge.message
 The team slept at the inn: HP and PP fully restored.
 
+== pnj.hilde.nom
+Hilde's forge
+
+== pnj.hilde.sous
+Weapons and armour
+
 == pnj.berthe.nom
 Berthe's stall
 
 == pnj.berthe.sous
-Gear and items
+Herbs and tonics
 
 == pnj.berthe.accueil
-Berthe: “Welcome! Herbs, tonics, and a few good pieces for adventurers.”
+Berthe: “Welcome! Herbs and tonics for the road. For blades and armour, go and see Hilde at the forge.”
 
 == pnj.nell.nom
 Nell's herbalist shop
@@ -245,3 +251,89 @@ Stones fall from the ceiling! *Everyone loses 6 HP.*
 
 == grotte.ev.goutte
 Very pure water drips from a stalactite: *+6 PP* for everyone.
+
+# ================= Stone Pass =================
+
+== lieu.col.le
+the pass
+
+== lieu.col.p
+foot of the pass
+
+== lieu.col.s
+summit
+
+== lieu.col.sous
+The wind whistles between the stones
+
+== lieu.col.sous.vide
+The crystal is gone
+
+== lieu.col.desc
+A path cut into the rock climbs between frost-covered standing stones. At the very top, an amber glow shines.
+
+== lieu.col.desc.vide
+At the summit, the crystal's pedestal is empty. The wind pushes the mist south, towards the coast.
+
+== lieu.col.intro
+## Stone Pass
+The path climbs to the summit, where the amber crystal shines. The beasts of the pass are tougher than those of the forest.
+
+== col.c1.nom
+Travellers' cairn
+
+== col.c1.texte
+Under a pile of stones, a forgotten purse: *60 gold*.
+
+== col.c2.nom
+Shepherds' carving
+
+== col.c2.texte
+Shepherds drive off a ram with buckets of water and torches. *Rock Ram weaknesses added to the codex.*
+
+== col.c3.nom
+Shepherd's shelter
+
+== col.c3.texte
+A drystone hut with a hearth still warm. The team *recovers all its strength*. You can rest here on every visit.
+
+== col.c4.nom
+Frozen satchel
+
+== col.c4.texte
+Caught in the ice, a pedlar's satchel: *2 tonics and 1 elixir*.
+
+== col.c5.nom
+Harpy nest
+
+== col.c5.texte
+A nest of branches and bones, scarred by blade cuts and rockfalls. *Harpy weaknesses added to the codex.*
+
+== col.c6.nom
+Split standing stone
+
+== col.c6.texte
+In the crack of the stone, a *Stone talisman* (accessory, Defence +3, HP +8).
+
+== col.m50
+## 50% milestone reached
+In an old lookout post: *2 herbs and 1 tonic*.
+
+== col.m100
+## 100% milestone reached
+You know every stone of the pass. You find a *Ram's horn* (accessory, Attack +3, Defence +2). Pass mastered: crossing it will now bring only 0 to 2 fights.
+
+== col.ev.combat
+Hooves clatter on the rock…
+
+== col.ev.eboulis
+A slab of rock breaks loose! *Everyone loses 8 HP.*
+
+== col.ev.edelweiss
+White flowers grow in a crack. Their scent warms you: *+15 HP* for everyone.
+
+== col.ev.pelerin
+A pilgrim comes down from the pass. He gives you *25 gold* “for the lantern”.
+
+== col.ev.vent
+An icy gust sweeps the mist away and clears the mind: *+6 PP* for everyone.

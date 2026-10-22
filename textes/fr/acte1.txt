@@ -187,6 +187,106 @@ Mira : « Alors on part demain. » Sol hoche la tête sans un mot.
 == a1.e7.message
 Nouveau chemin sur la carte : le *Col des Pierres*.
 
+# ---------- Étape 8 : la montée du col ----------
+
+== a1.e8.titre
+Gravir le Col des Pierres
+
+== a1.e8.montee
+## Col des Pierres
+Le sentier grimpe entre des menhirs couverts de givre. Tout en haut, une lueur ambrée perce la brume.
+Sol : « Des traces de bottes, beaucoup. Quelqu'un est passé avant nous. »
+Mira : « L'Ordre. Alors on se dépêche. » [Monter]
+
+== a1.e8.harpies
+Des cris aigus éclatent au-dessus de vous. Des harpies plongent des rochers, et un bélier des roches charge derrière elles !
+
+== a1.e8.traces
+Mira : « Elles étaient affolées. Comme si quelque chose les avait chassées du sommet. »
+Sol : « Ou quelqu'un. »
+
+== a1.e8.sommet
+## Sommet du col
+Au sommet, un cercle de pierres dressées entoure le cristal d'ambre, grand comme un homme.
+Derrière les menhirs, des voix résonnent, et un bruit de métal qu'on frappe.
+Contre ta poitrine, l'éclat de la lanterne se met à trembler.
+
+== a1.e8.message
+Le cristal d'ambre est tout proche. *Prépare l'équipe* : le combat du sommet sera rude.
+
+# ---------- Étape 9 : le cristal d'ambre ----------
+
+== a1.e9.titre
+Le cristal d'ambre
+
+== a1.e9.cage
+## Le cristal d'ambre
+Un jeune homme aux cheveux d'argent referme une cage de fer noir autour du cristal. Derrière lui, un colosse masqué tient les chaînes.
+Varen : « Tiens donc. Le petit garde de Lanterval, et ses amis. »
+Varen : « Vous arrivez trop tard. L'ambre appartient à la Paupière, maintenant. »
+
+== a1.e9.varen
+Mira : « Rends-le ! Sans lui, notre village va disparaître ! »
+Varen : « Disparaître ? Oublier ses peines dans la brume, moi j'appelle ça guérir. »
+Des Ombres surgissent des rochers et encerclent Sol.
+Varen : « Toi et la rouquine, contre moi seul. Ce sera bien assez. »
+
+== a1.e9.conseil
+*Duel : seuls Kael et Mira se battent.* Varen est rapide et frappe fort. La Terre de Kael et le Feu de Mira peuvent briser sa garde.
+
+== a1.e9.varen.fin
+Varen recule d'un pas, une main sur l'épaule. Pour la première fois, il ne sourit plus.
+Varen : « Pas mal… pour des gens qui vont tout oublier. »
+Sol se dégage des Ombres et vous rejoint.
+Varen : « Sans-Nom. Occupe-toi d'eux. » [Faire face]
+
+== a1.e9.sansnom
+Le colosse lâche les chaînes. Le sol tremble à chacun de ses pas.
+Il ne dit rien. Sur son masque d'acier, un œil fermé est gravé.
+
+== a1.e9.cri
+## Le Sans-Nom
+Tu es à terre. Le Sans-Nom lève sa masse au-dessus de toi.
+Mira : « KAEL ! »
+Le colosse se fige. Une seconde, son masque se tourne vers toi, comme s'il cherchait quelque chose.
+Puis la masse s'abat, et tout devient noir. […]
+
+== a1.e9.reveil
+## Auberge du Chaudron
+Tu ouvres les yeux sous les poutres de l'auberge. Par la fenêtre, la lanterne brille encore, faiblement.
+Hilde : « Doucement. Brann vous a redescendus du col sur une charrette, tous les trois. Vous avez dormi deux jours. »
+Mira : « Maman… Ils ont pris le cristal. Le colosse aurait pu nous achever, et il s'est arrêté. »
+Hilde détourne les yeux vers la fenêtre.
+Hilde : « Brann t'attend au poste de garde, Kael. Il a quelque chose pour toi. »
+
+== a1.e9.message
+L'Ordre a emporté le cristal d'ambre. *Brann t'attend au poste de garde.*
+
+# ---------- Étape 10 : l'épée du père ----------
+
+== a1.e10.titre
+L'épée du père
+
+== a1.e10.brann
+Brann : « Te voilà debout. Tu as la tête dure, comme ton père. »
+Brann : « La nuit où il est parti dans la brume, il m'a laissé quelque chose. "Pour Kael, quand il sera prêt", qu'il a dit. »
+Brann : « Après ce que tu as fait au col, je crois que tu l'es. »
+
+== a1.e10.epee
+## L'épée du père
+Brann te tend une épée dans un fourreau usé. La lame est ébréchée, mais la garde porte le blason des gardes de Lanterval.
+Tu reçois l'*Épée du père* (objet important).
+Brann : « Elle est trop abîmée pour se battre. Mais un jour, quelqu'un saura la réparer. »
+
+== a1.e10.depart
+Sol : « J'ai entendu les Ombres, là-haut. Elles emportent le cristal vers la côte, à Salvent. »
+Sol se tait. Salvent, c'est le port où sa petite sœur a disparu.
+Mira : « Alors on va à Salvent. Par le Marais salant, c'est le plus court. »
+Brann : « Allez. Et revenez, cette fois. »
+
+== a1.e10.message
+Nouveau chemin sur la carte : le *Marais salant*, vers la côte de Salvent.
+
 # ---------- Ce que disent les gens du village selon l'avancée ----------
 # pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.
 
@@ -196,8 +296,14 @@ Orvan : « La forêt est à l'est. Fais vite, Mira n'a jamais su reculer devant 
 == pnj.orvan.a1.e4
 Orvan : « Le cœur de cristal est au fond de la grotte. Rapporte-le avant qu'il ne s'éteigne pour de bon. »
 
+== pnj.orvan.a1.e8
+Orvan : « Reposez-vous. Le Col des Pierres vous attend, au nord de la forêt, mais il ne s'enfuira pas cette nuit. »
+
+== pnj.orvan.a1.e10
+Orvan : « Je n'aurais jamais dû vous envoyer seuls là-haut. Va voir Brann, il t'attend. »
+
 == pnj.orvan.fin
-Orvan : « Reposez-vous. Le Col des Pierres vous attend, mais il ne s'enfuira pas cette nuit. »
+Orvan : « Le cœur tiendra la saison. D'ici là, retrouvez le cristal d'ambre, où que l'Ordre l'emporte. »
 
 == pnj.brann
 Brann : « Reste prudent, Kael. La brume rend les bêtes nerveuses. »
@@ -214,11 +320,38 @@ Tilo : « Il paraît qu'un géant de pierre dort au fond de la grotte. Les vieux
 == pnj.tilo.a1.e6
 Tilo : « Tout le monde dit que tu as le cœur de cristal ! Va vite voir l'Ancien ! »
 
-== pnj.tilo.fin
-Tilo : « Les lucioles sont revenues dans la forêt ! On pourra y aller le soir maintenant ? »
+== pnj.tilo.a1.e8
+Tilo : « Les lucioles sont revenues dans la forêt ! Et au col, maman dit que les harpies volent les chapeaux des voyageurs. »
 
-# ---------- Fin de la version 0.1 ----------
+== pnj.tilo.a1.e10
+Tilo : « Vous êtes revenus sur une charrette, tout pâles… J'ai eu peur, tu sais. »
+
+== pnj.tilo.fin
+Tilo : « Tu vas voir la mer ? Rapporte-moi un coquillage ! »
+
+# Hilde, à la forge : son accueil change avec l'avancée (pnj.hilde.accueil.<étape>)
+
+== pnj.hilde.accueil
+Hilde : « Mira est encore partie sans prévenir ? Si tu la croises, ramène-la-moi. En attendant, la forge est ouverte. »
+
+== pnj.hilde.accueil.a1.e3
+Hilde : « Merci d'avoir ramené ma fille. Elle tient de moi : elle fonce d'abord, elle réfléchit après. »
+
+== pnj.hilde.accueil.a1.e4
+Hilde : « On raconte que vous avez trouvé un insigne à l'œil fermé. » Elle serre son marteau un peu trop fort. « Ne le montre à personne d'autre. »
+
+== pnj.hilde.accueil.a1.e8
+Hilde : « Le col, déjà ? J'ai sorti de nouvelles pièces du feu. Prenez ce qu'il faut, je n'ai pas envie de vous recoudre. »
+
+== pnj.hilde.accueil.a1.e10
+Hilde : « Tu es debout, c'est bien. Mira dort encore, laisse-la se reposer. »
+
+== pnj.hilde.accueil.fin
+Hilde : « Salvent… » Elle reste un moment sans rien dire. « Prends soin d'elle, Kael. »
+
+# ---------- Fin de la version 0.2 ----------
 
 == fin.version
-## Fin de la version 0.1
-Ici commencera la suite de l'acte 1 : le Col des Pierres. Elle arrive dans la prochaine version.
+## Fin de la version 0.2
+L'acte 1 est terminé ! L'Ordre emporte le cristal d'ambre vers la côte, et la route de Salvent passe par le Marais salant.
+L'acte 2 arrive dans une prochaine version. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.
