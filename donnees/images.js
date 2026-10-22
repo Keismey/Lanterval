@@ -47,11 +47,11 @@ const IMAGES = {
 
   // ---------- Monstres (tournés vers la droite) ----------
   'monstre.loup': { fichier: 'img/monstres/loup.webp', provisoire: 'loup', sujet: 'Loup des brumes' },
-  'monstre.spore': { provisoire: 'spore', sujet: 'Champi-spore' },
-  'monstre.chauve': { provisoire: 'chauve', sujet: 'Chiroptère' },
-  'monstre.gelee': { provisoire: 'gelee', sujet: 'Gelée de quartz' },
-  'monstre.ombre': { provisoire: 'ombre', sujet: 'Ombre voleuse de l\'Ordre' },
-  'monstre.alpha': { provisoire: 'alpha', sujet: 'Loup alpha à la cicatrice' },
+  'monstre.spore': { fichier: 'img/monstres/spore.webp', provisoire: 'spore', sujet: 'Champi-spore' },
+  'monstre.chauve': { fichier: 'img/monstres/chauve.webp', provisoire: 'chauve', sujet: 'Chiroptère' },
+  'monstre.gelee': { fichier: 'img/monstres/gelee.webp', provisoire: 'gelee', sujet: 'Gelée de quartz' },
+  'monstre.ombre': { fichier: 'img/monstres/ombre.webp', provisoire: 'ombre', sujet: 'Ombre voleuse de l\'Ordre' },
+  'monstre.alpha': { fichier: 'img/monstres/alpha.webp', provisoire: 'alpha', sujet: 'Loup alpha à la cicatrice' },
   'monstre.belier': { provisoire: 'belier', sujet: 'Bélier des roches, cornes de pierre' },
   'monstre.harpie': { provisoire: 'harpie', sujet: 'Harpie du col, ailes grises, serres' },
   'monstre.varen': { provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre' },
