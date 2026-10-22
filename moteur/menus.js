@@ -150,8 +150,9 @@ function classesHtml() {
       const x = TECHNIQUES[id], el = elTxt(x.el), c = x.el ? ' el-' + x.el.slice(-1) : '';
       return `<div class="ctech${c}"><span class="ic">${ic(icTech(x))}</span><div><b>${esc(t('tech.' + id))}</b><small>${esc(`${x.pp} ${t('stat.pp')}${el ? ' · ' + el : ''} · ${t('tech.' + id + '.desc')}`)}</small></div></div>`;
     }).join('');
-    return `<div class="cls"><h4>${esc(t('classe.' + j))}${qui.length ? ` <span class="note">· ${esc(qui.join(', '))}</span>` : ''}</h4><p>${esc(t('classe.' + j + '.desc'))}</p>
-      <p>${esc(t('codex.armes', { liste: J.armes.map(a => t('codex.arme.' + a)).join(', ') }))}<br>${esc(mods.length ? mods.map(([k, v]) => pct(k, v)).join(', ') : t('codex.equilibre'))}</p>${techs}</div>`;
+    // repliable : le nom de la classe, puis le détail une fois dépliée
+    return `<details class="cls"><summary>${esc(t('classe.' + j))}${qui.length ? ` <span class="note">· ${esc(qui.join(', '))}</span>` : ''}</summary><div class="cls-corps"><p>${esc(t('classe.' + j + '.desc'))}</p>
+      <p>${esc(t('codex.armes', { liste: J.armes.map(a => t('codex.arme.' + a)).join(', ') }))}<br>${esc(mods.length ? mods.map(([k, v]) => pct(k, v)).join(', ') : t('codex.equilibre'))}</p>${techs}</div></details>`;
   }).join('')}</div>`;
 }
 function helpHtml() {
