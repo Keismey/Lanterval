@@ -13,8 +13,8 @@ const IMAGES = {
   'decor.foret.calme': { fichier: 'img/decors/foret-calme.webp', provisoire: 'foret-calme', sujet: 'Forêt des Murmures, brume levée, lucioles' },
   'decor.grotte': { fichier: 'img/decors/grotte.webp', provisoire: 'grotte', sujet: 'Grotte de Cristal, cristaux bleus lumineux' },
   'decor.grotte.sombre': { fichier: 'img/decors/grotte-sombre.webp', provisoire: 'grotte-sombre', sujet: 'Grotte de Cristal, cristaux éteints, yeux rouges dans le noir' },
-  'decor.col': { provisoire: 'col', sujet: 'Col des Pierres, sentier entre des menhirs, neige et ciel ambré' },
-  'decor.col.vide': { provisoire: 'col-vide', sujet: 'Col des Pierres, socle vide du cristal, ciel gris' },
+  'decor.col': { fichier: 'img/decors/col.webp', provisoire: 'col', sujet: 'Col des Pierres, sentier entre des menhirs, neige et ciel ambré' },
+  'decor.col.vide': { fichier: 'img/decors/col-vide.webp', provisoire: 'col-vide', sujet: 'Col des Pierres, socle vide du cristal, ciel gris' },
   'decor.carte': { provisoire: 'carte', sujet: 'Carte de la Vallée de Lanterval' },
 
   // ---------- Panoramas (format large ~2,4:1) ----------
@@ -52,8 +52,8 @@ const IMAGES = {
   'monstre.gelee': { fichier: 'img/monstres/gelee.webp', provisoire: 'gelee', sujet: 'Gelée de quartz' },
   'monstre.ombre': { fichier: 'img/monstres/ombre.webp', provisoire: 'ombre', sujet: 'Ombre voleuse de l\'Ordre' },
   'monstre.alpha': { fichier: 'img/monstres/alpha.webp', provisoire: 'alpha', sujet: 'Loup alpha à la cicatrice' },
-  'monstre.belier': { provisoire: 'belier', sujet: 'Bélier des roches, cornes de pierre' },
-  'monstre.harpie': { provisoire: 'harpie', sujet: 'Harpie du col, ailes grises, serres' },
+  'monstre.belier': { fichier: 'img/monstres/belier.webp', provisoire: 'belier', sujet: 'Bélier des roches, cornes de pierre' },
+  'monstre.harpie': { fichier: 'img/monstres/harpie.webp', provisoire: 'harpie', sujet: 'Harpie du col, ailes grises, serres' },
   'monstre.varen': { provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre' },
   'monstre.sansnom': { provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse' },
   'monstre.golem': { fichier: 'img/monstres/golem.webp', provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' }
