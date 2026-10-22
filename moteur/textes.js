@@ -62,24 +62,48 @@ function bulle(ligne) {
   return { qui, nom, texte, bouton };
 }
 
-/* Texte lettre par lettre : un appui n'importe où affiche tout d'un coup, sans déclencher de bouton. */
-let TW = null;
+/* Texte lettre par lettre. Tout le texte est posé dès le début (la partie pas encore écrite reste invisible) :
+   la mise en page ne bouge pas et les boutons restent à leur place. Un appui n'importe où affiche tout d'un coup,
+   sans déclencher de bouton. Un texte identique au précédent s'affiche directement. */
+let TW = null, DERNIER_TEXTE = '';
 function typeIn(root) {
   if (TW) TW();
-  if (OPT.texte === 'instant' || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-  const nodes = [];
-  root.querySelectorAll('.ptext,.note').forEach(e => { const w = document.createTreeWalker(e, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) if (n.nodeValue.trim()) nodes.push([n, n.nodeValue]); });
-  if (!nodes.length) return;
-  nodes.forEach(([n]) => n.nodeValue = '');
+  const zones = [...root.querySelectorAll('.ptext')];
+  const cle = zones.map(e => e.textContent).join('|');
+  const deja = cle === DERNIER_TEXTE;
+  DERNIER_TEXTE = cle;
+  if (deja || OPT.texte === 'instant' || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  const morceaux = [];
+  for (const e of zones) {
+    const w = document.createTreeWalker(e, NodeFilter.SHOW_TEXT), noeuds = [];
+    let n; while ((n = w.nextNode())) if (n.nodeValue.trim()) noeuds.push(n);
+    for (const n of noeuds) {
+      const v = n.nodeValue, vu = document.createTextNode(''), cache = document.createElement('span');
+      cache.className = 'tw-cache'; cache.textContent = v;
+      n.replaceWith(vu, cache);
+      morceaux.push([vu, cache, v]);
+    }
+  }
+  if (!morceaux.length) return;
   const k = OPT.texte === 'rapide' ? .4 : 1;
   let i = 0, c = 0, tm;
   const eat = e => { e.preventDefault(); e.stopPropagation(); };
-  const end = () => { clearTimeout(tm); nodes.forEach(([n, v]) => n.nodeValue = v); document.removeEventListener('pointerdown', skip, true); TW = null; };
-  const skip = e => { eat(e); end(); document.addEventListener('click', eat, { capture: true, once: true }); setTimeout(() => document.removeEventListener('click', eat, true), 500); };
+  const end = () => {
+    clearTimeout(tm);
+    for (const [vu, cache, v] of morceaux) { vu.nodeValue = v; cache.remove(); }
+    document.removeEventListener('pointerdown', skip, true); TW = null;
+  };
+  const skip = e => {
+    if (e.target.closest && e.target.closest('#hud,#modal,#ks-dlg')) return;
+    eat(e); end();
+    document.addEventListener('click', eat, { capture: true, once: true });
+    setTimeout(() => document.removeEventListener('click', eat, true), 500);
+  };
   const tick = () => {
-    if (i >= nodes.length) return end();
-    const [n, v] = nodes[i]; const ch = v[c++]; n.nodeValue = v.slice(0, c);
-    if (c >= v.length) { i++; c = 0; }
+    if (i >= morceaux.length) return end();
+    const [vu, cache, v] = morceaux[i], ch = v[c++];
+    vu.nodeValue = v.slice(0, c); cache.textContent = v.slice(c);
+    if (c >= v.length) { cache.remove(); i++; c = 0; }
     tm = setTimeout(tick, (/[.!?…]/.test(ch) ? 160 : /[,;:]/.test(ch) ? 80 : 20) * k);
   };
   document.addEventListener('pointerdown', skip, true); TW = end; tick();

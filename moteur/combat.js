@@ -163,8 +163,8 @@ async function heroCommand(h) {
   while (true) {
     const sk = CLASSES[h.job].tech, solo = aliveH().length < 2;
     const opts = [
-      { k: 'attaque', ic: 'sword', label: esc(t('tech.attaque')), sub: esc(t('element.L')) },
-      { k: 'skills', ic: 'spark', label: esc(t('combat.cmd.tech')), sub: esc(t('classe.' + h.job)) },
+      { k: 'attaque', ic: 'sword', label: esc(t('tech.attaque')), sub: esc(t('element.' + elArme(h))), cls: 'el-' + elArme(h) },
+      { k: 'skills', ic: 'spark', label: esc(t('combat.cmd.tech')), sub: esc(t('classe.' + h.job)), cls: 'el-' + HEROS[h.id].el },
       { k: 'objet', ic: 'bag', label: esc(t('combat.cmd.objet')), sub: esc(t('combat.cmd.objet.sous', { n: itemCount() })), dis: !itemCount() },
       { k: 'garde', ic: 'shield', label: esc(t('combat.cmd.garde')), sub: esc(t('combat.cmd.garde.sous')) },
       { k: 'union', ic: 'link', label: esc(t('combat.union')), sub: esc(B.team.length < 2 ? t('combat.cmd.union.seul') : B.union >= 3 ? t('combat.cmd.union.prete') : `${B.union}/3`), dis: B.union < 3 || solo, cls: B.union >= 3 && !solo ? 'main' : '' },
@@ -180,7 +180,7 @@ async function heroCommand(h) {
     }
     let s;
     if (k === 'skills') {
-      const so = sk.map(id => { const x = TECHNIQUES[id], el = elTech(h, x.el); return { k: id, ic: icTech(x), label: esc(t('tech.' + id)), sub: esc(`${x.pp} ${t('stat.pp')}${el ? ' · ' + el : ''} · ${t('tech.' + id + '.desc')}`), dis: h.pp < x.pp }; });
+      const so = sk.map(id => { const x = TECHNIQUES[id], el = elTech(h, x.el); return { k: id, ic: icTech(x), label: esc(t('tech.' + id)), sub: esc(`${x.pp} ${t('stat.pp')}${el ? ' · ' + el : ''} · ${t('tech.' + id + '.desc')}`), dis: h.pp < x.pp, cls: x.el ? 'el-' + elsOf(h, x.el).slice(-1)[0] : '' }; });
       so.push(retourOpt('back'));
       bMsg(esc(t('combat.tech.liste', { nom: nomH(h), classe: t('classe.' + h.job) })));
       const c = await menu(so, true); if (c === 'back') continue;
@@ -214,6 +214,8 @@ async function strike(e, els, base, mult) {
   bOverlay();
   return line;
 }
+// élément de l'Attaque : celui de l'arme si elle en a un, sinon Lame
+function elArme(h) { const a = h.eq.arme && EQUIPEMENT[h.eq.arme]; return (a && a.el) || 'L'; }
 function elsOf(h, el) { const he = HEROS[h.id].el; return el === 'X' ? [he] : el === 'LX' ? ['L', he] : [el]; }
 async function heroAct(h, a) {
   const s = hs(h), nm = nomH(h);
@@ -242,7 +244,7 @@ async function heroAct(h, a) {
     B.inUnion = false;
     bMsg(lines.filter(l => l.includes('<b>') || /vaincu/.test(l)).join(' ') || esc(t('combat.union.fin'))); bDraw(); await wait(500); return 1.2;
   }
-  const sk = a.sk === 'attaque' ? { el: 'L', type: 'phys', pow: 1, pp: 0, cible: 'ennemi', poids: 1 } : TECHNIQUES[a.sk], nomT = t('tech.' + a.sk);
+  const sk = a.sk === 'attaque' ? { el: elArme(h), type: 'phys', pow: 1, pp: 0, cible: 'ennemi', poids: 1 } : TECHNIQUES[a.sk], nomT = t('tech.' + a.sk);
   h.pp -= sk.pp; bCards();
   if (sk.type === 'scan') {
     revealAll(a.t.id);

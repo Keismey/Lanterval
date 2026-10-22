@@ -274,3 +274,10 @@ h3.sec{margin:4px 0 0;font:700 12px var(--f-ui);color:var(--muted);letter-spacin
 /* les images définitives (dossier img/) ne sont pas du pixel art */
 img[src^="img/"]{image-rendering:auto!important}
 .chip.h.face img{width:100%;height:100%;left:0;top:0;object-fit:cover}
+/* texte lettre par lettre : la suite est déjà en place, invisible */
+.tw-cache{visibility:hidden}
+/* icônes de combat à la couleur de leur élément (Lame, Terre, Feu, Eau) */
+.btn.el-L .ic{color:var(--el-L);background:color-mix(in srgb,var(--el-L) 22%,transparent)}
+.btn.el-T .ic{color:var(--el-T);background:color-mix(in srgb,var(--el-T) 22%,transparent)}
+.btn.el-F .ic{color:var(--el-F);background:color-mix(in srgb,var(--el-F) 22%,transparent)}
+.btn.el-E .ic{color:var(--el-E);background:color-mix(in srgb,var(--el-E) 22%,transparent)}

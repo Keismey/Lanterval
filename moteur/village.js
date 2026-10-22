@@ -71,7 +71,7 @@ async function auberge(pnj) {
 
 /* ---------- Boutiques ---------- */
 function nomEq(id) { return t('equip.' + id); }
-function stTxt(st) { return Object.entries(st).map(([k, v]) => `${t('stat.' + k)} ${v > 0 ? '+' : ''}${v}`).join(', '); }
+function stTxt(st, el) { return (el ? t('element.' + el) + ' · ' : '') + Object.entries(st).map(([k, v]) => `${t('stat.' + k)} ${v > 0 ? '+' : ''}${v}`).join(', '); }
 function wearers(id) {
   const e = EQUIPEMENT[id];
   if (e.place === 'arme') return Object.keys(CLASSES).filter(j => CLASSES[j].armes.includes(e.type)).map(j => CLASSES[j].cachee && !S.jobs.includes(j) ? '???' : t('classe.' + j)).join(', ');
@@ -84,7 +84,7 @@ async function boutique(pnj) {
   let line = html(bulle(t(`pnj.${pnj.id}.accueil`)).texte);
   while (true) {
     const opts = pnj.objets.map(([k, prix]) => ({ k: 'i:' + k, ic: 'heart', label: esc(t('objet.' + k)), sub: esc(t('boutique.objet', { prix, effet: t('objet.' + k + '.desc'), n: S.inv[k] || 0 })), dis: S.gold < prix }));
-    for (const k of pnj.equipement) opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(nomEq(k)), sub: esc(`${EQUIPEMENT[k].prix} ${t('po')} · ${stTxt(EQUIPEMENT[k].st)} · ${wearers(k)}`), dis: S.gold < EQUIPEMENT[k].prix });
+    for (const k of pnj.equipement) opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(nomEq(k)), sub: esc(`${EQUIPEMENT[k].prix} ${t('po')} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)} · ${wearers(k)}`), dis: S.gold < EQUIPEMENT[k].prix });
     opts.push({ k: 'sell', ic: 'coin', label: esc(t('boutique.vendre')), sub: esc(t('boutique.vendre.sous')), cls: 'side' });
     opts.push({ k: 'x', label: esc(t('retour')), ic: 'back', cls: 'ghost' });
     const k = await show(line, { who: qui, portrait: pnj.portrait, choices: opts, note: tx('boutique.bourse', { or: S.gold }) + (pnj.equipement.length ? ' ' + tx('boutique.equiper') : '') });
@@ -103,7 +103,7 @@ async function vendre(pnj) {
     const opts = Object.keys(OBJETS).filter(k => S.inv[k] > 0).map(k => ({ k: 'i:' + k, ic: 'heart', label: esc(`${t('objet.' + k)} ×${S.inv[k]}`), sub: esc(`+${OBJETS[k].v} ${t('po')} · ${t('objet.' + k + '.desc')}`) }));
     for (const k of Object.keys(S.bag).filter(k => S.bag[k] > 0)) {
       const v = eqVal(k);
-      opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(`${nomEq(k)} ×${S.bag[k]}`), sub: esc(v ? `+${v} ${t('po')} · ${t('place.' + EQUIPEMENT[k].place)} · ${stTxt(EQUIPEMENT[k].st)}` : t('boutique.cadeau')), dis: !v });
+      opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(`${nomEq(k)} ×${S.bag[k]}`), sub: esc(v ? `+${v} ${t('po')} · ${t('place.' + EQUIPEMENT[k].place)} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)}` : t('boutique.cadeau')), dis: !v });
     }
     opts.push({ k: 'x', label: esc(t('boutique.fini')), ic: 'back', cls: 'ghost' });
     const k = await show(line, { who: qui, portrait: pnj.portrait, title: t('boutique.vendre'), choices: opts, note: tx('boutique.bourse', { or: S.gold }) + ' ' + tx('boutique.porte') + (opts.length === 1 ? ' ' + tx('boutique.vide') : '') });

@@ -21,7 +21,18 @@ function show(text, o = {}) {
     const ch = (o.choices || [{ label: esc(t('continuer')), k: 0, ic: 'run' }]).map(x => typeof x === 'string' ? { label: x, ic: 'run' } : x);
     p.innerHTML = `${o.title ? `<div class="ptitle">${esc(o.title)}</div>` : ''}${o.who ? `<div class="who">${av(o.portrait)}<b>${esc(o.who)}</b></div>` : ''}
       <div class="ptext">${text}</div>${o.note ? `<p class="note">${o.note}</p>` : ''}<div class="acts">${btns(ch)}</div>`;
-    bind(p, ch, res); p.scrollTop = 0; hud(); typeIn(p);
+    let fini = false;
+    const choisir = k => { if (fini) return; fini = true; document.removeEventListener('click', partout); res(k); };
+    bind(p, ch, choisir); p.scrollTop = 0; hud(); typeIn(p);
+    // un seul bouton (« Continuer », « Combattre »…) : un appui n'importe où dans la scène ou le texte suffit
+    const t0 = performance.now();
+    const partout = e => {
+      if (e.timeStamp <= t0 || !document.body.contains(p) || modalOuverte() || document.getElementById('ks-dlg')) return;
+      if (e.target.closest('button,a,input,#hud,#modal')) return;
+      if (!e.target.closest('#scene,#panel')) return;
+      const o = ch[0]; choisir(o.k !== undefined ? o.k : 0);
+    };
+    if (ch.length === 1 && !ch[0].dis) document.addEventListener('click', partout);
   });
 }
 async function flash(text) { $('#panel').innerHTML = `<div class="ptitle" style="font-size:18px">${text}</div>`; await wait(750); }

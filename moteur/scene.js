@@ -73,7 +73,7 @@ function lbl(titre, sous) { return `<div class="lbl glass"><b>${esc(titre)}</b>$
 function fx(xp, yp, text, cls) { const d = document.createElement('div'); d.className = 'fnum ' + (cls || ''); d.style.left = xp + '%'; d.style.top = yp + '%'; d.innerHTML = text; $('#fx').appendChild(d); setTimeout(() => d.remove(), 1000); }
 
 /* ---------- Monstres à l'écran pendant un combat ---------- */
-const PLACES = { 1: [[.5, .84]], 2: [[.3, .78], [.7, .84]], 3: [[.18, .76], [.5, .86], [.82, .76]] };
+const PLACES = { 1: [[.5, .78]], 2: [[.3, .72], [.7, .78]], 3: [[.18, .7], [.5, .78], [.82, .7]] };
 function poserMonstres(ennemis) {
   const n = ennemis.length;
   ennemis.forEach((e, i) => { [e.px, e.py] = PLACES[n][i]; });

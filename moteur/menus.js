@@ -33,7 +33,7 @@ function openParty() {
     if (vue === 'main') {
       const jo = [{ k: 'job', ic: 'star', label: esc(t('classe.' + h.job)), sub: esc(t('classe.' + h.job + '.desc') + ' ' + t('equipe.toucher')), cls: 'wide' }];
       const mj = sh.querySelector('#m-job'); mj.innerHTML = btns(jo); bind(mj, jo, () => { vue = 'job'; draw(); });
-      const eo = PLACES_EQ.map(p => { const id = h.eq[p]; return { k: p, ic: icPlace(p), label: esc(id ? nomEq(id) : t('equipe.rien')), sub: esc(t('place.' + p) + (id ? ' · ' + stTxt(EQUIPEMENT[id].st) : '')) }; });
+      const eo = PLACES_EQ.map(p => { const id = h.eq[p]; return { k: p, ic: icPlace(p), label: esc(id ? nomEq(id) : t('equipe.rien')), sub: esc(t('place.' + p) + (id ? ' · ' + stTxt(EQUIPEMENT[id].st, EQUIPEMENT[id].el) : '')) }; });
       const me = sh.querySelector('#m-eq'); me.innerHTML = btns(eo); bind(me, eo, k => { place = k; vue = 'place'; draw(); });
       const io = Object.keys(OBJETS).filter(k => S.inv[k] > 0).map(k => ({ k, ic: 'heart', label: esc(`${t('objet.' + k)} ×${S.inv[k]}`), sub: esc(t('objet.' + k + '.desc') + ' · ' + t('equipe.utiliser', { nom })) }));
       const mi = sh.querySelector('#m-items'); mi.innerHTML = io.length ? btns(io) : `<p class="note">${esc(t('equipe.sac.vide'))}</p>`;
@@ -88,8 +88,8 @@ function openInv(tab) {
     } else if (tab === 'eq') {
       const sac = Object.keys(S.bag).filter(k => S.bag[k] > 0), porte = [];
       for (const h of team()) for (const p of PLACES_EQ) if (h.eq[p]) porte.push([h, p, h.eq[p]]);
-      body = `<h3 class="sec">${esc(t('inventaire.sac'))}</h3><div class="list">${sac.length ? sac.map(k => irow(icPlace(EQUIPEMENT[k].place), esc(nomEq(k)), esc(`${t('place.' + EQUIPEMENT[k].place)} · ${stTxt(EQUIPEMENT[k].st)} · ${wearers(k)}`), '×' + S.bag[k])).join('') : `<p class="note">${esc(t('inventaire.sac.vide'))}</p>`}</div>
-        <h3 class="sec">${esc(t('inventaire.porte'))}</h3><div class="list">${porte.map(([h, p, k]) => irow(icPlace(p), esc(nomEq(k)), esc(`${t('parle.' + h.id)} · ${t('place.' + p)} · ${stTxt(EQUIPEMENT[k].st)}`))).join('')}</div>
+      body = `<h3 class="sec">${esc(t('inventaire.sac'))}</h3><div class="list">${sac.length ? sac.map(k => irow(icPlace(EQUIPEMENT[k].place), esc(nomEq(k)), esc(`${t('place.' + EQUIPEMENT[k].place)} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)} · ${wearers(k)}`), '×' + S.bag[k])).join('') : `<p class="note">${esc(t('inventaire.sac.vide'))}</p>`}</div>
+        <h3 class="sec">${esc(t('inventaire.porte'))}</h3><div class="list">${porte.map(([h, p, k]) => irow(icPlace(p), esc(nomEq(k)), esc(`${t('parle.' + h.id)} · ${t('place.' + p)} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)}`))).join('')}</div>
         <p class="note">${esc(t('inventaire.eq.aide'))}</p>`;
     } else {
       const k = importants();

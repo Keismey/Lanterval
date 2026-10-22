@@ -549,7 +549,7 @@ Compris, au combat !
 Garde à 0 : l'ennemi perd son prochain tour et subit +50 % de dégâts. Une attaque chargée est annulée.
 
 == aide.elements
-*Éléments* : Lame, Terre, Feu, Eau. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau) ; l'Attaque normale est toujours Lame.
+*Éléments* : Lame, Terre, Feu, Eau. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau) ; l'Attaque normale est Lame, sauf avec une arme élémentaire (comme le Bâton de braise, Feu).
 
 == aide.inconnue
 Faiblesse pas encore découverte. Touche-la une fois et elle reste affichée, ici et dans le bestiaire.

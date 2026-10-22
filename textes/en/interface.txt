@@ -530,7 +530,7 @@ The enemy's *guard*. Each hit on a weakness removes 1 point.
 Guard at 0: the enemy loses its next turn and takes +50 % damage. A charged attack is cancelled.
 
 == aide.elements
-*Elements*: Blade, Earth, Fire, Water. Each hero has their own (Kael Earth, Mira Fire, Sol Water); the normal Attack is always Blade.
+*Elements*: Blade, Earth, Fire, Water. Each hero has their own (Kael Earth, Mira Fire, Sol Water); the normal Attack is Blade, unless you hold an elemental weapon (like the Ember staff, Fire).
 
 == aide.inconnue
 Weakness not discovered yet. Hit it once and it stays shown, here and in the bestiary.
