@@ -9,7 +9,7 @@
 const IMAGES = {
   // ---------- Décors ----------
   'decor.lanterval': { fichier: 'img/decors/lanterval.webp', lueur: [.503, .29], sujet: 'La place de Lanterval et sa lanterne monumentale, de jour' },
-  'decor.foret': { provisoire: 'foret', sujet: 'Forêt des Murmures, troncs immenses et brume épaisse' },
+  'decor.foret': { fichier: 'img/decors/foret.webp', provisoire: 'foret', sujet: 'Forêt des Murmures, troncs immenses et brume épaisse' },
   'decor.foret.calme': { provisoire: 'foret-calme', sujet: 'Forêt des Murmures, brume levée, lucioles' },
   'decor.grotte': { provisoire: 'grotte', sujet: 'Grotte de Cristal, cristaux bleus lumineux' },
   'decor.grotte.sombre': { provisoire: 'grotte-sombre', sujet: 'Grotte de Cristal, cristaux éteints, yeux rouges dans le noir' },
@@ -30,8 +30,8 @@ const IMAGES = {
 
   // ---------- Héros (tournés vers la gauche) ----------
   'heros.kael': { fichier: 'img/heros/kael.webp', portrait: 'img/heros/kael-portrait.webp', provisoire: 'kael', sujet: 'Kael, 17 ans, apprenti garde, cape bleue' },
-  'heros.mira': { provisoire: 'mira', sujet: 'Mira, 18 ans, cheveux roux, flammes dans les mains' },
-  'heros.sol': { provisoire: 'sol', sujet: 'Sol, 20 ans, cheveux bleus, bâton' },
+  'heros.mira': { fichier: 'img/heros/mira.webp', portrait: 'img/heros/mira-portrait.webp', provisoire: 'mira', sujet: 'Mira, 18 ans, cheveux roux, flammes dans les mains' },
+  'heros.sol': { fichier: 'img/heros/sol.webp', portrait: 'img/heros/sol-portrait.webp', provisoire: 'sol', sujet: 'Sol, 20 ans, cheveux bleus, bâton' },
 
   // ---------- Personnages du village (portraits) ----------
   'pnj.orvan': { provisoire: 'f_orvan', sujet: 'L\'Ancien Orvan, vieil homme à barbe blanche' },
