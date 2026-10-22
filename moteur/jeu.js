@@ -68,9 +68,11 @@ function renderFin() {
   setDecor(decorDuLieu(v), { lueur: lueurDuLieu(v) });
   ovc().innerHTML = lbl(nomLieu(v), t(varianteLieu(v, 'sous')));
   const st = S.st, zones = Object.keys(S.z).filter(lieuVisible);
+  // quêtes annexes encore jouables dans cette version (une étape qui attend l'acte suivant ne compte pas)
   const annexes = Object.keys(ANNEXES), finies = annexes.filter(annexeFinie).length;
+  const reste = annexes.filter(a => !annexeFinie(a) && (annexeEtat(a) ? annexeDispo(a) : annexeOuverte(a))).length;
   const opts = [
-    { k: 'go', ic: 'run', label: esc(t('fin.continuer')), sub: esc(t(finies < annexes.length ? 'fin.continuer.annexes' : 'fin.continuer.zones')), cls: 'main' },
+    { k: 'go', ic: 'run', label: esc(t('fin.continuer')), sub: esc(t(reste ? 'fin.continuer.annexes' : 'fin.continuer.zones')), cls: 'main' },
     { k: 'plus', ic: 'star', label: esc(t('fin.plus')), sub: esc(t('fin.plus.sous')) },
     { k: 'titre', ic: 'home', label: esc(t('options.titre')), cls: 'ghost' }
   ];

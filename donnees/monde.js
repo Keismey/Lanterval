@@ -155,7 +155,7 @@ const LIEUX = {
   },
 
   lanternes: {
-    type: 'zone', region: 'cote', x: .7, y: .2, cotes: ['b', 'c'],
+    type: 'zone', region: 'cote', x: .68, y: .3, cotes: ['b', 'c'],
     visible: 'fini a2.e2', ouvert: 'fini a2.e2',
     etats: [{ id: 'allume', si: 'fini a2.e3' }],   // les trois lanternes brillent
     maxEvenements: 3,

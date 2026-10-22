@@ -37,7 +37,7 @@ function route(dest) {
 function coutTraversee(zone) { return t(S.z[zone] && S.z[zone].m100 ? 'carte.cout.maitrise' : 'carte.cout'); }
 function viaTxt(via) {
   if (!via.length) return t('carte.direct');
-  return t('carte.traverser', { lieux: via.map(([z]) => t('lieu.' + z + '.le')).join(' ' + t('carte.puis') + ' ') }) + ' : ' + via.map(([z]) => coutTraversee(z)).join(' + ');
+  return t('carte.traverser', { lieux: via.map(([z]) => t('lieu.' + z + '.le')).join(' ' + t('carte.puis') + ' '), cout: via.map(([z]) => coutTraversee(z)).join(' + ') });
 }
 function ouSuisJe() { const c = coteActuel(); return nomLieu(lieuActuel()) + (c ? ', ' + t(`lieu.${lieuActuel()}.${c}`) : ''); }
 

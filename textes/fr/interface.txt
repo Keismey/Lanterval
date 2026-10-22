@@ -202,7 +202,7 @@ Rester ici
 Chemin direct
 
 == carte.traverser
-Traverser {lieux}
+Traverser {lieux} : {cout}
 
 == carte.puis
 puis

@@ -185,7 +185,7 @@ Stay here
 Direct path
 
 == carte.traverser
-Cross {lieux}
+Cross {lieux}: {cout}
 
 == carte.puis
 then
