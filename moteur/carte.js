@@ -52,6 +52,14 @@ function queteSur(id) {
   return '';
 }
 
+// « ! » du bouton Carte : la quête principale (sinon une quête annexe) attend dans un autre lieu
+function marqueCarte(ici) {
+  const lieuQ = l => villageDuPnj(l) || lieuDe(l);
+  const e = etapeCourante(); if (e && lieuQ(e.lieu) !== ici) return 'main';
+  for (const a in ANNEXES) { const x = annexeEtape(a); if (x && lieuQ(x.lieu) !== ici) return 'side'; }
+  return '';
+}
+
 function renderMap() {
   setDecor('decor.carte');
   const ici = lieuActuel(), ids = Object.keys(LIEUX).filter(lieuVisible), R = {};

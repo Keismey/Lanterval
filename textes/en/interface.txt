@@ -232,12 +232,6 @@ Side quest
 == zone.conseil.equipe
 best with 2 or more
 
-== zone.rentrer
-Return to {lieu}
-
-== zone.aller
-Go to: {lieu}
-
 == zone.explorer
 Explore
 
@@ -950,6 +944,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.2.2
+No more buttons that take the team to the quest automatically: a yellow (main quest) or blue (side quest) “!” marks the Map button, the Cross button and the place on the map.
 ## Version 0.2.1
 In the Codex, each class expands with a tap to show its weapons, stats and techniques.
 ## Version 0.2.0

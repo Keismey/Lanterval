@@ -9,29 +9,24 @@ function zoneOverlay(id) {
   <div class="xtrack"><i style="width:${pc}%"></i><span class="gem ${z.m50 ? 'ok' : ''}" style="left:50%" title="${esc(t('zone.palier', { p: 50 }))}"></span><span class="gem ${z.m100 ? 'ok' : ''}" style="left:calc(100% - 7px)" title="${esc(t('zone.palier', { p: 100 }))}"></span></div></div>`;
 }
 
-// boutons de quête jouables ici, ou qui ramènent l'équipe là où la quête attend
+// boutons des quêtes jouables ici. Une quête qui attend ailleurs n'emmène pas l'équipe :
+// un « ! » marque le bouton Traverser (autre côté de la zone) ou le bouton Carte (autre lieu).
 function questBtns(id) {
   const o = [], e = etapeCourante();
-  if (e) {
-    if (estIci(e.lieu)) o.push({ k: 'q:main', ic: 'star', label: esc(titreEtape(e)), sub: esc(t('zone.quete.principale')), cls: 'main wide' });
-    else if (lieuDe(e.lieu) === id) o.push({ k: 'cross', ic: 'star', label: esc(t('zone.traverser', { lieu: t(`lieu.${id}.${e.lieu.split('.')[1]}`) })), sub: esc(t(e.id + '.titre') + ' · ' + coutTraversee(id)), cls: 'main wide' });
-    else { const b = boutonAller(e); if (b) o.push(b); }
-  }
+  if (e && estIci(e.lieu)) o.push({ k: 'q:main', ic: 'star', label: esc(titreEtape(e)), sub: esc(t('zone.quete.principale')), cls: 'main wide' });
   for (const a in ANNEXES) {
-    const x = annexeEtape(a); if (!x) continue;
-    if (!estIci(x.lieu)) { const v = villageDuPnj(x.lieu); if (v && !o.some(b => b.k === 'go:' + v)) { const r = route(v); if (r) o.push({ k: 'go:' + v, ic: 'paw', label: esc(t('zone.rentrer', { lieu: nomLieu(v) })), sub: esc(t(`${a}.e${annexeEtat(a)}.titre`) + ' · ' + viaTxt(r.via)), cls: 'side wide' }); } continue; }
+    const x = annexeEtape(a); if (!x || !estIci(x.lieu)) continue;
     const n = annexeEtat(a), cle = existe(`${a}.e${n}.bouton`) ? `${a}.e${n}.bouton` : `${a}.e${n}.titre`;
     o.push({ k: 'a:' + a, ic: 'paw', label: esc(t(cle)), sub: esc(t('zone.quete.annexe') + (team().length < 2 ? ' · ' + t('zone.conseil.equipe') : '')), cls: 'side wide' });
   }
   return o;
 }
-
-// bouton qui emmène l'équipe là où l'étape en cours se joue (village ou autre zone)
-function boutonAller(e) {
-  const v = villageDuPnj(e.lieu) || lieuDe(e.lieu);
-  if (v === lieuActuel() || !lieuOuvert(v)) return null;
-  const r = route(v); if (!r) return null;
-  return { k: 'go:' + v, ic: 'star', label: esc(t(LIEUX[v].type === 'village' ? 'zone.rentrer' : 'zone.aller', { lieu: nomLieu(v) })), sub: esc(t(e.id + '.titre') + ' · ' + viaTxt(r.via)), cls: 'main wide' };
+// « ! » du bouton Traverser : une quête attend de l'autre côté de cette zone
+function marqueTraversee(id) {
+  const autreCote = l => l && lieuDe(l) === id && l.includes('.') && !estIci(l);
+  const e = etapeCourante(); if (e && autreCote(e.lieu)) return 'main';
+  for (const a in ANNEXES) { const x = annexeEtape(a); if (x && autreCote(x.lieu)) return 'side'; }
+  return '';
 }
 
 function renderZone() {
@@ -47,9 +42,9 @@ function renderZone() {
     if (repos) opts.push({ k: 'rest', ic: 'drop', label: esc(t(`${id}.${repos.id}.nom`)), sub: esc(t(z.rest ? 'zone.repos.utilise' : 'zone.repos')), dis: z.rest });
   }
   // traverser vers l'autre côté de la zone
-  if (L.cotes && !qb.some(b => b.k === 'cross')) {
+  if (L.cotes) {
     const autre = L.cotes.find(c => c !== cote);
-    opts.push({ k: 'cross', ic: 'cross', label: esc(t('zone.traverser', { lieu: t(`lieu.${id}.${autre}`) })), sub: esc(coutTraversee(id)) });
+    opts.push({ k: 'cross', ic: 'cross', label: esc(t('zone.traverser', { lieu: t(`lieu.${id}.${autre}`) })), sub: esc(coutTraversee(id)), bang: marqueTraversee(id) });
   }
   // chemins qui partent d'ici mais pas encore ouverts
   for (const [a, b] of LIENS) {
@@ -57,7 +52,7 @@ function renderZone() {
     const l = lieuDe(autre);
     if (lieuVisible(l) && (!lieuOuvert(l) || LIEUX[l].bientot)) opts.push({ k: 'x', ic: 'lock', label: esc(nomLieu(l)), sub: esc(existe(`lieu.${l}.ferme`) ? t(`lieu.${l}.ferme`) : t(LIEUX[l].bientot ? 'zone.bientot' : 'zone.ferme')), dis: true });
   }
-  opts.push({ k: 'map', ic: 'map', label: esc(t('zone.carte')), sub: esc(t('zone.carte.sous')), cls: 'ghost' });
+  opts.push({ k: 'map', ic: 'map', label: esc(t('zone.carte')), sub: esc(t('zone.carte.sous')), cls: 'ghost', bang: marqueCarte(id) });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomLieu(id))} <small>${esc(cote ? t(`lieu.${id}.${cote}`) : '')}</small></div><p class="ptext">${tx(varianteLieu(id, 'desc'))}</p><div class="msgline">${S.msg || ''}</div><div class="acts">${btns(opts)}</div>`;
   S.msg = '';
@@ -70,7 +65,6 @@ function renderZone() {
       else if (k === 'cross') { const autre = L.cotes.find(c => c !== cote); await traverse(id, cote, autre); S.loc = id + '.' + autre; }
       else if (k === 'q:main') await jouerEtape(etapeCourante());
       else if (k.startsWith('a:')) await jouerAnnexe(k.slice(2));
-      else if (k.startsWith('go:')) await voyager(k.slice(3));
     });
   });
 }

@@ -25,16 +25,13 @@ function renderVillage() {
     const sub = main ? t(q.etape.id + '.titre') : q && q.type === 'offre' ? t('village.annexe') : q ? t(`${q.id}.e${annexeEtat(q.id)}.titre`) : t(`pnj.${p.id}.sous`, { prix: p.prix });
     return { k: p.id, img: imgSrc('pnj.' + p.portrait), label: esc(t(`pnj.${p.id}.nom`)), sub: esc(sub), bang: q ? (main ? 'main' : 'side') : '', cls: (main ? 'main ' : q ? 'side ' : '') + (p.large ? 'wide' : '') };
   });
-  const e = etapeCourante(), aller = e && !V.pnj.some(p => p.id === e.lieu) ? boutonAller(e) : null;
-  if (aller) opts.unshift(aller);
-  opts.push({ k: 'map', ic: 'map', label: esc(t('village.partir')), sub: esc(t('carte.titre')), cls: 'ghost' });
+  opts.push({ k: 'map', ic: 'map', label: esc(t('village.partir')), sub: esc(t('carte.titre')), cls: 'ghost', bang: marqueCarte(vid) });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomLieu(vid))} <small>${esc(t('village'))}</small></div><p class="ptext">${tx(varianteLieu(vid, 'desc'))}</p>
     <div class="msgline">${S.msg || ''}</div><div class="acts">${btns(opts)}</div>`;
   S.msg = '';
   bind(p, opts, k => {
     if (k === 'map') { S.screen = 'map'; renderStable(); }
-    else if (k.startsWith('go:')) run(() => voyager(k.slice(3)));
     else run(() => parler(V.pnj.find(x => x.id === k)));
   });
 }

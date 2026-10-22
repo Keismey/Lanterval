@@ -245,12 +245,6 @@ Quête annexe
 == zone.conseil.equipe
 conseillé à 2 ou plus
 
-== zone.rentrer
-Rentrer à {lieu}
-
-== zone.aller
-Aller à : {lieu}
-
 == zone.explorer
 Explorer
 
@@ -984,6 +978,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.2.2
+Plus de bouton qui emmène l'équipe tout seul vers la quête : un « ! » jaune (quête principale) ou bleu (quête annexe) marque le bouton Carte, le bouton Traverser et le lieu sur la carte.
 ## Version 0.2.1
 Dans le Codex, chaque classe se déplie d'un appui pour montrer ses armes, ses statistiques et ses techniques.
 ## Version 0.2.0
