@@ -29,11 +29,17 @@ LISTE = [
     ('perso-sol.jpg', 'heros/sol.webp', 'detoure', {'hauteur': 420}),
     ('perso-sol.jpg', 'heros/sol-portrait.webp', 'portrait', {'boite': (620, 42, 180, 180), 'cote': 192}),
     ('decor-foret-murmures.jpg', 'decors/foret.webp', 'decor', {'largeur': 1376}),
+    ('monstre-champi-spore.jpg', 'monstres/spore.webp', 'detoure', {'largeur': 640}),
+    ('monstre-chiroptere.jpg', 'monstres/chauve.webp', 'detoure', {'largeur': 640, 'trous': True}),
+    ('monstre-gelee-quartz.jpg', 'monstres/gelee.webp', 'detoure', {'largeur': 640}),
+    ('monstre-ombre-voleuse.jpg', 'monstres/ombre.webp', 'detoure', {'largeur': 640, 'trous': True}),
+    ('monstre-loup-alpha.jpg', 'monstres/alpha.webp', 'detoure', {'largeur': 640, 'trous': True}),
 ]
 
 
-def detourer(im):
-    """Rend transparent le fond clair relié aux bords (papier blanc), en douceur sur les lavis."""
+def detourer(im, trous=False):
+    """Rend transparent le fond clair relié aux bords (papier blanc), en douceur sur les lavis.
+    trous : vide aussi le blanc enfermé dans la brume ou la fumée (à éviter si le sujet a du blanc)."""
     im = im.convert('RGBA')
     w, h = im.size
     px = im.load()
@@ -75,6 +81,11 @@ def detourer(im):
             if len(ilot) < 60:
                 for j in ilot:
                     vu[j] = 1
+    if trous:
+        blanc = lambda c: min(c[0], c[1], c[2]) > 226 and max(c[0], c[1], c[2]) - min(c[0], c[1], c[2]) < 30
+        for i in range(w * h):
+            if not vu[i] and blanc(px[i % w, i // w]):
+                vu[i] = 1
     for y in range(h):
         for x in range(w):
             if not vu[y * w + x]:
@@ -128,7 +139,7 @@ def main():
         if mode == 'decor':
             im = taille(im.convert('RGB'), o)
         elif mode == 'detoure':
-            im = taille(detourer(im), o)
+            im = taille(detourer(im, o.get('trous', False)), o)
         elif mode == 'portrait':
             x, y, c = o['boite'][0], o['boite'][1], o['boite'][2]
             im = im.convert('RGB').crop((x, y, x + c, y + c)).resize((o['cote'], o['cote']), Image.LANCZOS)
