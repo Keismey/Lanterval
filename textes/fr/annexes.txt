@@ -50,3 +50,189 @@ Brann : « Tu l'as eu ! Ton père aurait été fier. Prends mon vieil arc, je va
 
 == loup.apres
 Brann : « Les moutons dorment tranquilles grâce à toi. Si tu croises d'autres bêtes étranges, tu sais où me trouver. »
+
+# ---------- 5. Le navire oublié (Rosal, classe Corsaire) ----------
+
+== navire.titre
+Le navire oublié
+
+== navire.offre
+Rosal : « J'avais un navire, je crois. Le Goéland, ou le Cormoran ? »
+Rosal : « Ma tête est pleine de brume, mais mes mains se souviennent du gouvernail. »
+Rosal : « Il y avait un journal de bord, toujours rangé dans les cales. Si quelqu'un le retrouvait, je saurais au moins son nom. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== navire.message
+Quête annexe : chercher un journal de bord dans les *cales de l'Épave engloutie*.
+
+== navire.e1.titre
+Fouiller les cales de l'épave
+
+== navire.e1.bouton
+Fouiller les cales
+
+== navire.e1.attente
+Rosal : « Les cales, petit. C'est toujours dans les cales qu'on range ce qui compte. »
+
+== navire.e1.cales
+## Le navire oublié
+Au fond des cales, des caisses éventrées et des cordages pourris. Deux noyés se lèvent de l'eau, leurs lanternes éteintes à la main. [Combattre]
+
+== navire.e1.journal
+## Le navire oublié
+Dans une caisse étanche, un second journal de bord : « La Salicorne, capitaine Rosal. Cachée dans la crique du phare, en cas de malheur. »
+Mira : « La Salicorne ! Elle n'avait pas coulé, alors. »
+
+== navire.e1.message
+Quête annexe : chercher la *Salicorne* dans la crique du *Phare noyé*.
+
+== navire.e2.titre
+Retrouver la Salicorne dans la crique du phare
+
+== navire.e2.bouton
+Aborder la Salicorne
+
+== navire.e2.attente
+Rosal : « La crique du phare… Bien sûr. J'y cachais mon navire quand les douaniers rôdaient. »
+
+== navire.e2.crique
+## La Salicorne
+Dans la crique, un trois-mâts aux voiles grises. Des contrebandiers de l'Ordre y chargent des cages noires.
+Bosco : « Ce rafiot est à nous, maintenant. Personne ne se souvient de sa capitaine ! » [Combattre]
+
+== navire.e2.fin
+## La Salicorne
+Le Bosco saute à l'eau et nage vers le large. La Salicorne est libre, ses cales vides de cages.
+
+== navire.e2.message
+Quête annexe : rapporte la nouvelle à *Rosal*, à l'auberge de Salvent.
+
+== navire.e3.titre
+Rendre la Salicorne à Rosal
+
+== navire.e3.barre
+## La Salicorne
+Rosal monte à bord et pose les mains sur la barre. Ses yeux s'éclairent d'un coup.
+Rosal : « La Salicorne ! Je me souviens de tout. De mes voyages, de mes amours, et même de mes dettes. »
+
+== navire.e3.scene
+Rosal : « Approche, je vais t'apprendre à te battre comme une corsaire. On frappe, on prend, et on frappe deux fois plus fort quand l'autre baisse sa garde. »
+## Quête annexe terminée
+*Classe secrète débloquée : Corsaire*, qui vole parfois un objet en frappant et fait des dégâts doublés sur une garde brisée. Tu reçois le *Sabre de Rosal* (pour le Corsaire) et *100 po*.
+
+== navire.apres
+Rosal : « Quand la brume sera partie, je t'emmènerai voir l'autre bout du monde. Ma tête s'en souvient très bien, maintenant. »
+
+# ---------- 7. Les prix perdus (Gaspard) ----------
+
+== prix.titre
+Les prix perdus
+
+== prix.offre
+Gaspard : « Combien coûte une potion ? Trois pièces, trois cents ? Mon registre a disparu, et ma mémoire avec. »
+Gaspard : « Je l'avais sur moi en revenant du marais. Une pie m'a sauté dessus, et pfuit ! Plus de registre. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== prix.message
+Quête annexe : chercher le registre de Gaspard dans le *Marais salant*.
+
+== prix.e1.titre
+Chercher le registre dans le Marais salant
+
+== prix.e1.bouton
+Ramasser les pages
+
+== prix.e1.attente
+Gaspard : « Le Marais salant, je crois. Ou c'était hier ? Bref, le marais. »
+
+== prix.e1.pages
+## Les prix perdus
+Des pages couvertes de chiffres traînent dans la vase, entre les bassins de sel. Des crabes s'en servent comme d'un nid. [Combattre]
+
+== prix.e1.pie
+## Les prix perdus
+Tu ramasses les pages qui restent. Au-dessus de toi, une grosse pie grise s'envole avec la couverture du registre dans le bec.
+Mira : « Elle part vers le nord. Vers le Marais des Lanternes. »
+
+== prix.e1.message
+Quête annexe : suivre la *Pie-brume* jusqu'au *Marais des Lanternes*.
+
+== prix.e2.titre
+Trouver le nid de la Pie-brume
+
+== prix.e2.bouton
+Trouver le nid de la pie
+
+== prix.e2.attente
+Gaspard : « Une pie a volé mon registre ? Ça explique tout. Enfin, presque tout. »
+
+== prix.e2.nid
+## Les prix perdus
+Au sommet d'un arbre mort, un nid énorme, plein de cuillères, de boucles et de pièces. La Pie-brume défend son trésor. [Combattre]
+
+== prix.e2.fin
+## Les prix perdus
+Dans le nid, la couverture du registre, des cuillères et trois bagues que personne ne réclamera. Tu recolles les pages : le registre est complet.
+
+== prix.e2.message
+Quête annexe : rapporte le registre à *Gaspard*, à Salvent.
+
+== prix.e3.titre
+Rendre son registre à Gaspard
+
+== prix.e3.scene
+Gaspard : « Mon registre ! Une potion, c'est vingt pièces. Pour toi, dix-huit. »
+Gaspard : « Et j'avais oublié tout un rayon au fond de la boutique. Des griffes de nacre, rien que ça ! »
+## Quête annexe terminée
+La boutique de Gaspard affiche de nouveau les vrais prix, avec *10 % de remise* pour toi, et vend des *Griffes de nacre* (poings du Moine).
+
+== prix.apres
+Gaspard : « Vingt pièces la potion, pas une de plus. C'est écrit, maintenant ! »
+
+# ---------- 6. La berceuse (Maëlle ; Sol et Naïa) ----------
+
+== berceuse.titre
+La berceuse
+
+== berceuse.offre
+Maëlle : « Petit, ta sœur ne s'endormait qu'avec sa boîte à musique. Elle l'avait sur le bateau. »
+Maëlle : « Si elle l'entendait encore une fois… peut-être qu'elle se souviendrait de toi. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== berceuse.message
+Quête annexe : chercher la boîte à musique de Naïa dans les *cales de l'Épave engloutie*.
+
+== berceuse.e1.titre
+Chercher la cabine des enfants dans l'épave
+
+== berceuse.e1.bouton
+Chercher la cabine des enfants
+
+== berceuse.e1.attente
+Maëlle : « Une petite boîte en bois, avec une mouette peinte dessus. Je l'ai vue cent fois sur le quai. »
+
+== berceuse.e1.cabine
+## La berceuse
+Au bout des cales, une cabine minuscule, deux couchettes l'une au-dessus de l'autre. Sol reste un moment sur le seuil.
+Un banc de poissons-lames tourne autour de la porte. [Combattre]
+
+== berceuse.e1.boite
+## La berceuse
+Sous la couchette du bas, une petite boîte en bois peinte d'une mouette. Le couvercle est fendu, le mécanisme ne tourne plus.
+Sol : « Il faudrait des doigts de forgeron pour réparer ça. »
+Mira : « Ma mère a des doigts de forgeron. »
+
+== berceuse.e1.message
+Quête annexe : la boîte à musique est cassée. *La suite à l'acte 3*, quand quelqu'un pourra la réparer.
+
+== berceuse.e2.titre
+Faire réparer la boîte à musique (acte 3)
+
+== berceuse.e2.scene
+Hilde : « Les ressorts, c'est comme les épées. Il faut de la patience, et des doigts plus fins que les miens. Mira, aide-moi. »
+
+== berceuse.e2.attente
+Maëlle : « Prends soin de cette boîte, petit. Un jour, elle chantera de nouveau. »

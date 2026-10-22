@@ -12,10 +12,11 @@ async function run(fn) {
 async function defaite() {
   S.reprise = null; // l'étape perdue se rejoue depuis le début
   S.gold = Math.floor(S.gold / 2); healAll(); restorePP();
-  S.loc = 'lanterval'; S.screen = 'village';
-  logR('journal.log.retour');
-  setDecor(decorDuLieu('lanterval'), { lueur: lueurDuLieu('lanterval') }); ovc().innerHTML = '';
-  await show(tx('defaite.texte', { or: S.gold }), { title: t('defaite.titre') });
+  const v = S.auberge && LIEUX[S.auberge] ? S.auberge : 'lanterval';   // l'auberge du dernier village visité
+  S.loc = v; S.screen = 'village';
+  logR('journal.log.retour', { lieu: 'lieu.' + v + '.nom' });
+  setDecor(decorDuLieu(v), { lueur: lueurDuLieu(v) }); ovc().innerHTML = '';
+  await show(tx('defaite.texte', { or: S.gold, lieu: nomLieu(v) }), { title: t('defaite.titre') });
 }
 
 // affiche l'écran stable de la partie (là où le joueur choisit quoi faire)
@@ -63,12 +64,15 @@ async function commencer() {
 
 /* ---------- Fin de la version ---------- */
 function renderFin() {
-  setDecor(decorDuLieu('lanterval'), { lueur: lueurDuLieu('lanterval') });
-  ovc().innerHTML = lbl(nomLieu('lanterval'), t(varianteLieu('lanterval', 'sous')));
+  const v = LIEUX[lieuActuel()].type === 'village' ? lieuActuel() : 'lanterval';
+  setDecor(decorDuLieu(v), { lueur: lueurDuLieu(v) });
+  ovc().innerHTML = lbl(nomLieu(v), t(varianteLieu(v, 'sous')));
   const st = S.st, zones = Object.keys(S.z).filter(lieuVisible);
+  // quêtes annexes encore jouables dans cette version (une étape qui attend l'acte suivant ne compte pas)
   const annexes = Object.keys(ANNEXES), finies = annexes.filter(annexeFinie).length;
+  const reste = annexes.filter(a => !annexeFinie(a) && (annexeEtat(a) ? annexeDispo(a) : annexeOuverte(a))).length;
   const opts = [
-    { k: 'go', ic: 'run', label: esc(t('fin.continuer')), sub: esc(t(finies < annexes.length ? 'fin.continuer.annexes' : 'fin.continuer.zones')), cls: 'main' },
+    { k: 'go', ic: 'run', label: esc(t('fin.continuer')), sub: esc(t(reste ? 'fin.continuer.annexes' : 'fin.continuer.zones')), cls: 'main' },
     { k: 'plus', ic: 'star', label: esc(t('fin.plus')), sub: esc(t('fin.plus.sous')) },
     { k: 'titre', ic: 'home', label: esc(t('options.titre')), cls: 'ghost' }
   ];

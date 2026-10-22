@@ -124,6 +124,18 @@ Quête annexe
 == boutique.objet
 {prix} po · {effet} · tu en as {n}
 
+== boutique.onglet.arme
+Armes
+
+== boutique.onglet.armure
+Armures
+
+== boutique.onglet.acc
+Accessoires
+
+== boutique.onglet.conso
+Consommables
+
 == boutique.vendre
 Vendre
 
@@ -132,6 +144,12 @@ Objets et équipement du sac
 
 == boutique.bourse
 Bourse : *{or} po*.
+
+== boutique.fous
+Les prix changent à chaque visite : *en rouge* s'ils sont gonflés, *en vert* s'ils sont réduits.
+
+== boutique.remise
+Les vrais prix, avec 10 % de remise.
 
 == boutique.equiper
 Pour équiper ce que tu achètes, passe par l'écran Équipe.
@@ -184,7 +202,7 @@ Rester ici
 Chemin direct
 
 == carte.traverser
-Traverser {lieux}
+Traverser {lieux} : {cout}
 
 == carte.puis
 puis
@@ -505,6 +523,63 @@ L'Union frappe tous les ennemis.
 == combat.rempart
 {nom} dresse un rempart : dégâts subis par l'équipe ÷2 jusqu'à son prochain tour.
 
+== combat.dort.court
+Zzz
+
+== combat.courage.court
+Courage
+
+== combat.esquive.court
+Esquive
+
+== combat.vol.rien
+{nom} n'a plus rien à voler.
+
+== combat.vol.rate
+Raté ! {nom} garde ce qu'il a.
+
+== combat.vol.objet
+Volé à {nom} : *{objet}* !
+
+== combat.vol.or
+Volé à {nom} : *{n} po* !
+
+== combat.meditation
+{nom} médite : +{n} PV, +{p} PP.
+
+== combat.esquive
+{nom} se tient prêt à esquiver le prochain coup.
+
+== combat.courage
+{nom} entonne le *Chant de courage* : Attaque et Magie de l'équipe en hausse !
+
+== combat.dort
+{nom} *s'endort*. Il ne se réveillera qu'en recevant un coup.
+
+== combat.dort.rate
+{nom} bâille… mais reste éveillé.
+
+== combat.dort.resiste
+{nom} ne se laisse pas endormir.
+
+== combat.dort.tour
+{nom} dort profondément.
+
+== combat.reveil
+{nom} se réveille !
+
+== combat.esquive.coup
+{nom} esquive le coup !
+
+== combat.drain
+{nom} reprend {n} PV.
+
+== combat.double
+{nom} frappe deux fois !
+
+== combat.mord
+{nom} mord.
+
 == combat.attaque
 {nom} attaque.
 
@@ -523,7 +598,7 @@ L'Union frappe tous les ennemis.
 Retour à l'auberge
 
 == defaite.texte
-Tu te réveilles à l'auberge, soigné. Dans la fuite, tu as perdu la moitié de ta bourse : il te reste *{or} po*.
+Tu te réveilles à l'auberge de {lieu}, soigné. Dans la fuite, tu as perdu la moitié de ta bourse : il te reste *{or} po*.
 
 # ================= Aide au combat =================
 
@@ -755,6 +830,15 @@ Bâton
 == codex.arme.arc
 Arc
 
+== codex.arme.poing
+Poings
+
+== codex.arme.harpe
+Harpe
+
+== codex.arme.sabre
+Sabre
+
 == codex.equilibre
 Statistiques équilibrées.
 
@@ -842,7 +926,7 @@ Défaite contre {noms}
 Écrasés par {noms}
 
 == journal.log.retour
-Retour à l'auberge
+Retour à l'auberge de {lieu}
 
 # ================= Bilan et fin de version =================
 
@@ -874,7 +958,7 @@ quêtes annexes finies
 partie+
 
 == fin.titre
-Fin de la version 0.2
+Fin de la version 0.3
 
 == fin.continuer
 Continuer à jouer
@@ -978,6 +1062,17 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.3.0
+L'acte 2, « La ville qui oublie », est jouable : le Marais salant, Salvent, le Marais des Lanternes, l'Épave engloutie et le Phare noyé.
+La Côte de Salvent a sa propre carte. Le Marais salant relie la vallée et la côte, et le menu de la carte propose aussi de rentrer à Lanterval.
+Trois boss (la Vouivre des marais, la Mère-des-abysses, le Héraut de la Paupière), sept nouveaux monstres et deux boss de quêtes annexes.
+Nouvelles classes : Moine, Voleur et Barde, données par le cristal d'écume. Classe secrète : Corsaire.
+Nouvelles techniques : Rafale, Méditation, Vol, Esquive, Chant de courage, Berceuse, Abordage.
+Quêtes annexes : « Le navire oublié » et « Les prix perdus » ; « La berceuse » commence (la suite à l'acte 3).
+Chez Gaspard, les prix changent à chaque visite : en rouge s'ils sont gonflés, en vert s'ils sont réduits, jusqu'à ce que son registre soit retrouvé.
+Les boutiques ont des onglets : Armes, Armures, Accessoires et Consommables (à l'achat comme à la vente).
+En cas de défaite, l'équipe se réveille à l'auberge du dernier village visité.
+Images : tout ce qui est nouveau est provisoire.
 ## Version 0.2.2
 Plus de bouton qui emmène l'équipe tout seul vers la quête : un « ! » jaune (quête principale) ou bleu (quête annexe) marque le bouton Carte, le bouton Traverser et le lieu sur la carte.
 ## Version 0.2.1

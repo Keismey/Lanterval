@@ -7,6 +7,11 @@
      regen   : se soigne sous un seuil de PV (seuil, chance, v)
      fort    : coup puissant avec un nom (chance, mult)
      charge  : prépare un coup sur toute l'équipe tous les 3 tours (mult), annulé si la garde est brisée
+     drain   : mord et se soigne d'autant (chance)
+     double  : frappe deux fois (chance)
+     appel   : appelle un renfort à la place d'un allié tombé (id, chance)
+   vol : ce qu'on peut lui voler (Voleur, Corsaire) ; sans vol, on lui prend de l'or.
+   endormi : résiste à la Berceuse (les boss y résistent toujours)
    intouchable : ne descend jamais sous 1 PV et sa garde ne se brise pas (combat perdu d'avance, voir acte1.js) */
 
 const MONSTRES = {
@@ -29,5 +34,31 @@ const MONSTRES = {
   varen: { pv: 230, atk: 16, def: 6, vit: 15, garde: 4, faible: ['T', 'F'], resiste: ['E'], xp: 80, or: 60, taille: .3, boss: true,
     capacites: [{ type: 'fort', chance: .35, mult: 1.4 }] },
   sansnom: { pv: 999, atk: 70, def: 30, vit: 9, garde: 9, faible: [], resiste: ['L', 'T', 'F', 'E'], xp: 0, or: 0, taille: .42, boss: true, intouchable: true,
-    capacites: [{ type: 'charge', mult: 2.5 }] }
+    capacites: [{ type: 'charge', mult: 2.5 }] },
+
+  // ---------- Acte 2 : Côte de Salvent ----------
+  crabe: { pv: 70, atk: 26, def: 12, vit: 7, garde: 4, faible: ['T', 'F'], resiste: ['E'], xp: 18, or: 12, taille: .15, vol: 'herbe' },
+  sangsue: { pv: 58, atk: 24, def: 5, vit: 10, garde: 2, faible: ['F', 'L'], resiste: ['E'], xp: 16, or: 11, taille: .14, f: true, vol: 'tonique',
+    capacites: [{ type: 'drain', chance: .4 }] },
+  follet: { pv: 50, atk: 27, def: 4, vit: 18, garde: 2, faible: ['E', 'T'], resiste: ['F'], xp: 18, or: 12, taille: .14, vol: 'tonique',
+    capacites: [{ type: 'spores', chance: .3, mult: .7 }] },
+  crapaud: { pv: 78, atk: 26, def: 7, vit: 8, garde: 3, faible: ['L', 'F'], resiste: ['E'], xp: 19, or: 13, taille: .16, vol: 'herbe',
+    capacites: [{ type: 'spores', chance: .35, mult: .75 }] },
+  noye: { pv: 84, atk: 32, def: 8, vit: 9, garde: 3, faible: ['F', 'L'], resiste: ['E'], xp: 22, or: 15, taille: .21, vol: 'elixir',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  poisson: { pv: 52, atk: 30, def: 5, vit: 20, garde: 2, faible: ['T'], resiste: ['E', 'F'], xp: 20, or: 13, taille: .14, vol: 'herbe',
+    capacites: [{ type: 'double', chance: .35 }] },
+  soldat: { pv: 92, atk: 35, def: 10, vit: 11, garde: 4, faible: ['F', 'E'], resiste: ['T'], xp: 24, or: 18, taille: .21, vol: 'tonique',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.35 }] },
+  vouivre: { pv: 620, atk: 33, def: 9, vit: 12, garde: 5, faible: ['T'], resiste: ['E', 'F'], xp: 140, or: 100, taille: .36, boss: true, f: true, vol: 'elixir',
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'drain', chance: .25 }] },
+  mere: { pv: 900, atk: 40, def: 14, vit: 7, garde: 6, faible: ['T', 'F'], resiste: ['E', 'L'], xp: 170, or: 120, taille: .4, boss: true, f: true, vol: 'perle',
+    capacites: [{ type: 'appel', id: 'crabe', chance: .35 }, { type: 'fort', chance: .3, mult: 1.45 }] },
+  heraut: { pv: 1150, atk: 48, def: 12, vit: 20, garde: 5, faible: ['E', 'T'], resiste: ['F'], xp: 220, or: 160, taille: .3, boss: true, vol: 'cloche',
+    capacites: [{ type: 'charge', mult: 1.6 }, { type: 'fort', chance: .3, mult: 1.4 }] },
+  // boss des quêtes annexes de la côte
+  pie: { pv: 300, atk: 30, def: 6, vit: 19, garde: 4, faible: ['T', 'L'], resiste: ['E'], xp: 70, or: 60, taille: .2, f: true, vol: 'rose',
+    capacites: [{ type: 'double', chance: .3 }] },
+  bosco: { pv: 480, atk: 40, def: 10, vit: 12, garde: 5, faible: ['F', 'T'], resiste: ['E'], xp: 110, or: 90, taille: .26, vol: 'elixir',
+    capacites: [{ type: 'fort', chance: .35, mult: 1.45 }] }
 };

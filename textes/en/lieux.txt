@@ -337,3 +337,409 @@ A pilgrim comes down from the pass. He gives you *25 gold* “for the lantern”
 
 == col.ev.vent
 An icy gust sweeps the mist away and clears the mind: *+6 PP* for everyone.
+
+# ================= Salt Marsh =================
+
+== carte.titre.cote
+Coast map
+
+== lieu.champs.nom
+Burnt Fields
+
+== lieu.marais.le
+the salt marsh
+
+== lieu.marais.v
+valley side
+
+== lieu.marais.c
+coast side
+
+== lieu.marais.sous
+Salt crunches underfoot
+
+== lieu.marais.desc
+White salt pans as far as the eye can see, reeds and a low mist that smells of the sea. The road to the coast runs through here.
+
+== lieu.marais.intro
+## Salt Marsh
+The marsh links the valley to the Salvent Coast. On the other side, a new map awaits you.
+
+== marais.m1.nom
+Beached boat
+
+== marais.m1.texte
+Under an upturned boat, a fisherman's purse: *60 gold*.
+
+== marais.m2.nom
+Empty shells
+
+== marais.m2.texte
+Cracked shells, burnt or smashed with stones. *Salt Crab weaknesses added to the codex.*
+
+== marais.m3.nom
+Salt-maker's hut
+
+== marais.m3.texte
+A plank hut with a thatched roof and a stove still warm. The team *recovers all its strength*. You can rest here on every visit.
+
+== marais.m4.nom
+Salt-maker's basket
+
+== marais.m4.texte
+Left on a low wall: *2 herbs and 1 tonic*.
+
+== marais.m5.nom
+Salt heap
+
+== marais.m5.texte
+Under a heap of salt, an iron cashbox: *80 gold*.
+
+== marais.m6.nom
+Leech pond
+
+== marais.m6.texte
+A salt-maker left a torch planted at the water's edge to keep the leeches away. *Grey Leech weaknesses added to the codex.*
+
+== marais.m50
+## 50% milestone reached
+In the salt-maker's shed: *2 tonics*.
+
+== marais.m100
+## 100% milestone reached
+The marsh has no more secrets for you. You find a *Compass rose* (accessory, Speed +3). Marsh mastered: crossing it will now bring only 0 to 2 fights.
+
+== marais.ev.combat
+The mud starts to bubble…
+
+== marais.ev.sel
+Very pure salt crystals, good for selling: *+20 gold*.
+
+== marais.ev.vase
+One leg sinks in, then two! *Everyone loses 9 HP.*
+
+== marais.ev.heron
+A heron takes off in front of you. Calm returns: *+15 HP* for everyone.
+
+== marais.ev.brise
+A sea breeze chases the mist away: *+6 PP* for everyone.
+
+# ================= Salvent =================
+
+== lieu.salvent.nom
+Salvent
+
+== lieu.salvent.sous
+The town that forgets
+
+== lieu.salvent.sous.libre
+The lighthouse watches over the harbour
+
+== lieu.salvent.desc
+A fishing port built in steps. People greet each other without knowing why, and the boats stay moored.
+
+== lieu.salvent.desc.libre
+The lighthouse beam sweeps the harbour. The fishermen are back at sea and children run along the quays.
+
+== pnj.maelle.nom
+Maëlle's inn
+
+== pnj.maelle.sous
+Full rest · {prix} g
+
+== pnj.maelle.accueil
+Maëlle: “One night, {prix} gold, fish soup included. For Sol it would be free, but he wouldn't want that.”
+
+== pnj.gaspard.nom
+Gaspard's shop
+
+== pnj.gaspard.sous
+Items and equipment
+
+== pnj.gaspard.accueil
+Gaspard: “Welcome! Everything's for sale, but at what price? Good question.”
+
+== pnj.gaspard.accueil.fous
+Gaspard: “Prices? I make them up as I go, like everyone here. Come back tomorrow, they'll have changed!”
+
+== pnj.gaspard.accueil.remise
+Gaspard: “My favourite customer! The real prices, minus ten percent. It's written in the ledger.”
+
+== pnj.naia.nom
+Naïa
+
+== pnj.naia.sous
+On the quay
+
+== pnj.rosal.nom
+Rosal, the captain
+
+== pnj.rosal.sous
+At the inn
+
+== pnj.loic.nom
+Loïc, the fisherman
+
+== pnj.loic.sous
+On the quays
+
+# ================= Lantern Marsh =================
+
+== lieu.lanternes.nom
+Lantern Marsh
+
+== lieu.lanternes.le
+the Lantern Marsh
+
+== lieu.lanternes.b
+bank
+
+== lieu.lanternes.c
+heart of the marsh
+
+== lieu.lanternes.sous
+The lanterns are out
+
+== lieu.lanternes.sous.allume
+The three lanterns are shining
+
+== lieu.lanternes.desc
+Black water, dead trees and blue flames that dance without warming anyone.
+
+== lieu.lanternes.desc.allume
+The three lanterns shine on their posts. The mist keeps its distance, gilded by their light.
+
+== lieu.lanternes.intro
+## Lantern Marsh
+Three small lanterns used to protect Salvent. The will-o'-wisps have eaten their light.
+
+== lanternes.l1.nom
+Floating crate
+
+== lanternes.l1.texte
+Stuck in the reeds, a smuggler's crate: *2 elixirs*.
+
+== lanternes.l2.nom
+Overturned buckets
+
+== lanternes.l2.texte
+Buckets of water and broken lanterns: someone fought the will-o'-wisps here. *Will-o'-wisp weaknesses added to the codex.*
+
+== lanternes.l3.nom
+Ferryman's jetty
+
+== lanternes.l3.texte
+A dry jetty under a reed awning. The team *recovers all its strength*. You can rest here on every visit.
+
+== lanternes.l4.nom
+Sunken chest
+
+== lanternes.l4.texte
+A chest half buried in the mud: *120 gold*.
+
+== lanternes.l5.nom
+Toad pond
+
+== lanternes.l5.texte
+Toads flee from a sword planted in the bank. *Mist Toad weaknesses added to the codex.*
+
+== lanternes.l6.nom
+Giant oyster
+
+== lanternes.l6.texte
+An oyster as big as a shield, half open. Inside, a *Grey pearl* (accessory, Magic +4, PP +6).
+
+== lanternes.m50
+## 50% milestone reached
+In the ferryman's boat: *2 herbs and 2 tonics*.
+
+== lanternes.m100
+## 100% milestone reached
+You know every post in the marsh. You find a *Wyvern scale* (accessory, Defence +4, HP +12). Marsh mastered: crossing it will now bring only 0 to 2 fights.
+
+== lanternes.ev.combat
+A blue glow comes closer, skimming the water…
+
+== lanternes.ev.lueur
+A distant lantern shines for a moment and minds clear: *+8 PP* for everyone.
+
+== lanternes.ev.lucioles
+Fireflies land on the wounds, soft and warm: *+18 HP* for everyone.
+
+== lanternes.ev.vase
+The ground gives way under the group! *Everyone loses 10 HP.*
+
+== lanternes.ev.barque
+An empty boat drifts by. Under the bench: *30 gold*.
+
+# ================= Sunken Wreck =================
+
+== lieu.epave.nom
+Sunken Wreck
+
+== lieu.epave.le
+the wreck
+
+== lieu.epave.p
+beach
+
+== lieu.epave.c
+holds
+
+== lieu.epave.sous
+Under the sea, at the foot of the rocks
+
+== lieu.epave.desc
+The hull of a great ship lies under clear water. Thanks to Sol, a bubble of air goes with the group.
+
+== lieu.epave.intro
+## Sunken Wreck
+Sol keeps a bubble of air around the group. The deeper you go towards the holds, the more dangerous the beasts.
+
+== epave.e1.nom
+Galley crate
+
+== epave.e1.texte
+A watertight crate, tightly shut: *2 elixirs*.
+
+== epave.e2.nom
+Ship's doctor's cabin
+
+== epave.e2.texte
+In his notebook, the ship's doctor: “The drowned fear fire and iron.” *Drowned one weaknesses added to the codex.*
+
+== epave.e3.nom
+Air pocket
+
+== epave.e3.texte
+An air pocket under the deck, dry and calm. The team *recovers all its strength*. You can rest here on every visit.
+
+== epave.e4.nom
+Quartermaster's chest
+
+== epave.e4.texte
+In a rusty chest: *3 tonics*.
+
+== epave.e5.nom
+Torn net
+
+== epave.e5.texte
+A net cut clean through, and ballast stones at the bottom. Bladefish can't swim under a weight. *Bladefish weaknesses added to the codex.*
+
+== epave.e6.nom
+Captain's treasure
+
+== epave.e6.texte
+Under the floor of the captain's cabin: *150 gold*.
+
+== epave.m50
+## 50% milestone reached
+In the sail locker: *2 tonics and 1 elixir*.
+
+== epave.m100
+## 100% milestone reached
+You know every plank of the wreck. You find a *Shark tooth* (accessory, Attack +6). Wreck mastered: crossing it will now bring only 0 to 2 fights.
+
+== epave.ev.combat
+A shadow passes between the masts…
+
+== epave.ev.courant
+A violent current shakes the bubble! *Everyone loses 10 HP.*
+
+== epave.ev.bulle
+A bubble of fresh air rises from the depths: *+8 PP* for everyone.
+
+== epave.ev.coquillage
+Inside a shell, gold coins: *+40 gold*.
+
+== epave.ev.algue
+Soft seaweed wraps around the wounds: *+18 HP* for everyone.
+
+# ================= Drowned Lighthouse =================
+
+== lieu.phare.nom
+Drowned Lighthouse
+
+== lieu.phare.le
+the lighthouse
+
+== lieu.phare.c
+cove
+
+== lieu.phare.s
+summit
+
+== lieu.phare.sous
+In the hands of the Order
+
+== lieu.phare.sous.libre
+The lighthouse shines again
+
+== lieu.phare.desc
+A red-striped lighthouse on a rock pounded by the sea. Banners with a closed eye snap in the wind.
+
+== lieu.phare.desc.libre
+The lighthouse beam turns above the sea. In the cove, only the waves make any noise.
+
+== lieu.phare.intro
+## Drowned Lighthouse
+A long staircase climbs from the foot of the rock to the summit. The Order guards every landing.
+
+== phare.p1.nom
+Order storeroom
+
+== phare.p1.texte
+In a crate marked with a closed eye: *2 elixirs*.
+
+== phare.p2.nom
+Weapon rack
+
+== phare.p2.texte
+Armour marked by burns and salt-water rust. *Order Soldier weaknesses added to the codex.*
+
+== phare.p3.nom
+Keeper's room
+
+== phare.p3.texte
+Erwan's little room, the bed neatly made. The team *recovers all its strength*. You can rest here on every visit.
+
+== phare.p4.nom
+Oil cupboard
+
+== phare.p4.texte
+Between the oil cans: *3 tonics*.
+
+== phare.p5.nom
+Pay chest
+
+== phare.p5.texte
+The Order soldiers' pay: *200 gold*. They won't be needing it any more.
+
+== phare.p6.nom
+Fog bell
+
+== phare.p6.texte
+A small bronze bell rung in foggy weather: *Fog bell* (accessory, Defence +3, Magic +3, Speed +1).
+
+== phare.m50
+## 50% milestone reached
+In the keeper's emergency box: *2 elixirs*.
+
+== phare.m100
+## 100% milestone reached
+You know every step of the lighthouse. You find a *Grey pearl* (accessory, Magic +4, PP +6). Lighthouse mastered: crossing it will now bring only 0 to 2 fights.
+
+== phare.ev.combat
+Boots echo in the staircase…
+
+== phare.ev.vague
+A huge wave hits the rock! *Everyone loses 11 HP.*
+
+== phare.ev.provisions
+A bag of supplies left behind by the Order: *+45 gold*.
+
+== phare.ev.phare
+The beam passes over the group and warms their hearts: *+8 PP* for everyone.
+
+== phare.ev.embruns
+The sea spray lashes faces and wakes everyone up: *+20 HP* for everyone.

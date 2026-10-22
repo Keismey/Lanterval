@@ -1,5 +1,17 @@
 # État du projet
 
+## Version 0.3.0 (2026-10-22)
+
+- Acte 2 « La ville qui oublie » (donnees/acte2.js, étapes a2.e1 à a2.e8) : Marais salant (zone à deux côtés, pont entre la vallée et la côte), Salvent, Marais des Lanternes, Épave engloutie, Phare noyé.
+- Cartes par région : `region` dans donnees/monde.js, `carte: { cote: [x, y] }` pour un lieu sur deux cartes ; le menu de la carte propose aussi les villages des autres régions.
+- Boss : Vouivre des marais, Mère-des-abysses (appelle des crabes), Héraut de la Paupière ; boss annexes : Pie-brume, Bosco. Nouvelles capacités de monstres : `drain`, `double`, `appel`, et `vol` (objet volable).
+- Classes Moine, Voleur, Barde (cristal d'écume) et classe secrète Corsaire (quête « Le navire oublié »). Statuts de combat : sommeil, courage, esquive.
+- Quêtes annexes : « Le navire oublié » (Rosal), « Les prix perdus » (Gaspard : prix tirés au hasard à chaque visite, en rouge si gonflés et en vert si réduits, puis vrais prix à −10 %), « La berceuse » (étape 1 ; l'étape 2 attend l'acte 3 via `si: 'drapeau acte3'`).
+- Boutiques à onglets (Armes, Armures, Accessoires, Consommables), à l'achat comme à la vente (demande de Keismey).
+- Défaite : réveil à l'auberge du dernier village visité (`S.auberge`).
+- Équilibrage vérifié au bot (exploration à 100 %, niveaux 15 à 17 en fin d'acte 2) : boss de l'acte 2 entre 15 et 40 % de PV restants au plus bas, sans défaite.
+- Images provisoires (pixel art) pour tout ce qui est nouveau.
+
 ## Version 0.2.2 (2026-10-22)
 
 - Pas de quête téléguidée (demande de Keismey) : plus de bouton « Aller à / Rentrer à » ; un « ! » marque le bouton Carte (`marqueCarte`), le bouton Traverser (`marqueTraversee`) et le lieu sur la carte.
@@ -29,6 +41,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.3)
+## Prochaine étape (0.3.1)
 
-Acte 2, la Côte de Salvent : Marais salant, Salvent, Marais des Lanternes, Épave engloutie, Phare noyé (onglet « Quête principale » de la bible).
+Quêtes annexes 2, 3 et 4 de la bible (la graine, le carnet d'Aldric, le colporteur), repoussées lors du plan de l'acte 2. Ensuite 0.4 : acte 3, les forges de Cendre, avec la suite de « La berceuse » chez Hilde.

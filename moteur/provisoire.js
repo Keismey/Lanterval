@@ -57,6 +57,8 @@ function face(o) { return mk(24, 24, x => {
   else if (!o.dark) P(x, '#9a4a4a', 11, 15, 3, 1);
   if (o.mous) P(x, o.mous, 9, 14, 7, 1);
   if (o.scarf) P(x, o.scarf, 5, 18, 14, 2);
+  if (o.hat) { P(x, o.hat, 2, 5, 20, 2); E(x, o.hat, 12, 3, 6, 3); P(x, o.hat, 2, 3, 2, 3); P(x, o.hat, 20, 3, 2, 3); }
+  if (o.patch) { P(x, '#1b1830', 8, 10, 4, 3); P(x, '#1b1830', 6, 8, 12, 1); }
 }); }
 function wolf(body, shade, belly, eye, scar) { return mk(40, 32, x => { E(x, body, 19, 19, 12, 7); E(x, shade, 19, 15, 11, 3); E(x, belly, 20, 23, 8, 3);
   E(x, body, 31, 14, 6, 5); P(x, body, 34, 14, 5, 4); P(x, '#2a2a3a', 38, 14, 1, 1); P(x, shade, 28, 6, 2, 5); P(x, shade, 32, 6, 2, 5);
@@ -111,8 +113,115 @@ function dessinerSprites() {
   SPR.f_tilo = face({ skin: '#f4d0b0', hair: '#3a2a1a', cl: '#3f8a4c' });
   SPR.f_brann = face({ skin: '#c99a74', helm: '#8a93a8', mous: '#4a3020', cl: '#5a6478', cl2: '#3a4258' });
   SPR.f_inconnu = face({ dark: true, hood: '#2a2440', cl: '#2a2440' });
+  spritesActe2();
   for (const k in SPR) SPRURL[k] = SPR[k].toDataURL();
 }
+
+/* ---------- Acte 2 : Côte de Salvent ---------- */
+function spritesActe2() {
+  SPR.crabe = mk(36, 26, x => { E(x, '#d8643a', 18, 15, 11, 7); E(x, '#b84a2a', 18, 19, 10, 3); for (const [cx, cy] of [[12, 11], [17, 9], [22, 11], [15, 14], [21, 14]]) P(x, '#f4f0e8', cx, cy, 2, 1);
+    for (const lx of [9, 12, 24, 27]) { P(x, '#a8402a', lx, 20, 2, 5); } P(x, '#d8643a', 27, 8, 4, 7); E(x, '#e87a4a', 32, 7, 4, 4); P(x, '#f4f0e8', 34, 6, 2, 1); P(x, '#d8643a', 4, 9, 4, 6); E(x, '#e87a4a', 4, 7, 4, 3);
+    P(x, '#1b1830', 20, 7, 1, 2); P(x, '#1b1830', 24, 7, 1, 2); P(x, '#d8643a', 20, 4, 1, 4); P(x, '#d8643a', 24, 4, 1, 4); });
+  SPR.sangsue = mk(38, 22, x => { for (let i = 0; i < 7; i++) E(x, i % 2 ? '#7a7f88' : '#8a909a', 6 + i * 4.3, 12 + Math.round(Math.sin(i * .9) * 3), 4, 5); E(x, '#5a5e66', 34, 11, 4, 5);
+    D(x, '#c84a4a', 36, 11, 2); P(x, '#f4f4f4', 35, 9, 1, 1); P(x, '#f4f4f4', 35, 13, 1, 1); P(x, '#aab0b8', 4, 9, 30, 1); });
+  SPR.follet = mk(26, 32, x => { for (let k = 0; k < 22; k++) { const w = Math.round(9 * Math.sin(Math.PI * Math.min(1, (k + 2) / 24)) * (k < 6 ? k / 6 : 1)); P(x, k < 8 ? '#cfefff' : '#6ab8ff', 13 - w + Math.round(Math.sin(k * .5)), 4 + k, 2 * w, 1); }
+    E(x, '#e8f8ff', 13, 20, 5, 5); P(x, '#1b3a6a', 10, 19, 2, 3); P(x, '#1b3a6a', 15, 19, 2, 3); P(x, '#3a8ad8', 9, 28, 8, 2); });
+  SPR.crapaud = mk(36, 30, x => { E(x, '#6a8a4a', 18, 19, 14, 9); E(x, '#a8b878', 18, 23, 10, 4); D(x, '#6a8a4a', 11, 9, 4); D(x, '#6a8a4a', 25, 9, 4); D(x, '#f2d84a', 11, 8, 2); D(x, '#f2d84a', 25, 8, 2);
+    P(x, '#1b1830', 11, 8, 1, 2); P(x, '#1b1830', 25, 8, 1, 2); P(x, '#3a4a2a', 9, 16, 18, 1); for (const lx of [5, 28]) P(x, '#5a7a3a', lx, 24, 4, 5); for (const [cx, cy] of [[14, 13], [22, 15], [18, 11]]) P(x, '#4a6a3a', cx, cy, 2, 2); });
+  SPR.noye = mk(32, 42, x => { for (let y = 12; y < 40; y++) { const w = 5 + Math.round((y - 12) * .25); P(x, y % 4 ? '#4a8a8a' : '#3a7070', 16 - w, y, 2 * w, 1); }
+    D(x, '#9ac8c0', 16, 9, 6); P(x, '#2a3a4a', 9, 2, 14, 3); P(x, '#2a3a4a', 7, 4, 18, 2); P(x, '#0b2a2a', 13, 9, 2, 2); P(x, '#0b2a2a', 18, 9, 2, 2); P(x, '#2a5a3a', 15, 13, 2, 1);
+    for (const lx of [8, 13, 20, 24]) P(x, '#3a8a4a', lx, 16 + (lx % 3) * 4, 2, 10); P(x, '#6a5a3a', 26, 18, 2, 14); P(x, '#8a8a8a', 24, 16, 6, 3); });
+  SPR.poisson = mk(40, 22, x => { E(x, '#9ab0c8', 19, 11, 13, 6); E(x, '#d8e4f0', 19, 14, 10, 2); for (let k = 0; k < 6; k++) P(x, '#7a90a8', 4 + k, 11 - k, 2, 2 * k + 1);
+    for (let k = 0; k < 8; k++) P(x, '#e8eef8', 14 + k, 4 - Math.floor(k / 3), 1, 3 + Math.floor(k / 3)); P(x, '#e8eef8', 20, 17, 6, 2);
+    D(x, '#f4f4f4', 29, 9, 2); P(x, '#1b1830', 30, 9, 1, 1); P(x, '#5a6a80', 32, 12, 3, 1); });
+  SPR.soldat = mk(32, 44, x => { P(x, '#4a4458', 10, 34, 5, 9); P(x, '#4a4458', 17, 34, 5, 9); P(x, '#8a8ea0', 8, 16, 16, 19); P(x, '#6c7080', 18, 16, 6, 19); P(x, '#7a52a0', 8, 26, 16, 3);
+    D(x, '#8a8ea0', 16, 10, 6); P(x, '#1b1830', 12, 10, 8, 2); P(x, '#ff8a8a', 13, 10, 1, 1); P(x, '#ff8a8a', 18, 10, 1, 1); P(x, '#a8acb8', 15, 2, 2, 4);
+    P(x, '#6a5a3a', 26, 2, 2, 38); for (let k = 0; k < 5; k++) P(x, '#d8e0ec', 27 - k / 2, k, k + 1, 1); P(x, '#8a8ea0', 4, 18, 4, 12); P(x, '#7a52a0', 3, 20, 6, 6); });
+  SPR.vouivre = mk(64, 56, x => { for (let i = 0; i < 12; i++) E(x, i % 2 ? '#3f7a4a' : '#4a8a52', 8 + i * 3.4, 44 - Math.round(Math.sin(i * .55) * 6), 6, 5);
+    for (let k = 0; k < 18; k++) { P(x, '#5aa060', 22 + k, 10 + Math.round(k * .35), 1, 18 - k); P(x, '#4a8a52', 40 - k, 12 + Math.round(k * .3), 1, 14 - Math.round(k * .6)); }
+    E(x, '#4a8a52', 50, 22, 7, 6); E(x, '#3f7a4a', 46, 30, 5, 9); P(x, '#4a8a52', 54, 22, 9, 4); P(x, '#a8d070', 55, 26, 8, 2); P(x, '#f4f4f4', 57, 25, 1, 1); P(x, '#f4f4f4', 60, 25, 1, 1);
+    P(x, '#ffd84a', 52, 19, 2, 2); P(x, '#2a5a32', 46, 14, 2, 5); P(x, '#2a5a32', 50, 13, 2, 5); E(x, '#a8d070', 30, 47, 14, 2); });
+  SPR.mere = mk(66, 52, x => { E(x, '#b84a3a', 33, 30, 22, 13); E(x, '#d8643a', 33, 25, 20, 8); for (const [cx, cy, r] of [[22, 22, 3], [31, 19, 4], [41, 21, 3], [27, 28, 2], [44, 28, 3]]) { D(x, '#e8d8c0', cx, cy, r); D(x, '#c8b8a0', cx, cy, Math.max(1, r - 2)); }
+    for (const lx of [12, 17, 22, 44, 49, 54]) P(x, '#8a3a2a', lx, 38, 3, 12);
+    P(x, '#b84a3a', 52, 16, 6, 12); E(x, '#d8643a', 59, 12, 6, 6); P(x, '#f4f0e8', 61, 9, 4, 2); P(x, '#b84a3a', 8, 18, 6, 10); E(x, '#d8643a', 7, 14, 6, 5);
+    P(x, '#1b1830', 38, 13, 2, 3); P(x, '#1b1830', 44, 13, 2, 3); P(x, '#b84a3a', 38, 8, 2, 6); P(x, '#b84a3a', 44, 8, 2, 6); P(x, '#3a8a4a', 14, 26, 2, 8); P(x, '#3a8a4a', 50, 30, 2, 6); });
+  SPR.heraut = mk(42, 54, x => { P(x, '#3a2a4a', 14, 40, 6, 13); P(x, '#3a2a4a', 23, 40, 6, 13); for (let y = 16; y < 44; y++) { const w = 9 + Math.round((y - 16) * .2); P(x, y % 5 ? '#5a3a7a' : '#4a2a6a', 21 - w, y, 2 * w, 1); }
+    P(x, '#c8ccd8', 13, 17, 16, 10); P(x, '#a8acb8', 23, 17, 6, 10); D(x, '#c8ccd8', 21, 10, 7); P(x, '#1b1830', 15, 10, 12, 2); P(x, '#7a52a0', 17, 9, 8, 1);
+    P(x, '#f2c14e', 20, 1, 2, 4); P(x, '#6a5a3a', 34, 14, 2, 22); E(x, '#8a8ea0', 35, 12, 4, 4); P(x, '#c8ccd8', 33, 9, 1, 2); P(x, '#c8ccd8', 37, 9, 1, 2); P(x, '#7a52a0', 4, 22, 6, 14); });
+  SPR.pie = mk(40, 34, x => { E(x, '#2a2a3a', 18, 18, 9, 7); E(x, '#f4f4f8', 16, 20, 5, 4); for (let k = 0; k < 12; k++) P(x, k % 2 ? '#6a7a9a' : '#3a3a5a', 2 + k, 14 + Math.round(k / 3), 1, 4);
+    E(x, '#2a2a3a', 28, 11, 5, 5); P(x, '#3a3a4a', 32, 11, 6, 2); P(x, '#f2c14e', 28, 9, 2, 2); for (let k = 0; k < 10; k++) P(x, '#9aa8c8', 12 + k, 9 - Math.floor(k / 2), 1, 6);
+    P(x, '#5a5a6a', 17, 25, 1, 6); P(x, '#5a5a6a', 21, 25, 1, 6); P(x, '#f2c14e', 24, 26, 2, 2); });
+  SPR.bosco = mk(38, 46, x => { P(x, '#3a2a22', 11, 34, 6, 11); P(x, '#3a2a22', 20, 34, 6, 11); P(x, '#e8e0d0', 8, 16, 21, 19); for (let y = 18; y < 34; y += 3) P(x, '#3a5a8a', 8, y, 21, 1); P(x, '#5a3a22', 8, 30, 21, 3);
+    D(x, '#d89a78', 18, 10, 6); P(x, '#b83a3a', 11, 4, 14, 3); P(x, '#b83a3a', 24, 6, 4, 2); E(x, '#5a3a22', 18, 15, 6, 3); P(x, '#1b1830', 15, 9, 2, 2); P(x, '#1b1830', 20, 9, 2, 2);
+    P(x, '#e8e0d0', 3, 18, 5, 10); P(x, '#a8acb8', 3, 28, 2, 4); P(x, '#a8acb8', 2, 31, 3, 1); P(x, '#e8e0d0', 29, 18, 5, 10); for (let k = 0; k < 14; k++) P(x, '#d8e0ec', 32 + Math.round(k * .3), 12 + k, 2, 1); });
+  SPR.f_maelle = face({ skin: '#e8c0a0', hair: '#b8b8c0', cl: '#3a6aa8', scarf: '#6a8ac8' });
+  SPR.f_gaspard = face({ skin: '#f0c8a8', mous: '#8a6a4a', cl: '#8a5a3a', cl2: '#5a3a22' });
+  SPR.f_loic = face({ skin: '#e0a880', hood: '#3a5a8a', beard: '#c8642a', cl: '#2a4a6a' });
+  SPR.f_rosal = face({ skin: '#d89a78', hair: '#e8e8f0', hat: '#2a2028', patch: true, cl: '#7a2a2a', cl2: '#3a1a1a' });
+  SPR.f_naia = face({ skin: '#f0d0b8', hair: '#3a8ad8', cl: '#f2c14e', cl2: '#d8a830' });
+  SPR.f_nev = face({ skin: '#f0d8c8', hair: '#f4f4f8', hood: '#5a4a78', cl: '#5a4a78', cl2: '#7a52a0' });
+  SPR.f_heraut = face({ skin: '#c8ccd8', helm: '#5a3a7a', cl: '#4a2a6a', cl2: '#7a52a0' });
+  SPR.f_bosco = face({ skin: '#d89a78', hair: '#b83a3a', mous: '#5a3a22', cl: '#e8e0d0', cl2: '#3a5a8a' });
+  SPR.f_erwan = face({ skin: '#d8a888', hair: '#9a9aa0', beard: '#a0a0a8', cl: '#e0b030' });
+}
+
+function bgMarais(c, W, H) { const r = rng(61);
+  dgrad(c, 0, 0, W, H * .5, ['#8a96a8', '#aab4c0', '#c8ccd0']);
+  const gy = Math.round(H * .48); dgrad(c, 0, gy, W, H - gy, ['#8a8a6a', '#6a6a4a']);
+  for (let i = 0; i < 9; i++) { const x = (i % 3) * W * .34 + W * .04 + (r() * 8 | 0), y = gy + 8 + Math.floor(i / 3) * H * .15, w = W * .24, h = H * .09; P(c, '#5a6a7a', x - 1, y - 1, w + 2, h + 2); P(c, i % 2 ? '#e8eef0' : '#d8e4e8', x, y, w, h); }
+  for (let i = 0; i < 60; i++) { const x = r() * W, y = gy + r() * (H - gy); P(c, '#4a5a2a', x, y - 5, 1, 5); P(c, '#6a7a3a', x + 1, y - 3, 1, 3); }
+  P(c, '#5a4030', W * .78, gy - 14, 22, 14); for (let k = 0; k < 8; k++) P(c, '#7a4a3a', W * .78 - 2 + k, gy - 22 + k, 26 - 2 * k, 1);
+  c.fillStyle = 'rgba(230,236,240,.25)'; c.fillRect(0, gy - 6, W, 6); c.fillRect(0, gy + H * .2, W, 4); }
+function bgSalvent(c, W, H, libre) { const r = rng(71);
+  dgrad(c, 0, 0, W, H * .55, libre ? ['#6aa0d8', '#9ac4e8', '#e8d8b0'] : ['#7a8494', '#9aa2ae', '#b8bcc4']);
+  const hy = Math.round(H * .5); dgrad(c, 0, hy, W, H - hy, libre ? ['#3a7ab8', '#2a5a90'] : ['#4a6a88', '#34506a']);
+  P(c, '#3a3a40', W * .86, hy - H * .26, 7, H * .26); P(c, '#e8e8f0', W * .86, hy - H * .26, 7, 3); D(c, libre ? '#fff0a0' : '#8a8a70', W * .86 + 3, hy - H * .28, 3);
+  if (libre) { c.fillStyle = 'rgba(255,240,160,.25)'; c.beginPath(); c.moveTo(W * .86 + 3, hy - H * .28); c.lineTo(W * .5, hy - H * .4); c.lineTo(W * .5, hy - H * .3); c.fill(); }
+  for (let i = 0; i < 6; i++) { const x = i * W * .09, h = H * (.16 + r() * .08), w = W * .08; P(c, '#d8c8a8', x, hy + 6 - h, w, h); for (let k = 0; k < 6; k++) P(c, '#a8423a', x - 2 + k, hy + 6 - h - 6 + k, w + 4 - 2 * k, 1); P(c, '#3a3a5a', x + w * .4, hy - h * .5, 3, 4); }
+  const qy = Math.round(H * .74); P(c, '#6a4a2a', 0, qy, W * .7, 5); for (let x = 2; x < W * .7; x += 10) P(c, '#4a3a20', x, qy + 5, 3, H - qy);
+  for (const [f, col] of [[.2, '#b85a3a'], [.48, '#3a7a5a'], [.66, '#c8a040']]) { const x = W * f, y = qy + 12; P(c, col, x, y, 26, 6); P(c, '#4a3a2a', x + 2, y + 6, 22, 2); P(c, '#d8d0c0', x + 12, y - 16, 2, 16); }
+  if (!libre) { c.fillStyle = 'rgba(220,226,232,.28)'; c.fillRect(0, hy - 10, W, 14); c.fillRect(0, qy - 20, W, 10); } }
+function bgLanternes(c, W, H, allume) { const r = rng(83);
+  dgrad(c, 0, 0, W, H * .6, allume ? ['#2a2a4a', '#5a4a5a', '#a88a5a'] : ['#141a24', '#1e2a30', '#2a3a3a']);
+  const gy = Math.round(H * .58); dgrad(c, 0, gy, W, H - gy, allume ? ['#3a4a3a', '#1e2a24'] : ['#1a2622', '#0e1614']);
+  for (const f of [.08, .36, .62, .9]) { const x = W * f; P(c, '#1a1a14', x, gy - H * .4, 4, H * .4); P(c, '#1a1a14', x - 6, gy - H * .3, 8, 2); P(c, '#1a1a14', x + 3, gy - H * .34, 9, 2); }
+  for (const [f, y] of [[.22, .66], [.5, .72], [.78, .64]]) { const x = W * f, yy = H * y; P(c, '#3a2a1a', x, yy - 18, 2, 22); P(c, '#4a3a2a', x - 3, yy - 24, 8, 7);
+    if (allume) { D(c, 'rgba(255,200,90,.22)', x + 1, yy - 20, 12); D(c, '#ffd070', x + 1, yy - 20, 2); } else P(c, '#2a2a2a', x - 1, yy - 22, 4, 3); }
+  for (let i = 0; i < 40; i++) { const x = r() * W, y = gy + r() * (H - gy); P(c, '#2a3a2a', x, y - 4, 1, 4); }
+  for (let i = 0; i < 18; i++) P(c, allume ? 'rgba(255,220,140,.5)' : 'rgba(140,200,255,.35)', r() * W, gy - 10 + r() * 40, 1, 1);
+  c.fillStyle = allume ? 'rgba(255,220,160,.08)' : 'rgba(180,200,210,.10)'; c.fillRect(0, gy - 8, W, 10); }
+function bgEpave(c, W, H) { const r = rng(91);
+  dgrad(c, 0, 0, W, H, ['#4aa0b8', '#2a6a90', '#1a3a64', '#101e3a']);
+  c.fillStyle = 'rgba(220,250,255,.08)'; for (const f of [.15, .4, .7]) { const x = W * f; c.beginPath(); c.moveTo(x, 0); c.lineTo(x + 10, 0); c.lineTo(x + 40, H); c.lineTo(x + 20, H); c.fill(); }
+  const gy = Math.round(H * .8); dgrad(c, 0, gy, W, H - gy, ['#5a5a4a', '#3a3a30']);
+  for (let k = 0; k < 30; k++) { const w = Math.round(W * .5 * Math.sin(Math.PI * k / 30)); P(c, k % 4 ? '#3a2a1e' : '#2a1e14', W * .48 - w / 2, gy - 30 + k, w, 1); }
+  P(c, '#2a1e14', W * .58, gy - H * .5, 3, H * .5 - 20); P(c, '#2a1e14', W * .52, gy - H * .42, 22, 2); P(c, '#1a1410', W * .4, gy - 18, 6, 6);
+  for (let i = 0; i < 26; i++) { const x = r() * W, h = 8 + r() * 22; for (let k = 0; k < h; k++) P(c, '#2a7a4a', x + Math.round(Math.sin(k * .4) * 2), gy + 4 - k, 1, 1); }
+  for (let i = 0; i < 20; i++) D(c, 'rgba(220,250,255,.35)', r() * W, r() * H * .7, 1); }
+function bgPhare(c, W, H, libre) { const r = rng(97);
+  dgrad(c, 0, 0, W, H * .6, libre ? ['#4a6aa8', '#8aa8d0', '#e8c890'] : ['#3a3a4a', '#5a5a6a', '#7a7a84']);
+  const hy = Math.round(H * .58); dgrad(c, 0, hy, W, H - hy, libre ? ['#2a5a8a', '#1a3a5a'] : ['#2a3a4a', '#1a2430']);
+  E(c, '#3a3a40', W * .5, hy + 6, W * .26, 14); E(c, '#4a4a52', W * .5, hy + 2, W * .22, 8);
+  const tx = W * .5 - 10, th = H * .48; for (let y = 0; y < th; y++) { const w = 14 + Math.round(y * .1); P(c, Math.floor(y / 8) % 2 ? '#e8e0d0' : '#b84a3a', W * .5 - w / 2, hy - th + y, w, 1); }
+  P(c, '#2a2a30', tx - 2, hy - th - 12, 24, 12); D(c, libre ? '#fff0a0' : '#5a5a50', W * .5, hy - th - 6, 4);
+  if (libre) { D(c, 'rgba(255,240,160,.18)', W * .5, hy - th - 6, 18); }
+  else for (const dx of [-30, 26]) { P(c, '#4a3a2a', W * .5 + dx, hy - 30, 2, 30); P(c, '#7a52a0', W * .5 + dx + 2, hy - 30, 10, 14); D(c, '#f4f4f4', W * .5 + dx + 7, hy - 23, 2); }
+  for (let i = 0; i < 30; i++) P(c, 'rgba(255,255,255,.4)', r() * W, hy + r() * (H - hy), 3, 1); }
+function bgMapCote(c, W, H) { const n1 = vnoise(14, 22), n2 = vnoise(18, 8), im = c.getImageData(0, 0, W, H), d = im.data;
+  const pal = { deep: hex('#1d3f7a'), sea: hex('#2f62a8'), sand: hex('#d8c38a'), g1: hex('#7a9a5e'), g2: hex('#6a8a50'), m1: hex('#8a9a7a') };
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const nx = x / W, ny = y / H, v = n1(x, y) * .7 + n2(x, y) * .3, th = (BY[(y & 3) * 4 + (x & 3)] + .5) / 16;
+    const cote = .32 + (v - .5) * .18 + Math.sin(ny * 5) * .04; let tt;
+    if (nx < cote - .06) tt = nx < cote - .2 ? pal.deep : pal.sea; else if (nx < cote) tt = pal.sand; else tt = v + th * .18 < .55 ? pal.g2 : pal.g1;
+    const k = (y * W + x) * 4; d[k] = tt[0]; d[k + 1] = tt[1]; d[k + 2] = tt[2]; d[k + 3] = 255; }
+  c.putImageData(im, 0, 0); const r = rng(22), N = LIEUX;
+  const at = (id, dx, dy) => { const p = surCarte(id, 'cote'); return [p.x * W + dx, p.y * H + dy]; };
+  for (let i = 0; i < 14; i++) { const [x, y] = at('marais', (r() - .5) * 30, (r() - .5) * 18); P(c, '#e8eef0', x, y, 4, 2); }
+  for (let i = 0; i < 12; i++) { const [x, y] = at('lanternes', (r() - .5) * 30, (r() - .5) * 16); P(c, '#3a5a4a', x, y, 3, 2); }
+  for (const [dx, dy] of [[-6, -2], [1, -5], [5, 2], [-2, 4]]) { const [x, y] = at('salvent', dx, dy); P(c, '#d8c39a', x - 2, y - 2, 5, 3); P(c, '#a8423a', x - 3, y - 4, 7, 2); }
+  { const [x, y] = at('phare', 0, 0); P(c, '#e8e0d0', x - 1, y - 9, 3, 9); P(c, '#b84a3a', x - 1, y - 6, 3, 2); D(c, '#fff0a0', x, y - 10, 1); }
+  { const [x, y] = at('epave', 0, 0); P(c, '#4a3a2a', x - 5, y, 10, 2); P(c, '#4a3a2a', x, y - 6, 1, 6); } }
+
+
 
 /* ---------- Décors ---------- */
 function bgForest(c, W, H, calm) { const r = rng(21);
@@ -178,3 +287,14 @@ const DECORS_PROVISOIRES = {
   'col-vide': (c, w, h) => bgCol(c, w, h, true),
   'carte': bgMap
 };
+Object.assign(DECORS_PROVISOIRES, {
+  'marais': bgMarais,
+  'salvent': (c, w, h) => bgSalvent(c, w, h, false),
+  'salvent-libre': (c, w, h) => bgSalvent(c, w, h, true),
+  'lanternes': (c, w, h) => bgLanternes(c, w, h, false),
+  'lanternes-allume': (c, w, h) => bgLanternes(c, w, h, true),
+  'epave': bgEpave,
+  'phare': (c, w, h) => bgPhare(c, w, h, false),
+  'phare-libre': (c, w, h) => bgPhare(c, w, h, true),
+  'carte-cote': bgMapCote
+});

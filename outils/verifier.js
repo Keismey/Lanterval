@@ -11,11 +11,11 @@ const lire = f => fs.readFileSync(path.join(RACINE, f), 'utf8');
 const ctx = { console };
 vm.createContext(ctx);
 vm.runInContext('const ACTES = [];', ctx);
-for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'annexes']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
+for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'acte2', 'annexes']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
 const D = vm.runInContext('({ ACTES, ANNEXES, LIEUX, LIENS, IMAGES, MONSTRES, OBJETS, EQUIPEMENT, IMPORTANTS, HEROS, CLASSES, TECHNIQUES })', ctx);
 
 // textes
-const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'annexes'];
+const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'annexes'];
 const TXT = {};
 for (const lg of ['fr', 'en']) {
   TXT[lg] = {};
@@ -99,7 +99,7 @@ for (const id in D.ANNEXES) {
   const A = D.ANNEXES[id];
   texte(id + '.titre', id); condition(A.ouvre, id);
   evenements(A.offre, id + ' offre');
-  A.etapes.forEach((e, i) => { texte(`${id}.e${i + 1}.titre`, id); lieu(e.lieu, `${id}.e${i + 1}`); evenements(e.evenements, `${id}.e${i + 1}`); });
+  A.etapes.forEach((e, i) => { texte(`${id}.e${i + 1}.titre`, id); lieu(e.lieu, `${id}.e${i + 1}`); condition(e.si, `${id}.e${i + 1}`); evenements(e.evenements, `${id}.e${i + 1}`); });
 }
 
 // monde
@@ -109,7 +109,8 @@ for (const id in D.LIEUX) {
   condition(L.visible, id); condition(L.ouvert, id);
   for (const e of L.etats || []) condition(e.si, id);
   if (L.type === 'village') for (const p of L.pnj) {
-    texte(`pnj.${p.id}.nom`, id); texte(`pnj.${p.id}.sous`, id);
+    texte(`pnj.${p.id}.nom`, id); texte(`pnj.${p.id}.sous`, id); condition(p.si, p.id); condition(p.fous, p.id); condition(p.remise, p.id);
+    if (p.role === 'auberge') texte(p.portrait === 'aubergiste' ? 'pnj.auberge.accueil' : `pnj.${p.id}.accueil`, p.id);
     if (!D.IMAGES['pnj.' + p.portrait]) erreur(`portrait inconnu « ${p.portrait} »`);
     for (const [o] of p.objets || []) if (!D.OBJETS[o]) erreur(`objet inconnu « ${o} » (${p.id})`);
     for (const x of p.equipement || []) {
@@ -146,7 +147,12 @@ for (const id in D.IMPORTANTS) { texte('important.' + id, 'importants'); texte(`
 for (const id in D.MONSTRES) {
   texte('monstre.' + id, 'monstres'); texte(`monstre.${id}.desc`, 'monstres');
   if (!D.IMAGES['monstre.' + id]) erreur(`image manquante monstre.${id}`);
-  for (const c of D.MONSTRES[id].capacites || []) { texte(`monstre.${id}.special`, id); if (c.type === 'charge') texte(`monstre.${id}.charge`, id); }
+  for (const c of D.MONSTRES[id].capacites || []) {
+    if (c.type === 'charge') texte(`monstre.${id}.charge`, id);
+    if (c.type === 'appel') { texte(`monstre.${id}.appel`, id); monstre(c.id, id + ' appel'); }
+    if (['charge', 'spores', 'regen', 'fort'].includes(c.type)) texte(`monstre.${id}.special`, id);
+  }
+  if (D.MONSTRES[id].vol && !D.OBJETS[D.MONSTRES[id].vol] && !D.EQUIPEMENT[D.MONSTRES[id].vol]) erreur(`vol inconnu « ${D.MONSTRES[id].vol} » (${id})`);
 }
 for (const [id, f] of Object.entries(D.IMAGES)) {
   for (const k of ['fichier', 'portrait']) if (f[k] && !fs.existsSync(path.join(RACINE, f[k]))) erreur(`fichier image absent « ${f[k]} » (${id})`);
@@ -163,7 +169,7 @@ for (const f of fs.readdirSync(path.join(RACINE, 'moteur'))) {
 const PARLE = { fr: {}, en: {} };
 for (const lg of ['fr', 'en']) for (const k in TXT[lg]) if (k.startsWith('parle.')) PARLE[lg][TXT[lg][k].l.join(' ')] = 1;
 for (const lg of ['fr', 'en']) for (const [k, { f, l }] of Object.entries(TXT[lg])) {
-  if (!/^(a\d|prologue|loup|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
+  if (!/^(a\d|prologue|loup|navire|prix|berceuse|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
   const bulles = l.filter(x => !x.startsWith('##') && !x.startsWith('>'));
   if (bulles.length > 5) averti(`${f} « ${k} » : ${bulles.length} bulles (5 au plus)`);
   for (const b of bulles) {

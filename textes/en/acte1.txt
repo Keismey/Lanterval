@@ -292,7 +292,7 @@ Orvan: “Get some rest. The Stone Pass awaits you, north of the forest, but it 
 == pnj.orvan.a1.e10
 Orvan: “I should never have sent you up there alone. Go and see Brann, he's waiting for you.”
 
-== pnj.orvan.fin
+== pnj.orvan.a2.e1
 Orvan: “The heart will last the season. Until then, find the amber crystal, wherever the Order takes it.”
 
 == pnj.brann
@@ -316,7 +316,7 @@ Tilo: “The fireflies are back in the forest! And Mum says the harpies at the p
 == pnj.tilo.a1.e10
 Tilo: “You came back on a cart, all pale… I was scared, you know.”
 
-== pnj.tilo.fin
+== pnj.tilo.a2.e1
 Tilo: “Are you going to see the sea? Bring me back a shell!”
 
 # Hilde, at the forge: her greeting changes as the story moves on (pnj.hilde.accueil.<step>)
@@ -336,12 +336,5 @@ Hilde: “The pass, already? I've pulled some new pieces out of the fire. Take w
 == pnj.hilde.accueil.a1.e10
 Hilde: “You're up, good. Mira is still asleep, let her rest.”
 
-== pnj.hilde.accueil.fin
+== pnj.hilde.accueil.a2.e1
 Hilde: “Salvent…” She stays silent for a moment. “Take care of her, Kael.”
-
-# ---------- End of version 0.2 ----------
-
-== fin.version
-## End of version 0.2
-Act 1 is complete! The Order is taking the amber crystal to the coast, and the road to Salvent runs through the Salt Marsh.
-Act 2 is coming in a future version. Until then, you can finish the side quests and explore every zone to 100%.

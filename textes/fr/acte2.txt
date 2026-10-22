@@ -1,0 +1,374 @@
+# Lanterval · Acte 2 : La ville qui oublie (textes en français)
+# Même format que acte1.txt (voir l'aide en haut de ce fichier).
+
+== a2.titre
+La ville qui oublie
+
+# ---------- Étape 1 : Marais salant ----------
+
+== a2.e1.titre
+Traverser le Marais salant
+
+== a2.e1.bouton
+Suivre le pêcheur perdu
+
+== a2.e1.pecheur
+## Acte 2 · La ville qui oublie
+Au bord des bassins de sel, un homme tourne en rond, un filet vide sur l'épaule.
+Pêcheur : « Bonjour… Je crois que je rentrais chez moi. Mais je ne sais plus où c'est, ni comment je m'appelle. »
+Sol : « La brume. Elle prend d'abord les petites choses, puis le reste. »
+Mira : « On va à Salvent. Viens avec nous, quelqu'un te reconnaîtra bien. » [Traverser le marais]
+
+== a2.e1.crabes
+## Marais salant
+Le sel craque sous les pas. Des carapaces blanches se dressent hors de la vase. [Combattre]
+
+== a2.e1.nom
+## Marais salant
+Pêcheur : « Merci ! Vous savez, j'ai l'impression que mon nom commence par un L. Ou par un B. »
+Kael : « On progresse. »
+
+== a2.e1.cote
+## La côte
+Au bout du marais, la terre descend vers la mer. Un port se devine dans la brume, et plus loin un phare éteint sur son rocher.
+Sol s'arrête. Il regarde le phare longtemps, sans rien dire.
+Pêcheur : « Salvent ! Ça, je m'en souviens. Je crois. »
+
+== a2.e1.message
+*Salvent* apparaît sur la carte de la Côte. Le pêcheur vous suit.
+
+# ---------- Étape 2 : Salvent ----------
+
+== a2.e2.titre
+Découvrir Salvent
+
+== a2.e2.bouton
+Entrer à l'auberge de Maëlle
+
+== a2.e2.arrivee
+## Salvent
+Salvent descend en escaliers jusqu'au port. Les barques sont à quai, les filets sèchent, et personne ne semble savoir pourquoi.
+Une femme lâche son panier en voyant le pêcheur.
+« Loïc ! Trois jours que je te cherche ! »
+Loïc : « Loïc… Oui ! C'est moi ! »
+Loïc : « Et vous êtes… ma femme ? Excusez-moi, c'est la brume. »
+
+== a2.e2.gaspard
+## Salvent
+Sur la place, un marchand crie ses prix à la foule.
+Gaspard : « Herbe médicinale, quatre pièces ! Non, quatre cents ! Ou quatre-vingts ? »
+Mira : « Au moins, on peut tomber sur une bonne affaire. »
+
+== a2.e2.maelle
+## L'auberge
+À l'auberge, une vieille femme essuie des verres. Elle s'arrête net en voyant Sol.
+Maëlle : « Ces yeux-là… Tu es le petit du naufrage. Celui qu'on a cru perdu en mer. »
+Sol : « Vous vous souvenez de moi ? »
+Maëlle : « Je suis trop vieille pour que la brume trouve la place de s'installer. Assieds-toi, petit. »
+
+== a2.e2.lanternes
+## L'auberge
+Maëlle : « Avant, trois petites lanternes brillaient dans le marais au nord. Elles retenaient la brume loin du port. »
+Maëlle : « Elles se sont éteintes le jour où ces gens à l'œil fermé ont pris le phare. »
+Kael : « L'Ordre. Ils sont là aussi. »
+Maëlle : « Rallumez les lanternes, et la ville tiendra quelques jours. Ensuite, on parlera du phare. »
+
+== a2.e2.message
+Rallume les trois lanternes du *Marais des Lanternes*, au nord de Salvent.
+
+# ---------- Étape 3 : Marais des Lanternes ----------
+
+== a2.e3.titre
+Rallumer les trois lanternes
+
+== a2.e3.bouton
+Rallumer les lanternes
+
+== a2.e3.berge
+## Marais des Lanternes
+La première lanterne se dresse sur un pieu, au bord de l'eau noire. Des flammes bleues dansent autour d'elle.
+Mira : « Des feux follets. Ils ont mangé toute la lumière. » [Combattre]
+
+== a2.e3.premiere
+## Marais des Lanternes
+Mira souffle sur la mèche. *La première lanterne se rallume* et la brume recule de quelques pas.
+Sol : « La deuxième est plus loin, vers le cœur du marais. » [Avancer dans le marais]
+
+== a2.e3.deuxieme
+## Marais des Lanternes
+La deuxième lanterne penche au milieu des roseaux. Des crapauds énormes montent la garde. [Combattre]
+
+== a2.e3.deuxieme.fin
+## Marais des Lanternes
+*La deuxième lanterne brille.* Un sentier de lumière s'ouvre vers le cœur du marais.
+
+== a2.e3.coeur
+## Le cœur du marais
+La dernière lanterne est tordue, à moitié dans l'eau. Quelque chose de long glisse autour du pieu.
+L'eau se soulève. Une vouivre déploie ses ailes de mousse et siffle.
+Kael : « C'est elle qui garde la brume ici. »
+
+== a2.e3.conseil
+La *Vouivre des marais* prépare un souffle qui touche toute l'équipe. Brise sa garde avec la *Terre* (Kael) pour l'arrêter. Elle résiste au Feu et à l'Eau.
+
+== a2.e3.troisieme
+## Le cœur du marais
+La Vouivre s'enfonce dans la vase et ne remonte pas. Kael redresse le pieu ; Mira rallume la mèche.
+*Les trois lanternes brillent.* Au loin, le port de Salvent sort de la brume.
+Sol regarde vers la mer, du côté d'une vieille coque échouée.
+Sol : « Le navire de mon naufrage est là-bas, sous l'eau. Je dois y retourner. »
+
+== a2.e3.message
+Les lanternes protègent le port. L'*Épave engloutie* apparaît sur la carte, au sud de Salvent.
+
+# ---------- Étape 4 : Épave engloutie ----------
+
+== a2.e4.titre
+Plonger dans l'épave
+
+== a2.e4.bouton
+Plonger avec Sol
+
+== a2.e4.plongee
+## Épave engloutie
+Sol entre dans l'eau sans hésiter. Une bulle d'air se forme autour du groupe, tenue par son pouvoir.
+Sol : « Je n'étais jamais revenu. J'avais six ans. Ma sœur en avait deux. »
+Mira : « On est avec toi. » [Entrer dans la coque]
+
+== a2.e4.coursive
+## Épave engloutie
+La coursive est envahie d'algues. Des formes pâles bougent entre les cabines. [Combattre]
+
+== a2.e4.cabine
+## Épave engloutie
+Au fond de la coursive, la cabine du capitaine. Le journal de bord flotte, enfermé dans une boîte de cuivre.
+
+== a2.e4.journal
+## Le journal de bord
+« Nuit de tempête. Coque ouverte sur les rochers du phare. Un garçon emporté par le courant, jamais retrouvé. »
+« Une fillette de deux ans sauvée des eaux et recueillie à Salvent. »
+Sol serre le journal contre lui.
+Sol : « Elle est vivante. Elle a toujours été là, à Salvent. »
+
+== a2.e4.mere
+## Les cales
+Le plancher tremble. Dans les cales, une carapace couverte de coquillages se soulève : la Mère-des-abysses garde son nid.
+
+== a2.e4.conseil
+La *Mère-des-abysses* a une garde énorme et appelle des crabes à l'aide. Frappe-la avec la *Terre* ou le *Feu* ; la Lame et l'Eau glissent sur sa carapace.
+
+== a2.e4.fin
+## Les cales
+La Mère-des-abysses recule dans un trou de la coque et disparaît.
+Kael : « Rentrons. Maëlle saura qui a recueilli ta sœur. »
+
+== a2.e4.message
+Retourne voir *Maëlle* à l'auberge de Salvent.
+
+# ---------- Étape 5 : Naïa ----------
+
+== a2.e5.titre
+Retrouver la sœur de Sol
+
+== a2.e5.bouton
+Montrer le journal à Maëlle
+
+== a2.e5.maelle
+## L'auberge
+Maëlle lit la page du journal. Ses mains tremblent un peu.
+Maëlle : « La fillette, c'est Erwan qui l'a recueillie. Le gardien du phare. Il l'a appelée Naïa. »
+Maëlle : « L'Ordre retient Erwan dans le phare. Naïa l'attend tous les soirs sur le quai. » [Aller sur le quai]
+
+== a2.e5.naia
+## Le quai
+Une jeune fille en ciré jaune regarde le phare éteint. Elle a les mêmes cheveux bleus que Sol.
+Naïa : « Vous êtes des voyageurs ? Mon père est là-bas. Ces gens l'ont enfermé pour garder la lumière. »
+Naïa : « On m'a dit que j'avais une famille, avant. Mais je ne me souviens de rien. La brume, sans doute. »
+Sol ouvre la bouche, puis la referme.
+
+== a2.e5.sol
+## Le quai
+Mira : « Tu ne lui dis pas ? »
+Sol : « Pas maintenant. Elle a un père, et il est prisonnier. Je ne vais pas lui donner un frère et une peine de plus. »
+Sol : « On libère Erwan d'abord. Le phare est sur le rocher, à l'ouest. »
+
+== a2.e5.message
+Le *Phare noyé* apparaît sur la carte. L'Ordre le tient.
+
+# ---------- Étape 6 : Phare noyé, la crique ----------
+
+== a2.e6.titre
+Entrer dans le phare
+
+== a2.e6.bouton
+Gagner l'escalier du phare
+
+== a2.e6.crique
+## Phare noyé
+La mer monte jusqu'à la porte du phare. Des bannières à l'œil fermé claquent au vent.
+Des soldats de l'Ordre gardent l'entrée. [Combattre]
+
+== a2.e6.nev
+## L'escalier
+Sur les premières marches, une novice de l'Ordre lève sa lance. Elle n'a pas seize ans.
+Nev : « Halte ! Je dois… je dois sonner l'alerte. »
+Elle regarde Sol, puis le port, puis ses propres mains.
+Nev : « Ils ont dit qu'on venait sauver Salvent de ses souvenirs. Mais les gens ne savent même plus le nom de leurs enfants. »
+Nev : « Je ne vous ai pas vus. Le Héraut est en haut. Faites vite. »
+
+== a2.e6.escalier
+## L'escalier
+À mi-hauteur, deux soldats descendent les marches. Ils n'ont pas croisé Nev. [Combattre]
+
+== a2.e6.escalier.fin
+## L'escalier
+Les marches tournent encore. Tout en haut, une lumière froide filtre sous une porte.
+
+== a2.e6.sommet
+## Le sommet
+La lanterne du phare est couverte d'une cage noire. Dedans, un cristal couleur d'écume bat comme un cœur.
+Un vieil homme est attaché au garde-fou : Erwan, le gardien.
+
+== a2.e6.message
+Le *Héraut de la Paupière* t'attend au sommet du phare.
+
+# ---------- Étape 7 : Phare noyé, le sommet ----------
+
+== a2.e7.titre
+Affronter le Héraut
+
+== a2.e7.bouton
+Défier le Héraut
+
+== a2.e7.heraut
+## Le Héraut de la Paupière
+Héraut : « Les enfants de la lanterne. Varen m'a parlé de vous. »
+Héraut : « Regardez ce port. Plus personne n'y pleure ses morts. Nous lui offrons la paix, et vous voulez lui rendre ses chagrins. »
+Kael : « Vous lui prenez ses souvenirs. Ce n'est pas la paix, c'est le vide. »
+Héraut : « Alors fermez les yeux avec eux. »
+
+== a2.e7.conseil
+Le *Héraut* prépare « Paupière close », un coup sur toute l'équipe. Brise sa garde avec l'*Eau* (Sol) ou la *Terre* (Kael) pour l'annuler. Il résiste au Feu.
+
+== a2.e7.cristal
+## Le cristal d'écume
+Le Héraut tombe à genoux, puis s'enfuit par la fenêtre, dans une barque de l'Ordre.
+Kael brise la cage. Le cristal d'écume s'illumine, et le phare projette sa lumière sur la mer.
+Comme à Lanterval, le cristal répond à l'éclat de la lanterne. Il t'apprend de nouvelles façons de te battre.
+
+== a2.e7.classes
+## Classes
+*Nouvelles classes : Moine, Voleur et Barde.*
+Moine : poings ou bâton, Rafale (trois coups) et Méditation. Voleur : très rapide, vole des objets et esquive. Barde : harpe, chants qui renforcent l'équipe ou endorment un ennemi.
+Change de classe dans le menu Équipe. Le Codex détaille chaque classe.
+
+== a2.e7.gardien
+## Le sommet
+Erwan : « Merci, les enfants. Ma petite Naïa doit être morte d'inquiétude. »
+Sol détache ses liens sans rien dire. Ses mains tremblent un peu.
+Erwan : « Rentrons à Salvent. Ce soir, le phare veille de nouveau. »
+
+== a2.e7.message
+Le phare brille. Retourne à l'auberge de *Maëlle*, à Salvent.
+
+# ---------- Étape 8 : Salvent, la lettre d'Orvan ----------
+
+== a2.e8.titre
+Rentrer à Salvent
+
+== a2.e8.bouton
+Fêter le retour de la lumière
+
+== a2.e8.ville
+## Salvent
+Trois jours ont passé. La brume ne dépasse plus les rochers, et les pêcheurs se rappellent leurs prénoms.
+Loïc : « J'ai retrouvé ma barque, ma femme et mes enfants. Dans cet ordre, mais je ne leur dirai pas. »
+Erwan et Naïa sont attablés à l'auberge. Maëlle a sorti sa meilleure soupe.
+
+== a2.e8.berceuse
+## L'auberge
+Naïa fredonne en remuant sa soupe. Sol se fige.
+Sol : « Cette chanson… Où l'as-tu apprise ? »
+Naïa : « Je ne sais pas. Je l'ai toujours eue dans la tête. Personne d'autre ne la connaît. »
+Sol sourit sans répondre. Leur mère la chantait chaque soir.
+
+== a2.e8.vision
+## Une vision
+Ce soir-là, sous la lumière du phare, l'éclat de la lanterne se met à briller dans ta main.
+Une vision : une femme au regard calme, et à côté d'elle un jeune homme qui sourit. Derrière eux, un œil immense, gravé dans la pierre.
+Kael : « Ce jeune homme… c'est Orvan. Orvan, à vingt ans. »
+Le lendemain, tu confies une lettre pour Orvan au coche de la vallée.
+
+== a2.e8.lettre
+## L'auberge
+Maëlle : « Kael ! Le coche de la vallée a apporté une lettre pour toi. L'écriture tremble un peu. »
+
+== a2.e8.aveu
+## La lettre d'Orvan
+« Kael, tu as vu juste. Il y a cinquante ans, j'ai fondé l'Ordre de la Paupière avec Ysold. Nous voulions que plus personne ne souffre. »
+« Ysold a perdu toute sa famille à la guerre. Elle a voulu fermer l'Œil, la source de la mémoire du monde. »
+« J'ai eu peur, et je suis parti. Je ne vous l'ai jamais dit. Pardonnez-moi. »
+« Les éclaireurs de Brann sont formels : le cristal d'ambre du col a été emmené aux forges de Cendre, à l'est. »
+Mira : « Cendre… La ville de ma mère. »
+
+== a2.e8.est
+## Cap à l'est
+Sol : « Je reste avec vous. Naïa a Erwan, et le phare. Je reviendrai lui parler quand la brume sera partie. »
+Kael : « Alors on repart. Les forges de Cendre, à l'est. »
+
+== a2.e8.message
+L'acte 2 est terminé ! Le cristal d'écume protège Salvent, et la route de Cendre passe par Lanterval.
+
+# ---------- Ce que disent les gens selon l'avancée ----------
+# pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.
+
+== pnj.loic
+Loïc : « Je m'appelle Loïc. Loïc ! Je me le répète cent fois par jour, au cas où. »
+
+== pnj.loic.a2.e4
+Loïc : « Les lanternes brillent et ma femme m'a reconnu deux fois aujourd'hui. C'est un record ! »
+
+== pnj.loic.a2.e7
+Loïc : « Vous montez au phare ? Saluez Erwan de ma part. Enfin, s'il se souvient de moi. »
+
+== pnj.loic.fin
+Loïc : « J'ai repris la mer ! Et cette fois, j'ai écrit mon nom sur ma barque. »
+
+== pnj.rosal
+Rosal : « Encore un verre, Maëlle. De quoi ? Je ne sais plus. Du même. »
+
+== pnj.naia
+Naïa : « Mon père dit que la mer garde tout ce qu'on lui donne. Même les souvenirs. »
+
+== pnj.naia.a2.e7
+Naïa : « Si vous voyez mon père là-haut, dites-lui que je l'attends. Tous les soirs. »
+
+== pnj.naia.fin
+Naïa : « Sol, c'est ça ? Tu me regardes comme si tu me connaissais. C'est drôle, j'ai la même impression. »
+
+# Lanterval pendant l'acte 2 (les textes « a2.e1 » de l'acte 1 servent au début)
+
+== pnj.orvan.a2.e3
+Orvan : « Salvent oublie, dis-tu ? Alors l'Ordre y est déjà. Soyez prudents. »
+
+== pnj.orvan.fin
+Orvan : « Tu as reçu ma lettre. Je n'ai pas d'excuse, Kael. Seulement l'espoir de réparer ce que j'ai commencé. »
+
+== pnj.tilo.a2.e3
+Tilo : « C'est vrai qu'à Salvent les gens oublient leur nom ? Moi je m'appelle Tilo. Tilo ! »
+
+== pnj.tilo.fin
+Tilo : « Tu m'as rapporté un coquillage ? Non ? Bon, la prochaine fois. »
+
+== pnj.hilde.accueil.a2.e3
+Hilde : « Des nouvelles de la côte ? Mira mange au moins ? Prends ce qu'il te faut, et ramène-la entière. »
+
+== pnj.hilde.accueil.fin
+Hilde : « Cendre… Si vous allez là-bas, je viendrai. Ne discute pas. »
+
+# ---------- Fin de la version 0.3 ----------
+
+== fin.version
+## Fin de la version 0.3
+L'acte 2 est terminé ! Le cristal d'écume protège Salvent, Naïa fredonne la berceuse, et Orvan a avoué son passé.
+L'acte 3 arrive dans une prochaine version. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.

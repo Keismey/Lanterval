@@ -16,6 +16,15 @@ const IMAGES = {
   'decor.col': { fichier: 'img/decors/col.webp', provisoire: 'col', sujet: 'Col des Pierres, sentier entre des menhirs, neige et ciel ambré' },
   'decor.col.vide': { fichier: 'img/decors/col-vide.webp', provisoire: 'col-vide', sujet: 'Col des Pierres, socle vide du cristal, ciel gris' },
   'decor.carte': { provisoire: 'carte', sujet: 'Carte de la Vallée de Lanterval' },
+  'decor.marais': { provisoire: 'marais', sujet: 'Marais salant, bassins de sel blanc, roseaux et brume basse, cabane de saunier' },
+  'decor.salvent': { provisoire: 'salvent', sujet: 'Salvent, port de pêche sous la brume, quais de bois, barques, phare au loin' },
+  'decor.salvent.libre': { provisoire: 'salvent-libre', sujet: 'Salvent sous un ciel dégagé, le phare brille au loin' },
+  'decor.lanternes': { provisoire: 'lanternes', sujet: 'Marais des Lanternes, eaux sombres, trois petites lanternes éteintes sur des pieux' },
+  'decor.lanternes.allume': { provisoire: 'lanternes-allume', sujet: 'Marais des Lanternes, trois petites lanternes allumées sur des pieux, brume dorée' },
+  'decor.epave': { provisoire: 'epave', sujet: 'Épave engloutie, coque de navire sous l\'eau, rayons de lumière, algues' },
+  'decor.phare': { provisoire: 'phare', sujet: 'Phare noyé sur un rocher, mer haute, bannières de l\'Ordre' },
+  'decor.phare.libre': { provisoire: 'phare-libre', sujet: 'Phare noyé, la lumière brille, mer calme' },
+  'decor.carte.cote': { provisoire: 'carte-cote', sujet: 'Carte de la Côte de Salvent' },
 
   // ---------- Panoramas (format large ~2,4:1) ----------
   'pano.ouverture': { sujet: 'Lanterval au crépuscule, la lanterne vacille' },
@@ -27,6 +36,12 @@ const IMAGES = {
   'pano.cage': { sujet: 'Varen et le Sans-Nom encagent le cristal d\'ambre au sommet du col' },
   'pano.epee': { sujet: 'Brann tend l\'épée du père à Kael, au poste de garde' },
   'pano.loup-alpha': { sujet: 'Le Loup alpha sur un rocher, sous la lune et la brume' },
+  'pano.salvent': { sujet: 'Salvent sous la brume, le port vu d\'en haut' },
+  'pano.epave': { sujet: 'L\'épave sous l\'eau, rayons de lumière, Sol qui plonge' },
+  'pano.naia': { sujet: 'Naïa sur le quai, le phare noyé au loin' },
+  'pano.phare': { sujet: 'Le phare noyé aux mains de l\'Ordre, Nev sur l\'escalier' },
+  'pano.vision': { sujet: 'Vision : Ysold et le jeune Orvan côte à côte, devant l\'Œil' },
+  'pano.rosal': { sujet: 'Rosal à la barre de la Salicorne, voiles dans la brume' },
 
   // ---------- Héros (tournés vers la gauche) ----------
   'heros.kael': { fichier: 'img/heros/kael.webp', portrait: 'img/heros/kael-portrait.webp', provisoire: 'kael', sujet: 'Kael, 17 ans, apprenti garde, cape bleue' },
@@ -44,6 +59,16 @@ const IMAGES = {
   'pnj.varen': { fichier: 'img/pnj/varen.webp', portrait: 'img/pnj/varen.webp', provisoire: 'f_varen', sujet: 'Varen, jeune homme de l\'Ordre, cheveux argentés, sourire arrogant' },
   'pnj.sansnom': { fichier: 'img/pnj/sansnom.webp', portrait: 'img/pnj/sansnom.webp', provisoire: 'f_sansnom', sujet: 'Le Sans-Nom, colosse au masque d\'acier à l\'œil fermé' },
   'pnj.silhouette': { provisoire: 'f_inconnu', sujet: 'Silhouette encapuchonnée de l\'Ordre, yeux rouges' },
+  'pnj.maelle': { provisoire: 'f_maelle', sujet: 'Maëlle, vieille aubergiste de Salvent, chignon gris, châle bleu' },
+  'pnj.gaspard': { provisoire: 'f_gaspard', sujet: 'Gaspard, marchand rond et chauve, lunettes, air perdu' },
+  'pnj.loic': { provisoire: 'f_loic', sujet: 'Loïc, pêcheur, bonnet de laine, barbe rousse' },
+  'pnj.rosal': { provisoire: 'f_rosal', sujet: 'Rosal, vieille capitaine corsaire, tricorne, cache-œil' },
+  'pnj.naia': { provisoire: 'f_naia', sujet: 'Naïa, 16 ans, cheveux bleus comme Sol, ciré jaune' },
+  'pnj.nev': { provisoire: 'f_nev', sujet: 'Nev, 16 ans, novice de l\'Ordre, cheveux blancs courts, capuche' },
+  'pnj.heraut': { provisoire: 'f_heraut', sujet: 'Le Héraut de la Paupière, casque à l\'œil fermé, cape violette' },
+  'pnj.pecheur': { provisoire: 'f_loic', sujet: 'Loïc, pêcheur, bonnet de laine, barbe rousse (même portrait que pnj.loic)' },
+  'pnj.bosco': { provisoire: 'f_bosco', sujet: 'Le Bosco, contrebandier, bandana rouge, moustache' },
+  'pnj.erwan': { provisoire: 'f_erwan', sujet: 'Erwan, gardien du phare, vieil homme, ciré et barbe grise' },
 
   // ---------- Monstres (tournés vers la droite) ----------
   'monstre.loup': { fichier: 'img/monstres/loup.webp', provisoire: 'loup', sujet: 'Loup des brumes' },
@@ -56,5 +81,19 @@ const IMAGES = {
   'monstre.harpie': { fichier: 'img/monstres/harpie.webp', provisoire: 'harpie', sujet: 'Harpie du col, ailes grises, serres' },
   'monstre.varen': { fichier: 'img/monstres/varen.webp', provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre' },
   'monstre.sansnom': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse' },
-  'monstre.golem': { fichier: 'img/monstres/golem.webp', provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' }
+  'monstre.golem': { fichier: 'img/monstres/golem.webp', provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' },
+
+  // ---------- Monstres de l'acte 2 ----------
+  'monstre.crabe': { provisoire: 'crabe', sujet: 'Crabe de sel, carapace couverte de cristaux de sel' },
+  'monstre.sangsue': { provisoire: 'sangsue', sujet: 'Sangsue grise géante des marais' },
+  'monstre.follet': { provisoire: 'follet', sujet: 'Feu follet, petite flamme bleue avec deux yeux' },
+  'monstre.crapaud': { provisoire: 'crapaud', sujet: 'Crapaud des brumes, gros et verdâtre' },
+  'monstre.noye': { provisoire: 'noye', sujet: 'Noyé, marin spectral couvert d\'algues' },
+  'monstre.poisson': { provisoire: 'poisson', sujet: 'Poisson-lame, nageoires tranchantes' },
+  'monstre.soldat': { provisoire: 'soldat', sujet: 'Soldat de l\'Ordre de la Paupière, armure grise, lance' },
+  'monstre.vouivre': { provisoire: 'vouivre', sujet: 'Vouivre des marais, serpent ailé vert, gueule ouverte' },
+  'monstre.mere': { provisoire: 'mere', sujet: 'Mère-des-abysses, crabe géant couvert de coquillages' },
+  'monstre.heraut': { provisoire: 'heraut', sujet: 'Héraut de la Paupière, chevalier en armure violette, masse' },
+  'monstre.pie': { provisoire: 'pie', sujet: 'Pie-brume, grande pie grise aux plumes de brume' },
+  'monstre.bosco': { provisoire: 'bosco', sujet: 'Le Bosco, contrebandier costaud, crochet et sabre' }
 };
