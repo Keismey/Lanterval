@@ -30,14 +30,18 @@ LISTE = [
     ('perso-sol.jpg', 'heros/sol-portrait.webp', 'portrait', {'boite': (620, 42, 180, 180), 'cote': 192}),
     ('decor-foret-murmures.jpg', 'decors/foret.webp', 'decor', {'largeur': 1376}),
     ('monstre-champi-spore.jpg', 'monstres/spore.webp', 'detoure', {'largeur': 640}),
-    ('monstre-chiroptere.jpg', 'monstres/chauve.webp', 'detoure', {'largeur': 640, 'trous': True}),
+    ('monstre-chiroptere.jpg', 'monstres/chauve.webp', 'detoure', {'largeur': 640, 'trous': 400}),
     ('monstre-gelee-quartz.jpg', 'monstres/gelee.webp', 'detoure', {'largeur': 640}),
-    ('monstre-ombre-voleuse.jpg', 'monstres/ombre.webp', 'detoure', {'largeur': 640, 'trous': True}),
-    ('monstre-loup-alpha.jpg', 'monstres/alpha.webp', 'detoure', {'largeur': 640, 'trous': True}),
+    ('monstre-ombre-voleuse.jpg', 'monstres/ombre.webp', 'detoure', {'largeur': 640, 'trous': 400}),
+    ('monstre-loup-alpha.jpg', 'monstres/alpha.webp', 'detoure', {'largeur': 640, 'trous': 400}),
     ('monstre-gardien-cristal.jpg', 'monstres/golem.webp', 'detoure', {'largeur': 760, 'trous': 3000}),
     ('decor-foret-calme.jpg', 'decors/foret-calme.webp', 'decor', {'largeur': 1376}),
     ('decor-grotte-cristal.jpg', 'decors/grotte.webp', 'decor', {'largeur': 1376}),
     ('decor-grotte-sombre.jpg', 'decors/grotte-sombre.webp', 'decor', {'largeur': 1376}),
+    ('decor-col-pierres.jpg', 'decors/col.webp', 'decor', {'largeur': 1376}),
+    ('decor-col-vide.jpg', 'decors/col-vide.webp', 'decor', {'largeur': 1376}),
+    ('monstre-belier-roches.jpg', 'monstres/belier.webp', 'detoure', {'largeur': 640}),
+    ('monstre-harpie-col.jpg', 'monstres/harpie.webp', 'detoure', {'largeur': 640, 'trous': 400}),
 ]
 
 
