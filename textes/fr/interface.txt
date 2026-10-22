@@ -1,0 +1,921 @@
+# Lanterval · Interface (textes en français)
+# Même format que les autres fichiers : « == repère », puis le texte. *gras*, {valeur} remplie par le jeu.
+# Les textes d'interface tiennent sur une ligne (les lignes d'un même repère sont jointes).
+
+# ================= Boutons et mots courants =================
+
+== continuer
+Continuer
+
+== combattre
+Combattre !
+
+== fermer
+Fermer
+
+== retour
+Retour
+
+== po
+po
+
+== village
+Village
+
+== menu.options
+Options
+
+== menu.inventaire
+Inventaire
+
+== menu.equipe
+Équipe
+
+== menu.codex
+Codex
+
+== menu.journal
+Journal
+
+== stat.hp
+PV
+
+== stat.pp
+PP
+
+== stat.atk
+Attaque
+
+== stat.mag
+Magie
+
+== stat.def
+Défense
+
+== stat.spd
+Vitesse
+
+== place.arme
+Arme
+
+== place.armure
+Armure
+
+== place.acc
+Accessoire
+
+# ================= Écran titre =================
+
+== titre.sous
+Un RPG de Keismey Studio
+
+== titre.texte
+La lanterne de Lanterval protège le val depuis toujours. Ce soir, sa lumière vacille.
+
+== titre.commencer
+Commencer l'aventure
+
+== titre.commencer.sous
+Nouvelle partie
+
+== titre.continuer
+Continuer
+
+== titre.plus
+partie+ {n}
+
+== titre.nouvelle
+Nouvelle partie
+
+== titre.nouvelle.sous
+Recommencer depuis le début
+
+== titre.nouvelle.confirmer
+Confirmer : nouvelle partie ?
+
+== titre.version
+Version {v} · sauvegarde automatique
+
+# ================= Scène et récit =================
+
+== scene.image
+Image à venir
+
+== scene.provisoire
+Images provisoires
+
+== recit.heros
+Ton héros
+
+== recit.rejoint
+{nom} rejoint l'équipe
+
+== recit.passer
+Passer la scène
+
+# ================= Village =================
+
+== village.partir
+Partir
+
+== village.annexe
+Quête annexe
+
+== boutique.objet
+{prix} po · {effet} · tu en as {n}
+
+== boutique.vendre
+Vendre
+
+== boutique.vendre.sous
+Objets et équipement du sac
+
+== boutique.bourse
+Bourse : *{or} po*.
+
+== boutique.equiper
+Pour équiper ce que tu achètes, passe par l'écran Équipe.
+
+== boutique.achete
+Et voilà : *{nom}* rangé dans ton sac.
+
+== boutique.achete.eq
+Et voilà : *{nom}* rangé dans ton sac. Va dans Équipe pour le porter.
+
+== boutique.vente.accueil
+« Montre-moi ce que tu as, je t'en donne un prix honnête. »
+
+== boutique.cadeau
+Cadeau : ne se vend pas
+
+== boutique.fini
+J'ai fini
+
+== boutique.porte
+Seul ce qui est dans le sac se vend, pas ce que l'équipe porte.
+
+== boutique.vide
+Ton sac est vide.
+
+== boutique.autre
+« Autre chose ? »
+
+== boutique.vendu
+Vendu : *{nom}* pour {prix} po.
+
+# ================= Carte et traversées =================
+
+== carte.ici
+Tu es : *{lieu}*.
+
+== carte.fermes
+Chemins fermés pour l'instant : {lieux}. Ils montrent où l'histoire continuera.
+
+== carte.ferme
+*{lieu}* : ce chemin s'ouvrira plus tard dans l'histoire.
+
+== carte.bientot
+*{lieu}* : la suite de l'histoire arrive dans la prochaine version du jeu.
+
+== carte.rester
+Rester ici
+
+== carte.direct
+Chemin direct
+
+== carte.traverser
+Traverser {lieux}
+
+== carte.puis
+puis
+
+== carte.cout
+1 à 3 combats
+
+== carte.cout.maitrise
+0 à 2 combats
+
+== trav.titre
+Traversée
+
+== trav.vers
+Traversée vers : {lieu}
+
+== trav.avance
+Traversée {p} %
+
+== trav.texte
+Tu traverses {zone}, direction : *{lieu}*.
+
+== trav.note
+1 à 3 combats au hasard. Explore la zone à 100 % pour en réduire le nombre.
+
+== trav.note.maitrise
+Zone maîtrisée : 0 à 2 combats.
+
+== trav.monstres
+Des monstres te barrent la route !
+
+== trav.fin
+Traversée de {zone} terminée : {n} combats.
+
+== trav.fin.un
+Traversée de {zone} terminée : {n} combat.
+
+== trav.or
+*{or} po* ramassés en chemin.
+
+# ================= Zones =================
+
+== zone.exploration
+Exploration
+
+== zone.decouvertes
+{p} % · {n}/{total} découvertes
+
+== zone.palier
+Palier {p} %
+
+== zone.quete.principale
+Quête principale
+
+== zone.quete.annexe
+Quête annexe
+
+== zone.conseil.equipe
+conseillé à 2 ou plus
+
+== zone.rentrer
+Rentrer à {lieu}
+
+== zone.aller
+Aller à : {lieu}
+
+== zone.explorer
+Explorer
+
+== zone.reste
+{n} découvertes à faire
+
+== zone.reste.un
+1 découverte à faire
+
+== zone.tout
+Tout est trouvé · événements
+
+== zone.rien
+Rien de neuf pour l'instant
+
+== zone.chasser
+Chercher des monstres
+
+== zone.chasser.sous
+Combat assuré
+
+== zone.chasser.texte
+Tu fouilles les recoins à la recherche de monstres…
+
+== zone.repos
+Repos complet
+
+== zone.repos.utilise
+Déjà utilisé pendant cette visite
+
+== zone.repos.fait
+Tu te reposes à : {lieu}. *PV et PP au maximum.*
+
+== zone.traverser
+Traverser vers : {lieu}
+
+== zone.ferme
+Fermé pour l'instant
+
+== zone.bientot
+Dans la prochaine version
+
+== zone.carte
+Carte
+
+== zone.carte.sous
+Voir les chemins
+
+== zone.tag.tresor
+Trésor
+
+== zone.tag.lieu
+Lieu
+
+== zone.tag.evenement
+Événement
+
+# ================= Combat =================
+
+== combat.conseil
+Conseil
+
+== combat.boss
+*Combat de boss !* Surveille l'ordre des tours en haut.
+
+== combat.debut
+{noms} !
+
+== combat.tours
+Tours
+
+== combat.union
+Union
+
+== combat.chaine
+Enchaînement ×{m}
+
+== combat.chaine.court
+(enchaînement ×{m})
+
+== combat.auto
+Auto
+
+== combat.vide
+Le groupe se formera en chemin
+
+== combat.inconnue
+Faiblesse inconnue
+
+== combat.resiste.titre
+Résiste : {el}
+
+== combat.garde.titre
+Garde
+
+== combat.brise.court
+BRISÉ
+
+== combat.fx.brise
+BRISÉ !
+
+== combat.pv
+{hp}/{max} PV
+
+== combat.garde
+garde {n}
+
+== combat.garde.brisee
+garde brisée
+
+== combat.releve
+{nom} se relève et reforme sa garde.
+
+== combat.auto.coupe
+*Auto coupé* : {nom} est sous 30 % de PV. À toi de jouer.
+
+== combat.auto.tour
+Auto : {nom} attaque.
+
+== combat.auto.arreter
+Arrêter l'auto
+
+== combat.auto.arreter.sous
+Tu reprends la main au prochain tour
+
+== combat.auto.arrete
+Auto arrêté : tu reprends la main au prochain tour.
+
+== combat.atoi
+À toi : *{nom}* ({classe}).
+
+== combat.atoi.chaine
+Enchaînement en cours : ce coup fera ×{m}.
+
+== combat.defaite
+L'équipe est à terre…
+
+== combat.victoire
+*Victoire !* +{xp} XP, +{or} po.
+
+== combat.niveau
+*{nom}* passe au niveau {n} !
+
+== combat.suite.auto
+Suite automatique…
+
+== combat.cmd.tech
+Techniques
+
+== combat.cmd.objet
+Objet
+
+== combat.cmd.objet.sous
+{n} en sac
+
+== combat.cmd.garde
+Garde
+
+== combat.cmd.garde.sous
+Dégâts ÷2
+
+== combat.cmd.union.seul
+À plusieurs
+
+== combat.cmd.union.prete
+Prête !
+
+== combat.cmd.auto.sous
+Attaques auto
+
+== combat.cmd.auto.non
+Pas ici
+
+== combat.cmd.fuir
+Fuir
+
+== combat.cmd.fuir.sous
+70 %
+
+== combat.cmd.fuir.non
+Impossible
+
+== combat.tech.liste
+Techniques de {nom} ({classe}) :
+
+== combat.cible.ennemi
+{quoi} : touche un ennemi, sur l'image ou dans la liste.
+
+== combat.cible.allie
+{quoi} : sur qui ?
+
+== combat.faiblesse
+Faiblesse !
+
+== combat.resiste
+Résiste…
+
+== combat.perd
+{nom} perd {n} PV.
+
+== combat.brise
+*Garde brisée !* Son prochain tour est perdu et ses dégâts subis augmentent de 50 %.
+
+== combat.charge.annulee
+*L'attaque chargée est annulée !*
+
+== combat.vaincu
+{nom} est vaincu.
+
+== combat.vaincue
+{nom} est vaincue.
+
+== combat.garde.texte
+{nom} se met en garde.
+
+== combat.fuite
+Tu prends la fuite !
+
+== combat.fuite.rate
+Impossible de fuir !
+
+== combat.objet
+{nom} utilise {objet} sur {cible}.
+
+== combat.plus.pv
++{n} PV.
+
+== combat.plus.pp
++{n} PP.
+
+== combat.union.texte
+*Union !* Toute l'équipe frappe ensemble.
+
+== combat.union.fin
+L'Union frappe tous les ennemis.
+
+== combat.scan
+{nom} scrute {cible} : faiblesses *{faibles}*
+
+== combat.scan.res
+, résiste à {res}
+
+== combat.soin
+{nom} soigne {cible} : +{n} PV.
+
+== combat.soins
+{nom} soigne toute l'équipe.
+
+== combat.provoc
+{nom} provoque les ennemis, qui vont l'attaquer en priorité.
+
+== combat.rempart
+{nom} dresse un rempart : dégâts subis par l'équipe ÷2 jusqu'à son prochain tour.
+
+== combat.attaque
+{nom} attaque.
+
+== combat.fort
+{nom} : {coup} !
+
+== combat.en.garde
+(en garde)
+
+== combat.a.terre
+*{nom} est à terre !*
+
+# ================= Défaite =================
+
+== defaite.titre
+Retour à l'auberge
+
+== defaite.texte
+Tu te réveilles à l'auberge, soigné. Dans la fuite, tu as perdu la moitié de ta bourse : il te reste *{or} po*.
+
+# ================= Aide au combat =================
+
+== aide.titre
+Aide au combat
+
+== aide.premier
+Premier combat
+
+== aide.intro
+Les combats se jouent au tour par tour. Voici ce que veulent dire les icônes. Tu retrouveras cette aide dans le Codex, en haut à droite.
+
+== aide.ok
+Compris, au combat !
+
+== aide.tours
+*Ordre des tours*, en haut de l'écran : le premier, encadré d'or, joue maintenant. La vitesse décide de l'ordre.
+
+== aide.garde
+*Garde* de l'ennemi. Chaque coup sur une faiblesse retire 1 point.
+
+== aide.brise
+Garde à 0 : l'ennemi perd son prochain tour et subit +50 % de dégâts. Une attaque chargée est annulée.
+
+== aide.elements
+*Éléments* : Lame, Terre, Feu, Eau. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau) ; l'Attaque normale est toujours Lame.
+
+== aide.inconnue
+Faiblesse pas encore découverte. Touche-la une fois et elle reste affichée, ici et dans le bestiaire.
+
+== aide.resistance
+Résistance : dégâts divisés par 2.
+
+== aide.union
+*Union* : chaque faiblesse touchée remplit la jauge. À 3, toute l'équipe frappe tous les ennemis.
+
+== aide.chaine
+*Enchaînement* : quand deux héros jouent d'affilée, chaque coup fait +15 % (jusqu'à +45 %).
+
+== aide.auto
+*Auto* : attaques normales automatiques. Se coupe si un héros passe sous 30 % de PV. Indisponible contre les boss et en quête.
+
+# ================= Équipe =================
+
+== equipe.niveau
+niv. {n} · {xp}/{max} XP
+
+== equipe.classe
+Classe
+
+== equipe.equipement
+Équipement
+
+== equipe.techniques
+Techniques
+
+== equipe.sac
+Sac
+
+== equipe.sac.vide
+Aucun objet de soin.
+
+== equipe.toucher
+Toucher pour changer.
+
+== equipe.rien
+Rien
+
+== equipe.utiliser
+utiliser sur {nom}
+
+== equipe.classe.aide
+Choisis la classe de {nom}. L'élément ({el}) reste le même, les stats et les techniques changent. Une arme incompatible retourne dans le sac.
+
+== equipe.place.aide
+{place} de {nom} ({classe}). Les écarts sont calculés par rapport à l'équipement actuel.
+
+== equipe.changer.classe
+Changer de classe
+
+== equipe.changer
+Changer : {place}
+
+== equipe.verrouillee
+Verrouillée
+
+== equipe.actuelle
+(actuelle)
+
+== equipe.retour.sac
+{nom} retourne dans le sac.
+
+== equipe.devient
+{nom} devient {classe}.
+
+== equipe.pas.pour
+Pas pour la classe {classe} · {qui}
+
+== equipe.retirer
+Retirer
+
+== equipe.place.vide
+Rien dans le sac pour cet emplacement. Achète de l'équipement chez Berthe ou explore les zones.
+
+== equipe.pareil
+Aucun changement
+
+== equipe.toutes
+Toutes les classes
+
+# ================= Inventaire =================
+
+== inventaire.objets
+Objets
+
+== inventaire.equipement
+Équipement
+
+== inventaire.importants
+Importants
+
+== inventaire.bourse
+Bourse
+
+== inventaire.vide
+Aucun objet de soin. Berthe et Nell en vendent au village.
+
+== inventaire.toucher
+Touche un objet pour l'utiliser.
+
+== inventaire.combat
+En combat, utilise la commande Objet.
+
+== inventaire.utilise
+{objet} utilisé sur {nom}.
+
+== inventaire.sac
+Dans le sac
+
+== inventaire.sac.vide
+Rien dans le sac.
+
+== inventaire.porte
+Porté
+
+== inventaire.eq.aide
+Pour changer l'équipement, passe par l'écran Équipe. Tu peux vendre ce qui est dans le sac chez Berthe ou Nell.
+
+== inventaire.imp.vide
+Aucun objet important pour l'instant.
+
+== inventaire.mystere
+Un objet mystérieux. Son usage se révélera plus tard.
+
+# ================= Codex =================
+
+== codex.bestiaire
+Bestiaire
+
+== codex.aide
+Les faiblesses se découvrent en combat (en les touchant), avec Œil de lynx, ou grâce aux lieux explorés.
+
+== codex.inconnu
+Pas encore rencontré.
+
+== codex.vaincus
+Vaincus : {n}.
+
+== codex.faiblesses
+Faiblesses
+
+== codex.resiste
+Résiste
+
+# ================= Journal =================
+
+== journal.acte
+Acte {n} · {titre}
+
+== journal.annexe
+Quête annexe · {titre}
+
+== journal.tout.fini
+Toute l'histoire de cette version est terminée.
+
+== journal.classes
+Classes
+
+== journal.secrete
+??? (secrète)
+
+== journal.verrouillee
+{nom} (verrouillée)
+
+== journal.bilan
+Bilan
+
+== journal.vide
+Rien pour l'instant.
+
+== journal.auto
+(auto)
+
+== journal.log.etape
+Quête : {titre}
+
+== journal.log.annexe
+Nouvelle quête annexe : {titre}
+
+== journal.log.annexeFinie
+Quête annexe terminée : {titre}
+
+== journal.log.auberge
+Nuit à l'auberge
+
+== journal.log.achat
+Achat : {nom}
+
+== journal.log.vente
+Vente : {nom}
+
+== journal.log.arrivee
+Arrivée à {lieu}
+
+== journal.log.entree
+Entrée : {lieu}
+
+== journal.log.traversee
+Traversée de {lieu} : {n} combat(s), {duree}
+
+== journal.log.decouverte
+{lieu} : {nom} ({p} %)
+
+== journal.log.palier
+{lieu} : palier {p} %
+
+== journal.log.combat
+Combat : {noms}, {tours} tours{auto}, {duree}
+
+== journal.log.combat.quete
+Combat de quête : {noms}, {tours} tours, {duree}
+
+== journal.log.boss
+Combat de boss : {noms}, {tours} tours, {duree}
+
+== journal.log.fuite
+Fuite ({noms})
+
+== journal.log.defaite
+Défaite contre {noms}
+
+== journal.log.retour
+Retour à l'auberge
+
+# ================= Bilan et fin de version =================
+
+== stats.temps
+temps de jeu
+
+== stats.appuis
+appuis
+
+== stats.combats
+combats
+
+== stats.combats.quete
+combats ({n} de quête)
+
+== stats.auto
+tours en auto
+
+== stats.explorations
+explorations
+
+== stats.traversees
+traversées
+
+== stats.annexes
+quêtes annexes finies
+
+== stats.plus
+partie+
+
+== fin.titre
+Fin de la version 0.1
+
+== fin.continuer
+Continuer à jouer
+
+== fin.continuer.annexes
+Finir les quêtes annexes
+
+== fin.continuer.zones
+Explorer les zones à 100 %
+
+== fin.plus
+Commencer une partie+
+
+== fin.plus.sous
+L'histoire recommence : tu gardes classes, niveaux, équipement et codex ; les monstres sont plus forts.
+
+== fin.chronologie
+Chronologie
+
+# ================= Options =================
+
+== options.langue
+Langue : Français
+
+== options.langue.sous
+Toucher pour passer en anglais
+
+== options.texte
+Texte : {v}
+
+== options.texte.normal
+normal
+
+== options.texte.rapide
+rapide
+
+== options.texte.instant
+instantané
+
+== options.texte.sous
+Vitesse d'affichage des dialogues
+
+== options.combats.normaux
+Combats : vitesse normale
+
+== options.combats.rapides
+Combats : rapides
+
+== options.combats.sous
+Toucher pour changer
+
+== options.sauvegarde
+Sauvegarde
+
+== options.sauvegarde.sous
+Exporter ou importer ta partie
+
+== options.notes
+Notes de version
+
+== options.notes.sous
+Version {v} : ce qui a changé
+
+== options.bug
+Signaler un bug
+
+== options.bug.sous
+Formulaire du hub Keismey Studio
+
+== options.soutien
+Soutenir le studio
+
+== options.soutien.sous
+Ko-fi, si le jeu te plaît
+
+== options.titre
+Écran titre
+
+== options.titre.sous
+La partie est sauvegardée
+
+== options.reset
+Recommencer
+
+== options.reset.sous
+Effacer la partie et repartir de zéro
+
+== options.reset.confirmer
+Confirmer : tout effacer ?
+
+== options.reset.confirmer.sous
+La partie en cours sera perdue
+
+== debug.titre
+Mode test
+
+== debug.sous
+Sauter à une étape, donner de l'or…
+
+# ================= Notes de version =================
+# Une ligne par point ; « ## » ouvre une version.
+
+== notes.version
+## Version 0.1.0
+Premier vrai jeu, construit à partir de la maquette.
+L'acte 1 se joue jusqu'à la fête de la lanterne, avec la quête annexe du loup alpha.
+Sauvegarde automatique, copie de secours et export de la partie dans les Options.
+Partie+ : recommence l'histoire en gardant classes, niveaux, équipement et codex.
+Le jeu marche hors ligne et en anglais.
+Images : le village, Kael, le loup et la fête sont définitifs ; le reste est provisoire.

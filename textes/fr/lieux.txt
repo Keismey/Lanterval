@@ -1,0 +1,247 @@
+# Lanterval · Lieux : villages, zones, carte (textes en français)
+# Même format que acte1.txt. Les variantes (.fete, .calme, .sombre) s'affichent selon l'avancée de l'histoire.
+
+# ================= Village de Lanterval =================
+
+== lieu.lanterval.nom
+Lanterval
+
+== lieu.lanterval.sous
+La lanterne vacille
+
+== lieu.lanterval.sous.fete
+La lanterne brille à nouveau
+
+== lieu.lanterval.desc
+Les villageois parlent à voix basse. La lumière de la lanterne baisse un peu plus chaque jour et la brume gagne les champs.
+
+== lieu.lanterval.desc.fete
+La place est animée. Sous la lanterne rallumée, les enfants jouent et les marchands ont ressorti leurs étals.
+
+== pnj.orvan.nom
+Ancien Orvan
+
+== pnj.orvan.sous
+Maison de l'Ancien
+
+== pnj.brann.nom
+Brann, le garde
+
+== pnj.brann.sous
+Poste de garde
+
+== pnj.auberge.nom
+Auberge du Chaudron
+
+== pnj.auberge.sous
+Repos complet · {prix} po
+
+== pnj.auberge.accueil
+Aubergiste : « Une nuit au Chaudron, {prix} po. Ragoût compris, et tu repars en pleine forme ! »
+
+== pnj.auberge.dormir
+Dormir
+
+== pnj.auberge.dormir.sous
+{prix} po · PV et PP au maximum
+
+== pnj.auberge.message
+L'équipe a dormi à l'auberge : PV et PP au maximum.
+
+== pnj.berthe.nom
+Échoppe de Berthe
+
+== pnj.berthe.sous
+Équipement et objets
+
+== pnj.berthe.accueil
+Berthe : « Bienvenue ! Des herbes, des toniques, et quelques bonnes pièces pour les aventuriers. »
+
+== pnj.nell.nom
+Herboristerie de Nell
+
+== pnj.nell.sous
+Remèdes puissants
+
+== pnj.nell.accueil
+Nell : « Mes remèdes sont plus forts que ceux de Berthe. Plus chers aussi. »
+
+== pnj.tilo.nom
+Tilo, sur la place
+
+== pnj.tilo.sous
+Rumeurs du village
+
+# ================= Carte de la vallée =================
+
+== carte.titre
+Carte de la vallée
+
+== lieu.col.nom
+Col des Pierres
+
+== lieu.marais.nom
+Marais salant
+
+== lieu.prof.nom
+Profondeurs
+
+== lieu.prof.ferme
+Éboulement : plus tard dans l'histoire
+
+# ================= Forêt des Murmures =================
+
+== lieu.foret.nom
+Forêt des Murmures
+
+== lieu.foret.le
+la forêt
+
+== lieu.foret.v
+côté village
+
+== lieu.foret.g
+orée nord
+
+== lieu.foret.sous
+Brume épaisse
+
+== lieu.foret.sous.calme
+La brume s'est levée
+
+== lieu.foret.desc
+Des arbres immenses et une brume qui colle aux fougères. On entend des pas qui ne sont pas les tiens.
+
+== lieu.foret.desc.calme
+La brume s'est levée. Des lucioles dansent entre les troncs.
+
+== lieu.foret.intro
+## Forêt des Murmures
+Chaque trésor ou lieu remarquable que tu trouves fait monter la barre d'exploration. À 50 % et 100 %, une récompense t'attend.
+
+== foret.f1.nom
+Coffre moussu
+
+== foret.f1.texte
+Sous la mousse, un vieux coffre de bûcheron : *2 herbes médicinales*.
+
+== foret.f2.nom
+Source claire
+
+== foret.f2.texte
+Une eau limpide entre deux rochers. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== foret.f3.nom
+Pierre gravée
+
+== foret.f3.texte
+Une stèle de chasseurs : des loups fuient devant des torches et des lames. *Faiblesses des Loups des brumes ajoutées au codex.*
+
+== foret.f4.nom
+Racines creuses
+
+== foret.f4.texte
+Entre les racines d'un chêne : *40 po et une Cotte de cuir* (armure, Défense +4).
+
+== foret.f5.nom
+Cercle de champignons
+
+== foret.f5.texte
+Des champignons géants se rétractent devant une flamme. *Faiblesses des Champi-spores ajoutées au codex.*
+
+== foret.m50
+## Palier 50 % atteint
+Un chasseur t'a laissé un sac au pied d'un arbre marqué : *1 herbe et 1 tonique*.
+
+== foret.m100
+## Palier 100 % atteint
+Tu connais chaque recoin de la forêt. Tu trouves une *Plume de luciole* (accessoire, Vitesse +2). Forêt maîtrisée : sa traversée ne donnera plus que 0 à 2 combats.
+
+== foret.ev.combat
+Des grognements dans les fourrés…
+
+== foret.ev.baies
+Un buisson croule sous les baies sauvages : *+12 PV* pour tous.
+
+== foret.ev.colporteur
+Un colporteur égaré te demande la route de Lanterval et te donne *15 po* pour ta peine.
+
+== foret.ev.piege
+Clac ! Un vieux piège de braconnier se referme sur ta botte : *Kael perd 8 PV*.
+
+== foret.ev.champignons
+Des champignons bleus luisent au pied d'un arbre. Leur parfum apaise l'esprit : *+5 PP* pour tous.
+
+# ================= Grotte de Cristal =================
+
+== lieu.grotte.nom
+Grotte de Cristal
+
+== lieu.grotte.le
+la grotte
+
+== lieu.grotte.e
+entrée
+
+== lieu.grotte.f
+fond
+
+== lieu.grotte.sous
+Les cristaux brillent
+
+== lieu.grotte.sous.sombre
+Les cristaux sont éteints
+
+== lieu.grotte.desc
+Des cristaux bleus éclairent les parois. L'air vibre d'un bourdonnement sourd, comme une respiration.
+
+== lieu.grotte.desc.sombre
+Les cristaux sont éteints. Dans le noir, des yeux rouges te suivent.
+
+== lieu.grotte.intro
+## Grotte de Cristal
+Le cœur de cristal est tout au fond. Une fois là-bas, il faudra retraverser la grotte pour ressortir.
+
+== grotte.g1.nom
+Veine de cristal
+
+== grotte.g1.texte
+Une veine de cristal pur affleure : *40 po*.
+
+== grotte.g2.nom
+Coffre englouti
+
+== grotte.g2.texte
+Un coffre à moitié noyé : l'*Anneau d'onde* (accessoire, Magie +3).
+
+== grotte.g3.nom
+Fresque du Gardien
+
+== grotte.g3.texte
+Un géant de cristal terrassé par des villageois armés de masses et de seaux d'eau. *Faiblesses du Gardien ajoutées au codex.*
+
+== grotte.g4.nom
+Puits de lumière
+
+== grotte.g4.texte
+Un rayon tombe d'une faille du plafond. Rien qu'à le regarder, l'esprit s'éclaircit : *PP restaurés*.
+
+== grotte.m50
+## Palier 50 % atteint
+Dans un ancien campement de mineurs : *2 toniques*.
+
+== grotte.m100
+## Palier 100 % atteint
+Plus aucun recoin ne t'échappe. Tu trouves l'*Éclat prismatique* (accessoire, Attaque +4). Grotte maîtrisée : sa traversée ne donnera plus que 0 à 2 combats.
+
+== grotte.ev.combat
+Des bruissements d'ailes dans le noir…
+
+== grotte.ev.filon
+Un petit filon de cristal brut : *+20 po*.
+
+== grotte.ev.eboulis
+Des pierres tombent du plafond ! *Tout le monde perd 6 PV.*
+
+== grotte.ev.goutte
+Une eau très pure goutte d'une stalactite : *+6 PP* pour tous.

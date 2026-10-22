@@ -1,0 +1,314 @@
+# Lanterval · Names: heroes, classes, techniques, items, monsters (English)
+# Same format as the French file. Speaker names (parle.*) must match the names used in the dialogues.
+
+== parle.kael
+Kael
+
+== parle.mira
+Mira
+
+== parle.sol
+Sol
+
+== parle.orvan
+Orvan
+
+== parle.brann
+Brann
+
+== parle.berthe
+Berthe
+
+== parle.nell
+Nell
+
+== parle.aubergiste
+Innkeeper
+
+== parle.tilo
+Tilo
+
+== parle.silhouette
+Hooded figure
+
+== heros.kael.age
+17 years old
+
+== heros.kael.bio
+Apprentice guard of Lanterval. Stubborn and protective, he has never left the valley and dreams of proving he deserves his sword.
+
+== heros.mira.age
+18 years old
+
+== heros.mira.bio
+The blacksmith's daughter. Curious and impulsive, she has held fire in her hands since childhood and never waits for permission.
+
+== heros.sol.age
+20 years old
+
+== heros.sol.bio
+Hermit of the underground lake. Calm and quiet, he has guarded the cave for years and knows the secrets of the Crystal Guardian.
+
+== element.L
+Blade
+
+== element.T
+Earth
+
+== element.F
+Fire
+
+== element.E
+Water
+
+== classe.apprenti
+Apprentice
+
+== classe.apprenti.desc
+Versatile, no speciality.
+
+== classe.guerrier
+Warrior
+
+== classe.guerrier.desc
+Takes hits and hits hard. Draws enemy attacks.
+
+== classe.mage
+Mage
+
+== classe.mage.desc
+Powerful spells of their element, but fragile.
+
+== classe.soigneur
+Healer
+
+== classe.soigneur.desc
+Keeps the team on its feet.
+
+== classe.chevalier
+Knight
+
+== classe.chevalier.desc
+Protects the whole group.
+
+== classe.chevalier.verrou
+Unlocked by the crystal heart
+
+== classe.rodeur
+Ranger
+
+== classe.rodeur.desc
+Very fast, ideal for breaking guards.
+
+== classe.rodeur.verrou
+Secret class: hidden in a side quest
+
+== tech.attaque
+Attack
+
+== tech.frappe
+Elemental strike
+
+== tech.frappe.desc
+Physical blow of your element.
+
+== tech.provoc
+Taunt
+
+== tech.provoc.desc
+Enemies target this hero until their next turn, with extra defence.
+
+== tech.sort
+Elemental spell
+
+== tech.sort.desc
+Spell of your element on one enemy.
+
+== tech.deluge
+Deluge
+
+== tech.deluge.desc
+Spell on all enemies. Slow.
+
+== tech.soin
+Heal
+
+== tech.soin.desc
+Restores HP to one ally.
+
+== tech.soins
+Group heal
+
+== tech.soins.desc
+Restores HP to the whole team.
+
+== tech.sacree
+Sacred blade
+
+== tech.sacree.desc
+Blade and element at once: hits more weaknesses.
+
+== tech.rempart
+Bulwark
+
+== tech.rempart.desc
+Damage taken by the team ÷2 until their next turn.
+
+== tech.double
+Double shot
+
+== tech.double.desc
+Two arrows at random enemies.
+
+== tech.lynx
+Lynx eye
+
+== tech.lynx.desc
+Reveals an enemy's weaknesses. Very fast.
+
+== objet.herbe
+Healing herb
+
+== objet.herbe.desc
++35 HP
+
+== objet.tonique
+Tonic
+
+== objet.tonique.desc
++12 PP
+
+== objet.elixir
+Nell's elixir
+
+== objet.elixir.desc
++90 HP
+
+== equip.dague
+Rusty dagger
+
+== equip.baton
+Oak staff
+
+== equip.epee
+Iron sword
+
+== equip.braise
+Ember staff
+
+== equip.arc
+Brann's bow
+
+== equip.tunique
+Tunic
+
+== equip.cuir
+Leather coat
+
+== equip.mailles
+Chain mail
+
+== equip.robe
+Mage robe
+
+== equip.plume
+Firefly feather
+
+== equip.anneau
+Wave ring
+
+== equip.eclat
+Prismatic shard
+
+== equip.medaillon
+Lanterval medallion
+
+== important.eclat-lanterne
+Lantern shard
+
+== important.eclat-lanterne.desc
+Given by Elder Orvan. It unlocks classes.
+
+== important.insigne
+Closed-eye badge
+
+== important.insigne.desc
+Found in the forest, near Mira. The symbol of the Order of the Eyelid.
+
+== important.coeur
+Crystal heart
+
+== important.coeur.desc
+Bring it back to Elder Orvan, in the village.
+
+== important.croc
+Alpha wolf's fang
+
+== important.croc.desc
+Proof for Brann that the alpha wolf is defeated.
+
+== monstre.loup
+Mist wolf
+
+== monstre.loup.court
+Wolf
+
+== monstre.loup.desc
+Hunts in packs in the mist. Fast.
+
+== monstre.spore
+Sporeshroom
+
+== monstre.spore.desc
+Releases spores that hit the whole team.
+
+== monstre.spore.special
+{nom} releases a cloud of spores!
+
+== monstre.chauve
+Cave bat
+
+== monstre.chauve.desc
+Very fast but fragile. A single weakness is enough.
+
+== monstre.gelee
+Quartz jelly
+
+== monstre.gelee.court
+Jelly
+
+== monstre.gelee.desc
+Soaks up moisture to heal itself when weakened.
+
+== monstre.gelee.special
+{nom} soaks up moisture and recovers {v} HP.
+
+== monstre.ombre
+Shadow thief
+
+== monstre.ombre.desc
+Servant of a mysterious order. Hits hard.
+
+== monstre.ombre.special
+Shadow blade
+
+== monstre.alpha
+Alpha wolf
+
+== monstre.alpha.desc
+Scarred pack leader. Its guard is solid.
+
+== monstre.alpha.special
+Savage bite
+
+== monstre.golem
+Crystal Guardian
+
+== monstre.golem.desc
+Guardian of the crystal heart. Gathers light before striking.
+
+== monstre.golem.charge
+The Guardian gathers light… *powerful attack on its next turn*, unless you break its guard first.
+
+== monstre.golem.special
+*Prismatic ray!* The light strikes the whole team.

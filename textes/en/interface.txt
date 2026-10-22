@@ -1,0 +1,887 @@
+# Lanterval · Interface (English)
+# Same format as the French file.
+
+== continuer
+Continue
+
+== combattre
+Fight!
+
+== fermer
+Close
+
+== retour
+Back
+
+== po
+g
+
+== village
+Village
+
+== menu.options
+Options
+
+== menu.inventaire
+Inventory
+
+== menu.equipe
+Team
+
+== menu.codex
+Codex
+
+== menu.journal
+Journal
+
+== stat.hp
+HP
+
+== stat.pp
+PP
+
+== stat.atk
+Attack
+
+== stat.mag
+Magic
+
+== stat.def
+Defence
+
+== stat.spd
+Speed
+
+== place.arme
+Weapon
+
+== place.armure
+Armour
+
+== place.acc
+Accessory
+
+== titre.sous
+An RPG by Keismey Studio
+
+== titre.texte
+The lantern of Lanterval has always protected the valley. Tonight, its light is flickering.
+
+== titre.commencer
+Start the adventure
+
+== titre.commencer.sous
+New game
+
+== titre.continuer
+Continue
+
+== titre.plus
+new game+ {n}
+
+== titre.nouvelle
+New game
+
+== titre.nouvelle.sous
+Start again from the beginning
+
+== titre.nouvelle.confirmer
+Confirm: new game?
+
+== titre.version
+Version {v} · autosave
+
+== scene.image
+Image coming soon
+
+== scene.provisoire
+Temporary images
+
+== recit.heros
+Your hero
+
+== recit.rejoint
+{nom} joins the team
+
+== recit.passer
+Skip scene
+
+== village.partir
+Leave
+
+== village.annexe
+Side quest
+
+== boutique.objet
+{prix} g · {effet} · you have {n}
+
+== boutique.vendre
+Sell
+
+== boutique.vendre.sous
+Items and gear in your bag
+
+== boutique.bourse
+Purse: *{or} g*.
+
+== boutique.equiper
+To equip what you buy, go to the Team screen.
+
+== boutique.achete
+There you go: *{nom}* put in your bag.
+
+== boutique.achete.eq
+There you go: *{nom}* put in your bag. Go to Team to wear it.
+
+== boutique.vente.accueil
+“Show me what you've got, I'll give you a fair price.”
+
+== boutique.cadeau
+Gift: can't be sold
+
+== boutique.fini
+I'm done
+
+== boutique.porte
+Only what's in your bag can be sold, not what the team is wearing.
+
+== boutique.vide
+Your bag is empty.
+
+== boutique.autre
+“Anything else?”
+
+== boutique.vendu
+Sold: *{nom}* for {prix} g.
+
+== carte.ici
+You are at: *{lieu}*.
+
+== carte.fermes
+Paths closed for now: {lieux}. They show where the story will go next.
+
+== carte.ferme
+*{lieu}*: this path will open later in the story.
+
+== carte.bientot
+*{lieu}*: the story continues there in the next version of the game.
+
+== carte.rester
+Stay here
+
+== carte.direct
+Direct path
+
+== carte.traverser
+Cross {lieux}
+
+== carte.puis
+then
+
+== carte.cout
+1 to 3 fights
+
+== carte.cout.maitrise
+0 to 2 fights
+
+== trav.titre
+Crossing
+
+== trav.vers
+Heading for: {lieu}
+
+== trav.avance
+Crossing {p} %
+
+== trav.texte
+You cross {zone}, heading for: *{lieu}*.
+
+== trav.note
+1 to 3 random fights. Explore the zone to 100 % to reduce them.
+
+== trav.note.maitrise
+Zone mastered: 0 to 2 fights.
+
+== trav.monstres
+Monsters block your way!
+
+== trav.fin
+Finished crossing {zone}: {n} fights.
+
+== trav.fin.un
+Finished crossing {zone}: {n} fight.
+
+== trav.or
+*{or} g* picked up along the way.
+
+== zone.exploration
+Exploration
+
+== zone.decouvertes
+{p} % · {n}/{total} discoveries
+
+== zone.palier
+{p} % milestone
+
+== zone.quete.principale
+Main quest
+
+== zone.quete.annexe
+Side quest
+
+== zone.conseil.equipe
+best with 2 or more
+
+== zone.rentrer
+Return to {lieu}
+
+== zone.aller
+Go to: {lieu}
+
+== zone.explorer
+Explore
+
+== zone.reste
+{n} discoveries left
+
+== zone.reste.un
+1 discovery left
+
+== zone.tout
+Everything found · events
+
+== zone.rien
+Nothing new for now
+
+== zone.chasser
+Look for monsters
+
+== zone.chasser.sous
+Guaranteed fight
+
+== zone.chasser.texte
+You search every corner for monsters…
+
+== zone.repos
+Full rest
+
+== zone.repos.utilise
+Already used this visit
+
+== zone.repos.fait
+You rest at: {lieu}. *HP and PP fully restored.*
+
+== zone.traverser
+Cross to: {lieu}
+
+== zone.ferme
+Closed for now
+
+== zone.bientot
+In the next version
+
+== zone.carte
+Map
+
+== zone.carte.sous
+See the paths
+
+== zone.tag.tresor
+Treasure
+
+== zone.tag.lieu
+Place
+
+== zone.tag.evenement
+Event
+
+== combat.conseil
+Tip
+
+== combat.boss
+*Boss fight!* Keep an eye on the turn order at the top.
+
+== combat.debut
+{noms}!
+
+== combat.tours
+Turns
+
+== combat.union
+Union
+
+== combat.chaine
+Chain ×{m}
+
+== combat.chaine.court
+(chain ×{m})
+
+== combat.auto
+Auto
+
+== combat.vide
+The group will grow along the way
+
+== combat.inconnue
+Unknown weakness
+
+== combat.resiste.titre
+Resists: {el}
+
+== combat.garde.titre
+Guard
+
+== combat.brise.court
+BROKEN
+
+== combat.fx.brise
+BROKEN!
+
+== combat.pv
+{hp}/{max} HP
+
+== combat.garde
+guard {n}
+
+== combat.garde.brisee
+guard broken
+
+== combat.releve
+{nom} gets back up and restores its guard.
+
+== combat.auto.coupe
+*Auto off*: {nom} is below 30 % HP. Your turn.
+
+== combat.auto.tour
+Auto: {nom} attacks.
+
+== combat.auto.arreter
+Stop auto
+
+== combat.auto.arreter.sous
+You take over next turn
+
+== combat.auto.arrete
+Auto stopped: you take over next turn.
+
+== combat.atoi
+Your turn: *{nom}* ({classe}).
+
+== combat.atoi.chaine
+Chain in progress: this hit will do ×{m}.
+
+== combat.defaite
+The team is down…
+
+== combat.victoire
+*Victory!* +{xp} XP, +{or} g.
+
+== combat.niveau
+*{nom}* reaches level {n}!
+
+== combat.suite.auto
+Continuing automatically…
+
+== combat.cmd.tech
+Techniques
+
+== combat.cmd.objet
+Item
+
+== combat.cmd.objet.sous
+{n} in bag
+
+== combat.cmd.garde
+Guard
+
+== combat.cmd.garde.sous
+Damage ÷2
+
+== combat.cmd.union.seul
+Needs a team
+
+== combat.cmd.union.prete
+Ready!
+
+== combat.cmd.auto.sous
+Auto attacks
+
+== combat.cmd.auto.non
+Not here
+
+== combat.cmd.fuir
+Flee
+
+== combat.cmd.fuir.sous
+70 %
+
+== combat.cmd.fuir.non
+Impossible
+
+== combat.tech.liste
+{nom}'s techniques ({classe}):
+
+== combat.cible.ennemi
+{quoi}: tap an enemy, on the picture or in the list.
+
+== combat.cible.allie
+{quoi}: on whom?
+
+== combat.faiblesse
+Weakness!
+
+== combat.resiste
+Resists…
+
+== combat.perd
+{nom} loses {n} HP.
+
+== combat.brise
+*Guard broken!* It loses its next turn and takes 50 % more damage.
+
+== combat.charge.annulee
+*The charged attack is cancelled!*
+
+== combat.vaincu
+{nom} is defeated.
+
+== combat.vaincue
+{nom} is defeated.
+
+== combat.garde.texte
+{nom} takes a guard stance.
+
+== combat.fuite
+You run away!
+
+== combat.fuite.rate
+Couldn't escape!
+
+== combat.objet
+{nom} uses {objet} on {cible}.
+
+== combat.plus.pv
++{n} HP.
+
+== combat.plus.pp
++{n} PP.
+
+== combat.union.texte
+*Union!* The whole team strikes together.
+
+== combat.union.fin
+The Union hits every enemy.
+
+== combat.scan
+{nom} studies {cible}: weaknesses *{faibles}*
+
+== combat.scan.res
+, resists {res}
+
+== combat.soin
+{nom} heals {cible}: +{n} HP.
+
+== combat.soins
+{nom} heals the whole team.
+
+== combat.provoc
+{nom} taunts the enemies, who will attack them first.
+
+== combat.rempart
+{nom} raises a bulwark: damage taken by the team ÷2 until their next turn.
+
+== combat.attaque
+{nom} attacks.
+
+== combat.fort
+{nom}: {coup}!
+
+== combat.en.garde
+(guarding)
+
+== combat.a.terre
+*{nom} is down!*
+
+== defaite.titre
+Back to the inn
+
+== defaite.texte
+You wake up at the inn, healed. While fleeing, you lost half your purse: you have *{or} g* left.
+
+== aide.titre
+Combat help
+
+== aide.premier
+First fight
+
+== aide.intro
+Fights are turn-based. Here is what the icons mean. You'll find this help again in the Codex, top right.
+
+== aide.ok
+Got it, let's fight!
+
+== aide.tours
+*Turn order*, at the top of the screen: the first one, framed in gold, plays now. Speed decides the order.
+
+== aide.garde
+The enemy's *guard*. Each hit on a weakness removes 1 point.
+
+== aide.brise
+Guard at 0: the enemy loses its next turn and takes +50 % damage. A charged attack is cancelled.
+
+== aide.elements
+*Elements*: Blade, Earth, Fire, Water. Each hero has their own (Kael Earth, Mira Fire, Sol Water); the normal Attack is always Blade.
+
+== aide.inconnue
+Weakness not discovered yet. Hit it once and it stays shown, here and in the bestiary.
+
+== aide.resistance
+Resistance: damage halved.
+
+== aide.union
+*Union*: each weakness you hit fills the gauge. At 3, the whole team strikes every enemy.
+
+== aide.chaine
+*Chain*: when two heroes play in a row, each hit does +15 % (up to +45 %).
+
+== aide.auto
+*Auto*: automatic normal attacks. Turns off if a hero drops below 30 % HP. Not available against bosses or in quests.
+
+== equipe.niveau
+lv. {n} · {xp}/{max} XP
+
+== equipe.classe
+Class
+
+== equipe.equipement
+Gear
+
+== equipe.techniques
+Techniques
+
+== equipe.sac
+Bag
+
+== equipe.sac.vide
+No healing items.
+
+== equipe.toucher
+Tap to change.
+
+== equipe.rien
+Nothing
+
+== equipe.utiliser
+use on {nom}
+
+== equipe.classe.aide
+Choose {nom}'s class. The element ({el}) stays the same, stats and techniques change. An incompatible weapon goes back to the bag.
+
+== equipe.place.aide
+{place} for {nom} ({classe}). Differences are compared to the current gear.
+
+== equipe.changer.classe
+Change class
+
+== equipe.changer
+Change: {place}
+
+== equipe.verrouillee
+Locked
+
+== equipe.actuelle
+(current)
+
+== equipe.retour.sac
+{nom} goes back to the bag.
+
+== equipe.devient
+{nom} becomes a {classe}.
+
+== equipe.pas.pour
+Not for the {classe} class · {qui}
+
+== equipe.retirer
+Remove
+
+== equipe.place.vide
+Nothing in the bag for this slot. Buy gear from Berthe or explore the zones.
+
+== equipe.pareil
+No change
+
+== equipe.toutes
+All classes
+
+== inventaire.objets
+Items
+
+== inventaire.equipement
+Gear
+
+== inventaire.importants
+Key items
+
+== inventaire.bourse
+Purse
+
+== inventaire.vide
+No healing items. Berthe and Nell sell them in the village.
+
+== inventaire.toucher
+Tap an item to use it.
+
+== inventaire.combat
+In combat, use the Item command.
+
+== inventaire.utilise
+{objet} used on {nom}.
+
+== inventaire.sac
+In the bag
+
+== inventaire.sac.vide
+Nothing in the bag.
+
+== inventaire.porte
+Worn
+
+== inventaire.eq.aide
+To change gear, go to the Team screen. You can sell what's in your bag to Berthe or Nell.
+
+== inventaire.imp.vide
+No key items yet.
+
+== inventaire.mystere
+A mysterious item. Its purpose will be revealed later.
+
+== codex.bestiaire
+Bestiary
+
+== codex.aide
+Weaknesses are discovered in combat (by hitting them), with Lynx eye, or thanks to explored places.
+
+== codex.inconnu
+Not met yet.
+
+== codex.vaincus
+Defeated: {n}.
+
+== codex.faiblesses
+Weaknesses
+
+== codex.resiste
+Resists
+
+== journal.acte
+Act {n} · {titre}
+
+== journal.annexe
+Side quest · {titre}
+
+== journal.tout.fini
+The whole story of this version is complete.
+
+== journal.classes
+Classes
+
+== journal.secrete
+??? (secret)
+
+== journal.verrouillee
+{nom} (locked)
+
+== journal.bilan
+Summary
+
+== journal.vide
+Nothing yet.
+
+== journal.auto
+(auto)
+
+== journal.log.etape
+Quest: {titre}
+
+== journal.log.annexe
+New side quest: {titre}
+
+== journal.log.annexeFinie
+Side quest complete: {titre}
+
+== journal.log.auberge
+Night at the inn
+
+== journal.log.achat
+Bought: {nom}
+
+== journal.log.vente
+Sold: {nom}
+
+== journal.log.arrivee
+Arrived at {lieu}
+
+== journal.log.entree
+Entered: {lieu}
+
+== journal.log.traversee
+Crossed {lieu}: {n} fight(s), {duree}
+
+== journal.log.decouverte
+{lieu}: {nom} ({p} %)
+
+== journal.log.palier
+{lieu}: {p} % milestone
+
+== journal.log.combat
+Fight: {noms}, {tours} turns{auto}, {duree}
+
+== journal.log.combat.quete
+Quest fight: {noms}, {tours} turns, {duree}
+
+== journal.log.boss
+Boss fight: {noms}, {tours} turns, {duree}
+
+== journal.log.fuite
+Fled ({noms})
+
+== journal.log.defaite
+Defeated by {noms}
+
+== journal.log.retour
+Back to the inn
+
+== stats.temps
+play time
+
+== stats.appuis
+taps
+
+== stats.combats
+fights
+
+== stats.combats.quete
+fights ({n} quest)
+
+== stats.auto
+auto turns
+
+== stats.explorations
+explorations
+
+== stats.traversees
+crossings
+
+== stats.annexes
+side quests done
+
+== stats.plus
+new game+
+
+== fin.titre
+End of version 0.1
+
+== fin.continuer
+Keep playing
+
+== fin.continuer.annexes
+Finish the side quests
+
+== fin.continuer.zones
+Explore the zones to 100 %
+
+== fin.plus
+Start a new game+
+
+== fin.plus.sous
+The story starts over: you keep classes, levels, gear and codex; monsters are stronger.
+
+== fin.chronologie
+Timeline
+
+== options.langue
+Language: English
+
+== options.langue.sous
+Tap to switch to French
+
+== options.texte
+Text: {v}
+
+== options.texte.normal
+normal
+
+== options.texte.rapide
+fast
+
+== options.texte.instant
+instant
+
+== options.texte.sous
+Dialogue display speed
+
+== options.combats.normaux
+Fights: normal speed
+
+== options.combats.rapides
+Fights: fast
+
+== options.combats.sous
+Tap to change
+
+== options.sauvegarde
+Save
+
+== options.sauvegarde.sous
+Export or import your game
+
+== options.notes
+Release notes
+
+== options.notes.sous
+Version {v}: what's new
+
+== options.bug
+Report a bug
+
+== options.bug.sous
+Keismey Studio hub form
+
+== options.soutien
+Support the studio
+
+== options.soutien.sous
+Ko-fi, if you enjoy the game
+
+== options.titre
+Title screen
+
+== options.titre.sous
+Your game is saved
+
+== options.reset
+Start over
+
+== options.reset.sous
+Erase the game and start from scratch
+
+== options.reset.confirmer
+Confirm: erase everything?
+
+== options.reset.confirmer.sous
+The current game will be lost
+
+== debug.titre
+Test mode
+
+== debug.sous
+Jump to a step, give gold…
+
+== notes.version
+## Version 0.1.0
+First real game, built from the prototype.
+Act 1 plays up to the lantern festival, with the alpha wolf side quest.
+Autosave, backup copy and game export in the Options.
+New game+: start the story over while keeping classes, levels, gear and codex.
+The game works offline and in English.
+Images: the village, Kael, the wolf and the festival are final; the rest is temporary.

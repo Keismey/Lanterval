@@ -1,0 +1,247 @@
+# Lanterval · Places: villages, zones, map (English)
+# Same format as the French file.
+
+# ================= Lanterval =================
+
+== lieu.lanterval.nom
+Lanterval
+
+== lieu.lanterval.sous
+The lantern flickers
+
+== lieu.lanterval.sous.fete
+The lantern shines again
+
+== lieu.lanterval.desc
+The villagers speak in hushed voices. The lantern dims a little more every day and the mist creeps over the fields.
+
+== lieu.lanterval.desc.fete
+The square is lively. Under the rekindled lantern, children play and the merchants have set out their stalls again.
+
+== pnj.orvan.nom
+Elder Orvan
+
+== pnj.orvan.sous
+The Elder's house
+
+== pnj.brann.nom
+Brann, the guard
+
+== pnj.brann.sous
+Guard post
+
+== pnj.auberge.nom
+The Cauldron Inn
+
+== pnj.auberge.sous
+Full rest · {prix} g
+
+== pnj.auberge.accueil
+Innkeeper: “A night at the Cauldron, {prix} gold. Stew included, and you'll leave fighting fit!”
+
+== pnj.auberge.dormir
+Sleep
+
+== pnj.auberge.dormir.sous
+{prix} g · HP and PP fully restored
+
+== pnj.auberge.message
+The team slept at the inn: HP and PP fully restored.
+
+== pnj.berthe.nom
+Berthe's stall
+
+== pnj.berthe.sous
+Gear and items
+
+== pnj.berthe.accueil
+Berthe: “Welcome! Herbs, tonics, and a few good pieces for adventurers.”
+
+== pnj.nell.nom
+Nell's herbalist shop
+
+== pnj.nell.sous
+Strong remedies
+
+== pnj.nell.accueil
+Nell: “My remedies are stronger than Berthe's. Pricier too.”
+
+== pnj.tilo.nom
+Tilo, on the square
+
+== pnj.tilo.sous
+Village rumours
+
+# ================= Valley map =================
+
+== carte.titre
+Valley map
+
+== lieu.col.nom
+Stone Pass
+
+== lieu.marais.nom
+Salt Marsh
+
+== lieu.prof.nom
+The Depths
+
+== lieu.prof.ferme
+Rockfall: later in the story
+
+# ================= Whispering Forest =================
+
+== lieu.foret.nom
+Whispering Forest
+
+== lieu.foret.le
+the forest
+
+== lieu.foret.v
+village side
+
+== lieu.foret.g
+northern edge
+
+== lieu.foret.sous
+Thick mist
+
+== lieu.foret.sous.calme
+The mist has lifted
+
+== lieu.foret.desc
+Huge trees and a mist that clings to the ferns. You can hear footsteps that aren't yours.
+
+== lieu.foret.desc.calme
+The mist has lifted. Fireflies dance between the trunks.
+
+== lieu.foret.intro
+## Whispering Forest
+Every treasure or remarkable place you find fills the exploration bar. At 50 % and 100 %, a reward awaits you.
+
+== foret.f1.nom
+Mossy chest
+
+== foret.f1.texte
+Under the moss, an old woodcutter's chest: *2 healing herbs*.
+
+== foret.f2.nom
+Clear spring
+
+== foret.f2.texte
+Crystal-clear water between two rocks. The team *recovers all its strength*. You can rest here on every visit.
+
+== foret.f3.nom
+Carved stone
+
+== foret.f3.texte
+A hunters' stele: wolves fleeing from torches and blades. *Mist wolf weaknesses added to the codex.*
+
+== foret.f4.nom
+Hollow roots
+
+== foret.f4.texte
+Between the roots of an oak: *40 gold and a Leather coat* (armour, Defence +4).
+
+== foret.f5.nom
+Mushroom ring
+
+== foret.f5.texte
+Giant mushrooms shrink back from a flame. *Sporeshroom weaknesses added to the codex.*
+
+== foret.m50
+## 50 % milestone reached
+A hunter left you a bag at the foot of a marked tree: *1 herb and 1 tonic*.
+
+== foret.m100
+## 100 % milestone reached
+You know every corner of the forest. You find a *Firefly feather* (accessory, Speed +2). Forest mastered: crossing it now means only 0 to 2 fights.
+
+== foret.ev.combat
+Growling in the bushes…
+
+== foret.ev.baies
+A bush is heavy with wild berries: *+12 HP* for everyone.
+
+== foret.ev.colporteur
+A lost peddler asks you the way to Lanterval and gives you *15 gold* for your trouble.
+
+== foret.ev.piege
+Snap! An old poacher's trap closes on your boot: *Kael loses 8 HP*.
+
+== foret.ev.champignons
+Blue mushrooms glow at the foot of a tree. Their scent calms the mind: *+5 PP* for everyone.
+
+# ================= Crystal Cave =================
+
+== lieu.grotte.nom
+Crystal Cave
+
+== lieu.grotte.le
+the cave
+
+== lieu.grotte.e
+entrance
+
+== lieu.grotte.f
+far end
+
+== lieu.grotte.sous
+The crystals shine
+
+== lieu.grotte.sous.sombre
+The crystals have gone dark
+
+== lieu.grotte.desc
+Blue crystals light up the walls. The air hums with a low drone, like breathing.
+
+== lieu.grotte.desc.sombre
+The crystals have gone dark. In the shadows, red eyes follow you.
+
+== lieu.grotte.intro
+## Crystal Cave
+The crystal heart lies at the very end. Once there, you'll have to cross the cave again to get out.
+
+== grotte.g1.nom
+Crystal vein
+
+== grotte.g1.texte
+A vein of pure crystal breaks the surface: *40 gold*.
+
+== grotte.g2.nom
+Sunken chest
+
+== grotte.g2.texte
+A half-flooded chest: the *Wave ring* (accessory, Magic +3).
+
+== grotte.g3.nom
+Guardian fresco
+
+== grotte.g3.texte
+A crystal giant brought down by villagers armed with maces and buckets of water. *Guardian weaknesses added to the codex.*
+
+== grotte.g4.nom
+Light well
+
+== grotte.g4.texte
+A beam falls through a crack in the ceiling. Just looking at it clears the mind: *PP restored*.
+
+== grotte.m50
+## 50 % milestone reached
+In an old miners' camp: *2 tonics*.
+
+== grotte.m100
+## 100 % milestone reached
+No corner escapes you any more. You find the *Prismatic shard* (accessory, Attack +4). Cave mastered: crossing it now means only 0 to 2 fights.
+
+== grotte.ev.combat
+Wings rustling in the dark…
+
+== grotte.ev.filon
+A small seam of raw crystal: *+20 gold*.
+
+== grotte.ev.eboulis
+Stones fall from the ceiling! *Everyone loses 6 HP.*
+
+== grotte.ev.goutte
+Very pure water drips from a stalactite: *+6 PP* for everyone.

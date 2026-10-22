@@ -1,0 +1,214 @@
+# Lanterval · Act 1: The lantern (English)
+# Same format as the French file (see the help at the top of textes/fr/acte1.txt).
+# Speaker names must match textes/en/noms.txt (parle.*), followed by « : ».
+
+== a1.titre
+The lantern
+
+# ---------- Prologue ----------
+
+== prologue
+## Prologue
+Lanterval is a village nestled at the foot of the mountains. For as long as anyone remembers, the lantern on the square has kept the mist away, thanks to the crystal glowing at its heart.
+Tonight, its light is flickering.
+
+== prologue.suite
+## Prologue
+Elder Orvan has sent for you. In the village, a gold *!* marks the main quest and a blue *!* marks a side quest.
+
+# ---------- Step 1: Orvan ----------
+
+== a1.e1.titre
+Speak to Elder Orvan
+
+== a1.e1.scene
+Orvan: “Kael. The lantern's crystal is dying. Without it, the mist will swallow Lanterval before the season ends.”
+Orvan: “Mira, the blacksmith's daughter, left at dawn to follow the mist into the Whispering Forest. Alone, of course. Bring her back, and find out where this evil comes from.”
+He breaks a shard off the lantern and hands it to you.
+Orvan: “This crystal recognises brave hearts. It will teach you other ways to fight.” [Accept the quest]
+
+== a1.e1.classes
+## Classes
+*New classes: Warrior, Mage, Healer.* Change class and gear at any time outside combat, with the Team button at the top of the screen.
+Each character keeps their element: Kael strikes with Earth whatever his class.
+
+== a1.e1.message
+Quest: *find Mira* in the Whispering Forest. Try out the Warrior class.
+
+# ---------- Step 2: Whispering Forest ----------
+
+== a1.e2.titre
+Find Mira in the Whispering Forest
+
+== a1.e2.bouton
+Find Mira
+
+== a1.e2.traces
+Near the path, fresh footprints and charred twigs. Someone has lit flames here, several times. [Follow the tracks]
+
+== a1.e2.encerclee
+In a clearing, Mira has her back to a tree and holds three wolves at bay with flames.
+Mira: “Kael?! Don't just stand there!” [Help Mira]
+
+== a1.e2.merci
+Mira: “Not bad, for an apprentice guard.” She blows on her still-smoking fingers.
+
+== a1.e2.insigne
+Something glints in the trampled grass: a metal badge shaped like a closed eye.
+Mira: “Those wolves weren't hunting alone. I saw a hooded figure slip between the trees just before they surrounded me.”
+Kael: “The Elder will know what it is. Let's head back to the village.”
+Mira: “I'm coming with you, and that's not a question.”
+
+== a1.e2.message
+Show the badge to *Elder Orvan*, in the village.
+
+# ---------- Step 3: the badge ----------
+
+== a1.e3.titre
+Show the badge to the Elder
+
+== a1.e3.scene
+You show the badge. The Elder turns pale.
+Orvan: “A closed eye… The symbol of the Order of the Eyelid. I thought they had vanished fifty years ago.”
+Mira: “And the mist? I followed it all day. It doesn't come from the village: it pours out of the Crystal Cave, north of the forest.”
+Orvan: “That's where the crystal heart that feeds our lantern sleeps. If it goes out, nothing will protect us any more.”
+Orvan: “Go to the end of the cave and bring me the heart. And beware of those who wear this eye.”
+
+== a1.e3.message
+New zone on the map: the *Crystal Cave*, north of the Whispering Forest.
+
+# ---------- Step 4: Sol ----------
+
+== a1.e4.titre
+Explore the Crystal Cave
+
+== a1.e4.bouton
+Go deeper into the cave
+
+== a1.e4.choix
+The main tunnel splits. To the left, an icy draught. To the right, a blue glow slowly pulsing.
+> gauche : Left | The draught
+> droite : Right | The glow
+
+== a1.e4.gauche
+A hollow where cave bats are sleeping. They wake up shrieking! [Fight]
+
+== a1.e4.gauche.fin
+Behind them, a miner's satchel: *2 tonics*. The tunnel joins up with the glow.
+
+== a1.e4.droite
+You head straight for the glow. The floor is covered in sharp shards: *everyone loses 5 HP*.
+
+== a1.e4.lac
+On the shore of an underground lake, a young man with blue hair fends off jellies with his staff. He is surrounded. [Lend a hand]
+
+== a1.e4.sol
+Sol: “Thank you. My name is Sol. I've been guarding this lake since the Guardian woke up.”
+Sol: “If you want the heart, you'll have to defeat it. It hates water: I've seen it back away from the lake.”
+
+== a1.e4.passage
+Sol: “I know a passage along the lake. It leads straight to the far end of the cave.”
+
+== a1.e4.message
+You are at the *far end of the cave*. The crystal heart is very close.
+
+# ---------- Step 5: the Guardian ----------
+
+== a1.e5.titre
+Defeat the Crystal Guardian
+
+== a1.e5.bouton
+Approach the crystal heart
+
+== a1.e5.salle
+A vast chamber. In the centre, on a pedestal, the crystal heart beats faintly. The rocks around it begin to tremble…
+
+== a1.e5.gardien
+The rocks come together into a colossus. *The Crystal Guardian* blocks your way!
+
+== a1.e5.conseil
+Break its guard before it unleashes its charged attack (red “!” badge in the turn order). Auto mode is off against bosses.
+
+== a1.e5.victoire
+The Guardian shatters. You pick up the crystal heart: it is warm, like a beating heart. *New class: Knight.*
+Behind you, every light in the cave goes out. In the dark, something moves. You'll have to cross the cave again to get out.
+
+== a1.e5.message
+The cave has changed: its crystals are dark and other creatures prowl there.
+
+# ---------- Step 6: ambush on the way back ----------
+
+== a1.e6.titre
+Leave the cave with the heart
+
+== a1.e6.bouton
+Leave the cave
+
+== a1.e6.embuscade
+## Ambush
+Halfway out, a hooded figure steps out of the shadows.
+Hooded figure: “That crystal does not belong to you. Hand it over.” [Refuse]
+In reply, two shadows peel away from the walls. [Fight]
+
+== a1.e6.fuite
+## Ambush
+The figure has vanished into the dark. On its sleeve, you had time to see the same closed eye as on the badge.
+
+== a1.e6.message
+You made it out of the cave. Bring the heart back to *Elder Orvan*.
+
+# ---------- Step 7: the celebration ----------
+
+== a1.e7.titre
+Bring the heart back to the Elder
+
+== a1.e7.coeur
+Orvan: “The heart! You found it!” The Elder takes it in both hands and places it in the lantern's cage.
+
+== a1.e7.fete
+## The lantern
+The lantern blazes with blue light. The mist retreats to the edge of the forest and all of Lanterval comes out to celebrate.
+Reward: *100 gold* and the *Lanterval medallion* (accessory, HP +10). The team is in top shape.
+
+== a1.e7.aveu
+Orvan: “Thank you, all three of you. But I must be honest: this heart will only last one season.”
+Orvan: “The valley's true crystal, the amber crystal, rests in the Stone Pass, to the north. If the Order is looking for it too, you must reach it before them.”
+Mira: “Then we leave tomorrow.” Sol nods without a word.
+
+== a1.e7.message
+New path on the map: the *Stone Pass*.
+
+# ---------- What the villagers say as the story moves on ----------
+
+== pnj.orvan.a1.e2
+Orvan: “The forest is to the east. Hurry, Mira has never known how to back down from anything.”
+
+== pnj.orvan.a1.e4
+Orvan: “The crystal heart is at the end of the cave. Bring it back before it goes out for good.”
+
+== pnj.orvan.fin
+Orvan: “Get some rest. The Stone Pass awaits you, but it won't run away tonight.”
+
+== pnj.brann
+Brann: “Stay careful, Kael. The mist makes the beasts nervous.”
+
+== pnj.tilo.a1.e1
+Tilo: “Brann, the guard, is looking for someone brave. They say he knows secret hunter techniques!”
+
+== pnj.tilo.a1.e2
+Tilo: “Mira went into the forest all by herself! Mum says wolves are scared of fire.”
+
+== pnj.tilo.a1.e3
+Tilo: “They say a stone giant sleeps at the end of the cave. The old folks say it hates water.”
+
+== pnj.tilo.a1.e6
+Tilo: “Everyone says you've got the crystal heart! Go and see the Elder, quick!”
+
+== pnj.tilo.fin
+Tilo: “The fireflies are back in the forest! Can we go there in the evening now?”
+
+# ---------- End of version 0.1 ----------
+
+== fin.version
+## End of version 0.1
+The rest of Act 1 begins here: the Stone Pass. It's coming in the next version.

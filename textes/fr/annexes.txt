@@ -1,0 +1,52 @@
+# Lanterval · Quêtes annexes (textes en français)
+# Même format que acte1.txt (voir l'aide en haut de ce fichier).
+
+# ---------- 1. Le loup alpha (Brann, classe Rôdeur) ----------
+
+== loup.titre
+Le loup alpha
+
+== loup.offre
+Brann : « Un loup énorme mène les meutes depuis que la brume monte. Il a une cicatrice sur l'œil et il a déjà emporté trois moutons. »
+Brann : « Trouve-le avant qu'il ne trouve le village. Reviens vivant, c'est tout ce que je te demande. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== loup.message
+Quête annexe : *traquer le loup alpha* dans la forêt. Brann conseille d'y aller à plusieurs.
+
+== loup.e1.titre
+Traquer le loup alpha dans la forêt
+
+== loup.e1.bouton
+Suivre la piste
+
+== loup.e1.attente
+Brann : « Il rôde au cœur de la forêt. N'y va pas seul, il a mis en fuite trois chasseurs. »
+
+== loup.e1.piste
+## Le loup alpha
+Des empreintes énormes, plus grandes que ta main, s'enfoncent vers un ravin. [Suivre les empreintes]
+Près d'un rocher, la carcasse d'un cerf, à peine refroidie. Le vent tourne. [Avancer]
+
+== loup.e1.ravin
+## Le loup alpha
+Sur un rocher, sous la lune, un loup gris sombre à la cicatrice te fixe. Un autre loup surgit derrière toi. [Combattre]
+
+== loup.e1.fin
+## Le loup alpha
+Le loup alpha s'effondre. Tu prends un de ses crocs comme preuve pour Brann.
+
+== loup.e1.message
+Quête annexe : retourne voir *Brann* au village.
+
+== loup.e2.titre
+Retourner voir Brann
+
+== loup.e2.scene
+Brann : « Tu l'as eu ! Ton père aurait été fier. Prends mon vieil arc, je vais te montrer comment se bat un rôdeur. »
+## Quête annexe terminée
+*Classe secrète débloquée : Rôdeur*, très rapide, avec Double tir pour briser les gardes. Tu reçois aussi l'*Arc de Brann* (seul un Rôdeur peut l'équiper) et *40 po*.
+
+== loup.apres
+Brann : « Les moutons dorment tranquilles grâce à toi. Si tu croises d'autres bêtes étranges, tu sais où me trouver. »

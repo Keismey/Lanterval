@@ -1,0 +1,52 @@
+# Lanterval · Side quests (English)
+# Same format as the French file.
+
+# ---------- 1. The alpha wolf (Brann, Ranger class) ----------
+
+== loup.titre
+The alpha wolf
+
+== loup.offre
+Brann: “A huge wolf has been leading the packs since the mist started rising. It has a scar over one eye and it has already taken three sheep.”
+Brann: “Find it before it finds the village. Come back alive, that's all I ask.”
+> oui : Accept | Side quest
+> non : Later
+
+== loup.message
+Side quest: *hunt the alpha wolf* in the forest. Brann advises going as a group.
+
+== loup.e1.titre
+Hunt the alpha wolf in the forest
+
+== loup.e1.bouton
+Follow the trail
+
+== loup.e1.attente
+Brann: “It prowls the heart of the forest. Don't go alone, it has already chased off three hunters.”
+
+== loup.e1.piste
+## The alpha wolf
+Huge pawprints, bigger than your hand, lead towards a ravine. [Follow the prints]
+Near a rock lies the carcass of a deer, barely cold. The wind turns. [Move on]
+
+== loup.e1.ravin
+## The alpha wolf
+On a rock, under the moon, a dark grey wolf with a scar stares at you. Another wolf leaps out behind you. [Fight]
+
+== loup.e1.fin
+## The alpha wolf
+The alpha wolf collapses. You take one of its fangs as proof for Brann.
+
+== loup.e1.message
+Side quest: go back to *Brann* in the village.
+
+== loup.e2.titre
+Go back to Brann
+
+== loup.e2.scene
+Brann: “You got it! Your father would have been proud. Take my old bow, I'll show you how a ranger fights.”
+## Side quest complete
+*Secret class unlocked: Ranger*, very fast, with Double shot to break guards. You also receive *Brann's bow* (only a Ranger can equip it) and *40 gold*.
+
+== loup.apres
+Brann: “The sheep sleep soundly thanks to you. If you come across other strange beasts, you know where to find me.”

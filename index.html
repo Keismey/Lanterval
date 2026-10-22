@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b0d1a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lanterval">
+<meta name="description" content="Lanterval, un RPG à l'aquarelle : rallume la lanterne de ton village. Keismey Studio.">
+<title>Lanterval</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preload" href="polices/figtree-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="polices/cinzel-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/jeu.css">
+</head>
+<body>
+<div id="app">
+  <div class="top" id="hud"></div>
+  <div class="stage">
+    <div class="scene" id="scene"><div id="decor"></div><div id="units"></div><div id="ov"><div id="ovc"></div><div id="fx"></div></div></div>
+    <div class="panel" id="panel"></div>
+  </div>
+</div>
+<div id="modal"></div>
+
+<!-- fichiers communs du studio -->
+<script src="commun/ks-studio.js"></script>
+<script src="commun/ks-back.js"></script>
+<!-- le moteur, puis les données du jeu (scénario, monde, monstres…), puis le reste du moteur -->
+<script src="moteur/base.js"></script>
+<script src="donnees/heros.js"></script>
+<script src="donnees/objets.js"></script>
+<script src="donnees/monstres.js"></script>
+<script src="donnees/monde.js"></script>
+<script src="donnees/images.js"></script>
+<script src="donnees/acte1.js"></script>
+<script src="donnees/annexes.js"></script>
+<script src="moteur/textes.js"></script>
+<script src="moteur/provisoire.js"></script>
+<script src="moteur/etat.js"></script>
+<script src="moteur/scene.js"></script>
+<script src="moteur/interface.js"></script>
+<script src="moteur/recit.js"></script>
+<script src="moteur/village.js"></script>
+<script src="moteur/carte.js"></script>
+<script src="moteur/zone.js"></script>
+<script src="moteur/combat.js"></script>
+<script src="moteur/menus.js"></script>
+<script src="moteur/debug.js"></script>
+<script src="moteur/jeu.js"></script>
+<script>if ('serviceWorker' in navigator && /^https?:/.test(location.protocol)) window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdb82226cd1b401d9e4f4e899f9b8425"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

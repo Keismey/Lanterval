@@ -1,0 +1,224 @@
+# Lanterval · Acte 1 : La lanterne (textes en français)
+#
+# Comment lire ce fichier
+#   == repère          début d'un texte. Le repère sert au jeu : ne le change pas.
+#   Nom : texte        une bulle dite par un personnage (Kael, Mira, Orvan…)
+#   texte              une bulle de récit
+#   ## Titre           change le titre affiché au-dessus des bulles suivantes
+#   *mots*             mots en gras
+#   [Bouton]           à la fin d'une bulle : le texte du bouton pour continuer
+#   > id : Texte | précision    une réponse possible dans un choix (ne change pas l'id)
+# Une ligne = une bulle, 3 phrases au plus. 5 bulles au plus par repère.
+# Les lignes qui commencent par # sont des notes : le jeu les ignore.
+
+== a1.titre
+La lanterne
+
+# ---------- Prologue ----------
+
+== prologue
+## Prologue
+Lanterval est un village perché au pied des monts. Depuis toujours, la lanterne de la place repousse la brume grâce au cristal qui brille en son cœur.
+Ce soir, sa lueur vacille.
+
+== prologue.suite
+## Prologue
+L'Ancien Orvan te fait appeler. Dans le village, un *!* doré signale la quête principale et un *!* bleu une quête annexe.
+
+# ---------- Étape 1 : Orvan ----------
+
+== a1.e1.titre
+Parler à l'Ancien Orvan
+
+== a1.e1.scene
+Orvan : « Kael. Le cristal de la lanterne s'éteint. Sans lui, la brume avalera Lanterval avant la fin de la saison. »
+Orvan : « Mira, la fille de la forgeronne, est partie à l'aube suivre la brume dans la Forêt des Murmures. Seule, bien sûr. Ramène-la, et découvrez d'où vient ce mal. »
+Il détache un éclat de la lanterne et te le tend.
+Orvan : « Ce cristal reconnaît les cœurs vaillants. Il t'apprendra d'autres façons de te battre. » [Accepter la quête]
+
+== a1.e1.classes
+## Classes
+*Nouvelles classes : Guerrier, Mage, Soigneur.* Change de classe et d'équipement à tout moment hors combat, avec le bouton Équipe en haut de l'écran.
+Chaque personnage garde son élément : Kael frappe avec la Terre quelle que soit sa classe.
+
+== a1.e1.message
+Quête : *retrouver Mira* dans la Forêt des Murmures. Pense à essayer la classe Guerrier.
+
+# ---------- Étape 2 : Forêt des Murmures ----------
+
+== a1.e2.titre
+Retrouver Mira dans la Forêt des Murmures
+
+== a1.e2.bouton
+Retrouver Mira
+
+== a1.e2.traces
+Près du sentier, des traces de pas fraîches et des brindilles calcinées. Quelqu'un a allumé des flammes ici, plusieurs fois. [Suivre les traces]
+
+== a1.e2.encerclee
+Dans une clairière, Mira est dos à un arbre et tient trois loups en respect avec des flammes.
+Mira : « Kael ?! Ne reste pas planté là ! » [Aider Mira]
+
+== a1.e2.merci
+Mira : « Pas mal, pour un apprenti garde. » Elle souffle sur ses doigts encore fumants.
+
+== a1.e2.insigne
+Dans l'herbe piétinée, quelque chose brille : un insigne de métal en forme d'œil fermé.
+Mira : « Ces loups ne chassaient pas seuls. J'ai vu une silhouette encapuchonnée filer entre les arbres juste avant qu'ils m'encerclent. »
+Kael : « L'Ancien saura ce que c'est. On rentre au village. »
+Mira : « Je viens avec toi, et ce n'est pas une question. »
+
+== a1.e2.message
+Montre l'insigne à *l'Ancien Orvan*, au village.
+
+# ---------- Étape 3 : l'insigne ----------
+
+== a1.e3.titre
+Montrer l'insigne à l'Ancien
+
+== a1.e3.scene
+Tu montres l'insigne. L'Ancien pâlit.
+Orvan : « Un œil fermé… Le symbole de l'Ordre de la Paupière. Je les croyais disparus depuis cinquante ans. »
+Mira : « Et la brume ? Je l'ai suivie toute la journée. Elle ne vient pas du village : elle sort de la Grotte de Cristal, au nord de la forêt. »
+Orvan : « C'est là que dort le cœur de cristal qui nourrit notre lanterne. S'il s'éteint, plus rien ne nous protégera. »
+Orvan : « Allez au fond de la grotte et rapportez-moi le cœur. Et méfiez-vous de ceux qui portent cet œil. »
+
+== a1.e3.message
+Nouvelle zone sur la carte : *Grotte de Cristal*, au nord de la Forêt des Murmures.
+
+# ---------- Étape 4 : Sol ----------
+
+== a1.e4.titre
+Explorer la Grotte de Cristal
+
+== a1.e4.bouton
+S'enfoncer dans la grotte
+
+== a1.e4.choix
+Le tunnel principal se sépare. À gauche, un courant d'air glacé. À droite, une lueur bleue qui pulse lentement.
+> gauche : Gauche | Le courant d'air
+> droite : Droite | La lueur
+
+== a1.e4.gauche
+Une niche où dorment des chiroptères. Ils se réveillent en criant ! [Combattre]
+
+== a1.e4.gauche.fin
+Derrière eux, une sacoche de mineur : *2 toniques*. Le tunnel rejoint la lueur.
+
+== a1.e4.droite
+Tu avances droit vers la lueur. Le sol est couvert d'éclats coupants : *chacun perd 5 PV*.
+
+== a1.e4.lac
+Au bord d'un lac souterrain, un jeune homme aux cheveux bleus repousse des gelées à coups de bâton. Il est encerclé. [Lui prêter main-forte]
+
+== a1.e4.sol
+Sol : « Merci. Je m'appelle Sol. Je garde ce lac depuis que le Gardien s'est réveillé. »
+Sol : « Si vous voulez le cœur, il faudra le vaincre. Il déteste l'eau : je l'ai vu reculer devant le lac. »
+
+== a1.e4.passage
+Sol : « Je connais un passage le long du lac. Il mène tout droit au fond de la grotte. »
+
+== a1.e4.message
+Tu es au *fond de la grotte*. Le cœur de cristal est tout proche.
+
+# ---------- Étape 5 : le Gardien ----------
+
+== a1.e5.titre
+Vaincre le Gardien de cristal
+
+== a1.e5.bouton
+Approcher du cœur de cristal
+
+== a1.e5.salle
+Une salle immense. Au centre, sur un socle, le cœur de cristal palpite faiblement. Les rochers autour se mettent à trembler…
+
+== a1.e5.gardien
+Les rochers s'assemblent en un colosse. *Le Gardien de cristal* te barre la route !
+
+== a1.e5.conseil
+Brise sa garde avant qu'il ne lâche son attaque chargée (pastille rouge « ! » dans l'ordre des tours). Le mode auto est coupé contre les boss.
+
+== a1.e5.victoire
+Le Gardien s'effondre en éclats. Tu ramasses le cœur de cristal : il est tiède, comme un cœur qui bat. *Nouvelle classe : Chevalier.*
+Derrière toi, toutes les lueurs de la grotte s'éteignent. Dans le noir, quelque chose bouge. Il va falloir retraverser la grotte pour sortir.
+
+== a1.e5.message
+La grotte a changé : ses cristaux sont éteints et d'autres créatures y rôdent.
+
+# ---------- Étape 6 : embuscade au retour ----------
+
+== a1.e6.titre
+Ressortir de la grotte avec le cœur
+
+== a1.e6.bouton
+Ressortir de la grotte
+
+== a1.e6.embuscade
+## Embuscade
+À mi-chemin, une silhouette encapuchonnée sort de l'ombre.
+Silhouette : « Ce cristal ne vous appartient pas. Rendez-le. » [Refuser]
+Pour toute réponse, deux ombres se détachent des parois. [Combattre]
+
+== a1.e6.fuite
+## Embuscade
+La silhouette a disparu dans le noir. Sur sa manche, tu as eu le temps de voir le même œil fermé que sur l'insigne.
+
+== a1.e6.message
+Tu es sorti de la grotte. Rapporte le cœur à *l'Ancien Orvan*.
+
+# ---------- Étape 7 : la fête ----------
+
+== a1.e7.titre
+Rapporter le cœur à l'Ancien
+
+== a1.e7.coeur
+Orvan : « Le cœur ! Tu l'as trouvé ! » L'Ancien le prend à deux mains et le dépose dans la cage de la lanterne.
+
+== a1.e7.fete
+## La lanterne
+La lanterne s'embrase d'une lumière bleue. La brume recule jusqu'à la lisière de la forêt et tout Lanterval sort fêter ça.
+Récompense : *100 po* et le *Médaillon de Lanterval* (accessoire, PV +10). L'équipe est en pleine forme.
+
+== a1.e7.aveu
+Orvan : « Merci à vous trois. Mais je dois être honnête : ce cœur ne tiendra qu'une saison. »
+Orvan : « Le vrai cristal de la vallée, le cristal d'ambre, repose au Col des Pierres, au nord. Si l'Ordre le cherche aussi, il faut l'atteindre avant eux. »
+Mira : « Alors on part demain. » Sol hoche la tête sans un mot.
+
+== a1.e7.message
+Nouveau chemin sur la carte : le *Col des Pierres*.
+
+# ---------- Ce que disent les gens du village selon l'avancée ----------
+# pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.
+
+== pnj.orvan.a1.e2
+Orvan : « La forêt est à l'est. Fais vite, Mira n'a jamais su reculer devant rien. »
+
+== pnj.orvan.a1.e4
+Orvan : « Le cœur de cristal est au fond de la grotte. Rapporte-le avant qu'il ne s'éteigne pour de bon. »
+
+== pnj.orvan.fin
+Orvan : « Reposez-vous. Le Col des Pierres vous attend, mais il ne s'enfuira pas cette nuit. »
+
+== pnj.brann
+Brann : « Reste prudent, Kael. La brume rend les bêtes nerveuses. »
+
+== pnj.tilo.a1.e1
+Tilo : « Brann, le garde, cherche quelqu'un de courageux. Il paraît qu'il connaît des techniques secrètes de chasseur ! »
+
+== pnj.tilo.a1.e2
+Tilo : « Mira est partie toute seule dans la forêt ! Maman dit que les loups ont peur du feu. »
+
+== pnj.tilo.a1.e3
+Tilo : « Il paraît qu'un géant de pierre dort au fond de la grotte. Les vieux disent qu'il déteste l'eau. »
+
+== pnj.tilo.a1.e6
+Tilo : « Tout le monde dit que tu as le cœur de cristal ! Va vite voir l'Ancien ! »
+
+== pnj.tilo.fin
+Tilo : « Les lucioles sont revenues dans la forêt ! On pourra y aller le soir maintenant ? »
+
+# ---------- Fin de la version 0.1 ----------
+
+== fin.version
+## Fin de la version 0.1
+Ici commencera la suite de l'acte 1 : le Col des Pierres. Elle arrive dans la prochaine version.

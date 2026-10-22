@@ -1,0 +1,333 @@
+# Lanterval · Noms et descriptions : héros, classes, techniques, objets, monstres (français)
+# Même format que acte1.txt.
+
+# ================= Qui parle dans les dialogues =================
+# Le nom écrit avant « : » dans une bulle. Il choisit aussi le portrait affiché.
+
+== parle.kael
+Kael
+
+== parle.mira
+Mira
+
+== parle.sol
+Sol
+
+== parle.orvan
+Orvan
+
+== parle.brann
+Brann
+
+== parle.berthe
+Berthe
+
+== parle.nell
+Nell
+
+== parle.aubergiste
+Aubergiste
+
+== parle.tilo
+Tilo
+
+== parle.silhouette
+Silhouette
+
+# ================= Héros =================
+
+== heros.kael.age
+17 ans
+
+== heros.kael.bio
+Apprenti garde de Lanterval. Têtu et protecteur, il n'a jamais quitté la vallée et rêve de prouver qu'il mérite son épée.
+
+== heros.mira.age
+18 ans
+
+== heros.mira.bio
+Fille de la forgeronne. Curieuse et impulsive, elle tient le feu dans ses mains depuis l'enfance et n'attend jamais qu'on lui donne la permission.
+
+== heros.sol.age
+20 ans
+
+== heros.sol.bio
+Ermite du lac souterrain. Calme et peu bavard, il protège la grotte depuis des années et connaît les secrets du Gardien de cristal.
+
+# ================= Éléments =================
+
+== element.L
+Lame
+
+== element.T
+Terre
+
+== element.F
+Feu
+
+== element.E
+Eau
+
+# ================= Classes =================
+
+== classe.apprenti
+Apprenti
+
+== classe.apprenti.desc
+Polyvalent, sans spécialité.
+
+== classe.guerrier
+Guerrier
+
+== classe.guerrier.desc
+Encaisse et frappe fort. Attire les coups.
+
+== classe.mage
+Mage
+
+== classe.mage.desc
+Sorts puissants de son élément, fragile.
+
+== classe.soigneur
+Soigneur
+
+== classe.soigneur.desc
+Garde l'équipe debout.
+
+== classe.chevalier
+Chevalier
+
+== classe.chevalier.desc
+Protège tout le groupe.
+
+== classe.chevalier.verrou
+Débloquée par le cœur de cristal
+
+== classe.rodeur
+Rôdeur
+
+== classe.rodeur.desc
+Très rapide, idéal pour briser les gardes.
+
+== classe.rodeur.verrou
+Classe secrète : cachée dans une quête annexe
+
+# ================= Techniques =================
+
+== tech.attaque
+Attaque
+
+== tech.frappe
+Frappe élémentaire
+
+== tech.frappe.desc
+Coup physique de ton élément.
+
+== tech.provoc
+Provocation
+
+== tech.provoc.desc
+Les ennemis le visent jusqu'à son prochain tour, défense renforcée.
+
+== tech.sort
+Sort élémentaire
+
+== tech.sort.desc
+Sort de ton élément sur un ennemi.
+
+== tech.deluge
+Déluge
+
+== tech.deluge.desc
+Sort sur tous les ennemis. Lent.
+
+== tech.soin
+Soin
+
+== tech.soin.desc
+Rend des PV à un allié.
+
+== tech.soins
+Soin de groupe
+
+== tech.soins.desc
+Rend des PV à toute l'équipe.
+
+== tech.sacree
+Lame sacrée
+
+== tech.sacree.desc
+Lame et élément à la fois : touche plus de faiblesses.
+
+== tech.rempart
+Rempart
+
+== tech.rempart.desc
+Dégâts subis par l'équipe ÷2 jusqu'à son prochain tour.
+
+== tech.double
+Double tir
+
+== tech.double.desc
+Deux flèches sur des ennemis au hasard.
+
+== tech.lynx
+Œil de lynx
+
+== tech.lynx.desc
+Révèle les faiblesses d'un ennemi. Très rapide.
+
+# ================= Objets de soin =================
+
+== objet.herbe
+Herbe médicinale
+
+== objet.herbe.desc
++35 PV
+
+== objet.tonique
+Tonique
+
+== objet.tonique.desc
++12 PP
+
+== objet.elixir
+Élixir de Nell
+
+== objet.elixir.desc
++90 PV
+
+# ================= Équipement =================
+
+== equip.dague
+Dague rouillée
+
+== equip.baton
+Bâton de chêne
+
+== equip.epee
+Épée de fer
+
+== equip.braise
+Bâton de braise
+
+== equip.arc
+Arc de Brann
+
+== equip.tunique
+Tunique
+
+== equip.cuir
+Cotte de cuir
+
+== equip.mailles
+Cotte de mailles
+
+== equip.robe
+Robe de mage
+
+== equip.plume
+Plume de luciole
+
+== equip.anneau
+Anneau d'onde
+
+== equip.eclat
+Éclat prismatique
+
+== equip.medaillon
+Médaillon de Lanterval
+
+# ================= Objets importants =================
+
+== important.eclat-lanterne
+Éclat de la lanterne
+
+== important.eclat-lanterne.desc
+Confié par l'Ancien Orvan. Il débloque les classes.
+
+== important.insigne
+Insigne à l'œil fermé
+
+== important.insigne.desc
+Trouvé dans la forêt, près de Mira. Le symbole de l'Ordre de la Paupière.
+
+== important.coeur
+Cœur de cristal
+
+== important.coeur.desc
+À rapporter à l'Ancien Orvan, au village.
+
+== important.croc
+Croc du loup alpha
+
+== important.croc.desc
+La preuve pour Brann que le loup alpha est vaincu.
+
+# ================= Monstres =================
+
+== monstre.loup
+Loup des brumes
+
+== monstre.loup.court
+Loup
+
+== monstre.loup.desc
+Chasse en meute dans la brume. Rapide.
+
+== monstre.spore
+Champi-spore
+
+== monstre.spore.desc
+Libère des spores qui touchent toute l'équipe.
+
+== monstre.spore.special
+{nom} libère un nuage de spores !
+
+== monstre.chauve
+Chiroptère
+
+== monstre.chauve.desc
+Très rapide mais fragile. Une seule faiblesse suffit.
+
+== monstre.gelee
+Gelée de quartz
+
+== monstre.gelee.court
+Gelée
+
+== monstre.gelee.desc
+Absorbe l'humidité pour se soigner quand elle faiblit.
+
+== monstre.gelee.special
+{nom} absorbe l'humidité et récupère {v} PV.
+
+== monstre.ombre
+Ombre voleuse
+
+== monstre.ombre.desc
+Servante d'un ordre mystérieux. Frappe fort.
+
+== monstre.ombre.special
+Lame d'ombre
+
+== monstre.alpha
+Loup alpha
+
+== monstre.alpha.desc
+Chef de meute à la cicatrice. Sa garde est solide.
+
+== monstre.alpha.special
+Morsure sauvage
+
+== monstre.golem
+Gardien de cristal
+
+== monstre.golem.desc
+Gardien du cœur de cristal. Concentre la lumière avant de frapper.
+
+== monstre.golem.charge
+Le Gardien concentre la lumière… *attaque puissante à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.golem.special
+*Rayon prismatique !* La lumière frappe toute l'équipe.
