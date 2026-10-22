@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.2.1 (2026-10-22)
+
+- Codex : chaque classe débloquée est repliable (`<details class="cls">`).
+
 ## Version 0.2.0 (2026-10-22)
 
 - L'acte 1 est complet (étapes 1 à 10 dans donnees/acte1.js ; les étapes 8 et 9 de la bible deviennent a1.e8 montée du col, a1.e9 sommet, a1.e10 épée du père).

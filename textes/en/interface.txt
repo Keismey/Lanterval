@@ -716,7 +716,7 @@ Class not unlocked yet.
 Classes
 
 == codex.classes.aide
-Unlocked classes and their techniques. A technique of “the hero's element” takes the element of whoever uses it.
+Unlocked classes and their techniques: tap a class to expand it. A technique of “the hero's element” takes the element of whoever uses it.
 
 == codex.armes
 Weapons: {liste}.
@@ -950,6 +950,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.2.1
+In the Codex, each class expands with a tap to show its weapons, stats and techniques.
 ## Version 0.2.0
 Act 1 is complete: the Stone Pass is open, with its treasures, events and two new monsters.
 At the top of the pass, a duel against Varen, then an encounter with the Nameless that cannot be won (no gold lost).

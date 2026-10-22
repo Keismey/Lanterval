@@ -741,7 +741,7 @@ Classe pas encore débloquée.
 Classes
 
 == codex.classes.aide
-Les classes débloquées et leurs techniques. Une technique de « l'élément du héros » prend l'élément de celui qui l'utilise.
+Les classes débloquées et leurs techniques : touche une classe pour la déplier. Une technique de « l'élément du héros » prend l'élément de celui qui l'utilise.
 
 == codex.armes
 Armes : {liste}.
@@ -984,6 +984,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.2.1
+Dans le Codex, chaque classe se déplie d'un appui pour montrer ses armes, ses statistiques et ses techniques.
 ## Version 0.2.0
 L'acte 1 est complet : le Col des Pierres est ouvert, avec ses trésors, ses événements et deux nouveaux monstres.
 Au sommet du col, un duel contre Varen, puis une rencontre avec le Sans-Nom qui ne peut pas être gagnée (sans perte d'or).
