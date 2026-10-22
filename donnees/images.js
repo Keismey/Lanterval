@@ -41,8 +41,8 @@ const IMAGES = {
   'pnj.nell': { provisoire: 'f_nell', sujet: 'Nell, herboriste à capuche verte' },
   'pnj.tilo': { provisoire: 'f_tilo', sujet: 'Tilo, petit garçon du village' },
   'pnj.hilde': { provisoire: 'f_hilde', sujet: 'Hilde, forgeronne, cheveux roux tressés, tablier de cuir' },
-  'pnj.varen': { provisoire: 'f_varen', sujet: 'Varen, jeune homme de l\'Ordre, cheveux argentés, sourire arrogant' },
-  'pnj.sansnom': { provisoire: 'f_sansnom', sujet: 'Le Sans-Nom, colosse au masque d\'acier à l\'œil fermé' },
+  'pnj.varen': { fichier: 'img/pnj/varen.webp', portrait: 'img/pnj/varen.webp', provisoire: 'f_varen', sujet: 'Varen, jeune homme de l\'Ordre, cheveux argentés, sourire arrogant' },
+  'pnj.sansnom': { fichier: 'img/pnj/sansnom.webp', portrait: 'img/pnj/sansnom.webp', provisoire: 'f_sansnom', sujet: 'Le Sans-Nom, colosse au masque d\'acier à l\'œil fermé' },
   'pnj.silhouette': { provisoire: 'f_inconnu', sujet: 'Silhouette encapuchonnée de l\'Ordre, yeux rouges' },
 
   // ---------- Monstres (tournés vers la droite) ----------
@@ -54,7 +54,7 @@ const IMAGES = {
   'monstre.alpha': { fichier: 'img/monstres/alpha.webp', provisoire: 'alpha', sujet: 'Loup alpha à la cicatrice' },
   'monstre.belier': { fichier: 'img/monstres/belier.webp', provisoire: 'belier', sujet: 'Bélier des roches, cornes de pierre' },
   'monstre.harpie': { fichier: 'img/monstres/harpie.webp', provisoire: 'harpie', sujet: 'Harpie du col, ailes grises, serres' },
-  'monstre.varen': { provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre' },
-  'monstre.sansnom': { provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse' },
+  'monstre.varen': { fichier: 'img/monstres/varen.webp', provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre' },
+  'monstre.sansnom': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse' },
   'monstre.golem': { fichier: 'img/monstres/golem.webp', provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' }
 };
