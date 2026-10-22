@@ -977,7 +977,7 @@ Sauter à une étape, donner de l'or…
 == notes.version
 ## Version 0.1.2
 Le Codex a un onglet Classes : les classes débloquées, leurs armes, leurs statistiques et leurs techniques.
-Le Bâton de braise n'est plus une arme de Feu : l'Attaque normale reste Lame, sans couleur ; seules les techniques prennent la couleur de leur élément.
+Le Bâton de braise n'est plus une arme de Feu : l'Attaque normale reste Lame, sans couleur ; seules les techniques à élément gardent leur couleur.
 Le menu Équipe montre des jauges de PV, PP et XP avec les chiffres.
 Toucher une statistique dans l'Équipe explique à quoi elle sert ; l'aide du Codex les explique toutes.
 Le Journal range les quêtes en cours et terminées dans des listes repliables ; les classes sont dans le Codex, celles pas encore débloquées en ???.

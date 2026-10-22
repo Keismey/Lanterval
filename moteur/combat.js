@@ -164,7 +164,7 @@ async function heroCommand(h) {
     const sk = CLASSES[h.job].tech, solo = aliveH().length < 2;
     const opts = [
       { k: 'attaque', ic: 'sword', label: esc(t('tech.attaque')), sub: esc(t('element.' + elArme(h))) },
-      { k: 'skills', ic: 'spark', label: esc(t('combat.cmd.tech')), sub: esc(t('classe.' + h.job)), cls: 'el-' + HEROS[h.id].el },
+      { k: 'skills', ic: 'spark', label: esc(t('combat.cmd.tech')), sub: esc(t('classe.' + h.job)) },
       { k: 'objet', ic: 'bag', label: esc(t('combat.cmd.objet')), sub: esc(t('combat.cmd.objet.sous', { n: itemCount() })), dis: !itemCount() },
       { k: 'garde', ic: 'shield', label: esc(t('combat.cmd.garde')), sub: esc(t('combat.cmd.garde.sous')) },
       { k: 'union', ic: 'link', label: esc(t('combat.union')), sub: esc(B.team.length < 2 ? t('combat.cmd.union.seul') : B.union >= 3 ? t('combat.cmd.union.prete') : `${B.union}/3`), dis: B.union < 3 || solo, cls: B.union >= 3 && !solo ? 'main' : '' },

@@ -943,7 +943,7 @@ Jump to a step, give gold…
 == notes.version
 ## Version 0.1.2
 The Codex has a Classes tab: unlocked classes, their weapons, stats and techniques.
-The Ember staff is no longer a Fire weapon: the normal Attack stays Blade, with no colour; only techniques take the colour of their element.
+The Ember staff is no longer a Fire weapon: the normal Attack stays Blade, with no colour; only techniques with an element keep their colour.
 The Team menu shows HP, PP and XP gauges with numbers.
 Tap a stat in the Team menu to see what it does; the Codex help explains them all.
 The Journal sorts current and completed quests into folding lists; classes are in the Codex, locked ones shown as ???.
