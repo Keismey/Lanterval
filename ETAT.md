@@ -1,5 +1,15 @@
 # État du projet
 
+## Version 0.2.0 (2026-10-22)
+
+- L'acte 1 est complet (étapes 1 à 10 dans donnees/acte1.js ; les étapes 8 et 9 de la bible deviennent a1.e8 montée du col, a1.e9 sommet, a1.e10 épée du père).
+- Col des Pierres : zone à deux côtés (pied, sommet), 6 découvertes, 5 événements, Bélier des roches et Harpie du col ; état « vide » après le vol du cristal.
+- Duel contre Varen à deux héros (`equipe: 'kael mira'`), puis combat perdu d'avance contre le Sans-Nom (`perdu: true`, monstre `intouchable`) : pas de retour au village ni de perte d'or, l'étape continue et Kael se réveille à l'auberge.
+- Épée du père (objet important), Marais salant sur la carte (prochaine version).
+- Hilde, mère de Mira, tient la forge de Lanterval (armes et armures, nouvelles pièces après la fête) ; Berthe vend les herbes et toniques. Accueil des boutiques selon l'avancée (`pnj.<id>.accueil.<étape>`).
+- Images provisoires (pixel art) : décor du col, Bélier, Harpie, Varen, Sans-Nom, portraits de Hilde, Varen et du Sans-Nom. Panoramas « cage du cristal » et « épée du père » en cadre nommé.
+- Hub : pas de fiche avant la version finale (décision de Keismey) ; le jeu se joue par son lien.
+
 ## Version 0.1.2 (2026-10-22)
 
 - 0.1.1 : texte stable, appui n'importe où pour continuer, monstres deux fois plus petits, icônes de combat colorées par élément. Le moteur gère les armes élémentaires (`el` dans donnees/objets.js), mais aucune n'en a pour l'instant.
@@ -10,9 +20,7 @@
 - Sauvegarde automatique, copie de secours, export/import (Options › Sauvegarde), partie+.
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
-- Pas encore sur le hub : l'entrée du hub viendra avec la 0.2.
 
-## Prochaine étape (0.2)
+## Prochaine étape (0.3)
 
-Fin de l'acte 1 : Col des Pierres, défaite scénarisée, réveil à l'auberge, avec images provisoires ; entrée sur le hub.
-Questions ouvertes : Hilde la forgeronne (mère de Mira) n'est pas encore au village.
+Acte 2, la Côte de Salvent : Marais salant, Salvent, Marais des Lanternes, Épave engloutie, Phare noyé (onglet « Quête principale » de la bible).

@@ -72,7 +72,7 @@ function evenements(evts, ou) {
     const o = `${ou}, ${type}`;
     if (type === 'dialogue' || type === 'message') texte(a, o);
     else if (type === 'panorama') { if (!D.IMAGES[a]) erreur(`image inconnue « ${a} » (${o})`); }
-    else if (type === 'combat') { a.split(/\s+/).forEach(id => monstre(id, o)); if (a.split(/\s+/).length > 3) erreur(`plus de 3 monstres (${o})`); if (b && b.conseil) texte(b.conseil, o); }
+    else if (type === 'combat') { a.split(/\s+/).forEach(id => monstre(id, o)); if (a.split(/\s+/).length > 3) erreur(`plus de 3 monstres (${o})`); if (b && b.conseil) texte(b.conseil, o); if (b && b.equipe) b.equipe.split(/\s+/).forEach(h => { if (!D.HEROS[h]) erreur(`héros inconnu « ${h} » (${o})`); }); }
     else if (type === 'rejoint' || type === 'presente') { if (!D.HEROS[a]) erreur(`héros inconnu « ${a} » (${o})`); }
     else if (type === 'gagne') gain(a, o);
     else if (type === 'perd') a.split(',').forEach(x => { if (!D.IMPORTANTS[x.trim()]) erreur(`objet important inconnu « ${x} » (${o})`); });
@@ -112,7 +112,11 @@ for (const id in D.LIEUX) {
     texte(`pnj.${p.id}.nom`, id); texte(`pnj.${p.id}.sous`, id);
     if (!D.IMAGES['pnj.' + p.portrait]) erreur(`portrait inconnu « ${p.portrait} »`);
     for (const [o] of p.objets || []) if (!D.OBJETS[o]) erreur(`objet inconnu « ${o} » (${p.id})`);
-    for (const o of p.equipement || []) if (!D.EQUIPEMENT[o]) erreur(`équipement inconnu « ${o} » (${p.id})`);
+    for (const x of p.equipement || []) {
+      const o = typeof x === 'string' ? x : x[0];
+      if (!D.EQUIPEMENT[o]) erreur(`équipement inconnu « ${o} » (${p.id})`);
+      if (typeof x !== 'string') condition(x[1], p.id);
+    }
   }
   if (L.tresors) {
     for (const k of ['sous', 'desc', 'le']) texte(`lieu.${id}.${k}`, id);

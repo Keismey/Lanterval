@@ -86,6 +86,24 @@ function dessinerSprites() {
     P(x, '#7d7b9e', 4, 24, 10, 22); P(x, '#64628a', 51, 24, 10, 22); P(x, '#9896b8', 2, 44, 13, 7); P(x, '#706e94', 50, 44, 13, 7);
     for (let i = 0; i < 7; i++) { const w = i < 4 ? i : 6 - i; P(x, '#8ff3ff', 32 - w * 2, 28 + i * 2, w * 4 + 2, 2); } P(x, '#ffffff', 31, 32, 2, 4);
     for (const [cx, h] of [[8, 10], [11, 7], [56, 9], [53, 6], [28, 6], [38, 5]]) { for (let k = 0; k < h; k++) { const ww = Math.max(1, Math.round(3 * k / h)); P(x, '#8ff3ff', cx - ww / 2, (cx > 20 && cx < 45 ? 8 : 24) - h + k, ww, 1); } } });
+  SPR.belier = mk(40, 32, x => { E(x, '#9a8f80', 18, 19, 12, 8); E(x, '#b8ae9e', 18, 15, 10, 4); for (const lx of [9, 14, 21, 26]) P(x, '#6c6358', lx, 24, 3, 7);
+    E(x, '#8a7f70', 31, 15, 6, 5); P(x, '#8a7f70', 34, 15, 5, 4); P(x, '#2a2a3a', 38, 16, 1, 1); P(x, '#ffb84a', 33, 13, 2, 1);
+    E(x, '#5c544a', 29, 10, 4, 4); E(x, '#7b7266', 29, 10, 2, 2); P(x, '#5c544a', 25, 12, 3, 4); P(x, '#d8d0c0', 7, 14, 4, 3); });
+  SPR.harpie = mk(40, 34, x => { for (let k = 0; k < 14; k++) { const hh = Math.max(2, 12 - Math.floor(k / 1.4)); P(x, '#8a93a8', 14 - k, 6 + Math.floor(k / 2), 1, hh); P(x, '#8a93a8', 26 + k, 6 + Math.floor(k / 2), 1, hh); }
+    E(x, '#6c7488', 20, 18, 5, 8); D(x, '#e8c8a8', 20, 8, 4); P(x, '#4a4458', 15, 4, 10, 3); P(x, '#4a4458', 15, 6, 2, 8); P(x, '#4a4458', 23, 6, 2, 8);
+    P(x, '#1b1830', 18, 8, 1, 1); P(x, '#1b1830', 21, 8, 1, 1); P(x, '#f2c14e', 17, 26, 2, 5); P(x, '#f2c14e', 22, 26, 2, 5); P(x, '#c9962e', 16, 30, 4, 1); P(x, '#c9962e', 21, 30, 4, 1); });
+  SPR.varen = mk(34, 40, x => { for (let y = 16; y < 38; y++) { const w = 6 + Math.round((y - 16) * .3); P(x, y % 6 === 0 ? '#2a2440' : '#3b3256', 15 - w, y, 2 * w, 1); }
+    P(x, '#7a52a0', 9, 18, 12, 2); D(x, '#e8c8a8', 15, 11, 5); E(x, '#e6e8f0', 15, 7, 6, 3); P(x, '#e6e8f0', 9, 7, 2, 7); P(x, '#c8ccd8', 19, 7, 2, 5);
+    P(x, '#1b1830', 15, 11, 1, 1); P(x, '#1b1830', 18, 11, 1, 1); P(x, '#9a4a4a', 16, 14, 2, 1);
+    for (let k = 0; k < 14; k++) P(x, '#d8e0ec', 23 + Math.round(k * .5), 14 + k, 2, 1); P(x, '#8a6a2a', 21, 27, 4, 2); P(x, '#0b0812', 9, 37, 4, 2); P(x, '#0b0812', 17, 37, 4, 2); });
+  SPR.sansnom = mk(56, 64, x => { P(x, '#2a2836', 16, 44, 9, 18); P(x, '#2a2836', 31, 44, 9, 18); P(x, '#1a1824', 14, 60, 12, 3); P(x, '#1a1824', 30, 60, 12, 3);
+    P(x, '#3b3850', 12, 20, 32, 26); P(x, '#2e2b40', 34, 20, 10, 26); P(x, '#5a566e', 12, 20, 32, 3); P(x, '#7a52a0', 12, 34, 32, 3);
+    P(x, '#3b3850', 4, 22, 8, 22); P(x, '#3b3850', 44, 22, 8, 22); E(x, '#5a566e', 8, 21, 6, 4); E(x, '#5a566e', 48, 21, 6, 4);
+    D(x, '#c8ccd8', 28, 11, 8); P(x, '#a8aab8', 20, 13, 16, 2); P(x, '#1b1830', 23, 11, 10, 1); P(x, '#1b1830', 24, 12, 8, 1);
+    P(x, '#6c6358', 50, 4, 3, 40); P(x, '#4a4458', 46, 0, 11, 9); P(x, '#5c544a', 47, 1, 9, 2); });
+  SPR.f_hilde = face({ skin: '#e8b890', hair: '#b8442a', cl: '#7a5233', cl2: '#5a3a22' });
+  SPR.f_varen = face({ skin: '#e8c8a8', hair: '#e6e8f0', cl: '#3b3256', cl2: '#7a52a0' });
+  SPR.f_sansnom = face({ skin: '#c8ccd8', helm: '#3b3850', cl: '#2a2836', cl2: '#7a52a0' });
   SPR.f_orvan = face({ skin: '#e6bf9c', hair: '#d8d8e0', beard: '#eeeeee', cl: '#6a4a8a' });
   SPR.f_nell = face({ skin: '#f0c8a8', hair: '#8a5a2a', hood: '#4a7a3a', cl: '#4a7a3a', cl2: '#3a5a2a' });
   SPR.f_berthe = face({ skin: '#e8b890', hair: '#c46a2a', cl: '#b83a3a', scarf: '#f2c14e' });
@@ -122,6 +140,17 @@ function bgCave(c, W, H, dark) { const r = rng(33);
   for (let x = 0; x < W;) { const w = 5 + (r() * 10 | 0), h = 4 + (r() * 14 | 0); for (let k = 0; k < h; k++) { const ww = Math.max(1, Math.round(w * (k / h))); P(c, dark ? '#221a33' : '#34326a', x + (w - ww) / 2, gy - h + k, ww, 1); } x += w + 6 + (r() * 30 | 0); }
   for (const [fx, fy, s] of [[.1, .74, 6], [.34, .44, 4], [.72, .62, 7], [.9, .36, 5], [.55, .86, 5], [.22, .2, 3]]) crystal(c, W * fx, H * fy, s, dark);
   if (dark) { for (const [fx, fy] of [[.3, .5], [.8, .3], [.62, .7]]) { P(c, '#ff3a3a', W * fx, H * fy, 1, 1); P(c, '#ff3a3a', W * fx + 3, H * fy, 1, 1); } } }
+function bgCol(c, W, H, vide) { const r = rng(47);
+  dgrad(c, 0, 0, W, H, vide ? ['#4a4e5e', '#6c7080', '#8a8e9c', '#a8acb6'] : ['#3a3a6a', '#8a6a7a', '#e0a070', '#f2c88a']);
+  const pics = (base, haut, col, neige, seed) => { const q = rng(seed); for (let x = -10; x < W + 10;) { const w = 18 + (q() * 30 | 0), h = haut * (.6 + q() * .5); for (let k = 0; k < h; k++) { const ww = Math.round(w * k / h); P(c, col, x + (w - ww) / 2, base - h + k, ww, 1); if (neige && k < h * .25) P(c, '#eef0f6', x + (w - ww) / 2, base - h + k, ww, 1); } x += w * .7; } };
+  pics(H * .5, H * .32, vide ? '#5a5e6c' : '#6a5a7a', true, 3); pics(H * .62, H * .26, vide ? '#4a4e5a' : '#4e4660', false, 9);
+  const gy = Math.round(H * .74); dgrad(c, 0, gy - 10, W, H - gy + 10, vide ? ['#5c5a5e', '#3e3c42'] : ['#7a6a5a', '#4e4238']);
+  for (let y = gy; y < H; y++) { const tt = (y - gy) / (H - gy), w = 8 + tt * W * .22; P(c, vide ? '#7a7a80' : '#a8906a', W * .5 - w / 2, y, w, 1); }
+  for (const [fx, h] of [[.12, .28], [.27, .2], [.74, .24], [.88, .3]]) { const x = W * fx, hh = H * h; P(c, '#5c544a', x - 4, gy - hh + 6, 9, hh); P(c, '#7b7266', x - 4, gy - hh + 6, 3, hh); P(c, '#3e3830', x + 3, gy - hh + 6, 2, hh); }
+  const cx = W * .5, cy = gy - 4; P(c, '#5c544a', cx - 10, cy - 4, 21, 6);
+  if (!vide) { D(c, 'rgba(255,190,90,.18)', cx, cy - 16, 18); D(c, 'rgba(255,190,90,.25)', cx, cy - 14, 10); for (let k = 0; k < 16; k++) { const ww = Math.max(1, Math.round(5 * Math.min(1, k / 6))); P(c, '#ffb84a', cx - ww / 2, cy - 22 + k, ww, 1); } P(c, '#fff0c0', cx - 1, cy - 18, 1, 8); }
+  else for (let i = 0; i < 4; i++) P(c, '#2e2b40', cx - 8 + i * 5, cy - 18, 2, 14);
+  for (let i = 0; i < 30; i++) P(c, vide ? 'rgba(255,255,255,.5)' : 'rgba(255,255,255,.35)', r() * W, r() * H * .7, 1, 1); }
 function bgMap(c, W, H) { const n1 = vnoise(4, 22), n2 = vnoise(8, 8), im = c.getImageData(0, 0, W, H), d = im.data;
   const pal = { deep: hex('#1d3f7a'), sea: hex('#2f62a8'), sand: hex('#d8c38a'), g1: hex('#5d9a4e'), g2: hex('#4f8a45'), g3: hex('#437a3e'), m1: hex('#8a7f70'), m2: hex('#6c6358') };
   for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const nx = x / W, ny = y / H, v = n1(x, y) * .7 + n2(x, y) * .3;
@@ -145,5 +174,7 @@ const DECORS_PROVISOIRES = {
   'foret-calme': (c, w, h) => bgForest(c, w, h, true),
   'grotte': (c, w, h) => bgCave(c, w, h, false),
   'grotte-sombre': (c, w, h) => bgCave(c, w, h, true),
+  'col': (c, w, h) => bgCol(c, w, h, false),
+  'col-vide': (c, w, h) => bgCol(c, w, h, true),
   'carte': bgMap
 };

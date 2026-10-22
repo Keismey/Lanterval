@@ -31,6 +31,15 @@ Tilo
 == parle.silhouette
 Hooded figure
 
+== parle.hilde
+Hilde
+
+== parle.varen
+Varen
+
+== parle.sansnom
+Nameless
+
 == heros.kael.age
 17 years old
 
@@ -199,6 +208,12 @@ Ember staff
 == equip.arc
 Brann's bow
 
+== equip.acier
+Steel sword
+
+== equip.chene
+Ironoak staff
+
 == equip.tunique
 Tunic
 
@@ -211,6 +226,12 @@ Chain mail
 == equip.robe
 Mage robe
 
+== equip.brigandine
+Brigandine
+
+== equip.cape
+Wool cloak
+
 == equip.plume
 Firefly feather
 
@@ -222,6 +243,12 @@ Prismatic shard
 
 == equip.medaillon
 Lanterval medallion
+
+== equip.talisman
+Stone talisman
+
+== equip.corne
+Ram's horn
 
 == important.eclat-lanterne
 Lantern shard
@@ -246,6 +273,12 @@ Alpha wolf's fang
 
 == important.croc.desc
 Proof for Brann that the alpha wolf is defeated.
+
+== important.epee-pere
+Father's sword
+
+== important.epee-pere.desc
+The guard's sword of Kael's father, chipped. Brann had kept it for ten years.
 
 == monstre.loup
 Mist wolf
@@ -312,3 +345,48 @@ The Guardian gathers light… *powerful attack on its next turn*, unless you bre
 
 == monstre.golem.special
 *Prismatic ray!* The light strikes the whole team.
+
+== monstre.belier
+Rock Ram
+
+== monstre.belier.court
+Ram
+
+== monstre.belier.desc
+Its stone horns split boulders. It charges without warning.
+
+== monstre.belier.special
+Horn charge
+
+== monstre.harpie
+Pass Harpy
+
+== monstre.harpie.court
+Harpy
+
+== monstre.harpie.desc
+It dives from the rocks and whips up icy gusts.
+
+== monstre.harpie.special
+{nom} beats its wings: an icy gust hits the whole team!
+
+== monstre.varen
+Varen
+
+== monstre.varen.desc
+Young lieutenant of the Order of the Eyelid. Fast, arrogant, formidable.
+
+== monstre.varen.special
+Wind blade
+
+== monstre.sansnom
+The Nameless
+
+== monstre.sansnom.desc
+Masked giant of the Order. No one knows his name, not even him.
+
+== monstre.sansnom.charge
+The Nameless raises his mace… *he is about to strike the whole team*.
+
+== monstre.sansnom.special
+*Giant's blow!* The mace crashes down on the whole team.

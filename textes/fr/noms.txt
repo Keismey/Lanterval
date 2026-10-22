@@ -34,6 +34,15 @@ Tilo
 == parle.silhouette
 Silhouette
 
+== parle.hilde
+Hilde
+
+== parle.varen
+Varen
+
+== parle.sansnom
+Sans-Nom
+
 # ================= Héros =================
 
 == heros.kael.age
@@ -214,6 +223,12 @@ Bâton de braise
 == equip.arc
 Arc de Brann
 
+== equip.acier
+Épée d'acier
+
+== equip.chene
+Bâton de chêne-fer
+
 == equip.tunique
 Tunique
 
@@ -226,6 +241,12 @@ Cotte de mailles
 == equip.robe
 Robe de mage
 
+== equip.brigandine
+Brigandine
+
+== equip.cape
+Cape de laine
+
 == equip.plume
 Plume de luciole
 
@@ -237,6 +258,12 @@ Anneau d'onde
 
 == equip.medaillon
 Médaillon de Lanterval
+
+== equip.talisman
+Talisman de pierre
+
+== equip.corne
+Corne de bélier
 
 # ================= Objets importants =================
 
@@ -263,6 +290,12 @@ Croc du loup alpha
 
 == important.croc.desc
 La preuve pour Brann que le loup alpha est vaincu.
+
+== important.epee-pere
+Épée du père
+
+== important.epee-pere.desc
+L'épée de garde du père de Kael, ébréchée. Brann la gardait depuis dix ans.
 
 # ================= Monstres =================
 
@@ -331,3 +364,48 @@ Le Gardien concentre la lumière… *attaque puissante à son prochain tour*, sa
 
 == monstre.golem.special
 *Rayon prismatique !* La lumière frappe toute l'équipe.
+
+== monstre.belier
+Bélier des roches
+
+== monstre.belier.court
+Bélier
+
+== monstre.belier.desc
+Ses cornes de pierre fendent les rochers. Il charge sans prévenir.
+
+== monstre.belier.special
+Charge cornue
+
+== monstre.harpie
+Harpie du col
+
+== monstre.harpie.court
+Harpie
+
+== monstre.harpie.desc
+Elle plonge depuis les rochers et soulève des rafales glacées.
+
+== monstre.harpie.special
+{nom} bat des ailes : une rafale glacée frappe toute l'équipe !
+
+== monstre.varen
+Varen
+
+== monstre.varen.desc
+Jeune lieutenant de l'Ordre de la Paupière. Rapide, arrogant, redoutable.
+
+== monstre.varen.special
+Lame du vent
+
+== monstre.sansnom
+Le Sans-Nom
+
+== monstre.sansnom.desc
+Colosse masqué de l'Ordre. Personne ne connaît son nom, pas même lui.
+
+== monstre.sansnom.charge
+Le Sans-Nom lève sa masse… *il va frapper toute l'équipe*.
+
+== monstre.sansnom.special
+*Coup du colosse !* La masse s'abat sur toute l'équipe.

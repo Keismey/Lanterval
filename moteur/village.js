@@ -54,12 +54,13 @@ async function parler(pnj) {
   return dialogue(repliqueAttente(pnj.id), {});
 }
 // réplique selon l'avancée : pnj.<id>.<étape en cours>, sinon celle d'une étape précédente, sinon pnj.<id>
-function repliqueAttente(id) {
-  const ids = toutesEtapes().map(e => e.id), cur = etapeCourante();
+// (quoi = '.accueil' pour l'accueil d'une boutique : pnj.<id>.accueil.<étape>)
+function repliqueAttente(id, quoi = '') {
+  const ids = toutesEtapes().map(e => e.id), cur = etapeCourante(), base = `pnj.${id}${quoi}`;
   const pos = cur ? ids.indexOf(cur.id) : ids.length;
-  if (!cur && existe(`pnj.${id}.fin`)) return `pnj.${id}.fin`;
-  for (let i = pos; i >= 0; i--) if (ids[i] && existe(`pnj.${id}.${ids[i]}`)) return `pnj.${id}.${ids[i]}`;
-  return `pnj.${id}`;
+  if (!cur && existe(`${base}.fin`)) return `${base}.fin`;
+  for (let i = pos; i >= 0; i--) if (ids[i] && existe(`${base}.${ids[i]}`)) return `${base}.${ids[i]}`;
+  return base;
 }
 
 async function auberge(pnj) {
@@ -79,15 +80,18 @@ function wearers(id) {
 }
 function icEq(id) { const p = EQUIPEMENT[id].place; return p === 'arme' ? 'sword' : p === 'armure' ? 'shield' : 'spark'; }
 
+// pièces en vente : 'epee', ou ['acier', 'fini a1.e7'] qui n'arrive qu'avec la condition
+function enRayon(pnj) { return pnj.equipement.filter(x => typeof x === 'string' || cond(x[1])).map(x => typeof x === 'string' ? x : x[0]); }
+
 async function boutique(pnj) {
   const qui = t('parle.' + pnj.portrait);
-  let line = html(bulle(t(`pnj.${pnj.id}.accueil`)).texte);
+  let line = html(bulle(t(repliqueAttente(pnj.id, '.accueil'))).texte);
   while (true) {
     const opts = pnj.objets.map(([k, prix]) => ({ k: 'i:' + k, ic: 'heart', label: esc(t('objet.' + k)), sub: esc(t('boutique.objet', { prix, effet: t('objet.' + k + '.desc'), n: S.inv[k] || 0 })), dis: S.gold < prix }));
-    for (const k of pnj.equipement) opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(nomEq(k)), sub: esc(`${EQUIPEMENT[k].prix} ${t('po')} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)} · ${wearers(k)}`), dis: S.gold < EQUIPEMENT[k].prix });
+    for (const k of enRayon(pnj)) opts.push({ k: 'e:' + k, ic: icEq(k), label: esc(nomEq(k)), sub: esc(`${EQUIPEMENT[k].prix} ${t('po')} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)} · ${wearers(k)}`), dis: S.gold < EQUIPEMENT[k].prix });
     opts.push({ k: 'sell', ic: 'coin', label: esc(t('boutique.vendre')), sub: esc(t('boutique.vendre.sous')), cls: 'side' });
     opts.push({ k: 'x', label: esc(t('retour')), ic: 'back', cls: 'ghost' });
-    const k = await show(line, { who: qui, portrait: pnj.portrait, choices: opts, note: tx('boutique.bourse', { or: S.gold }) + (pnj.equipement.length ? ' ' + tx('boutique.equiper') : '') });
+    const k = await show(line, { who: qui, portrait: pnj.portrait, choices: opts, note: tx('boutique.bourse', { or: S.gold }) + (enRayon(pnj).length ? ' ' + tx('boutique.equiper') : '') });
     if (k === 'x') return;
     if (k === 'sell') { line = await vendre(pnj); continue; }
     const [ty, id] = k.split(':');

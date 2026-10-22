@@ -36,7 +36,7 @@ function bOverlay() {
   const m = chaine();
   const ei = B.enemies.map((e, i) => e.hp <= 0 ? '' : `<div class="einfo glass ${B.targeting ? 'tg' : ''}" data-ei="${i}" style="left:${e.px * 100}%;top:${(e.py * 100 + 1.5).toFixed(1)}%">
     <div class="nm">${esc(e.name)}</div><div class="bar ${e.hp / e.mhp < .3 ? 'low' : ''}"><i style="width:${e.hp / e.mhp * 100}%"></i></div>
-    <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${e.shield}</span>`}${elChips(e)}</div></div>`).join('');
+    <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${MONSTRES[e.id].intouchable ? '∞' : e.shield}</span>`}${elChips(e)}</div></div>`).join('');
   ovc().innerHTML = `<div class="tl glass"><span class="tll">${esc(t('combat.tours'))}</span>${chips}</div>
    <div class="bmeta">${B.team.length > 1 ? `<span class="glass pips">${esc(t('combat.union'))} ${[0, 1, 2].map(i => `<b class="${B.union > i ? 'on' : ''}"></b>`).join('')}</span>` : ''}${m ? `<span class="glass chain">${esc(t('combat.chaine', { m }))}</span>` : ''}${B.auto ? `<span class="glass autoflag">${esc(t('combat.auto'))}</span>` : ''}</div>${ei}`;
   majMonstres();
@@ -79,13 +79,14 @@ function pickItem() {
 document.addEventListener('click', e => { const x = e.target.closest('#ov [data-ei]'); if (x && B && B.pick) B.pick(+x.dataset.ei); });
 
 /* ---------- Déroulé d'un combat ---------- */
-// o : { zone, canFlee, quest, boss }. Renvoie 'win' ou 'fled' ; lance DEFAITE si l'équipe tombe.
+// o : { zone, canFlee, quest, boss, equipe, perdu }. Renvoie 'win', 'fled' ou 'perdu' (combat perdu d'avance) ;
+// lance DEFAITE si l'équipe tombe dans un combat normal. equipe : ids des seuls héros qui se battent.
 async function battle(ids, o) {
   const t0 = S.st.time, n = ids.length, cnt = {}, vus = {}, fp = forcePlus();
   S.st.fights++; if (o.quest) S.st.qfights++;
   ids.forEach(id => { cnt[id] = (cnt[id] || 0) + 1; seen(id); });
-  const T = team();
-  B = { zone: o.zone, canFlee: o.canFlee !== false, boss: !!o.boss, quest: !!o.quest, union: 0, streak: 0, turns: 0, cur: null, targeting: false, team: T, st: {}, auto: false, wall: null,
+  const T = o.equipe ? team().filter(h => o.equipe.includes(h.id)) : team();
+  B = { zone: o.zone, canFlee: o.canFlee !== false, boss: !!o.boss, quest: !!o.quest, perdu: !!o.perdu, union: 0, streak: 0, turns: 0, cur: null, targeting: false, team: T, st: {}, auto: false, wall: null,
     enemies: ids.map(id => {
       const d = MONSTRES[id]; vus[id] = (vus[id] || 0) + 1;
       const nom = cnt[id] > 1 ? (existe(`monstre.${id}.court`) ? t(`monstre.${id}.court`) : t('monstre.' + id)) + ' ' + 'ABC'[vus[id] - 1] : t('monstre.' + id);
@@ -101,7 +102,7 @@ async function battle(ids, o) {
   poserMonstres(B.enemies);
   $('#panel').innerHTML = `<div class="pcards" id="pcards"></div><div class="msgline" id="bmsg"></div><div class="cmds" id="bcmd"></div>`;
   bDraw();
-  bMsg(o.boss ? tx('combat.boss') : esc(t('combat.debut', { noms: nomsEnnemis() })));
+  bMsg(o.perdu ? tx('combat.ecrasant') : o.boss ? tx('combat.boss') : esc(t('combat.debut', { noms: nomsEnnemis() })));
   if (!S.f.tuto) { S.f.tuto = true; await openHelp(true); }
   await wait(600);
   while (true) {
@@ -132,6 +133,11 @@ async function battle(ids, o) {
     }
   }
   B.cur = null; bDraw();
+  if (!aliveH().length && B.perdu) {
+    bMsg(tx('combat.perdu')); await wait(1600); logR('journal.log.perdu', { noms: nomsEnnemis() });
+    for (const h of B.team) h.hp = 1;
+    finCombat(); return 'perdu';
+  }
   if (!aliveH().length) { bMsg(esc(t('combat.defaite'))); await wait(1100); logR('journal.log.defaite', { noms: nomsEnnemis() }); finCombat(); throw DEFAITE; }
   const xp = B.enemies.reduce((a, e) => a + e.xp, 0), gold = B.enemies.reduce((a, e) => a + e.gold, 0);
   S.gold += gold;
@@ -202,7 +208,7 @@ async function strike(e, els, base, mult) {
   else if (res) { m *= .5; els.forEach(x => { if (e.res.includes(x)) reveal(e.id, x, true); }); cls = 'res'; tag = t('combat.resiste') + ' '; }
   if (e.broken) m *= 1.5;
   const dmg = Math.max(1, Math.round(base * rnd(.9, 1.1) * m));
-  e.hp = Math.max(0, e.hp - dmg);
+  e.hp = Math.max(MONSTRES[e.id].intouchable ? 1 : 0, e.hp - dmg);
   const [x, y] = epos(e); fx(x, y, dmg, cls); await hitFlash(e);
   let line = esc(tag + t('combat.perd', { nom: e.name, n: dmg }));
   if (weak && e.shield <= 0 && !e.broken && e.hp > 0) {

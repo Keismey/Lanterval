@@ -7,7 +7,10 @@
      ['dialogue', repère]                une ou plusieurs bulles
      ['panorama', image]                 l'image large remplace le décor jusqu'à ['decor']
      ['decor']                           retour au décor du lieu
-     ['combat', 'loup loup', options]    options : boss, conseil (repère d'un texte affiché avant)
+     ['combat', 'loup loup', options]    options : boss, conseil (repère d'un texte affiché avant),
+                                         equipe ('kael mira' : seuls ces héros se battent),
+                                         perdu (combat perdu d'avance : l'équipe tombe et l'étape continue,
+                                         sans retour au village ni perte d'or)
      ['rejoint', héros]                  le héros entre dans l'équipe ; ['presente', héros] affiche sa fiche
      ['gagne', '100 or, medaillon']      ['perd', 'coeur']
      ['classes', 'guerrier mage']        débloque des classes
@@ -107,7 +110,45 @@ ACTES.push({
       ['dialogue', 'a1.e7.fete'],
       ['decor'],
       ['dialogue', 'a1.e7.aveu'],
-      ['message', 'a1.e7.message'],
+      ['message', 'a1.e7.message']
+    ] },
+
+    // Col des Pierres, en deux étapes : la montée, puis le sommet (duel contre Varen et défaite face au Sans-Nom)
+    { id: 'a1.e8', lieu: 'col.p', evenements: [
+      ['dialogue', 'a1.e8.montee'],
+      ['traversee', 'col.s', { milieu: [
+        ['dialogue', 'a1.e8.harpies'],
+        ['combat', 'harpie belier harpie'],
+        ['dialogue', 'a1.e8.traces']
+      ] }],
+      ['dialogue', 'a1.e8.sommet'],
+      ['message', 'a1.e8.message']
+    ] },
+
+    { id: 'a1.e9', lieu: 'col.s', evenements: [
+      ['panorama', 'pano.cage'],
+      ['dialogue', 'a1.e9.cage'],
+      ['dialogue', 'a1.e9.varen'],
+      ['combat', 'varen', { boss: true, equipe: 'kael mira', conseil: 'a1.e9.conseil' }],
+      ['dialogue', 'a1.e9.varen.fin'],
+      ['dialogue', 'a1.e9.sansnom'],
+      ['combat', 'sansnom', { boss: true, perdu: true }],
+      ['dialogue', 'a1.e9.cri'],
+      ['position', 'lanterval'],
+      ['decor'],
+      ['soin'],
+      ['dialogue', 'a1.e9.reveil'],
+      ['message', 'a1.e9.message']
+    ] },
+
+    { id: 'a1.e10', lieu: 'brann', evenements: [
+      ['dialogue', 'a1.e10.brann'],
+      ['panorama', 'pano.epee'],
+      ['gagne', 'epee-pere'],
+      ['dialogue', 'a1.e10.epee'],
+      ['decor'],
+      ['dialogue', 'a1.e10.depart'],
+      ['message', 'a1.e10.message'],
       ['fin_version']
     ] }
   ]

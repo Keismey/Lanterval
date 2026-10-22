@@ -178,6 +178,106 @@ Mira: “Then we leave tomorrow.” Sol nods without a word.
 == a1.e7.message
 New path on the map: the *Stone Pass*.
 
+# ---------- Step 8: climbing the pass ----------
+
+== a1.e8.titre
+Climb the Stone Pass
+
+== a1.e8.montee
+## Stone Pass
+The path climbs between frost-covered standing stones. High above, an amber glow pierces the mist.
+Sol: “Boot prints, lots of them. Someone came through before us.”
+Mira: “The Order. Then we hurry.” [Climb]
+
+== a1.e8.harpies
+Shrill cries ring out above you. Harpies dive from the rocks, and a rock ram charges behind them!
+
+== a1.e8.traces
+Mira: “They were panicking. As if something had chased them off the summit.”
+Sol: “Or someone.”
+
+== a1.e8.sommet
+## Summit of the pass
+At the summit, a ring of standing stones surrounds the amber crystal, as tall as a man.
+Behind the stones, voices echo, and the sound of hammered metal.
+Against your chest, the lantern shard begins to tremble.
+
+== a1.e8.message
+The amber crystal is very close. *Get the team ready*: the fight at the summit will be tough.
+
+# ---------- Step 9: the amber crystal ----------
+
+== a1.e9.titre
+The amber crystal
+
+== a1.e9.cage
+## The amber crystal
+A young man with silver hair closes a cage of black iron around the crystal. Behind him, a masked giant holds the chains.
+Varen: “Well, well. The little guard of Lanterval, and his friends.”
+Varen: “You're too late. The amber belongs to the Eyelid now.”
+
+== a1.e9.varen
+Mira: “Give it back! Without it, our village will disappear!”
+Varen: “Disappear? Forgetting your sorrows in the mist, I call that healing.”
+Shadows burst out from the rocks and surround Sol.
+Varen: “You and the redhead, against me alone. That will be plenty.”
+
+== a1.e9.conseil
+*Duel: only Kael and Mira fight.* Varen is fast and hits hard. Kael's Earth and Mira's Fire can break his guard.
+
+== a1.e9.varen.fin
+Varen steps back, a hand on his shoulder. For the first time, he isn't smiling.
+Varen: “Not bad… for people who are going to forget everything.”
+Sol breaks free of the Shadows and joins you.
+Varen: “Nameless. Deal with them.” [Stand firm]
+
+== a1.e9.sansnom
+The giant lets go of the chains. The ground shakes with every step.
+He says nothing. A closed eye is engraved on his steel mask.
+
+== a1.e9.cri
+## The Nameless
+You are down. The Nameless raises his mace above you.
+Mira: “KAEL!”
+The giant freezes. For one second, his mask turns towards you, as if he were looking for something.
+Then the mace comes down, and everything goes black. […]
+
+== a1.e9.reveil
+## The Cauldron Inn
+You open your eyes under the beams of the inn. Through the window, the lantern still shines, faintly.
+Hilde: “Easy now. Brann brought the three of you down from the pass on a cart. You slept for two days.”
+Mira: “Mum… They took the crystal. That giant could have finished us, and he stopped.”
+Hilde looks away, towards the window.
+Hilde: “Brann is waiting for you at the guard post, Kael. He has something for you.”
+
+== a1.e9.message
+The Order has taken the amber crystal. *Brann is waiting for you at the guard post.*
+
+# ---------- Step 10: the father's sword ----------
+
+== a1.e10.titre
+The father's sword
+
+== a1.e10.brann
+Brann: “Back on your feet. You're as stubborn as your father.”
+Brann: “The night he left into the mist, he gave me something. ‘For Kael, when he's ready,’ he said.”
+Brann: “After what you did at the pass, I think you are.”
+
+== a1.e10.epee
+## The father's sword
+Brann hands you a sword in a worn scabbard. The blade is chipped, but the hilt bears the crest of the Lanterval guards.
+You receive the *Father's sword* (key item).
+Brann: “It's too damaged to fight with. But one day, someone will know how to mend it.”
+
+== a1.e10.depart
+Sol: “I heard the Shadows up there. They're taking the crystal to the coast, to Salvent.”
+Sol falls silent. Salvent is the port where his little sister disappeared.
+Mira: “Then we go to Salvent. Through the Salt Marsh, it's the shortest way.”
+Brann: “Go. And come back, this time.”
+
+== a1.e10.message
+New path on the map: the *Salt Marsh*, towards the coast of Salvent.
+
 # ---------- What the villagers say as the story moves on ----------
 
 == pnj.orvan.a1.e2
@@ -186,8 +286,14 @@ Orvan: “The forest is to the east. Hurry, Mira has never known how to back dow
 == pnj.orvan.a1.e4
 Orvan: “The crystal heart is at the end of the cave. Bring it back before it goes out for good.”
 
+== pnj.orvan.a1.e8
+Orvan: “Get some rest. The Stone Pass awaits you, north of the forest, but it won't run away tonight.”
+
+== pnj.orvan.a1.e10
+Orvan: “I should never have sent you up there alone. Go and see Brann, he's waiting for you.”
+
 == pnj.orvan.fin
-Orvan: “Get some rest. The Stone Pass awaits you, but it won't run away tonight.”
+Orvan: “The heart will last the season. Until then, find the amber crystal, wherever the Order takes it.”
 
 == pnj.brann
 Brann: “Stay careful, Kael. The mist makes the beasts nervous.”
@@ -204,11 +310,38 @@ Tilo: “They say a stone giant sleeps at the end of the cave. The old folks say
 == pnj.tilo.a1.e6
 Tilo: “Everyone says you've got the crystal heart! Go and see the Elder, quick!”
 
-== pnj.tilo.fin
-Tilo: “The fireflies are back in the forest! Can we go there in the evening now?”
+== pnj.tilo.a1.e8
+Tilo: “The fireflies are back in the forest! And Mum says the harpies at the pass steal travellers' hats.”
 
-# ---------- End of version 0.1 ----------
+== pnj.tilo.a1.e10
+Tilo: “You came back on a cart, all pale… I was scared, you know.”
+
+== pnj.tilo.fin
+Tilo: “Are you going to see the sea? Bring me back a shell!”
+
+# Hilde, at the forge: her greeting changes as the story moves on (pnj.hilde.accueil.<step>)
+
+== pnj.hilde.accueil
+Hilde: “Has Mira gone off without a word again? If you see her, bring her back to me. In the meantime, the forge is open.”
+
+== pnj.hilde.accueil.a1.e3
+Hilde: “Thank you for bringing my daughter back. She takes after me: she charges first and thinks later.”
+
+== pnj.hilde.accueil.a1.e4
+Hilde: “They say you found a badge with a closed eye.” She grips her hammer a little too tightly. “Don't show it to anyone else.”
+
+== pnj.hilde.accueil.a1.e8
+Hilde: “The pass, already? I've pulled some new pieces out of the fire. Take what you need, I don't want to stitch you back up.”
+
+== pnj.hilde.accueil.a1.e10
+Hilde: “You're up, good. Mira is still asleep, let her rest.”
+
+== pnj.hilde.accueil.fin
+Hilde: “Salvent…” She stays silent for a moment. “Take care of her, Kael.”
+
+# ---------- End of version 0.2 ----------
 
 == fin.version
-## End of version 0.1
-The rest of Act 1 begins here: the Stone Pass. It's coming in the next version.
+## End of version 0.2
+Act 1 is complete! The Order is taking the amber crystal to the coast, and the road to Salvent runs through the Salt Marsh.
+Act 2 is coming in a future version. Until then, you can finish the side quests and explore every zone to 100%.

@@ -6,7 +6,8 @@
      spores  : touche toute l'équipe (chance, mult)
      regen   : se soigne sous un seuil de PV (seuil, chance, v)
      fort    : coup puissant avec un nom (chance, mult)
-     charge  : prépare un coup sur toute l'équipe tous les 3 tours (mult), annulé si la garde est brisée */
+     charge  : prépare un coup sur toute l'équipe tous les 3 tours (mult), annulé si la garde est brisée
+   intouchable : ne descend jamais sous 1 PV et sa garde ne se brise pas (combat perdu d'avance, voir acte1.js) */
 
 const MONSTRES = {
   loup: { pv: 34, atk: 10, def: 3, vit: 12, garde: 2, faible: ['L', 'F'], resiste: [], xp: 8, or: 6, taille: .17 },
@@ -20,5 +21,13 @@ const MONSTRES = {
   alpha: { pv: 85, atk: 13, def: 5, vit: 13, garde: 4, faible: ['F', 'L'], resiste: ['T'], xp: 30, or: 25, taille: .21,
     capacites: [{ type: 'fort', chance: .3, mult: 1.35 }] },
   golem: { pv: 260, atk: 17, def: 7, vit: 7, garde: 4, faible: ['T', 'E'], resiste: ['F', 'L'], xp: 60, or: 50, taille: .38, boss: true,
-    capacites: [{ type: 'charge', mult: 1.55 }] }
+    capacites: [{ type: 'charge', mult: 1.55 }] },
+  belier: { pv: 58, atk: 14, def: 8, vit: 8, garde: 3, faible: ['E', 'F'], resiste: ['T'], xp: 14, or: 10, taille: .19,
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  harpie: { pv: 40, atk: 12, def: 3, vit: 17, garde: 2, faible: ['T', 'L'], resiste: ['E'], xp: 13, or: 9, taille: .18, f: true,
+    capacites: [{ type: 'spores', chance: .3, mult: .7 }] },
+  varen: { pv: 230, atk: 16, def: 6, vit: 15, garde: 4, faible: ['T', 'F'], resiste: ['E'], xp: 80, or: 60, taille: .3, boss: true,
+    capacites: [{ type: 'fort', chance: .35, mult: 1.4 }] },
+  sansnom: { pv: 999, atk: 70, def: 30, vit: 9, garde: 9, faible: [], resiste: ['L', 'T', 'F', 'E'], xp: 0, or: 0, taille: .42, boss: true, intouchable: true,
+    capacites: [{ type: 'charge', mult: 2.5 }] }
 };
