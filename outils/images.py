@@ -34,12 +34,17 @@ LISTE = [
     ('monstre-gelee-quartz.jpg', 'monstres/gelee.webp', 'detoure', {'largeur': 640}),
     ('monstre-ombre-voleuse.jpg', 'monstres/ombre.webp', 'detoure', {'largeur': 640, 'trous': True}),
     ('monstre-loup-alpha.jpg', 'monstres/alpha.webp', 'detoure', {'largeur': 640, 'trous': True}),
+    ('monstre-gardien-cristal.jpg', 'monstres/golem.webp', 'detoure', {'largeur': 760, 'trous': 3000}),
+    ('decor-foret-calme.jpg', 'decors/foret-calme.webp', 'decor', {'largeur': 1376}),
+    ('decor-grotte-cristal.jpg', 'decors/grotte.webp', 'decor', {'largeur': 1376}),
+    ('decor-grotte-sombre.jpg', 'decors/grotte-sombre.webp', 'decor', {'largeur': 1376}),
 ]
 
 
 def detourer(im, trous=False):
     """Rend transparent le fond clair relié aux bords (papier blanc), en douceur sur les lavis.
-    trous : vide aussi le blanc enfermé dans la brume ou la fumée (à éviter si le sujet a du blanc)."""
+    trous : vide aussi le blanc enfermé dans la brume ou la fumée (à éviter si le sujet a du blanc) ;
+    un nombre au lieu de True ne vide que les zones d'au moins ce nombre de pixels (garde les reflets)."""
     im = im.convert('RGBA')
     w, h = im.size
     px = im.load()
@@ -83,9 +88,25 @@ def detourer(im, trous=False):
                     vu[j] = 1
     if trous:
         blanc = lambda c: min(c[0], c[1], c[2]) > 226 and max(c[0], c[1], c[2]) - min(c[0], c[1], c[2]) < 30
-        for i in range(w * h):
-            if not vu[i] and blanc(px[i % w, i // w]):
-                vu[i] = 1
+        mini = 0 if trous is True else trous
+        deja = bytearray(w * h)
+        for i0 in range(w * h):
+            if vu[i0] or deja[i0] or not blanc(px[i0 % w, i0 // w]):
+                continue
+            zone, file = [], deque([i0])
+            deja[i0] = 1
+            while file:
+                i = file.popleft()
+                zone.append(i)
+                x, y = i % w, i // w
+                for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+                    j = ny * w + nx
+                    if 0 <= nx < w and 0 <= ny < h and not vu[j] and not deja[j] and blanc(px[nx, ny]):
+                        deja[j] = 1
+                        file.append(j)
+            if len(zone) >= mini:
+                for i in zone:
+                    vu[i] = 1
     for y in range(h):
         for x in range(w):
             if not vu[y * w + x]:

@@ -10,9 +10,9 @@ const IMAGES = {
   // ---------- Décors ----------
   'decor.lanterval': { fichier: 'img/decors/lanterval.webp', lueur: [.503, .29], sujet: 'La place de Lanterval et sa lanterne monumentale, de jour' },
   'decor.foret': { fichier: 'img/decors/foret.webp', provisoire: 'foret', sujet: 'Forêt des Murmures, troncs immenses et brume épaisse' },
-  'decor.foret.calme': { provisoire: 'foret-calme', sujet: 'Forêt des Murmures, brume levée, lucioles' },
-  'decor.grotte': { provisoire: 'grotte', sujet: 'Grotte de Cristal, cristaux bleus lumineux' },
-  'decor.grotte.sombre': { provisoire: 'grotte-sombre', sujet: 'Grotte de Cristal, cristaux éteints, yeux rouges dans le noir' },
+  'decor.foret.calme': { fichier: 'img/decors/foret-calme.webp', provisoire: 'foret-calme', sujet: 'Forêt des Murmures, brume levée, lucioles' },
+  'decor.grotte': { fichier: 'img/decors/grotte.webp', provisoire: 'grotte', sujet: 'Grotte de Cristal, cristaux bleus lumineux' },
+  'decor.grotte.sombre': { fichier: 'img/decors/grotte-sombre.webp', provisoire: 'grotte-sombre', sujet: 'Grotte de Cristal, cristaux éteints, yeux rouges dans le noir' },
   'decor.col': { provisoire: 'col', sujet: 'Col des Pierres, sentier entre des menhirs, neige et ciel ambré' },
   'decor.col.vide': { provisoire: 'col-vide', sujet: 'Col des Pierres, socle vide du cristal, ciel gris' },
   'decor.carte': { provisoire: 'carte', sujet: 'Carte de la Vallée de Lanterval' },
@@ -56,5 +56,5 @@ const IMAGES = {
   'monstre.harpie': { provisoire: 'harpie', sujet: 'Harpie du col, ailes grises, serres' },
   'monstre.varen': { provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre' },
   'monstre.sansnom': { provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse' },
-  'monstre.golem': { provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' }
+  'monstre.golem': { fichier: 'img/monstres/golem.webp', provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' }
 };
