@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.2.2 (2026-10-22)
+
+- Pas de quête téléguidée (demande de Keismey) : plus de bouton « Aller à / Rentrer à » ; un « ! » marque le bouton Carte (`marqueCarte`), le bouton Traverser (`marqueTraversee`) et le lieu sur la carte.
+
 ## Version 0.2.1 (2026-10-22)
 
 - Codex : chaque classe débloquée est repliable (`<details class="cls">`).
