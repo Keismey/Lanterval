@@ -36,6 +36,8 @@ LISTE = [
     ('perso-mira.jpg', 'heros/mira-portrait.webp', 'portrait', {'boite': (594, 42, 170, 170), 'cote': 192}),
     ('perso-sol.jpg', 'heros/sol.webp', 'detoure', {'hauteur': 420}),
     ('perso-sol.jpg', 'heros/sol-portrait.webp', 'portrait', {'boite': (620, 42, 180, 180), 'cote': 192}),
+    ('perso-nev.jpg', 'heros/nev.webp', 'detoure', {'hauteur': 420}),
+    ('perso-nev.jpg', 'heros/nev-portrait.webp', 'portrait', {'boite': (615, 30, 180), 'cote': 192}),
     ('decor-foret-murmures.jpg', 'decors/foret.webp', 'decor', {'largeur': 1376}),
     ('monstre-champi-spore.jpg', 'monstres/spore.webp', 'detoure', {'largeur': 640}),
     ('monstre-chiroptere.jpg', 'monstres/chauve.webp', 'detoure', {'largeur': 640, 'trous': 400}),
@@ -84,6 +86,11 @@ LISTE = [
     ('perso-loic.jpg', 'pnj/loic.webp', 'portrait', {'boite': (230, 40, 580), 'cote': 192}),
     ('perso-rosal.jpg', 'pnj/rosal.webp', 'portrait', {'boite': (170, 10, 640), 'cote': 192}),
     ('perso-naia.jpg', 'pnj/naia.webp', 'portrait', {'boite': (220, 120, 600), 'cote': 192}),
+    ('perso-erwan.jpg', 'pnj/erwan.webp', 'portrait', {'boite': (230, 40, 580), 'cote': 192}),
+    ('perso-ysold.jpg', 'pnj/ysold.webp', 'portrait', {'boite': (220, 30, 600), 'cote': 192}),
+    ('perso-pia.jpg', 'pnj/pia.webp', 'portrait', {'boite': (230, 60, 580), 'cote': 192}),
+    ('perso-roxane.jpg', 'pnj/roxane.webp', 'portrait', {'boite': (200, 20, 580), 'cote': 192}),
+    ('perso-fennel.jpg', 'pnj/fennel.webp', 'portrait', {'boite': (180, 40, 640), 'cote': 192}),
 ]
 
 
