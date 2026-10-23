@@ -8,7 +8,8 @@
    « pas fini a1.e7 », « annexe loup 2 » = quête annexe loup arrivée à l'étape 2 ou plus.
    Plusieurs conditions se joignent avec « et ». Sans condition : toujours vrai.
 
-   Personnage (pnj) : si = condition pour qu'il soit là.
+   Personnage (pnj) : si = condition pour qu'il soit là. Un même personnage peut être dans plusieurs villages
+   avec des conditions qui se suivent (Roxane, Fennel) : il suit l'équipe.
    Boutique : equipement liste les pièces en vente ; ['acier', 'fini a1.e7'] n'arrive en rayon qu'avec la condition.
    fous : condition pendant laquelle les prix sont tirés au hasard à chaque visite ; remise : condition d'une remise de 10 %.
 
@@ -30,7 +31,11 @@ const LIEUX = {
         objets: [['herbe', 8], ['tonique', 12]], equipement: [] },
       { id: 'nell', role: 'boutique', portrait: 'nell',
         objets: [['herbe', 7], ['tonique', 11], ['elixir', 25]], equipement: [] },
-      { id: 'tilo', portrait: 'tilo' }
+      { id: 'tilo', portrait: 'tilo' },
+      // quêtes annexes de la vallée ; Roxane et Fennel partent à Salvent quand la ville est découverte
+      { id: 'pia', portrait: 'pia', si: 'fini a1.e7' },
+      { id: 'roxane', portrait: 'roxane', si: 'fini a1.e7 et pas fini a2.e1' },
+      { id: 'fennel', portrait: 'fennel', si: 'fini a1.e2 et pas fini a2.e1' }
     ]
   },
 
@@ -150,7 +155,9 @@ const LIEUX = {
         equipement: ['bandes', 'coutelas', 'harpe', 'veste', ['corail', 'fini a2.e4'], ['flots', 'fini a2.e4'], ['nacre', 'fini a2.e4'], ['houle', 'fini a2.e4'], ['griffes', 'annexe prix 3']] },
       { id: 'naia', portrait: 'naia', si: 'fini a2.e4' },
       { id: 'rosal', portrait: 'rosal' },
-      { id: 'loic', portrait: 'loic' }
+      { id: 'loic', portrait: 'loic' },
+      { id: 'roxane', portrait: 'roxane' },
+      { id: 'fennel', portrait: 'fennel' }
     ]
   },
 

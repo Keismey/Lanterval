@@ -962,6 +962,11 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.3.2
+Three new side quests in Lanterval that cross every region: “The lantern seed” (Pia), “The hunter's logbook” (Roxane) and “The peddler” (Fennel). They continue in act 3.
+Two fearsome beasts to hunt: the Rock Boar at Stone Pass and the Thunder Eel in the Lantern Marsh.
+Roxane and Fennel follow the team from village to village, and the village menu shows what Fennel is looking for.
+The Codex introduces Roxane and Fennel in the Characters tab.
 ## Version 0.3.1
 The Codex has a Characters tab: the key characters of the story, each with an expandable entry that grows as the adventure goes on.
 A red dot on the Codex icon, the tab and the character marks new information, until you read their entry.

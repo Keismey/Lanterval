@@ -78,6 +78,24 @@ Tilo, on the square
 == pnj.tilo.sous
 Village rumours
 
+== pnj.pia.nom
+Pia, the gardener
+
+== pnj.pia.sous
+By the flowerbeds
+
+== pnj.roxane.nom
+Roxane, the hunter
+
+== pnj.roxane.sous
+At the inn
+
+== pnj.fennel.nom
+Fennel, the peddler
+
+== pnj.fennel.sous
+Passing through, he trades
+
 # ================= Valley map =================
 
 == carte.titre

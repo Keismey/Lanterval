@@ -51,6 +51,239 @@ Brann : « Tu l'as eu ! Ton père aurait été fier. Prends mon vieil arc, je va
 == loup.apres
 Brann : « Les moutons dorment tranquilles grâce à toi. Si tu croises d'autres bêtes étranges, tu sais où me trouver. »
 
+# ---------- 2. La graine-lanterne (Pia) ----------
+
+== graine.titre
+La graine-lanterne
+
+== graine.offre
+Pia : « Grand-mère dit que cette graine donne une fleur qui brille dans la brume. »
+Pia : « Il lui faut de l'eau salée, de la cendre chaude et un vent très fort. Moi, je n'ai pas le droit de sortir du village. »
+Pia : « Tu veux bien t'en occuper ? Je te la prête. Rends-la-moi en fleur ! »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== graine.message
+Quête annexe : la *graine-lanterne* a besoin d'eau salée. Peut-être dans un marais au bord de la mer ?
+
+== graine.e1.titre
+Arroser la graine à l'eau salée
+
+== graine.e1.bouton
+Arroser la graine
+
+== graine.e1.attente
+Pia : « Grand-mère dit que l'eau salée, on la trouve là où la mer entre dans les marais. Moi, je n'ai jamais vu la mer. »
+
+== graine.e1.arroser
+## La graine-lanterne
+Tu plantes la graine dans un creux de vase et tu l'arroses d'eau salée. Une petite lueur s'allume sous la terre.
+Mira : « Elle brille ! Attends… Elle attire les feux follets. » [Combattre]
+
+== graine.e1.fin
+## La graine-lanterne
+Les feux follets dispersés, une pousse verte sort de la vase. Une minuscule lanterne pend au bout de sa tige.
+Sol : « Elle a encore faim. De la cendre chaude, d'après la petite. Il faudra attendre d'aller à Cendre. »
+
+== graine.e1.message
+Quête annexe : la graine est devenue une *pousse-lanterne*. *La suite à l'acte 3*, dans la cendre chaude.
+
+== graine.e2.titre
+Réchauffer la pousse dans la cendre (acte 3)
+
+== graine.e2.scene
+Kael couvre la pousse de cendre chaude. Un bourgeon rougeoie.
+
+== graine.e2.attente
+Pia : « Elle a poussé ? Grand-mère dit qu'après l'eau, il lui faut de la cendre chaude. Il y en a plein à Cendre, c'est écrit dans le nom ! »
+
+== graine.apres
+Pia : « Tous les soirs, je regarde ma fleur. Grand-mère dit qu'elle éclaire mieux que la lanterne. Ne lui répète pas que j'ai dit ça. »
+
+== pnj.pia
+Pia : « Grand-mère dit que les fleurs ont peur de la brume. Moi je dis qu'il faut juste trouver la bonne. »
+
+# ---------- 3. Le carnet du chasseur (Roxane) ----------
+
+== chasse.titre
+Le carnet du chasseur
+
+== chasse.offre
+Roxane : « Je tiens un carnet des bêtes que personne n'ose chasser. Il en reste quatre, une par région. »
+Roxane : « La première est tout près : un sanglier aussi gros qu'une charrette, au Col des Pierres. Son dos est couvert de pierre. »
+Roxane : « Rapporte-moi une preuve de chacune, je paie bien. Et ne fais pas le malin : celle-là a déjà renvoyé trois chasseurs chez eux en morceaux. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== chasse.message
+Quête annexe : traquer le *Sanglier-roc* au *Col des Pierres*. Roxane dit que sa garde de pierre ne craint que le Feu.
+
+== chasse.e1.titre
+Traquer le Sanglier-roc au Col des Pierres
+
+== chasse.e1.bouton
+Traquer le Sanglier-roc
+
+== chasse.e1.attente
+Roxane : « Le Sanglier-roc, au Col des Pierres. Les lames glissent sur son dos. Il faut du feu pour fendre la pierre. »
+
+== chasse.e1.traque
+## Le carnet du chasseur
+Des menhirs renversés, des sillons profonds dans la neige. Quelque chose de très lourd est passé par ici.
+Derrière un rocher, un sanglier énorme gratte le sol. Son dos est couvert de plaques de pierre. [Combattre]
+
+== chasse.e1.fin
+## Le carnet du chasseur
+Le Sanglier-roc s'écroule dans un bruit d'éboulement. Tu détaches une de ses défenses, longue comme ton bras.
+Mira : « Roxane va être contente. Moi, je vais avoir des courbatures pendant une semaine. »
+
+== chasse.e1.message
+Quête annexe : rapporte la défense à *Roxane*.
+
+== chasse.e2.titre
+Rapporter la défense à Roxane
+
+== chasse.e2.scene
+Roxane : « Une défense de Sanglier-roc ! Je l'inscris dans le carnet : chassé par Kael, de Lanterval. »
+Roxane : « Voici ta prime, 150 pièces. La suivante est une anguille qui crache la foudre, au cœur du Marais des Lanternes, sur la côte. »
+Roxane : « Elle frappe deux fois tant que sa garde tient. Brise-la vite, ou elle te brisera. »
+
+== chasse.e2.message
+Quête annexe : traquer l'*Anguille-tonnerre* au cœur du *Marais des Lanternes*.
+
+== chasse.e3.titre
+Traquer l'Anguille-tonnerre au Marais des Lanternes
+
+== chasse.e3.bouton
+Traquer l'Anguille-tonnerre
+
+== chasse.e3.attente
+Roxane : « L'Anguille-tonnerre vit au cœur du Marais des Lanternes. La terre l'éteint, l'eau ne lui fait rien. »
+
+== chasse.e3.traque
+## Le carnet du chasseur
+L'eau noire grésille. Des éclairs jaunes courent sous la surface, de lanterne en lanterne.
+Une anguille longue comme une barque jaillit du marais, la gueule pleine d'étincelles. [Combattre]
+
+== chasse.e3.fin
+## Le carnet du chasseur
+L'Anguille-tonnerre retombe dans la vase et s'éteint. Une de ses écailles crépite encore entre tes doigts.
+Sol : « Je n'aurais jamais cru plonger un jour à côté de ça. Heureusement, on n'a pas plongé. »
+
+== chasse.e3.message
+Quête annexe : rapporte l'écaille à *Roxane*.
+
+== chasse.e4.titre
+Rapporter l'écaille à Roxane
+
+== chasse.e4.scene
+Roxane : « Une écaille d'Anguille-tonnerre, et tu as encore tous tes cheveux ! Deux bêtes dans le carnet. »
+Roxane : « Voilà 300 pièces. La troisième vit dans les Champs brûlés, à Cendre : une salamandre reine qui appelle ses petites. »
+Roxane : « Je t'attendrai là-bas. Une chasseuse suit toujours le gibier, et toi, tu en trouves beaucoup. »
+
+== chasse.e4.message
+Quête annexe : deux bêtes sur quatre. *La suite à l'acte 3*, dans les Champs brûlés.
+
+== chasse.e5.titre
+Traquer la Salamandre reine aux Champs brûlés (acte 3)
+
+== chasse.e5.scene
+Roxane : « La Salamandre reine. Fais attention à ses petites. »
+
+== chasse.e5.attente
+Roxane : « La Salamandre reine vit dans les Champs brûlés. Quand la route de Cendre sera ouverte, je te suivrai. »
+
+== chasse.apres
+Roxane : « Ton nom est dans mon carnet quatre fois. Personne d'autre n'y est plus d'une fois. »
+
+== pnj.roxane
+Roxane : « Ne me regarde pas comme ça. Une cicatrice, c'est juste une bête qui a eu de la chance une fois. »
+
+# ---------- 4. Le colporteur (Fennel, troc) ----------
+
+== colporteur.titre
+Le colporteur
+
+== colporteur.offre
+Fennel : « Je ne vends rien, je troque. Chaque village a ce qu'un autre désire, il suffit de faire passer les choses. »
+Fennel : « Donne-moi un pot de miel de Lanterval et je te donne mieux. Et ensuite, encore mieux. »
+Fennel : « Au bout du chemin, il y a quelque chose de très beau. Ça te tente ? »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== colporteur.message
+Quête annexe : trouver un *pot de miel de Lanterval* pour Fennel. Qui en vend au village ?
+
+== colporteur.e1.titre
+Trouver un pot de miel au village
+
+== colporteur.e1.sous
+Cherche : un pot de miel de Lanterval
+
+== colporteur.e1.attente
+Fennel : « Le miel de Lanterval, c'est le meilleur de la vallée. Quelqu'un qui vend des herbes en a sûrement. »
+
+== colporteur.e1.scene
+Berthe : « Du miel pour Fennel ? J'en garde toujours un pot pour lui. Il me rapporte du thé de la côte en échange. »
+Berthe : « Tiens. Et dis-lui que la dernière fois, son thé sentait le poisson. »
+
+== colporteur.e1.message
+Quête annexe : apporte le *pot de miel* à *Fennel*.
+
+== colporteur.e2.titre
+Troquer le miel avec Fennel
+
+== colporteur.e2.scene
+Fennel : « Le miel de Berthe ! Je reconnais le pot. Voici une boussole en échange. »
+Fennel : « Elle est un peu rouillée, mais elle montre toujours le nord. Quelqu'un, quelque part, a perdu le sien. »
+
+== colporteur.e2.message
+Quête annexe : trouve quelqu'un qui *a perdu le nord*. Fennel pense que c'est sur la côte.
+
+== colporteur.e3.titre
+Trouver quelqu'un qui a perdu le nord
+
+== colporteur.e3.sous
+Cherche : quelqu'un qui a perdu le nord
+
+== colporteur.e3.attente
+Fennel : « Une boussole, c'est utile à ceux qui vont sur l'eau. Et qui oublient le chemin du retour. »
+
+== colporteur.e3.scene
+Loïc : « Une boussole ! Avec la brume, j'oublie où est le nord, et même où est la mer. »
+Loïc : « Prends cette perle, je l'ai trouvée dans un filet. Moi, je ne saurais pas quoi en faire. »
+
+== colporteur.e3.message
+Quête annexe : apporte la *perle grise* à *Fennel*.
+
+== colporteur.e4.titre
+Troquer la perle avec Fennel
+
+== colporteur.e4.scene
+Fennel : « Une perle grise, couleur de brume ! Contre ça, une corne de brume. Ce n'est pas un hasard. »
+Fennel : « Quelqu'un à Cendre en rêve depuis des années. Garde-la bien, on se retrouvera là-bas. »
+
+== colporteur.e4.message
+Quête annexe : Fennel a troqué la perle contre une *corne de brume*. *La suite à l'acte 3*, à Forgecendre.
+
+== colporteur.e5.titre
+Troquer la corne de brume à Forgecendre (acte 3)
+
+== colporteur.e5.sous
+Cherche : quelqu'un qui a besoin d'une corne de brume
+
+== colporteur.e5.scene
+Fennel : « Forgecendre ! Les mineurs ont besoin de ta corne. »
+
+== colporteur.e5.attente
+Fennel : « Garde ta corne de brume. À Forgecendre, les mineurs s'appellent d'une galerie à l'autre. Ils en rêvent. »
+
+== colporteur.apres
+Fennel : « Le plus beau troc de ma vie. Je le raconterai dans tous les villages. »
+
+== pnj.fennel
+Fennel : « Rien à troquer ? Alors je te troque un conseil : ne marche jamais dans la brume sans lanterne. »
+
 # ---------- 5. Le navire oublié (Rosal, classe Corsaire) ----------
 
 == navire.titre

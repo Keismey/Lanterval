@@ -165,7 +165,11 @@ function lieuActuel() { return S.loc.split('.')[0]; }
 function coteActuel() { return S.loc.split('.')[1] || null; }
 // un lieu d'étape (« foret », « grotte.f », « orvan ») correspond-il à la position ?
 function estIci(lieu) { return lieu === S.loc || lieu === lieuActuel(); }
-function villageDuPnj(pnj) { return Object.keys(LIEUX).find(k => LIEUX[k].type === 'village' && LIEUX[k].pnj.some(p => p.id === pnj)) || null; }
+// un personnage peut changer de village selon l'avancée (Roxane, Fennel) : on prend celui où il est en ce moment
+function villageDuPnj(pnj) {
+  const avec = Object.keys(LIEUX).filter(k => LIEUX[k].type === 'village' && LIEUX[k].pnj.some(p => p.id === pnj));
+  return avec.find(k => lieuVisible(k) && LIEUX[k].pnj.some(p => p.id === pnj && cond(p.si))) || avec[0] || null;
+}
 
 // Régions : chaque région a sa carte (vallee, cote…). Une zone à deux côtés peut être à cheval sur deux régions.
 function regionsDu(id) { const r = LIEUX[id].region; return !r ? ['vallee'] : typeof r === 'string' ? [r] : [...new Set(Object.values(r))]; }

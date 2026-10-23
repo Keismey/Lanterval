@@ -69,6 +69,9 @@ const IMAGES = {
   'pnj.pecheur': { provisoire: 'f_loic', sujet: 'Loïc, pêcheur, bonnet de laine, barbe rousse (même portrait que pnj.loic)' },
   'pnj.bosco': { provisoire: 'f_bosco', sujet: 'Le Bosco, contrebandier, bandana rouge, moustache' },
   'pnj.erwan': { provisoire: 'f_erwan', sujet: 'Erwan, gardien du phare, vieil homme, ciré et barbe grise' },
+  'pnj.pia': { provisoire: 'f_pia', sujet: 'Pia, 9 ans, petite jardinière, nattes brunes, tablier vert, arrosoir' },
+  'pnj.roxane': { provisoire: 'f_roxane', sujet: 'Roxane, chasseuse, la quarantaine, cheveux noirs courts, cicatrice sur la joue, manteau de fourrure' },
+  'pnj.fennel': { provisoire: 'f_fennel', sujet: 'Fennel, colporteur souriant, chapeau à large bord, hotte chargée de bibelots' },
   'pnj.ysold': { provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
 
   // ---------- Monstres (tournés vers la droite) ----------
@@ -96,5 +99,8 @@ const IMAGES = {
   'monstre.mere': { provisoire: 'mere', sujet: 'Mère-des-abysses, crabe géant couvert de coquillages' },
   'monstre.heraut': { provisoire: 'heraut', sujet: 'Héraut de la Paupière, chevalier en armure violette, masse' },
   'monstre.pie': { provisoire: 'pie', sujet: 'Pie-brume, grande pie grise aux plumes de brume' },
-  'monstre.bosco': { provisoire: 'bosco', sujet: 'Le Bosco, contrebandier costaud, crochet et sabre' }
+  'monstre.bosco': { provisoire: 'bosco', sujet: 'Le Bosco, contrebandier costaud, crochet et sabre' },
+  // bêtes du « Carnet du chasseur »
+  'monstre.sanglier': { provisoire: 'sanglier', sujet: 'Sanglier-roc, énorme sanglier au dos couvert de plaques de pierre, défenses blanches' },
+  'monstre.anguille': { provisoire: 'anguille', sujet: 'Anguille-tonnerre, longue anguille sombre parcourue d\'éclairs jaunes' }
 };

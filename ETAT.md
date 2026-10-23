@@ -1,5 +1,19 @@
 # État du projet
 
+## Version 0.3.2 (2026-10-23)
+
+- Quêtes annexes de la vallée (bible, quêtes 2, 3 et 4), jouées aux actes 1 et 2 ; leur dernière étape attend l'acte 3 (`si: 'drapeau acte3'`) :
+  - « La graine-lanterne » (Pia, après la fête) : arroser la graine au Marais des Lanternes (feux follets) ; elle devient une pousse.
+  - « Le carnet du chasseur » (Roxane, après la fête) : Sanglier-roc au Col des Pierres (garde 7, faible au Feu), Anguille-tonnerre au cœur du Marais des Lanternes (frappe deux fois tant que sa garde tient) ; Roxane paie 150 puis 300 po.
+  - « Le colporteur » (Fennel, après l'arrivée de Mira) : miel de Berthe → boussole (Fennel) → perle grise (Loïc) → corne de brume (Fennel).
+- Le prompt de l'étape parlait du « carnet d'Aldric » : c'est la quête 10 de la bible (acte 3). La quête 3 est « Le carnet du chasseur ».
+- Personnages qui suivent l'équipe : un même PNJ dans plusieurs villages avec des conditions `si` qui se suivent (Roxane, Fennel) ; `villageDuPnj` prend le village où il est en ce moment.
+- Sous-titre du donneur : `<quête>.e<n>.sous` (ce que cherche Fennel) quand l'étape se joue ailleurs.
+- Capacité `double` avec `garde: true` : seulement tant que la garde du monstre tient.
+- Codex, onglet Personnages : Roxane et Fennel.
+- Portraits provisoires de Pia, Roxane, Fennel ; Sanglier-roc et Anguille-tonnerre en pixel art.
+- `outils/bot.js` : le bot de test qui joue la partie entière (quêtes annexes comprises) et donne les niveaux et les PV les plus bas à chaque combat de quête.
+
 ## Version 0.3.1 (2026-10-23)
 
 - Onglet Personnages du Codex (demande de Keismey) : donnees/personnages.js donne, pour chaque personnage, une condition par info ; textes perso.<id>.<n> dans textes/xx/personnages.txt. `S.perso[id]` = infos déjà lues ; une info nouvelle met une pastille sur l'icône du Codex, l'onglet et le personnage, éteinte quand on déplie sa fiche (les infos nouvelles restent surlignées). L'icône du Codex ouvre directement l'onglet Personnages quand il y a du nouveau.
@@ -46,6 +60,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.3.2)
+## Prochaine étape (0.4)
 
-Quêtes annexes 2, 3 et 4 de la bible (la graine, le carnet d'Aldric, le colporteur), repoussées lors du plan de l'acte 2. Ensuite 0.4 : acte 3, les forges de Cendre, avec la suite de « La berceuse » chez Hilde.
+Acte 3, les forges de Cendre. Il faudra y poser le drapeau `acte3` et écrire la suite des quêtes annexes qui l'attendent : « La berceuse » (Hilde répare la boîte), « La graine-lanterne » (cendre chaude aux Champs brûlés), « Le carnet du chasseur » (Salamandre reine), « Le colporteur » (trocs à Forgecendre).

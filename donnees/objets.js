@@ -63,5 +63,14 @@ const IMPORTANTS = {
   'journal-salicorne': {},
   'pages-registre': {},
   registre: {},
-  boite: {}           // la boîte à musique de Naïa (« La berceuse », réparée par Hilde à l'acte 3)
+  boite: {},          // la boîte à musique de Naïa (« La berceuse », réparée par Hilde à l'acte 3)
+  // quêtes annexes de la vallée : graine-lanterne, carnet du chasseur, colporteur
+  graine: {},
+  pousse: {},
+  defense: {},
+  'ecaille-orage': {},
+  miel: {},
+  boussole: {},
+  'perle-grise': {},
+  'corne-brume': {}
 };

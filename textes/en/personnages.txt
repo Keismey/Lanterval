@@ -111,3 +111,17 @@ The Order officer who held the Salvent lighthouse. He sincerely believes he is o
 
 == perso.ysold.1
 She founded the Order of the Eyelid with Orvan fifty years ago. After losing her whole family in the war, she wanted to close the Eye, the source of the world's memory.
+
+# ---------- Side quests of the valley ----------
+
+== perso.roxane.1
+A hunter who keeps a logbook of the beasts nobody dares to hunt, one per region. She follows the team from inn to inn.
+
+== perso.roxane.2
+She learned to hunt from an old master in the High Winds. She says he never taught her to be afraid, only to be careful.
+
+== perso.fennel.1
+A peddler who never sells anything: he trades. He says every village has what another one wants.
+
+== perso.fennel.2
+Fennel knows everyone, from Lanterval to the coast. Nobody knows where he comes from, and his answer changes every time someone asks.

@@ -20,5 +20,8 @@ const PERSONNAGES = {
   erwan: ['fini a2.e7'],
   nev: ['fini a2.e6'],
   heraut: ['fini a2.e7'],
-  ysold: ['fini a2.e8']
+  ysold: ['fini a2.e8'],
+  // quêtes annexes de la vallée
+  roxane: ['annexe chasse 1', 'annexe chasse 3'],
+  fennel: ['annexe colporteur 1', 'annexe colporteur 5']
 };

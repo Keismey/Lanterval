@@ -111,3 +111,17 @@ L'officier de l'Ordre qui tenait le phare de Salvent. Il croit sincèrement offr
 
 == perso.ysold.1
 Elle a fondé l'Ordre de la Paupière avec Orvan, il y a cinquante ans. Après avoir perdu toute sa famille à la guerre, elle a voulu fermer l'Œil, la source de la mémoire du monde.
+
+# ---------- Quêtes annexes de la vallée ----------
+
+== perso.roxane.1
+Une chasseuse qui tient le carnet des bêtes que personne n'ose chasser, une par région. Elle suit l'équipe d'auberge en auberge.
+
+== perso.roxane.2
+Elle a appris à chasser auprès d'un vieux maître des Hauts-Vents. Elle dit qu'il ne lui a jamais appris à avoir peur, seulement à être prudente.
+
+== perso.fennel.1
+Un colporteur qui ne vend jamais rien : il troque. Il dit que chaque village a ce qu'un autre désire.
+
+== perso.fennel.2
+Fennel connaît tout le monde, de Lanterval à la côte. Personne ne sait d'où il vient, et il change de réponse chaque fois qu'on lui pose la question.

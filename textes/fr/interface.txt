@@ -1068,6 +1068,11 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.3.2
+Trois nouvelles quêtes annexes à Lanterval, qui traversent toutes les régions : « La graine-lanterne » (Pia), « Le carnet du chasseur » (Roxane) et « Le colporteur » (Fennel). Leur suite arrive avec l'acte 3.
+Deux bêtes redoutables à traquer : le Sanglier-roc au Col des Pierres et l'Anguille-tonnerre au Marais des Lanternes.
+Roxane et Fennel suivent l'équipe de village en village, et le menu du village affiche ce que Fennel cherche.
+Le Codex présente Roxane et Fennel dans l'onglet Personnages.
 ## Version 0.3.1
 Le Codex a un onglet Personnages : les personnages importants de l'histoire, chacun avec une fiche à déplier qui s'enrichit au fil de l'aventure.
 Une pastille rouge sur l'icône du Codex, l'onglet et le personnage signale une info nouvelle, jusqu'à ce qu'on lise sa fiche.
