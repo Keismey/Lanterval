@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.3.4 (2026-10-23)
+
+- Demande de Keismey : sur grand écran (paysage d'au moins 560 px de haut), même mise en page que sur téléphone, image en haut au format des décors (16:9, jusqu'à 60 % de la hauteur) et panneau de dialogues et boutons dessous, largeur bornée (720 à 1100 px). Seul le téléphone couché garde la scène à gauche et le panneau à droite (css/jeu.css).
+
 ## Version 0.3.3 (2026-10-23)
 
 - Demande de Keismey (ne pas casser le 4e mur) : une bulle « ? texte » est une astuce de jeu, affichée dans un encadré avec une icône « ? » (`encadreTuto` dans moteur/textes.js). Les conseils avant un boss (`conseil`) sont encadrés de la même façon. Appliqué au prologue (les « ! »), aux deux annonces de classes et aux récompenses des quêtes annexes.
