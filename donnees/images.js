@@ -26,12 +26,12 @@ const IMAGES = {
   'decor.phare.libre': { fichier: 'img/decors/phare-libre.webp', provisoire: 'phare-libre', sujet: 'Phare noyé, la lumière brille, mer calme' },
   'decor.carte.cote': { fichier: 'img/decors/carte-cote.webp', provisoire: 'carte-cote', sujet: 'Carte de la Côte de Salvent' },
   // acte 3 : Plaines de Cendre
-  'decor.champs': { provisoire: 'champs', sujet: 'Champs brûlés, blé calciné, ferme en ruine, fumée et ciel orange' },
-  'decor.forgecendre': { provisoire: 'forgecendre', sujet: 'Forgecendre, ville minière, cheminées, fumée rouge, bannières de l\'Ordre' },
-  'decor.forgecendre.libre': { provisoire: 'forgecendre-libre', sujet: 'Forgecendre libérée, forges allumées, sans bannières de l\'Ordre' },
-  'decor.mines': { provisoire: 'mines', sujet: 'Mines rouges, galerie étayée, roche rouge, rails, cages à cristal' },
-  'decor.mines.libre': { provisoire: 'mines-libre', sujet: 'Mines rouges, galerie éclairée de lampes, cages ouvertes' },
-  'decor.volcan': { provisoire: 'volcan', sujet: 'Volcan endormi, pentes noires, coulées de lave, cratère qui fume' },
+  'decor.champs': { fichier: 'img/decors/champs.webp', provisoire: 'champs', sujet: 'Champs brûlés, blé calciné, ferme en ruine, fumée et ciel orange' },
+  'decor.forgecendre': { fichier: 'img/decors/forgecendre.webp', provisoire: 'forgecendre', sujet: 'Forgecendre, ville minière, cheminées, fumée rouge, bannières de l\'Ordre' },
+  'decor.forgecendre.libre': { fichier: 'img/decors/forgecendre-libre.webp', provisoire: 'forgecendre-libre', sujet: 'Forgecendre libérée, forges allumées, sans bannières de l\'Ordre' },
+  'decor.mines': { fichier: 'img/decors/mines.webp', provisoire: 'mines', sujet: 'Mines rouges, galerie étayée, roche rouge, rails, cages à cristal' },
+  'decor.mines.libre': { fichier: 'img/decors/mines-libre.webp', provisoire: 'mines-libre', sujet: 'Mines rouges, galerie éclairée de lampes, cages ouvertes' },
+  'decor.volcan': { fichier: 'img/decors/volcan.webp', provisoire: 'volcan', sujet: 'Volcan endormi, pentes noires, coulées de lave, cratère qui fume' },
   'decor.carte.cendre': { provisoire: 'carte-cendre', sujet: 'Carte des Plaines de Cendre' },
   // acte 4 : Hauts-Vents
   'decor.pont': { provisoire: 'pont', sujet: 'Pont des Nuées, long pont suspendu de cordes et de planches au-dessus des nuages, vent violent' },
