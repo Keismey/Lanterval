@@ -130,11 +130,20 @@ function openCodex(tab) {
       return `<div class="bst"><img alt="" src="${imgSrc('monstre.' + id)}"><div><h4>${esc(t('monstre.' + id))}</h4><p>${tx('monstre.' + id + '.desc')} ${esc(t('codex.vaincus', { n: c.kills }))}</p><div class="erow"><span class="note">${esc(t('codex.faiblesses'))}</span>${w}${r ? `<span class="note gauche">${esc(t('codex.resiste'))}</span>${r}` : ''}</div></div></div>`;
     }).join('')}</div>`;
     else if (tab === 'classes') body = classesHtml();
+    else if (tab === 'perso') body = persoHtml();
     else body = helpHtml();
-    const onglet = (k, nom) => `<button class="tab txt ${tab === k ? 'on' : ''}" data-t="${k}">${esc(nom)}</button>`;
-    const sh = modal('grand', sheetHead(t('menu.codex')) + `<div class="tabs">${onglet('best', t('codex.bestiaire'))}${onglet('classes', t('codex.classes'))}${onglet('help', t('aide.titre'))}</div>` + body);
+    const onglet = (k, nom, neuf) => `<button class="tab txt ${tab === k ? 'on' : ''}" data-t="${k}">${esc(nom)}${neuf ? '<span class="pastille"></span>' : ''}</button>`;
+    const sh = modal('grand', sheetHead(t('menu.codex')) + `<div class="tabs">${onglet('best', t('codex.bestiaire'))}${onglet('classes', t('codex.classes'))}${onglet('perso', t('codex.perso'), persoNouveautes())}${onglet('help', t('aide.titre'))}</div>` + body);
     sh.querySelector('#mclose').onclick = closeModal;
     sh.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { tab = b.dataset.t; draw(); });
+    // déplier un personnage marque ses infos comme lues : les pastilles s'éteignent, les nouvelles infos restent surlignées
+    sh.querySelectorAll('details[data-p]').forEach(d => d.addEventListener('toggle', () => {
+      if (!d.open) return;
+      S.perso[d.dataset.p] = infosPerso(d.dataset.p).length; save();
+      d.querySelector('summary .pastille')?.remove();
+      if (!persoNouveautes()) sh.querySelector('.tab .pastille')?.remove();
+      hud();
+    }));
   };
   draw();
 }
@@ -153,6 +162,14 @@ function classesHtml() {
     // repliable : le nom de la classe, puis le détail une fois dépliée
     return `<details class="cls"><summary>${esc(t('classe.' + j))}${qui.length ? ` <span class="note">· ${esc(qui.join(', '))}</span>` : ''}</summary><div class="cls-corps"><p>${esc(t('classe.' + j + '.desc'))}</p>
       <p>${esc(t('codex.armes', { liste: J.armes.map(a => t('codex.arme.' + a)).join(', ') }))}<br>${esc(mods.length ? mods.map(([k, v]) => pct(k, v)).join(', ') : t('codex.equilibre'))}</p>${techs}</div></details>`;
+  }).join('')}</div>`;
+}
+// personnages importants : chacun se déplie sur ce qu'on sait de lui à ce point de l'histoire
+function persoHtml() {
+  return `<p class="note">${esc(t('codex.perso.aide'))}</p><div class="list">${persoConnus().map(id => {
+    const lus = S.perso[id] || 0;
+    const infos = infosPerso(id).map((i, n) => `<p class="${n >= lus ? 'neuf' : ''}">${tx(`perso.${id}.${i + 1}`)}</p>`).join('');
+    return `<details class="cls perso" data-p="${id}"><summary>${av(id, 'sm')}${esc(t('parle.' + id))}${persoNouveau(id) ? '<span class="pastille"></span>' : ''}</summary><div class="cls-corps">${infos}</div></details>`;
   }).join('')}</div>`;
 }
 function helpHtml() {

@@ -1,0 +1,113 @@
+# Lanterval · personnages importants (onglet Personnages du Codex)
+# perso.<id>.<n> : l'info n du personnage, dans l'ordre de donnees/personnages.js. Une ou deux phrases, sans dévoiler la suite.
+
+== perso.kael.1
+Apprenti garde de Lanterval, 17 ans, élément Terre. Têtu et protecteur, il n'avait jamais quitté la vallée avant que la lanterne ne faiblisse.
+
+== perso.kael.2
+Il a rapporté le cœur de cristal du fond de la grotte, et la lanterne a brillé de nouveau.
+
+== perso.kael.3
+Au sommet du col, l'Ordre lui a pris le cristal d'ambre et le Sans-Nom l'a terrassé d'un seul coup.
+
+== perso.kael.4
+Son père est parti dans la brume une nuit et n'est jamais revenu. Brann lui a remis son épée, trop abîmée pour se battre.
+
+== perso.kael.5
+À Salvent, l'éclat de la lanterne lui a montré une vision : Orvan à vingt ans, à côté d'une femme, devant un œil immense gravé dans la pierre.
+
+== perso.mira.1
+Fille de Hilde la forgeronne, 18 ans, élément Feu. Elle suivait seule la brume dans la forêt quand Kael l'a tirée d'un cercle de loups.
+
+== perso.mira.2
+C'est elle qui a compris que la brume sortait de la Grotte de cristal.
+
+== perso.mira.3
+Les forges de Cendre, où l'Ordre a emporté le cristal d'ambre, sont dans la ville natale de sa mère.
+
+== perso.sol.1
+Ermite du lac souterrain, 20 ans, élément Eau. Calme et peu bavard, il gardait le lac depuis le réveil du Gardien de cristal.
+
+== perso.sol.2
+À Salvent, Maëlle l'a reconnu : c'est l'enfant d'un naufrage, celui qu'on avait cru perdu en mer.
+
+== perso.sol.3
+Il avait six ans lors du naufrage, et sa petite sœur deux. D'après le journal de bord de l'épave, une fillette a été recueillie à Salvent : elle est vivante.
+
+== perso.sol.4
+Il a retrouvé sa sœur sans rien lui dire : elle ne se souvient de rien et vient de retrouver son père adoptif. Il a choisi de rester avec Kael et Mira.
+
+== perso.orvan.1
+L'Ancien de Lanterval, gardien de la lanterne. Il a confié à Kael un éclat de son cristal.
+
+== perso.orvan.2
+Il a reconnu l'insigne à l'œil fermé : le symbole de l'Ordre de la Paupière, disparu depuis cinquante ans.
+
+== perso.orvan.3
+Il a avoué que le cœur de cristal ne tiendrait qu'une saison, et a envoyé l'équipe chercher le cristal d'ambre au Col des Pierres.
+
+== perso.orvan.4
+Dans une lettre, il a avoué avoir fondé l'Ordre de la Paupière avec Ysold, il y a cinquante ans, avant de partir par peur.
+
+== perso.brann.1
+Le garde de Lanterval, chef de Kael. Ancien chasseur, il connaît la forêt et ses bêtes mieux que personne.
+
+== perso.brann.2
+Il a redescendu l'équipe du col sur une charrette après sa défaite contre le Sans-Nom.
+
+== perso.brann.3
+Le père de Kael lui avait confié son épée la nuit où il est parti dans la brume : « Pour Kael, quand il sera prêt. »
+
+== perso.brann.4
+Ses éclaireurs ont suivi le cristal d'ambre jusqu'aux forges de Cendre, à l'est.
+
+== perso.hilde.1
+La mère de Mira. Elle tient la forge de Lanterval et vend armes et armures.
+
+== perso.hilde.2
+Quand elle a entendu parler de l'insigne à l'œil fermé, elle a demandé à Kael de ne le montrer à personne.
+
+== perso.hilde.3
+Elle vient de Cendre, la ville des forges, et compte bien y accompagner l'équipe.
+
+== perso.silhouette.1
+Une silhouette encapuchonnée qui rôdait dans la forêt quand les loups ont encerclé Mira.
+
+== perso.silhouette.2
+Elle a tendu une embuscade dans la grotte pour reprendre le cœur de cristal. Sur sa manche, le même œil fermé que sur l'insigne.
+
+== perso.varen.1
+Un jeune homme de l'Ordre de la Paupière, rapide et arrogant. Au sommet du col, il a emporté le cristal d'ambre. Pour lui, oublier ses peines dans la brume, c'est guérir.
+
+== perso.varen.2
+Le Héraut de Salvent le connaît : Varen lui a parlé de l'équipe.
+
+== perso.sansnom.1
+Un colosse au masque d'acier marqué d'un œil fermé, qui obéit à Varen. Au col, il a terrassé l'équipe d'un seul coup de masse.
+
+== perso.maelle.1
+La vieille aubergiste de Salvent, trop âgée, dit-elle, pour que la brume trouve la place de s'installer. Elle a reconnu Sol, l'enfant du naufrage.
+
+== perso.maelle.2
+C'est elle qui a révélé que la fillette du naufrage avait été recueillie par Erwan, le gardien du phare.
+
+== perso.naia.1
+La sœur de Sol, 16 ans, perdue lors du naufrage. Erwan, le gardien du phare, l'a recueillie et élevée à Salvent. Elle ne se souvient pas de sa famille d'avant.
+
+== perso.naia.2
+Elle fredonne une berceuse que personne d'autre ne connaît : celle que leur mère chantait chaque soir.
+
+== perso.naia.3
+Sa boîte à musique, retrouvée dans l'épave, est cassée. Il faudra des doigts de forgeron pour la réparer.
+
+== perso.erwan.1
+Le gardien du phare de Salvent, que l'Ordre retenait prisonnier. Il a recueilli Naïa et l'a élevée comme sa fille.
+
+== perso.nev.1
+Une novice de l'Ordre, de garde au pied du phare. Troublée par ce que l'Ordre fait à Salvent, elle a laissé passer l'équipe sans sonner l'alerte.
+
+== perso.heraut.1
+L'officier de l'Ordre qui tenait le phare de Salvent. Il croit sincèrement offrir la paix en effaçant les chagrins. Vaincu, il s'est enfui en barque.
+
+== perso.ysold.1
+Elle a fondé l'Ordre de la Paupière avec Orvan, il y a cinquante ans. Après avoir perdu toute sa famille à la guerre, elle a voulu fermer l'Œil, la source de la mémoire du monde.

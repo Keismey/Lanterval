@@ -809,6 +809,12 @@ Classe pas encore débloquée.
 == codex.classes
 Classes
 
+== codex.perso
+Personnages
+
+== codex.perso.aide
+Les personnages importants de l'histoire : touche un nom pour lire sa fiche. Elle s'enrichit au fil de l'aventure ; une pastille rouge signale une nouveauté.
+
 == codex.classes.aide
 Les classes débloquées et leurs techniques : touche une classe pour la déplier. Une technique de « l'élément du héros » prend l'élément de celui qui l'utilise.
 
@@ -1062,6 +1068,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.3.1
+Le Codex a un onglet Personnages : les personnages importants de l'histoire, chacun avec une fiche à déplier qui s'enrichit au fil de l'aventure.
+Une pastille rouge sur l'icône du Codex, l'onglet et le personnage signale une info nouvelle, jusqu'à ce qu'on lise sa fiche.
 ## Version 0.3.0
 L'acte 2, « La ville qui oublie », est jouable : le Marais salant, Salvent, le Marais des Lanternes, l'Épave engloutie et le Phare noyé.
 La Côte de Salvent a sa propre carte. Le Marais salant relie la vallée et la côte, et le menu de la carte propose aussi de rentrer à Lanterval.

@@ -11,11 +11,11 @@ const lire = f => fs.readFileSync(path.join(RACINE, f), 'utf8');
 const ctx = { console };
 vm.createContext(ctx);
 vm.runInContext('const ACTES = [];', ctx);
-for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'acte2', 'annexes']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
-const D = vm.runInContext('({ ACTES, ANNEXES, LIEUX, LIENS, IMAGES, MONSTRES, OBJETS, EQUIPEMENT, IMPORTANTS, HEROS, CLASSES, TECHNIQUES })', ctx);
+for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'acte2', 'annexes', 'personnages']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
+const D = vm.runInContext('({ ACTES, ANNEXES, LIEUX, LIENS, IMAGES, MONSTRES, OBJETS, EQUIPEMENT, IMPORTANTS, HEROS, CLASSES, TECHNIQUES, PERSONNAGES })', ctx);
 
 // textes
-const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'annexes'];
+const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'annexes', 'personnages'];
 const TXT = {};
 for (const lg of ['fr', 'en']) {
   TXT[lg] = {};
@@ -100,6 +100,13 @@ for (const id in D.ANNEXES) {
   texte(id + '.titre', id); condition(A.ouvre, id);
   evenements(A.offre, id + ' offre');
   A.etapes.forEach((e, i) => { texte(`${id}.e${i + 1}.titre`, id); lieu(e.lieu, `${id}.e${i + 1}`); condition(e.si, `${id}.e${i + 1}`); evenements(e.evenements, `${id}.e${i + 1}`); });
+}
+
+// personnages du Codex : nom, visage, une info par condition
+for (const id in D.PERSONNAGES) {
+  texte('parle.' + id, 'personnages');
+  if (!D.IMAGES['heros.' + id] && !D.IMAGES['pnj.' + id]) erreur(`personnage sans image « ${id} » (heros.${id} ou pnj.${id})`);
+  D.PERSONNAGES[id].forEach((c, i) => { condition(c, 'perso.' + id); texte(`perso.${id}.${i + 1}`, 'personnages'); });
 }
 
 // monde

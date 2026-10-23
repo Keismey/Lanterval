@@ -163,6 +163,7 @@ function spritesActe2() {
   SPR.f_heraut = face({ skin: '#c8ccd8', helm: '#5a3a7a', cl: '#4a2a6a', cl2: '#7a52a0' });
   SPR.f_bosco = face({ skin: '#d89a78', hair: '#b83a3a', mous: '#5a3a22', cl: '#e8e0d0', cl2: '#3a5a8a' });
   SPR.f_erwan = face({ skin: '#d8a888', hair: '#9a9aa0', beard: '#a0a0a8', cl: '#e0b030' });
+  SPR.f_ysold = face({ skin: '#ecd4c4', hair: '#d8d8e4', cl: '#3a2a5a', cl2: '#7a52a0' });
 }
 
 function bgMarais(c, W, H) { const r = rng(61);

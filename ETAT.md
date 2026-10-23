@@ -1,5 +1,10 @@
 # État du projet
 
+## Version 0.3.1 (2026-10-23)
+
+- Onglet Personnages du Codex (demande de Keismey) : donnees/personnages.js donne, pour chaque personnage, une condition par info ; textes perso.<id>.<n> dans textes/xx/personnages.txt. `S.perso[id]` = infos déjà lues ; une info nouvelle met une pastille sur l'icône du Codex, l'onglet et le personnage, éteinte quand on déplie sa fiche (les infos nouvelles restent surlignées). L'icône du Codex ouvre directement l'onglet Personnages quand il y a du nouveau.
+- Portrait provisoire d'Ysold (`pnj.ysold`).
+
 ## Version 0.3.0 (2026-10-22)
 
 - Acte 2 « La ville qui oublie » (donnees/acte2.js, étapes a2.e1 à a2.e8) : Marais salant (zone à deux côtés, pont entre la vallée et la côte), Salvent, Marais des Lanternes, Épave engloutie, Phare noyé.
@@ -41,6 +46,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.3.1)
+## Prochaine étape (0.3.2)
 
 Quêtes annexes 2, 3 et 4 de la bible (la graine, le carnet d'Aldric, le colporteur), repoussées lors du plan de l'acte 2. Ensuite 0.4 : acte 3, les forges de Cendre, avec la suite de « La berceuse » chez Hilde.
