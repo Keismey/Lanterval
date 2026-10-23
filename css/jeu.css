@@ -111,6 +111,7 @@ button{font:inherit;color:inherit}
 .btn.main{background:linear-gradient(135deg,#f3cd63,#c8901f);color:var(--ink-gold);border-color:transparent;box-shadow:0 6px 18px rgba(233,185,73,.22)}
 .btn.main small{color:rgba(42,27,0,.72)}
 .btn.main .ic{background:rgba(255,255,255,.32)}
+.btn.main:hover:not(:disabled){background:linear-gradient(135deg,#f3cd63,#c8901f);border-color:transparent;filter:brightness(1.06)}
 .btn.side{border-color:rgba(111,182,255,.55);background:rgba(111,182,255,.1)}
 .btn.side .ic{background:rgba(111,182,255,.2);color:var(--side)}
 .btn.wide{grid-column:1/-1}
@@ -346,3 +347,23 @@ img[src^="img/"]{image-rendering:auto!important}
 .btn.el-V .ic,.ctech.el-V .ic{color:var(--el-V);background:color-mix(in srgb,var(--el-V) 22%,transparent)}
 .zz{color:#151a33;background:#b9d8ff;border-radius:6px;padding:1px 5px;font-size:10px;font-weight:800}
 .cher{color:var(--danger);font-weight:800}.bon{color:var(--hp);font-weight:800}
+/* écran de victoire */
+.vict{display:flex;flex-direction:column;gap:9px}
+.vgain{display:flex;gap:6px;flex-wrap:wrap}
+.vgain .pill{font-size:13px;color:#b4f06a}
+.vgain .pill.or{color:var(--gold2)}
+.vrows{display:flex;flex-direction:column;gap:7px}
+.vrow{display:grid;grid-template-columns:auto 92px 1fr;align-items:center;gap:8px;padding:6px 9px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}
+.vn{display:flex;flex-direction:column;min-width:0}
+.vn b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vn span{font-size:12px;color:var(--muted)}
+.vx{display:flex;flex-direction:column;gap:3px}
+.vx .xtrack>i{transition:width .6s ease-out}
+.vup{font-size:12px;font-weight:700;color:var(--gold2);min-height:15px}
+.vrow.up{border-color:var(--gold);box-shadow:0 0 12px rgba(233,185,73,.25)}
+/* traversée : la barre avance d'une étape à l'autre, le panneau liste ce qui s'est passé */
+.trav .xtrack>i{transition:width 1.3s linear}
+.travlog{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px}
+.travlog li{padding:6px 10px;border-radius:10px;background:var(--surface2);border:1px solid var(--line)}
+.travlog li.now{border-color:var(--gold);color:var(--gold2)}
+.travlog b{color:var(--gold2)}

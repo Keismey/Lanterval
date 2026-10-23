@@ -220,6 +220,27 @@ Zone mastered: 0 to 2 fights.
 == trav.monstres
 Monsters block your way!
 
+== trav.combattre
+Fight
+
+== trav.etape
+Leg {n}/{total}
+
+== trav.marche
+on the move…
+
+== trav.log.calme
+nothing to report
+
+== trav.log.combat
+fight won: {noms}
+
+== trav.log.or
+*{or} g* picked up
+
+== trav.log.rencontre
+an encounter on the way
+
 == trav.fin
 Finished crossing {zone}: {n} fights.
 
@@ -388,14 +409,23 @@ The team is down…
 == combat.perdu
 The team is down…
 
-== combat.victoire
-*Victory!* +{xp} XP, +{or} g.
+== combat.victoire.titre
+Victory!
+
+== combat.victoire.xp
++{xp} XP
+
+== combat.victoire.or
++{or} g
+
+== combat.victoire.niv
+Lv. {n}
+
+== combat.victoire.up
+Level {n}!
 
 == combat.niveau
 *{nom}* reaches level {n}!
-
-== combat.suite.auto
-Continuing automatically…
 
 == combat.cmd.tech
 Techniques
@@ -977,6 +1007,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.5.1
+Crossings take their time: four legs, each showing what happens (a fight, gold found, nothing to report). Monsters are announced before each fight, and a summary appears on arrival.
+At the end of each won fight, a screen shows the XP and gold earned, each hero's XP bar and any levels gained; tap to continue, even in auto battle.
 ## Version 0.5.0
 Act 4, “The Eye”, begins: the Cloud Bridge, Aerie, the Monastery ruins and the Howling Peak, on the High Winds map. The story runs until the night before the assault.
 Kael can at last fight with his father's sword, Aldric's sword, reserved for him.

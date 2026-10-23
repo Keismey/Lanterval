@@ -1,5 +1,11 @@
 # État du projet
 
+## Version 0.5.1 (2026-10-23)
+
+- Demande de Keismey : les traversées allaient trop vite. `traverse` (moteur/carte.js) avance en 4 étapes de 1,4 s ; le panneau garde la liste de ce qui s'est passé à chaque étape (combat gagné et contre qui, or ramassé, rien à signaler) ; avant chaque combat, les monstres sont annoncés avec un bouton « Combattre » ; à l'arrivée, un bilan à valider d'un appui.
+- Demande de Keismey : fin de combat toujours validée d'un appui (avant, le combat automatique sans niveau gagné continuait tout seul). Écran de victoire (`ecranVictoire` dans moteur/combat.js) : XP et or gagnés, barre d'XP de chaque héros qui se remplit, « Niveau N ! » quand un niveau est gagné.
+- Correction : un bouton doré (principal) restait gris quand le pointeur était encore dessus après un appui.
+
 ## Version 0.5.0 (2026-10-23)
 
 - Acte 4 « L'Œil », première partie (donnees/acte4.js, étapes a4.e1 à a4.e7, plan validé par Keismey) : carte `vents` avec le Pont des Nuées (zone à deux côtés Cendre/Aerie), Aerie, les Ruines du monastère (parvis/sanctuaire) et le Pic hurlant (base/sommet) ; l'Escalier de brume est visible en « bientôt ». L'histoire va jusqu'au feu de camp, la veille de l'assaut.
@@ -114,6 +120,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.5.1)
+## Prochaine étape (0.5.2)
 
-0.5.1 : quêtes annexes 12 (l'œuf de wyverne), 13 (le cerf-volant : dague ultime de Nev, réservée à Nev, en ajoutant la dague aux armes du Moine et du Berserker) et 15 (les larmes de l'Œil). Puis 0.5.2 : l'Escalier de brume, l'assaut final et l'épilogue, qui lira `annexe aldric 4` (Aldric survit) et `annexe moule 4` (réconciliation de Mira et Hilde).
+0.5.2 : quêtes annexes 12 (l'œuf de wyverne), 13 (le cerf-volant : dague ultime de Nev, réservée à Nev, en ajoutant la dague aux armes du Moine et du Berserker) et 15 (les larmes de l'Œil). Puis 0.5.3 : l'Escalier de brume, l'assaut final et l'épilogue, qui lira `annexe aldric 4` (Aldric survit) et `annexe moule 4` (réconciliation de Mira et Hilde).
