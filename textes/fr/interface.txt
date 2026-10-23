@@ -1068,6 +1068,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.3.4
+Sur ordinateur, l'image est désormais en haut et les dialogues et boutons en dessous, comme sur téléphone : les panoramas et la carte s'affichent en entier.
 ## Version 0.3.3
 Les astuces de jeu (quêtes, classes, récompenses, conseils avant un boss) sont encadrées à part, avec une icône « ? », pour ne pas se mêler au récit.
 ## Version 0.3.2
