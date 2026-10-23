@@ -81,9 +81,9 @@ const IMAGES = {
   'pnj.rosal': { provisoire: 'f_rosal', sujet: 'Rosal, vieille capitaine corsaire, tricorne, cache-œil' },
   'pnj.naia': { provisoire: 'f_naia', sujet: 'Naïa, 16 ans, cheveux bleus comme Sol, ciré jaune' },
   'pnj.nev': { provisoire: 'f_nev', sujet: 'Nev, 16 ans, novice de l\'Ordre, cheveux blancs courts, capuche' },
-  'pnj.heraut': { provisoire: 'f_heraut', sujet: 'Le Héraut de la Paupière, casque à l\'œil fermé, cape violette' },
+  'pnj.heraut': { fichier: 'img/pnj/heraut.webp', portrait: 'img/pnj/heraut.webp', provisoire: 'f_heraut', sujet: 'Le Héraut de la Paupière, casque à l\'œil fermé, cape violette' },
   'pnj.pecheur': { provisoire: 'f_loic', sujet: 'Loïc, pêcheur, bonnet de laine, barbe rousse (même portrait que pnj.loic)' },
-  'pnj.bosco': { provisoire: 'f_bosco', sujet: 'Le Bosco, contrebandier, bandana rouge, moustache' },
+  'pnj.bosco': { fichier: 'img/pnj/bosco.webp', portrait: 'img/pnj/bosco.webp', provisoire: 'f_bosco', sujet: 'Le Bosco, contrebandier, bandana rouge, moustache' },
   'pnj.erwan': { provisoire: 'f_erwan', sujet: 'Erwan, gardien du phare, vieil homme, ciré et barbe grise' },
   'pnj.pia': { provisoire: 'f_pia', sujet: 'Pia, 9 ans, petite jardinière, nattes brunes, tablier vert, arrosoir' },
   'pnj.roxane': { provisoire: 'f_roxane', sujet: 'Roxane, chasseuse, la quarantaine, cheveux noirs courts, cicatrice sur la joue, manteau de fourrure' },
@@ -117,12 +117,12 @@ const IMAGES = {
   'monstre.soldat': { fichier: 'img/monstres/soldat.webp', provisoire: 'soldat', sujet: 'Soldat de l\'Ordre de la Paupière, armure grise, lance' },
   'monstre.vouivre': { fichier: 'img/monstres/vouivre.webp', provisoire: 'vouivre', sujet: 'Vouivre des marais, serpent ailé vert, gueule ouverte' },
   'monstre.mere': { fichier: 'img/monstres/mere.webp', provisoire: 'mere', sujet: 'Mère-des-abysses, crabe géant couvert de coquillages' },
-  'monstre.heraut': { provisoire: 'heraut', sujet: 'Héraut de la Paupière, chevalier en armure violette, masse' },
+  'monstre.heraut': { fichier: 'img/monstres/heraut.webp', provisoire: 'heraut', sujet: 'Héraut de la Paupière, chevalier en armure violette, masse' },
   'monstre.pie': { fichier: 'img/monstres/pie.webp', provisoire: 'pie', sujet: 'Pie-brume, grande pie grise aux plumes de brume' },
-  'monstre.bosco': { provisoire: 'bosco', sujet: 'Le Bosco, contrebandier costaud, crochet et sabre' },
+  'monstre.bosco': { fichier: 'img/monstres/bosco.webp', provisoire: 'bosco', sujet: 'Le Bosco, contrebandier costaud, crochet et sabre' },
   // bêtes du « Carnet du chasseur »
-  'monstre.sanglier': { provisoire: 'sanglier', sujet: 'Sanglier-roc, énorme sanglier au dos couvert de plaques de pierre, défenses blanches' },
-  'monstre.anguille': { provisoire: 'anguille', sujet: 'Anguille-tonnerre, longue anguille sombre parcourue d\'éclairs jaunes' },
+  'monstre.sanglier': { fichier: 'img/monstres/sanglier.webp', provisoire: 'sanglier', sujet: 'Sanglier-roc, énorme sanglier au dos couvert de plaques de pierre, défenses blanches' },
+  'monstre.anguille': { fichier: 'img/monstres/anguille.webp', provisoire: 'anguille', sujet: 'Anguille-tonnerre, longue anguille sombre parcourue d\'éclairs jaunes' },
 
   // ---------- Monstres de l'acte 3 ----------
   'monstre.chien': { provisoire: 'chien', sujet: 'Chien de cendre, chien maigre au pelage gris de cendre, yeux de braise' },
