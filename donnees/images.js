@@ -169,11 +169,11 @@ const IMAGES = {
   'monstre.brume': { fichier: 'img/monstres/brume.webp', provisoire: 'brume', sujet: 'Ombre de brume, silhouette de fumée grise et bleue, longs bras, yeux pâles' },
 
   // ---------- Monstres de l'acte 4 ----------
-  'monstre.rapace': { provisoire: 'rapace', sujet: 'Rapace voleur, grand oiseau brun aux serres jaunes, qui vole les sacoches' },
-  'monstre.sylphe': { provisoire: 'sylphe', sujet: 'Sylphe, esprit du vent, silhouette blanche et translucide faite de rubans d\'air' },
-  'monstre.gargouille': { provisoire: 'gargouille', sujet: 'Gargouille du monastère, statue de pierre grise ailée, cornes, crocs' },
-  'monstre.spectre': { provisoire: 'spectre', sujet: 'Moine spectral, robe bleu pâle déchirée, visage effacé, chapelet' },
-  'monstre.griffon': { provisoire: 'griffon', sujet: 'Griffon des cimes, corps de lion fauve, tête et ailes d\'aigle' },
+  'monstre.rapace': { fichier: 'img/monstres/rapace.webp', provisoire: 'rapace', sujet: 'Rapace voleur, grand oiseau brun aux serres jaunes, qui vole les sacoches' },
+  'monstre.sylphe': { fichier: 'img/monstres/sylphe.webp', provisoire: 'sylphe', sujet: 'Sylphe, esprit du vent, silhouette blanche et translucide faite de rubans d\'air' },
+  'monstre.gargouille': { fichier: 'img/monstres/gargouille.webp', provisoire: 'gargouille', sujet: 'Gargouille du monastère, statue de pierre grise ailée, cornes, crocs' },
+  'monstre.spectre': { fichier: 'img/monstres/spectre.webp', provisoire: 'spectre', sujet: 'Moine spectral, robe bleu pâle déchirée, visage effacé, chapelet' },
+  'monstre.griffon': { fichier: 'img/monstres/griffon.webp', provisoire: 'griffon', sujet: 'Griffon des cimes, corps de lion fauve, tête et ailes d\'aigle' },
   'monstre.givre': { provisoire: 'givre', sujet: 'Élémentaire de givre, amas de glace bleue en forme de géant, yeux blancs' },
   'monstre.serpent': { provisoire: 'serpent', sujet: 'Serpent d\'azur, immense serpent bleu ciel aux écailles de cristal, enroulé autour d\'un pilier' },
   'monstre.varen3': { fichier: 'img/monstres/varen.webp', provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre (même image que monstre.varen)' },
