@@ -127,6 +127,6 @@ const MONSTRES = {
   varen3: { pv: 2400, atk: 86, def: 12, vit: 26, garde: 6, faible: ['L', 'T'], resiste: ['V'], xp: 300, or: 0, taille: .3, boss: true, vol: 'baume',
     capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
   // « Le carnet du chasseur » : le Roc ailé du Pont des Nuées
-  rocaile: { pv: 4200, atk: 96, def: 14, vit: 22, garde: 7, faible: ['V', 'T'], resiste: ['E', 'F'], xp: 380, or: 200, taille: .3, boss: true, vol: 'potion',
-    capacites: [{ type: 'envol', mult: 1.3 }, { type: 'fort', chance: .3, mult: 1.45 }] }
+  rocaile: { pv: 4800, atk: 148, def: 14, vit: 26, garde: 10, faible: ['V', 'T'], resiste: ['E', 'F'], xp: 380, or: 200, taille: .36, boss: true, vol: 'potion',
+    capacites: [{ type: 'envol', mult: 1.6 }, { type: 'fort', chance: .35, mult: 1.5 }] }
 };

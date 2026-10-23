@@ -13,6 +13,7 @@
 - Codex, onglet Personnages : Tavor, Pell, Ilse, et nouvelles infos pour Kael, Mira, Sol, Nev, Orvan, Varen, Naïa, Ysold, Roxane, Fennel.
 - Images de l'acte 4 : toutes provisoires (pixel art pour les monstres, les visages et les décors, cadre nommé pour les panoramas).
 - Le vérificateur signale désormais les repères de texte en double sans planter.
+- Équilibrage au bot (graines 1 à 3, le bot sait maintenant viser un monstre en l'air avec le Vent) : l'équipe arrive au Pont vers le niveau 29 et au sommet du Pic vers 33 ; le Serpent d'azur descend l'équipe entre 7 et 43 % de PV, Varen (Nev seule) entre 16 et 35 %, le Roc ailé entre 36 et 74 % (le bot se soigne beaucoup avec Sol).
 ## Version 0.4.2 (2026-10-23)
 
 - Demande de Keismey : les armes ultimes sont réservées à leur personnage (`heros` dans donnees/objets.js) : Bâton des marées pour Sol, Cœur de forge pour Mira. Le sac, l'inventaire et le menu Équipe l'indiquent (« Seulement pour Sol », « Réservée à Mira ») ; une arme portée par quelqu'un d'autre retourne au sac au chargement de la partie. L'épée d'Aldric (Kael) et la dague de Nev suivront la même règle à l'acte 4.
