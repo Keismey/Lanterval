@@ -79,6 +79,11 @@ LISTE = [
     ('perso-tilo.jpg', 'pnj/tilo.webp', 'portrait', {'boite': (220, 40, 580), 'cote': 192}),
     ('perso-aubergiste.jpg', 'pnj/aubergiste.webp', 'portrait', {'boite': (220, 10, 580), 'cote': 192}),
     ('perso-silhouette.jpg', 'pnj/silhouette.webp', 'portrait', {'boite': (250, 70, 600), 'cote': 192}),
+    ('perso-maelle.jpg', 'pnj/maelle.webp', 'portrait', {'boite': (250, 80, 560), 'cote': 192}),
+    ('perso-gaspard.jpg', 'pnj/gaspard.webp', 'portrait', {'boite': (230, 40, 560), 'cote': 192}),
+    ('perso-loic.jpg', 'pnj/loic.webp', 'portrait', {'boite': (230, 40, 580), 'cote': 192}),
+    ('perso-rosal.jpg', 'pnj/rosal.webp', 'portrait', {'boite': (170, 10, 640), 'cote': 192}),
+    ('perso-naia.jpg', 'pnj/naia.webp', 'portrait', {'boite': (220, 120, 600), 'cote': 192}),
 ]
 
 
