@@ -46,7 +46,7 @@ Retourner voir Brann
 == loup.e2.scene
 Brann : « Tu l'as eu ! Ton père aurait été fier. Prends mon vieil arc, je vais te montrer comment se bat un rôdeur. »
 ## Quête annexe terminée
-*Classe secrète débloquée : Rôdeur*, très rapide, avec Double tir pour briser les gardes. Tu reçois aussi l'*Arc de Brann* (seul un Rôdeur peut l'équiper) et *40 po*.
+? *Classe secrète débloquée : Rôdeur*, très rapide, avec Double tir pour briser les gardes. Tu reçois aussi l'*Arc de Brann* (seul un Rôdeur peut l'équiper) et *40 po*.
 
 == loup.apres
 Brann : « Les moutons dorment tranquilles grâce à toi. Si tu croises d'autres bêtes étranges, tu sais où me trouver. »
@@ -352,7 +352,7 @@ Rosal : « La Salicorne ! Je me souviens de tout. De mes voyages, de mes amours,
 == navire.e3.scene
 Rosal : « Approche, je vais t'apprendre à te battre comme une corsaire. On frappe, on prend, et on frappe deux fois plus fort quand l'autre baisse sa garde. »
 ## Quête annexe terminée
-*Classe secrète débloquée : Corsaire*, qui vole parfois un objet en frappant et fait des dégâts doublés sur une garde brisée. Tu reçois le *Sabre de Rosal* (pour le Corsaire) et *100 po*.
+? *Classe secrète débloquée : Corsaire*, qui vole parfois un objet en frappant et fait des dégâts doublés sur une garde brisée. Tu reçois le *Sabre de Rosal* (pour le Corsaire) et *100 po*.
 
 == navire.apres
 Rosal : « Quand la brume sera partie, je t'emmènerai voir l'autre bout du monde. Ma tête s'en souvient très bien, maintenant. »
@@ -419,7 +419,7 @@ Rendre son registre à Gaspard
 Gaspard : « Mon registre ! Une potion, c'est vingt pièces. Pour toi, dix-huit. »
 Gaspard : « Et j'avais oublié tout un rayon au fond de la boutique. Des griffes de nacre, rien que ça ! »
 ## Quête annexe terminée
-La boutique de Gaspard affiche de nouveau les vrais prix, avec *10 % de remise* pour toi, et vend des *Griffes de nacre* (poings du Moine).
+? La boutique de Gaspard affiche de nouveau les vrais prix, avec *10 % de remise* pour toi, et vend des *Griffes de nacre* (poings du Moine).
 
 == prix.apres
 Gaspard : « Vingt pièces la potion, pas une de plus. C'est écrit, maintenant ! »

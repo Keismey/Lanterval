@@ -81,6 +81,9 @@ button{font:inherit;color:inherit}
 .ptitle small{font:600 12.5px var(--f-ui);color:var(--muted);letter-spacing:.02em}
 .ptext{margin:0;line-height:1.5;text-wrap:pretty}
 .ptext b{color:var(--gold2);font-weight:700}
+/* astuces de jeu (« ? » dans les textes) : encadrées à part du récit */
+.tuto{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;border:1px solid var(--side);border-radius:12px;background:rgba(111,182,255,.09)}
+.tuto-q{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--side);color:#0b0d1a;font-weight:800;font-size:14px;line-height:1}
 .note{margin:0;font-size:13px;color:var(--muted);line-height:1.45}
 .msgline{font-size:13.5px;line-height:1.45;padding:9px 11px;border-radius:12px;background:var(--surface2);border:1px solid var(--line)}
 .msgline:empty{display:none}

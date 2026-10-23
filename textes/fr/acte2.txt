@@ -258,9 +258,9 @@ Comme à Lanterval, le cristal répond à l'éclat de la lanterne. Il t'apprend 
 
 == a2.e7.classes
 ## Classes
-*Nouvelles classes : Moine, Voleur et Barde.*
-Moine : poings ou bâton, Rafale (trois coups) et Méditation. Voleur : très rapide, vole des objets et esquive. Barde : harpe, chants qui renforcent l'équipe ou endorment un ennemi.
-Change de classe dans le menu Équipe. Le Codex détaille chaque classe.
+? *Nouvelles classes : Moine, Voleur et Barde.*
+? Moine : poings ou bâton, Rafale (trois coups) et Méditation. Voleur : très rapide, vole des objets et esquive. Barde : harpe, chants qui renforcent l'équipe ou endorment un ennemi.
+? Change de classe dans le menu Équipe. Le Codex détaille chaque classe.
 
 == a2.e7.gardien
 ## Le sommet

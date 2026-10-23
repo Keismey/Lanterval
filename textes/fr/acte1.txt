@@ -4,6 +4,7 @@
 #   == repère          début d'un texte. Le repère sert au jeu : ne le change pas.
 #   Nom : texte        une bulle dite par un personnage (Kael, Mira, Orvan…)
 #   texte              une bulle de récit
+#   ? texte            une astuce de jeu (règles, menus), encadrée à part du récit
 #   ## Titre           change le titre affiché au-dessus des bulles suivantes
 #   *mots*             mots en gras
 #   [Bouton]           à la fin d'une bulle : le texte du bouton pour continuer
@@ -23,7 +24,8 @@ Ce soir, sa lueur vacille.
 
 == prologue.suite
 ## Prologue
-L'Ancien Orvan te fait appeler. Dans le village, un *!* doré signale la quête principale et un *!* bleu une quête annexe.
+L'Ancien Orvan te fait appeler.
+? Dans le village, un *!* doré signale la quête principale et un *!* bleu une quête annexe.
 
 # ---------- Étape 1 : Orvan ----------
 
@@ -38,8 +40,8 @@ Orvan : « Ce cristal reconnaît les cœurs vaillants. Il t'apprendra d'autres f
 
 == a1.e1.classes
 ## Classes
-*Nouvelles classes : Guerrier, Mage, Soigneur.* Change de classe et d'équipement à tout moment hors combat, avec le bouton Équipe en haut de l'écran.
-Chaque personnage garde son élément : Kael frappe avec la Terre quelle que soit sa classe.
+? *Nouvelles classes : Guerrier, Mage, Soigneur.* Change de classe et d'équipement à tout moment hors combat, avec le bouton Équipe en haut de l'écran.
+? Chaque personnage garde son élément : Kael frappe avec la Terre quelle que soit sa classe.
 
 == a1.e1.message
 Quête : *retrouver Mira* dans la Forêt des Murmures. Pense à essayer la classe Guerrier.

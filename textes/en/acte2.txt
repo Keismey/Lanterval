@@ -258,9 +258,9 @@ As in Lanterval, the crystal answers the lantern shard. It teaches you new ways 
 
 == a2.e7.classes
 ## Classes
-*New classes: Monk, Thief and Bard.*
-Monk: fists or staff, Flurry (three blows) and Meditate. Thief: very fast, steals items and dodges. Bard: harp, songs that boost the team or put an enemy to sleep.
-Change class in the Team menu. The Codex describes each class.
+? *New classes: Monk, Thief and Bard.*
+? Monk: fists or staff, Flurry (three blows) and Meditate. Thief: very fast, steals items and dodges. Bard: harp, songs that boost the team or put an enemy to sleep.
+? Change class in the Team menu. The Codex describes each class.
 
 == a2.e7.gardien
 ## The top

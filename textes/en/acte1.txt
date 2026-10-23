@@ -14,7 +14,8 @@ Tonight, its light is flickering.
 
 == prologue.suite
 ## Prologue
-Elder Orvan has sent for you. In the village, a gold *!* marks the main quest and a blue *!* marks a side quest.
+Elder Orvan has sent for you.
+? In the village, a gold *!* marks the main quest and a blue *!* marks a side quest.
 
 # ---------- Step 1: Orvan ----------
 
@@ -29,8 +30,8 @@ Orvan: “This crystal recognises brave hearts. It will teach you other ways to 
 
 == a1.e1.classes
 ## Classes
-*New classes: Warrior, Mage, Healer.* Change class and gear at any time outside combat, with the Team button at the top of the screen.
-Each character keeps their element: Kael strikes with Earth whatever his class.
+? *New classes: Warrior, Mage, Healer.* Change class and gear at any time outside combat, with the Team button at the top of the screen.
+? Each character keeps their element: Kael strikes with Earth whatever his class.
 
 == a1.e1.message
 Quest: *find Mira* in the Whispering Forest. Try out the Warrior class.

@@ -54,13 +54,17 @@ function pl(n, un, plusieurs) { return n > 1 ? plusieurs : un; }
 
 // Une bulle : qui parle, le texte, le bouton éventuel
 function bulle(ligne) {
-  let texte = ligne, bouton = null, qui = null, nom = null;
+  let texte = ligne, bouton = null, qui = null, nom = null, tuto = false;
   const b = /\s*\[([^\]]+)\]\s*$/.exec(texte);
   if (b) { bouton = b[1]; texte = texte.slice(0, b.index); }
+  // « ? texte » : une astuce de jeu, encadrée à part pour ne pas se mêler au récit
+  if (/^\?\s/.test(texte)) { tuto = true; texte = texte.replace(/^\?\s+/, ''); }
   const m = /^([^:«»*]{1,28}?)\s?:\s(.+)$/.exec(texte);
-  if (m && PARLE[m[1]]) { nom = m[1]; qui = PARLE[m[1]]; texte = m[2]; }
-  return { qui, nom, texte, bouton };
+  if (!tuto && m && PARLE[m[1]]) { nom = m[1]; qui = PARLE[m[1]]; texte = m[2]; }
+  return { qui, nom, texte, bouton, tuto };
 }
+// encadré « ? » des astuces (bulles « ? texte », conseils avant un boss)
+function encadreTuto(h) { return `<span class="tuto"><span class="tuto-q" aria-hidden="true">?</span><span>${h}</span></span>`; }
 
 /* Texte lettre par lettre. Tout le texte est posé dès le début (la partie pas encore écrite reste invisible) :
    la mise en page ne bouge pas et les boutons restent à leur place. Un appui n'importe où affiche tout d'un coup,
