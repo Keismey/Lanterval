@@ -1,5 +1,17 @@
 # État du projet
 
+## Version 0.4.0 (2026-10-23)
+
+- Acte 3 « Les forges de Cendre » (donnees/acte3.js, étapes a3.e1 à a3.e10, plan validé par Keismey) : carte `cendre` avec les Champs brûlés (zone à deux côtés vallée/Cendre), Forgecendre (état `libre` après a3.e5), les Mines rouges, le Volcan endormi ; le Pont des Nuées est visible en « bientôt ».
+- Nev rejoint en a3.e1 (élément Vent `V`, classe de départ Moine) : combats à quatre héros (`.pcards.n4`). Duel de a3.e8 avec `equipe: 'kael nev'`.
+- Événement `['drapeau', id]` (pose `S.f[id]`) : `acte3` en a3.e1, `pardon` (choix de Mira en a3.e6), `charrette` en a3.e10 (voyage direct vers un village depuis la carte, moteur/carte.js).
+- Classes Berserker, Alchimiste, Invocateur (cristal de braise, a3.e8) et Géomancien (secrète, quête « La pierre qui chante ») ; élément `Z` = élément de la région (`ELEMENT_REGION` dans donnees/heros.js). Techniques : furie (recul), rage (Attaque ×1,4 pendant 3 actions, Défense baissée), corrosion (retire un point de garde), mixture, invocation, offrande, terroir, éboulement.
+- Quêtes annexes : suite de la graine (bourgeon), du carnet (Salamandre reine, 500 po), du colporteur (Dorn, lingot → plume de roc) avec une dernière étape qui attend `drapeau acte4` ; fin de « La berceuse » (Bâton des marées pour Sol) ; nouvelles quêtes `pierre` (Dorn) et `mineurs` (Tobi, Lampe de mineur : l'exploration trouve plus souvent un trésor ou un lieu ; trois armes de Hilde débloquées).
+- Hilde quitte Lanterval pour Forgecendre en a3.e2 ; Roxane et Fennel l'y suivent.
+- Équilibrage au bot (graines 1 à 5) : l'équipe entre dans l'acte 3 vers le niveau 18 et le finit vers 25 ; les boss de l'acte 3 sont plus rapides et ont plus de garde, pour ne pas rester brisés en permanence face à quatre héros.
+- Mode test : sauter une étape applique aussi les événements d'une traversée (`milieu`), sinon Nev ne rejoignait pas l'équipe.
+- Images de l'acte 3 : toutes provisoires (entrées ajoutées dans donnees/images.js avec leur `sujet`).
+
 ## Version 0.3.5 (2026-10-23)
 
 - Mise à jour du jeu sur le site public : le service worker télécharge les fichiers sans le cache du navigateur (`cache: 'reload'`, GitHub Pages les garde 10 minutes), et la page se recharge toute seule à l'écran titre quand une nouvelle version s'installe.
@@ -72,6 +84,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.4)
+## Prochaine étape (0.4.1, puis 0.5)
 
-Acte 3, les forges de Cendre. Il faudra y poser le drapeau `acte3` et écrire la suite des quêtes annexes qui l'attendent : « La berceuse » (Hilde répare la boîte), « La graine-lanterne » (cendre chaude aux Champs brûlés), « Le carnet du chasseur » (Salamandre reine), « Le colporteur » (trocs à Forgecendre).
+0.4.1 : les quêtes annexes 9 et 10 de la bible (Plaines de Cendre, dont « Le carnet d'Aldric »), proposées dans le plan de l'acte 3 et validées pour une version à part. Puis 0.5 : acte 4 (Hauts-Vents, Aerie, Pont des Nuées) ; il posera le drapeau `acte4` attendu par la dernière étape de la graine, du carnet et du colporteur. Les larmes de l'Œil attendent l'acte 4.
