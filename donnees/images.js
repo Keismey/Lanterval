@@ -71,6 +71,10 @@ const IMAGES = {
   'pano.fresques': { sujet: 'Les fresques de l\'Œil dans le monastère : un œil immense ouvert sur le monde, des moines qui le ferment' },
   'pano.ysold-azur': { sujet: 'Au sommet du Pic hurlant, Ysold arrache le cristal d\'azur, Varen à genoux' },
   'pano.feu': { sujet: 'Le feu de camp à Aerie, la veille de l\'assaut, les quatre héros autour des flammes' },
+  // quêtes annexes des Hauts-Vents (0.5.2)
+  'pano.wyverne': { sujet: 'Au pied du Pic hurlant, une wyverne gris-bleu et son petit tout juste éclos volent au-dessus d\'un grand nid de cordes et de plumes accroché à la falaise' },
+  'pano.cerfvolant': { sujet: 'Au sommet enneigé du Pic hurlant, Nev et Varen de dos tiennent ensemble la ficelle d\'un grand cerf-volant bleu qui monte dans les nuages' },
+  'pano.larmes': { sujet: 'La nuit, au feu de camp d\'Aerie, quatre larmes de lumière (cristal, écume, braise, azur) flottent autour du vieil Orvan, au-dessus des flammes' },
   'pano.fleur': { sujet: 'La fleur-lanterne qui brille au pied de la lanterne de Lanterval, Pia à genoux à côté' },
 
   // ---------- Héros (tournés vers la gauche) ----------
@@ -111,6 +115,7 @@ const IMAGES = {
   'pnj.edda': { provisoire: 'f_edda', sujet: 'Edda, aubergiste du Nid à Aerie, joues rouges, bonnet de laine, châle à plumes' },
   'pnj.joran': { provisoire: 'f_joran', sujet: 'Joran, forgeron d\'Aerie, grand et maigre, lunettes de vol, tablier de cuir' },
   'pnj.pell': { provisoire: 'f_pell', sujet: 'Pell, facteur en planeur, jeune homme roux, casquette de cuir, lunettes de vol, sacoche de lettres' },
+  'pnj.liss': { provisoire: 'f_liss', sujet: 'Liss, grand-mère de Nev et Varen, vieille femme d\'Aerie aux cheveux blancs tressés, châle bleu, regard sévère et doux' },
   'pnj.ilse': { provisoire: 'f_ilse', sujet: 'Ilse, dresseuse de wyvernes et tisserande, la cinquantaine, tresse grise, cicatrices de griffes sur les bras' },
   'pnj.ysold': { fichier: 'img/pnj/ysold.webp', portrait: 'img/pnj/ysold.webp', provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
 
@@ -173,5 +178,12 @@ const IMAGES = {
   'monstre.varen3': { fichier: 'img/monstres/varen.webp', provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre (même image que monstre.varen)' },
   'monstre.rocaile': { provisoire: 'rocaile', sujet: 'Roc ailé posé au sol, oiseau géant au plumage de pierre grise, bec crochu, ailes repliées' },
   // image en vol d'un monstre qui s'envole (capacité envol) : même cadrage, ailes grandes ouvertes, sans ombre au sol
-  'monstre.rocaile.vol': { provisoire: 'rocaile_vol', sujet: 'Roc ailé en plein vol, vu de face, ailes de pierre grandes ouvertes, serres en avant' }
+  'monstre.rocaile.vol': { provisoire: 'rocaile_vol', sujet: 'Roc ailé en plein vol, vu de face, ailes de pierre grandes ouvertes, serres en avant' },
+  // quêtes annexes des Hauts-Vents (0.5.2)
+  'monstre.prieur': { provisoire: 'prieur', sujet: 'Prieur spectral, grand moine fantôme en robe bleu pâle et chape brodée, capuche sur un visage effacé, crosse de pierre' },
+  'monstre.wyverne': { provisoire: 'wyverne', sujet: 'Wyverne mère, dragon à deux pattes aux écailles gris-bleu, ailes membraneuses, yeux voilés de brume' },
+  'monstre.larmet': { provisoire: 'larmet', sujet: 'Gardien de cristal, silhouette massive faite de cristaux bleus de la grotte, une larme de lumière au milieu du torse' },
+  'monstre.larmee': { provisoire: 'larmee', sujet: 'Gardien d\'écume, forme d\'écume et de coquillages qui se dresse de l\'eau, une larme de lumière au milieu du torse' },
+  'monstre.larmef': { provisoire: 'larmef', sujet: 'Gardien de braise, silhouette de métal en fusion aux bras brûlants, une larme de lumière au milieu du torse' },
+  'monstre.larmev': { provisoire: 'larmev', sujet: 'Gardien d\'azur, grand oiseau de vent et de brume aux ailes de lames, une larme de lumière au milieu du corps' }
 };

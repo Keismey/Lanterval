@@ -384,6 +384,23 @@ function spritesActe4() {
   SPR.f_joran = face({ skin: '#e0b090', hair: '#3a2a1a', cl: '#7a5233', cl2: '#5a3a22', lunettes: '#8ad0e8' });
   SPR.f_pell = face({ skin: '#f4d0b0', hair: '#d8642a', hat: '#6a4a2a', cl: '#4a6a8a', cl2: '#8a5a32', lunettes: '#f2c14e' });
   SPR.f_ilse = face({ skin: '#d8a880', hair: '#a8a8b0', tresse: '#8a8a92', cl: '#5a7a6a', cl2: '#3a5a4a' });
+  // quêtes annexes des Hauts-Vents (0.5.2)
+  SPR.prieur = mk(40, 52, x => { for (let y = 12; y < 51; y++) { const w = 6 + Math.round((y - 12) * .4); P(x, y % 6 === 0 ? '#6a86b8' : '#8aa6d0', 20 - w, y, 2 * w, 1); }
+    for (let i = 0; i < 6; i++) x.clearRect(5 + i * 5, 48 + (i % 2), 2, 4); P(x, '#d8c890', 12, 20, 16, 3); P(x, '#d8c890', 18, 23, 4, 20);
+    E(x, '#6a86b8', 20, 11, 9, 9); D(x, '#1a2234', 20, 13, 5); P(x, '#e8f4ff', 17, 13, 2, 1); P(x, '#e8f4ff', 22, 13, 2, 1);
+    P(x, '#9a9aa8', 34, 4, 2, 46); D(x, '#b8b8c4', 35, 4, 3); });
+  SPR.f_liss = face({ skin: '#e8c0a0', hair: '#f0f0f4', tresse: '#d8d8e0', cl: '#4a7ab8', cl2: '#3a5a98', scarf: '#7ab8e0' });
+  SPR.wyverne = mk(60, 50, x => { for (let k = 0; k < 20; k++) { const hh = Math.max(2, 16 - Math.floor(k / 1.4)); P(x, k % 4 ? '#6a8aa8' : '#4a6a88', 22 - k, 6 + Math.floor(k / 2), 1, hh); P(x, k % 4 ? '#6a8aa8' : '#4a6a88', 34 + k, 6 + Math.floor(k / 2), 1, hh); }
+    E(x, '#7a9ab8', 28, 28, 9, 11); E(x, '#b8d0e0', 28, 31, 5, 7); for (let k = 0; k < 12; k++) P(x, '#5a7a98', 18 - k, 36 + Math.floor(k / 3), 3, 2);
+    P(x, '#5a7a98', 23, 37, 3, 9); P(x, '#5a7a98', 31, 37, 3, 9); P(x, '#2a2a30', 21, 45, 6, 2); P(x, '#2a2a30', 30, 45, 6, 2);
+    for (let k = 0; k < 8; k++) P(x, '#7a9ab8', 30 + k, 18 - k, 4, 3); E(x, '#7a9ab8', 41, 9, 6, 4); P(x, '#d8e8f0', 40, 7, 2, 2); P(x, '#f4f4f4', 45, 11, 1, 2); P(x, '#a8b8c8', 44, 4, 2, 3); });
+  const larme = (c1, c2, c3) => mk(44, 52, x => { P(x, c2, 12, 40, 7, 11); P(x, c2, 25, 40, 7, 11); E(x, c1, 22, 26, 13, 16); E(x, c2, 22, 30, 9, 9);
+    P(x, c1, 2, 16, 8, 20); P(x, c1, 34, 16, 8, 20); D(x, c1, 22, 8, 7); P(x, '#ffffff', 18, 7, 2, 2); P(x, '#ffffff', 24, 7, 2, 2);
+    D(x, '#ffffff', 22, 27, 4); D(x, c3, 22, 28, 2); for (let k = 0; k < 5; k++) P(x, c3, 8 + k * 7, 2 + (k % 2) * 3, 2, 4); });
+  SPR.larmet = larme('#7ac8e8', '#4a98c8', '#e8f8ff');
+  SPR.larmee = larme('#c8e8e0', '#6ab0b8', '#f4ffff');
+  SPR.larmef = larme('#e86a3a', '#a83a22', '#ffd860');
+  SPR.larmev = larme('#a8c8f0', '#6a8ac8', '#e8f0ff');
 }
 
 function nuages(c, W, H, y0, y1, seed, col) { const r = rng(seed); for (let i = 0; i < 14; i++) { const x = r() * W, y = y0 + r() * (y1 - y0), w = 20 + r() * 40; E(c, col, x, y, w, 5 + r() * 6); } }

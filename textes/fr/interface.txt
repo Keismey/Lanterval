@@ -589,6 +589,36 @@ Enchantée
 == combat.enchant
 {nom} enchante son arme : son *Attaque* prend l'élément {el} pendant 3 actions.
 
+== combat.saut.court
+En l'air
+
+== combat.saut
+{nom} saute très haut au-dessus de {cible} ! *Personne ne peut le toucher* jusqu'à son prochain tour.
+
+== combat.saut.chute
+{nom} retombe de tout son poids !
+
+== combat.saut.attend
+{nom} cherche une cible, mais personne n'est à sa portée.
+
+== combat.rappel.court
+Rappel
+
+== combat.rappel
+{nom} rappelle à {cible} son dernier geste : *{tech}*, sans payer de PP !
+
+== combat.rappel.rien
+{nom} cherche un souvenir à rappeler à {cible}, mais il n'y en a pas encore.
+
+== combat.sceau.court
+Sceau
+
+== combat.sceau
+{nom} trace le *Sceau de mémoire* : l'équipe subit un tiers de dégâts en moins pendant les {n} prochaines actions des monstres.
+
+== combat.sceau.reste
+Sceau {n}
+
 == combat.air.court
 En l'air
 
@@ -1155,6 +1185,10 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.5.2
+Trois nouvelles quêtes annexes à Aerie : « L'œuf de wyverne » (Ilse), « Le cerf-volant » (Liss, la grand-mère de Nev et Varen) et « Les larmes de l'Œil » (Tavor).
+Nouvelles classes cachées : Dragonnier (Saut et Souffle) et la classe ultime, Gardien des souvenirs (Rappel et Sceau de mémoire). Nev reçoit sa dague ultime, Fil-de-vent ; le Moine et le Berserker peuvent maintenant porter des dagues.
+Les quatre larmes de l'Œil se cherchent dans l'ordre que tu veux. L'Ancien Orvan reste à Aerie après le feu de camp.
 ## Version 0.5.1
 Les traversées prennent leur temps : quatre étapes, chacune affichée avec ce qui s'y passe (combat, or trouvé, rien à signaler). Les monstres sont annoncés avant chaque combat, et un bilan s'affiche d'un coup à l'arrivée.
 À la fin de chaque combat gagné, un écran montre l'XP et l'or gagnés, la barre d'XP de chaque héros et les niveaux gagnés ; on continue d'un appui, même en combat automatique.

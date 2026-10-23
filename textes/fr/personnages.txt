@@ -262,3 +262,29 @@ Tisserande d'Aerie, elle tisse les toiles des planeurs et soigne les dernières 
 
 == perso.ilse.2
 D'une plume de roc, elle a tissé la Cape des quatre vents. Fennel est son plus vieux client.
+
+# ---------- Version 0.5.2 ----------
+
+== perso.orvan.6
+Au feu du Nid, il a réuni les quatre larmes de l'Œil, qu'il avait vues tomber il y a cinquante ans, et en a fait un gardien des souvenirs.
+
+== perso.varen.6
+Avec Nev, il a réparé et fait voler leur cerf-volant d'enfants. Pour la première fois depuis six ans, sa grand-mère lui a parlé.
+
+== perso.nev.7
+Sa grand-mère Liss lui a pardonné, et lui a donné Fil-de-vent, la dague de son grand-père.
+
+== perso.tavor.4
+Il a raconté les quatre larmes que l'Œil a pleurées quand on l'a endormi, chacune tombée dans une région.
+
+== perso.ilse.3
+Elle a appris le Saut à l'équipe : la wyverne qui vient d'éclore a choisi Kael.
+
+== perso.liss.1
+La grand-mère de Nev et Varen, à Aerie. Depuis que ses petits-enfants sont partis pour l'Ordre, elle regarde le Pic hurlant tous les soirs.
+
+== perso.liss.2
+Elle a gardé leur cerf-volant d'enfants au grenier, déchiré, pendant six ans.
+
+== perso.liss.3
+Elle a pardonné à Nev et Varen, et leur a promis de réparer le reste comme la toile.

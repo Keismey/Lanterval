@@ -1581,3 +1581,152 @@ Le Roc ailé s'envole d'un grand coup d'ailes ! *En l'air, seules les attaques d
 == monstre.rocaile.pique
 Le Roc ailé pique sur toute l'équipe !
 
+
+# ---------- Version 0.5.2 : quêtes annexes des Hauts-Vents ----------
+
+== parle.liss
+Liss
+
+== classe.dragonnier
+Dragonnier
+
+== classe.dragonnier.desc
+Saute avec la wyverne d'Ilse : il disparaît du combat, personne ne peut le toucher, puis il retombe sur sa cible. Lances et épées.
+
+== classe.dragonnier.verrou
+Classe secrète : une dresseuse d'Aerie attend des nouvelles d'un œuf
+
+== classe.souvenirs
+Gardien des souvenirs
+
+== classe.souvenirs.desc
+La classe ultime : il rappelle aux alliés ce qu'ils viennent de faire, et protège l'équipe avec la mémoire de l'Œil.
+
+== classe.souvenirs.verrou
+Classe secrète : le vieux moine d'Aerie parle de larmes perdues
+
+== tech.saut
+Saut
+
+== tech.saut.desc
+Le héros saute très haut : personne ne peut le toucher, et il retombe sur sa cible à son tour suivant, même si elle vole.
+
+== tech.souffle
+Souffle
+
+== tech.souffle.desc
+Le petit de la wyverne souffle un vent coupant sur tous les ennemis.
+
+== tech.rappel
+Rappel
+
+== tech.rappel.desc
+Un allié refait sa dernière action, sans payer de PP.
+
+== tech.sceau
+Sceau de mémoire
+
+== tech.sceau.desc
+L'équipe subit un tiers de dégâts en moins pendant les 4 prochaines actions des monstres.
+
+== equip.fildevent
+Fil-de-vent
+
+== equip.lanceilse
+Lance d'Ilse
+
+== equip.lance
+Lance des falaises
+
+== important.cerf-volant-dechire
+Cerf-volant déchiré
+
+== important.cerf-volant-dechire.desc
+Le cerf-volant bleu de Nev et Varen, la toile fendue d'un bout à l'autre. Il dormait au grenier de Liss.
+
+== important.cerf-volant
+Cerf-volant bleu
+
+== important.cerf-volant.desc
+Réparé avec une bannière du monastère. Nev et Varen l'ont fait voler au sommet du Pic hurlant.
+
+== important.larme-cristal
+Larme de cristal
+
+== important.larme-cristal.desc
+Une larme de l'Œil, trouvée au fond de la Grotte de Cristal. Elle garde un souvenir de Kael et de son père.
+
+== important.larme-ecume
+Larme d'écume
+
+== important.larme-ecume.desc
+Une larme de l'Œil, trouvée dans l'Épave engloutie. Elle garde un souvenir de Sol et de Naïa.
+
+== important.larme-braise
+Larme de braise
+
+== important.larme-braise.desc
+Une larme de l'Œil, trouvée au fond des Mines rouges. Elle garde un souvenir de Hilde et de Mira.
+
+== important.larme-azur
+Larme d'azur
+
+== important.larme-azur.desc
+Une larme de l'Œil, trouvée au sanctuaire des Ruines. Elle garde un souvenir de Nev et de Varen.
+
+== monstre.wyverne
+Wyverne mère
+
+== monstre.wyverne.desc
+La dernière wyverne d'Ilse, rendue folle par la brume. Elle crache un souffle de brume et frappe deux fois tant que sa garde tient.
+
+== monstre.wyverne.charge
+La Wyverne mère gonfle sa gorge, pleine de brume… *elle va souffler sur toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.wyverne.special
+La Wyverne mère crache un souffle de brume sur toute l'équipe !
+
+== monstre.larmet
+Gardien de cristal
+
+== monstre.larmet.desc
+Des cristaux de la Grotte assemblés autour d'une larme de l'Œil. Il se répare quand il est blessé.
+
+== monstre.larmet.special
+Le Gardien de cristal recolle ses éclats et reprend {v} PV !
+
+== monstre.larmee
+Gardien d'écume
+
+== monstre.larmee.desc
+De l'écume et des coquillages autour d'une larme de l'Œil. Il boit la force de ceux qu'il frappe.
+
+== monstre.larmef
+Gardien de braise
+
+== monstre.larmef.desc
+Du minerai en fusion autour d'une larme de l'Œil. Il prépare des coulées de feu sur toute l'équipe.
+
+== monstre.larmef.charge
+Le Gardien de braise se met à rougir, de plus en plus fort… *il va brûler toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.larmef.special
+Le Gardien de braise déverse une coulée de feu sur toute l'équipe !
+
+== monstre.larmev
+Gardien d'azur
+
+== monstre.larmev.desc
+Un oiseau de vent et de brume autour d'une larme de l'Œil. Il frappe deux fois tant que sa garde tient.
+
+== monstre.larmev.special
+Ailes tranchantes
+
+== monstre.prieur
+Prieur spectral
+
+== monstre.prieur.desc
+Le dernier prieur du monastère, devenu brume. Il garde encore la bannière du parvis, et appelle ses frères à l'aide.
+
+== monstre.prieur.appel
+Le Prieur spectral lève sa crosse : un {renfort} sort de la brume !

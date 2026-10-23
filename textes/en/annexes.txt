@@ -1093,3 +1093,339 @@ Pell: “If you ever have a letter to send, anywhere, just tell me. For you, it'
 
 == pnj.pell
 Pell: “I've been flying from village to village since I was twelve. The wind is my horse.”
+
+# ---------- 12. The wyvern egg (Ilse, Dragoon class) ----------
+
+== wyverne.titre
+The wyvern egg
+
+== wyverne.offre
+Ilse: “My last wyvern laid an egg on the Sleeping Volcano, before the Order drove her from the cliffs. A single egg, warm as an ember.”
+Ilse: “She found shelter in a nest at the foot of the Howling Peak. The mist has driven her mad, but a mother always knows her egg.”
+Ilse: “If you find that egg, bring it back to her. She has lost enough already.”
+> oui : Accept | Side quest
+> non : Later
+
+== wyverne.message
+Side quest: bring the *wyvern egg* back to the nest on the *Howling Peak*. If you don't have it, it is still on the *Sleeping Volcano*.
+
+== wyverne.e1.titre
+Find the warm egg
+
+== wyverne.e1.bouton
+Look for the burning nest
+
+== wyverne.e1.attente
+Ilse: “The egg must be on the Sleeping Volcano, on the crater side. Wyverns lay where the rock stays warm.”
+
+== wyverne.e1.nid
+## The wyvern egg
+At the edge of the crater, between two frozen lava flows, lies a nest of charred branches. In the middle, a big scaly egg barely moves.
+Three lava lizards circle around it, tongues flicking. [Fight]
+
+== wyverne.e1.fin
+## The wyvern egg
+Kael lifts the egg with both hands. It is heavy, and warm like a stone in the sun.
+Nev: “It's moving! We have to hurry, it won't wait for the war to end.”
+
+== wyverne.e1.message
+Side quest: the *warm egg* is in your bag. The mother's nest is at the foot of the *Howling Peak*.
+
+== wyverne.e2.titre
+Return the egg to its mother
+
+== wyverne.e2.bouton
+Approach the nest
+
+== wyverne.e2.attente
+Ilse: “The nest is at the foot of the Howling Peak, in the cliff face. Talk to her gently. And if that isn't enough, hit hard.”
+
+== wyverne.e2.nid
+## The nest
+In a hollow of the cliff, a large nest of ropes and feathers, woven by Ilse years ago. It is empty.
+A cry tears through the wind. A blue-grey wyvern lands in front of the nest, her eyes drowned in mist. [Fight]
+
+== wyverne.e2.conseil
+? The *Wyvern mother* resists *Wind*. *Earth* and *Blade* crack her guard. When she draws breath, break her guard before she breathes mist on the whole team.
+
+== wyverne.e2.eclosion
+## The nest
+The wyvern backs away, panting. Kael sets the egg in the nest and steps back slowly.
+The mother tilts her head. The mist leaves her eyes all at once, like smoke blown away by the wind.
+The egg cracks. A little snout pokes out, then two damp wings. The little one cries, and its mother answers.
+
+== wyverne.e2.message
+Side quest: the egg has hatched. Go back to *Ilse* in Aerie.
+
+== wyverne.e3.titre
+Tell Ilse about the hatching
+
+== wyverne.e3.scene
+## The wyvern egg
+Ilse listens without a word. Then she looks over Kael's shoulder: the little one is there, perched on the railing.
+Ilse: “It followed you all the way here. A wyvern isn't tamed, it chooses. That one chose you.”
+Ilse: “So I'll teach you to jump with it. Take my old lance. I haven't jumped in a long time.”
+
+== wyverne.e3.fin
+? Reward: hidden class *Dragoon* (Jump: the hero vanishes, then lands on the target, even a flying one; Breath: Wind on every enemy) and *Ilse's lance*. Joran now sells a second lance.
+
+== wyverne.apres
+Ilse: “The little one eats from my hand every morning. It's looking for you. Don't keep it waiting too long.”
+
+# ---------- 13. The kite (Liss; Nev and Varen) ----------
+
+== cerfvolant.titre
+The kite
+
+== cerfvolant.offre
+Liss: “The two of you, together, under my roof. It took a war for that.”
+Liss: “Your kite is still in the attic. Torn, just like the day you left.”
+Liss: “Mend it. Fly it. And I'll see whether I forgive you.”
+> oui : Accept | Side quest
+> non : Later
+
+== cerfvolant.message
+Side quest: go up to Liss's *attic* with Nev and Varen.
+
+== cerfvolant.e1.titre
+Go up to Liss's attic
+
+== cerfvolant.e1.bouton
+Go up to the attic
+
+== cerfvolant.e1.grenier
+## The kite
+The attic smells of dust and wool. Under a blanket lies a big blue kite, its sail split from end to end.
+Varen: “You tore it. You flew it into the storm.”
+Nev: “You let go of the string! You always let go too soon.”
+
+== cerfvolant.e1.rire
+## The kite
+They stare at each other, arms crossed, exactly alike. Mira is the first to giggle.
+Nev bursts out laughing, then Varen, more quietly. The first time the team has ever heard Varen laugh.
+Varen: “The sail came from a monastery banner. There must be some left on the forecourt of the ruins.”
+
+== cerfvolant.e1.message
+Side quest: find a *banner* on the forecourt of the *Monastery ruins*, with Nev and Varen.
+
+== cerfvolant.e2.titre
+Find a banner at the ruins
+
+== cerfvolant.e2.bouton
+Look for a banner
+
+== cerfvolant.e2.attente
+Liss: “A monastery banner, on the forecourt. My husband took one down for you once. The monks scolded him for it.”
+
+== cerfvolant.e2.banniere
+## The kite
+On the forecourt, a blue banner still hangs from a column, untouched. Varen reaches for it.
+A tall figure in a cope slides out of the mist, crozier in hand: the monastery's prior. Nev stands back to back with her brother without thinking.
+Nev: “Stay back. This time we fight together, him and me.” [Fight]
+
+== cerfvolant.e2.conseil
+? Only *Nev* and *Varen* fight. The *Spectral prior* fears *Fire* and *Blade* and calls monks as reinforcements: break his guard and give him no breath. Keep healing items at hand.
+
+== cerfvolant.e2.fin
+## The kite
+Varen takes the banner down and folds it with care. Nev watches him.
+Nev: “You fought better when we were against each other.”
+Varen: “No. I fought better when I knew where you were.”
+
+== cerfvolant.e2.message
+Side quest: the kite is mended. Fly it on the summit of the *Howling Peak*.
+
+== cerfvolant.e3.titre
+Fly the kite
+
+== cerfvolant.e3.bouton
+Let the kite go
+
+== cerfvolant.e3.attente
+Liss: “On the summit of the Peak. It's the only place where the wind was strong enough for the two of you.”
+
+== cerfvolant.e3.vent
+## The summit
+On the summit of the Peak, where they fought, Nev and Varen hold the string with four hands.
+The wind catches the sail at once. The blue kite climbs and climbs, until it touches the clouds.
+
+== cerfvolant.e3.ficelle
+## The summit
+Varen: “You always held the string too tight.”
+Nev: “And you always let go too soon.”
+This time, neither of them lets go.
+
+== cerfvolant.e3.message
+Side quest: the kite has flown. Go back to *Liss* in Aerie.
+
+== cerfvolant.e4.titre
+Go back to Liss
+
+== cerfvolant.e4.pardon
+## The kite
+Liss looks at the kite, then at her two grandchildren, for a long time. Her hands tremble a little.
+Liss: “I waited six years for you. Every evening, I watched the Peak.”
+Liss: “You came home. That's all I wanted. The rest, we'll mend like the sail.”
+
+== cerfvolant.e4.fin
+## The kite
+Liss takes a slender dagger from her apron, its blade as clear as the sky above the Peak.
+Liss: “Your grandfather's. He used it to cut the strings of kites caught in storms. Nev, it's yours.”
+Varen: “Take it. I already have what I wanted.”
+? Reward: *Windstring*, Nev's ultimate dagger (only for Nev). Nev can wield it as a Monk, Berserker, Thief, Ninja or Spellblade.
+
+== cerfvolant.apres
+Liss: “The kite hangs above the fireplace. It will wait for you to come back and fly it. Both of you.”
+
+== pnj.liss
+Liss: “I have nothing to say to you, Nev. Not yet.”
+
+== pnj.liss.a4.e7
+Liss: “Your brother sleeps under my roof tonight. I haven't decided yet whether that makes me happy.”
+
+# ---------- 15. The tears of the Eye (Tavor; ultimate class Keeper of memories) ----------
+
+== larmes.titre
+The tears of the Eye
+
+== larmes.offre
+Tavor: “When the monks drew the lid over the Eye, it wept four tears. Each one holds a piece of the world's memory.”
+Tavor: “They fell far from here: in the Crystal Cave, the Sunken Wreck, the Red Mines, and deep in our own sanctuary.”
+Tavor: “Together, they make a keeper the mist cannot touch. But each of them has its own guardian.”
+> oui : Accept | Side quest
+> non : Later
+
+== larmes.message
+Side quest: gather the *four tears of the Eye*, in any order: *Crystal Cave*, *Sunken Wreck*, *Red Mines*, *sanctuary of the ruins*.
+
+== larmes.e1.titre
+Gather the four tears of the Eye
+
+== larmes.e1.sous
+The tears: Cave, Wreck, Mines, sanctuary
+
+== larmes.e1.attente
+Tavor: “A tear shines deep in every place where the Eye wept. Follow the light, not the mist.”
+
+== larmes.e1.m1.titre
+The crystal tear, deep in the Cave
+
+== larmes.e1.m1.bouton
+Follow the glow of the crystals
+
+== larmes.e1.m1.lueur
+## The tears of the Eye
+Deep in the Cave, a drop of light floats among the crystals without falling.
+The crystals tear free from the ground and gather into a huge figure, rising in front of the tear. [Fight]
+
+== larmes.e1.m1.conseil
+? The *Crystal guardian* resists *Earth* and *Blade*. *Fire* and *Wind* crack its guard. It mends itself when hurt: hit hard and give it no rest.
+
+== larmes.e1.m1.souvenir
+## The crystal tear
+Kael touches the tear. A summer forest, a laughing man lifting a child onto his shoulders.
+“Look, Kael. You can see the lantern from here,” says Aldric. “As long as it shines, we always find our way home.”
+The light slowly fades. Kael keeps his hand closed around the tear for a long time.
+
+== larmes.e1.m1.message
+Side quest: the *crystal tear* is yours.
+
+== larmes.e1.m2.titre
+The foam tear, in the Sunken Wreck
+
+== larmes.e1.m2.bouton
+Dive toward the glow
+
+== larmes.e1.m2.lueur
+## The tears of the Eye
+In the wreck's hold, a light beats like a heart under the seaweed.
+The water starts to swirl. A shape of foam and shells rises and opens a bottomless mouth. [Fight]
+
+== larmes.e1.m2.conseil
+? The *Foam guardian* resists *Water* and *Fire*. *Earth* and *Wind* crack its guard. It strikes twice while its guard holds.
+
+== larmes.e1.m2.souvenir
+## The foam tear
+Sol touches the tear. A little boat on a calm sea, two children counting the stars.
+“Do you think we'll ever get lost?” asks little Naïa. “Never,” answers little Sol. “If you get lost, I'll sing you the lullaby.”
+Sol wipes his eyes with the back of his hand, without a word.
+
+== larmes.e1.m2.message
+Side quest: the *foam tear* is yours.
+
+== larmes.e1.m3.titre
+The ember tear, deep in the Red Mines
+
+== larmes.e1.m3.bouton
+Follow the heat
+
+== larmes.e1.m3.lueur
+## The tears of the Eye
+At the end of the great gallery, a red tear glows in the rock, hot as a live coal.
+The ore melts and flows into a figure of molten metal that raises two burning arms. [Fight]
+
+== larmes.e1.m3.conseil
+? The *Ember guardian* resists *Fire* and *Earth*. *Water* and *Wind* crack its guard. When it draws breath, break its guard before it unleashes the fire.
+
+== larmes.e1.m3.souvenir
+## The ember tear
+Mira touches the tear. A rainy night, a young woman running down a mountain path, a baby held tight against her.
+“Hush, my little one,” whispers Hilde. “No one will ever put you in a cage.”
+Mira: “That was me. She was running for me.”
+Mira squeezes the tear so hard it almost burns her hand.
+
+== larmes.e1.m3.message
+Side quest: the *ember tear* is yours.
+
+== larmes.e1.m4.titre
+The azure tear, in the sanctuary of the ruins
+
+== larmes.e1.m4.bouton
+Climb toward the blue glow
+
+== larmes.e1.m4.lueur
+## The tears of the Eye
+Above the empty altar, where the crystal used to sleep, a blue tear spins in the wind.
+The wind tightens around it and takes the shape of a great bird of mist with bladed wings. [Fight]
+
+== larmes.e1.m4.conseil
+? The *Azure guardian* resists *Wind* and *Water*. *Earth* and *Fire* crack its guard. It strikes twice while its guard holds.
+
+== larmes.e1.m4.souvenir
+## The azure tear
+Nev touches the tear. A walkway in Aerie, a boy teaching a little girl to stand up in the wind.
+“Spread your arms,” says young Varen. “The wind won't knock you down if you're not afraid of it.”
+Varen, beside Nev, looks away. But he doesn't leave.
+
+== larmes.e1.m4.message
+Side quest: the *azure tear* is yours.
+
+== larmes.e2.titre
+Show the tears to Orvan
+
+== larmes.e2.bouton
+Show the tears
+
+== larmes.e2.attente
+Tavor: “All four tears! Tonight, at the fire in the Nest, someone will know what to do with them. Someone who was there when they fell.”
+
+== larmes.e2.feu
+## The tears of the Eye
+At the fire in the Nest, Kael lays the four tears on a flat stone. They rise on their own and turn slowly above the flames.
+Orvan watches them without a word. In each one, a flash of memory passes, then another.
+Orvan: “I saw them fall, fifty years ago. I thought they were lost forever.”
+
+== larmes.e2.gardien
+## The tears of the Eye
+Orvan raises his wrinkled hand. The tears settle in his palm and melt into a single light, soft as a lantern.
+Orvan: “I helped close that Eye. I have no right to keep it. But I can teach you to keep what it sees.”
+Orvan: “Remember one another. It's the one thing the mist can't take.”
+
+== larmes.e2.fin
+? Reward: ultimate hidden class *Keeper of memories*. Recall makes an ally repeat their last action without paying PP; Memory seal cuts the team's damage by a third for the monsters' next 4 actions.
+
+== larmes.apres
+Tavor: “The monks used to say the Eye weeps when it is afraid to forget. Thanks to you, it is less afraid.”
+
+== pnj.orvan.fin
+Orvan: “Tomorrow, the Stair of Mist. Tonight, I'm warming myself at Edda's fire. I'm too old for cold nights.”

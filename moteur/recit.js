@@ -52,6 +52,8 @@ const EVENEMENTS = {
   async degats([spec]) { appliquerEffet('degats ' + spec); },
   async revele([spec]) { const [id, el] = spec.split(/\s+/); if (el) { reveal(id, el); seen(id); } else revealAll(id); },
   async position([pos]) { S.loc = pos; },
+  // « volcan v6 » : la découverte fixe d'une zone est faite (l'œuf trouvé par une quête ne se retrouve pas en explorant)
+  async trouve([spec], ctx) { const [z, f] = spec.split(/\s+/); if (S.z[z].found.includes(f)) return; S.z[z].found.push(f); await paliers(z, ctx.silencieux); },
   async traversee([vers, o], ctx, suite, id) {
     if (ctx.silencieux) { if (o && o.milieu) await jouer(o.milieu, ctx, id + '.'); S.loc = vers; return; }
     const milieu = o && o.milieu ? () => jouer(o.milieu, ctx, id + '.') : null;
@@ -93,9 +95,9 @@ async function jouer(evts, ctx, chemin = '') {
 // à l'ouverture d'une partie : relance l'étape interrompue, s'il y en a une
 function reprendre() {
   const r = S.reprise; if (!r) return null;
-  const [type, id, n] = r.k.split(':'), e = type === 'e' && toutesEtapes().find(x => x.id === id);
+  const [type, id, n, m] = r.k.split(':'), e = type === 'e' && toutesEtapes().find(x => x.id === id);
   if (e && !fini(id) && etapeCourante() === e) return () => jouerEtape(e);
-  if (type === 'a' && ANNEXES[id] && annexeEtat(id) === +n) return () => jouerAnnexe(id);
+  if (type === 'a' && ANNEXES[id] && annexeEtat(id) === +n) return () => jouerAnnexe(id, false, m === undefined ? undefined : +m);
   if (type === 'o' && ANNEXES[id] && !annexeEtat(id)) return () => jouerOffre(id);
   S.reprise = null; return null;
 }
@@ -121,12 +123,20 @@ async function jouerOffre(id) {
   S.annexes[id] = 1;
   logR('journal.log.annexe', { titre: id + '.titre' });
 }
-async function jouerAnnexe(id, silencieux) {
-  const n = annexeEtat(id), e = ANNEXES[id].etapes[n - 1];
-  const ctx = { titre: t(id + '.titre'), style: 'side', silencieux, reprise: silencieux ? null : pointDeReprise(`a:${id}:${n}`) };
-  await jouer(e.evenements, ctx);
+// morceau : pour une étape en désordre (parmi), le morceau joué ; l'étape est finie quand tous ses morceaux le sont
+async function jouerAnnexe(id, silencieux, morceau) {
+  const e = annexeEtape(id), n = annexeEtat(id);
+  if (e.parmi && morceau === undefined) morceau = annexeDispo(id).morceau;
+  const evts = e.parmi ? e.parmi[morceau].evenements : e.evenements, k = `a:${id}:${n}` + (e.parmi ? ':' + morceau : '');
+  const ctx = { titre: t(id + '.titre'), style: 'side', silencieux, reprise: silencieux ? null : pointDeReprise(k) };
+  await jouer(evts, ctx);
   if (!silencieux) S.reprise = null;
   if (ctx.stop) return;
+  if (e.parmi) {
+    S.morceaux[id] = [...morceauxFaits(id).filter(x => x !== morceau), morceau];
+    if (S.morceaux[id].length < e.parmi.length) return;
+    delete S.morceaux[id];
+  }
   S.annexes[id] = n + 1;
   if (annexeFinie(id) && !silencieux) logR('journal.log.annexeFinie', { titre: id + '.titre' });
 }

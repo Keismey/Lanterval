@@ -59,6 +59,11 @@ const EQUIPEMENT = {
   tempete: { place: 'arme', type: 'hache', prix: 880, st: { atk: 37, spd: -1 } },
   // l'épée d'Aldric, reforgée par Hilde : l'arme ultime de Kael
   aldric: { place: 'arme', type: 'epee', heros: 'kael', cadeau: true, st: { atk: 36, def: 4 } },
+  // Fil-de-vent, la dague du grand-père de Nev (« Le cerf-volant ») : l'arme ultime de Nev
+  fildevent: { place: 'arme', type: 'dague', heros: 'nev', cadeau: true, st: { atk: 33, spd: 6 } },
+  // lances du Dragonnier : celle d'Ilse (« L'œuf de wyverne »), puis celle de Joran
+  lanceilse: { place: 'arme', type: 'lance', cadeau: true, st: { atk: 34, spd: 2 } },
+  lance: { place: 'arme', type: 'lance', prix: 980, st: { atk: 31 } },
   // marteau et tablier de Hilde, lame courbe et cuir noir de Varen (invités, jamais dans le sac)
   courbe: { place: 'arme', type: 'sabre', cadeau: true, st: { atk: 30, spd: 3 } },
   cuirnoir: { place: 'armure', cadeau: true, st: { def: 20, hp: 25 } },
@@ -159,5 +164,12 @@ const IMPORTANTS = {
   fleurie: {},
   'serre-roc': {},
   lettres: {},
-  'plume-facteur': {}
+  'plume-facteur': {},
+  // quêtes annexes des Hauts-Vents : le cerf-volant de Nev et Varen, les quatre larmes de l'Œil
+  'cerf-volant-dechire': {},
+  'cerf-volant': {},
+  'larme-cristal': {},
+  'larme-ecume': {},
+  'larme-braise': {},
+  'larme-azur': {}
 };

@@ -14,10 +14,10 @@ function zoneOverlay(id) {
 function questBtns(id) {
   const o = [], e = etapeCourante();
   if (e && estIci(e.lieu)) o.push({ k: 'q:main', ic: 'star', label: esc(titreEtape(e)), sub: esc(t('zone.quete.principale')), cls: 'main wide' });
-  for (const a in ANNEXES) {
-    const x = annexeDispo(a); if (!x || !estIci(x.lieu)) continue;
-    const n = annexeEtat(a), cle = existe(`${a}.e${n}.bouton`) ? `${a}.e${n}.bouton` : `${a}.e${n}.titre`;
-    o.push({ k: 'a:' + a, ic: 'paw', label: esc(t(cle)), sub: esc(t('zone.quete.annexe') + (team().length < 2 ? ' · ' + t('zone.conseil.equipe') : '')), cls: 'side wide' });
+  for (const [a, x] of annexesDispos()) {
+    if (!estIci(x.lieu)) continue;
+    const c = cleEtape(a, x), cle = existe(c + '.bouton') ? c + '.bouton' : c + '.titre';
+    o.push({ k: 'a:' + a + (x.morceau !== undefined ? ':' + x.morceau : ''), ic: 'paw', label: esc(t(cle)), sub: esc(t('zone.quete.annexe') + (team().length < 2 ? ' · ' + t('zone.conseil.equipe') : '')), cls: 'side wide' });
   }
   return o;
 }
@@ -25,7 +25,7 @@ function questBtns(id) {
 function marqueTraversee(id) {
   const autreCote = l => l && lieuDe(l) === id && l.includes('.') && !estIci(l);
   const e = etapeCourante(); if (e && autreCote(e.lieu)) return 'main';
-  for (const a in ANNEXES) { const x = annexeDispo(a); if (x && autreCote(x.lieu)) return 'side'; }
+  for (const [, x] of annexesDispos()) if (autreCote(x.lieu)) return 'side';
   return '';
 }
 
@@ -64,7 +64,7 @@ function renderZone() {
       else if (k === 'rest') { const f = L.tresors.find(x => x.repos); z.rest = true; healAll(); restorePP(); S.msg = tx('zone.repos.fait', { lieu: t(`${id}.${f.id}.nom`) }); }
       else if (k === 'cross') { const autre = L.cotes.find(c => c !== cote); await traverse(id, cote, autre); S.loc = id + '.' + autre; }
       else if (k === 'q:main') await jouerEtape(etapeCourante());
-      else if (k.startsWith('a:')) await jouerAnnexe(k.slice(2));
+      else if (k.startsWith('a:')) { const [, a, m] = k.split(':'); await jouerAnnexe(a, false, m === undefined ? undefined : +m); }
     });
   });
 }
@@ -83,6 +83,20 @@ function recompense(x) {
   hud();
 }
 
+// récompenses à 50 % et 100 % d'exploration (silencieux : sans dialogue)
+async function paliers(id, silencieux) {
+  const z = S.z[id], L = LIEUX[id], pc = pct(id);
+  for (const [p, cle, palier] of [[50, 'm50', 'palier50'], [100, 'm100', 'palier100']]) {
+    if (pc >= p && !z[cle]) {
+      z[cle] = true; recompense(L[palier] || {});
+      if (silencieux) continue;
+      ovc().innerHTML = zoneOverlay(id);
+      await dialogue(`${id}.${cle}`, { titre: nomLieu(id) });
+      logR('journal.log.palier', { lieu: 'lieu.' + id + '.nom', p });
+    }
+  }
+}
+
 async function explore(id) {
   const z = S.z[id], L = LIEUX[id];
   S.st.explores++;
@@ -99,15 +113,7 @@ async function explore(id) {
     ovc().innerHTML = zoneOverlay(id);
     await show(`<span class="tag ${f.type === 'lieu' ? 'lieu' : ''}">${esc(t('zone.tag.' + f.type))}</span><b>${esc(t(`${id}.${f.id}.nom`))}</b><br>${tx(`${id}.${f.id}.texte`)}`, { title: nomLieu(id) });
     logR('journal.log.decouverte', { lieu: 'lieu.' + id + '.nom', nom: `${id}.${f.id}.nom`, p: pct(id) });
-    const pc = pct(id);
-    for (const [p, cle, palier] of [[50, 'm50', 'palier50'], [100, 'm100', 'palier100']]) {
-      if (pc >= p && !z[cle]) {
-        z[cle] = true; recompense(L[palier] || {});
-        ovc().innerHTML = zoneOverlay(id);
-        await dialogue(`${id}.${cle}`, { titre: nomLieu(id) });
-        logR('journal.log.palier', { lieu: 'lieu.' + id + '.nom', p });
-      }
-    }
+    await paliers(id);
   } else {
     z.rnd++; z.streak++;
     let tot = 0; for (const e of L.evenements) tot += e.poids;

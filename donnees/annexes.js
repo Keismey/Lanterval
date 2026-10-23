@@ -4,6 +4,9 @@
    etapes : comme celles de la quête principale (voir acte1.js). Une quête annexe ne bloque jamais l'histoire.
    Une étape attend sans « ! » tant que son lieu n'est pas ouvert, ou que sa condition si n'est pas remplie
    (« drapeau acte3 » : la suite se joue à l'acte 3 ; « drapeau acte4 » : elle attend l'acte 4).
+   saute : condition qui fait passer l'étape toute seule (« objet oeuf » : l'œuf est déjà dans le sac).
+   parmi : une étape en morceaux qui se jouent dans l'ordre qu'on veut (chacun son lieu, ses événements, ses textes
+   <quête>.e<n>.m<k>.titre et .bouton) ; l'étape est finie quand tous ses morceaux le sont (les larmes de l'Œil).
    Le donneur peut afficher sous son nom ce qu'il attend : texte <quête>.e<n>.sous (ce que cherche Fennel). */
 
 const ANNEXES = {
@@ -464,6 +467,129 @@ const ANNEXES = {
         ['dialogue', 'courrier.e5.scene'],
         ['gagne', '300 or'],
         ['dialogue', 'courrier.e5.fin']
+      ] }
+    ]
+  },
+
+  // 12. L'œuf de wyverne (Ilse, classe Dragonnier). L'œuf chaud se trouve en explorant le Volcan endormi (dès l'acte 3).
+  // S'il manque, l'étape du nid brûlant le fait trouver ; elle se saute toute seule quand l'œuf est déjà dans le sac (saute).
+  wyverne: {
+    donneur: 'ilse', ouvre: 'fini a4.e2',
+    offre: [
+      ['choix', 'wyverne.offre', { oui: [['message', 'wyverne.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'volcan.c', saute: 'objet oeuf', evenements: [
+        ['dialogue', 'wyverne.e1.nid'],
+        ['combat', 'lezard lezard lezard'],
+        ['gagne', 'oeuf'],
+        ['trouve', 'volcan v6'],
+        ['dialogue', 'wyverne.e1.fin'],
+        ['message', 'wyverne.e1.message']
+      ] },
+      { lieu: 'pic.b', evenements: [
+        ['dialogue', 'wyverne.e2.nid'],
+        ['combat', 'wyverne', { boss: true, conseil: 'wyverne.e2.conseil' }],
+        ['perd', 'oeuf'],
+        ['panorama', 'pano.wyverne'],
+        ['dialogue', 'wyverne.e2.eclosion'],
+        ['decor'],
+        ['message', 'wyverne.e2.message']
+      ] },
+      { lieu: 'ilse', evenements: [
+        ['dialogue', 'wyverne.e3.scene'],
+        ['classes', 'dragonnier'],
+        ['gagne', 'lanceilse'],
+        ['dialogue', 'wyverne.e3.fin']
+      ] }
+    ]
+  },
+
+  // 13. Le cerf-volant (Liss ; Nev et Varen). S'ouvre après le feu de camp, quand Varen se bat avec l'équipe.
+  // Le combat des Ruines se joue à deux, Nev et Varen seuls. Récompense : Fil-de-vent, la dague ultime de Nev.
+  // Finie (« annexe cerfvolant 5 »), Varen reste à Aerie avec Liss dans l'épilogue (0.5.3).
+  cerfvolant: {
+    donneur: 'liss', ouvre: 'fini a4.e7',
+    offre: [
+      ['choix', 'cerfvolant.offre', { oui: [['message', 'cerfvolant.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'liss', evenements: [
+        ['dialogue', 'cerfvolant.e1.grenier'],
+        ['gagne', 'cerf-volant-dechire'],
+        ['dialogue', 'cerfvolant.e1.rire'],
+        ['message', 'cerfvolant.e1.message']
+      ] },
+      { lieu: 'ruines.p', evenements: [
+        ['dialogue', 'cerfvolant.e2.banniere'],
+        ['combat', 'spectre prieur spectre', { boss: true, equipe: 'nev', invitee: 'varen', conseil: 'cerfvolant.e2.conseil' }],
+        ['perd', 'cerf-volant-dechire'],
+        ['gagne', 'cerf-volant'],
+        ['dialogue', 'cerfvolant.e2.fin'],
+        ['message', 'cerfvolant.e2.message']
+      ] },
+      { lieu: 'pic.s', evenements: [
+        ['dialogue', 'cerfvolant.e3.vent'],
+        ['panorama', 'pano.cerfvolant'],
+        ['dialogue', 'cerfvolant.e3.ficelle'],
+        ['decor'],
+        ['message', 'cerfvolant.e3.message']
+      ] },
+      { lieu: 'liss', evenements: [
+        ['dialogue', 'cerfvolant.e4.pardon'],
+        ['gagne', 'fildevent'],
+        ['dialogue', 'cerfvolant.e4.fin']
+      ] }
+    ]
+  },
+
+  // 15. Les larmes de l'Œil (Tavor ; classe ultime Gardien des souvenirs). Les quatre larmes se cherchent dans l'ordre
+  // qu'on veut (étape parmi) ; chacune a son gardien et montre le souvenir d'un héros.
+  // Orvan, monté à Aerie pour le feu de camp, remet la classe (après a4.e7, même si les larmes sont réunies avant).
+  larmes: {
+    donneur: 'tavor', ouvre: 'fini a4.e4',
+    offre: [
+      ['choix', 'larmes.offre', { oui: [['message', 'larmes.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { parmi: [
+        { lieu: 'grotte.f', evenements: [
+          ['dialogue', 'larmes.e1.m1.lueur'],
+          ['combat', 'larmet', { boss: true, conseil: 'larmes.e1.m1.conseil' }],
+          ['gagne', 'larme-cristal'],
+          ['dialogue', 'larmes.e1.m1.souvenir'],
+          ['message', 'larmes.e1.m1.message']
+        ] },
+        { lieu: 'epave.c', evenements: [
+          ['dialogue', 'larmes.e1.m2.lueur'],
+          ['combat', 'larmee', { boss: true, conseil: 'larmes.e1.m2.conseil' }],
+          ['gagne', 'larme-ecume'],
+          ['dialogue', 'larmes.e1.m2.souvenir'],
+          ['message', 'larmes.e1.m2.message']
+        ] },
+        { lieu: 'mines.g', evenements: [
+          ['dialogue', 'larmes.e1.m3.lueur'],
+          ['combat', 'larmef', { boss: true, conseil: 'larmes.e1.m3.conseil' }],
+          ['gagne', 'larme-braise'],
+          ['dialogue', 'larmes.e1.m3.souvenir'],
+          ['message', 'larmes.e1.m3.message']
+        ] },
+        { lieu: 'ruines.s', evenements: [
+          ['dialogue', 'larmes.e1.m4.lueur'],
+          ['combat', 'larmev', { boss: true, conseil: 'larmes.e1.m4.conseil' }],
+          ['gagne', 'larme-azur'],
+          ['dialogue', 'larmes.e1.m4.souvenir'],
+          ['message', 'larmes.e1.m4.message']
+        ] }
+      ] },
+      { lieu: 'orvan', si: 'fini a4.e7', evenements: [
+        ['perd', 'larme-cristal, larme-ecume, larme-braise, larme-azur'],
+        ['panorama', 'pano.larmes'],
+        ['dialogue', 'larmes.e2.feu'],
+        ['dialogue', 'larmes.e2.gardien'],
+        ['decor'],
+        ['classes', 'souvenirs'],
+        ['dialogue', 'larmes.e2.fin']
       ] }
     ]
   }

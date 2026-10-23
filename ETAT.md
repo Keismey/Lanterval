@@ -1,5 +1,17 @@
 # État du projet
 
+## Version 0.5.2 (2026-10-23)
+
+- Quêtes annexes des Hauts-Vents (bible, quêtes 12, 13 et 15 ; plan validé par Keismey) :
+  - « L'œuf de wyverne » (`wyverne`, Ilse, dès a4.e2) : l'œuf chaud se trouve en explorant le Volcan endormi ; s'il manque, l'étape du nid brûlant (lézards de lave) le fait trouver et compte la découverte `volcan v6` (événement `trouve`). Boss au pied du Pic hurlant : la Wyverne mère (souffle de brume chargé, double coup tant que sa garde tient). Récompense : classe cachée *Dragonnier* et Lance d'Ilse ; Joran vend ensuite la Lance des falaises. Panorama `pano.wyverne`.
+  - « Le cerf-volant » (`cerfvolant`, Liss, nouvelle PNJ d'Aerie, après a4.e7) : grenier, bannière du parvis des Ruines (Nev et Varen seuls contre le Prieur spectral, qui appelle des moines), vol au sommet du Pic, pardon de Liss. Récompense : *Fil-de-vent*, la dague ultime de Nev (réservée à Nev). Le Moine et le Berserker portent désormais aussi la dague. Finie (`annexe cerfvolant 5`), elle servira à l'épilogue (Varen reste avec Liss). Panorama `pano.cerfvolant`.
+  - « Les larmes de l'Œil » (`larmes`, Tavor, après a4.e4) : quatre larmes dans l'ordre qu'on veut (Grotte, Épave, Mines, sanctuaire des Ruines), chacune avec son gardien et le souvenir d'un héros ; Orvan, resté à Aerie après le feu de camp, remet la classe ultime *Gardien des souvenirs*. Panorama `pano.larmes`.
+- Moteur : étape « en désordre » (`parmi` dans annexes.js, morceaux dans `S.morceaux`, repères `<quête>.e<n>.m<k>`) ; étape `saute` (passée toute seule quand sa condition est vraie) ; condition `objet <id>` ; sous-titre de PNJ par village (`sous` dans monde.js).
+- Techniques : Saut (le héros quitte le combat jusqu'à son tour suivant, personne ne le touche, puis il retombe sur sa cible, même en l'air), Souffle (Vent sur tous), Rappel (un allié refait sa dernière action sans payer de PP), Sceau de mémoire (un tiers de dégâts en moins pendant les 4 prochaines actions des monstres).
+- Codex, onglet Personnages : Liss, et nouvelles infos pour Orvan, Varen, Nev, Tavor et Ilse.
+- Images provisoires : Wyverne mère, quatre gardiens de larme, Prieur spectral (pixel art), portrait de Liss, trois panoramas en cadre nommé.
+- Équilibrage au bot (graines 1 à 5 ; le bot joue ces quêtes avant le Pic, à quatre héros, niveaux 31 à 38) : gardiens de larme entre 18 et 63 % de PV au plus bas, Wyverne mère entre 0 et 67 %, Prieur spectral (Nev et Varen) entre 32 et 65 %.
+
 ## Version 0.5.1 (2026-10-23)
 
 - Demande de Keismey : les traversées allaient trop vite. `traverse` (moteur/carte.js) avance en 4 étapes de 1,4 s ; le panneau garde la liste de ce qui s'est passé à chaque étape (combat gagné et contre qui, or ramassé, rien à signaler) ; avant chaque combat, les monstres sont annoncés avec un bouton « Combattre » ; à l'arrivée, un bilan affiché d'un coup (option `instant` de `show`, demande de Keismey) et validé d'un appui.
@@ -120,6 +132,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.5.2)
+## Prochaine étape (0.5.3)
 
-0.5.2 : quêtes annexes 12 (l'œuf de wyverne), 13 (le cerf-volant : dague ultime de Nev, réservée à Nev, en ajoutant la dague aux armes du Moine et du Berserker) et 15 (les larmes de l'Œil). Puis 0.5.3 : l'Escalier de brume, l'assaut final et l'épilogue, qui lira `annexe aldric 4` (Aldric survit) et `annexe moule 4` (réconciliation de Mira et Hilde).
+0.5.3 : l'Escalier de brume, l'assaut final et l'épilogue, qui lira `annexe aldric 4` (Aldric survit), `annexe moule 4` (réconciliation de Mira et Hilde) et `annexe cerfvolant 5` (Varen reste à Aerie avec Liss). Le Sceau de mémoire pourra bloquer un « Oubli » d'Ysold si on lui en donne un.
