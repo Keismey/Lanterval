@@ -157,10 +157,10 @@ const IMAGES = {
   'monstre.varen2': { fichier: 'img/monstres/varen.webp', provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre (même image que monstre.varen)' },
   'monstre.sansnom2': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse (même image que monstre.sansnom)' },
   'monstre.salreine': { fichier: 'img/monstres/salreine.webp', provisoire: 'salreine', sujet: 'Salamandre reine, énorme salamandre couronnée de flammes' },
-  'monstre.statue': { provisoire: 'statue', sujet: 'Golem de pierre du Col, menhir vivant aux yeux bleus' },
-  'monstre.tellure': { provisoire: 'tellure', sujet: 'Élémentaire de terre, colosse de roche rouge veiné de cristaux qui chantent' },
-  'monstre.gardien': { provisoire: 'gardien', sujet: 'Gardien de cage, grande statue de fer noir dont le torse est une cage, bras comme des marteaux' },
-  'monstre.brume': { provisoire: 'brume', sujet: 'Ombre de brume, silhouette de fumée grise et bleue, longs bras, yeux pâles' },
+  'monstre.statue': { fichier: 'img/monstres/statue.webp', provisoire: 'statue', sujet: 'Golem de pierre du Col, menhir vivant aux yeux bleus' },
+  'monstre.tellure': { fichier: 'img/monstres/tellure.webp', provisoire: 'tellure', sujet: 'Élémentaire de terre, colosse de roche rouge veiné de cristaux qui chantent' },
+  'monstre.gardien': { fichier: 'img/monstres/gardien.webp', provisoire: 'gardien', sujet: 'Gardien de cage, grande statue de fer noir dont le torse est une cage, bras comme des marteaux' },
+  'monstre.brume': { fichier: 'img/monstres/brume.webp', provisoire: 'brume', sujet: 'Ombre de brume, silhouette de fumée grise et bleue, longs bras, yeux pâles' },
 
   // ---------- Monstres de l'acte 4 ----------
   'monstre.rapace': { provisoire: 'rapace', sujet: 'Rapace voleur, grand oiseau brun aux serres jaunes, qui vole les sacoches' },
