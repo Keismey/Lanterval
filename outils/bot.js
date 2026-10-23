@@ -55,7 +55,7 @@ function cerveau(graine) {
     const faibleA = el => E.filter(e => e.weak.includes(el) && !e.broken).sort((a, b) => a.shield - b.shield || a.hp - b.hp)[0];
     const cibleX = faibleA(he), cibleL = faibleA(elArme(h)), cassé = E.find(e => e.broken), faible = [...E].sort((a, b) => a.hp - b.hp)[0];
     if (E.length >= 3 && tech('deluge')) return { type: 'skill', sk: 'deluge' };
-    for (const sk of ['sort', 'frappe', 'sacree', 'rafale', 'abordage']) if (tech(sk) && (cibleX || cassé)) return { type: 'skill', sk, t: cassé || cibleX };
+    for (const sk of ['sort', 'frappe', 'sacree', 'rafale', 'abordage', 'marteau']) if (tech(sk) && (cibleX || cassé)) return { type: 'skill', sk, t: cassé || cibleX };
     if (cibleL) return { type: 'skill', sk: 'attaque', t: cibleL };
     if (tech('sort')) return { type: 'skill', sk: 'sort', t: cassé || faible };
     return { type: 'skill', sk: 'attaque', t: cassé || faible };

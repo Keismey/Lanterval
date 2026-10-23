@@ -6,15 +6,15 @@
    le visage de heros.<id> ou pnj.<id> dans donnees/images.js.
    Une info nouvelle met une pastille sur l'icône du Codex, l'onglet et le personnage, jusqu'à ce qu'on déplie sa fiche. */
 const PERSONNAGES = {
-  kael: [true, 'fini a1.e7', 'fini a1.e9', 'fini a1.e10', 'fini a2.e8', 'fini a3.e9', 'fini a3.e10'],
-  mira: ['fini a1.e2', 'fini a1.e3', 'fini a2.e8', 'fini a3.e4', 'fini a3.e10'],
+  kael: [true, 'fini a1.e7', 'fini a1.e9', 'fini a1.e10', 'fini a2.e8', 'fini a3.e9', 'fini a3.e10', 'annexe aldric 4'],
+  mira: ['fini a1.e2', 'fini a1.e3', 'fini a2.e8', 'fini a3.e4', 'fini a3.e10', 'annexe moule 4'],
   sol: ['fini a1.e4', 'fini a2.e2', 'fini a2.e4', 'fini a2.e8', 'annexe berceuse 4'],
   orvan: [true, 'fini a1.e3', 'fini a1.e7', 'fini a2.e8'],
-  brann: [true, 'fini a1.e9', 'fini a1.e10', 'fini a2.e8'],
-  hilde: [true, 'fini a1.e3', 'fini a2.e8', 'fini a3.e2', 'fini a3.e4', 'fini a3.e10'],
+  brann: [true, 'fini a1.e9', 'fini a1.e10', 'fini a2.e8', 'annexe aldric 2'],
+  hilde: [true, 'fini a1.e3', 'fini a2.e8', 'fini a3.e2', 'fini a3.e4', 'fini a3.e10', 'annexe moule 2'],
   silhouette: ['fini a1.e2', 'fini a1.e6'],
   varen: ['fini a1.e9', 'fini a2.e7', 'fini a3.e1', 'fini a3.e8'],
-  sansnom: ['fini a1.e9', 'fini a3.e9'],
+  sansnom: ['fini a1.e9', 'fini a3.e9', 'annexe aldric 4'],
   maelle: ['fini a2.e2', 'fini a2.e5'],
   naia: ['fini a2.e5', 'fini a2.e8', 'annexe berceuse 2', 'annexe berceuse 4'],
   erwan: ['fini a2.e7'],

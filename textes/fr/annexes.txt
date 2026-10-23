@@ -663,6 +663,181 @@ Dorn : « Prends mon vieux bâton. Il a sondé plus de roche que toutes les pioc
 == pierre.apres
 Dorn : « Tous les matins, je descends écouter la veine. Elle chante mieux depuis que les marteaux de l'Ordre se sont tus. »
 
+# ---------- 9. Le premier moule (Hilde ; Mira et Hilde) ----------
+
+== moule.titre
+Le premier moule
+
+== moule.offre
+Hilde : « Le Forgeur est tombé, mais il reste une chose au fond des mines : le moule de la toute première cage. Celui que j'ai fait de mes mains. »
+Hilde : « Avant de fuir, je l'ai enfermé derrière une porte que moi seule sais ouvrir. Tant qu'il existe, l'Ordre peut couler d'autres cages. »
+Hilde : « Je veux le détruire avec toi, Mira. Et cette fois, je me bats à vos côtés. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== moule.message
+Quête annexe : trouver la *salle scellée* au fond des *Mines rouges*. Hilde vient avec vous.
+
+== moule.e1.titre
+Ouvrir la salle scellée des Mines rouges
+
+== moule.e1.bouton
+Salle scellée
+
+== moule.e1.porte
+## Le premier moule
+Au bout de la grande galerie se dresse une porte de fer noir, sans poignée ni serrure. Des coups de masse l'ont cabossée, mais elle a tenu.
+Hilde : « L'Ordre a frappé à cette porte pendant dix-huit ans. Elle n'écoute que moi. »
+Hilde appuie trois fois au même endroit, comme on frappe chez un ami. La porte s'ouvre dans un long soupir.
+
+== moule.e1.salle
+## La salle scellée
+Au milieu de la salle, sur une enclume, repose un moule de bronze en forme de cage. Deux grandes statues de fer l'entourent.
+Mira : « Maman… Elles bougent. »
+Hilde : « Ce sont mes premiers gardiens. Je les ai forgés pour protéger le moule. Ils ne reconnaissent plus personne, même pas moi. »
+
+== moule.e1.conseil
+Hilde se bat avec vous : tu choisis ses actions comme pour les autres. Les Gardiens de cage sont faibles à l'*Eau* et au *Vent*, et résistent au Feu et à la Terre. Brise leur garde pour annuler les grands coups qu'ils préparent.
+
+== moule.e1.fin
+## La salle scellée
+Les gardiens s'effondrent dans un fracas de ferraille. Hilde soulève le moule à deux mains : il est bien plus lourd qu'il n'en a l'air.
+Hilde : « Ce bronze ne fond pas dans une forge ordinaire. Il faut un feu plus vieux que nous. »
+Mira : « Le volcan. On le jette dans le cratère. »
+
+== moule.e1.message
+Quête annexe : jeter le *premier moule* dans le cratère du *Volcan endormi*. Hilde vient avec vous.
+
+== moule.e2.titre
+Jeter le moule dans le cratère du Volcan endormi
+
+== moule.e2.bouton
+Jeter le moule
+
+== moule.e2.bord
+## Le premier moule
+Au bord du cratère, la lave bouillonne encore là où reposait le cristal de braise. Hilde tend le moule à sa fille.
+Mira : « Tu ne veux pas le faire toi-même ? »
+Hilde : « Tu l'as porté plus longtemps que moi, sans le savoir. À toi de t'en débarrasser. »
+Mira jette le moule de toutes ses forces. La lave l'avale, puis gronde : des esprits de braise jaillissent du cratère. [Combattre]
+
+== moule.e2.fin
+## Le cratère
+Le moule a disparu. À sa place, une coulée de métal rouge remonte à la surface, plus brillante que le fer.
+Hilde : « Du métal nourri par la braise du cristal… Je n'en avais vu que dans les livres de mon père. »
+Hilde le recueille dans un creuset. Mira tient les pinces sans qu'on le lui demande.
+
+== moule.e2.message
+Quête annexe : rapporte le *métal ardent* à la forge de *Hilde*, à Forgecendre.
+
+== moule.e3.titre
+Forger avec Hilde à Forgecendre
+
+== moule.e3.forge
+## La forge
+Toute la nuit, la forge chante. Hilde tient la pince, Mira frappe. Elles parlent peu, mais elles rient deux fois.
+Hilde : « Plus doucement… Voilà. Tu as la main de ton grand-père. »
+Mira : « Tu ne m'avais jamais parlé de lui. »
+Hilde : « J'avais peur que tu demandes pourquoi on était parties. Maintenant, tu le sais. »
+
+== moule.e3.arme
+## La forge
+Au matin, un bâton de métal rouge refroidit sur l'enclume. À son sommet, une petite flamme brille sans rien brûler.
+Mira : « Celui-là, personne ne l'enfermera dans une cage. »
+Hilde serre sa fille contre elle. Pour une fois, Mira ne se dégage pas.
+
+== moule.e3.fin
+## Quête annexe terminée
+Hilde : « Le premier moule est fondu. Ce que j'avais forgé de pire est devenu ce que j'ai forgé de mieux. »
+? Tu reçois le *Cœur de forge*, le bâton le plus puissant pour Mira (Magie +29, PP +10).
+
+# ---------- 10. Le carnet d'Aldric (Hilde ; Kael et Aldric) ----------
+
+== aldric.titre
+Le carnet d'Aldric
+
+== aldric.offre
+Hilde : « Kael, attends. En reforgeant l'épée, j'ai trouvé ça, roulé dans la garde. Une page arrachée à un carnet. »
+Hilde : « C'est l'écriture d'Aldric. Je crois que c'est à toi de la lire. »
+> oui : Lire la page | Quête annexe
+> non : Plus tard
+
+== aldric.page
+## La page dans l'épée
+« Si quelqu'un trouve ces mots, dites à Kael que je ne suis pas parti par lâcheté. Brann sait le reste. »
+Kael relit la page trois fois. Puis il la plie avec soin et la range contre l'épée.
+Nev : « Brann ? Le garde de ton village ? Alors on sait où aller. »
+
+== aldric.message
+Quête annexe : la page d'Aldric dit que *Brann*, à Lanterval, sait le reste.
+
+== aldric.e1.titre
+Montrer la page d'Aldric à Brann
+
+== aldric.e1.coffre
+## Le carnet d'Aldric
+Brann lit la page sans un mot. Puis il ouvre le vieux coffre qui sert de banc devant le poste de garde.
+Brann : « Il me l'a confiée la veille de partir. Je devais te la donner quand tu serais prêt. Je crois que tu l'es. »
+
+== aldric.e1.page
+## La deuxième page
+« L'Ordre rôde au Col des Pierres. Ils cherchent le cristal d'ambre, et après lui, notre lanterne. »
+« J'ai caché ce que je sais là où la lumière dort, au fond de la Grotte de Cristal. Si je ne reviens pas, Brann, veille sur le petit. »
+Brann : « J'ai veillé sur toi du mieux que j'ai pu. Mais c'est toi qui veilles sur nous, maintenant. »
+
+== aldric.e1.message
+Quête annexe : Aldric a caché une page au fond de la *Grotte de Cristal*.
+
+== aldric.e2.titre
+Chercher la page d'Aldric au fond de la Grotte de Cristal
+
+== aldric.e2.bouton
+La page dans le cristal
+
+== aldric.e2.cristal
+## Le carnet d'Aldric
+Au fond de la grotte, un cristal éteint retient un morceau de papier, pris dans la pierre comme une feuille dans la glace.
+Sol : « Le cristal a poussé autour. Il a dû la glisser dans une fente, il y a dix ans. »
+Mais la brume s'est épaissie. Trois ombres se détachent des parois, plus grandes que celles d'autrefois. [Combattre]
+
+== aldric.e2.page
+## La troisième page
+Kael pose la main sur le cristal. Il se fend sans bruit et rend la page.
+« L'Ordre a un nom pour ceux qui ont tout oublié : les sans-nom. S'ils me prennent, je finirai sous un masque. »
+« Kael, si tu me croises un jour, ne me laisse pas oublier ta voix. »
+« Je vais les attendre au sommet du col. Si je ne redescends pas, cherchez sous la pierre plate. »
+
+== aldric.e2.message
+Quête annexe : la dernière page est sous la pierre plate, au sommet du *Col des Pierres*.
+
+== aldric.e3.titre
+Trouver la dernière page au sommet du Col des Pierres
+
+== aldric.e3.bouton
+La pierre d'Aldric
+
+== aldric.e3.pierre
+## Le carnet d'Aldric
+Au sommet du col, près du socle vide, une grande pierre plate. Deux sentinelles de l'Ordre et un automate creusent tout autour.
+Nev : « Elles cherchent la même chose que nous. Ysold veut savoir ce qu'Aldric a écrit. »
+Kael : « Ce carnet est à mon père. Personne d'autre ne le lira. »
+
+== aldric.e3.page
+## La dernière page
+Sous la pierre plate, une boîte de fer. Dedans, la dernière page et un bouclier rond, marqué de la lanterne des gardes de Lanterval.
+« Je ne suis pas parti. Je les suis. Tant que je marche derrière eux, ils n'iront pas jusqu'à Lanterval. »
+
+== aldric.e3.carnet
+## Le carnet d'Aldric
+Kael rassemble les quatre pages. Elles tiennent ensemble, comme si elles ne s'étaient jamais quittées.
+Kael : « Il ne nous a pas abandonnés. Il nous protégeait. Depuis dix ans. »
+Mira lui pose la main sur l'épaule. Personne ne parle pendant un long moment.
+
+== aldric.e3.fin
+## Quête annexe terminée
+Kael : « Je lui lirai ces mots. Même s'il ne se souvient de rien, il entendra ma voix. »
+? Tu reçois le *Bouclier d'Aldric* (accessoire : Défense +8, PV +25). Le *Carnet d'Aldric* est rangé dans tes objets importants.
+
 # ---------- 11. Les mineurs disparus (Tobi) ----------
 
 == mineurs.titre

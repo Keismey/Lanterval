@@ -22,6 +22,9 @@ Au cratère du Volcan endormi, il a brisé le masque du Sans-Nom. Dessous, il a 
 == perso.kael.7
 Hilde a reforgé l'épée de son père et gravé une lanterne sur la garde. Kael la porte pour qu'Aldric la reconnaisse un jour.
 
+== perso.kael.8
+Il a réuni les quatre pages du carnet de son père. Aldric n'était pas parti par lâcheté : il suivait l'Ordre pour l'empêcher d'atteindre Lanterval.
+
 == perso.mira.1
 Fille de Hilde la forgeronne, 18 ans, élément Feu. Elle suivait seule la brume dans la forêt quand Kael l'a tirée d'un cercle de loups.
 
@@ -36,6 +39,9 @@ Dans les Mines rouges, elle a appris que sa mère avait forgé la première cage
 
 == perso.mira.5
 Elle a aidé sa mère à reforger l'épée d'Aldric, toute une nuit, sans un mot. Entre elles, quelque chose commence à se réparer.
+
+== perso.mira.6
+Avec sa mère, elle a jeté le moule de la première cage dans le volcan. Elles ont forgé ensemble le Cœur de forge, et elles ont ri.
 
 == perso.sol.1
 Ermite du lac souterrain, 20 ans, élément Eau. Calme et peu bavard, il gardait le lac depuis le réveil du Gardien de cristal.
@@ -76,6 +82,9 @@ Le père de Kael lui avait confié son épée la nuit où il est parti dans la b
 == perso.brann.4
 Ses éclaireurs ont suivi le cristal d'ambre jusqu'aux forges de Cendre, à l'est.
 
+== perso.brann.5
+Aldric lui avait confié une page de son carnet, à donner à Kael le jour où il serait prêt. Il l'a gardée dix ans dans un coffre.
+
 == perso.hilde.1
 La mère de Mira. Elle tient la forge de Lanterval et vend armes et armures.
 
@@ -93,6 +102,9 @@ Elle a forgé la toute première cage de l'Ordre en croyant protéger les crista
 
 == perso.hilde.6
 Elle a connu Aldric, le père de Kael. Sa charrette conduit désormais l'équipe de village en village.
+
+== perso.hilde.7
+Avant de fuir, elle avait enfermé le moule de la première cage derrière une porte que l'Ordre n'a jamais pu ouvrir. Elle s'est battue aux côtés de l'équipe pour le reprendre.
 
 == perso.silhouette.1
 Une silhouette encapuchonnée qui rôdait dans la forêt quand les loups ont encerclé Mira.
@@ -117,6 +129,9 @@ Un colosse au masque d'acier marqué d'un œil fermé, qui obéit à Varen. Au c
 
 == perso.sansnom.2
 Sous le masque brisé : Aldric, le père de Kael, parti dans la brume il y a des années. L'Ordre lui a pris sa mémoire et son nom. Il a emporté le cristal de braise vers le nord.
+
+== perso.sansnom.3
+Son carnet le dit : il suivait l'Ordre pour protéger Lanterval, et il savait qu'il finirait peut-être sous un masque. Il a demandé à Kael de ne pas le laisser oublier sa voix.
 
 == perso.maelle.1
 La vieille aubergiste de Salvent, trop âgée, dit-elle, pour que la brume trouve la place de s'installer. Elle a reconnu Sol, l'enfant du naufrage.

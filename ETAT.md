@@ -1,5 +1,17 @@
 # État du projet
 
+## Version 0.4.1 (2026-10-23)
+
+- Quêtes annexes 9 et 10 de la bible, données par Hilde à Forgecendre après l'épée reforgée (`ouvre: 'fini a3.e10'`), choix validés par Keismey :
+  - « Le premier moule » (`moule`) : salle scellée des Mines rouges (boss : deux Gardiens de cage), moule jeté dans le cratère du Volcan endormi, forge avec Hilde. Récompense : *Cœur de forge*, bâton ultime de Mira (Magie +29, PP +10). Panorama `pano.forge`.
+  - « Le carnet d'Aldric » (`aldric`) : page dans la garde de l'épée, page chez Brann, page au fond de la Grotte de Cristal (Ombres de brume), dernière page au sommet du Col (sentinelles et automate de l'Ordre). Récompense : *Bouclier d'Aldric* (accessoire, Défense +8, PV +25) et le *Carnet d'Aldric*. Toute la quête se joue dès l'acte 3 ; finie (`annexe aldric 4`), elle fait survivre Aldric dans l'épilogue (acte 4). Panorama `pano.carnet`.
+- Invitée en combat : option `invitee: 'hilde'` d'un combat de quête. Hilde (`HEROS.hilde`, `invite: true`, classe Forgeronne : Coup de marteau qui ronge la garde, Trempe qui divise les dégâts par deux) se bat au niveau de Kael, se commande comme un héros, ne gagne pas d'expérience et n'apparaît ni dans le menu Équipe ni dans le Codex. Cinq cartes en combat (`.pcards.n5`).
+- Un personnage qui a deux quêtes à offrir (Hilde) propose l'autre quand on vient d'en refuser une (`offresRefusees` dans moteur/village.js).
+- Codex, onglet Personnages : nouvelles infos pour Kael, Mira, Brann, Hilde et le Sans-Nom.
+- Correction : le casque trouvé dans la galerie porte le nom d'Ulric (et non Bram), le père de Tobi.
+- Images provisoires : Gardien de cage et Ombre de brume (pixel art) ; panoramas en cadre nommé.
+- Équilibrage au bot (graines 1 à 3) : les Gardiens de cage descendent l'équipe (niveau 26, avec Hilde) entre 19 et 39 % de PV.
+
 ## Version 0.4.0 (2026-10-23)
 
 - Acte 3 « Les forges de Cendre » (donnees/acte3.js, étapes a3.e1 à a3.e10, plan validé par Keismey) : carte `cendre` avec les Champs brûlés (zone à deux côtés vallée/Cendre), Forgecendre (état `libre` après a3.e5), les Mines rouges, le Volcan endormi ; le Pont des Nuées est visible en « bientôt ».
@@ -84,6 +96,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.4.1, puis 0.5)
+## Prochaine étape (0.5)
 
-0.4.1 : les quêtes annexes 9 et 10 de la bible (Plaines de Cendre, dont « Le carnet d'Aldric »), proposées dans le plan de l'acte 3 et validées pour une version à part. Puis 0.5 : acte 4 (Hauts-Vents, Aerie, Pont des Nuées) ; il posera le drapeau `acte4` attendu par la dernière étape de la graine, du carnet et du colporteur. Les larmes de l'Œil attendent l'acte 4.
+0.5 : acte 4 (Hauts-Vents, Aerie, Pont des Nuées) ; il posera le drapeau `acte4` attendu par la dernière étape de la graine, du carnet du chasseur et du colporteur. Les larmes de l'Œil attendent l'acte 4. L'épilogue lira `annexe aldric 4` (Aldric survit) et `annexe moule 4` (réconciliation de Mira et Hilde). Armes ultimes à venir (validées par Keismey, 2026-10-23) : épée d'Aldric pour Kael (tank), dague pour Nev (quête du cerf-volant), en ajoutant la dague aux armes du Moine et du Berserker.

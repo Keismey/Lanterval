@@ -7,7 +7,7 @@ const aliveE = () => B.enemies.filter(e => e.hp > 0), aliveH = () => B.team.filt
 const spd = u => u.isEnemy ? u.spd : B.st[u.id].spd;
 const hs = h => B.st[h.id];
 const nomH = h => t('parle.' + h.id);
-const vignette = u => u.isEnemy ? imgSrc('monstre.' + u.id) : ((IMAGES['heros.' + u.id] || {}).portrait || imgSrc('heros.' + u.id));
+const vignette = u => { if (u.isEnemy) return imgSrc('monstre.' + u.id); const f = ficheDe(u.id) || {}; return f.portrait || f.fichier || SPRURL[f.provisoire] || ''; };
 const nomsEnnemis = () => B.enemies.map(e => e.name).join(', ');
 
 // ordre des prochains tours (frise en haut de l'écran)
@@ -31,7 +31,7 @@ function bOverlay() {
   const tl = predict(9); let prevH = false;
   const chips = tl.map((p, i) => {
     const ch = !p.u.isEnemy && prevH && i > 0; prevH = !p.u.isEnemy && !p.rec;
-    return `<span class="chipw ${ch ? 'ch' : ''}" title="${esc(p.u.isEnemy ? p.u.name : nomH(p.u))}"><span class="chip ${p.u.isEnemy ? 'e' : 'h'} ${!p.u.isEnemy && (IMAGES['heros.' + p.u.id] || {}).portrait ? 'face' : ''} ${i === 0 ? 'now' : ''}"><img alt="" src="${vignette(p.u)}"></span>${p.rec ? '<i class="rec">KO</i>' : p.chg ? '<i class="chg">!</i>' : ''}</span>`;
+    return `<span class="chipw ${ch ? 'ch' : ''}" title="${esc(p.u.isEnemy ? p.u.name : nomH(p.u))}"><span class="chip ${p.u.isEnemy ? 'e' : 'h'} ${!p.u.isEnemy && (ficheDe(p.u.id) || {}).portrait ? 'face' : ''} ${i === 0 ? 'now' : ''}"><img alt="" src="${vignette(p.u)}"></span>${p.rec ? '<i class="rec">KO</i>' : p.chg ? '<i class="chg">!</i>' : ''}</span>`;
   }).join('');
   const m = chaine();
   const ei = B.enemies.map((e, i) => e.hp <= 0 ? '' : `<div class="einfo glass ${B.targeting ? 'tg' : ''}" data-ei="${i}" style="left:${e.px * 100}%;top:${(e.py * 100 + 1.5).toFixed(1)}%">
@@ -49,7 +49,7 @@ function bCards() {
    <div class="bar ${h.hp / s.hp < .3 ? 'low' : ''}"><i style="width:${h.hp / s.hp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.hp'))}</span><b>${h.hp}/${s.hp}</b></div>
    <div class="bar pp"><i style="width:${h.pp / s.pp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.pp'))}</span><b>${h.pp}/${s.pp}</b></div></div>`;
   }).join('') + (B.team.length < 3 ? Array(3 - B.team.length).fill(`<div class="pcard empty">${esc(t('combat.vide'))}</div>`).join('') : '');
-  el.classList.toggle('n4', B.team.length > 3);
+  el.classList.toggle('n4', B.team.length === 4); el.classList.toggle('n5', B.team.length > 4);
   hud();
 }
 function bMsg(texte) { const m = $('#bmsg'); if (m) m.innerHTML = texte; }
@@ -80,13 +80,15 @@ function pickItem() {
 document.addEventListener('click', e => { const x = e.target.closest('#ov [data-ei]'); if (x && B && B.pick) B.pick(+x.dataset.ei); });
 
 /* ---------- Déroulé d'un combat ---------- */
-// o : { zone, canFlee, quest, boss, equipe, perdu }. Renvoie 'win', 'fled' ou 'perdu' (combat perdu d'avance) ;
-// lance DEFAITE si l'équipe tombe dans un combat normal. equipe : ids des seuls héros qui se battent.
+// o : { zone, canFlee, quest, boss, equipe, perdu, invitee }. Renvoie 'win', 'fled' ou 'perdu' (combat perdu d'avance) ;
+// lance DEFAITE si l'équipe tombe dans un combat normal. equipe : ids des seuls héros qui se battent ;
+// invitee : un personnage (Hilde) qui se bat avec l'équipe le temps du combat, au niveau de Kael, sans gagner d'expérience.
 async function battle(ids, o) {
   const t0 = S.st.time, cnt = {}, vus = {};
   S.st.fights++; if (o.quest) S.st.qfights++;
   ids.forEach(id => { cnt[id] = (cnt[id] || 0) + 1; seen(id); });
   const T = o.equipe ? team().filter(h => o.equipe.includes(h.id)) : team();
+  if (o.invitee) T.push(mkInvite(o.invitee));
   B = { zone: o.zone, canFlee: o.canFlee !== false, boss: !!o.boss, quest: !!o.quest, perdu: !!o.perdu, union: 0, streak: 0, turns: 0, cur: null, targeting: false, team: T, st: {}, auto: false, wall: null,
     enemies: ids.map(id => {
       vus[id] = (vus[id] || 0) + 1;
@@ -154,6 +156,7 @@ function mkEnnemi(id, nom) {
   return { id, isEnemy: true, name: nom, hp: pv, mhp: pv, atk: Math.round(d.atk * (1 + (fp - 1) * .6)), def: d.def, spd: d.vit, shield: d.garde, mshield: d.garde, weak: d.faible, res: d.resiste,
     xp: Math.round(d.xp * fp), gold: Math.round(d.or * fp), broken: false, charged: false, cnt: 0, dort: false, vole: false };
 }
+function mkInvite(id) { const h = HEROS[id], c = { id, lvl: char('kael').lvl, xp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure, acc: null }, invite: true }; fullC(c); return c; }
 function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
 function gainXP(x) {
   const ups = [];

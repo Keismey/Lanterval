@@ -57,6 +57,8 @@ const IMAGES = {
   'pano.masque': { sujet: 'Le masque brisé du Sans-Nom, le visage d\'Aldric dessous' },
   'pano.berceuse': { sujet: 'Sol et Naïa au pied du phare, la boîte à musique ouverte entre eux' },
   'pano.veine': { sujet: 'La veine chantante, des cristaux rouges qui vibrent dans la galerie' },
+  'pano.forge': { sujet: 'Mira et Hilde à la forge de Forgecendre, la nuit, dans une pluie d\'étincelles' },
+  'pano.carnet': { sujet: 'Kael au sommet du Col des Pierres, le carnet de son père complet entre les mains' },
 
   // ---------- Héros (tournés vers la gauche) ----------
   'heros.kael': { fichier: 'img/heros/kael.webp', portrait: 'img/heros/kael-portrait.webp', provisoire: 'kael', sujet: 'Kael, 17 ans, apprenti garde, cape bleue' },
@@ -138,5 +140,7 @@ const IMAGES = {
   'monstre.sansnom2': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse (même image que monstre.sansnom)' },
   'monstre.salreine': { provisoire: 'salreine', sujet: 'Salamandre reine, énorme salamandre couronnée de flammes' },
   'monstre.statue': { provisoire: 'statue', sujet: 'Golem de pierre du Col, menhir vivant aux yeux bleus' },
-  'monstre.tellure': { provisoire: 'tellure', sujet: 'Élémentaire de terre, colosse de roche rouge veiné de cristaux qui chantent' }
+  'monstre.tellure': { provisoire: 'tellure', sujet: 'Élémentaire de terre, colosse de roche rouge veiné de cristaux qui chantent' },
+  'monstre.gardien': { provisoire: 'gardien', sujet: 'Gardien de cage, grande statue de fer noir dont le torse est une cage, bras comme des marteaux' },
+  'monstre.brume': { provisoire: 'brume', sujet: 'Ombre de brume, silhouette de fumée grise et bleue, longs bras, yeux pâles' }
 };

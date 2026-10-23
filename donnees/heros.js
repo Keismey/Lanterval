@@ -12,7 +12,11 @@ const HEROS = {
     base: { hp: 54, pp: 16, atk: 8, mag: 10, def: 6, spd: 12 }, gain: { hp: 7, pp: 3, atk: 1.2, mag: 2, def: 1.2, spd: .8 } },
   // acte 3 : Nev rejoint dans les Champs brûlés, en Moine
   nev: { el: 'V', classe: 'moine', arme: 'bandes', armure: 'veste',
-    base: { hp: 52, pp: 14, atk: 10, mag: 9, def: 6, spd: 14 }, gain: { hp: 7, pp: 2.5, atk: 2, mag: 1.6, def: 1.2, spd: 1 } }
+    base: { hp: 52, pp: 14, atk: 10, mag: 9, def: 6, spd: 14 }, gain: { hp: 7, pp: 2.5, atk: 2, mag: 1.6, def: 1.2, spd: 1 } },
+  // invitée : se bat avec l'équipe dans certains combats de quête (['combat', …, { invitee: 'hilde' }]),
+  // au niveau de Kael ; elle n'est pas dans le menu Équipe et ne gagne pas d'expérience
+  hilde: { el: 'F', classe: 'forgeronne', arme: 'marteau', armure: 'tablier', invite: true,
+    base: { hp: 62, pp: 12, atk: 12, mag: 6, def: 8, spd: 9 }, gain: { hp: 8.5, pp: 2, atk: 2.4, mag: 1, def: 1.5, spd: .8 } }
 };
 // ordre d'affichage dans l'équipe
 const ORDRE_HEROS = ['kael', 'mira', 'sol', 'nev'];
@@ -37,7 +41,9 @@ const CLASSES = {
   // corsaire : vole parfois en frappant, dégâts doublés sur une garde brisée (pirate dans combat.js)
   corsaire: { mod: { hp: 1.05, atk: 1.2, spd: 1.15, mag: .7, pp: .8 }, tech: ['abordage', 'vol'], armes: ['sabre', 'dague'], cachee: true, pirate: true },
   // géomancien : ses sorts prennent l'élément de la région (Terre dans la vallée, Eau sur la côte, Feu à Cendre)
-  geomancien: { mod: { pp: 1.25, atk: .8, mag: 1.3 }, tech: ['terroir', 'eboulement'], armes: ['baton'], cachee: true }
+  geomancien: { mod: { pp: 1.25, atk: .8, mag: 1.3 }, tech: ['terroir', 'eboulement'], armes: ['baton'], cachee: true },
+  // classe d'une invitée (Hilde) : jamais débloquée, absente du Codex et du menu Équipe
+  forgeronne: { mod: { hp: 1.2, atk: 1.2, def: 1.2, mag: .7 }, tech: ['marteau', 'trempe'], armes: ['marteau'], invite: true }
 };
 
 const TECHNIQUES = {
@@ -73,7 +79,10 @@ const TECHNIQUES = {
   invocation: { el: 'X', type: 'mag', pow: 1.35, pp: 16, cible: 'tous', poids: 1.7 },
   offrande: { type: 'offrande', pp: 0, cible: 'allie', poids: .8 },
   terroir: { el: 'Z', type: 'mag', pow: 1.5, pp: 5, cible: 'ennemi', poids: 1 },
-  eboulement: { el: 'Z', type: 'mag', pow: .95, pp: 10, cible: 'tous', poids: 1.3 }
+  eboulement: { el: 'Z', type: 'mag', pow: .95, pp: 10, cible: 'tous', poids: 1.3 },
+  // Hilde (invitée)
+  marteau: { el: 'L', type: 'phys', pow: 1.6, pp: 4, cible: 'ennemi', poids: 1.1, corrode: true },
+  trempe: { type: 'rempart', pp: 5, cible: 'soi', poids: 1 }
 };
 // élément de chaque région (techniques du Géomancien)
 const ELEMENT_REGION = { vallee: 'T', cote: 'E', cendre: 'F', vents: 'V' };

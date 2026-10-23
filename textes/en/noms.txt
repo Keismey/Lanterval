@@ -850,6 +850,12 @@ Their spells take the element of the region: Earth in the valley, Water on the c
 == classe.geomancien.verrou
 Secret class: someone in Forgecendre knows how to listen to the rock
 
+== classe.forgeronne
+Blacksmith
+
+== classe.forgeronne.desc
+Hilde's class: her hammer wears down enemy guard, her tempering shields the team.
+
 == tech.furie
 Fury
 
@@ -897,6 +903,18 @@ Rockslide
 
 == tech.eboulement.desc
 A spell of the region's element on every enemy.
+
+== tech.marteau
+Hammer blow
+
+== tech.marteau.desc
+A heavy Blade blow that removes one guard point, even without a weakness.
+
+== tech.trempe
+Tempering
+
+== tech.trempe.desc
+Damage taken by the team ÷2 until Hilde's next turn.
 
 == objet.potion
 Cendre potion
@@ -964,6 +982,18 @@ Lava heart
 == equip.lampe
 Miner's lamp
 
+== equip.coeurforge
+Forgeheart
+
+== equip.marteau
+Hilde's hammer
+
+== equip.tablier
+Forge apron
+
+== equip.bouclier
+Aldric's shield
+
 == important.epee-aldric
 Aldric's sword
 
@@ -1016,13 +1046,49 @@ A red shard from the singing vein of the Red Mines. It vibrates with the stone.
 Dented helmet
 
 == important.casque-mineur.desc
-A miner's helmet found in the deep gallery. A name is carved inside: Bram, Tobi's father.
+A miner's helmet found in the deep gallery. A name is carved inside: Ulric, Tobi's father.
 
 == important.oeuf
 Warm egg
 
 == important.oeuf.desc
 A big scaly egg found on the Sleeping Volcano. It is warm and, sometimes, it moves.
+
+== important.moule
+First mould
+
+== important.moule.desc
+The bronze mould of the Order's very first cage, forged by Hilde. It is much heavier than it looks.
+
+== important.metal-ardent
+Burning metal
+
+== important.metal-ardent.desc
+A crucible of red metal, fed by the ember crystal. It never quite cools down.
+
+== important.page-aldric
+Aldric's page
+
+== important.page-aldric.desc
+A page rolled up in the sword's hilt: “Tell Kael I didn't leave out of cowardice. Brann knows the rest.”
+
+== important.pages-aldric2
+Two of Aldric's pages
+
+== important.pages-aldric2.desc
+The page from the sword and the one Brann kept in his chest. Aldric hid the next one deep in the Crystal Cave.
+
+== important.pages-aldric3
+Three of Aldric's pages
+
+== important.pages-aldric3.desc
+One is still missing, under the flat stone at the top of the Stone Pass.
+
+== important.carnet-aldric
+Aldric's notebook
+
+== important.carnet-aldric.desc
+The four pages of Kael's father, together at last. Kael will read them to his father.
 
 == monstre.chien
 Ash hound
@@ -1185,3 +1251,27 @@ The Elemental sinks into the ground… *it will shake the whole gallery next tur
 
 == monstre.tellure.special
 The Elemental shakes the gallery!
+
+== monstre.gardien
+Cage guardian
+
+== monstre.gardien.court
+Guardian
+
+== monstre.gardien.desc
+An iron statue forged by Hilde to guard the first mould. It recognises no one any more.
+
+== monstre.gardien.charge
+The Guardian raises both iron arms… *it will strike the whole team next turn*, unless you break its guard first.
+
+== monstre.gardien.special
+The Guardian brings its arms down on the whole team!
+
+== monstre.brume
+Mist shade
+
+== monstre.brume.court
+Shade
+
+== monstre.brume.desc
+A shade of the Crystal Cave, grown in the mist. It drinks the strength of whoever it touches.

@@ -301,6 +301,79 @@ const ANNEXES = {
     ]
   },
 
+  // 9. Le premier moule (Hilde ; Mira et Hilde). Hilde se bat avec l'équipe (invitee) dans les deux combats.
+  moule: {
+    donneur: 'hilde', ouvre: 'fini a3.e10',
+    offre: [
+      ['choix', 'moule.offre', { oui: [['message', 'moule.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'mines.g', evenements: [
+        ['dialogue', 'moule.e1.porte'],
+        ['dialogue', 'moule.e1.salle'],
+        ['combat', 'gardien gardien', { boss: true, invitee: 'hilde', conseil: 'moule.e1.conseil' }],
+        ['gagne', 'moule'],
+        ['dialogue', 'moule.e1.fin'],
+        ['message', 'moule.e1.message']
+      ] },
+      { lieu: 'volcan.c', evenements: [
+        ['dialogue', 'moule.e2.bord'],
+        ['combat', 'esprit lezard esprit', { invitee: 'hilde' }],
+        ['perd', 'moule'],
+        ['gagne', 'metal-ardent'],
+        ['dialogue', 'moule.e2.fin'],
+        ['message', 'moule.e2.message']
+      ] },
+      { lieu: 'hilde', evenements: [
+        ['panorama', 'pano.forge'],
+        ['dialogue', 'moule.e3.forge'],
+        ['perd', 'metal-ardent'],
+        ['dialogue', 'moule.e3.arme'],
+        ['decor'],
+        ['gagne', 'coeurforge'],
+        ['dialogue', 'moule.e3.fin']
+      ] }
+    ]
+  },
+
+  // 10. Le carnet d'Aldric (Hilde ; Kael et Aldric). Quatre pages : la garde de l'épée, Brann, la grotte, le col.
+  // Finie, elle fait survivre Aldric dans l'épilogue (condition « annexe aldric 4 », acte 4).
+  aldric: {
+    donneur: 'hilde', ouvre: 'fini a3.e10',
+    offre: [
+      ['choix', 'aldric.offre', { oui: [['gagne', 'page-aldric'], ['dialogue', 'aldric.page'], ['message', 'aldric.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'brann', evenements: [
+        ['dialogue', 'aldric.e1.coffre'],
+        ['perd', 'page-aldric'],
+        ['gagne', 'pages-aldric2'],
+        ['dialogue', 'aldric.e1.page'],
+        ['message', 'aldric.e1.message']
+      ] },
+      { lieu: 'grotte.f', evenements: [
+        ['dialogue', 'aldric.e2.cristal'],
+        ['combat', 'brume brume brume'],
+        ['perd', 'pages-aldric2'],
+        ['gagne', 'pages-aldric3'],
+        ['dialogue', 'aldric.e2.page'],
+        ['message', 'aldric.e2.message']
+      ] },
+      { lieu: 'col.s', evenements: [
+        ['dialogue', 'aldric.e3.pierre'],
+        ['combat', 'sentinelle automate sentinelle'],
+        ['dialogue', 'aldric.e3.page'],
+        ['perd', 'pages-aldric3'],
+        ['gagne', 'carnet-aldric'],
+        ['panorama', 'pano.carnet'],
+        ['dialogue', 'aldric.e3.carnet'],
+        ['decor'],
+        ['gagne', 'bouclier'],
+        ['dialogue', 'aldric.e3.fin']
+      ] }
+    ]
+  },
+
   // 11. Les mineurs disparus (Tobi). La galerie profonde des Mines rouges débouche sur les Champs brûlés.
   mineurs: {
     donneur: 'tobi', ouvre: 'fini a3.e6',

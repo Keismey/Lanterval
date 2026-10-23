@@ -45,6 +45,11 @@ const EQUIPEMENT = {
   // armes des quêtes annexes : Bâton des marées (Sol, « La berceuse »), Bâton de Dorn (Géomancien)
   marees: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 6, mag: 27, pp: 12 } },
   dorn: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 5, mag: 21, def: 3 } },
+  // Cœur de forge (Mira, « Le premier moule »)
+  coeurforge: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 7, mag: 29, pp: 10 } },
+  // marteau et tablier de Hilde (invitée, jamais dans le sac)
+  marteau: { place: 'arme', type: 'marteau', cadeau: true, st: { atk: 24 } },
+  tablier: { place: 'armure', cadeau: true, st: { def: 16, hp: 20 } },
   tunique: { place: 'armure', v: 5, st: { def: 2 } },
   cuir: { place: 'armure', v: 20, st: { def: 4, hp: 5 } },
   mailles: { place: 'armure', prix: 55, st: { def: 7, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
@@ -72,7 +77,9 @@ const EQUIPEMENT = {
   filon: { place: 'acc', v: 100, st: { def: 5, hp: 15 } },
   lave: { place: 'acc', v: 120, st: { atk: 3, mag: 6 } },
   // Lampe de mineur (« Les mineurs disparus ») : plus de découvertes avec Explorer (voir zone.js)
-  lampe: { place: 'acc', cadeau: true, st: { def: 2 }, lampe: true }
+  lampe: { place: 'acc', cadeau: true, st: { def: 2 }, lampe: true },
+  // Bouclier d'Aldric (« Le carnet d'Aldric ») : le jeu n'a pas d'emplacement de bouclier, c'est un accessoire
+  bouclier: { place: 'acc', cadeau: true, st: { def: 8, hp: 25 } }
 };
 
 // Objets importants (onglet « Importants » de l'inventaire), dans l'ordre d'affichage.
@@ -111,5 +118,11 @@ const IMPORTANTS = {
   pierre: {},
   'cristal-chantant': {},
   'casque-mineur': {},
+  moule: {},          // « Le premier moule » : le moule de la première cage, puis le métal ardent
+  'metal-ardent': {},
+  'page-aldric': {},  // « Le carnet d'Aldric » : une page, puis deux, trois, et le carnet complet
+  'pages-aldric2': {},
+  'pages-aldric3': {},
+  'carnet-aldric': {},
   oeuf: { mystere: 'drapeau acte4' }
 };

@@ -22,6 +22,9 @@ In the crater of the Sleeping Volcano, he broke the Nameless's mask. Underneath,
 == perso.kael.7
 Hilde reforged his father's sword and engraved a lantern on the guard. Kael carries it so that Aldric might recognise it one day.
 
+== perso.kael.8
+He gathered the four pages of his father's notebook. Aldric didn't leave out of cowardice: he was following the Order to keep it away from Lanterval.
+
 == perso.mira.1
 Daughter of Hilde the blacksmith, 18, Fire element. She was following the mist alone in the forest when Kael pulled her out of a ring of wolves.
 
@@ -36,6 +39,9 @@ In the Red Mines, she learned that her mother forged the Order's first cage, the
 
 == perso.mira.5
 She helped her mother reforge Aldric's sword, all night long, without a word. Between them, something is starting to mend.
+
+== perso.mira.6
+With her mother, she threw the mould of the first cage into the volcano. Together they forged the Forgeheart, and they laughed.
 
 == perso.sol.1
 Hermit of the underground lake, 20, Water element. Calm and quiet, he had guarded the lake since the Crystal Guardian woke up.
@@ -76,6 +82,9 @@ Kael's father left him his sword the night he went off into the mist: “For Kae
 == perso.brann.4
 His scouts followed the amber crystal to the forges of Cendre, in the east.
 
+== perso.brann.5
+Aldric had left him a page of his notebook, to give to Kael the day he was ready. He kept it in a chest for ten years.
+
 == perso.hilde.1
 Mira's mother. She runs the Lanterval forge and sells weapons and armour.
 
@@ -93,6 +102,9 @@ She forged the Order's very first cage, thinking it would protect the crystals. 
 
 == perso.hilde.6
 She knew Aldric, Kael's father. Her cart now takes the team from village to village.
+
+== perso.hilde.7
+Before fleeing, she locked the mould of the first cage behind a door the Order never managed to open. She fought alongside the team to take it back.
 
 == perso.silhouette.1
 A hooded figure who was prowling the forest when the wolves surrounded Mira.
@@ -117,6 +129,9 @@ A colossus in a steel mask marked with a closed eye, who obeys Varen. At the pas
 
 == perso.sansnom.2
 Under the broken mask: Aldric, Kael's father, who left into the mist years ago. The Order took his memory and his name. He carried the ember crystal off to the north.
+
+== perso.sansnom.3
+His notebook says it: he was following the Order to protect Lanterval, and he knew he might end up behind a mask. He asked Kael not to let him forget his voice.
 
 == perso.maelle.1
 The old innkeeper of Salvent, too old, she says, for the mist to find room to settle. She recognised Sol, the child of the shipwreck.

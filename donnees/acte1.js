@@ -10,7 +10,8 @@
      ['combat', 'loup loup', options]    options : boss, conseil (repère d'un texte affiché avant),
                                          equipe ('kael mira' : seuls ces héros se battent),
                                          perdu (combat perdu d'avance : l'équipe tombe et l'étape continue,
-                                         sans retour au village ni perte d'or)
+                                         sans retour au village ni perte d'or),
+                                         invitee ('hilde' : ce personnage se bat avec l'équipe, voir heros.js)
      ['rejoint', héros]                  le héros entre dans l'équipe ; ['presente', héros] affiche sa fiche
      ['gagne', '100 or, medaillon']      ['perd', 'coeur']
      ['classes', 'guerrier mage']        débloque des classes

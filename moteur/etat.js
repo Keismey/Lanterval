@@ -90,6 +90,8 @@ function best(id) { return S.best[id] || (S.best[id] = { weak: [], res: [] }); }
 function seen(id) { S.codex[id] = S.codex[id] || { kills: 0 }; }
 function revealAll(id) { const b = best(id); b.weak = [...MONSTRES[id].faible]; b.res = [...MONSTRES[id].resiste]; seen(id); }
 function reveal(id, el, res) { const b = best(id), a = res ? b.res : b.weak; if (!a.includes(el)) a.push(el); }
+// les classes du joueur (sans celle d'une invitée comme Hilde)
+function classesJouables() { return Object.keys(CLASSES).filter(j => !CLASSES[j].invite); }
 function unlockJob(j) { if (!S.jobs.includes(j)) S.jobs.push(j); }
 function pct(id) { return Math.round(S.z[id].found.length / LIEUX[id].tresors.length * 100); }
 

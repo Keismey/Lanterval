@@ -97,5 +97,11 @@ const MONSTRES = {
   statue: { pv: 150, atk: 55, def: 16, vit: 7, garde: 5, faible: ['V', 'E'], resiste: ['T', 'L'], xp: 27, or: 20, taille: .22, vol: 'tonique',
     capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
   tellure: { pv: 3000, atk: 84, def: 16, vit: 24, garde: 14, faible: ['V'], resiste: ['T', 'L'], xp: 240, or: 150, taille: .38, boss: true, vol: 'ether',
-    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'regen', seuil: .5, chance: .3, v: 60 }] }
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'regen', seuil: .5, chance: .3, v: 60 }] },
+  // « Le premier moule » : les deux gardiens de la salle scellée (Hilde se bat avec l'équipe)
+  gardien: { pv: 1900, atk: 82, def: 18, vit: 19, garde: 9, faible: ['E', 'V'], resiste: ['F', 'T'], xp: 200, or: 120, taille: .34, boss: true, vol: 'potion',
+    capacites: [{ type: 'charge', mult: 1.4 }, { type: 'double', chance: .25, garde: true }] },
+  // « Le carnet d'Aldric » : les ombres de la Grotte de Cristal, nourries par la brume
+  brume: { pv: 215, atk: 68, def: 9, vit: 18, garde: 3, faible: ['F', 'V'], resiste: ['T', 'E'], xp: 32, or: 24, taille: .2, f: true, vol: 'ether',
+    capacites: [{ type: 'drain', chance: .35 }] }
 };
