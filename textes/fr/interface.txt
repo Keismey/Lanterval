@@ -760,6 +760,12 @@ Aucun changement
 == equipe.toutes
 Toutes les classes
 
+== equipe.reservee
+Seulement pour {nom} ({classes})
+
+== equipe.pas.heros
+Réservée à {nom}
+
 # ================= Inventaire =================
 
 == inventaire.objets

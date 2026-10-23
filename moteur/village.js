@@ -85,6 +85,10 @@ function nomEq(id) { return t('equip.' + id); }
 function stTxt(st, el) { return (el ? t('element.' + el) + ' · ' : '') + Object.entries(st).map(([k, v]) => `${t('stat.' + k)} ${v > 0 ? '+' : ''}${v}`).join(', '); }
 function wearers(id) {
   const e = EQUIPEMENT[id];
+  if (e.heros) return t('equipe.reservee', { nom: t('parle.' + e.heros), classes: wearersClasses(e) });
+  return wearersClasses(e);
+}
+function wearersClasses(e) {
   if (e.place === 'arme') return classesJouables().filter(j => CLASSES[j].armes.includes(e.type)).map(j => CLASSES[j].cachee && !S.jobs.includes(j) ? '???' : t('classe.' + j)).join(', ');
   return e.classes ? e.classes.map(j => t('classe.' + j)).join(', ') : t('equipe.toutes');
 }

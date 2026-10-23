@@ -41,6 +41,11 @@ function migrer(s) {
   if (!s.vus) s.vus = {};
   if (!s.auberge) s.auberge = 'lanterval';
   if (!s.perso) s.perso = {};
+  // une arme réservée à un personnage (heros dans objets.js) retourne au sac si quelqu'un d'autre la porte
+  for (const id in s.chars) for (const p of ['arme', 'armure', 'acc']) {
+    const c = s.chars[id], e = c.eq && EQUIPEMENT[c.eq[p]];
+    if (e && e.heros && e.heros !== id) { s.bag[c.eq[p]] = (s.bag[c.eq[p]] || 0) + 1; c.eq[p] = null; }
+  }
   s.v = FORMAT; s.version = VERSION;
   return s;
 }
@@ -73,7 +78,7 @@ const mhp = h => stats(h).hp, mpp = h => stats(h).pp;
 function clampC(h) { const s = stats(h); h.hp = Math.min(h.hp, s.hp); h.pp = Math.min(h.pp, s.pp); }
 function fullC(h) { const s = stats(h); h.hp = s.hp; h.pp = s.pp; }
 function join(id) { const h = char(id); h.lvl = Math.max(h.lvl, char('kael').lvl); h.joined = true; fullC(h); }
-function canWear(h, id, job) { const e = EQUIPEMENT[id], j = job || h.job; if (e.place === 'arme') return CLASSES[j].armes.includes(e.type); if (e.classes) return e.classes.includes(j); return true; }
+function canWear(h, id, job) { const e = EQUIPEMENT[id], j = job || h.job; if (e.heros && e.heros !== h.id) return false; if (e.place === 'arme') return CLASSES[j].armes.includes(e.type); if (e.classes) return e.classes.includes(j); return true; }
 function healAll(n) { for (const h of team()) { if (n === undefined) fullC(h); else if (h.hp > 0) h.hp = Math.min(mhp(h), h.hp + n); } }
 function restorePP(n) { for (const h of team()) h.pp = n === undefined ? mpp(h) : Math.min(mpp(h), h.pp + n); }
 function hurt(id, n) { const h = char(id); h.hp = Math.max(1, h.hp - n); }

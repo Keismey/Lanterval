@@ -658,6 +658,12 @@ No change
 == equipe.toutes
 All classes
 
+== equipe.reservee
+Only for {nom} ({classes})
+
+== equipe.pas.heros
+Only {nom} can use it
+
 == inventaire.objets
 Items
 
