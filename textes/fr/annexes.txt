@@ -1429,5 +1429,162 @@ Orvan : « Souvenez-vous les uns des autres. C'est la seule chose que la brume n
 == larmes.apres
 Tavor : « Les moines disaient que l'Œil pleure quand il a peur d'oublier. Grâce à toi, il a moins peur. »
 
-== pnj.orvan.fin
+== pnj.orvan.a4.e8
 Orvan : « Demain, l'Escalier de brume. Ce soir, je me chauffe au feu d'Edda. Je n'ai plus l'âge des nuits froides. »
+
+# ---------- 16. Les Échos (Garrick, après la fin ; Talisman de l'écho et Codex complet) ----------
+
+== pnj.garrick
+Garrick : « Je ne chasse plus, petit. Mais la brume, elle, chasse toujours. »
+Garrick : « Quand tout ça sera fini, et que le carnet de Roxane sera plein, reviens me voir. J'aurai une dernière piste pour toi. »
+
+== echos.titre
+Les Échos
+
+== echos.offre
+Garrick : « Alors c'est toi, le nom qui est quatre fois dans le carnet de Roxane. Assieds-toi. »
+Garrick : « La brume copie les bêtes qu'on abat. Elle garde leur forme, sans rien dedans, et elle les refait en pire. On appelle ça des Échos. »
+Garrick : « Il y en a quatre qui rôdent, pas loin de là où vous avez abattu vos plus grands monstres. Et un cinquième, au Col des Pierres. Celui-là, je ne te le souhaite pas. »
+> oui : Chasser les Échos | Quête annexe
+> non : Plus tard
+
+== echos.message
+Quête annexe : chasser les *quatre Échos*, dans l'ordre que tu veux : *Forêt des Murmures*, *Marais des Lanternes*, *Champs brûlés*, *Pont des Nuées*. Puis le cinquième, au *Col des Pierres*.
+
+== echos.e1.titre
+Chasser les quatre Échos
+
+== echos.e1.sous
+Les Échos : Forêt, Marais, Champs, Pont
+
+== echos.e1.attente
+Garrick : « Un Écho, ça ne se cache pas. Ça rôde pas loin de là où l'original est tombé. Va voir où tu as eu tes plus belles peurs. »
+
+== echos.e1.m1.titre
+L'Écho de la Forêt des Murmures
+
+== echos.e1.m1.bouton
+Suivre la lumière grise
+
+== echos.e1.m1.brume
+## Les Échos
+Entre les grands troncs, une lumière grise palpite au ras du sol. Des cristaux de brume s'assemblent, morceau par morceau.
+Kael : « Le Gardien de cristal. On l'a abattu au fond de la grotte, au tout début. »
+Mira : « Il a l'air plus en colère que la première fois. » [Combattre]
+
+== echos.e1.m1.conseil
+? L'*Écho du Gardien* résiste au *Feu* et à la *Lame* ; la *Terre* et l'*Eau* fendent sa garde. Il prépare un rayon sur toute l'équipe et frappe deux fois tant que sa garde tient.
+
+== echos.e1.m1.fin
+## Les Échos
+L'Écho se défait en poussière grise, et la forêt redevient silencieuse.
+Sol : « Un de moins. Garrick a dit quatre, plus un. »
+
+== echos.e1.m1.message
+Écho du Gardien vaincu dans la *Forêt des Murmures*.
+
+== echos.e1.m2.titre
+L'Écho du Marais des Lanternes
+
+== echos.e1.m2.bouton
+Approcher des lanternes éteintes
+
+== echos.e1.m2.brume
+## Les Échos
+Les trois petites lanternes du marais s'éteignent d'un coup. Dans l'eau noire, une forme ailée se lève, faite de brume froide.
+Sol : « La Vouivre. Elle n'était pas aussi grande, la dernière fois. » [Combattre]
+
+== echos.e1.m2.conseil
+? L'*Écho de la Vouivre* résiste à l'*Eau* et au *Feu* ; seule la *Terre* fend sa garde. Elle prépare un souffle sur toute l'équipe et mord pour se soigner.
+
+== echos.e1.m2.fin
+## Les Échos
+L'Écho se dissout dans l'eau, et les trois lanternes se rallument une à une.
+
+== echos.e1.m2.message
+Écho de la Vouivre vaincu au *Marais des Lanternes*.
+
+== echos.e1.m3.titre
+L'Écho des Champs brûlés
+
+== echos.e1.m3.bouton
+Écouter le marteau dans la fumée
+
+== echos.e1.m3.brume
+## Les Échos
+Au milieu du blé calciné, un bruit d'enclume résonne, sans personne pour frapper. Un géant de fer gris sort de la fumée.
+Mira : « Le Forgeur de cages. Même en brume, il veut encore couler des cages. » [Combattre]
+
+== echos.e1.m3.conseil
+? L'*Écho du Forgeur* résiste au *Feu* et à la *Lame* ; l'*Eau* et le *Vent* fendent sa garde. Il prépare un coup d'enclume sur toute l'équipe et appelle des automates.
+
+== echos.e1.m3.fin
+## Les Échos
+L'enclume de brume tombe, et ne se relève pas. Le vent emporte la fumée vers le sud.
+
+== echos.e1.m3.message
+Écho du Forgeur vaincu dans les *Champs brûlés*.
+
+== echos.e1.m4.titre
+L'Écho du Pont des Nuées
+
+== echos.e1.m4.bouton
+Traverser le brouillard du pont
+
+== echos.e1.m4.brume
+## Les Échos
+Au milieu du Pont des Nuées, un chevalier violet attend, la masse levée. Il n'a pas de visage.
+Nev : « Le Héraut de Salvent. Il croyait vraiment offrir la paix. Celui-là, il ne croit plus rien. » [Combattre]
+
+== echos.e1.m4.conseil
+? L'*Écho du Héraut* résiste au *Feu* ; l'*Eau* et la *Terre* fendent sa garde. Il prépare « Paupière close » sur toute l'équipe et frappe souvent deux fois.
+
+== echos.e1.m4.fin
+## Les Échos
+L'Écho se déchire dans le vent, et le pont arrête de grincer.
+
+== echos.e1.m4.message
+Écho du Héraut vaincu sur le *Pont des Nuées*.
+
+== echos.e2.titre
+Affronter le dernier Écho au Col des Pierres
+
+== echos.e2.bouton
+Monter au sommet du col
+
+== echos.e2.attente
+Garrick : « Le cinquième t'attend au Col des Pierres. Prépare-toi bien, petit. C'est celui qui fait le plus peur. »
+
+== echos.e2.col
+## Les Échos
+Au sommet du col, près du socle vide, la brume prend une forme immense. Une masse, un masque, et rien dedans.
+Kael : « Le Sans-Nom. Mais mon père n'est plus là-dedans. C'est seulement sa peur. »
+Kael : « Alors on peut le battre pour de bon. » [Combattre]
+
+== echos.e2.conseil
+? L'*Écho du Sans-Nom* est le plus fort de tous. Il résiste à la *Terre* et à l'*Eau* ; le *Feu* et le *Vent* fendent sa garde. Il prépare un coup sur toute l'équipe, frappe deux fois tant que sa garde tient et mord pour se soigner.
+
+== echos.e2.fin
+## Les Échos
+L'Écho éclate en mille gouttes grises, qui tombent sur le col comme une pluie douce. Le soleil revient sur les menhirs.
+Kael : « C'est fini. Pour de bon, cette fois. »
+
+== echos.e2.message
+Les cinq Échos sont vaincus. Retourne voir *Garrick* à Aerie.
+
+== echos.e3.titre
+Raconter la chasse à Garrick
+
+== echos.e3.retour
+## Les Échos
+Garrick écoute tout le récit sans rien dire, les yeux fermés. À la fin, il sourit.
+Garrick : « Cinq Échos. Je n'en ai jamais eu plus de deux. Roxane va être jalouse. »
+Garrick : « Prends mon carnet, aussi. Toutes les bêtes que j'ai croisées en cinquante ans y sont, avec ce qui les fait tomber. »
+
+== echos.e3.fin
+## Quête annexe terminée
+Garrick : « Et ça. Mon talisman. Il m'a toujours fait tirer le premier. »
+? Tu reçois le *Talisman de l'écho* (accessoire : Attaque +6, Magie +6, Vitesse +4 ; son porteur agit le premier, et sa première technique de chaque combat ne coûte pas de PP) et *2 000 po*. Le *Codex* est complet : tous les monstres, avec leurs faiblesses et leurs résistances.
+
+== echos.apres
+Garrick : « Tu reviens me voir ? Il n'y a plus d'Échos, petit. Grâce à toi, la brume n'a plus rien à copier. »

@@ -22,7 +22,7 @@ function predict(n) {
 function elChips(e) {
   const b = best(e.id); let s = '';
   for (const el of e.weak) s += b.weak.includes(el) ? elChip(el) : `<span class="elc unk" title="${esc(t('combat.inconnue'))}">?</span>`;
-  for (const el of b.res) s += `<span class="elc ${el} res" title="${esc(t('combat.resiste.titre', { el: t('element.' + el) }))}">${el}</span>`;
+  for (const el of b.res.filter(x => e.res.includes(x))) s += `<span class="elc ${el} res" title="${esc(t('combat.resiste.titre', { el: t('element.' + el) }))}">${el}</span>`;
   return s;
 }
 const chaine = () => B.streak > 0 ? (1 + .15 * Math.min(B.streak, 3)).toFixed(2) : null;
@@ -36,7 +36,7 @@ function bOverlay() {
   const m = chaine();
   const ei = B.enemies.map((e, i) => e.hp <= 0 ? '' : `<div class="einfo glass ${B.targeting ? 'tg' : ''}" data-ei="${i}" style="left:${e.px * 100}%;top:${(e.py * 100 + 1.5).toFixed(1)}%">
     <div class="nm">${esc(e.name)}</div><div class="bar ${e.hp / e.mhp < .3 ? 'low' : ''}"><i style="width:${e.hp / e.mhp * 100}%"></i></div>
-    <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${MONSTRES[e.id].intouchable ? '∞' : e.shield}</span>`}${elChips(e)}${e.dort ? `<span class="zz">${esc(t('combat.dort.court'))}</span>` : ''}${e.air ? `<span class="zz">${esc(t('combat.air.court'))}</span>` : ''}</div></div>`).join('');
+    <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${MONSTRES[e.id].intouchable ? '∞' : e.shield}</span>`}${elChips(e)}${e.dort ? `<span class="zz">${esc(t('combat.dort.court'))}</span>` : ''}${e.air ? `<span class="zz">${esc(t('combat.air.court'))}</span>` : ''}${e.cristal !== undefined ? `<span class="zz">${esc(t('combat.cristal.' + cristalDe(e).c))}</span>` : ''}</div></div>`).join('');
   ovc().innerHTML = `<div class="tl glass"><span class="tll">${esc(t('combat.tours'))}</span>${chips}</div>
    <div class="bmeta">${B.team.length > 1 ? `<span class="glass pips">${esc(t('combat.union'))} ${[0, 1, 2].map(i => `<b class="${B.union > i ? 'on' : ''}"></b>`).join('')}</span>` : ''}${m ? `<span class="glass chain">${esc(t('combat.chaine', { m }))}</span>` : ''}${B.sceau > 0 ? `<span class="glass chain">${esc(t('combat.sceau.reste', { n: B.sceau }))}</span>` : ''}${B.auto ? `<span class="glass autoflag">${esc(t('combat.auto'))}</span>` : ''}</div>${ei}`;
   majMonstres();
@@ -45,7 +45,7 @@ function bCards() {
   const el = $('#pcards'); if (!el) return;
   el.innerHTML = B.team.map(h => {
     const s = hs(h);
-    return `<div class="pcard ${B.cur === h ? 'act' : ''} ${h.hp <= 0 ? 'ko' : ''}" data-h="${h.id}"><div class="pc-top">${av(h.id, 'sm')}<div class="pc-n"><b>${esc(nomH(h))}</b><span>${esc(t('classe.' + h.job))}${h.courage > 0 ? ' · ' + esc(t('combat.courage.court')) : ''}${h.rage > 0 ? ' · ' + esc(t('combat.rage.court')) : ''}${h.esquive ? ' · ' + esc(t('combat.esquive.court')) : ''}${h.enchant > 0 ? ' · ' + esc(t('combat.enchant.court')) : ''}${h.saut ? ' · ' + esc(t('combat.saut.court')) : ''}</span></div></div>
+    return `<div class="pcard ${B.cur === h ? 'act' : ''} ${h.hp <= 0 ? 'ko' : ''}" data-h="${h.id}"><div class="pc-top">${av(h.id, 'sm')}<div class="pc-n"><b>${esc(nomH(h))}</b><span>${esc(t('classe.' + h.job))}${h.courage > 0 ? ' · ' + esc(t('combat.courage.court')) : ''}${h.rage > 0 ? ' · ' + esc(t('combat.rage.court')) : ''}${h.esquive ? ' · ' + esc(t('combat.esquive.court')) : ''}${h.enchant > 0 ? ' · ' + esc(t('combat.enchant.court')) : ''}${h.saut ? ' · ' + esc(t('combat.saut.court')) : ''}${h.oubli > 0 ? ' · ' + esc(t('combat.oubli.court')) : ''}</span></div></div>
    <div class="bar ${h.hp / s.hp < .3 ? 'low' : ''}"><i style="width:${h.hp / s.hp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.hp'))}</span><b>${h.hp}/${s.hp}</b></div>
    <div class="bar pp"><i style="width:${h.pp / s.pp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.pp'))}</span><b>${h.pp}/${s.pp}</b></div></div>`;
   }).join('') + (B.team.length < 3 ? Array(3 - B.team.length).fill(`<div class="pcard empty">${esc(t('combat.vide'))}</div>`).join('') : '');
@@ -101,6 +101,8 @@ async function battle(ids, o) {
   // Œil du traqueur : faiblesses et résistances de chaque monstre connues dès le début
   if (T.some(h => h.eq.acc && EQUIPEMENT[h.eq.acc].traqueur)) for (const e of B.enemies) revealAll(e.id);
   for (const u of units()) u.next = 100 / spd(u) * rnd(.25, 1);
+  // Talisman de l'écho : son porteur agit le premier, et sa première technique ne coûte pas de PP
+  for (const h of T) if (h.eq.acc && EQUIPEMENT[h.eq.acc].echo) { h.next = 0; h.echoLibre = true; }
   $('#app').classList.add('inb');
   setDecor(decorDuLieu(o.zone || lieuActuel()));
   poserMonstres(B.enemies);
@@ -110,6 +112,8 @@ async function battle(ids, o) {
   if (!S.f.tuto) { S.f.tuto = true; await openHelp(true); }
   await wait(600);
   while (true) {
+    // un monstre avec fin (Aldric) s'arrête sous ce seuil de PV : le combat s'achève sur une scène
+    for (const e of aliveE()) { const f = MONSTRES[e.id].fin; if (f && e.hp <= e.mhp * f) { e.hp = 0; B.cur = null; bDraw(); bMsg(tx(`monstre.${e.id}.fin`, { nom: e.name })); await wait(1600); } }
     if (!aliveE().length || !aliveH().length) break;
     const u = units().sort((a, b) => a.next - b.next || (a.isEnemy ? 1 : 0) - (b.isEnemy ? 1 : 0))[0];
     B.cur = u; B.turns++; bDraw();
@@ -118,6 +122,7 @@ async function battle(ids, o) {
       B.streak = 0;
       const w = await enemyAct(u); u.next += 100 / u.spd * w;
       if (B.sceau > 0) B.sceau--;
+      await tournerCristal(u);
     } else {
       u.guard = false; u.taunt = false; if (B.wall === u) B.wall = null;
       if (u.saut) { const w = await atterrir(u); u.next += 100 / hs(u).spd * w; continue; }
@@ -136,6 +141,7 @@ async function battle(ids, o) {
       const w = await heroAct(u, a);
       if (w === 'fled') { S.st.fights--; logR('journal.log.fuite', { noms: nomsEnnemis() }); finCombat(); return 'fled'; }
       u.next += 100 / hs(u).spd * w;
+      if (u.oubli > 0) u.oubli--;
     }
   }
   B.cur = null; bDraw();
@@ -179,11 +185,21 @@ async function ecranVictoire(xp, gold, avant) {
 }
 function mkEnnemi(id, nom) {
   const d = MONSTRES[id], fp = forcePlus(), pv = Math.round(d.pv * fp);
-  return { id, isEnemy: true, name: nom, hp: pv, mhp: pv, atk: Math.round(d.atk * (1 + (fp - 1) * .6)), def: d.def, spd: d.vit, shield: d.garde, mshield: d.garde, weak: d.faible, res: d.resiste,
+  const e = { id, isEnemy: true, name: nom, hp: pv, mhp: pv, atk: Math.round(d.atk * (1 + (fp - 1) * .6)), def: d.def, spd: d.vit, shield: d.garde, mshield: d.garde, weak: d.faible, res: d.resiste,
     xp: Math.round(d.xp * fp), gold: Math.round(d.or * fp), broken: false, charged: false, cnt: 0, dort: false, vole: false };
+  if (capacite(e, 'cristaux')) { e.cristal = 0; appliquerCristal(e); }
+  return e;
+}
+// cristaux (Ysold) : elle porte un cristal à la fois, qui donne sa faiblesse et sa résistance, et en change après chaque action
+const cristalDe = e => capacite(e, 'cristaux').ordre[e.cristal];
+function appliquerCristal(e) { const c = cristalDe(e); e.weak = c.faible; e.res = c.resiste; }
+async function tournerCristal(e) {
+  const c = capacite(e, 'cristaux'); if (!c || e.hp <= 0) return;
+  e.cristal = (e.cristal + 1) % c.ordre.length; appliquerCristal(e);
+  bMsg(tx('combat.cristal', { nom: e.name, cristal: t('combat.cristal.' + cristalDe(e).c) })); bOverlay(); await wait(850);
 }
 function mkInvite(id) { const h = HEROS[id], c = { id, lvl: char('kael').lvl, xp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure, acc: null }, invite: true }; fullC(c); return c; }
-function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; delete h.saut; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
+function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; delete h.saut; delete h.oubli; delete h.echoLibre; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
 function gainXP(x) {
   const ups = [];
   for (const h of team()) {
@@ -204,7 +220,7 @@ async function heroCommand(h) {
     const sk = CLASSES[h.job].tech, solo = aliveH().length < 2;
     const opts = [
       { k: 'attaque', ic: 'sword', label: esc(t('tech.attaque')), sub: esc(t('element.' + elArme(h))) },
-      { k: 'skills', ic: 'spark', label: esc(t('combat.cmd.tech')), sub: esc(t('classe.' + h.job)) },
+      { k: 'skills', ic: 'spark', label: esc(t('combat.cmd.tech')), sub: esc(h.oubli > 0 ? t('combat.cmd.tech.oubli', { n: h.oubli }) : t('classe.' + h.job)), dis: h.oubli > 0 },
       { k: 'objet', ic: 'bag', label: esc(t('combat.cmd.objet')), sub: esc(t('combat.cmd.objet.sous', { n: itemCount() })), dis: !itemCount() },
       { k: 'garde', ic: 'shield', label: esc(t('combat.cmd.garde')), sub: esc(t('combat.cmd.garde.sous')) },
       { k: 'union', ic: 'link', label: esc(t('combat.union')), sub: esc(B.team.length < 2 ? t('combat.cmd.union.seul') : B.union >= 3 ? t('combat.cmd.union.prete') : `${B.union}/3`), dis: B.union < 3 || solo, cls: B.union >= 3 && !solo ? 'main' : '' },
@@ -220,7 +236,7 @@ async function heroCommand(h) {
     }
     let s;
     if (k === 'skills') {
-      const so = sk.map(id => { const x = TECHNIQUES[id], el = elTech(h, x.el); return { k: id, ic: icTech(x), label: esc(t('tech.' + id)), sub: esc(`${x.pp} ${t('stat.pp')}${el ? ' · ' + el : ''} · ${t('tech.' + id + '.desc')}`), dis: h.pp < x.pp, cls: x.el ? 'el-' + elsOf(h, x.el).slice(-1)[0] : '' }; });
+      const so = sk.map(id => { const x = TECHNIQUES[id], el = elTech(h, x.el), pp = h.echoLibre ? 0 : x.pp; return { k: id, ic: icTech(x), label: esc(t('tech.' + id)), sub: esc(`${pp} ${t('stat.pp')}${el ? ' · ' + el : ''} · ${t('tech.' + id + '.desc')}`), dis: h.pp < pp, cls: x.el ? 'el-' + elsOf(h, x.el).slice(-1)[0] : '' }; });
       so.push(retourOpt('back'));
       bMsg(esc(t('combat.tech.liste', { nom: nomH(h), classe: t('classe.' + h.job) })));
       const c = await menu(so, true); if (c === 'back') continue;
@@ -247,7 +263,7 @@ async function strike(e, els, base, mult, brise = 1.5, corrode = false, aerien =
   if (corrode && !weak && !e.broken && !MONSTRES[e.id].intouchable) { e.shield--; tag += t('combat.corrode') + ' '; }
   if (e.broken) m *= brise;
   const dmg = Math.max(1, Math.round(base * rnd(.9, 1.1) * m));
-  e.hp = Math.max(MONSTRES[e.id].intouchable ? 1 : 0, e.hp - dmg);
+  e.hp = Math.max(MONSTRES[e.id].intouchable || MONSTRES[e.id].fin ? 1 : 0, e.hp - dmg);
   const [x, y] = epos(e); fx(x, y, dmg, cls); await hitFlash(e);
   let line = esc(tag + t('combat.perd', { nom: e.name, n: dmg }));
   if ((weak || corrode) && e.shield <= 0 && !e.broken && e.hp > 0) {
@@ -317,7 +333,8 @@ async function heroAct(h, a) {
   const sk = a.sk === 'attaque' ? { el: elArme(h), type: 'phys', pow: 1, pp: 0, cible: 'ennemi', poids: 1 } : TECHNIQUES[a.sk], nomT = t('tech.' + a.sk);
   // Rappel (Gardien des souvenirs) : relance la dernière action d'un allié, sans qu'il paie de PP (gratuit)
   if (a.sk !== 'rappel') B.dernier[h.id] = { type: 'skill', sk: a.sk, t: a.t };
-  if (!a.gratuit) h.pp -= sk.pp; bCards();
+  const libre = h.echoLibre && sk.pp > 0; if (libre) h.echoLibre = false;
+  if (!a.gratuit && !libre) h.pp -= sk.pp; bCards();
   if (h.enchant > 0 && a.sk !== 'enchant') h.enchant--;
   if (sk.type === 'scan') {
     revealAll(a.t.id);
@@ -435,13 +452,23 @@ async function enemyAct(e) {
   const regen = capacite(e, 'regen');
   if (regen && e.hp < e.mhp * regen.seuil && Math.random() < regen.chance) {
     const v = Math.min(regen.v, e.mhp - e.hp); e.hp += v; fx(...epos(e), '+' + v, 'heal');
-    bMsg(tx(`monstre.${e.id}.special`, { nom: e.name, v })); bDraw(); await wait(650); return 1;
+    bMsg(tx(existe(`monstre.${e.id}.soin`) ? `monstre.${e.id}.soin` : `monstre.${e.id}.special`, { nom: e.name, v })); bDraw(); await wait(650); return 1;
   }
   // appel : un renfort prend la place d'un allié tombé
   const appel = capacite(e, 'appel'), libre = B.enemies.findIndex(x => x.hp <= 0 && x !== e);
   if (appel && libre >= 0 && Math.random() < appel.chance) {
     const r = mkEnnemi(appel.id, B.enemies[libre].name); r.next = e.next + 100 / r.spd; B.enemies[libre] = r; seen(appel.id);
     poserMonstres(B.enemies); bMsg(tx(`monstre.${e.id}.appel`, { nom: e.name, renfort: r.name })); bDraw(); await wait(800); return 1;
+  }
+  // oubli (Paupière du monde) : un héros frappé oublie ses techniques pendant 2 actions, sauf sous le Sceau de mémoire
+  const oubli = capacite(e, 'oubli'), proies = aPortee().filter(h => !h.oubli);
+  if (oubli && proies.length && Math.random() < oubli.chance) {
+    const c = proies.reduce((a, b) => a.pp > b.pp ? a : b); bMsg(tx(`monstre.${e.id}.oubli`, { nom: e.name, cible: nomH(c) })); await wait(500);
+    const d = await dmgHero(c, e.atk * .8), l = d === null ? esc(t('combat.esquive.coup', { nom: nomH(c) })) : esc(t('combat.perd', { nom: nomH(c), n: d }));
+    if (d !== null && B.sceau > 0) { heroFx(c, esc(t('combat.sceau.court')), 'heal'); bMsg(l + ' ' + tx('combat.oubli.sceau', { nom: nomH(c) })); }
+    else if (d !== null && c.hp > 0) { c.oubli = 2; heroFx(c, esc(t('combat.oubli.court')), ''); bMsg(l + ' ' + tx('combat.oubli', { nom: nomH(c) })); }
+    else bMsg(l + (c.hp <= 0 ? ' ' + tx('combat.a.terre', { nom: nomH(c) }) : ''));
+    bDraw(); await wait(900); return 1;
   }
   const fort = capacite(e, 'fort'), coup = fort && Math.random() < fort.chance;
   const dbl = capacite(e, 'double'), fois = !coup && dbl && !(dbl.garde && e.broken) && Math.random() < dbl.chance ? 2 : 1;
@@ -456,7 +483,8 @@ async function enemyAct(e) {
     if (c.hp <= 0) l += ' ' + tx('combat.a.terre', { nom: nc });
     lignes.push(l);
   }
-  const debut = coup ? t('combat.fort', { nom: e.name, coup: t(`monstre.${e.id}.special`) }) : fois > 1 ? t('combat.double', { nom: e.name }) : mord ? t('combat.mord', { nom: e.name }) : t('combat.attaque', { nom: e.name });
+  // nom du coup puissant : monstre.<id>.coup quand .special sert déjà à une autre capacité (charge, regen)
+  const debut = coup ? t('combat.fort', { nom: e.name, coup: t(existe(`monstre.${e.id}.coup`) ? `monstre.${e.id}.coup` : `monstre.${e.id}.special`) }) : fois > 1 ? t('combat.double', { nom: e.name }) : mord ? t('combat.mord', { nom: e.name }) : t('combat.attaque', { nom: e.name });
   bMsg(esc(debut) + ' ' + lignes.join(' '));
   bDraw(); await wait(fois > 1 ? 800 : 650); return 1;
 }

@@ -43,7 +43,7 @@ function cerveau(graine) {
   window.heroCommand = async h => {
     const E = aliveE(), T = aliveH();
     if (R.cur) { R.cur.min = Math.min(R.cur.min, ...team().map(pvp)); R.cur.tours = B.turns; }
-    const tech = id => CLASSES[h.job].tech.includes(id) && h.pp >= TECHNIQUES[id].pp;
+    const tech = id => !(h.oubli > 0) && CLASSES[h.job].tech.includes(id) && (h.pp >= TECHNIQUES[id].pp || h.echoLibre);
     const bas = T.filter(x => pvp(x) < .45).sort((a, b) => pvp(a) - pvp(b));
     if (bas.length >= 2 && tech('soins')) return { type: 'skill', sk: 'soins' };
     if (bas.length && tech('soin')) return { type: 'skill', sk: 'soin', t: bas[0] };
@@ -118,7 +118,8 @@ function cerveau(graine) {
   // ---------- ce que le bot fait ensuite ----------
   const essais = {};
   R.pas = async () => {
-    if (S.screen === 'fin') { S.screen = 'village'; R.etapes++; }
+    // la fin vue : retour à Aerie avant l'Escalier, comme le bouton de l'écran de fin
+    if (S.screen === 'fin') { retourAvantFinal(); R.etapes++; note('fin du jeu vue'); }
     // 1. accepter les quêtes annexes proposées
     for (const a in ANNEXES) if (!annexeEtat(a) && annexeOuverte(a)) {
       const v = villageDuPnj(ANNEXES[a].donneur);
@@ -131,7 +132,8 @@ function cerveau(graine) {
     let quete = null;
     for (const [a, x] of annexesDispos()) { quete = { a, lieu: x.lieu, m: x.morceau }; break; }
     const e = etapeCourante();
-    if (!quete && e) quete = { e, lieu: e.lieu };
+    // après la fin, le bot ne rejoue pas le final : il s'arrête quand il n'a plus de quête annexe
+    if (!quete && e && !S.finVue) quete = { e, lieu: e.lieu };
     if (!quete) return false;
     const pos = posDe(quete.lieu), id = pos.split('.')[0];
     const cle = (quete.a ? quete.a + annexeEtat(quete.a) + (quete.m !== undefined ? '.' + quete.m : '') : quete.e.id);

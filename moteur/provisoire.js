@@ -401,6 +401,24 @@ function spritesActe4() {
   SPR.larmee = larme('#c8e8e0', '#6ab0b8', '#f4ffff');
   SPR.larmef = larme('#e86a3a', '#a83a22', '#ffd860');
   SPR.larmev = larme('#a8c8f0', '#6a8ac8', '#e8f0ff');
+  // le final (0.5.3)
+  SPR.veilleur = mk(36, 52, x => { P(x, '#4a4458', 11, 38, 6, 13); P(x, '#4a4458', 20, 38, 6, 13); P(x, '#8a8ea0', 9, 18, 19, 21); P(x, '#6c7080', 21, 18, 7, 21);
+    P(x, '#7a52a0', 9, 30, 19, 3); E(x, '#9a9eb0', 18, 11, 8, 8); P(x, '#1b1830', 12, 11, 12, 2); P(x, '#e8edf5', 14, 11, 8, 1);
+    P(x, '#5a4a3a', 31, 2, 2, 48); for (let k = 0; k < 6; k++) P(x, '#c8ccd8', 29 - k / 2, 2 + k, 6 + k, 1); P(x, '#8a8ea0', 4, 20, 5, 14); });
+  SPR.nueeoubli = mk(40, 40, x => { for (let k = 0; k < 9; k++) E(x, k % 2 ? '#7a6aa8' : '#9a8ac8', 8 + (k % 3) * 12, 10 + Math.floor(k / 3) * 9, 8, 6);
+    for (let k = 0; k < 6; k++) P(x, '#6a5a98', 6 + k * 6, 30, 2, 8 + (k % 3) * 2);
+    for (const [cx, cy] of [[12, 12], [26, 18], [18, 24]]) { P(x, '#e8e0ff', cx - 2, cy, 1, 1); P(x, '#e8e0ff', cx + 2, cy, 1, 1); P(x, '#4a3a78', cx - 1, cy + 3, 3, 1); } });
+  SPR.ysold = mk(48, 60, x => { for (let y = 22; y < 58; y++) { const w = 5 + Math.round((y - 22) * .38); P(x, y % 7 === 0 ? '#5a3a7a' : '#7a52a0', 24 - w, y, 2 * w, 1); }
+    D(x, '#f0d8c8', 24, 15, 6); E(x, '#e6e8f0', 24, 11, 7, 4); P(x, '#e6e8f0', 17, 11, 3, 14); P(x, '#e6e8f0', 28, 11, 3, 14);
+    P(x, '#1b1830', 21, 15, 2, 1); P(x, '#1b1830', 26, 15, 2, 1); P(x, '#f0d8c8', 12, 26, 6, 3); P(x, '#f0d8c8', 30, 26, 6, 3);
+    for (const [cx, cy, c] of [[6, 18, '#f2c14e'], [42, 18, '#6ad8e8'], [6, 40, '#ff6a3a'], [42, 40, '#a8c8f0']]) { D(x, c, cx, cy, 4); P(x, '#ffffff', cx - 1, cy - 2, 2, 1); } });
+  SPR.paupiere = mk(64, 52, x => { E(x, '#f4e8a8', 32, 30, 28, 14); D(x, '#ffd860', 32, 31, 9); D(x, '#2a2440', 32, 31, 4); P(x, '#ffffff', 29, 28, 2, 2);
+    for (let y = 0; y < 26; y++) { const w = Math.round(30 * Math.sqrt(Math.max(0, 1 - Math.pow((26 - y) / 26, 2)))); P(x, y % 5 === 0 ? '#6a6478' : '#8a8498', 32 - w, 4 + y, 2 * w, 1); }
+    for (let k = 0; k < 7; k++) P(x, '#3a3450', 8 + k * 7, 28, 3, 4 + (k % 2) * 2);
+    for (let k = 0; k < 6; k++) P(x, '#c8b8e8', 12 + k * 8, 18 - (k % 2) * 4, 2, 2);
+    for (let k = 0; k < 5; k++) P(x, 'rgba(200,190,230,.9)', 14 + k * 9, 44, 2, 6); });
+  SPR.f_aldric = face({ skin: '#e2b894', hair: '#c8b070', beard: '#b8a070', cl: '#2a2836', cl2: '#4a4458' });
+  SPR.f_garrick = face({ skin: '#d8a880', hair: '#9a9aa0', patch: true, cl: '#8a6a4a', cl2: '#5a4a3a', scarf: '#c8b8a0' });
 }
 
 function nuages(c, W, H, y0, y1, seed, col) { const r = rng(seed); for (let i = 0; i < 14; i++) { const x = r() * W, y = y0 + r() * (y1 - y0), w = 20 + r() * 40; E(c, col, x, y, w, 5 + r() * 6); } }
@@ -434,6 +452,16 @@ function bgPic(c, W, H) { const r = rng(157);
   const gy = Math.round(H * .78); dgrad(c, 0, gy, W, H - gy, ['#e8f0f8', '#a8b8cc']);
   for (let i = 0; i < 50; i++) { const x = r() * W, y = r() * H; P(c, 'rgba(255,255,255,.7)', x, y, 4 + r() * 6, 1); }
   for (let i = 0; i < 30; i++) P(c, '#ffffff', r() * W, r() * H, 1, 1); }
+// l'Escalier de brume : des marches qui montent dans la brume violette ; au sommet, l'Œil sous sa paupière de pierre
+function bgEscalier(c, W, H, sommet) { const r = rng(163);
+  dgrad(c, 0, 0, W, H, sommet ? ['#2a2048', '#5a4a8a', '#a898c8', '#e8e0f4'] : ['#3a3460', '#6a62a0', '#b8b0d8', '#e8e8f4']);
+  if (sommet) { const cx = W * .5, cy = H * .3; E(c, '#f4e8a8', cx, cy, W * .22, H * .1); D(c, '#ffd860', cx, cy, Math.round(H * .07)); D(c, '#2a2440', cx, cy, Math.round(H * .03));
+    for (let y = 0; y < H * .1; y++) { const w = W * .22 * Math.sqrt(Math.max(0, 1 - Math.pow((H * .1 - y) / (H * .1), 2))); P(c, '#8a8498', cx - w, cy - H * .1 + y, 2 * w, 1); } }
+  const vx = W * .5, vy = H * (sommet ? .48 : .2);
+  for (let k = 0; k < 30; k++) { const f = k / 30, y = H - (H - vy) * f, hw = W * .3 * (1 - f) + 4, hh = Math.max(1, 7 * (1 - f));
+    P(c, k % 2 ? '#c8c0d8' : '#a8a0c0', vx - hw + Math.sin(f * 5) * 10 * f, y - hh, hw * 2, hh); }
+  for (const s of [-1, 1]) for (let i = 0; i < 3; i++) { const x = vx + s * W * (.3 + i * .08), y = H * (.55 + i * .1), h = H * (.25 - i * .05); P(c, '#7a7298', x - 3, y - h, 6, h); P(c, '#9a92b8', x - 3, y - h, 2, h); P(c, '#5a5278', x - 5, y - h - 2, 10, 3); }
+  for (let i = 0; i < 40; i++) P(c, 'rgba(220,210,255,.55)', r() * W, r() * H, 6 + r() * 14, 1); }
 function bgMapVents(c, W, H) { const n1 = vnoise(34, 26), n2 = vnoise(38, 9), im = c.getImageData(0, 0, W, H), d = im.data;
   const pal = { c1: hex('#8ab4e0'), c2: hex('#b8d4ee'), c3: hex('#e8f2fa'), r1: hex('#8a8478'), r2: hex('#6e6a62'), g: hex('#f4f8fc') };
   const iles = ['pont', 'aerie', 'ruines', 'pic', 'escalier'].map(id => surCarte(id, 'vents'));
@@ -500,7 +528,6 @@ function bgMap(c, W, H) { const n1 = vnoise(4, 22), n2 = vnoise(8, 8), im = c.ge
   const mtn = (x, y, s, snow) => { for (let k = 0; k < s; k++) { P(c, '#7b7266', x - k, y - s + k, k * 2 + 1, 1); P(c, '#5c544a', x, y - s + k, k + 1, 1); } if (snow) for (let k = 0; k < 3; k++) P(c, '#f2f2f8', x - k, y - s + k, k * 2 + 1, 1); };
   mtn(N.grotte.x * W - 10, N.grotte.y * H + 6, 11, false); mtn(N.grotte.x * W + 9, N.grotte.y * H + 4, 9, false); P(c, '#1a1426', N.grotte.x * W - 2, N.grotte.y * H - 1, 4, 3);
   mtn(N.col.x * W - 8, N.col.y * H + 6, 12, true); mtn(N.col.x * W + 8, N.col.y * H + 7, 10, true);
-  mtn(N.prof.x * W, N.prof.y * H + 5, 8, false); P(c, '#0b0812', N.prof.x * W - 2, N.prof.y * H + 1, 5, 3);
   for (let i = 0; i < 9; i++) { const x = N.marais.x * W + (r() - .5) * 24, y = N.marais.y * H + (r() - .5) * 14; P(c, '#7a8a4a', x, y - 3, 1, 3); P(c, '#9aa05a', x + 1, y - 4, 1, 2); }
   for (const [dx, dy] of [[-6, -2], [1, -5], [5, 2]]) { const x = N.lanterval.x * W + dx, y = N.lanterval.y * H + dy; P(c, '#d8c39a', x - 2, y - 2, 5, 3); P(c, '#a8423a', x - 3, y - 4, 7, 2); } }
 
@@ -535,5 +562,7 @@ Object.assign(DECORS_PROVISOIRES, {
   'aerie': bgAerie,
   'ruines': bgRuines,
   'pic': bgPic,
+  'escalier': (c, w, h) => bgEscalier(c, w, h, false),
+  'escalier-sommet': (c, w, h) => bgEscalier(c, w, h, true),
   'carte-vents': bgMapVents
 });

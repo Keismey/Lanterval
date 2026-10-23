@@ -30,7 +30,7 @@ function openDebug() {
   o.push({ k: 'objets', ic: 'bag', label: '+5 de chaque objet de soin' });
   if (ici && S.z[ici]) o.push({ k: 'zone', ic: 'search', label: 'Explorer cette zone à 100 %' });
   for (const a in ANNEXES) o.push({ k: 'a:' + a, ic: 'paw', label: `Quête annexe ${a} : étape suivante`, sub: `état actuel : ${S ? annexeEtat(a) : 0}` });
-  o.push({ k: 'fin', ic: 'book', label: 'Écran de fin de version' });
+  o.push({ k: 'fin', ic: 'book', label: 'Écran de fin du jeu', sub: 'Ses boutons ramènent à Aerie avant l\'Escalier' });
   o.push({ k: 'plus', ic: 'play', label: 'Lancer une partie+' });
   const sh = modal(sheetHead('Mode test') + `<p class="note">Les étapes d'avant sont jouées en silence. Rien de tout ça n'est possible sur le site public.</p><div class="acts" id="d-list"></div>`);
   sh.querySelector('#mclose').onclick = fermerFenetre;

@@ -34,7 +34,10 @@ function renderZone() {
   setDecor(decorDuLieu(id));
   ovc().innerHTML = zoneOverlay(id);
   const qb = questBtns(id), opts = [...qb];
-  if (z) {
+  // l'Escalier de brume (nonRetour) : on n'y explore qu'une fois monté, et on n'en redescend plus avant la fin ;
+  // ses deux côtés ne se relient que par l'histoire
+  const monte = L.nonRetour && cond(L.nonRetour);
+  if (z && (!L.nonRetour || monte)) {
     const reste = L.tresors.length - z.found.length, peut = reste > 0 || z.rnd < L.maxEvenements;
     opts.push({ k: 'explore', ic: 'search', label: esc(t('zone.explorer')), sub: esc(peut ? (reste ? t(reste > 1 ? 'zone.reste' : 'zone.reste.un', { n: reste }) : t('zone.tout')) : t('zone.rien')), dis: !peut });
     opts.push({ k: 'hunt', ic: 'sword', label: esc(t('zone.chasser')), sub: esc(t('zone.chasser.sous')) });
@@ -42,7 +45,7 @@ function renderZone() {
     if (repos) opts.push({ k: 'rest', ic: 'drop', label: esc(t(`${id}.${repos.id}.nom`)), sub: esc(t(z.rest ? 'zone.repos.utilise' : 'zone.repos')), dis: z.rest });
   }
   // traverser vers l'autre côté de la zone
-  if (L.cotes) {
+  if (L.cotes && !L.nonRetour) {
     const autre = L.cotes.find(c => c !== cote);
     opts.push({ k: 'cross', ic: 'cross', label: esc(t('zone.traverser', { lieu: t(`lieu.${id}.${autre}`) })), sub: esc(coutTraversee(id)), bang: marqueTraversee(id) });
   }
@@ -52,7 +55,8 @@ function renderZone() {
     const l = lieuDe(autre);
     if (lieuVisible(l) && (!lieuOuvert(l) || LIEUX[l].bientot)) opts.push({ k: 'x', ic: 'lock', label: esc(nomLieu(l)), sub: esc(existe(`lieu.${l}.ferme`) ? t(`lieu.${l}.ferme`) : t(LIEUX[l].bientot ? 'zone.bientot' : 'zone.ferme')), dis: true });
   }
-  opts.push({ k: 'map', ic: 'map', label: esc(t('zone.carte')), sub: esc(t('zone.carte.sous')), cls: 'ghost', bang: marqueCarte(id) });
+  if (monte) opts.push({ k: 'x', ic: 'lock', label: esc(t('zone.carte')), sub: esc(t('zone.nonretour')), dis: true });
+  else opts.push({ k: 'map', ic: 'map', label: esc(t('zone.carte')), sub: esc(t('zone.carte.sous')), cls: 'ghost', bang: marqueCarte(id) });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomLieu(id))} <small>${esc(cote ? t(`lieu.${id}.${cote}`) : '')}</small></div><p class="ptext">${tx(varianteLieu(id, 'desc'))}</p><div class="msgline">${S.msg || ''}</div><div class="acts">${btns(opts)}</div>`;
   S.msg = '';

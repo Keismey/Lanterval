@@ -16,7 +16,7 @@ function voisins(pos) {
   const o = [];
   for (const [a, b] of LIENS) { if (a === pos) o.push([b, null]); else if (b === pos) o.push([a, null]); }
   const id = lieuDe(pos), L = LIEUX[id];
-  if (L.cotes) for (const c of L.cotes) if (id + '.' + c !== pos) o.push([id + '.' + c, id]);
+  if (L.cotes && !L.nonRetour) for (const c of L.cotes) if (id + '.' + c !== pos) o.push([id + '.' + c, id]);
   return o.filter(([p]) => lieuOuvert(lieuDe(p)) && !LIEUX[lieuDe(p)].bientot);
 }
 // chemin le plus court (en nombre de traversées) vers un lieu : { vers, via: [[zone, deCote, versCote], …] }

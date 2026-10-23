@@ -22,7 +22,9 @@
      ['choix', repère, { id: [...] }]    une question ; chaque réponse a sa suite
      ['stop']                            arrête l'étape sans la terminer
      ['message', repère]                 ligne d'info affichée ensuite sur l'écran du lieu
-     ['fin_version']                     écran de fin de la version en cours */
+     ['si', condition, [...], [...]]     joue la première liste si la condition est vraie, sinon la seconde
+     ['codex']                           tous les monstres au Codex, faiblesses et résistances comprises
+     ['fin_jeu']                         générique et écran de fin du jeu (voir FINAL dans acte4.js) */
 
 ACTES.push({
   id: 'a1',

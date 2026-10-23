@@ -107,12 +107,6 @@ Stone Pass
 == lieu.marais.nom
 Salt Marsh
 
-== lieu.prof.nom
-The Depths
-
-== lieu.prof.ferme
-Rockfall: later in the story
-
 # ================= Whispering Forest =================
 
 == lieu.foret.nom
@@ -1350,6 +1344,89 @@ A ray of sunlight breaks through the clouds and warms everyone: *+45 HP* for eve
 == lieu.escalier.nom
 Stair of Mist
 
+== lieu.escalier.le
+the Stair
+
+== lieu.escalier.b
+foot
+
+== lieu.escalier.s
+top
+
+== lieu.escalier.sous
+Above the Howling Peak
+
+== lieu.escalier.sous.sommet
+Before the Heart of the Eye
+
+== lieu.escalier.ferme
+After the campfire in Aerie
+
+== lieu.escalier.desc
+Pale stone steps climb into the mist, higher than the clouds. No one has ever come back down to tell what waits at the top.
+
+== lieu.escalier.desc.sommet
+The last step opens onto a stone platform. Above it, a huge eye of light, half hidden under an eyelid of stone.
+
+== escalier.h1.nom
+Pilgrim's bag
+
+== escalier.h1.texte
+A canvas bag left on a step, still closed: *2 wind balms and 2 ethers*.
+
+== escalier.h2.nom
+Split helm
+
+== escalier.h2.texte
+A Watcher's helm, split by wind and fire. *Weaknesses of the Watcher of the Eyelid added to the codex.*
+
+== escalier.h3.nom
+Monks' alcove
+
+== escalier.h3.texte
+An alcove carved in the rock, with a clear spring and blankets. The team *recovers all its strength*. You can rest here once.
+
+== escalier.h4.nom
+Ancient offerings
+
+== escalier.h4.texte
+Stone bowls full of coins, left by pilgrims from another age: *900 g*.
+
+== escalier.h5.nom
+Retreating mist
+
+== escalier.h5.texte
+A swarm of oblivion came apart before a forgotten flame. *Weaknesses of the Oblivion Swarm added to the codex.*
+
+== escalier.h6.nom
+Order chest
+
+== escalier.h6.texte
+A chest bearing the Order's arms, forced open long ago: *3 Cendre potions and 2 wind balms*.
+
+== escalier.m50
+## 50% milestone reached
+Under a loose step: *2 wind balms and 3 ethers*.
+
+== escalier.m100
+## 100% milestone reached
+You know every step of the Stair. In the last alcove, a *Mist Star* (accessory: Attack +6, Magic +6, Defense +4).
+
+== escalier.ev.combat
+The mist closes in on the steps. Footsteps climb behind you…
+
+== escalier.ev.vertige
+A step crumbles under your feet! *Everyone loses 24 HP.*
+
+== escalier.ev.souvenir
+A childhood memory drifts by in the mist, soft and clear. Minds rest: *+16 PP* for everyone.
+
+== escalier.ev.offrande
+A gold coin shines between two stones: *+150 g*.
+
+== escalier.ev.lumiere
+A ray falls from the Eye and warms the steps: *+60 HP* for everyone.
+
 # ---------- Version 0.5.2 ----------
 
 == pnj.liss.nom
@@ -1360,3 +1437,11 @@ Nev and Varen's grandmother
 
 == pnj.orvan.sous.aerie
 By the fire, at Edda's
+
+# ---------- Version 0.5.3: the finale ----------
+
+== pnj.garrick.nom
+Garrick
+
+== pnj.garrick.sous
+Old hunter, Roxane's teacher

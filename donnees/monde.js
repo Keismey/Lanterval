@@ -392,7 +392,9 @@ const LIEUX = {
       { id: 'fennel', portrait: 'fennel', si: 'fini a4.e2' },
       // Liss, la grand-mère de Nev et Varen (« Le cerf-volant ») ; Orvan, arrivé pour le feu de camp
       { id: 'liss', portrait: 'liss', si: 'fini a4.e2' },
-      { id: 'orvan', portrait: 'orvan', si: 'fini a4.e7', sous: 'pnj.orvan.sous.aerie' }
+      { id: 'orvan', portrait: 'orvan', si: 'fini a4.e7', sous: 'pnj.orvan.sous.aerie' },
+      // Garrick, le vieux maître de Roxane (« Les Échos », après la fin)
+      { id: 'garrick', portrait: 'garrick', si: 'fini a4.e2' }
     ]
   },
 
@@ -448,9 +450,34 @@ const LIEUX = {
     }
   },
 
-  // Lieux de la suite, visibles sur la carte mais pas encore jouables
-  prof: { type: 'zone', x: .9, y: .62, visible: 'fini a1.e3', ouvert: false },
-  escalier: { type: 'zone', region: 'vents', x: .84, y: .12, visible: 'fini a4.e6', bientot: true }
+  // L'Escalier de brume, le final (a4.e8 à a4.e10). nonRetour : une fois monté (drapeau escalier), plus de carte
+  // ni de traversée libre jusqu'à la fin ; avant, on n'y explore pas. Ses deux côtés ne se relient que par l'histoire.
+  escalier: {
+    type: 'zone', region: 'vents', x: .84, y: .12, cotes: ['b', 's'],
+    visible: 'fini a4.e6', ouvert: 'fini a4.e7', nonRetour: 'drapeau escalier',
+    etats: [{ id: 'sommet', si: 'fini a4.e9' }],
+    maxEvenements: 3,
+    tresors: [
+      { id: 'h1', type: 'tresor', gagne: '2 baume, 2 ether' },
+      { id: 'h2', type: 'lieu', revele: 'veilleur' },
+      { id: 'h3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'h4', type: 'tresor', gagne: '900 or' },
+      { id: 'h5', type: 'lieu', revele: 'nueeoubli' },
+      { id: 'h6', type: 'tresor', gagne: '3 potion, 2 baume' }
+    ],
+    palier50: { gagne: '2 baume, 3 ether' },
+    palier100: { gagne: 'etoile' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'vertige', poids: 1.5, effet: 'degats tous 24' },
+      { id: 'souvenir', poids: 1.5, effet: 'pp 16' },
+      { id: 'offrande', poids: 1, gagne: '150 or' },
+      { id: 'lumiere', poids: 1.5, effet: 'soin 60' }
+    ],
+    groupes: {
+      normal: [['veilleur'], ['nueeoubli', 'nueeoubli'], ['veilleur', 'nueeoubli'], ['nueeoubli', 'veilleur', 'nueeoubli'], ['veilleur', 'brume']]
+    }
+  }
 };
 
 // Chemins de la carte. « foret.v » = la forêt côté village : on change de côté en traversant la zone.
@@ -459,7 +486,6 @@ const LIENS = [
   ['foret.g', 'grotte.e'],
   ['foret.g', 'col.p'],
   ['lanterval', 'marais.v'],
-  ['grotte.f', 'prof'],
   ['lanterval', 'champs.v'],
   // Côte de Salvent
   ['marais.c', 'salvent'],
@@ -475,5 +501,5 @@ const LIENS = [
   ['pont.a', 'aerie'],
   ['aerie', 'ruines.p'],
   ['aerie', 'pic.b'],
-  ['pic.s', 'escalier']
+  ['pic.s', 'escalier.b']
 ];

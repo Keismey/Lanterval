@@ -55,7 +55,7 @@ function effacerPartie() { try { localStorage.removeItem(CLE); localStorage.remo
 /* ---------- Partie+ : on garde classes, niveaux, équipement et codex ---------- */
 function partiePlus() {
   const old = S, s = newState();
-  s.plus = (old.plus || 0) + 1; s.fins = old.fins || 0;
+  s.plus = (old.plus || 0) + 1; s.fins = old.fins || 0; s.finVue = old.finVue || 0;
   s.jobs = [...old.jobs]; s.best = old.best; s.codex = old.codex; s.bag = old.bag; s.vus = old.vus || {};
   for (const id of ORDRE_HEROS) { const o = old.chars[id], c = s.chars[id]; c.lvl = o.lvl; c.xp = o.xp; c.job = o.job; c.eq = { ...o.eq }; fullC(c); }
   S = s; return s;
@@ -131,20 +131,36 @@ function fini(id) { return S.etapes.includes(id); }
 function etapeCourante() { return toutesEtapes().find(e => !fini(e.id)) || null; }
 function acteDe(etape) { return ACTES.find(a => a.etapes.includes(etape)); }
 
-// « fini a1.e3 et pas fini a1.e7 et annexe loup 2 » ; « objet oeuf » = l'objet important est dans le sac
+// « fini a1.e3 et pas fini a1.e7 et annexe loup 2 » ; « objet oeuf » = l'objet important est dans le sac ;
+// « finvue » = la fin du jeu a été vue (aussi en partie+) ; « ou » sépare des groupes de conditions jointes par « et »
 function cond(c) {
   if (c === undefined || c === true) return true;
   if (c === false) return false;
-  return String(c).split(/\s+et\s+/).every(p => {
+  return String(c).split(/\s+ou\s+/).some(g => g.split(/\s+et\s+/).every(p => {
     const m = p.trim().split(/\s+/), non = m[0] === 'pas'; if (non) m.shift();
     let ok;
-    if (m[0] === 'fini') ok = fini(m[1]);
+    if (m[0] === 'finvue') ok = (S.finVue || 0) > 0;
+    else if (m[0] === 'fini') ok = fini(m[1]);
     else if (m[0] === 'annexe') ok = (S.annexes[m[1]] || 0) >= +(m[2] || 1);
     else if (m[0] === 'drapeau') ok = !!S.f[m[1]];
     else if (m[0] === 'objet') ok = S.imp.includes(m[1]);
     else { console.warn('Condition inconnue :', p); ok = false; }
     return non ? !ok : ok;
-  });
+  }));
+}
+
+/* ---------- Le final (donnees/acte4.js, FINAL) ----------
+   Une fois monté à l'Escalier de brume (drapeau escalier), on ne redescend plus avant la fin.
+   Après la fin, la partie revient à Aerie juste avant l'Escalier : l'histoire du final est rejouable,
+   mais les niveaux, l'or, les objets et l'équipement gagnés là-haut sont gardés. */
+function dansLeFinal() { return !!S.f.escalier; }
+function retourAvantFinal() {
+  const ids = toutesEtapes().map(e => e.id), i = ids.indexOf(FINAL.depart);
+  S.etapes = S.etapes.filter(id => ids.indexOf(id) < i);
+  S.f.escalier = false; S.reprise = null;
+  S.loc = S.auberge = FINAL.retour; S.screen = 'village';
+  healAll(); restorePP();
+  logR('journal.log.avantfinal');
 }
 function etatLieu(id) { const L = LIEUX[id]; let e = null; for (const x of L.etats || []) if (cond(x.si)) e = x.id; return e; }
 function lieuVisible(id) { return cond(LIEUX[id].visible); }

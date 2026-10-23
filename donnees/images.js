@@ -3,7 +3,8 @@
    portrait : visage carré pour les avatars ;
    provisoire : dessin de la maquette utilisé tant que le fichier manque ;
    sujet : ce que l'image doit montrer (pour le prompt Gemini) ;
-   lueur : position du cristal de la lanterne dans l'image (en part de la largeur et de la hauteur).
+   lueur : position du cristal de la lanterne dans l'image (en part de la largeur et de la hauteur) ;
+   brume : l'image passe « en brume » (bleu-gris, translucide) : les Échos réutilisent les images des boss d'origine.
    Sans fichier ni dessin provisoire, le jeu affiche un cadre avec le sujet. */
 
 const IMAGES = {
@@ -185,5 +186,29 @@ const IMAGES = {
   'monstre.larmet': { provisoire: 'larmet', sujet: 'Gardien de cristal, silhouette massive faite de cristaux bleus de la grotte, une larme de lumière au milieu du torse' },
   'monstre.larmee': { provisoire: 'larmee', sujet: 'Gardien d\'écume, forme d\'écume et de coquillages qui se dresse de l\'eau, une larme de lumière au milieu du torse' },
   'monstre.larmef': { provisoire: 'larmef', sujet: 'Gardien de braise, silhouette de métal en fusion aux bras brûlants, une larme de lumière au milieu du torse' },
-  'monstre.larmev': { provisoire: 'larmev', sujet: 'Gardien d\'azur, grand oiseau de vent et de brume aux ailes de lames, une larme de lumière au milieu du corps' }
+  'monstre.larmev': { provisoire: 'larmev', sujet: 'Gardien d\'azur, grand oiseau de vent et de brume aux ailes de lames, une larme de lumière au milieu du corps' },
+
+  // ---------- Le final (0.5.3) : l'Escalier de brume, le Cœur de l'Œil, les épilogues, les Échos ----------
+  'decor.escalier': { provisoire: 'escalier', sujet: 'Escalier de brume, marches de pierre pâle qui montent dans les nuages au-dessus du Pic, brume violette, piliers brisés' },
+  'decor.escalier.sommet': { provisoire: 'escalier-sommet', sujet: 'Sommet de l\'Escalier de brume, plateforme de pierre devant un œil de lumière immense à demi fermé par une paupière de pierre' },
+  'monstre.veilleur': { provisoire: 'veilleur', sujet: 'Veilleur de la Paupière, grand chevalier de l\'Ordre en armure grise, heaume à l\'œil fermé, hallebarde' },
+  'monstre.nueeoubli': { provisoire: 'nueeoubli', sujet: 'Nuée d\'oubli, nuage de brume violette avec des visages effacés, longs filaments' },
+  'monstre.sansnom3': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse (même image que monstre.sansnom)' },
+  'monstre.ysold': { provisoire: 'ysold', sujet: 'Ysold fusionnée aux quatre cristaux, femme aux cheveux argentés en robe violette qui flotte, quatre cristaux (ambre, écume, braise, azur) qui tournent autour d\'elle' },
+  'monstre.paupiere': { provisoire: 'paupiere', sujet: 'La Paupière du monde, immense paupière de pierre gravée de runes qui se referme sur un œil de lumière, brume qui en coule' },
+  'monstre.echogolem': { fichier: 'img/monstres/golem.webp', provisoire: 'golem', brume: true, sujet: 'Écho du Gardien de cristal (image du Gardien en brume)' },
+  'monstre.echovouivre': { fichier: 'img/monstres/vouivre.webp', provisoire: 'vouivre', brume: true, sujet: 'Écho de la Vouivre (image de la Vouivre en brume)' },
+  'monstre.echoforgeur': { fichier: 'img/monstres/forgeur.webp', provisoire: 'forgeur', brume: true, sujet: 'Écho du Forgeur de cages (image du Forgeur en brume)' },
+  'monstre.echoheraut': { fichier: 'img/monstres/heraut.webp', provisoire: 'heraut', brume: true, sujet: 'Écho du Héraut (image du Héraut en brume)' },
+  'monstre.echosansnom': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', brume: true, sujet: 'Écho du Sans-Nom (image du Sans-Nom en brume)' },
+  'pnj.aldric': { provisoire: 'f_aldric', sujet: 'Aldric, père de Kael, la quarantaine, cheveux blonds grisonnants, barbe courte, armure noire de l\'Ordre fendue, sans masque' },
+  'pnj.garrick': { provisoire: 'f_garrick', sujet: 'Garrick, vieux chasseur d\'Aerie, cheveux gris en bataille, bandeau sur un œil, manteau de plumes et de fourrure' },
+  'pano.aldric': { sujet: 'Sur l\'Escalier de brume, Aldric sans masque, l\'épée de Kael à la main, retient seul une marée d\'Ombres pour laisser passer l\'équipe' },
+  'pano.ysold': { sujet: 'Au Cœur de l\'Œil, Ysold flotte au-dessus d\'une plateforme de pierre, fusionnée aux quatre cristaux qui tournent autour d\'elle' },
+  'pano.oeil': { sujet: 'L\'Œil du monde s\'ouvre au-dessus des nuages : la paupière de pierre se fend, la lumière coule vers les quatre régions' },
+  'pano.epilogue.kael': { sujet: 'Épilogue de Kael : Lanterval au matin, Kael en garde sur les remparts, l\'épée à la lanterne au côté, la vallée claire sans brume' },
+  'pano.epilogue.mira': { sujet: 'Épilogue de Mira : la forge de Forgecendre au matin, une flamme dans l\'âtre, Mira sur le pas de la porte' },
+  'pano.epilogue.sol': { sujet: 'Épilogue de Sol : le port de Salvent sous un ciel clair, Sol au bout du quai, le phare qui brille' },
+  'pano.epilogue.nev': { sujet: 'Épilogue de Nev : Aerie au vent, des cerfs-volants dans le ciel, Nev sur une plateforme au bord des falaises' },
+  'pano.echo': { sujet: 'Au sommet du Col des Pierres, une silhouette géante de brume bleu-gris prend la forme du Sans-Nom' }
 };

@@ -113,7 +113,11 @@ const EQUIPEMENT = {
   // Fleur-lanterne (« La graine-lanterne ») : regen = part des PV max rendue à chaque action du porteur
   fleur: { place: 'acc', cadeau: true, st: { hp: 20, def: 3 }, regen: .05 },
   // Œil du traqueur (« Le carnet du chasseur ») : faiblesses et résistances des monstres connues dès le début du combat
-  traqueur: { place: 'acc', cadeau: true, st: { atk: 4, mag: 4 }, traqueur: true }
+  traqueur: { place: 'acc', cadeau: true, st: { atk: 4, mag: 4 }, traqueur: true },
+  // le final : palier de l'Escalier de brume ; Talisman de l'écho (« Les Échos ») : le porteur agit le premier
+  // et sa première technique de chaque combat ne coûte pas de PP (voir battle dans combat.js)
+  etoile: { place: 'acc', v: 200, st: { atk: 6, mag: 6, def: 4 } },
+  talecho: { place: 'acc', cadeau: true, st: { atk: 6, mag: 6, spd: 4 }, echo: true }
 };
 
 // Objets importants (onglet « Importants » de l'inventaire), dans l'ordre d'affichage.

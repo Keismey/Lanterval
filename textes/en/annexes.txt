@@ -1427,5 +1427,162 @@ Orvan: “Remember one another. It's the one thing the mist can't take.”
 == larmes.apres
 Tavor: “The monks used to say the Eye weeps when it is afraid to forget. Thanks to you, it is less afraid.”
 
-== pnj.orvan.fin
+== pnj.orvan.a4.e8
 Orvan: “Tomorrow, the Stair of Mist. Tonight, I'm warming myself at Edda's fire. I'm too old for cold nights.”
+
+# ---------- 16. The Echoes (Garrick, after the end; Echo talisman and complete Codex) ----------
+
+== pnj.garrick
+Garrick: “I don't hunt any more, kid. But the mist still does.”
+Garrick: “When all this is over, and Roxane's logbook is full, come and see me. I'll have one last trail for you.”
+
+== echos.titre
+The Echoes
+
+== echos.offre
+Garrick: “So you're the name that's in Roxane's logbook four times. Sit down.”
+Garrick: “The mist copies the beasts you bring down. It keeps their shape, with nothing inside, and makes them again, only worse. We call them Echoes.”
+Garrick: “Four of them prowl not far from where you brought down your greatest monsters. And a fifth, at the Stone Pass. That one, I wouldn't wish on anyone.”
+> oui : Hunt the Echoes | Side quest
+> non : Later
+
+== echos.message
+Side quest: hunt the *four Echoes*, in any order: *Whispering Forest*, *Lantern Marsh*, *Burnt Fields*, *Cloud Bridge*. Then the fifth, at the *Stone Pass*.
+
+== echos.e1.titre
+Hunt the four Echoes
+
+== echos.e1.sous
+The Echoes: Forest, Marsh, Fields, Bridge
+
+== echos.e1.attente
+Garrick: “An Echo doesn't hide. It prowls not far from where the original fell. Go and look where you had your worst scares.”
+
+== echos.e1.m1.titre
+The Echo of the Whispering Forest
+
+== echos.e1.m1.bouton
+Follow the grey light
+
+== echos.e1.m1.brume
+## The Echoes
+Between the great trunks, a grey light pulses close to the ground. Crystals of mist come together, piece by piece.
+Kael: “The Crystal Guardian. We brought it down at the bottom of the cave, at the very beginning.”
+Mira: “It looks angrier than the first time.” [Fight]
+
+== echos.e1.m1.conseil
+The *Echo of the Guardian* resists *Fire* and *Blade*; *Earth* and *Water* split its guard. It charges a ray at the whole team and strikes twice while its guard holds.
+
+== echos.e1.m1.fin
+## The Echoes
+The Echo comes apart into grey dust, and the forest falls silent again.
+Sol: “One down. Garrick said four, plus one.”
+
+== echos.e1.m1.message
+Echo of the Guardian defeated in the *Whispering Forest*.
+
+== echos.e1.m2.titre
+The Echo of the Lantern Marsh
+
+== echos.e1.m2.bouton
+Approach the dark lanterns
+
+== echos.e1.m2.brume
+## The Echoes
+The marsh's three little lanterns go out all at once. From the black water rises a winged shape made of cold mist.
+Sol: “The Wyvern. It wasn't this big last time.” [Fight]
+
+== echos.e1.m2.conseil
+The *Echo of the Wyvern* resists *Water* and *Fire*; only *Earth* splits its guard. It charges a breath at the whole team and bites to heal itself.
+
+== echos.e1.m2.fin
+## The Echoes
+The Echo dissolves into the water, and the three lanterns light up again one by one.
+
+== echos.e1.m2.message
+Echo of the Wyvern defeated in the *Lantern Marsh*.
+
+== echos.e1.m3.titre
+The Echo of the Burnt Fields
+
+== echos.e1.m3.bouton
+Listen to the hammer in the smoke
+
+== echos.e1.m3.brume
+## The Echoes
+In the middle of the charred wheat, an anvil rings with no one to strike it. A giant of grey iron steps out of the smoke.
+Mira: “The Cage Forger. Even made of mist, it still wants to cast cages.” [Fight]
+
+== echos.e1.m3.conseil
+The *Echo of the Forger* resists *Fire* and *Blade*; *Water* and *Wind* split its guard. It charges an anvil blow at the whole team and calls automatons.
+
+== echos.e1.m3.fin
+## The Echoes
+The anvil of mist falls, and does not rise again. The wind carries the smoke away to the south.
+
+== echos.e1.m3.message
+Echo of the Forger defeated in the *Burnt Fields*.
+
+== echos.e1.m4.titre
+The Echo of the Cloud Bridge
+
+== echos.e1.m4.bouton
+Cross the fog on the bridge
+
+== echos.e1.m4.brume
+## The Echoes
+In the middle of the Cloud Bridge, a violet knight waits, mace raised. He has no face.
+Nev: “The Herald of Salvent. He truly believed he was offering peace. This one doesn't believe in anything any more.” [Fight]
+
+== echos.e1.m4.conseil
+The *Echo of the Herald* resists *Fire*; *Water* and *Earth* split its guard. It charges “Closed eyelid” at the whole team and often strikes twice.
+
+== echos.e1.m4.fin
+## The Echoes
+The Echo tears apart in the wind, and the bridge stops creaking.
+
+== echos.e1.m4.message
+Echo of the Herald defeated on the *Cloud Bridge*.
+
+== echos.e2.titre
+Face the last Echo at the Stone Pass
+
+== echos.e2.bouton
+Climb to the top of the pass
+
+== echos.e2.attente
+Garrick: “The fifth is waiting for you at the Stone Pass. Prepare well, kid. That's the scariest one.”
+
+== echos.e2.col
+## The Echoes
+At the top of the pass, near the empty pedestal, the mist takes on a huge shape. A mace, a mask, and nothing inside.
+Kael: “The Nameless. But my father isn't in there any more. It's only his fear.”
+Kael: “So we can beat it for good.” [Fight]
+
+== echos.e2.conseil
+The *Echo of the Nameless* is the strongest of all. It resists *Earth* and *Water*; *Fire* and *Wind* split its guard. It charges a blow at the whole team, strikes twice while its guard holds and bites to heal itself.
+
+== echos.e2.fin
+## The Echoes
+The Echo bursts into a thousand grey drops, which fall on the pass like a gentle rain. The sun returns to the standing stones.
+Kael: “It's over. For good, this time.”
+
+== echos.e2.message
+All five Echoes are defeated. Go back to *Garrick* in Aerie.
+
+== echos.e3.titre
+Tell Garrick about the hunt
+
+== echos.e3.retour
+## The Echoes
+Garrick listens to the whole story without a word, eyes closed. At the end, he smiles.
+Garrick: “Five Echoes. I never got more than two. Roxane is going to be jealous.”
+Garrick: “Take my notebook too. Every beast I've met in fifty years is in it, with what brings it down.”
+
+== echos.e3.fin
+## Side quest complete
+Garrick: “And this. My talisman. It always let me shoot first.”
+? You receive the *Echo talisman* (accessory: Attack +6, Magic +6, Speed +4; its wearer acts first, and their first technique in each fight costs no PP) and *2,000 g*. The *Codex* is complete: every monster, with its weaknesses and resistances.
+
+== echos.apres
+Garrick: “Back to see me? There are no more Echoes, kid. Thanks to you, the mist has nothing left to copy.”

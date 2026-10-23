@@ -76,6 +76,8 @@ button{font:inherit;color:inherit}
 .unit.mort{opacity:0}
 .unit.brise img{filter:drop-shadow(0 0 6px #ffe680) brightness(1.1)}
 .unit.charge img{filter:drop-shadow(0 0 14px rgba(143,243,255,.9))}
+/* Échos : l'image du boss d'origine, en brume bleu-grise et translucide */
+.unit.echo img,.bst img.echo{filter:grayscale(.7) sepia(.3) hue-rotate(180deg) saturate(1.6) brightness(1.15) drop-shadow(0 0 10px rgba(150,170,230,.7));opacity:.8}
 .unit.actif::before{content:"";position:absolute;left:50%;top:-12px;width:10px;height:10px;transform:translateX(-50%) rotate(45deg);background:var(--gold);box-shadow:0 0 8px var(--gold)}
 /* panorama : image large ; on garde le texte lisible */
 .scene.pano::after{background:linear-gradient(180deg,transparent 70%,rgba(5,6,15,.35) 100%)}

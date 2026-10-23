@@ -110,12 +110,6 @@ Col des Pierres
 == lieu.champs.nom
 Champs brûlés
 
-== lieu.prof.nom
-Profondeurs
-
-== lieu.prof.ferme
-Éboulement : plus tard dans l'histoire
-
 # ================= Forêt des Murmures =================
 
 == lieu.foret.nom
@@ -1360,6 +1354,89 @@ Un rayon de soleil perce les nuages et réchauffe tout le monde : *+45 PV* pour 
 == lieu.escalier.nom
 Escalier de brume
 
+== lieu.escalier.le
+l'Escalier
+
+== lieu.escalier.b
+pied
+
+== lieu.escalier.s
+sommet
+
+== lieu.escalier.sous
+Au-dessus du Pic hurlant
+
+== lieu.escalier.sous.sommet
+Devant le Cœur de l'Œil
+
+== lieu.escalier.ferme
+Après le feu de camp d'Aerie
+
+== lieu.escalier.desc
+Des marches de pierre pâle montent dans la brume, plus haut que les nuages. Personne n'en est jamais redescendu pour raconter ce qu'il y a en haut.
+
+== lieu.escalier.desc.sommet
+La dernière marche donne sur une plateforme de pierre. Au-dessus, un œil de lumière immense, à demi caché sous une paupière de pierre.
+
+== escalier.h1.nom
+Sac de pèlerin
+
+== escalier.h1.texte
+Un sac de toile oublié sur une marche, encore fermé : *2 baumes des vents et 2 éthers*.
+
+== escalier.h2.nom
+Heaume fendu
+
+== escalier.h2.texte
+Un heaume de Veilleur, fendu par le vent et le feu. *Faiblesses du Veilleur de la Paupière ajoutées au codex.*
+
+== escalier.h3.nom
+Niche des moines
+
+== escalier.h3.texte
+Une niche creusée dans la pierre, avec une source claire et des couvertures. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer une fois.
+
+== escalier.h4.nom
+Offrandes anciennes
+
+== escalier.h4.texte
+Des bols de pierre pleins de pièces, laissés par des pèlerins d'un autre temps : *900 po*.
+
+== escalier.h5.nom
+Brume qui recule
+
+== escalier.h5.texte
+Une nuée d'oubli s'est défaite devant une flamme oubliée. *Faiblesses de la Nuée d'oubli ajoutées au codex.*
+
+== escalier.h6.nom
+Coffre de l'Ordre
+
+== escalier.h6.texte
+Un coffre aux armes de l'Ordre, forcé depuis longtemps : *3 potions de Cendre et 2 baumes des vents*.
+
+== escalier.m50
+## Palier 50 % atteint
+Sous une marche descellée : *2 baumes des vents et 3 éthers*.
+
+== escalier.m100
+## Palier 100 % atteint
+Tu connais chaque marche de l'Escalier. Dans la dernière niche, une *Étoile de brume* (accessoire : Attaque +6, Magie +6, Défense +4).
+
+== escalier.ev.combat
+La brume se resserre sur les marches. Des pas montent derrière vous…
+
+== escalier.ev.vertige
+Une marche s'effrite sous vos pieds ! *Tout le monde perd 24 PV.*
+
+== escalier.ev.souvenir
+Un souvenir d'enfance passe dans la brume, doux et clair. L'esprit se repose : *+16 PP* pour tous.
+
+== escalier.ev.offrande
+Une pièce d'or brille entre deux pierres : *+150 po*.
+
+== escalier.ev.lumiere
+Un rayon tombe de l'Œil et réchauffe les marches : *+60 PV* pour tous.
+
 # ---------- Version 0.5.2 ----------
 
 == pnj.liss.nom
@@ -1370,3 +1447,11 @@ Grand-mère de Nev et Varen
 
 == pnj.orvan.sous.aerie
 Au coin du feu, chez Edda
+
+# ---------- Version 0.5.3 : le final ----------
+
+== pnj.garrick.nom
+Garrick
+
+== pnj.garrick.sous
+Vieux chasseur, le maître de Roxane

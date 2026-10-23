@@ -770,6 +770,9 @@ Le Héraut lève sa masse… *« Paupière close » à son prochain tour*, sauf 
 == monstre.heraut.special
 *Paupière close !* Une onde sombre frappe toute l'équipe.
 
+== monstre.heraut.coup
+Masse de la Paupière
+
 == monstre.pie
 Pie-brume
 
@@ -1234,6 +1237,9 @@ Le Sans-Nom lève sa masse au-dessus de sa tête… *il va frapper toute l'équi
 == monstre.sansnom2.special
 Le Sans-Nom écrase le sol de sa masse !
 
+== monstre.sansnom2.coup
+Coup de masse
+
 == monstre.salreine
 Salamandre reine
 
@@ -1269,6 +1275,9 @@ L'Élémentaire s'enfonce dans le sol… *il va faire trembler toute la galerie 
 
 == monstre.tellure.special
 L'Élémentaire fait trembler la galerie !
+
+== monstre.tellure.soin
+Les cristaux de l'Élémentaire chantent, et sa roche se referme : *+{v} PV*.
 
 == monstre.gardien
 Gardien de cage
@@ -1730,3 +1739,143 @@ Le dernier prieur du monastère, devenu brume. Il garde encore la bannière du p
 
 == monstre.prieur.appel
 Le Prieur spectral lève sa crosse : un {renfort} sort de la brume !
+
+# ---------- Version 0.5.3 : le final ----------
+
+== parle.aldric
+Aldric
+
+== parle.garrick
+Garrick
+
+== equip.etoile
+Étoile de brume
+
+== equip.talecho
+Talisman de l'écho
+
+== monstre.veilleur
+Veilleur de la Paupière
+
+== monstre.veilleur.desc
+Un chevalier de l'Ordre posté sur l'Escalier, le heaume gravé d'un œil fermé. Il garde la montée depuis cinquante ans.
+
+== monstre.veilleur.special
+Hallebarde de la Paupière
+
+== monstre.nueeoubli
+Nuée d'oubli
+
+== monstre.nueeoubli.court
+Nuée
+
+== monstre.nueeoubli.desc
+Une brume épaisse pleine de visages effacés. Elle enveloppe toute l'équipe et se nourrit de ce qu'elle touche.
+
+== monstre.nueeoubli.special
+La Nuée d'oubli enveloppe toute l'équipe !
+
+== monstre.sansnom3
+Le Sans-Nom
+
+== monstre.sansnom3.desc
+Aldric, sous le masque de l'Ordre, sur le dernier palier de l'Escalier. Il frappe deux fois tant que sa garde tient.
+
+== monstre.sansnom3.charge
+Le Sans-Nom lève sa masse au-dessus de sa tête… *il va frapper toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.sansnom3.special
+Le Sans-Nom abat sa masse sur les marches, et l'Escalier tremble !
+
+== monstre.sansnom3.fin
+Le Sans-Nom recule d'un pas et baisse sa masse. Sous le masque, son souffle tremble.
+
+== monstre.ysold
+Ysold
+
+== monstre.ysold.desc
+La fondatrice de l'Ordre, fusionnée aux quatre cristaux. Elle en porte un à la fois et en change après chaque action : sa faiblesse change avec lui.
+
+== monstre.ysold.special
+Lumière des quatre cristaux
+
+== monstre.paupiere
+Paupière du monde
+
+== monstre.paupiere.court
+Paupière
+
+== monstre.paupiere.desc
+La paupière de pierre que l'Ordre a tirée sur l'Œil. Elle fait oublier ses techniques à qui elle frappe ; sa garde ne cède qu'aux quatre éléments.
+
+== monstre.paupiere.charge
+La Paupière du monde se referme lentement… *elle va écraser toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.paupiere.special
+La Paupière du monde se referme d'un coup sur toute l'équipe !
+
+== monstre.paupiere.oubli
+La Paupière du monde pose son ombre sur {cible}.
+
+== monstre.echogolem
+Écho du Gardien
+
+== monstre.echogolem.desc
+La brume a copié le Gardien de cristal de la grotte, en pire. Il concentre la lumière et frappe deux fois tant que sa garde tient.
+
+== monstre.echogolem.charge
+L'Écho du Gardien concentre une lumière grise… *attaque puissante à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.echogolem.special
+*Rayon de brume !* Une lumière grise frappe toute l'équipe.
+
+== monstre.echovouivre
+Écho de la Vouivre
+
+== monstre.echovouivre.desc
+La Vouivre des marais, refaite de brume froide. Elle souffle sur toute l'équipe et mord pour se soigner.
+
+== monstre.echovouivre.charge
+L'Écho de la Vouivre gonfle sa gorge… *souffle sur toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.echovouivre.special
+*Souffle d'oubli !* Une vapeur glacée frappe toute l'équipe.
+
+== monstre.echoforgeur
+Écho du Forgeur
+
+== monstre.echoforgeur.desc
+Le Forgeur de cages, refait de brume et de fer gris. Il appelle encore ses automates.
+
+== monstre.echoforgeur.charge
+L'Écho du Forgeur lève son enclume… *il va écraser toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.echoforgeur.special
+L'Écho du Forgeur abat son enclume sur toute l'équipe !
+
+== monstre.echoforgeur.appel
+L'Écho du Forgeur frappe le sol : un {renfort} sort de la brume !
+
+== monstre.echoheraut
+Écho du Héraut
+
+== monstre.echoheraut.desc
+Le Héraut de la Paupière, refait de brume. Il frappe deux fois, plus vite que l'original.
+
+== monstre.echoheraut.charge
+L'Écho du Héraut lève sa masse… *« Paupière close » à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.echoheraut.special
+*Paupière close !* Une onde grise frappe toute l'équipe.
+
+== monstre.echosansnom
+Écho du Sans-Nom
+
+== monstre.echosansnom.desc
+La brume a gardé la forme du Sans-Nom, sans Aldric dedans. Le plus fort de tous les Échos.
+
+== monstre.echosansnom.charge
+L'Écho du Sans-Nom lève une masse de brume… *il va frapper toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.echosansnom.special
+L'Écho du Sans-Nom écrase le col sous sa masse de brume !

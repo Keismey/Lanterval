@@ -288,3 +288,41 @@ Elle a gardé leur cerf-volant d'enfants au grenier, déchiré, pendant six ans.
 
 == perso.liss.3
 Elle a pardonné à Nev et Varen, et leur a promis de réparer le reste comme la toile.
+
+# ---------- Version 0.5.3 : le final ----------
+
+== perso.kael.10
+Sur l'Escalier de brume, il a baissé son arme devant le Sans-Nom et lui a tendu l'épée reforgée. Son père s'est souvenu de lui.
+
+== perso.kael.11
+Au Cœur de l'Œil, il a gardé l'Œil ouvert avec ses trois amis. Il est rentré à Lanterval, où la brume ne revient plus.
+
+== perso.mira.8
+Au Cœur de l'Œil, son feu a fendu la Paupière du monde. Elle a choisi de rentrer, un jour ou l'autre, à Forgecendre.
+
+== perso.sol.7
+Au Cœur de l'Œil, il a soigné ses amis jusqu'au dernier coup. Il s'est installé à Salvent, près du phare et de sa sœur.
+
+== perso.orvan.7
+Au Cœur de l'Œil, il a aidé Ysold à se souvenir de sa famille. Il est resté là-haut avec elle, pour rattraper cinquante ans.
+
+== perso.varen.7
+Frappé par l'Oubli d'Ysold au Cœur de l'Œil, il a oublié jusqu'au nom de sa sœur. Quand l'Œil s'est ouvert, il s'est souvenu de tout.
+
+== perso.sansnom.4
+Sur l'Escalier de brume, devant l'épée de son fils, il a retrouvé son nom : Aldric. Il est resté seul sur le palier pour retenir les Ombres.
+
+== perso.sansnom.5
+Il a tenu l'Escalier jusqu'au bout, et il en est redescendu. Il a repris la garde de Lanterval, aux côtés de Kael.
+
+== perso.nev.8
+Au Cœur de l'Œil, elle a vu son frère l'oublier, puis se souvenir d'elle. Elle est rentrée à Aerie, où le vent chante encore.
+
+== perso.ysold.4
+Au Cœur de l'Œil, la Paupière du monde est tombée en poussière et l'Œil s'est ouvert. Ysold s'est souvenue de sa mère, de son frère et d'Orvan.
+
+== perso.garrick.1
+Le vieux maître de Roxane, à Aerie. Il dit que la brume copie les bêtes qu'on abat, en pire : ce sont les Échos.
+
+== perso.garrick.2
+Grâce à l'équipe, les cinq Échos sont tombés. Il a donné son talisman et le carnet de toute sa vie de chasseur.
