@@ -27,10 +27,10 @@ const IMAGES = {
   'decor.carte.cote': { provisoire: 'carte-cote', sujet: 'Carte de la Côte de Salvent' },
 
   // ---------- Panoramas (format large ~2,4:1) ----------
-  'pano.ouverture': { sujet: 'Lanterval au crépuscule, la lanterne vacille' },
-  'pano.mira-loups': { sujet: 'Mira dos à un arbre, trois loups autour d\'elle' },
-  'pano.insigne': { sujet: 'L\'insigne à l\'œil fermé dans un gant' },
-  'pano.lac-sol': { sujet: 'Le lac souterrain, Sol de dos' },
+  'pano.ouverture': { fichier: 'img/panoramas/ouverture.webp', sujet: 'Lanterval au crépuscule, la lanterne vacille' },
+  'pano.mira-loups': { fichier: 'img/panoramas/mira-loups.webp', sujet: 'Mira dos à un arbre, trois loups autour d\'elle' },
+  'pano.insigne': { fichier: 'img/panoramas/insigne.webp', sujet: 'L\'insigne à l\'œil fermé dans un gant' },
+  'pano.lac-sol': { fichier: 'img/panoramas/lac-sol.webp', sujet: 'Le lac souterrain, Sol de dos' },
   'pano.gardien': { sujet: 'Le Gardien de cristal se dresse' },
   'pano.fete': { fichier: 'img/panoramas/fete-lanterne.webp', sujet: 'La lanterne rallumée, fête sur la place' },
   'pano.cage': { sujet: 'Varen et le Sans-Nom encagent le cristal d\'ambre au sommet du col' },

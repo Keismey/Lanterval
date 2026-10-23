@@ -21,6 +21,10 @@ LISTE = [
     # (source, sortie, mode, options)
     ('decor-village-lanterval.jpg', 'decors/lanterval.webp', 'decor', {'largeur': 1376}),
     ('panorama-lanterne-village.jpg', 'panoramas/fete-lanterne.webp', 'decor', {'largeur': 1584}),
+    ('panorama-ouverture.jpg', 'panoramas/ouverture.webp', 'decor', {'largeur': 1584}),
+    ('panorama-mira-loups.jpg', 'panoramas/mira-loups.webp', 'decor', {'largeur': 1584}),
+    ('panorama-insigne.jpg', 'panoramas/insigne.webp', 'decor', {'largeur': 1584}),
+    ('panorama-lac-sol.jpg', 'panoramas/lac-sol.webp', 'decor', {'largeur': 1584}),
     ('perso-kael.jpg', 'heros/kael.webp', 'detoure', {'hauteur': 420}),
     ('perso-kael.jpg', 'heros/kael-portrait.webp', 'portrait', {'boite': (612, 38, 186, 186), 'cote': 192}),
     ('monstre-loup-des-brumes.jpg', 'monstres/loup.webp', 'detoure', {'largeur': 640}),
