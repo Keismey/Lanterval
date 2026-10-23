@@ -15,6 +15,15 @@ function quetesDuPnj(pnj) {
   return null;
 }
 
+// sous-titre d'un donneur dont la quête attend ailleurs : <quête>.e<n>.sous s'il existe (ce que cherche Fennel)
+function sousDonneur(pnj) {
+  for (const id in ANNEXES) {
+    const n = annexeEtat(id);
+    if (ANNEXES[id].donneur === pnj && n > 0 && !annexeFinie(id) && existe(`${id}.e${n}.sous`)) return t(`${id}.e${n}.sous`);
+  }
+  return '';
+}
+
 function renderVillage() {
   const vid = lieuActuel(), V = LIEUX[vid];
   S.auberge = vid;
@@ -23,7 +32,7 @@ function renderVillage() {
   saveSecours();
   const opts = V.pnj.filter(p => cond(p.si)).map(p => {
     const q = quetesDuPnj(p.id), main = q && q.type === 'etape';
-    const sub = main ? t(q.etape.id + '.titre') : q && q.type === 'offre' ? t('village.annexe') : q ? t(`${q.id}.e${annexeEtat(q.id)}.titre`) : t(`pnj.${p.id}.sous`, { prix: p.prix });
+    const sub = main ? t(q.etape.id + '.titre') : q && q.type === 'offre' ? t('village.annexe') : q ? t(`${q.id}.e${annexeEtat(q.id)}.titre`) : sousDonneur(p.id) || t(`pnj.${p.id}.sous`, { prix: p.prix });
     return { k: p.id, img: imgSrc('pnj.' + p.portrait), label: esc(t(`pnj.${p.id}.nom`)), sub: esc(sub), bang: q ? (main ? 'main' : 'side') : '', cls: (main ? 'main ' : q ? 'side ' : '') + (p.large ? 'wide' : '') };
   });
   opts.push({ k: 'map', ic: 'map', label: esc(t('village.partir')), sub: esc(nomCarte(regionDe(vid))), cls: 'ghost', bang: marqueCarte(vid) });

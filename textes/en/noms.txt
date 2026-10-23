@@ -707,3 +707,83 @@ The leader of the Order's smugglers. He stole the Salicorne.
 
 == monstre.bosco.special
 Bosun's hook
+
+# ================= Side quests of the valley =================
+
+== parle.pia
+Pia
+
+== parle.roxane
+Roxane
+
+== parle.fennel
+Fennel
+
+== important.graine
+Lantern seed
+
+== important.graine.desc
+Pia's seed. It needs salt water, hot ash and a very strong wind.
+
+== important.pousse
+Lantern shoot
+
+== important.pousse.desc
+Pia's seed sprouted in salt water. A tiny lantern hangs from the tip of its stem. Now it needs hot ash.
+
+== important.defense
+Rock Boar tusk
+
+== important.defense.desc
+As long as an arm, as hard as stone. Proof for Roxane's logbook.
+
+== important.ecaille-orage
+Storm scale
+
+== important.ecaille-orage.desc
+A scale from the Thunder Eel. It still crackles. Proof for Roxane's logbook.
+
+== important.miel
+Pot of honey
+
+== important.miel.desc
+Lanterval honey, kept by Berthe for Fennel the peddler.
+
+== important.boussole
+Rusty compass
+
+== important.boussole.desc
+Traded by Fennel for the honey. It still points north, for someone who has lost their bearings.
+
+== important.perle-grise
+Grey pearl
+
+== important.perle-grise.desc
+A mist-coloured pearl, found in Loïc's net. Fennel will surely want it.
+
+== important.corne-brume
+Foghorn
+
+== important.corne-brume.desc
+Traded by Fennel for the grey pearl. In Forgecendre, someone has been dreaming of one for years.
+
+== monstre.sanglier
+Rock Boar
+
+== monstre.sanglier.court
+Boar
+
+== monstre.sanglier.desc
+A boar as big as a cart, its back covered in plates of stone. Only Fire can crack its guard.
+
+== monstre.sanglier.special
+Stone charge
+
+== monstre.anguille
+Thunder Eel
+
+== monstre.anguille.court
+Eel
+
+== monstre.anguille.desc
+It spits lightning and strikes twice as long as its guard holds. Earth puts it out.

@@ -354,7 +354,7 @@ async function enemyAct(e) {
     poserMonstres(B.enemies); bMsg(tx(`monstre.${e.id}.appel`, { nom: e.name, renfort: r.name })); bDraw(); await wait(800); return 1;
   }
   const fort = capacite(e, 'fort'), coup = fort && Math.random() < fort.chance;
-  const dbl = capacite(e, 'double'), fois = !coup && dbl && Math.random() < dbl.chance ? 2 : 1;
+  const dbl = capacite(e, 'double'), fois = !coup && dbl && !(dbl.garde && e.broken) && Math.random() < dbl.chance ? 2 : 1;
   const drain = capacite(e, 'drain'), mord = !coup && fois === 1 && drain && Math.random() < drain.chance;
   const lignes = [];
   for (let i = 0; i < fois; i++) {

@@ -51,6 +51,239 @@ Brann: “You got it! Your father would have been proud. Take my old bow, I'll s
 == loup.apres
 Brann: “The sheep sleep soundly thanks to you. If you come across other strange beasts, you know where to find me.”
 
+# ---------- 2. The lantern seed (Pia) ----------
+
+== graine.titre
+The lantern seed
+
+== graine.offre
+Pia: “Grandma says this seed grows a flower that shines in the mist.”
+Pia: “It needs salt water, hot ash and a very strong wind. I'm not allowed to leave the village.”
+Pia: “Will you look after it? I'm lending it to you. Bring it back as a flower!”
+> oui : Accept | Side quest
+> non : Later
+
+== graine.message
+Side quest: the *lantern seed* needs salt water. Maybe in a marsh by the sea?
+
+== graine.e1.titre
+Water the seed with salt water
+
+== graine.e1.bouton
+Water the seed
+
+== graine.e1.attente
+Pia: “Grandma says you find salt water where the sea flows into the marshes. I've never seen the sea.”
+
+== graine.e1.arroser
+## The lantern seed
+You plant the seed in a hollow of mud and water it with salt water. A small glow lights up under the soil.
+Mira: “It's shining! Wait… It's drawing the will-o'-wisps.” [Fight]
+
+== graine.e1.fin
+## The lantern seed
+With the wisps scattered, a green shoot rises from the mud. A tiny lantern hangs from the tip of its stem.
+Sol: “It's still hungry. Hot ash, the little one said. We'll have to wait until we reach Cendre.”
+
+== graine.e1.message
+Side quest: the seed has become a *lantern shoot*. *To be continued in act 3*, in hot ash.
+
+== graine.e2.titre
+Warm the shoot in the ash (act 3)
+
+== graine.e2.scene
+Kael covers the shoot with hot ash. A bud starts to glow.
+
+== graine.e2.attente
+Pia: “Has it grown? Grandma says after the water, it needs hot ash. There's lots of it in Cendre, it's in the name!”
+
+== graine.apres
+Pia: “Every evening I look at my flower. Grandma says it shines brighter than the lantern. Don't tell her I said that.”
+
+== pnj.pia
+Pia: “Grandma says flowers are scared of the mist. I say you just have to find the right one.”
+
+# ---------- 3. The hunter's logbook (Roxane) ----------
+
+== chasse.titre
+The hunter's logbook
+
+== chasse.offre
+Roxane: “I keep a logbook of the beasts nobody dares to hunt. Four are left, one in each region.”
+Roxane: “The first one is close: a boar as big as a cart, up at Stone Pass. Its back is covered in stone.”
+Roxane: “Bring me proof of each one, I pay well. And don't be reckless: that one has already sent three hunters home in pieces.”
+> oui : Accept | Side quest
+> non : Later
+
+== chasse.message
+Side quest: hunt the *Rock Boar* at *Stone Pass*. Roxane says only Fire can crack its stone guard.
+
+== chasse.e1.titre
+Hunt the Rock Boar at Stone Pass
+
+== chasse.e1.bouton
+Hunt the Rock Boar
+
+== chasse.e1.attente
+Roxane: “The Rock Boar, at Stone Pass. Blades slide off its back. You need fire to split stone.”
+
+== chasse.e1.traque
+## The hunter's logbook
+Toppled standing stones, deep furrows in the snow. Something very heavy came through here.
+Behind a rock, an enormous boar paws at the ground. Its back is covered in plates of stone. [Fight]
+
+== chasse.e1.fin
+## The hunter's logbook
+The Rock Boar collapses like a rockslide. You pry loose one of its tusks, as long as your arm.
+Mira: “Roxane will be pleased. I'm going to ache for a week.”
+
+== chasse.e1.message
+Side quest: bring the tusk to *Roxane*.
+
+== chasse.e2.titre
+Bring the tusk to Roxane
+
+== chasse.e2.scene
+Roxane: “A Rock Boar tusk! I'll write it in the logbook: hunted by Kael, of Lanterval.”
+Roxane: “Here's your bounty, 150 coins. The next one is an eel that spits lightning, in the heart of the Lantern Marsh, on the coast.”
+Roxane: “It strikes twice as long as its guard holds. Break it fast, or it will break you.”
+
+== chasse.e2.message
+Side quest: hunt the *Thunder Eel* in the heart of the *Lantern Marsh*.
+
+== chasse.e3.titre
+Hunt the Thunder Eel in the Lantern Marsh
+
+== chasse.e3.bouton
+Hunt the Thunder Eel
+
+== chasse.e3.attente
+Roxane: “The Thunder Eel lives in the heart of the Lantern Marsh. Earth puts it out, water does nothing to it.”
+
+== chasse.e3.traque
+## The hunter's logbook
+The black water crackles. Yellow sparks run under the surface, from lantern to lantern.
+An eel as long as a rowing boat bursts out of the marsh, its jaws full of sparks. [Fight]
+
+== chasse.e3.fin
+## The hunter's logbook
+The Thunder Eel falls back into the mud and goes dark. One of its scales still crackles between your fingers.
+Sol: “I never thought I'd dive next to one of those. Luckily, we didn't dive.”
+
+== chasse.e3.message
+Side quest: bring the scale to *Roxane*.
+
+== chasse.e4.titre
+Bring the scale to Roxane
+
+== chasse.e4.scene
+Roxane: “A Thunder Eel scale, and you still have all your hair! Two beasts in the logbook.”
+Roxane: “Here are 300 coins. The third one lives in the Burnt Fields, at Cendre: a salamander queen who calls her young.”
+Roxane: “I'll wait for you there. A hunter always follows the game, and you find plenty of it.”
+
+== chasse.e4.message
+Side quest: two beasts out of four. *To be continued in act 3*, in the Burnt Fields.
+
+== chasse.e5.titre
+Hunt the Salamander Queen in the Burnt Fields (act 3)
+
+== chasse.e5.scene
+Roxane: “The Salamander Queen. Watch out for her young.”
+
+== chasse.e5.attente
+Roxane: “The Salamander Queen lives in the Burnt Fields. When the road to Cendre opens, I'll follow you.”
+
+== chasse.apres
+Roxane: “Your name is in my logbook four times. Nobody else is in it more than once.”
+
+== pnj.roxane
+Roxane: “Don't look at me like that. A scar is just a beast that got lucky once.”
+
+# ---------- 4. The peddler (Fennel, trading) ----------
+
+== colporteur.titre
+The peddler
+
+== colporteur.offre
+Fennel: “I don't sell anything, I trade. Every village has what another one wants, you just have to pass things along.”
+Fennel: “Give me a pot of Lanterval honey and I'll give you something better. And then something better still.”
+Fennel: “At the end of the road, there's something very beautiful. Interested?”
+> oui : Accept | Side quest
+> non : Later
+
+== colporteur.message
+Side quest: find a *pot of Lanterval honey* for Fennel. Who sells some in the village?
+
+== colporteur.e1.titre
+Find a pot of honey in the village
+
+== colporteur.e1.sous
+Looking for: a pot of Lanterval honey
+
+== colporteur.e1.attente
+Fennel: “Lanterval honey is the best in the valley. Someone who sells herbs surely has some.”
+
+== colporteur.e1.scene
+Berthe: “Honey for Fennel? I always keep a pot for him. He brings me tea from the coast in exchange.”
+Berthe: “Here. And tell him his last tea smelled of fish.”
+
+== colporteur.e1.message
+Side quest: bring the *pot of honey* to *Fennel*.
+
+== colporteur.e2.titre
+Trade the honey with Fennel
+
+== colporteur.e2.scene
+Fennel: “Berthe's honey! I know that pot. Here's a compass in exchange.”
+Fennel: “It's a bit rusty, but it still points north. Someone, somewhere, has lost theirs.”
+
+== colporteur.e2.message
+Side quest: find someone who *has lost their bearings*. Fennel thinks it's on the coast.
+
+== colporteur.e3.titre
+Find someone who has lost their bearings
+
+== colporteur.e3.sous
+Looking for: someone who has lost their bearings
+
+== colporteur.e3.attente
+Fennel: “A compass is useful to people who go out on the water. And who forget the way home.”
+
+== colporteur.e3.scene
+Loïc: “A compass! With this mist, I forget where north is, and even where the sea is.”
+Loïc: “Take this pearl, I found it in a net. I wouldn't know what to do with it.”
+
+== colporteur.e3.message
+Side quest: bring the *grey pearl* to *Fennel*.
+
+== colporteur.e4.titre
+Trade the pearl with Fennel
+
+== colporteur.e4.scene
+Fennel: “A grey pearl, the colour of mist! For that, a foghorn. That's no coincidence.”
+Fennel: “Someone in Cendre has been dreaming of one for years. Keep it safe, we'll meet again there.”
+
+== colporteur.e4.message
+Side quest: Fennel traded the pearl for a *foghorn*. *To be continued in act 3*, in Forgecendre.
+
+== colporteur.e5.titre
+Trade the foghorn in Forgecendre (act 3)
+
+== colporteur.e5.sous
+Looking for: someone who needs a foghorn
+
+== colporteur.e5.scene
+Fennel: “Forgecendre! The miners need your horn.”
+
+== colporteur.e5.attente
+Fennel: “Keep your foghorn. In Forgecendre, the miners call to each other from tunnel to tunnel. They dream of one.”
+
+== colporteur.apres
+Fennel: “The finest trade of my life. I'll tell the story in every village.”
+
+== pnj.fennel
+Fennel: “Nothing to trade? Then I'll trade you some advice: never walk in the mist without a lantern.”
+
 # ---------- 5. The forgotten ship (Rosal) ----------
 
 == navire.titre

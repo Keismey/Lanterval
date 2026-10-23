@@ -164,6 +164,16 @@ function spritesActe2() {
   SPR.f_bosco = face({ skin: '#d89a78', hair: '#b83a3a', mous: '#5a3a22', cl: '#e8e0d0', cl2: '#3a5a8a' });
   SPR.f_erwan = face({ skin: '#d8a888', hair: '#9a9aa0', beard: '#a0a0a8', cl: '#e0b030' });
   SPR.f_ysold = face({ skin: '#ecd4c4', hair: '#d8d8e4', cl: '#3a2a5a', cl2: '#7a52a0' });
+  // quêtes annexes de la vallée
+  SPR.f_pia = face({ skin: '#f6d6b8', hair: '#7a4a22', cl: '#5aa04a', cl2: '#3f7a34', scarf: '#f2c14e' });
+  SPR.f_roxane = face({ skin: '#d8a888', hair: '#1f1a24', cl: '#8a6a4a', cl2: '#c8b090', scarf: '#5a3a22' });
+  SPR.f_fennel = face({ skin: '#e8b890', hat: '#5a7a3a', mous: '#a86a3a', cl: '#c8742a', cl2: '#7a5233' });
+  SPR.sanglier = mk(44, 32, x => { E(x, '#6a4a3a', 21, 19, 15, 8); E(x, '#8a8e9a', 19, 13, 12, 4); for (const cx of [10, 16, 22, 28]) P(x, '#a8acb8', cx, 9, 4, 3);
+    E(x, '#5a3a2a', 35, 19, 7, 6); P(x, '#3a2a22', 40, 19, 3, 3); P(x, '#f4f0e8', 38, 22, 2, 4); P(x, '#f4f0e8', 41, 21, 1, 3); P(x, '#ff5a3a', 35, 16, 2, 1);
+    for (const lx of [10, 16, 25, 30]) P(x, '#4a3226', lx, 25, 3, 6); P(x, '#4a3226', 5, 15, 3, 2); });
+  SPR.anguille = mk(46, 30, x => { for (let k = 0; k < 36; k++) { const yy = 15 + Math.round(6 * Math.sin(k / 5)); P(x, '#2a3a4a', 4 + k, yy - 3, 2, 7); P(x, '#4a6a7a', 4 + k, yy - 3, 2, 2); }
+    E(x, '#2a3a4a', 41, 13, 4, 4); P(x, '#f2e14e', 42, 12, 1, 1); P(x, '#f4f4f4', 44, 15, 1, 1);
+    for (const [cx, cy] of [[10, 7], [20, 22], [30, 6], [16, 4]]) { P(x, '#f2e14e', cx, cy, 1, 3); P(x, '#f2e14e', cx + 1, cy + 2, 1, 3); } });
 }
 
 function bgMarais(c, W, H) { const r = rng(61);

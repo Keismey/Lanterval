@@ -78,6 +78,24 @@ Tilo, sur la place
 == pnj.tilo.sous
 Rumeurs du village
 
+== pnj.pia.nom
+Pia, la jardinière
+
+== pnj.pia.sous
+Près des parterres
+
+== pnj.roxane.nom
+Roxane, la chasseuse
+
+== pnj.roxane.sous
+À l'auberge
+
+== pnj.fennel.nom
+Fennel, le colporteur
+
+== pnj.fennel.sous
+De passage, il troque
+
 # ================= Carte de la vallée =================
 
 == carte.titre

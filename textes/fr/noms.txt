@@ -76,6 +76,15 @@ Ysold
 == parle.bosco
 Bosco
 
+== parle.pia
+Pia
+
+== parle.roxane
+Roxane
+
+== parle.fennel
+Fennel
+
 # ================= Héros =================
 
 == heros.kael.age
@@ -492,6 +501,54 @@ Boîte à musique
 == important.boite.desc
 La boîte de Naïa, peinte d'une mouette. Cassée : il faudra la faire réparer.
 
+== important.graine
+Graine-lanterne
+
+== important.graine.desc
+La graine de Pia. Il lui faut de l'eau salée, de la cendre chaude et un vent très fort.
+
+== important.pousse
+Pousse-lanterne
+
+== important.pousse.desc
+La graine de Pia a germé dans l'eau salée. Une minuscule lanterne pend au bout de sa tige. Il lui faut maintenant de la cendre chaude.
+
+== important.defense
+Défense de Sanglier-roc
+
+== important.defense.desc
+Longue comme un bras, dure comme la pierre. La preuve pour le carnet de Roxane.
+
+== important.ecaille-orage
+Écaille d'orage
+
+== important.ecaille-orage.desc
+Une écaille de l'Anguille-tonnerre. Elle crépite encore. La preuve pour le carnet de Roxane.
+
+== important.miel
+Pot de miel
+
+== important.miel.desc
+Le miel de Lanterval, gardé par Berthe pour Fennel le colporteur.
+
+== important.boussole
+Boussole rouillée
+
+== important.boussole.desc
+Troquée par Fennel contre le miel. Elle montre toujours le nord, à quelqu'un qui l'a perdu.
+
+== important.perle-grise
+Perle grise
+
+== important.perle-grise.desc
+Une perle couleur de brume, trouvée dans le filet de Loïc. Fennel la voudra sûrement.
+
+== important.corne-brume
+Corne de brume
+
+== important.corne-brume.desc
+Troquée par Fennel contre la perle grise. À Forgecendre, quelqu'un en rêve depuis des années.
+
 # ================= Monstres =================
 
 == monstre.loup
@@ -727,3 +784,24 @@ Le chef des contrebandiers de l'Ordre. Il a volé la Salicorne.
 
 == monstre.bosco.special
 Crochet du Bosco
+
+== monstre.sanglier
+Sanglier-roc
+
+== monstre.sanglier.court
+Sanglier
+
+== monstre.sanglier.desc
+Un sanglier gros comme une charrette, le dos couvert de plaques de pierre. Seul le Feu fend sa garde.
+
+== monstre.sanglier.special
+Charge de pierre
+
+== monstre.anguille
+Anguille-tonnerre
+
+== monstre.anguille.court
+Anguille
+
+== monstre.anguille.desc
+Elle crache la foudre et frappe deux fois tant que sa garde tient. La Terre l'éteint.

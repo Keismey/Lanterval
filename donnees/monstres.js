@@ -8,7 +8,7 @@
      fort    : coup puissant avec un nom (chance, mult)
      charge  : prépare un coup sur toute l'équipe tous les 3 tours (mult), annulé si la garde est brisée
      drain   : mord et se soigne d'autant (chance)
-     double  : frappe deux fois (chance)
+     double  : frappe deux fois (chance) ; garde: true = seulement tant que sa garde n'est pas brisée
      appel   : appelle un renfort à la place d'un allié tombé (id, chance)
    vol : ce qu'on peut lui voler (Voleur, Corsaire) ; sans vol, on lui prend de l'or.
    endormi : résiste à la Berceuse (les boss y résistent toujours)
@@ -60,5 +60,10 @@ const MONSTRES = {
   pie: { pv: 300, atk: 30, def: 6, vit: 19, garde: 4, faible: ['T', 'L'], resiste: ['E'], xp: 70, or: 60, taille: .2, f: true, vol: 'rose',
     capacites: [{ type: 'double', chance: .3 }] },
   bosco: { pv: 480, atk: 40, def: 10, vit: 12, garde: 5, faible: ['F', 'T'], resiste: ['E'], xp: 110, or: 90, taille: .26, vol: 'elixir',
-    capacites: [{ type: 'fort', chance: .35, mult: 1.45 }] }
+    capacites: [{ type: 'fort', chance: .35, mult: 1.45 }] },
+  // bêtes du « Carnet du chasseur » (Roxane)
+  sanglier: { pv: 520, atk: 27, def: 12, vit: 9, garde: 7, faible: ['F'], resiste: ['T'], xp: 90, or: 50, taille: .24, vol: 'tonique',
+    capacites: [{ type: 'fort', chance: .35, mult: 1.45 }] },
+  anguille: { pv: 600, atk: 32, def: 8, vit: 17, garde: 5, faible: ['T'], resiste: ['E', 'F'], xp: 130, or: 80, taille: .26, f: true, vol: 'elixir',
+    capacites: [{ type: 'double', chance: .6, garde: true }] }
 };
