@@ -63,7 +63,7 @@ const IMAGES = {
   // ---------- Héros (tournés vers la gauche) ----------
   'heros.kael': { fichier: 'img/heros/kael.webp', portrait: 'img/heros/kael-portrait.webp', provisoire: 'kael', sujet: 'Kael, 17 ans, apprenti garde, cape bleue' },
   'heros.mira': { fichier: 'img/heros/mira.webp', portrait: 'img/heros/mira-portrait.webp', provisoire: 'mira', sujet: 'Mira, 18 ans, cheveux roux, flammes dans les mains' },
-  'heros.nev': { provisoire: 'f_nev', sujet: 'Nev, 16 ans, cheveux blancs courts, capuche violette, bandes aux poings' },
+  'heros.nev': { fichier: 'img/heros/nev.webp', portrait: 'img/heros/nev-portrait.webp', provisoire: 'f_nev', sujet: 'Nev, 16 ans, cheveux blancs courts, capuche violette, bandes aux poings' },
   'heros.sol': { fichier: 'img/heros/sol.webp', portrait: 'img/heros/sol-portrait.webp', provisoire: 'sol', sujet: 'Sol, 20 ans, cheveux bleus, bâton' },
 
   // ---------- Personnages du village (portraits) ----------
@@ -82,19 +82,19 @@ const IMAGES = {
   'pnj.loic': { fichier: 'img/pnj/loic.webp', portrait: 'img/pnj/loic.webp', provisoire: 'f_loic', sujet: 'Loïc, pêcheur, bonnet de laine, barbe rousse' },
   'pnj.rosal': { fichier: 'img/pnj/rosal.webp', portrait: 'img/pnj/rosal.webp', provisoire: 'f_rosal', sujet: 'Rosal, vieille capitaine corsaire, tricorne, cache-œil' },
   'pnj.naia': { fichier: 'img/pnj/naia.webp', portrait: 'img/pnj/naia.webp', provisoire: 'f_naia', sujet: 'Naïa, 16 ans, cheveux bleus comme Sol, ciré jaune' },
-  'pnj.nev': { provisoire: 'f_nev', sujet: 'Nev, 16 ans, novice de l\'Ordre, cheveux blancs courts, capuche' },
+  'pnj.nev': { fichier: 'img/heros/nev-portrait.webp', portrait: 'img/heros/nev-portrait.webp', provisoire: 'f_nev', sujet: 'Nev, 16 ans, novice de l\'Ordre, cheveux blancs courts, capuche' },
   'pnj.heraut': { fichier: 'img/pnj/heraut.webp', portrait: 'img/pnj/heraut.webp', provisoire: 'f_heraut', sujet: 'Le Héraut de la Paupière, casque à l\'œil fermé, cape violette' },
   'pnj.pecheur': { fichier: 'img/pnj/loic.webp', portrait: 'img/pnj/loic.webp', provisoire: 'f_loic', sujet: 'Loïc, pêcheur, bonnet de laine, barbe rousse (même portrait que pnj.loic)' },
   'pnj.bosco': { fichier: 'img/pnj/bosco.webp', portrait: 'img/pnj/bosco.webp', provisoire: 'f_bosco', sujet: 'Le Bosco, contrebandier, bandana rouge, moustache' },
-  'pnj.erwan': { provisoire: 'f_erwan', sujet: 'Erwan, gardien du phare, vieil homme, ciré et barbe grise' },
-  'pnj.pia': { provisoire: 'f_pia', sujet: 'Pia, 9 ans, petite jardinière, nattes brunes, tablier vert, arrosoir' },
-  'pnj.roxane': { provisoire: 'f_roxane', sujet: 'Roxane, chasseuse, la quarantaine, cheveux noirs courts, cicatrice sur la joue, manteau de fourrure' },
-  'pnj.fennel': { provisoire: 'f_fennel', sujet: 'Fennel, colporteur souriant, chapeau à large bord, hotte chargée de bibelots' },
+  'pnj.erwan': { fichier: 'img/pnj/erwan.webp', portrait: 'img/pnj/erwan.webp', provisoire: 'f_erwan', sujet: 'Erwan, gardien du phare, vieil homme, ciré et barbe grise' },
+  'pnj.pia': { fichier: 'img/pnj/pia.webp', portrait: 'img/pnj/pia.webp', provisoire: 'f_pia', sujet: 'Pia, 9 ans, petite jardinière, nattes brunes, tablier vert, arrosoir' },
+  'pnj.roxane': { fichier: 'img/pnj/roxane.webp', portrait: 'img/pnj/roxane.webp', provisoire: 'f_roxane', sujet: 'Roxane, chasseuse, la quarantaine, cheveux noirs courts, cicatrice sur la joue, manteau de fourrure' },
+  'pnj.fennel': { fichier: 'img/pnj/fennel.webp', portrait: 'img/pnj/fennel.webp', provisoire: 'f_fennel', sujet: 'Fennel, colporteur souriant, chapeau à large bord, hotte chargée de bibelots' },
   'pnj.goran': { provisoire: 'f_goran', sujet: 'Goran, aubergiste de Forgecendre, grand et chauve, barbe noire, tablier de cuir' },
   'pnj.agathe': { provisoire: 'f_agathe', sujet: 'Agathe, apothicaire de Forgecendre, lunettes rondes, chignon gris, fioles à la ceinture' },
   'pnj.dorn': { provisoire: 'f_dorn', sujet: 'Dorn, vieux mineur aveugle, yeux blancs, barbe grise, casque de mineur' },
   'pnj.tobi': { provisoire: 'f_tobi', sujet: 'Tobi, 10 ans, fils de mineur, visage couvert de suie, casque trop grand' },
-  'pnj.ysold': { provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
+  'pnj.ysold': { fichier: 'img/pnj/ysold.webp', portrait: 'img/pnj/ysold.webp', provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
 
   // ---------- Monstres (tournés vers la droite) ----------
   'monstre.loup': { fichier: 'img/monstres/loup.webp', provisoire: 'loup', sujet: 'Loup des brumes' },
