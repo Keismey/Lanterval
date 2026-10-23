@@ -88,11 +88,11 @@ const IMAGES = {
   'monstre.golem': { fichier: 'img/monstres/golem.webp', provisoire: 'golem', sujet: 'Gardien de cristal, colosse de roche et de cristal' },
 
   // ---------- Monstres de l'acte 2 ----------
-  'monstre.crabe': { provisoire: 'crabe', sujet: 'Crabe de sel, carapace couverte de cristaux de sel' },
-  'monstre.sangsue': { provisoire: 'sangsue', sujet: 'Sangsue grise géante des marais' },
-  'monstre.follet': { provisoire: 'follet', sujet: 'Feu follet, petite flamme bleue avec deux yeux' },
-  'monstre.crapaud': { provisoire: 'crapaud', sujet: 'Crapaud des brumes, gros et verdâtre' },
-  'monstre.noye': { provisoire: 'noye', sujet: 'Noyé, marin spectral couvert d\'algues' },
+  'monstre.crabe': { fichier: 'img/monstres/crabe.webp', provisoire: 'crabe', sujet: 'Crabe de sel, carapace couverte de cristaux de sel' },
+  'monstre.sangsue': { fichier: 'img/monstres/sangsue.webp', provisoire: 'sangsue', sujet: 'Sangsue grise géante des marais' },
+  'monstre.follet': { fichier: 'img/monstres/follet.webp', provisoire: 'follet', sujet: 'Feu follet, petite flamme bleue avec deux yeux' },
+  'monstre.crapaud': { fichier: 'img/monstres/crapaud.webp', provisoire: 'crapaud', sujet: 'Crapaud des brumes, gros et verdâtre' },
+  'monstre.noye': { fichier: 'img/monstres/noye.webp', provisoire: 'noye', sujet: 'Noyé, marin spectral couvert d\'algues' },
   'monstre.poisson': { provisoire: 'poisson', sujet: 'Poisson-lame, nageoires tranchantes' },
   'monstre.soldat': { provisoire: 'soldat', sujet: 'Soldat de l\'Ordre de la Paupière, armure grise, lance' },
   'monstre.vouivre': { provisoire: 'vouivre', sujet: 'Vouivre des marais, serpent ailé vert, gueule ouverte' },
