@@ -82,10 +82,17 @@ function poserMonstres(ennemis) {
     return `<div class="unit ${f.fichier ? '' : 'pix'}" data-u="${i}" style="left:${e.px * 100}%;top:${e.py * 100}%;height:${MONSTRES[e.id].taille * 100}%"><img alt="" src="${imgSrc('monstre.' + e.id)}"></div>`;
   }).join('');
 }
+// un monstre en vol (capacité envol) monte au-dessus de sa place, sans sortir de l'écran ; son cadre d'infos reste en bas
+function levee(e) { return e.air ? Math.max(0, Math.min(.22, e.py - MONSTRES[e.id].taille - .04)) : 0; }
 function majMonstres() {
   if (!B) return;
   B.enemies.forEach((e, i) => {
     const el = document.querySelector(`.unit[data-u="${i}"]`); if (!el) return;
+    const lv = levee(e), cle = 'monstre.' + e.id + (e.air && IMAGES['monstre.' + e.id + '.vol'] ? '.vol' : ''), img = el.querySelector('img');
+    if (img && el.dataset.img !== cle) { el.dataset.img = cle; img.src = imgSrc(cle); el.classList.toggle('pix', !(IMAGES[cle] || {}).fichier); }
+    el.style.top = ((e.py - lv) * 100).toFixed(1) + '%';
+    el.style.setProperty('--lev', (lv / MONSTRES[e.id].taille * 100).toFixed(1) + '%');
+    el.classList.toggle('vol', !!e.air);
     el.classList.toggle('mort', e.hp <= 0 && !e.dying);
     el.classList.toggle('mourant', !!e.dying);
     el.classList.toggle('brise', !!e.broken);
@@ -94,7 +101,7 @@ function majMonstres() {
   });
 }
 // position du haut d'un monstre, en % de la scène (pour les chiffres de dégâts)
-function epos(e) { return [e.px * 100, (e.py - MONSTRES[e.id].taille * .7) * 100]; }
+function epos(e) { return [e.px * 100, (e.py - levee(e) - MONSTRES[e.id].taille * .7) * 100]; }
 async function hitFlash(u) {
   if (!u.isEnemy) { const c = document.querySelector(`.pcard[data-h="${u.id}"]`); if (c) { c.classList.remove('hit'); void c.offsetWidth; c.classList.add('hit'); } await wait(160); return; }
   const el = document.querySelector(`.unit[data-u="${B.enemies.indexOf(u)}"]`);

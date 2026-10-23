@@ -11,11 +11,15 @@ const lire = f => fs.readFileSync(path.join(RACINE, f), 'utf8');
 const ctx = { console };
 vm.createContext(ctx);
 vm.runInContext('const ACTES = [];', ctx);
-for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'acte2', 'acte3', 'annexes', 'personnages']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
+for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'acte2', 'acte3', 'acte4', 'annexes', 'personnages']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
 const D = vm.runInContext('({ ACTES, ANNEXES, LIEUX, LIENS, IMAGES, MONSTRES, OBJETS, EQUIPEMENT, IMPORTANTS, HEROS, CLASSES, TECHNIQUES, PERSONNAGES })', ctx);
 
+const erreurs = [], avertissements = [];
+function erreur(m) { erreurs.push(m); }
+function averti(m) { avertissements.push(m); }
+
 // textes
-const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'acte3', 'annexes', 'personnages'];
+const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'acte3', 'acte4', 'annexes', 'personnages'];
 const TXT = {};
 for (const lg of ['fr', 'en']) {
   TXT[lg] = {};
@@ -33,9 +37,6 @@ for (const lg of ['fr', 'en']) {
   }
 }
 
-const erreurs = [], avertissements = [];
-function erreur(m) { erreurs.push(m); }
-function averti(m) { avertissements.push(m); }
 function texte(cle, ou) { if (!TXT.fr[cle]) erreur(`texte manquant « ${cle} » (${ou})`); }
 function monstre(id, ou) { if (!D.MONSTRES[id]) erreur(`monstre inconnu « ${id} » (${ou})`); }
 function gain(spec, ou) {
@@ -166,6 +167,7 @@ for (const id in D.MONSTRES) {
     if (c.type === 'charge') texte(`monstre.${id}.charge`, id);
     if (c.type === 'appel') { texte(`monstre.${id}.appel`, id); monstre(c.id, id + ' appel'); }
     if (['charge', 'spores', 'regen', 'fort'].includes(c.type)) texte(`monstre.${id}.special`, id);
+    if (c.type === 'envol') { texte(`monstre.${id}.envol`, id); texte(`monstre.${id}.pique`, id); if (!D.IMAGES[`monstre.${id}.vol`]) erreur(`image en vol manquante monstre.${id}.vol`); }
   }
   if (D.MONSTRES[id].vol && !D.OBJETS[D.MONSTRES[id].vol] && !D.EQUIPEMENT[D.MONSTRES[id].vol]) erreur(`vol inconnu « ${D.MONSTRES[id].vol} » (${id})`);
 }
@@ -184,7 +186,7 @@ for (const f of fs.readdirSync(path.join(RACINE, 'moteur'))) {
 const PARLE = { fr: {}, en: {} };
 for (const lg of ['fr', 'en']) for (const k in TXT[lg]) if (k.startsWith('parle.')) PARLE[lg][TXT[lg][k].l.join(' ')] = 1;
 for (const lg of ['fr', 'en']) for (const [k, { f, l }] of Object.entries(TXT[lg])) {
-  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
+  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|courrier|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
   const bulles = l.filter(x => !x.startsWith('##') && !x.startsWith('>'));
   if (bulles.length > 5) averti(`${f} « ${k} » : ${bulles.length} bulles (5 au plus)`);
   for (const b of bulles) {

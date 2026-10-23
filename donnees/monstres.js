@@ -10,6 +10,8 @@
      drain   : mord et se soigne d'autant (chance)
      double  : frappe deux fois (chance) ; garde: true = seulement tant que sa garde n'est pas brisée
      appel   : appelle un renfort à la place d'un allié tombé (id, chance)
+     envol   : passe un tour sur deux en l'air, où seules les attaques de Vent le touchent ; il en retombe
+               quand sa garde se brise, et pique sur l'équipe en redescendant (mult)
    vol : ce qu'on peut lui voler (Voleur, Corsaire) ; sans vol, on lui prend de l'or.
    endormi : résiste à la Berceuse (les boss y résistent toujours)
    intouchable : ne descend jamais sous 1 PV et sa garde ne se brise pas (combat perdu d'avance, voir acte1.js) */
@@ -103,5 +105,28 @@ const MONSTRES = {
     capacites: [{ type: 'charge', mult: 1.4 }, { type: 'double', chance: .25, garde: true }] },
   // « Le carnet d'Aldric » : les ombres de la Grotte de Cristal, nourries par la brume
   brume: { pv: 215, atk: 68, def: 9, vit: 18, garde: 3, faible: ['F', 'V'], resiste: ['T', 'E'], xp: 32, or: 24, taille: .2, f: true, vol: 'ether',
-    capacites: [{ type: 'drain', chance: .35 }] }
+    capacites: [{ type: 'drain', chance: .35 }] },
+
+  // ---------- Acte 4 : Hauts-Vents ----------
+  rapace: { pv: 230, atk: 74, def: 9, vit: 26, garde: 2, faible: ['T', 'F'], resiste: ['V'], xp: 40, or: 32, taille: .17, vol: 'ether',
+    capacites: [{ type: 'double', chance: .3 }] },
+  sylphe: { pv: 205, atk: 76, def: 6, vit: 24, garde: 3, faible: ['T', 'L'], resiste: ['V', 'E'], xp: 38, or: 28, taille: .16, f: true, vol: 'ether',
+    capacites: [{ type: 'spores', chance: .35, mult: .7 }] },
+  gargouille: { pv: 320, atk: 80, def: 22, vit: 10, garde: 6, faible: ['T', 'E'], resiste: ['L', 'V'], xp: 46, or: 36, taille: .22, f: true, vol: 'potion',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  spectre: { pv: 260, atk: 82, def: 10, vit: 16, garde: 3, faible: ['F', 'L'], resiste: ['T', 'E'], xp: 44, or: 32, taille: .21, vol: 'ether',
+    capacites: [{ type: 'drain', chance: .35 }] },
+  griffon: { pv: 350, atk: 88, def: 14, vit: 20, garde: 4, faible: ['T', 'F'], resiste: ['V'], xp: 50, or: 38, taille: .23, vol: 'potion',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.45 }] },
+  givre: { pv: 300, atk: 84, def: 16, vit: 12, garde: 4, faible: ['F', 'T'], resiste: ['E', 'V'], xp: 48, or: 36, taille: .2, vol: 'ether',
+    capacites: [{ type: 'charge', mult: 1.2 }] },
+  // boss de l'acte 4
+  serpent: { pv: 6400, atk: 100, def: 18, vit: 26, garde: 12, faible: ['T', 'F'], resiste: ['V', 'E'], xp: 440, or: 320, taille: .42, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'double', chance: .25, garde: true }] },
+  // duel de Nev seule (a4.e6)
+  varen3: { pv: 2400, atk: 86, def: 12, vit: 26, garde: 6, faible: ['L', 'T'], resiste: ['V'], xp: 300, or: 0, taille: .3, boss: true, vol: 'baume',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  // « Le carnet du chasseur » : le Roc ailé du Pont des Nuées
+  rocaile: { pv: 4200, atk: 96, def: 14, vit: 22, garde: 7, faible: ['V', 'T'], resiste: ['E', 'F'], xp: 380, or: 200, taille: .3, boss: true, vol: 'potion',
+    capacites: [{ type: 'envol', mult: 1.3 }, { type: 'fort', chance: .3, mult: 1.45 }] }
 };

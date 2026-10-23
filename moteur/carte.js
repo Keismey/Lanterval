@@ -2,8 +2,10 @@
    Une position est un village (« lanterval ») ou un côté de zone (« foret.v »). Les chemins de LIENS
    sont directs ; pour passer d'un côté à l'autre d'une zone, il faut la traverser (combats au hasard).
    Chaque région (vallee, cote…) a sa carte : on y voit ses lieux ; le Marais salant relie la vallée et la côte.
-   La charrette de Hilde (drapeau charrette, fin de l'acte 3) mène directement dans un village, sans traversée. */
+   La charrette de Hilde (drapeau charrette, fin de l'acte 3) mène directement dans un village, sans traversée ;
+   la Plume du facteur (« Le courrier des falaises », acte 4) mène directement dans une zone déjà visitée. */
 const charrette = id => !!S.f.charrette && LIEUX[id].type === 'village';
+const plume = id => S.imp.includes('plume-facteur') && LIEUX[id].type === 'zone' && !!S.z[id] && S.z[id].visits > 0;
 
 // toutes les positions d'un lieu : ses côtés pour une zone qui en a, sinon le lieu lui-même
 function positions(id) { const L = LIEUX[id]; return L.cotes ? L.cotes.map(c => id + '.' + c) : [id]; }
@@ -102,7 +104,7 @@ function renderMap() {
   };
   ovc().querySelectorAll('.node').forEach(b => b.onclick = () => clic(b.dataset.n));
   // boutons : les lieux de cette carte, et les villages des autres régions
-  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(charrette(id) ? t('carte.charrette') : viaTxt(r.via)), bang: queteSur(id) || (ids.includes(id) ? '' : queteRegion(regionsDu(id)[0], ids)) }));
+  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(charrette(id) ? t('carte.charrette') : plume(id) && r.via.length ? t('carte.plume') : viaTxt(r.via)), bang: queteSur(id) || (ids.includes(id) ? '' : queteRegion(regionsDu(id)[0], ids)) }));
   opts.push({ k: 'back', ic: 'back', label: esc(t('carte.rester')), sub: esc(ouSuisJe()), cls: 'ghost' });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomCarte(reg))}</div><p class="ptext">${tx('carte.ici', { lieu: ouSuisJe() })}</p>
@@ -115,6 +117,8 @@ function renderMap() {
 async function voyager(dest) {
   if (charrette(dest)) { S.loc = dest; S.screen = 'village'; logR('journal.log.charrette', { lieu: 'lieu.' + dest + '.nom' }); return; }
   const r = route(dest); if (!r) return;
+  // Plume du facteur : on arrive du côté le plus proche, sans traverser
+  if (plume(dest) && r.via.length) { S.loc = r.vers; logR('journal.log.plume', { lieu: 'lieu.' + dest + '.nom' }); return entrerZone(dest); }
   for (const [z, de, vers] of r.via) { S.loc = z + '.' + de; await traverse(z, de, vers); S.loc = z + '.' + vers; }
   S.loc = r.vers;
   if (LIEUX[dest].type === 'village') { S.screen = 'village'; logR('journal.log.arrivee', { lieu: 'lieu.' + dest + '.nom' }); return; }

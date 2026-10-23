@@ -1,0 +1,317 @@
+# Lanterval · Act 4: The Eye (English texts)
+# Same format as acte1.txt (see the help at the top of that file).
+
+== a4.titre
+The Eye
+
+# ---------- Step 1: Cloud Bridge ----------
+
+== a4.e1.titre
+Cross the Cloud Bridge
+
+== a4.e1.bouton
+Climb to the High Winds
+
+== a4.e1.depart
+## Act 4 · The Eye
+Above Forgecendre, the road climbs into the clouds. Then there is no road at all: only a rope bridge vanishing into the white.
+Nev: “The Cloud Bridge. On the other side is Aerie. That's home.”
+Nev: “Well, it was home. Before I left with Varen to join the Order.”
+
+== a4.e1.epee
+## Cloud Bridge
+Kael draws the reforged sword from its scabbard. The blade shines like clear water, and the lantern engraved on the hilt catches the light.
+Kael: “Until now I didn't dare use it. As if it were still his.”
+Mira: “It's yours now. My mother doesn't forge for display cases.”
+? *Aldric's sword* is in your bag: equip it on Kael in the Team menu. It is reserved for Kael, with a class that wields swords.
+
+== a4.e1.pell
+## Cloud Bridge
+Halfway across, a canvas glider dives toward the team, chased by raptors and Order soldiers clinging to the ropes.
+The glider lands in a crash of planks. A red-haired young man jumps out, a satchel clutched to his chest.
+Pell: “Pell, postman of the High Winds! Sorry to drop in on you like this. Literally.” [Fight]
+
+== a4.e1.nouvelles
+## Cloud Bridge
+Pell: “Thanks. I've just come from Salvent. The Order attacked the port three days ago: they took the sea-foam crystal.”
+Sol: “And Naïa? The lighthouse keeper's daughter?”
+Pell: “Safe and sound. She hid at Maëlle's with the harbour children. She's the one who gave me the message for you.”
+Sol closes his eyes for a moment. His hands are still shaking when he opens them.
+
+== a4.e1.aerie
+## Cloud Bridge
+At the end of the bridge, the wind parts the clouds. A wooden village clings to the cliff on stilts, with windmills and kites.
+Nev: “Aerie. They're all going to stare at me.”
+Kael: “Then we'll walk in front of you.”
+
+== a4.e1.message
+The *Cloud Bridge* is crossed. *Aerie* appears on the High Winds map.
+
+# ---------- Step 2: Aerie ----------
+
+== a4.e2.titre
+Arrive in Aerie
+
+== a4.e2.bouton
+Speak to the old monk
+
+== a4.e2.arrivee
+## Aerie
+Aerie's houses stand on stilts above the void. The walkways creak, the windmills turn, and the wind never stops.
+On a square of planks, an old monk in a sky-blue robe is waiting, as if he knew the team would come.
+
+== a4.e2.accueil
+## Aerie
+Shutters slam one after another. A woman pulls her child inside when she sees Nev.
+Someone whispers behind the doors, “Liss's girl. The deserter. Varen's sister.”
+Nev: “I warned you. Here, nobody forgets anything. Not even with the mist.”
+
+== a4.e2.tavor
+## Aerie
+Tavor: “I am Tavor, the last monk of the monastery. Nev fled the Order, and this village doesn't know yet whether that is shame or courage.”
+Tavor: “I know. The azure crystal sleeps in the monastery ruins. I will take you there.”
+Tavor: “But first, you must see the frescoes. The Order hasn't told you everything about the Eye. Nobody has told you everything.”
+
+== a4.e2.village
+## Aerie
+Tavor: “Rest at the Nest, at Edda's. Joran will sell you his best: merchants no longer climb up here.”
+Tavor: “I'll wait for you on the monastery forecourt. Follow the kite path.”
+
+== a4.e2.message
+The *Monastery ruins* appear on the map. Edda's Nest and Joran's shop are open.
+
+# ---------- Steps 3 to 5: Monastery ruins ----------
+
+== a4.e3.titre
+Enter the monastery
+
+== a4.e3.bouton
+Join Tavor on the forecourt
+
+== a4.e3.parvis
+## Monastery ruins
+The monastery collapsed into the clouds long ago. All that remains is a forecourt, columns and a great stone door.
+Tavor: “The monks sealed this door fifty years ago. The stone guardians are still watching.”
+On the roof, two gargoyles open their eyes. [Fight]
+
+== a4.e3.porte
+## Monastery ruins
+Tavor lays his hand on the door. It opens without a sound, as if it recognised him.
+Tavor: “Behind it is the cloister of frescoes. And at the far end, the sanctuary where the azure sleeps.”
+
+== a4.e3.message
+The monastery door is open. The *cloister of frescoes* leads to the sanctuary.
+
+== a4.e4.titre
+Cross the cloister of frescoes
+
+== a4.e4.bouton
+Follow Tavor into the cloister
+
+== a4.e4.cloitre
+## Monastery ruins
+The cloister is full of mist. Robed shapes glide between the columns, their faces worn away.
+Tavor: “My brothers. What's left of them. The mist took them one by one, and they still guard the monastery.” [Cross the cloister]
+
+== a4.e4.fresques
+## The cloister of frescoes
+On the walls, huge frescoes: an eye open above the world, pouring rivers of light into every village.
+Tavor: “The Eye is not a monster. It is the memory of the world. It keeps everything we live, and gives it back when we forget.”
+On the next fresco, monks pull a stone eyelid over the Eye. And the mist begins to flow.
+
+== a4.e4.verite
+## The cloister of frescoes
+Tavor: “Fifty years ago, the Eye opened a little. Some monks were afraid of what it showed. They founded the Order of the Eyelid to close it.”
+Tavor: “The mist is the Eye closing. If it closes completely, nobody will ever remember anything again.”
+Mira: “And Ysold wants to close it for good. With the four crystals.”
+Tavor: “Ysold, and a young man who loved her. His name was Orvan.”
+
+== a4.e4.sanctuaire
+## Monastery ruins
+Kael: “Orvan… He admitted he co-founded the Order. He didn't tell us he knew what it meant.”
+Tavor: “He left the next day. He spent his life lighting lanterns against the mist he had helped to make.”
+Before them, the sanctuary door. Behind it, something enormous is breathing.
+
+== a4.e4.message
+The frescoes have spoken: the Eye is the *memory of the world*. The azure crystal waits in the *sanctuary*.
+
+== a4.e5.titre
+The azure crystal
+
+== a4.e5.bouton
+Enter the sanctuary
+
+== a4.e5.serpent
+## The sanctuary
+In the middle of the sanctuary, the azure crystal floats above an altar. A huge serpent coils around the pillar, its scales blue as the sky.
+Tavor: “The Azure Serpent. It has guarded the crystal since the monks left. The mist has driven it mad.”
+The Serpent opens its pale eyes and hisses. The wind starts to swirl in the hall.
+
+== a4.e5.conseil
+The Azure Serpent resists *Wind* and *Water*. *Earth* and *Fire* split its guard. Break it before it unleashes its storm.
+
+== a4.e5.cristal
+## The sanctuary
+The Serpent collapses in coils of blue light, and its madness leaves with the wind. The azure crystal drifts gently down toward Nev.
+Nev: “It's singing. Like the wind on the peak, when we were little.”
+
+== a4.e5.classes
+## The sanctuary
+The blue light passes through the team. Kael feels his movements grow lighter, faster.
+? New classes: *Sage*, *Ninja* and *Spellblade*. Change class in the Team menu.
+
+== a4.e5.vol
+## The sanctuary
+A shadow drops from the ceiling and snatches the crystal from Nev's hands. On the ledge, Varen tosses it in his palm.
+Varen: “Thanks for doing the work, little sister. The Serpent was the hard part.”
+Varen: “If you want it, come and get it on the Howling Peak. Alone. Like when we were kids.”
+He vanishes into the wind before Kael can reach the ledge.
+
+== a4.e5.message
+Varen has stolen the *azure crystal*. The *Howling Peak* appears on the map.
+
+# ---------- Step 6: Howling Peak ----------
+
+== a4.e6.titre
+Catch Varen on the Howling Peak
+
+== a4.e6.bouton
+Climb to the summit
+
+== a4.e6.montee
+## Howling Peak
+The wind howls so loudly in the rocks that you have to shout to be heard. The path zigzags up to the summit, through the ice.
+Nev: “We used to come up here with Varen, with our kite. The wind was too strong for the other children.” [Climb to the summit]
+
+== a4.e6.vent
+## Howling Peak
+Nev stops and looks up at the summit. Her fists are clenched in their wraps.
+Nev: “He said alone. He always liked rules, as long as he made them.”
+
+== a4.e6.varen
+## The summit
+At the top, Varen waits, the azure crystal hanging from his belt. The wind snaps his cloak.
+Nev: “Stay back. This is between him and me.”
+Kael: “Nev…”
+Nev: “Trust me, Kael. For once, I'm the one protecting someone.”
+
+== a4.e6.conseil
+Nev fights *alone*. Varen resists *Wind*: strike with *Attack* (Blade), which splits his guard. Keep healing items at hand.
+
+== a4.e6.refus
+## The summit
+Varen falls to his knees. Nev turns her back to catch her breath, and he picks up his blade.
+He raises it, for a moment. Then he lets it fall into the snow.
+Varen: “I can't. I never could. You're my sister, Nev.”
+
+== a4.e6.ysold
+## The summit
+A silver-haired woman steps out of the mist without a sound. Ysold. She tears the crystal from Varen's belt.
+Ysold: “You have failed, Varen. I gave you everything, and you choose your sister.”
+Ysold: “Keep her. I no longer need you. I have a staircase left to climb.”
+She vanishes. Varen doesn't even watch her go.
+
+== a4.e6.ombres
+## The summit
+The mist closes over the summit. Shadows come out of it, and they are not only looking at the team: they are looking at Varen.
+Varen picks up his blade and stands beside Nev.
+Varen: “Ysold never leaves witnesses. Let's fight together. Just this once.” [Fight]
+
+== a4.e6.invite
+## The summit
+The shadows fade into the wind. Varen looks at his hands as if he didn't recognise them.
+Nev: “Just this once, huh?”
+Varen: “… Maybe twice.”
+? *Varen* now fights with the team, in every battle except duels. He isn't in the Team menu and doesn't gain experience: he is always at Kael's level.
+
+== a4.e6.message
+*Varen* has changed sides. Ysold has all four crystals. Go back to *Aerie* before the assault.
+
+# ---------- Step 7: the eve of the assault ----------
+
+== a4.e7.titre
+The night before the assault
+
+== a4.e7.bouton
+Join the fire at the Nest
+
+== a4.e7.feu
+## The campfire
+Night falls over Aerie. Edda has lit a big fire on the Nest's platform, and for once, the wind is silent.
+Tavor: “Ysold has gone up the Stair of Mist, behind the Peak. Up there is the Heart of the Eye.”
+Tavor: “Tomorrow, you follow her. Tonight, eat, and talk. Memories are what you're fighting for.”
+
+== a4.e7.kael
+## Kael
+Kael turns Aldric's sword in the firelight.
+Kael: “The Nameless will be up there. My father will be up there. I don't know if I should fight him or bring him home.”
+Mira: “Both, maybe. You brought a lantern home once.”
+
+== a4.e7.mira
+## Mira
+Mira: “Before we left Forgecendre, my mother hugged me. I let her.”
+Mira: “I'm still angry with her. But I want to come back so I can stay angry with her for a long time.”
+
+== a4.e7.sol
+## Sol
+Sol: “Naïa still doesn't know who I am. Or maybe she knows, and she's waiting for me to say it.”
+Sol: “If the Eye closes, she'll never remember. So it won't close.”
+
+== a4.e7.nev
+## Nev
+Varen sits apart, at the edge of the platform. Nev brings him a bowl of soup and sits beside him without a word.
+Varen: “Grandmother hasn't spoken to me yet.”
+Nev: “She didn't speak to me for three days. Give her time.”
+
+== a4.e7.orvan
+## The campfire
+Footsteps on the walkway. An old man with a white beard, leaning on a staff, out of breath.
+Kael: “Elder Orvan? You climbed all the way up here?”
+Orvan: “Fifty years ago, I helped close that Eye. At least let me help you keep it open.”
+Orvan: “Tomorrow, I'm coming with you. Don't argue, Kael. Your father never argued either.”
+
+== a4.e7.message
+The team has rested. Tomorrow, the *Stair of Mist*.
+
+# ---------- End of version 0.5.0 ----------
+
+== fin.version
+## End of version 0.5.0
+The azure crystal is in Ysold's hands, and Varen now fights alongside the team. Tomorrow, the Stair of Mist.
+The rest is coming in the next versions: first the last side quests of the High Winds, then the finale. Until then, you can finish the side quests and explore every area to 100%.
+
+# ---------- What people say as the story moves on ----------
+# pnj.<who>.<current step>: if the step has no text, the game uses the one from the step before.
+
+== pnj.tavor
+Tavor: “The wind carries everything away, except what you entrust to it. That's what the monks used to say.”
+
+== pnj.tavor.a4.e7
+Tavor: “Eat. Sleep. Tomorrow you'll need every memory you have.”
+
+== pnj.tavor.fin
+Tavor: “The Stair of Mist is waiting for you. I'll pray for you, even if I'm no longer sure who is listening.”
+
+== pnj.edda.accueil
+Edda: “Welcome to the Nest! One night, {prix} g, with a feather blanket and the best stew on the cliffs.”
+
+== pnj.joran.accueil
+Joran: “Merchants don't come up here any more, so I forge everything myself. What you see is the best of the High Winds.”
+
+== pnj.ilse
+Ilse: “I weave the gliders' canvas and I care for the wyverns. Neither of them likes storms.”
+
+== pnj.orvan.a4.e2
+Orvan: “Hilde wrote to me through the cliff postman: you're in Aerie. So you're going to see the monastery frescoes.”
+
+== pnj.brann.a4.e2
+Brann: “They say the Order struck Salvent. Here, we keep watch day and night. Be careful up there, Kael.”
+
+== pnj.naia.a4.e2
+Naïa: “Pell found you, good. Tell Sol I'm all right. I don't know why, but I wanted him to know.”
+
+== pnj.roxane.a4.e2
+Roxane: “Aerie! My old master lives here. Garrick doesn't go out much, but he hears everything that happens on the cliffs.”
+
+== pnj.fennel.a4.e2
+Fennel: “I took Pell's glider to get up here. Never again. My stomach stayed in the middle of the bridge.”

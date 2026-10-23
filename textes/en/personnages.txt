@@ -203,3 +203,62 @@ A Forgecendre miner's son. His father didn't come back up from the mines with th
 
 == perso.tobi.2
 His father, Ulric, had fled the mines through an old shaft and was hiding in the Burnt Fields. They are together again.
+
+# ---------- Act 4 ----------
+
+== perso.kael.9
+On the eve of the assault, he didn't know whether to fight his father or bring him home. Mira told him: maybe both.
+
+== perso.mira.7
+At the Aerie campfire, she admitted she was still angry with her mother, but wanted to go home so she could stay angry with her for a long time.
+
+== perso.sol.6
+Naïa survived the attack on Salvent and sent him a message. For her, he swore the Eye would not close.
+
+== perso.orvan.5
+He climbed all the way to Aerie to fight alongside the team. He helped close the Eye fifty years ago; he wants to help keep it open.
+
+== perso.varen.5
+Beaten by Nev at the top of the Howling Peak, he couldn't raise his blade against his sister. Ysold abandoned him, and he now fights with the team.
+
+== perso.naia.5
+When the Order attacked Salvent, she hid the port's children at Maëlle's. She asked Pell to tell Sol she was safe.
+
+== perso.nev.5
+In Aerie, her home village, they call her the deserter and Varen's sister. Her grandmother Liss still lives there.
+
+== perso.nev.6
+She faced Varen alone at the top of the Howling Peak, and she won. For once, she was the one protecting someone.
+
+== perso.ysold.2
+The monastery frescoes say it: if the Eye closes completely, no one will ever remember anything again. That is what she wants.
+
+== perso.ysold.3
+At the top of the Howling Peak, she tore the azure crystal from Varen and abandoned him. She now holds all four crystals.
+
+== perso.roxane.4
+Thanks to the team, her logbook is complete: one beast per region. Her old master, Garrick, lives in Aerie.
+
+== perso.fennel.4
+His finest trade is done: from Lanterval honey all the way to the Cloak of the four winds, woven by Ilse in Aerie.
+
+== perso.tavor.1
+The last monk of the Aerie monastery. He agreed to guide the team to the azure crystal, despite the village's distrust of Nev.
+
+== perso.tavor.2
+He showed the team the frescoes: the Eye is the memory of the world, and the mist is the Eye closing.
+
+== perso.tavor.3
+He saw Ysold and Orvan leave the monastery fifty years ago. He never stopped waiting for someone to come and reopen the Eye.
+
+== perso.pell.1
+Postman of the High Winds, he flies from village to village by glider. He brought the team news from Salvent.
+
+== perso.pell.2
+The team delivered his last letters to Lanterval, Salvent and Forgecendre. He left them his quill, which knows every road.
+
+== perso.ilse.1
+A weaver in Aerie, she weaves the glider sails and cares for the last wyverns of the cliffs.
+
+== perso.ilse.2
+From a roc feather, she wove the Cloak of the four winds. Fennel is her oldest customer.

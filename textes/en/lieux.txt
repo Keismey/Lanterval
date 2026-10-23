@@ -1062,3 +1062,290 @@ A perfect shard of obsidian a merchant will pay well for: *+80 gold*.
 
 == volcan.ev.brise
 A cool breeze comes down from the summit: *+35 HP* for everyone.
+
+# ---------- Act 4: the High Winds ----------
+
+== carte.titre.vents
+High Winds map
+
+== lieu.pont.le
+the bridge
+
+== lieu.pont.c
+Cendre side
+
+== lieu.pont.a
+Aerie side
+
+== lieu.pont.sous
+Between Cendre and the High Winds
+
+== lieu.pont.desc
+A bridge of ropes and planks stretched above the clouds. The wind makes it sway like a swing, and raptors nest under the planks.
+
+== lieu.pont.intro
+## Cloud Bridge
+You cross from the Cendre road to the cliffs of Aerie. Don't look down: there's only white, very far below.
+
+== pont.n1.nom
+Hanging satchel
+
+== pont.n1.texte
+A traveller's satchel hanging from a rope, beaten by the wind: *2 Cendre potions and 1 ether*.
+
+== pont.n2.nom
+Nest under the planks
+
+== pont.n2.texte
+A raptor nest under the bridge, full of stolen jewels. Earth and fire scare them: they nest far from both. *Thieving raptor weaknesses added to the codex.*
+
+== pont.n3.nom
+Stone pillar
+
+== pont.n3.texte
+A stone pillar in the middle of the bridge, with a shelter from the wind. The team *recovers all its strength*. You can rest here on every visit.
+
+== pont.n4.nom
+Abandoned toll
+
+== pont.n4.texte
+The cash box of an old toll, forgotten for years: *420 g*.
+
+== pont.n5.nom
+Ribbon in the rope
+
+== pont.n5.texte
+A sylph got caught in a rope weighted with stones and dissolved. Earth weighs them down, blades tear them. *Sylph weaknesses added to the codex.*
+
+== pont.n6.nom
+Crate of remedies
+
+== pont.n6.texte
+A crate of remedies bound for Aerie, dropped from a glider: *1 wind balm*.
+
+== pont.m50
+## 50% milestone reached
+In a lost postman's bag: *2 Cendre potions and 2 ethers*.
+
+== pont.m100
+## 100% milestone reached
+You know every plank of the bridge. You find a *Captive cloud* (accessory, Defence +4, Speed +4). Bridge mastered: crossing it will now bring only 0 to 2 fights.
+
+== pont.ev.combat
+Bird cries come out of the clouds…
+
+== pont.ev.rafale
+A gust shakes the bridge and pins everyone against the ropes! *Everyone loses 18 HP.*
+
+== pont.ev.nuage
+A warm cloud drifts across the bridge and warms everyone's hands: *+40 HP* for everyone.
+
+== pont.ev.sacoche
+A purse caught in the ropes, forgotten by a traveller: *+90 g*.
+
+== pont.ev.silence
+The wind drops all at once, and the silence is immense. Minds rest: *+12 PP* for everyone.
+
+== lieu.aerie.nom
+Aerie
+
+== lieu.aerie.sous
+Cliff village
+
+== lieu.aerie.desc
+Wooden houses on stilts, clinging to the cliff above the clouds. Walkways link the houses, and kites dance above the roofs.
+
+== pnj.tavor.nom
+Tavor
+
+== pnj.tavor.sous
+The last monk of the monastery
+
+== pnj.edda.nom
+Edda
+
+== pnj.edda.sous
+The Nest · full rest · {prix} g
+
+== pnj.joran.nom
+Joran
+
+== pnj.joran.sous
+Weapons, armour and remedies
+
+== pnj.pell.nom
+Pell
+
+== pnj.pell.sous
+Glider postman
+
+== pnj.ilse.nom
+Ilse
+
+== pnj.ilse.sous
+Weaver and wyvern keeper
+
+== lieu.ruines.nom
+Monastery ruins
+
+== lieu.ruines.le
+the ruins
+
+== lieu.ruines.p
+forecourt
+
+== lieu.ruines.s
+sanctuary
+
+== lieu.ruines.sous
+The monastery fallen into the clouds
+
+== lieu.ruines.desc
+Broken columns, cloisters open onto the void, and frescoes worn away by the mist. The stone guardians and spectral monks still keep watch.
+
+== lieu.ruines.intro
+## Monastery ruins
+You cross from the forecourt to the sanctuary, through the cloister of frescoes. The monks left fifty years ago; their guardians did not.
+
+== ruines.u1.nom
+Refectory
+
+== ruines.u1.texte
+In the refectory, an untouched monk's chest: *2 Cendre potions and 1 wind balm*.
+
+== ruines.u2.nom
+Cracked gargoyle
+
+== ruines.u2.texte
+A gargoyle split by a root, next to a puddle. Earth and water eat away at their stone. *Gargoyle weaknesses added to the codex.*
+
+== ruines.u3.nom
+Hanging garden
+
+== ruines.u3.texte
+A small monks' garden, still green at the edge of the void. The team *recovers all its strength*. You can rest here on every visit.
+
+== ruines.u4.nom
+Offering box
+
+== ruines.u4.texte
+The monastery's offering box, never emptied: *480 g*.
+
+== ruines.u5.nom
+Snuffed candles
+
+== ruines.u5.texte
+Snuffed candles in front of a chapel. Spectral monks flee from flame and blessed blades. *Spectral monk weaknesses added to the codex.*
+
+== ruines.u6.nom
+Library
+
+== ruines.u6.texte
+Between two collapsed shelves, the copyist's supplies: *3 ethers*.
+
+== ruines.m50
+## 50% milestone reached
+In the sacristy: *2 Cendre potions and 1 ether*.
+
+== ruines.m100
+## 100% milestone reached
+You know every corridor of the monastery. You find a *Mother-of-pearl rosary* (accessory, Magic +7, PP +8). Ruins mastered: crossing them will now bring only 0 to 2 fights.
+
+== ruines.ev.combat
+A bell rings by itself, somewhere in the ruins…
+
+== ruines.ev.eboulis
+A column collapses next to the team! *Everyone loses 18 HP.*
+
+== ruines.ev.cloche
+The wind singing in a cracked bell soothes the mind: *+12 PP* for everyone.
+
+== ruines.ev.tronc
+A gold coin gleams between two flagstones, then another: *+100 g*.
+
+== ruines.ev.source
+A spring flows into a stone basin: *+40 HP* for everyone.
+
+== lieu.pic.nom
+Howling Peak
+
+== lieu.pic.le
+the peak
+
+== lieu.pic.b
+base
+
+== lieu.pic.s
+summit
+
+== lieu.pic.sous
+Where the wind howls
+
+== lieu.pic.desc
+A ridge of rock and ice that rises above the clouds. The wind howls through the rocks and never stops.
+
+== lieu.pic.intro
+## Howling Peak
+You climb from the base to the summit, along a path of ice. Griffins hunt there, and frost comes to life.
+
+== pic.k1.nom
+Shepherd's shelter
+
+== pic.k1.texte
+A stone shelter where shepherds left supplies: *2 wind balms*.
+
+== pic.k2.nom
+Torn feathers
+
+== pic.k2.texte
+Griffin feathers around a split rock and a dead fire. Earth and fire keep them away. *Peak griffin weaknesses added to the codex.*
+
+== pic.k3.nom
+Warm cave
+
+== pic.k3.texte
+A cave where a hot spring melts the ice. The team *recovers all its strength*. You can rest here on every visit.
+
+== pic.k4.nom
+Travellers' cairn
+
+== pic.k4.texte
+Under the stones of a cairn, coins left by travellers for luck: *550 g*.
+
+== pic.k5.nom
+Frozen puddle
+
+== pic.k5.texte
+A frost elemental melted near an old campfire. *Frost elemental weaknesses added to the codex.*
+
+== pic.k6.nom
+Climber's bag
+
+== pic.k6.texte
+A bag caught in the ice: *2 Cendre potions and 2 ethers*.
+
+== pic.m50
+## 50% milestone reached
+In a crevasse: *1 wind balm and 2 ethers*.
+
+== pic.m100
+## 100% milestone reached
+You know every handhold of the peak. You find a *Frost fang* (accessory, Attack +9). Peak mastered: crossing it will now bring only 0 to 2 fights.
+
+== pic.ev.combat
+The wind howls louder, and something howls with it…
+
+== pic.ev.avalanche
+A rush of snow slides down the slope! *Everyone loses 20 HP.*
+
+== pic.ev.hurlement
+The howling of the wind becomes a song, then falls silent. Minds rest: *+14 PP* for everyone.
+
+== pic.ev.cairn
+A gold coin frozen in the ice of a cairn: *+110 g*.
+
+== pic.ev.soleil
+A ray of sunlight breaks through the clouds and warms everyone: *+45 HP* for everyone.
+
+== lieu.escalier.nom
+Stair of Mist

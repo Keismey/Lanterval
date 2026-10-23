@@ -286,8 +286,9 @@ const LIEUX = {
         objets: [['herbe', 8], ['tonique', 12], ['elixir', 25], ['potion', 50], ['ether', 30]], equipement: [] },
       { id: 'dorn', portrait: 'dorn', si: 'fini a3.e2' },
       { id: 'tobi', portrait: 'tobi', si: 'fini a3.e6' },
-      { id: 'roxane', portrait: 'roxane', si: 'fini a3.e2' },
-      { id: 'fennel', portrait: 'fennel', si: 'fini a3.e2' }
+      // Roxane et Fennel partent pour Aerie à l'acte 4
+      { id: 'roxane', portrait: 'roxane', si: 'fini a3.e2 et pas fini a4.e2' },
+      { id: 'fennel', portrait: 'fennel', si: 'fini a3.e2 et pas fini a4.e2' }
     ]
   },
 
@@ -345,9 +346,107 @@ const LIEUX = {
     }
   },
 
+  // ---------- Hauts-Vents (acte 4) ----------
+  // Pont des Nuées : zone à deux côtés, le côté Cendre et le côté Aerie (carte des Hauts-Vents)
+  pont: {
+    type: 'zone', x: .88, y: .14, cotes: ['c', 'a'], region: { c: 'cendre', a: 'vents' }, carte: { vents: [.13, .8] },
+    visible: 'fini a3.e10', ouvert: 'fini a3.e10',
+    maxEvenements: 3,
+    tresors: [
+      { id: 'n1', type: 'tresor', gagne: '2 potion, ether' },
+      { id: 'n2', type: 'lieu', revele: 'rapace' },
+      { id: 'n3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'n4', type: 'tresor', gagne: '420 or' },
+      { id: 'n5', type: 'lieu', revele: 'sylphe' },
+      { id: 'n6', type: 'tresor', gagne: 'baume' }
+    ],
+    palier50: { gagne: '2 potion, 2 ether' },
+    palier100: { gagne: 'nuage' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'rafale', poids: 1.5, effet: 'degats tous 18' },
+      { id: 'nuage', poids: 1.5, effet: 'soin 40' },
+      { id: 'sacoche', poids: 1, gagne: '90 or' },
+      { id: 'silence', poids: 1.5, effet: 'pp 12' }
+    ],
+    groupes: {
+      normal: [['rapace', 'rapace'], ['sylphe', 'rapace'], ['sylphe', 'sylphe', 'rapace'], ['sentinelle', 'rapace'], ['rapace', 'sylphe', 'rapace']]
+    }
+  },
+
+  aerie: {
+    type: 'village', region: 'vents', x: .36, y: .64,
+    visible: 'fini a4.e1',
+    pnj: [
+      { id: 'tavor', portrait: 'tavor', large: true },
+      { id: 'edda', role: 'auberge', portrait: 'edda', prix: 40 },
+      // la boutique finale ; Pell y ajoute sa réserve à la fin du « Courrier des falaises »
+      { id: 'joran', role: 'boutique', portrait: 'joran',
+        objets: [['potion', 50], ['ether', 30], ['baume', 90]],
+        equipement: ['vent', 'nuee', 'zephyr', 'serres', 'eolienne', 'tempete', 'plumacier', 'soie', 'cuirvent',
+          ['plumevent', 'annexe courrier 6'], ['amulette', 'annexe courrier 6']] },
+      { id: 'pell', portrait: 'pell', si: 'fini a4.e2' },
+      { id: 'ilse', portrait: 'ilse', si: 'fini a4.e2' },
+      { id: 'roxane', portrait: 'roxane', si: 'fini a4.e2' },
+      { id: 'fennel', portrait: 'fennel', si: 'fini a4.e2' }
+    ]
+  },
+
+  ruines: {
+    type: 'zone', region: 'vents', x: .7, y: .46, cotes: ['p', 's'],
+    visible: 'fini a4.e2', ouvert: 'fini a4.e2',
+    maxEvenements: 3,
+    tresors: [
+      { id: 'u1', type: 'tresor', gagne: '2 potion, baume' },
+      { id: 'u2', type: 'lieu', revele: 'gargouille' },
+      { id: 'u3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'u4', type: 'tresor', gagne: '480 or' },
+      { id: 'u5', type: 'lieu', revele: 'spectre' },
+      { id: 'u6', type: 'tresor', gagne: '3 ether' }
+    ],
+    palier50: { gagne: '2 potion, ether' },
+    palier100: { gagne: 'chapelet' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'eboulis', poids: 1.5, effet: 'degats tous 18' },
+      { id: 'cloche', poids: 1.5, effet: 'pp 12' },
+      { id: 'tronc', poids: 1, gagne: '100 or' },
+      { id: 'source', poids: 1.5, effet: 'soin 40' }
+    ],
+    groupes: {
+      normal: [['gargouille'], ['spectre', 'spectre'], ['gargouille', 'sylphe'], ['spectre', 'gargouille', 'spectre'], ['sylphe', 'spectre']]
+    }
+  },
+
+  pic: {
+    type: 'zone', region: 'vents', x: .46, y: .2, cotes: ['b', 's'],
+    visible: 'fini a4.e5', ouvert: 'fini a4.e5',
+    maxEvenements: 3,
+    tresors: [
+      { id: 'k1', type: 'tresor', gagne: '2 baume' },
+      { id: 'k2', type: 'lieu', revele: 'griffon' },
+      { id: 'k3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'k4', type: 'tresor', gagne: '550 or' },
+      { id: 'k5', type: 'lieu', revele: 'givre' },
+      { id: 'k6', type: 'tresor', gagne: '2 potion, 2 ether' }
+    ],
+    palier50: { gagne: 'baume, 2 ether' },
+    palier100: { gagne: 'crocgivre' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'avalanche', poids: 1.5, effet: 'degats tous 20' },
+      { id: 'hurlement', poids: 1.5, effet: 'pp 14' },
+      { id: 'cairn', poids: 1, gagne: '110 or' },
+      { id: 'soleil', poids: 1.5, effet: 'soin 45' }
+    ],
+    groupes: {
+      normal: [['griffon'], ['givre', 'rapace'], ['griffon', 'sylphe'], ['givre', 'givre'], ['rapace', 'griffon', 'rapace']]
+    }
+  },
+
   // Lieux de la suite, visibles sur la carte mais pas encore jouables
   prof: { type: 'zone', x: .9, y: .62, visible: 'fini a1.e3', ouvert: false },
-  pont: { type: 'zone', region: 'cendre', x: .88, y: .14, visible: 'fini a3.e10', bientot: true }
+  escalier: { type: 'zone', region: 'vents', x: .84, y: .12, visible: 'fini a4.e6', bientot: true }
 };
 
 // Chemins de la carte. « foret.v » = la forêt côté village : on change de côté en traversant la zone.
@@ -367,5 +466,10 @@ const LIENS = [
   ['champs.c', 'forgecendre'],
   ['forgecendre', 'mines.e'],
   ['forgecendre', 'volcan.p'],
-  ['forgecendre', 'pont']
+  ['forgecendre', 'pont.c'],
+  // Hauts-Vents
+  ['pont.a', 'aerie'],
+  ['aerie', 'ruines.p'],
+  ['aerie', 'pic.b'],
+  ['pic.s', 'escalier']
 ];

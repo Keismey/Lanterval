@@ -112,14 +112,42 @@ Sol : « De l'eau salée, de la cendre chaude, et un vent très fort. Il ne manq
 Quête annexe : la pousse est devenue un *bourgeon-lanterne*. Il lui faut maintenant un vent très fort. *La suite à l'acte 4*.
 
 == graine.e3.titre
-Ouvrir le bourgeon dans un vent très fort (acte 4)
+Ouvrir le bourgeon dans un vent très fort
+
+== graine.e3.bouton
+Tendre le bourgeon au vent
 
 == graine.e3.attente
 Pia : « Un bourgeon ! Grand-mère dit que le vent le plus fort souffle sur un pont, tout là-haut, dans les nuages. Ça existe, un pont dans les nuages ? »
 
-== graine.e3.scene
+== graine.e3.vent
 ## La graine-lanterne
-Le vent des Nuées s'engouffre dans le bourgeon, qui s'ouvre d'un coup.
+Au milieu du Pont des Nuées, Kael lève le bourgeon dans le vent. Les planches dansent sous ses pieds.
+Le bourgeon tremble, rougeoie, puis s'ouvre d'un coup en pétales d'or.
+Des silhouettes de vent tournent autour de la lumière, attirées comme des papillons. [Combattre]
+
+== graine.e3.fin
+## La graine-lanterne
+Les sylphes dispersés, la fleur reste ouverte. Elle brille d'une lumière douce, qui ne vacille pas dans le vent.
+Mira : « Elle éclaire à travers les nuages. Pia va en pleurer de joie. »
+
+== graine.e3.message
+Quête annexe : la *fleur-lanterne* est ouverte. Rapporte-la à *Pia*, à Lanterval.
+
+== graine.e4.titre
+Rapporter la fleur-lanterne à Pia
+
+== graine.e4.lanterne
+## La graine-lanterne
+Pia court jusqu'à la lanterne du village, la fleur serrée contre elle. Elle la plante entre deux pavés, au pied du grand pilier.
+Pia : « Grand-mère avait raison ! Elle brille dans la brume. Regarde, regarde ! »
+La fleur s'allume, et la brume recule d'un pas autour d'elle.
+
+== graine.e4.fin
+## La graine-lanterne
+Pia : « Elle a déjà fait une petite fleur, là, sur le côté. Celle-là, elle est pour toi. »
+Pia : « Garde-la sur toi. Comme ça, tu auras toujours un peu de Lanterval dans la brume. »
+? Récompense : *Fleur-lanterne* (accessoire). Le porteur reprend un peu de PV à chacune de ses actions.
 
 == graine.apres
 Pia : « Tous les soirs, je regarde ma fleur. Grand-mère dit qu'elle éclaire mieux que la lanterne. Ne lui répète pas que j'ai dit ça. »
@@ -242,14 +270,42 @@ Roxane : « Je n'ai jamais osé y monter. Avec toi, peut-être. »
 Quête annexe : trois bêtes sur quatre. *La suite à l'acte 4*, au Pont des Nuées.
 
 == chasse.e7.titre
-Traquer le Roc ailé au Pont des Nuées (acte 4)
+Traquer le Roc ailé au Pont des Nuées
+
+== chasse.e7.bouton
+Traquer le Roc ailé
 
 == chasse.e7.attente
 Roxane : « Le Roc ailé, sous le Pont des Nuées. Il paraît qu'il emporte des bœufs entiers. J'ai hâte. »
 
-== chasse.e7.scene
+== chasse.e7.traque
 ## Le carnet du chasseur
-Sous le Pont des Nuées, un cri immense déchire le vent.
+Sous le Pont des Nuées, un cri immense déchire le vent. Une ombre passe sous les planches, puis remonte d'un coup d'aile.
+Le Roc ailé se pose sur les cordes du pont, qui gémissent sous son poids. Ses plumes sont dures comme de la pierre.
+Nev : « Il ne restera pas au sol longtemps. Là-haut, il est chez lui. »
+
+== chasse.e7.conseil
+? Un tour sur deux, le Roc ailé s'envole : en l'air, seules les attaques de *Vent* le touchent. Briser sa garde le fait tomber.
+
+== chasse.e7.fin
+## Le carnet du chasseur
+Le Roc ailé s'abat sur le pont et ne se relève pas. Kael arrache une serre longue comme son bras.
+Kael : « Quatre sur quatre. Roxane est à Aerie, d'après Fennel. Elle ne va pas le croire. »
+
+== chasse.e7.message
+Quête annexe : rapporte la serre du Roc ailé à *Roxane*, à Aerie.
+
+== chasse.e8.titre
+Rapporter la serre à Roxane
+
+== chasse.e8.scene
+Roxane : « La serre du Roc ailé… Le carnet est complet. Quatre bêtes, une par région, et tu les as toutes eues. »
+Roxane : « Mon vieux maître vit ici, à Aerie. Garrick. C'est lui qui m'a appris à traquer. »
+Roxane : « Il dit que la brume copie les bêtes qu'on abat, en pire. Quand tout ça sera fini, va le voir. »
+
+== chasse.e8.fin
+Roxane : « Prends ça aussi. L'Œil du traqueur, mon plus vieux porte-bonheur. Avec lui, tu sais où frapper avant même de lever ton arme. »
+? Récompense : *800 po* et l'*Œil du traqueur* (accessoire). En combat, les faiblesses et résistances de chaque monstre sont connues dès le début.
 
 == chasse.apres
 Roxane : « Ton nom est dans mon carnet quatre fois. Personne d'autre n'y est plus d'une fois. »
@@ -348,19 +404,29 @@ Fennel : « Elle vient du Roc ailé des Hauts-Vents. Là-haut, à Aerie, une tis
 Quête annexe : Fennel a troqué le lingot contre une *plume de roc*. *La suite à l'acte 4*, à Aerie.
 
 == colporteur.e7.titre
-Faire tisser la plume à Aerie (acte 4)
+Faire tisser la plume de roc par Ilse
+
+== colporteur.e7.sous
+Cherche : Ilse, la tisserande d'Aerie
 
 == colporteur.e7.attente
 Fennel : « Garde bien ta plume. À Aerie, Ilse la tisserande en fera une merveille. Il faut juste réussir à monter jusque-là. »
 
 == colporteur.e7.scene
-Fennel : « Aerie, enfin ! Ilse, regarde ce que je t'apporte. »
+Ilse : « Une plume de roc ? Fennel t'a confié celle-là ? Alors il t'aime bien, ce vieux renard. »
+Ilse prend la plume et la fend en mille fils d'un seul geste. Ses doigts dansent sur le métier à tisser.
+Ilse : « Une cape des quatre vents. Elle ne pèse rien, et rien ne passe au travers. »
+
+== colporteur.e7.fin
+Fennel : « Du miel de Lanterval à une cape des quatre vents ! Je savais que tu irais jusqu'au bout. »
+? Récompense : *Cape des quatre vents* (armure légère, pour toutes les classes).
 
 == colporteur.e5.attente
 Fennel : « Garde ta corne de brume. À Forgecendre, les mineurs s'appellent d'une galerie à l'autre. Ils en rêvent. »
 
 == colporteur.apres
 Fennel : « Le plus beau troc de ma vie. Je le raconterai dans tous les villages. »
+
 
 == pnj.fennel
 Fennel : « Rien à troquer ? Alors je te troque un conseil : ne marche jamais dans la brume sans lanterne. »
@@ -914,3 +980,118 @@ Ulric : « En fuyant, on a trouvé un filon de roche de feu. Je vais en porter �
 
 == mineurs.apres
 Tobi : « Papa dit que je descendrai à la mine quand j'aurai douze ans. Moi, je veux être forgeron, comme Hilde. »
+
+# ---------- 14. Le courrier des falaises (Pell, le facteur en planeur) ----------
+
+== courrier.titre
+Le courrier des falaises
+
+== courrier.offre
+Pell : « Le vent a vidé ma sacoche sur le Pont des Nuées ! Des lettres pour tout le continent, coincées entre les planches. »
+Pell : « Et les rapaces adorent le papier. Ils en font leurs nids. »
+Pell : « Aide-moi à les ramasser, et je te prête une plume qui connaît tous les chemins. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== courrier.message
+Quête annexe : ramasser les lettres de Pell sur le *Pont des Nuées*.
+
+== courrier.e1.titre
+Ramasser les lettres sur le Pont des Nuées
+
+== courrier.e1.bouton
+Ramasser les lettres
+
+== courrier.e1.attente
+Pell : « Les lettres sont sur le pont, entre les planches. Fais attention aux rapaces, ils piquent sans prévenir. »
+
+== courrier.e1.lettres
+## Le courrier des falaises
+Des lettres claquent au vent, coincées entre les planches et dans les cordes du pont.
+Sol en attrape trois, Nev cinq. Puis trois grands rapaces fondent sur la sacoche, les serres en avant. [Combattre]
+
+== courrier.e1.pell
+## Le courrier des falaises
+Un planeur se pose sur le pont dans un grand claquement de toile. Pell saute à terre et compte les lettres.
+Pell : « Toutes là, sauf trois. Une pour Lanterval, une pour Salvent, une pour Forgecendre. Personne ne les apportera là-bas avec la brume. »
+Pell : « Sauf toi. Tiens, prends ma plume de facteur. »
+
+== courrier.e1.plume
+## Le courrier des falaises
+Pell : « Elle se souvient de tous les chemins que tu as déjà pris. Tu n'as qu'à lui dire où aller. »
+? *Plume du facteur* : depuis la carte, tu peux maintenant aller directement dans une zone déjà visitée, sans la traverser.
+
+== courrier.e1.message
+Quête annexe : trois lettres à porter, pour *Brann* (Lanterval), *Maëlle* (Salvent) et *Dorn* (Forgecendre).
+
+== courrier.e2.titre
+Porter la lettre de Brann à Lanterval
+
+== courrier.e2.sous
+Lettres pour : Brann, Maëlle, Dorn
+
+== courrier.e2.attente
+Pell : « Commence par Lanterval, c'est la plus vieille lettre. Elle a l'air d'attendre depuis longtemps. »
+
+== courrier.e2.scene
+## Le courrier des falaises
+Brann déplie la lettre devant le poste de garde. Les enfants du village jouent sur la place, sans peur de la brume.
+Brann : « C'est de ma sœur, partie à Aerie il y a vingt ans. Elle va bien. Elle a eu trois petits. »
+Brann : « Trois neveux et je n'en savais rien. Merci, Kael. Ton père aurait aimé te voir porter le courrier. »
+
+== courrier.e2.message
+Quête annexe : il reste deux lettres, pour *Maëlle* (Salvent) et *Dorn* (Forgecendre).
+
+== courrier.e3.titre
+Porter la lettre de Maëlle à Salvent
+
+== courrier.e3.sous
+Lettres pour : Maëlle, Dorn
+
+== courrier.e3.attente
+Pell : « La lettre de Salvent sent le sel. Quelqu'un là-bas attend des nouvelles de la mer. »
+
+== courrier.e3.scene
+## Le courrier des falaises
+Le port de Salvent répare ses barques, cassées par l'attaque de l'Ordre. Mais les pêcheurs chantent en travaillant.
+Maëlle : « Une lettre pour moi ? De mon fils, à bord d'un baleinier ! Il rentre au printemps. »
+Maëlle : « Avant votre passage, j'aurais oublié que j'avais un fils. Allez, file, Naïa t'attend sur le quai. »
+
+== courrier.e3.message
+Quête annexe : il reste une lettre, pour *Dorn* (Forgecendre).
+
+== courrier.e4.titre
+Porter la lettre de Dorn à Forgecendre
+
+== courrier.e4.sous
+Lettres pour : Dorn
+
+== courrier.e4.attente
+Pell : « La dernière va à Forgecendre. L'enveloppe est noire de suie. Ça ne m'étonne pas. »
+
+== courrier.e4.scene
+## Le courrier des falaises
+À Forgecendre, les forges sonnent du matin au soir. Tobi apprend à frapper le fer chez Hilde.
+Dorn : « Une lettre ? Je ne peux pas la lire, petit. Lis-la-moi. »
+Kael lit à voix haute. C'est un vieux camarade des mines, parti vivre à Aerie : il a gardé une place pour Dorn, au soleil.
+
+== courrier.e4.message
+Quête annexe : toutes les lettres sont arrivées. Retourne voir *Pell* à Aerie.
+
+== courrier.e5.titre
+Rendre la sacoche vide à Pell
+
+== courrier.e5.scene
+## Le courrier des falaises
+Pell : « Toutes les lettres livrées ? Même celle de Dorn ? Tu ferais un meilleur facteur que moi. »
+Pell : « Garde la plume, elle t'a adopté. Et Joran va te montrer ma réserve : je lui confie tout ce que les clients n'ont jamais réclamé. »
+
+== courrier.e5.fin
+? Récompense : *300 po*. La boutique de *Joran* vend désormais la Plume de vent et l'Amulette des nuées. Tu gardes la Plume du facteur.
+
+== courrier.apres
+Pell : « Si tu as une lettre à envoyer, n'importe où, dis-le-moi. Pour toi, c'est gratuit. À vie. »
+
+== pnj.pell
+Pell : « Je vole d'un village à l'autre depuis l'âge de douze ans. Le vent, c'est mon cheval. »
+
