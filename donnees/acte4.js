@@ -2,7 +2,7 @@
    Même format que donnees/acte1.js (la liste des événements possibles est en tête de ce fichier) et acte3.js (drapeaux).
    Drapeaux de l'acte : acte4 (en a4.e1, attendu par la suite des quêtes annexes), varen (en a4.e6 : Varen se bat avec l'équipe).
    Les textes sont dans textes/<langue>/acte4.txt. Les Hauts-Vents ont leur carte (region: 'vents' dans monde.js).
-   Version 0.5.0 : jusqu'au feu de camp (a4.e7) ; le final (Escalier de brume, Cœur de l'Œil, épilogue) arrive en 0.5.2. */
+   Version 0.5.0 : jusqu'au feu de camp (a4.e7) ; le final (Escalier de brume, Cœur de l'Œil, épilogue) arrive en 0.5.3. */
 
 ACTES.push({
   id: 'a4',

@@ -218,7 +218,11 @@ function openJournal() {
   for (const id in ANNEXES) {
     const n = annexeEtat(id); if (!n) continue;
     const ok = annexeFinie(id);
-    (ok ? finies : enCours).push(queteRepliable(t('journal.annexe', { titre: t(id + '.titre') }), ANNEXES[id].etapes.slice(0, n).map((e, i) => [t(`${id}.e${i + 1}.titre`), i + 1 < n]), ok));
+    // une étape en désordre (parmi) montre chacun de ses morceaux, cochés quand ils sont faits
+    const suite = ANNEXES[id].etapes.slice(0, n).flatMap((e, i) => e.parmi
+      ? e.parmi.map((m, j) => [t(`${id}.e${i + 1}.m${j + 1}.titre`), i + 1 < n || morceauxFaits(id).includes(j)])
+      : [[t(`${id}.e${i + 1}.titre`), i + 1 < n]]);
+    (ok ? finies : enCours).push(queteRepliable(t('journal.annexe', { titre: t(id + '.titre') }), suite, ok));
   }
   let quetes = `<h3 class="sec">${esc(t('journal.encours'))}</h3>${enCours.join('') || `<p class="note">${esc(t(cur ? 'journal.aucune' : 'journal.tout.fini'))}</p>`}`;
   if (finies.length) quetes += `<details class="terminees"><summary>${esc(t('journal.terminees', { n: finies.length }))}</summary><div class="list">${finies.join('')}</div></details>`;

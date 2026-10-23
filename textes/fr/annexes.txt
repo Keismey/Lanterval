@@ -1095,3 +1095,339 @@ Pell : « Si tu as une lettre à envoyer, n'importe où, dis-le-moi. Pour toi, c
 == pnj.pell
 Pell : « Je vole d'un village à l'autre depuis l'âge de douze ans. Le vent, c'est mon cheval. »
 
+
+# ---------- 12. L'œuf de wyverne (Ilse, classe Dragonnier) ----------
+
+== wyverne.titre
+L'œuf de wyverne
+
+== wyverne.offre
+Ilse : « Ma dernière wyverne a pondu au Volcan endormi, avant que l'Ordre ne la chasse des falaises. Un seul œuf, chaud comme une braise. »
+Ilse : « Elle s'est réfugiée dans un nid, au pied du Pic hurlant. La brume l'a rendue folle, mais une mère reconnaît toujours son œuf. »
+Ilse : « Si tu trouves cet œuf, rapporte-le-lui. Elle a assez perdu comme ça. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== wyverne.message
+Quête annexe : rapporter l'*œuf de wyverne* au nid du *Pic hurlant*. S'il te manque, il est resté au *Volcan endormi*.
+
+== wyverne.e1.titre
+Trouver l'œuf chaud
+
+== wyverne.e1.bouton
+Chercher le nid brûlant
+
+== wyverne.e1.attente
+Ilse : « L'œuf doit être au Volcan endormi, côté cratère. Les wyvernes pondent là où la roche reste chaude. »
+
+== wyverne.e1.nid
+## L'œuf de wyverne
+Au bord du cratère, entre deux coulées figées, un nid de branches calcinées. Au milieu, un gros œuf écailleux qui bouge à peine.
+Trois lézards de lave tournent autour, la langue sortie. [Combattre]
+
+== wyverne.e1.fin
+## L'œuf de wyverne
+Kael soulève l'œuf à deux mains. Il est lourd, et tiède comme une pierre au soleil.
+Nev : « Il bouge ! Il faut se dépêcher, il ne va pas attendre la fin de la guerre. »
+
+== wyverne.e1.message
+Quête annexe : l'*œuf chaud* est dans ton sac. Le nid de la mère est au pied du *Pic hurlant*.
+
+== wyverne.e2.titre
+Rendre l'œuf à sa mère
+
+== wyverne.e2.bouton
+Approcher du nid
+
+== wyverne.e2.attente
+Ilse : « Le nid est au pied du Pic hurlant, dans la paroi. Parle-lui doucement. Et si ça ne suffit pas, cogne fort. »
+
+== wyverne.e2.nid
+## Le nid
+Dans un creux de la falaise, un grand nid de cordes et de plumes, tressé par Ilse il y a des années. Il est vide.
+Un cri déchire le vent. Une wyverne aux écailles gris-bleu se pose devant le nid, les yeux noyés de brume. [Combattre]
+
+== wyverne.e2.conseil
+? La *Wyverne mère* résiste au *Vent*. La *Terre* et la *Lame* fendent sa garde. Quand elle prend son souffle, brise sa garde avant qu'elle ne crache la brume sur toute l'équipe.
+
+== wyverne.e2.eclosion
+## Le nid
+La wyverne recule, haletante. Kael pose l'œuf dans le nid et s'éloigne lentement.
+La mère penche la tête. La brume quitte ses yeux d'un coup, comme une fumée chassée par le vent.
+L'œuf se fend. Un petit museau en sort, puis deux ailes trempées. Le petit crie, et sa mère lui répond.
+
+== wyverne.e2.message
+Quête annexe : l'œuf a éclos. Retourne voir *Ilse* à Aerie.
+
+== wyverne.e3.titre
+Raconter l'éclosion à Ilse
+
+== wyverne.e3.scene
+## L'œuf de wyverne
+Ilse écoute sans rien dire. Puis elle regarde par-dessus l'épaule de Kael : le petit est là, perché sur la rambarde.
+Ilse : « Il t'a suivi jusqu'ici. Une wyverne ne s'apprivoise pas, elle choisit. Celle-là t'a choisi. »
+Ilse : « Alors je vais t'apprendre à sauter avec elle. Prends ma vieille lance. Je ne saute plus depuis longtemps. »
+
+== wyverne.e3.fin
+? Récompense : classe cachée *Dragonnier* (Saut : le héros disparaît, puis retombe sur sa cible, même en l'air ; Souffle : du Vent sur tous les ennemis) et la *Lance d'Ilse*. Joran vend désormais une deuxième lance.
+
+== wyverne.apres
+Ilse : « Le petit vient manger dans ma main tous les matins. Il te cherche. Ne le fais pas trop attendre. »
+
+# ---------- 13. Le cerf-volant (Liss ; Nev et Varen) ----------
+
+== cerfvolant.titre
+Le cerf-volant
+
+== cerfvolant.offre
+Liss : « Vous deux, ensemble, sous mon toit. Il a fallu une guerre pour ça. »
+Liss : « Votre cerf-volant est toujours au grenier. Déchiré, comme le jour où vous êtes partis. »
+Liss : « Réparez-le. Faites-le voler. Et je verrai si je vous pardonne. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== cerfvolant.message
+Quête annexe : monter au *grenier* de Liss avec Nev et Varen.
+
+== cerfvolant.e1.titre
+Monter au grenier de Liss
+
+== cerfvolant.e1.bouton
+Monter au grenier
+
+== cerfvolant.e1.grenier
+## Le cerf-volant
+Le grenier sent la poussière et la laine. Sous une couverture, un grand cerf-volant bleu, la toile fendue d'un bout à l'autre.
+Varen : « C'est toi qui l'as déchiré. Tu l'as lancé dans l'orage. »
+Nev : « C'est toi qui as lâché la ficelle ! Tu lâchais toujours trop tôt. »
+
+== cerfvolant.e1.rire
+## Le cerf-volant
+Ils se regardent, les bras croisés, exactement pareils. Mira pouffe la première.
+Nev éclate de rire, puis Varen, plus doucement. Le premier rire de Varen que l'équipe entend.
+Varen : « La toile venait d'une bannière du monastère. Il en reste sûrement, sur le parvis des ruines. »
+
+== cerfvolant.e1.message
+Quête annexe : trouver une *bannière* sur le parvis des *Ruines du monastère*, avec Nev et Varen.
+
+== cerfvolant.e2.titre
+Trouver une bannière aux Ruines
+
+== cerfvolant.e2.bouton
+Chercher une bannière
+
+== cerfvolant.e2.attente
+Liss : « Une bannière du monastère, sur le parvis. Mon mari en avait décroché une pour vous. Il s'était fait gronder par les moines. »
+
+== cerfvolant.e2.banniere
+## Le cerf-volant
+Sur le parvis, une bannière bleue pend encore à une colonne, intacte. Varen tend la main vers elle.
+Une grande silhouette en chape glisse hors de la brume, une crosse à la main : le prieur du monastère. Nev se met dos à dos avec son frère, sans réfléchir.
+Nev : « Restez en arrière. Cette fois, on se bat ensemble, lui et moi. » [Combattre]
+
+== cerfvolant.e2.conseil
+? Seuls *Nev* et *Varen* se battent. Le *Prieur spectral* craint le *Feu* et la *Lame* et appelle des moines en renfort : brise sa garde et ne le laisse pas souffler. Garde des objets de soin sous la main.
+
+== cerfvolant.e2.fin
+## Le cerf-volant
+Varen décroche la bannière et la plie avec soin. Nev le regarde faire.
+Nev : « Tu te battais mieux quand on était contre. »
+Varen : « Non. Je me battais mieux quand je savais où tu étais. »
+
+== cerfvolant.e2.message
+Quête annexe : le cerf-volant est réparé. Faites-le voler au sommet du *Pic hurlant*.
+
+== cerfvolant.e3.titre
+Faire voler le cerf-volant
+
+== cerfvolant.e3.bouton
+Lâcher le cerf-volant
+
+== cerfvolant.e3.attente
+Liss : « Au sommet du Pic. C'est le seul endroit où le vent était assez fort pour vous deux. »
+
+== cerfvolant.e3.vent
+## Le sommet
+Au sommet du Pic, là où ils se sont battus, Nev et Varen tiennent la ficelle à quatre mains.
+Le vent prend la toile d'un coup. Le cerf-volant bleu monte, monte, jusqu'à toucher les nuages.
+
+== cerfvolant.e3.ficelle
+## Le sommet
+Varen : « Tu tenais toujours la ficelle trop fort. »
+Nev : « Et toi, tu lâchais toujours trop tôt. »
+Cette fois, aucun des deux ne lâche.
+
+== cerfvolant.e3.message
+Quête annexe : le cerf-volant a volé. Retourne voir *Liss* à Aerie.
+
+== cerfvolant.e4.titre
+Retourner chez Liss
+
+== cerfvolant.e4.pardon
+## Le cerf-volant
+Liss regarde le cerf-volant, puis ses deux petits-enfants, longtemps. Ses mains tremblent un peu.
+Liss : « Je vous ai attendus six ans. Tous les soirs, je regardais le Pic. »
+Liss : « Vous êtes rentrés. C'est tout ce que je voulais. Le reste, on le réparera comme la toile. »
+
+== cerfvolant.e4.fin
+## Le cerf-volant
+Liss sort une dague fine de son tablier, la lame aussi claire que le ciel du Pic.
+Liss : « Celle de votre grand-père. Il coupait les ficelles des cerfs-volants pris dans l'orage. Nev, elle est pour toi. »
+Varen : « Prends-la. Moi, j'ai déjà ce que je voulais. »
+? Récompense : *Fil-de-vent*, la dague ultime de Nev (réservée à Nev). Nev peut la porter en Moine, Berserker, Voleur, Ninja ou Lame-mage.
+
+== cerfvolant.apres
+Liss : « Le cerf-volant est accroché au-dessus de la cheminée. Il attendra que vous reveniez le faire voler. Tous les deux. »
+
+== pnj.liss
+Liss : « Je n'ai rien à te dire, Nev. Pas encore. »
+
+== pnj.liss.a4.e7
+Liss : « Ton frère dort sous mon toit ce soir. Je n'ai pas encore décidé si j'en étais heureuse. »
+
+# ---------- 15. Les larmes de l'Œil (Tavor ; classe ultime Gardien des souvenirs) ----------
+
+== larmes.titre
+Les larmes de l'Œil
+
+== larmes.offre
+Tavor : « Quand les moines ont tiré la paupière sur l'Œil, il a pleuré quatre larmes. Chacune garde un morceau de la mémoire du monde. »
+Tavor : « Elles sont tombées loin d'ici : dans la Grotte de Cristal, l'Épave engloutie, les Mines rouges, et au fond de notre sanctuaire. »
+Tavor : « Réunies, elles font un gardien que la brume ne peut pas toucher. Mais chacune a son gardien, elle aussi. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== larmes.message
+Quête annexe : réunir les *quatre larmes de l'Œil*, dans l'ordre que tu veux : *Grotte de Cristal*, *Épave engloutie*, *Mines rouges*, *sanctuaire des Ruines*.
+
+== larmes.e1.titre
+Réunir les quatre larmes de l'Œil
+
+== larmes.e1.sous
+Les larmes : Grotte, Épave, Mines, sanctuaire
+
+== larmes.e1.attente
+Tavor : « Une larme brille au fond de chaque lieu où l'Œil a pleuré. Suis la lumière, pas la brume. »
+
+== larmes.e1.m1.titre
+La larme de cristal, au fond de la Grotte
+
+== larmes.e1.m1.bouton
+Suivre la lueur des cristaux
+
+== larmes.e1.m1.lueur
+## Les larmes de l'Œil
+Au fond de la Grotte, une goutte de lumière flotte entre les cristaux, sans tomber.
+Les cristaux s'arrachent du sol et s'assemblent en une silhouette immense, qui se dresse devant la larme. [Combattre]
+
+== larmes.e1.m1.conseil
+? Le *Gardien de cristal* résiste à la *Terre* et à la *Lame*. Le *Feu* et le *Vent* fendent sa garde. Il se répare quand il est blessé : frappe fort, sans lui laisser de répit.
+
+== larmes.e1.m1.souvenir
+## La larme de cristal
+Kael touche la larme. Une forêt d'été, un homme qui rit et soulève un enfant sur ses épaules.
+« Regarde, Kael. La lanterne, on la voit d'ici », dit Aldric. « Tant qu'elle brille, on rentre toujours à la maison. »
+La lumière s'éteint doucement. Kael garde la main fermée sur la larme, longtemps.
+
+== larmes.e1.m1.message
+Quête annexe : la *larme de cristal* est à toi.
+
+== larmes.e1.m2.titre
+La larme d'écume, dans l'Épave engloutie
+
+== larmes.e1.m2.bouton
+Plonger vers la lueur
+
+== larmes.e1.m2.lueur
+## Les larmes de l'Œil
+Dans la cale de l'épave, une lueur bat comme un cœur, sous les algues.
+L'eau se met à tourner. Une forme d'écume et de coquillages se lève et ouvre une bouche sans fond. [Combattre]
+
+== larmes.e1.m2.conseil
+? Le *Gardien d'écume* résiste à l'*Eau* et au *Feu*. La *Terre* et le *Vent* fendent sa garde. Il frappe deux fois tant que sa garde tient.
+
+== larmes.e1.m2.souvenir
+## La larme d'écume
+Sol touche la larme. Un petit bateau sur une mer calme, deux enfants qui comptent les étoiles.
+« Tu crois qu'on se perdra un jour ? » demande la petite Naïa. « Jamais », répond le petit Sol. « Si tu te perds, je te chante la berceuse. »
+Sol essuie ses yeux du revers de la main, sans rien dire.
+
+== larmes.e1.m2.message
+Quête annexe : la *larme d'écume* est à toi.
+
+== larmes.e1.m3.titre
+La larme de braise, au fond des Mines rouges
+
+== larmes.e1.m3.bouton
+Suivre la chaleur
+
+== larmes.e1.m3.lueur
+## Les larmes de l'Œil
+Au bout de la galerie profonde, une larme rouge luit dans la roche, chaude comme un tison.
+Le minerai fond et coule en une silhouette de métal en fusion, qui lève deux bras brûlants. [Combattre]
+
+== larmes.e1.m3.conseil
+? Le *Gardien de braise* résiste au *Feu* et à la *Terre*. L'*Eau* et le *Vent* fendent sa garde. Quand il prend son souffle, brise sa garde avant qu'il ne déchaîne le feu.
+
+== larmes.e1.m3.souvenir
+## La larme de braise
+Mira touche la larme. Une nuit de pluie, une jeune femme qui court sur un chemin de montagne, un bébé serré contre elle.
+« Chut, ma toute petite », souffle Hilde. « Personne ne te mettra jamais dans une cage. »
+Mira : « C'était moi. Elle courait pour moi. »
+Mira serre la larme si fort qu'elle lui brûle presque la main.
+
+== larmes.e1.m3.message
+Quête annexe : la *larme de braise* est à toi.
+
+== larmes.e1.m4.titre
+La larme d'azur, au sanctuaire des Ruines
+
+== larmes.e1.m4.bouton
+Monter vers la lueur bleue
+
+== larmes.e1.m4.lueur
+## Les larmes de l'Œil
+Au-dessus de l'autel vide, là où dormait le cristal, une larme bleue tourne dans le vent.
+Le vent se resserre autour d'elle et prend la forme d'un grand oiseau de brume, aux ailes de lames. [Combattre]
+
+== larmes.e1.m4.conseil
+? Le *Gardien d'azur* résiste au *Vent* et à l'*Eau*. La *Terre* et le *Feu* fendent sa garde. Il frappe deux fois tant que sa garde tient.
+
+== larmes.e1.m4.souvenir
+## La larme d'azur
+Nev touche la larme. Une passerelle d'Aerie, un garçon qui apprend à une petite fille à tenir debout dans le vent.
+« Écarte les bras », dit le petit Varen. « Le vent ne te fera pas tomber si tu n'as pas peur de lui. »
+Varen, à côté de Nev, détourne les yeux. Mais il ne s'en va pas.
+
+== larmes.e1.m4.message
+Quête annexe : la *larme d'azur* est à toi.
+
+== larmes.e2.titre
+Montrer les larmes à Orvan
+
+== larmes.e2.bouton
+Montrer les larmes
+
+== larmes.e2.attente
+Tavor : « Les quatre larmes ! Ce soir, au feu du Nid, quelqu'un saura quoi en faire. Quelqu'un qui était là quand elles sont tombées. »
+
+== larmes.e2.feu
+## Les larmes de l'Œil
+Au feu du Nid, Kael pose les quatre larmes sur une pierre plate. Elles se lèvent toutes seules et tournent lentement au-dessus des flammes.
+Orvan les regarde sans un mot. Dans chacune, un éclat de souvenir passe, puis un autre.
+Orvan : « Je les ai vues tomber, il y a cinquante ans. J'ai cru qu'elles étaient perdues pour toujours. »
+
+== larmes.e2.gardien
+## Les larmes de l'Œil
+Orvan lève sa main ridée. Les larmes se posent dans sa paume et se fondent en une seule lumière, douce comme une lanterne.
+Orvan : « J'ai aidé à fermer cet Œil. Je n'ai pas le droit de le garder. Mais je peux vous apprendre à garder ce qu'il voit. »
+Orvan : « Souvenez-vous les uns des autres. C'est la seule chose que la brume ne sait pas prendre. »
+
+== larmes.e2.fin
+? Récompense : classe cachée ultime *Gardien des souvenirs*. Rappel relance la dernière action d'un allié, sans qu'il paie de PP ; Sceau de mémoire réduit d'un tiers les dégâts de l'équipe pendant les 4 prochaines actions des monstres.
+
+== larmes.apres
+Tavor : « Les moines disaient que l'Œil pleure quand il a peur d'oublier. Grâce à toi, il a moins peur. »
+
+== pnj.orvan.fin
+Orvan : « Demain, l'Escalier de brume. Ce soir, je me chauffe au feu d'Edda. Je n'ai plus l'âge des nuits froides. »

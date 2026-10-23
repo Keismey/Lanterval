@@ -1562,3 +1562,152 @@ The Winged Roc takes off with a great beat of its wings! *In the air, only Wind 
 
 == monstre.rocaile.pique
 The Winged Roc dives on the whole team!
+
+# ---------- Version 0.5.2: side quests of the High Winds ----------
+
+== parle.liss
+Liss
+
+== classe.dragonnier
+Dragoon
+
+== classe.dragonnier.desc
+Jumps with Ilse's wyvern: vanishes from the fight where no one can touch them, then lands on the target. Lances and swords.
+
+== classe.dragonnier.verrou
+Secret class: a wyvern keeper in Aerie is waiting for news of an egg
+
+== classe.souvenirs
+Keeper of memories
+
+== classe.souvenirs.desc
+The ultimate class: reminds allies of what they just did, and shields the team with the Eye's memory.
+
+== classe.souvenirs.verrou
+Secret class: the old monk of Aerie speaks of lost tears
+
+== tech.saut
+Jump
+
+== tech.saut.desc
+The hero leaps high: no one can touch them, and they land on the target on their next turn, even a flying one.
+
+== tech.souffle
+Breath
+
+== tech.souffle.desc
+The wyvern hatchling breathes a cutting wind on every enemy.
+
+== tech.rappel
+Recall
+
+== tech.rappel.desc
+An ally repeats their last action without paying PP.
+
+== tech.sceau
+Memory seal
+
+== tech.sceau.desc
+The team takes a third less damage during the monsters' next 4 actions.
+
+== equip.fildevent
+Windstring
+
+== equip.lanceilse
+Ilse's lance
+
+== equip.lance
+Cliff lance
+
+== important.cerf-volant-dechire
+Torn kite
+
+== important.cerf-volant-dechire.desc
+Nev and Varen's blue kite, its sail split from end to end. It was sleeping in Liss's attic.
+
+== important.cerf-volant
+Blue kite
+
+== important.cerf-volant.desc
+Mended with a monastery banner. Nev and Varen flew it on the summit of the Howling Peak.
+
+== important.larme-cristal
+Crystal tear
+
+== important.larme-cristal.desc
+A tear of the Eye, found deep in the Crystal Cave. It holds a memory of Kael and his father.
+
+== important.larme-ecume
+Foam tear
+
+== important.larme-ecume.desc
+A tear of the Eye, found in the Sunken Wreck. It holds a memory of Sol and Naïa.
+
+== important.larme-braise
+Ember tear
+
+== important.larme-braise.desc
+A tear of the Eye, found deep in the Red Mines. It holds a memory of Hilde and Mira.
+
+== important.larme-azur
+Azure tear
+
+== important.larme-azur.desc
+A tear of the Eye, found in the sanctuary of the ruins. It holds a memory of Nev and Varen.
+
+== monstre.wyverne
+Wyvern mother
+
+== monstre.wyverne.desc
+Ilse's last wyvern, driven mad by the mist. She breathes mist and strikes twice while her guard holds.
+
+== monstre.wyverne.charge
+The Wyvern mother swells her throat, full of mist… *she will breathe on the whole team on her next turn*, unless you break her guard first.
+
+== monstre.wyverne.special
+The Wyvern mother breathes a gust of mist on the whole team!
+
+== monstre.larmet
+Crystal guardian
+
+== monstre.larmet.desc
+Crystals of the Cave gathered around a tear of the Eye. It mends itself when hurt.
+
+== monstre.larmet.special
+The Crystal guardian glues its shards back together and recovers {v} HP!
+
+== monstre.larmee
+Foam guardian
+
+== monstre.larmee.desc
+Foam and shells around a tear of the Eye. It drinks the strength of those it strikes.
+
+== monstre.larmef
+Ember guardian
+
+== monstre.larmef.desc
+Molten ore around a tear of the Eye. It prepares flows of fire on the whole team.
+
+== monstre.larmef.charge
+The Ember guardian glows redder and redder… *it will burn the whole team on its next turn*, unless you break its guard first.
+
+== monstre.larmef.special
+The Ember guardian pours a flow of fire over the whole team!
+
+== monstre.larmev
+Azure guardian
+
+== monstre.larmev.desc
+A bird of wind and mist around a tear of the Eye. It strikes twice while its guard holds.
+
+== monstre.larmev.special
+Slicing wings
+
+== monstre.prieur
+Spectral prior
+
+== monstre.prieur.desc
+The monastery's last prior, turned to mist. He still guards the banner on the forecourt, and calls his brothers for help.
+
+== monstre.prieur.appel
+The Spectral prior raises his crozier: a {renfort} rises from the mist!

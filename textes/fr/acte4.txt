@@ -276,9 +276,9 @@ L'équipe s'est reposée. Demain, l'*Escalier de brume*.
 # ---------- Fin de la version 0.5.0 ----------
 
 == fin.version
-## Fin de la version 0.5.0
+## Fin de la version 0.5.2
 Le cristal d'azur est aux mains d'Ysold, et Varen se bat désormais avec l'équipe. Demain, l'Escalier de brume.
-La suite arrive dans les prochaines versions : d'abord les dernières quêtes annexes des Hauts-Vents, puis le final. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.
+Le final arrive dans la prochaine version. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.
 
 # ---------- Ce que disent les gens selon l'avancée ----------
 # pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.

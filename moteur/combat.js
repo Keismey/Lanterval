@@ -38,14 +38,14 @@ function bOverlay() {
     <div class="nm">${esc(e.name)}</div><div class="bar ${e.hp / e.mhp < .3 ? 'low' : ''}"><i style="width:${e.hp / e.mhp * 100}%"></i></div>
     <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${MONSTRES[e.id].intouchable ? '∞' : e.shield}</span>`}${elChips(e)}${e.dort ? `<span class="zz">${esc(t('combat.dort.court'))}</span>` : ''}${e.air ? `<span class="zz">${esc(t('combat.air.court'))}</span>` : ''}</div></div>`).join('');
   ovc().innerHTML = `<div class="tl glass"><span class="tll">${esc(t('combat.tours'))}</span>${chips}</div>
-   <div class="bmeta">${B.team.length > 1 ? `<span class="glass pips">${esc(t('combat.union'))} ${[0, 1, 2].map(i => `<b class="${B.union > i ? 'on' : ''}"></b>`).join('')}</span>` : ''}${m ? `<span class="glass chain">${esc(t('combat.chaine', { m }))}</span>` : ''}${B.auto ? `<span class="glass autoflag">${esc(t('combat.auto'))}</span>` : ''}</div>${ei}`;
+   <div class="bmeta">${B.team.length > 1 ? `<span class="glass pips">${esc(t('combat.union'))} ${[0, 1, 2].map(i => `<b class="${B.union > i ? 'on' : ''}"></b>`).join('')}</span>` : ''}${m ? `<span class="glass chain">${esc(t('combat.chaine', { m }))}</span>` : ''}${B.sceau > 0 ? `<span class="glass chain">${esc(t('combat.sceau.reste', { n: B.sceau }))}</span>` : ''}${B.auto ? `<span class="glass autoflag">${esc(t('combat.auto'))}</span>` : ''}</div>${ei}`;
   majMonstres();
 }
 function bCards() {
   const el = $('#pcards'); if (!el) return;
   el.innerHTML = B.team.map(h => {
     const s = hs(h);
-    return `<div class="pcard ${B.cur === h ? 'act' : ''} ${h.hp <= 0 ? 'ko' : ''}" data-h="${h.id}"><div class="pc-top">${av(h.id, 'sm')}<div class="pc-n"><b>${esc(nomH(h))}</b><span>${esc(t('classe.' + h.job))}${h.courage > 0 ? ' · ' + esc(t('combat.courage.court')) : ''}${h.rage > 0 ? ' · ' + esc(t('combat.rage.court')) : ''}${h.esquive ? ' · ' + esc(t('combat.esquive.court')) : ''}${h.enchant > 0 ? ' · ' + esc(t('combat.enchant.court')) : ''}</span></div></div>
+    return `<div class="pcard ${B.cur === h ? 'act' : ''} ${h.hp <= 0 ? 'ko' : ''}" data-h="${h.id}"><div class="pc-top">${av(h.id, 'sm')}<div class="pc-n"><b>${esc(nomH(h))}</b><span>${esc(t('classe.' + h.job))}${h.courage > 0 ? ' · ' + esc(t('combat.courage.court')) : ''}${h.rage > 0 ? ' · ' + esc(t('combat.rage.court')) : ''}${h.esquive ? ' · ' + esc(t('combat.esquive.court')) : ''}${h.enchant > 0 ? ' · ' + esc(t('combat.enchant.court')) : ''}${h.saut ? ' · ' + esc(t('combat.saut.court')) : ''}</span></div></div>
    <div class="bar ${h.hp / s.hp < .3 ? 'low' : ''}"><i style="width:${h.hp / s.hp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.hp'))}</span><b>${h.hp}/${s.hp}</b></div>
    <div class="bar pp"><i style="width:${h.pp / s.pp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.pp'))}</span><b>${h.pp}/${s.pp}</b></div></div>`;
   }).join('') + (B.team.length < 3 ? Array(3 - B.team.length).fill(`<div class="pcard empty">${esc(t('combat.vide'))}</div>`).join('') : '');
@@ -91,7 +91,7 @@ async function battle(ids, o) {
   const T = o.equipe ? team().filter(h => o.equipe.includes(h.id)) : team();
   if (o.invitee) T.push(mkInvite(o.invitee));
   else if (S.f.varen && !o.equipe) T.push(mkInvite('varen'));
-  B = { zone: o.zone, canFlee: o.canFlee !== false, boss: !!o.boss, quest: !!o.quest, perdu: !!o.perdu, union: 0, streak: 0, turns: 0, cur: null, targeting: false, team: T, st: {}, auto: false, wall: null,
+  B = { zone: o.zone, canFlee: o.canFlee !== false, boss: !!o.boss, quest: !!o.quest, perdu: !!o.perdu, union: 0, streak: 0, turns: 0, cur: null, targeting: false, team: T, st: {}, auto: false, wall: null, sceau: 0, dernier: {},
     enemies: ids.map(id => {
       vus[id] = (vus[id] || 0) + 1;
       return mkEnnemi(id, cnt[id] > 1 ? (existe(`monstre.${id}.court`) ? t(`monstre.${id}.court`) : t('monstre.' + id)) + ' ' + 'ABC'[vus[id] - 1] : t('monstre.' + id));
@@ -117,8 +117,10 @@ async function battle(ids, o) {
       if (u.broken) { u.broken = false; u.shield = u.mshield; bMsg(esc(t('combat.releve', { nom: u.name }))); u.next += 100 / u.spd; await wait(750); continue; }
       B.streak = 0;
       const w = await enemyAct(u); u.next += 100 / u.spd * w;
+      if (B.sceau > 0) B.sceau--;
     } else {
       u.guard = false; u.taunt = false; if (B.wall === u) B.wall = null;
+      if (u.saut) { const w = await atterrir(u); u.next += 100 / hs(u).spd * w; continue; }
       let a = null;
       if (S.auto && B.autoOk) {
         const low = aliveH().find(h => h.hp / hs(h).hp < .3);
@@ -181,7 +183,7 @@ function mkEnnemi(id, nom) {
     xp: Math.round(d.xp * fp), gold: Math.round(d.or * fp), broken: false, charged: false, cnt: 0, dort: false, vole: false };
 }
 function mkInvite(id) { const h = HEROS[id], c = { id, lvl: char('kael').lvl, xp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure, acc: null }, invite: true }; fullC(c); return c; }
-function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
+function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; delete h.saut; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
 function gainXP(x) {
   const ups = [];
   for (const h of team()) {
@@ -195,7 +197,7 @@ function gainXP(x) {
 /* ---------- Commandes du héros ---------- */
 const icTech = x => x.type === 'soin' || x.type === 'soins' || x.type === 'meditation' ? 'heart' : x.type === 'scan' ? 'search' : x.type === 'provoc' || x.type === 'rempart' ? 'shield'
   : x.type === 'vol' ? 'bag' : x.type === 'esquive' ? 'run' : x.type === 'courage' || x.type === 'rage' ? 'star' : x.type === 'sommeil' ? 'drop'
-  : x.type === 'mixture' ? 'heart' : x.type === 'offrande' ? 'link' : x.type === 'enchant' ? 'star' : 'spark';
+  : x.type === 'mixture' ? 'heart' : x.type === 'offrande' ? 'link' : x.type === 'enchant' ? 'star' : x.type === 'rappel' ? 'link' : x.type === 'sceau' ? 'shield' : x.type === 'saut' ? 'run' : 'spark';
 function elTech(h, el) { const he = t('element.' + HEROS[h.id].el); return el === 'X' ? he : el === 'LX' ? t('element.L') + ' + ' + he : el === 'Z' ? t('element.' + elRegion()) : el ? t('element.' + el) : ''; }
 async function heroCommand(h) {
   while (true) {
@@ -233,11 +235,11 @@ async function heroCommand(h) {
 
 /* ---------- Coups et effets ---------- */
 function heroFx(h, texte, cls) { const c = document.querySelector(`.pcard[data-h="${h.id}"]`); if (!c) return; const d = document.createElement('div'); d.className = 'fnum ' + (cls || ''); d.innerHTML = texte; c.appendChild(d); setTimeout(() => d.remove(), 1000); }
-// corrode (Corrosion de l'Alchimiste) : enlève un point de garde même sans faiblesse
-async function strike(e, els, base, mult, brise = 1.5, corrode = false) {
+// corrode (Corrosion de l'Alchimiste) : enlève un point de garde même sans faiblesse ; aerien : touche un monstre en l'air (Saut)
+async function strike(e, els, base, mult, brise = 1.5, corrode = false, aerien = false) {
   if (e.dort) e.dort = false;
-  // en l'air (envol) : seul le Vent l'atteint
-  if (e.air && !els.includes('V')) { const [x, y] = epos(e); fx(x, y, esc(t('combat.fx.rate')), 'res'); return esc(t('combat.air.rate', { nom: e.name })); }
+  // en l'air (envol) : seul le Vent l'atteint, ou un héros qui saute
+  if (e.air && !els.includes('V') && !aerien) { const [x, y] = epos(e); fx(x, y, esc(t('combat.fx.rate')), 'res'); return esc(t('combat.air.rate', { nom: e.name })); }
   const weak = els.some(x => e.weak.includes(x)), res = !weak && els.some(x => e.res.includes(x));
   let m = mult, cls = '', tag = '';
   if (weak) { m *= 1.5; els.filter(x => e.weak.includes(x)).forEach(x => reveal(e.id, x)); cls = 'weak'; tag = t('combat.faiblesse') + ' '; if (!e.broken) { e.shield--; if (!B.inUnion) B.union = Math.min(3, B.union + 1); } }
@@ -313,7 +315,9 @@ async function heroAct(h, a) {
     bMsg(lines.filter(l => l.includes('<b>') || /vaincu/.test(l)).join(' ') || esc(t('combat.union.fin'))); bDraw(); await wait(500); return 1.2;
   }
   const sk = a.sk === 'attaque' ? { el: elArme(h), type: 'phys', pow: 1, pp: 0, cible: 'ennemi', poids: 1 } : TECHNIQUES[a.sk], nomT = t('tech.' + a.sk);
-  h.pp -= sk.pp; bCards();
+  // Rappel (Gardien des souvenirs) : relance la dernière action d'un allié, sans qu'il paie de PP (gratuit)
+  if (a.sk !== 'rappel') B.dernier[h.id] = { type: 'skill', sk: a.sk, t: a.t };
+  if (!a.gratuit) h.pp -= sk.pp; bCards();
   if (h.enchant > 0 && a.sk !== 'enchant') h.enchant--;
   if (sk.type === 'scan') {
     revealAll(a.t.id);
@@ -335,6 +339,18 @@ async function heroAct(h, a) {
   }
   if (sk.type === 'vol') { bMsg(voler(a.t)); await wait(750); return sk.poids; }
   if (sk.type === 'enchant') { h.enchant = 3; heroFx(h, esc(t('combat.enchant.court')), ''); bMsg(tx('combat.enchant', { nom: nm, el: t('element.' + HEROS[h.id].el) })); bCards(); await wait(600); return sk.poids; }
+  if (sk.type === 'rappel') {
+    const c = a.t, d = B.dernier[c.id];
+    if (!d || c.hp <= 0) { bMsg(esc(t('combat.rappel.rien', { nom: nm, cible: nomH(c) }))); await wait(650); return sk.poids; }
+    bMsg(tx('combat.rappel', { nom: nm, cible: nomH(c), tech: t('tech.' + d.sk) })); heroFx(c, esc(t('combat.rappel.court')), 'heal'); await wait(600);
+    const r = { ...d, gratuit: true };
+    if (r.t && !r.t.isEnemy && r.t.hp <= 0) r.t = aliveH().reduce((x, y) => x.hp / hs(x).hp < y.hp / hs(y).hp ? x : y);
+    await heroAct(c, r); return sk.poids;
+  }
+  // Sceau de mémoire : l'équipe subit un tiers de dégâts en moins pendant les prochaines actions des monstres
+  if (sk.type === 'sceau') { B.sceau = sk.tours; for (const c of aliveH()) heroFx(c, esc(t('combat.sceau.court')), 'heal'); bMsg(tx('combat.sceau', { nom: nm, n: sk.tours })); bOverlay(); await wait(650); return sk.poids; }
+  // Saut (Dragonnier) : le héros quitte le combat jusqu'à son prochain tour, où il retombe sur sa cible (atterrir)
+  if (sk.type === 'saut') { h.saut = a.t; heroFx(h, esc(t('combat.saut.court')), ''); bMsg(tx('combat.saut', { nom: nm, cible: a.t.name })); bCards(); await wait(600); return sk.poids; }
   if (sk.type === 'rage') { h.rage = 3; heroFx(h, esc(t('combat.rage.court')), ''); bMsg(tx('combat.rage', { nom: nm })); bCards(); await wait(600); return sk.poids; }
   if (sk.type === 'mixture') {
     const vs = []; for (const c of aliveH()) { const v = Math.min(Math.round(s.mag * sk.pow + 10), hs(c).hp - c.hp); c.hp += v; c.pp = Math.min(hs(c).pp, c.pp + 4); vs.push([c, v]); }
@@ -368,6 +384,14 @@ async function heroAct(h, a) {
   bMsg(esc(nomT) + (mult > 1 ? ' ' + esc(t('combat.chaine.court', { m: mult.toFixed(2) })) : '') + ' : ' + lines.join(' '));
   bDraw(); await wait(sk.cible === 'tous' ? 750 : 600); return sk.poids;
 }
+// fin du Saut : le héros retombe sur sa cible (une autre si elle est tombée), même si elle est en l'air
+async function atterrir(h) {
+  const sk = TECHNIQUES.saut, s = hs(h); let e = h.saut; h.saut = null;
+  if (!e || e.hp <= 0) { const al = aliveE(); if (!al.length) return 1; e = pick(al); }
+  const mult = 1 + .15 * Math.min(B.streak, 3); B.streak++;
+  const line = await strike(e, elsOf(h, sk.el), Math.max(2, s.atk * sk.pow - e.def * .6), mult, 1.5, false, true);
+  bMsg(tx('combat.saut.chute', { nom: nomH(h) }) + ' ' + line); bDraw(); await wait(700); return 1;
+}
 // renvoie les dégâts, ou null si le héros a esquivé
 async function dmgHero(c, raw) {
   const s = hs(c);
@@ -375,21 +399,24 @@ async function dmgHero(c, raw) {
   let d = Math.max(1, Math.round((raw - s.def * (c.rage > 0 ? .7 : 1) * (c.taunt ? .9 : .6)) * rnd(.9, 1.1)));
   if (c.guard) d = Math.max(1, Math.round(d / 2));
   if (B.wall && B.wall.hp > 0) d = Math.max(1, Math.round(d / 2));
+  if (B.sceau > 0) d = Math.max(1, Math.round(d * 2 / 3));
   c.hp = Math.max(0, c.hp - d); bCards(); heroFx(c, d, ''); await hitFlash(c);
   return d;
 }
 
 /* ---------- Tour d'un monstre ---------- */
 const capacite = (e, type) => (MONSTRES[e.id].capacites || []).find(c => c.type === type);
+// un héros qui saute (Dragonnier) est hors d'atteinte jusqu'à ce qu'il retombe
+const aPortee = () => aliveH().filter(h => !h.saut);
 async function enemyAct(e) {
-  const al = aliveH(); if (!al.length) return 1;
+  const al = aPortee(); if (!al.length) { bMsg(esc(t('combat.saut.attend', { nom: e.name }))); await wait(600); return 1; }
   if (e.dort) {
     if (Math.random() < .25) { e.dort = false; bMsg(esc(t('combat.reveil', { nom: e.name }))); }
     else bMsg(esc(t('combat.dort.tour', { nom: e.name })));
     bOverlay(); await wait(650); return 1;
   }
   const tn = al.find(h => h.taunt);
-  const cible = () => { const v = aliveH(); return tn && tn.hp > 0 ? tn : Math.random() < .4 ? v.reduce((a, b) => a.hp < b.hp ? a : b) : pick(v); };
+  const cible = () => { const v = aPortee(); return tn && tn.hp > 0 && !tn.saut ? tn : Math.random() < .4 ? v.reduce((a, b) => a.hp < b.hp ? a : b) : pick(v); };
   // envol : il pique en redescendant, puis remonte au tour suivant (sa garde brisée le fait tomber, voir strike)
   const envol = capacite(e, 'envol');
   if (envol && e.air) {
@@ -421,7 +448,7 @@ async function enemyAct(e) {
   const drain = capacite(e, 'drain'), mord = !coup && fois === 1 && drain && Math.random() < drain.chance;
   const lignes = [];
   for (let i = 0; i < fois; i++) {
-    const vivants = aliveH(); if (!vivants.length) break;
+    const vivants = aPortee(); if (!vivants.length) break;
     const c = cible(), d = await dmgHero(c, e.atk * (coup ? fort.mult : 1)), nc = nomH(c);
     if (d === null) { lignes.push(esc(t('combat.esquive.coup', { nom: nc }))); continue; }
     let l = esc(t('combat.perd', { nom: nc, n: d })) + (c.guard ? ' ' + esc(t('combat.en.garde')) : '');

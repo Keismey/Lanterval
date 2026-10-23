@@ -20,7 +20,7 @@ function mkC(id) { const h = HEROS[id]; const c = { id, lvl: 1, xp: 0, hp: 0, pp
 function newState() {
   const s = { v: FORMAT, version: VERSION, gold: 40, inv: { herbe: 3, tonique: 1 }, bag: {}, imp: [],
     etapes: [], annexes: {}, f: {}, jobs: ['apprenti'], chars: {}, z: {}, loc: 'lanterval', screen: 'title',
-    best: {}, codex: {}, vus: {}, auto: false, msg: '', plus: 0, fins: 0, auberge: 'lanterval', perso: {},
+    best: {}, codex: {}, vus: {}, auto: false, msg: '', plus: 0, fins: 0, auberge: 'lanterval', perso: {}, morceaux: {},
     st: { time: 0, fights: 0, qfights: 0, explores: 0, trav: 0, taps: 0, autoTurns: 0, log: [] } };
   for (const id of ORDRE_HEROS) s.chars[id] = mkC(id);
   for (const id in LIEUX) if (LIEUX[id].type === 'zone' && LIEUX[id].tresors) s.z[id] = mkZ();
@@ -41,6 +41,7 @@ function migrer(s) {
   if (!s.vus) s.vus = {};
   if (!s.auberge) s.auberge = 'lanterval';
   if (!s.perso) s.perso = {};
+  if (!s.morceaux) s.morceaux = {};
   // une arme réservée à un personnage (heros dans objets.js) retourne au sac si quelqu'un d'autre la porte
   for (const id in s.chars) for (const p of ['arme', 'armure', 'acc']) {
     const c = s.chars[id], e = c.eq && EQUIPEMENT[c.eq[p]];
@@ -130,7 +131,7 @@ function fini(id) { return S.etapes.includes(id); }
 function etapeCourante() { return toutesEtapes().find(e => !fini(e.id)) || null; }
 function acteDe(etape) { return ACTES.find(a => a.etapes.includes(etape)); }
 
-// « fini a1.e3 et pas fini a1.e7 et annexe loup 2 »
+// « fini a1.e3 et pas fini a1.e7 et annexe loup 2 » ; « objet oeuf » = l'objet important est dans le sac
 function cond(c) {
   if (c === undefined || c === true) return true;
   if (c === false) return false;
@@ -140,6 +141,7 @@ function cond(c) {
     if (m[0] === 'fini') ok = fini(m[1]);
     else if (m[0] === 'annexe') ok = (S.annexes[m[1]] || 0) >= +(m[2] || 1);
     else if (m[0] === 'drapeau') ok = !!S.f[m[1]];
+    else if (m[0] === 'objet') ok = S.imp.includes(m[1]);
     else { console.warn('Condition inconnue :', p); ok = false; }
     return non ? !ok : ok;
   });
@@ -158,14 +160,28 @@ function persoNouveautes() { return persoConnus().some(persoNouveau); }
 function annexeEtat(id) { return S.annexes[id] || 0; }
 function annexeOuverte(id) { return cond(ANNEXES[id].ouvre); }
 function annexeFinie(id) { return annexeEtat(id) > ANNEXES[id].etapes.length; }
-function annexeEtape(id) { const n = annexeEtat(id); return n >= 1 && !annexeFinie(id) ? ANNEXES[id].etapes[n - 1] : null; }
-// l'étape en cours, seulement si elle peut se jouer maintenant (lieu ouvert, condition si remplie) : sinon pas de « ! »
-function annexeDispo(id) {
-  const x = annexeEtape(id); if (!x) return null;
-  if (x.si && !cond(x.si)) return null;
-  const l = villageDuPnj(x.lieu) || x.lieu.split('.')[0];
-  return lieuOuvert(l) ? x : null;
+// une étape avec saute se passe toute seule quand sa condition est vraie (l'œuf de wyverne déjà trouvé en explorant)
+function annexeEtape(id) {
+  const E = ANNEXES[id].etapes; let n = annexeEtat(id);
+  while (n >= 1 && n <= E.length && E[n - 1].saute && cond(E[n - 1].saute)) { S.annexes[id] = ++n; delete S.morceaux[id]; }
+  return n >= 1 && n <= E.length ? E[n - 1] : null;
 }
+// Étape « en désordre » (parmi) : ses morceaux se jouent dans l'ordre qu'on veut (les larmes de l'Œil) ;
+// S.morceaux[id] = les morceaux déjà faits de l'étape en cours
+function morceauxFaits(id) { return S.morceaux[id] || []; }
+// ce qui peut se jouer maintenant (lieu ouvert, condition si remplie) : l'étape, ou chacun de ses morceaux pas encore faits ;
+// sinon rien, et pas de « ! »
+function annexeDispos(id) {
+  const x = annexeEtape(id); if (!x || (x.si && !cond(x.si))) return [];
+  const ouvert = l => lieuOuvert(villageDuPnj(l) || l.split('.')[0]);
+  if (!x.parmi) return ouvert(x.lieu) ? [x] : [];
+  return x.parmi.map((m, i) => ({ ...m, morceau: i })).filter(m => !morceauxFaits(id).includes(m.morceau) && ouvert(m.lieu));
+}
+function annexeDispo(id) { return annexeDispos(id)[0] || null; }
+// toutes les étapes et tous les morceaux de quêtes annexes jouables maintenant : [quête, étape]
+function annexesDispos() { const o = []; for (const a in ANNEXES) for (const x of annexeDispos(a)) o.push([a, x]); return o; }
+// repère des textes d'une étape jouable : « larmes.e1 », ou « larmes.e1.m2 » pour un morceau
+function cleEtape(a, x) { const n = annexeEtat(a); return x && x.morceau !== undefined ? `${a}.e${n}.m${x.morceau + 1}` : `${a}.e${n}`; }
 
 // où se trouve l'équipe : « lanterval » (village) ou « foret.v » (une zone et son côté)
 function lieuActuel() { return S.loc.split('.')[0]; }

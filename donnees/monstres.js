@@ -128,5 +128,20 @@ const MONSTRES = {
     capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
   // « Le carnet du chasseur » : le Roc ailé du Pont des Nuées
   rocaile: { pv: 4800, atk: 148, def: 14, vit: 26, garde: 10, faible: ['V', 'T'], resiste: ['E', 'F'], xp: 380, or: 200, taille: .36, boss: true, vol: 'potion',
-    capacites: [{ type: 'envol', mult: 1.6 }, { type: 'fort', chance: .35, mult: 1.5 }] }
+    capacites: [{ type: 'envol', mult: 1.6 }, { type: 'fort', chance: .35, mult: 1.5 }] },
+  // « L'œuf de wyverne » : la mère, folle de brume, au nid du Pic hurlant
+  wyverne: { pv: 6200, atk: 148, def: 16, vit: 25, garde: 9, faible: ['T', 'L'], resiste: ['V'], xp: 420, or: 260, taille: .4, f: true, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.4 }, { type: 'double', chance: .25, garde: true }] },
+  // « Le cerf-volant » : le prieur spectral garde la dernière bannière (combat de Nev et Varen seuls)
+  prieur: { pv: 4200, atk: 165, def: 16, vit: 26, garde: 8, faible: ['F', 'L'], resiste: ['T', 'E'], xp: 300, or: 150, taille: .26, boss: true, vol: 'ether',
+    capacites: [{ type: 'appel', id: 'spectre', chance: .45 }, { type: 'drain', chance: .3 }] },
+  // « Les larmes de l'Œil » : un gardien par larme, chacun de l'élément de sa région
+  larmet: { pv: 4400, atk: 155, def: 16, vit: 23, garde: 9, faible: ['F', 'V'], resiste: ['T', 'L'], xp: 300, or: 180, taille: .3, boss: true, vol: 'potion',
+    capacites: [{ type: 'regen', seuil: .5, chance: .3, v: 150 }] },
+  larmee: { pv: 4400, atk: 150, def: 14, vit: 22, garde: 8, faible: ['T', 'V'], resiste: ['E', 'F'], xp: 300, or: 180, taille: .3, boss: true, vol: 'ether',
+    capacites: [{ type: 'drain', chance: .35 }, { type: 'double', chance: .25, garde: true }] },
+  larmef: { pv: 4400, atk: 142, def: 16, vit: 20, garde: 7, faible: ['E', 'V'], resiste: ['F', 'T'], xp: 300, or: 180, taille: .3, boss: true, vol: 'potion',
+    capacites: [{ type: 'charge', mult: 1.35 }] },
+  larmev: { pv: 4400, atk: 120, def: 14, vit: 24, garde: 7, faible: ['T', 'F'], resiste: ['V', 'E'], xp: 300, or: 180, taille: .3, boss: true, vol: 'baume',
+    capacites: [{ type: 'double', chance: .3, garde: true }, { type: 'fort', chance: .3, mult: 1.4 }] }
 };

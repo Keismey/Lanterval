@@ -8,7 +8,7 @@
    « pas fini a1.e7 », « annexe loup 2 » = quête annexe loup arrivée à l'étape 2 ou plus.
    Plusieurs conditions se joignent avec « et ». Sans condition : toujours vrai.
 
-   Personnage (pnj) : si = condition pour qu'il soit là. Un même personnage peut être dans plusieurs villages
+   Personnage (pnj) : si = condition pour qu'il soit là ; sous = repère de son sous-titre dans ce village (sinon pnj.<id>.sous). Un même personnage peut être dans plusieurs villages
    avec des conditions qui se suivent (Roxane, Fennel, Hilde) : il suit l'équipe.
    Boutique : equipement liste les pièces en vente ; ['acier', 'fini a1.e7'] n'arrive en rayon qu'avec la condition.
    fous : condition pendant laquelle les prix sont tirés au hasard à chaque visite ; remise : condition d'une remise de 10 %.
@@ -22,7 +22,8 @@ const LIEUX = {
     type: 'village', x: .17, y: .72,
     etats: [{ id: 'fete', si: 'fini a1.e7' }],   // change le sous-titre, le texte et la lueur de la lanterne
     pnj: [
-      { id: 'orvan', portrait: 'orvan', large: true },
+      // Orvan monte à Aerie pour le feu de camp (a4.e7) et y reste
+      { id: 'orvan', portrait: 'orvan', large: true, si: 'pas fini a4.e7' },
       { id: 'brann', portrait: 'brann' },
       { id: 'auberge', role: 'auberge', portrait: 'aubergiste', prix: 10 },
       // Hilde part pour Forgecendre à l'acte 3 (sa forge de Lanterval ferme)
@@ -384,11 +385,14 @@ const LIEUX = {
       { id: 'joran', role: 'boutique', portrait: 'joran',
         objets: [['potion', 50], ['ether', 30], ['baume', 90]],
         equipement: ['vent', 'nuee', 'zephyr', 'serres', 'eolienne', 'tempete', 'plumacier', 'soie', 'cuirvent',
-          ['plumevent', 'annexe courrier 6'], ['amulette', 'annexe courrier 6']] },
+          ['plumevent', 'annexe courrier 6'], ['amulette', 'annexe courrier 6'], ['lance', 'annexe wyverne 4']] },
       { id: 'pell', portrait: 'pell', si: 'fini a4.e2' },
       { id: 'ilse', portrait: 'ilse', si: 'fini a4.e2' },
       { id: 'roxane', portrait: 'roxane', si: 'fini a4.e2' },
-      { id: 'fennel', portrait: 'fennel', si: 'fini a4.e2' }
+      { id: 'fennel', portrait: 'fennel', si: 'fini a4.e2' },
+      // Liss, la grand-mère de Nev et Varen (« Le cerf-volant ») ; Orvan, arrivé pour le feu de camp
+      { id: 'liss', portrait: 'liss', si: 'fini a4.e2' },
+      { id: 'orvan', portrait: 'orvan', si: 'fini a4.e7', sous: 'pnj.orvan.sous.aerie' }
     ]
   },
 

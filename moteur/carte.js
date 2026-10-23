@@ -49,7 +49,7 @@ function ouSuisJe() { const c = coteActuel(); return nomLieu(lieuActuel()) + (c 
 function lieuxQuete() {
   const e = etapeCourante(), lieux = [];
   if (e) lieux.push([e.lieu, 'main']);
-  for (const a in ANNEXES) { const x = annexeDispo(a); if (x) lieux.push([x.lieu, 'side']); }
+  for (const [, x] of annexesDispos()) lieux.push([x.lieu, 'side']);
   return lieux;
 }
 // un lieu où une quête attend l'équipe (point d'exclamation sur la carte)
@@ -71,7 +71,7 @@ function queteRegion(reg, ids) {
 function marqueCarte(ici) {
   const lieuQ = l => villageDuPnj(l) || lieuDe(l);
   const e = etapeCourante(); if (e && lieuQ(e.lieu) !== ici) return 'main';
-  for (const a in ANNEXES) { const x = annexeDispo(a); if (x && lieuQ(x.lieu) !== ici) return 'side'; }
+  for (const [, x] of annexesDispos()) if (lieuQ(x.lieu) !== ici) return 'side';
   return '';
 }
 

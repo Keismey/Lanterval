@@ -1349,3 +1349,14 @@ A ray of sunlight breaks through the clouds and warms everyone: *+45 HP* for eve
 
 == lieu.escalier.nom
 Stair of Mist
+
+# ---------- Version 0.5.2 ----------
+
+== pnj.liss.nom
+Liss
+
+== pnj.liss.sous
+Nev and Varen's grandmother
+
+== pnj.orvan.sous.aerie
+By the fire, at Edda's

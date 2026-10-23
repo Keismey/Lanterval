@@ -129,12 +129,12 @@ function cerveau(graine) {
     }
     // 2. une étape de quête annexe jouable, sinon la quête principale
     let quete = null;
-    for (const a in ANNEXES) { const x = annexeDispo(a); if (x) { quete = { a, lieu: x.lieu }; break; } }
+    for (const [a, x] of annexesDispos()) { quete = { a, lieu: x.lieu, m: x.morceau }; break; }
     const e = etapeCourante();
     if (!quete && e) quete = { e, lieu: e.lieu };
     if (!quete) return false;
     const pos = posDe(quete.lieu), id = pos.split('.')[0];
-    const cle = (quete.a ? quete.a + annexeEtat(quete.a) : quete.e.id);
+    const cle = (quete.a ? quete.a + annexeEtat(quete.a) + (quete.m !== undefined ? '.' + quete.m : '') : quete.e.id);
     essais[cle] = (essais[cle] || 0) + 1;
     if (essais[cle] > 6) { note(`bloqué sur ${cle}`); return false; }
     if (LIEUX[id].type === 'zone' && aExplorer(id)) await explorerZone(pos);
@@ -145,7 +145,7 @@ function cerveau(graine) {
       const p = LIEUX[id].pnj.find(x => x.id === quete.lieu && cond(x.si));
       if (!p) { note(`personnage absent : ${quete.lieu}`); return false; }
       await parler(p);
-    } else if (quete.a) await jouerAnnexe(quete.a);
+    } else if (quete.a) await jouerAnnexe(quete.a, false, quete.m);
     else await jouerEtape(e);
     return true;
   };

@@ -262,3 +262,29 @@ A weaver in Aerie, she weaves the glider sails and cares for the last wyverns of
 
 == perso.ilse.2
 From a roc feather, she wove the Cloak of the four winds. Fennel is her oldest customer.
+
+# ---------- Version 0.5.2 ----------
+
+== perso.orvan.6
+At the fire in the Nest, he gathered the four tears of the Eye, which he had seen fall fifty years ago, and made a keeper of memories out of them.
+
+== perso.varen.6
+With Nev, he mended and flew their childhood kite. For the first time in six years, his grandmother spoke to him.
+
+== perso.nev.7
+Her grandmother Liss forgave her, and gave her Windstring, her grandfather's dagger.
+
+== perso.tavor.4
+He told of the four tears the Eye wept when it was put to sleep, each one fallen in a different region.
+
+== perso.ilse.3
+She taught the team the Jump: the newly hatched wyvern chose Kael.
+
+== perso.liss.1
+Nev and Varen's grandmother, in Aerie. Since her grandchildren left for the Order, she has watched the Howling Peak every evening.
+
+== perso.liss.2
+She kept their childhood kite in the attic, torn, for six years.
+
+== perso.liss.3
+She forgave Nev and Varen, and promised them to mend the rest like the sail.

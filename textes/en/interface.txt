@@ -1007,6 +1007,10 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.5.2
+Three new side quests in Aerie: “The wyvern egg” (Ilse), “The kite” (Liss, Nev and Varen's grandmother) and “The tears of the Eye” (Tavor).
+New hidden classes: Dragoon (Jump and Breath) and the ultimate class, Keeper of memories (Recall and Memory seal). Nev receives her ultimate dagger, Windstring; Monks and Berserkers can now wield daggers.
+The four tears of the Eye can be gathered in any order. Elder Orvan stays in Aerie after the campfire.
 ## Version 0.5.1
 Crossings take their time: four legs, each showing what happens (a fight, gold found, nothing to report). Monsters are announced before each fight, and a summary appears all at once on arrival.
 At the end of each won fight, a screen shows the XP and gold earned, each hero's XP bar and any levels gained; tap to continue, even in auto battle.
@@ -1192,6 +1196,36 @@ Enchanted
 
 == combat.enchant
 {nom} enchants their weapon: their *Attack* takes the {el} element for 3 actions.
+
+== combat.saut.court
+Airborne
+
+== combat.saut
+{nom} leaps high above {cible}! *No one can touch them* until their next turn.
+
+== combat.saut.chute
+{nom} comes crashing down!
+
+== combat.saut.attend
+{nom} looks for a target, but no one is within reach.
+
+== combat.rappel.court
+Recall
+
+== combat.rappel
+{nom} reminds {cible} of their last move: *{tech}*, without paying PP!
+
+== combat.rappel.rien
+{nom} looks for a memory to remind {cible} of, but there is none yet.
+
+== combat.sceau.court
+Seal
+
+== combat.sceau
+{nom} traces the *Memory seal*: the team takes a third less damage during the monsters' next {n} actions.
+
+== combat.sceau.reste
+Seal {n}
 
 == combat.air.court
 Airborne

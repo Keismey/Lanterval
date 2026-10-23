@@ -44,7 +44,7 @@ function openDebug() {
     else if (k === 'soin') { healAll(); restorePP(); }
     else if (k === 'objets') for (const id in OBJETS) addItem(id, 5);
     else if (k === 'zone') { const z = S.z[ici]; z.found = LIEUX[ici].tresors.map(f => f.id); z.m50 = z.m100 = true; }
-    else if (k.startsWith('a:')) { const a = k.slice(2); S.annexes[a] = Math.min(annexeEtat(a) + 1, ANNEXES[a].etapes.length + 1); }
+    else if (k.startsWith('a:')) { const a = k.slice(2); S.annexes[a] = Math.min(annexeEtat(a) + 1, ANNEXES[a].etapes.length + 1); delete S.morceaux[a]; }
     else if (k === 'fin') S.screen = 'fin';
     else if (k === 'plus') { partiePlus(); await commencer(); }
   }));

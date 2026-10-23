@@ -1359,3 +1359,14 @@ Un rayon de soleil perce les nuages et réchauffe tout le monde : *+45 PV* pour 
 
 == lieu.escalier.nom
 Escalier de brume
+
+# ---------- Version 0.5.2 ----------
+
+== pnj.liss.nom
+Liss
+
+== pnj.liss.sous
+Grand-mère de Nev et Varen
+
+== pnj.orvan.sous.aerie
+Au coin du feu, chez Edda

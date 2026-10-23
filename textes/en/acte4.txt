@@ -276,9 +276,9 @@ The team has rested. Tomorrow, the *Stair of Mist*.
 # ---------- End of version 0.5.0 ----------
 
 == fin.version
-## End of version 0.5.0
+## End of version 0.5.2
 The azure crystal is in Ysold's hands, and Varen now fights alongside the team. Tomorrow, the Stair of Mist.
-The rest is coming in the next versions: first the last side quests of the High Winds, then the finale. Until then, you can finish the side quests and explore every area to 100%.
+The finale is coming in the next version. Until then, you can finish the side quests and explore every area to 100%.
 
 # ---------- What people say as the story moves on ----------
 # pnj.<who>.<current step>: if the step has no text, the game uses the one from the step before.

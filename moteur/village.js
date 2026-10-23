@@ -9,7 +9,7 @@ const offresRefusees = new Set();
 function quetesDuPnj(pnj) {
   const e = etapeCourante();
   if (e && e.lieu === pnj) return { type: 'etape', etape: e };
-  for (const id in ANNEXES) { const a = annexeDispo(id); if (a && a.lieu === pnj) return { type: 'annexe', id }; }
+  for (const [id, a] of annexesDispos()) if (a.lieu === pnj) return { type: 'annexe', id, morceau: a.morceau, cle: cleEtape(id, a) };
   const offres = Object.keys(ANNEXES).filter(id => ANNEXES[id].donneur === pnj && annexeEtat(id) === 0 && annexeOuverte(id));
   if (!offres.length) return null;
   let id = offres.find(x => !offresRefusees.has(x));
@@ -34,7 +34,7 @@ function renderVillage() {
   saveSecours();
   const opts = V.pnj.filter(p => cond(p.si)).map(p => {
     const q = quetesDuPnj(p.id), main = q && q.type === 'etape';
-    const sub = main ? t(q.etape.id + '.titre') : q && q.type === 'offre' ? t('village.annexe') : q ? t(`${q.id}.e${annexeEtat(q.id)}.titre`) : sousDonneur(p.id) || t(`pnj.${p.id}.sous`, { prix: p.prix });
+    const sub = main ? t(q.etape.id + '.titre') : q && q.type === 'offre' ? t('village.annexe') : q ? t(q.cle + '.titre') : sousDonneur(p.id) || t(p.sous || `pnj.${p.id}.sous`, { prix: p.prix });
     return { k: p.id, img: imgSrc('pnj.' + p.portrait), label: esc(t(`pnj.${p.id}.nom`)), sub: esc(sub), bang: q ? (main ? 'main' : 'side') : '', cls: (main ? 'main ' : q ? 'side ' : '') + (p.large ? 'wide' : '') };
   });
   opts.push({ k: 'map', ic: 'map', label: esc(t('village.partir')), sub: esc(nomCarte(regionDe(vid))), cls: 'ghost', bang: marqueCarte(vid) });
@@ -51,7 +51,7 @@ function renderVillage() {
 async function parler(pnj) {
   const q = quetesDuPnj(pnj.id);
   if (q && q.type === 'etape') return jouerEtape(q.etape);
-  if (q && q.type === 'annexe') return jouerAnnexe(q.id);
+  if (q && q.type === 'annexe') return jouerAnnexe(q.id, false, q.morceau);
   // une offre refusée laisse la place au métier du personnage (boutique, auberge)
   if (q && q.type === 'offre') { await jouerOffre(q.id); if (annexeEtat(q.id)) return; offresRefusees.add(q.id); if (!pnj.role) return; }
   if (pnj.role === 'auberge') return auberge(pnj);

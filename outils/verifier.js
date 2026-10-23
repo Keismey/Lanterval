@@ -53,6 +53,7 @@ function condition(c, ou) {
     const m = p.trim().split(/\s+/); if (m[0] === 'pas') m.shift();
     if (m[0] === 'fini') { if (!etapes.has(m[1])) erreur(`condition : étape inconnue « ${m[1]} » (${ou})`); }
     else if (m[0] === 'annexe') { if (!D.ANNEXES[m[1]]) erreur(`condition : quête annexe inconnue « ${m[1]} » (${ou})`); }
+    else if (m[0] === 'objet') { if (!D.IMPORTANTS[m[1]]) erreur(`condition : objet important inconnu « ${m[1]} » (${ou})`); }
     else if (m[0] !== 'drapeau') erreur(`condition illisible « ${p} » (${ou})`);
   }
 }
@@ -89,6 +90,7 @@ function evenements(evts, ou) {
       for (const k of ids) if (!b[k]) erreur(`réponse « ${k} » sans suite (${o})`);
     }
     else if (type === 'drapeau') { if (!/^[\w-]+$/.test(a)) erreur(`drapeau illisible « ${a} » (${o})`); }
+    else if (type === 'trouve') { const [z, f] = a.split(/\s+/); if (!D.LIEUX[z] || !(D.LIEUX[z].tresors || []).some(x => x.id === f)) erreur(`découverte inconnue « ${a} » (${o})`); }
     else if (!['decor', 'soin', 'stop', 'fin_version'].includes(type)) erreur(`événement inconnu « ${type} » (${ou})`);
   }
 }
@@ -101,7 +103,13 @@ for (const id in D.ANNEXES) {
   const A = D.ANNEXES[id];
   texte(id + '.titre', id); condition(A.ouvre, id);
   evenements(A.offre, id + ' offre');
-  A.etapes.forEach((e, i) => { texte(`${id}.e${i + 1}.titre`, id); lieu(e.lieu, `${id}.e${i + 1}`); condition(e.si, `${id}.e${i + 1}`); evenements(e.evenements, `${id}.e${i + 1}`); });
+  A.etapes.forEach((e, i) => {
+    const ou = `${id}.e${i + 1}`;
+    condition(e.si, ou); condition(e.saute, ou);
+    // étape en désordre : un titre, un lieu et des événements par morceau
+    if (e.parmi) e.parmi.forEach((m, j) => { texte(`${ou}.m${j + 1}.titre`, id); lieu(m.lieu, `${ou}.m${j + 1}`); evenements(m.evenements, `${ou}.m${j + 1}`); });
+    else { texte(`${ou}.titre`, id); lieu(e.lieu, ou); evenements(e.evenements, ou); }
+  });
 }
 
 // personnages du Codex : nom, visage, une info par condition
@@ -118,7 +126,7 @@ for (const id in D.LIEUX) {
   condition(L.visible, id); condition(L.ouvert, id);
   for (const e of L.etats || []) condition(e.si, id);
   if (L.type === 'village') for (const p of L.pnj) {
-    texte(`pnj.${p.id}.nom`, id); texte(`pnj.${p.id}.sous`, id); condition(p.si, p.id); condition(p.fous, p.id); condition(p.remise, p.id);
+    texte(`pnj.${p.id}.nom`, id); texte(p.sous || `pnj.${p.id}.sous`, id); condition(p.si, p.id); condition(p.fous, p.id); condition(p.remise, p.id);
     if (p.role === 'auberge') texte(p.portrait === 'aubergiste' ? 'pnj.auberge.accueil' : `pnj.${p.id}.accueil`, p.id);
     if (!D.IMAGES['pnj.' + p.portrait]) erreur(`portrait inconnu « ${p.portrait} »`);
     for (const [o] of p.objets || []) if (!D.OBJETS[o]) erreur(`objet inconnu « ${o} » (${p.id})`);
@@ -186,7 +194,7 @@ for (const f of fs.readdirSync(path.join(RACINE, 'moteur'))) {
 const PARLE = { fr: {}, en: {} };
 for (const lg of ['fr', 'en']) for (const k in TXT[lg]) if (k.startsWith('parle.')) PARLE[lg][TXT[lg][k].l.join(' ')] = 1;
 for (const lg of ['fr', 'en']) for (const [k, { f, l }] of Object.entries(TXT[lg])) {
-  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|courrier|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
+  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|courrier|wyverne|cerfvolant|larmes|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
   const bulles = l.filter(x => !x.startsWith('##') && !x.startsWith('>'));
   if (bulles.length > 5) averti(`${f} « ${k} » : ${bulles.length} bulles (5 au plus)`);
   for (const b of bulles) {
