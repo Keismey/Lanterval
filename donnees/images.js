@@ -145,11 +145,11 @@ const IMAGES = {
   'monstre.anguille': { fichier: 'img/monstres/anguille.webp', provisoire: 'anguille', sujet: 'Anguille-tonnerre, longue anguille sombre parcourue d\'éclairs jaunes' },
 
   // ---------- Monstres de l'acte 3 ----------
-  'monstre.chien': { provisoire: 'chien', sujet: 'Chien de cendre, chien maigre au pelage gris de cendre, yeux de braise' },
-  'monstre.scarabee': { provisoire: 'scarabee', sujet: 'Scarabée de braise, carapace noire fendue de lueurs rouges' },
-  'monstre.salamandre': { provisoire: 'salamandre', sujet: 'Salamandre, petit lézard orange tacheté de noir, flammes sur le dos' },
-  'monstre.ver': { provisoire: 'ver', sujet: 'Ver de roche, ver géant à la peau de pierre, bouche ronde pleine de dents' },
-  'monstre.automate': { provisoire: 'automate', sujet: 'Automate de fer de l\'Ordre, corps de chaudière, bras-marteaux' },
+  'monstre.chien': { fichier: 'img/monstres/chien.webp', provisoire: 'chien', sujet: 'Chien de cendre, chien maigre au pelage gris de cendre, yeux de braise' },
+  'monstre.scarabee': { fichier: 'img/monstres/scarabee.webp', provisoire: 'scarabee', sujet: 'Scarabée de braise, carapace noire fendue de lueurs rouges' },
+  'monstre.salamandre': { fichier: 'img/monstres/salamandre.webp', provisoire: 'salamandre', sujet: 'Salamandre, petit lézard orange tacheté de noir, flammes sur le dos' },
+  'monstre.ver': { fichier: 'img/monstres/ver.webp', provisoire: 'ver', sujet: 'Ver de roche, ver géant à la peau de pierre, bouche ronde pleine de dents' },
+  'monstre.automate': { fichier: 'img/monstres/automate.webp', provisoire: 'automate', sujet: 'Automate de fer de l\'Ordre, corps de chaudière, bras-marteaux' },
   'monstre.sentinelle': { provisoire: 'sentinelle', sujet: 'Sentinelle de l\'Ordre, armure noire et rouge, hallebarde, masque à l\'œil fermé' },
   'monstre.lezard': { provisoire: 'lezard', sujet: 'Lézard de lave, gros lézard noir aux fissures de lave' },
   'monstre.esprit': { provisoire: 'esprit', sujet: 'Esprit de braise, flamme rouge avec un visage, étincelles' },
