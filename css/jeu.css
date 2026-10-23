@@ -358,7 +358,7 @@ img[src^="img/"]{image-rendering:auto!important}
 .vn b{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .vn span{font-size:12px;color:var(--muted)}
 .vx{display:flex;flex-direction:column;gap:3px}
-.vx .xtrack>i{transition:width .6s ease-out}
+.vx .xtrack>i{background:var(--gold);transition:width .6s ease-out}
 .vup{font-size:12px;font-weight:700;color:var(--gold2);min-height:15px}
 .vrow.up{border-color:var(--gold);box-shadow:0 0 12px rgba(233,185,73,.25)}
 /* traversée : la barre avance d'une étape à l'autre, le panneau liste ce qui s'est passé */
