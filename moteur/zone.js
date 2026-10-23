@@ -90,7 +90,8 @@ async function explore(id) {
   let fixe;
   if (!reste.length) fixe = false;
   else if (z.rnd >= L.maxEvenements || z.streak >= 2) fixe = true;
-  else fixe = Math.random() < .5;
+  // Lampe de mineur : plus de découvertes fixes
+  else fixe = Math.random() < (team().some(h => h.eq.acc && EQUIPEMENT[h.eq.acc].lampe) ? .75 : .5);
   if (fixe) {
     z.streak = 0;
     const f = pick(reste);

@@ -1,0 +1,398 @@
+# Lanterval · Acte 3 : Les forges de Cendre (textes en français)
+# Même format que acte1.txt (voir l'aide en haut de ce fichier).
+
+== a3.titre
+Les forges de Cendre
+
+# ---------- Étape 1 : Champs brûlés ----------
+
+== a3.e1.titre
+Traverser les Champs brûlés
+
+== a3.e1.bouton
+Prendre la route de Cendre
+
+== a3.e1.lisiere
+## Acte 3 · Les forges de Cendre
+À l'est de Lanterval, les blés deviennent gris. Puis noirs. Une odeur de fumée flotte sur des champs qui ont brûlé il y a longtemps.
+Mira : « Les Plaines de Cendre. Ma mère n'en parle jamais. Elle change de sujet dès qu'on dit le nom. »
+Sol : « Écoutez. Quelqu'un court, là-bas. » [Traverser les champs]
+
+== a3.e1.nev
+## Champs brûlés
+Une fille aux cheveux blancs dévale un talus de cendre. Derrière elle, des soldats de l'Ordre et deux Ombres.
+Kael : « C'est la novice du phare ! Celle qui nous a laissés passer. »
+Nev : « Encore vous ? Tant mieux. Ils veulent me ramener, et je ne reviendrai pas. »
+Nev : « Je m'appelle Nev. On parlera après. » [Combattre]
+
+== a3.e1.varen
+## Champs brûlés
+Un homme aux cheveux argentés observe la scène du haut d'un mur calciné. Varen.
+Varen : « Tu choisis des amis bien faibles, Nev. Je te laisse jouer un peu. Tu reviendras de toi-même. »
+Nev : « Jamais. Tu m'entends, Varen ? Jamais ! »
+Varen disparaît dans la fumée.
+
+== a3.e1.ferme
+## La ferme brûlée
+Nev reprend son souffle contre un mur noirci.
+Nev : « À Salvent, j'ai vu des mères oublier leurs enfants. L'Ordre appelle ça une guérison. Moi, j'appelle ça un vol. »
+Nev : « Ils emmènent les cristaux à Forgecendre, la ville des mines. Je connais le chemin. Je viens avec vous. »
+Mira : « Forgecendre… Alors on va voir où ma mère a grandi. »
+
+== a3.e1.message
+*Nev* rejoint l'équipe. *Forgecendre* apparaît sur la carte des Plaines de Cendre.
+
+# ---------- Étape 2 : Forgecendre ----------
+
+== a3.e2.titre
+Découvrir Forgecendre
+
+== a3.e2.bouton
+Entrer à l'auberge de Goran
+
+== a3.e2.arrivee
+## Forgecendre
+Forgecendre fume par cent cheminées. Les marteaux sonnent jour et nuit, et des bannières à l'œil fermé pendent à chaque porte.
+Des mineurs au visage gris passent en silence, escortés par des sentinelles.
+Nev : « Toute la ville travaille pour l'Ordre. Ceux qui refusent descendent au fond des mines et ne remontent pas. »
+
+== a3.e2.hilde
+## Forgecendre
+Une charrette grince sur les pavés. Sur le banc, une femme aux tresses rousses tient les rênes.
+Mira : « Maman ? Qu'est-ce que tu fais là ? »
+Hilde : « Je t'avais dit que je viendrais. Je ne laisse pas ma fille entrer seule dans cette ville. »
+Un vieux mineur s'arrête et la dévisage. « Hilde la forgeronne ? On te croyait morte depuis dix-huit ans. »
+
+== a3.e2.ville
+## L'auberge de Goran
+Goran : « Hilde est revenue… Il y a des gens ici qui vont être contents. Et d'autres qui vont avoir peur. »
+Hilde : « Je ne suis pas là pour les souvenirs, Goran. Je suis là pour mes enfants. Tous les quatre. »
+Kael : « Les cristaux volés sont ici, d'après Nev. Où est-ce que l'Ordre les garde ? »
+Goran : « Au fond des Mines rouges. Ils obligent nos mineurs à y forger des cages. »
+
+== a3.e2.forge
+## La forge
+Hilde : « La vieille forge de mon père est encore debout. Je vais la rallumer. »
+Hilde : « Passez me voir avant de descendre aux mines. Ici, je peux faire de bien meilleures armes qu'à Lanterval. »
+Mira regarde sa mère sans rien dire. Elle a mille questions, et aucune ne sort.
+
+== a3.e2.message
+Hilde a rallumé sa forge à *Forgecendre*. Les *Mines rouges* apparaissent sur la carte.
+
+# ---------- Étape 3 : Mines rouges, l'entrée ----------
+
+== a3.e3.titre
+Libérer les mineurs de l'entrée
+
+== a3.e3.bouton
+Descendre dans les mines
+
+== a3.e3.entree
+## Mines rouges
+La roche est rouge comme de la braise. Des rails descendent dans le noir, et au loin des marteaux frappent en cadence.
+À l'entrée, des mineurs enchaînés poussent des chariots de fer. Des sentinelles et un automate les surveillent. [Combattre]
+
+== a3.e3.mineurs
+## Mines rouges
+Les chaînes tombent. Un mineur montre la galerie qui s'enfonce.
+« Merci… Les autres sont plus bas, là où on coule les cages. Et la chose qui les forge ne dort jamais. »
+Nev : « Le Forgeur de cages. Je l'ai vu une fois. Il a été construit pour ne jamais s'arrêter. »
+
+== a3.e3.message
+D'autres mineurs sont prisonniers plus bas : traverse les *Mines rouges* jusqu'à la *galerie profonde*.
+
+# ---------- Étape 4 : Mines rouges, l'aveu de Hilde ----------
+
+== a3.e4.titre
+Descendre vers la galerie profonde
+
+== a3.e4.bouton
+Suivre les rails vers le fond
+
+== a3.e4.descente
+## Mines rouges
+Hilde vous attend au bord des rails, une lampe à la main.
+Hilde : « Je connais ces galeries mieux que personne. Je viens avec vous jusqu'en bas. »
+Mira : « Tu connais aussi les cages, maman ? » Hilde ne répond pas. [Descendre]
+
+== a3.e4.atelier
+## L'atelier
+À mi-chemin, une grande salle taillée dans la roche. Au centre, sous un drap de poussière, une cage de fer noir.
+Hilde s'arrête devant. Sa lampe tremble.
+
+== a3.e4.aveu
+## La première cage
+Hilde : « Celle-là, c'est moi qui l'ai forgée. La toute première. L'Ordre m'avait promis qu'elle protégerait les cristaux. »
+Hilde : « Quand j'ai compris qu'elle servait à les voler, je me suis enfuie dans la nuit. Avec toi, Mira. Tu avais trois mois. »
+Mira : « Tu m'as menti toute ma vie. »
+Hilde : « Je t'ai protégée toute ta vie. Ce n'est pas pareil… mais je sais que ça y ressemble. »
+
+== a3.e4.alerte
+## L'atelier
+Un sifflement de vapeur. Des vers de roche sortent des murs, et un automate se met en marche. [Combattre]
+
+== a3.e4.galerie
+## La galerie profonde
+Au bout des rails, la galerie s'ouvre sur une forge immense. Des dizaines de mineurs y battent le fer sous les coups de fouet.
+Au milieu, une silhouette de fer haute comme trois hommes coule du métal dans un moule en forme de cage.
+Mira marche devant, sans un regard pour sa mère.
+
+== a3.e4.message
+Le *Forgeur de cages* t'attend dans la *galerie profonde*.
+
+# ---------- Étape 5 : le Forgeur de cages ----------
+
+== a3.e5.titre
+Arrêter le Forgeur de cages
+
+== a3.e5.bouton
+Affronter le Forgeur de cages
+
+== a3.e5.forgeur
+## La galerie profonde
+Le Forgeur de cages tourne vers vous sa tête d'enclume. Ses yeux s'allument comme des fours.
+Nev : « Il a été construit pour obéir. Pas pour réfléchir. »
+Hilde : « Je connais ce métal. L'eau le fait éclater, et le vent l'empêche de chauffer. Visez sa garde ! »
+
+== a3.e5.conseil
+Le Forgeur de cages est faible à l'*Eau* et au *Vent*, et résiste au Feu et à la Lame. Il prépare de grands coups sur toute l'équipe et peut appeler des automates. Brise sa garde pour annuler un coup en préparation.
+
+== a3.e5.libres
+## La galerie profonde
+Le Forgeur s'effondre dans un fracas de fer. Le feu de la forge s'éteint d'un coup.
+Les mineurs lèvent la tête. Puis l'un d'eux jette son marteau, et tous les autres l'imitent.
+« Libres ! On est libres ! » Les cris remontent jusqu'à la surface.
+
+== a3.e5.message
+Les mineurs sont libres. Remonte à *Forgecendre*, à l'auberge de Goran.
+
+# ---------- Étape 6 : Forgecendre, la colère de Mira ----------
+
+== a3.e6.titre
+Retourner à Forgecendre
+
+== a3.e6.bouton
+Rejoindre la fête des mineurs
+
+== a3.e6.fete
+## L'auberge de Goran
+Ce soir, Forgecendre fête ses mineurs. Les bannières de l'Ordre brûlent dans un tonneau, et Goran sert à boire gratis.
+Goran : « Les sentinelles ont fui vers le volcan. Toutes. Comme si quelque chose les y appelait. »
+Nev : « Le cristal de braise. Il dort dans le cratère du Volcan endormi. L'Ordre veut le prendre avant que vous arriviez. »
+
+== a3.e6.mira
+## Devant l'auberge
+Mira est assise seule sur les marches. Hilde s'approche, puis s'arrête à trois pas.
+Hilde : « Je ne te demande rien. Je voulais juste que tu saches que je suis là. »
+Mira ne lève pas les yeux. Kael s'assoit à côté d'elle.
+Kael : « Tu veux en parler ? »
+
+== a3.e6.choix
+## Devant l'auberge
+Mira : « Elle a fui pour me protéger, je le sais. Mais elle a forgé la cage qui a volé notre cristal. Qu'est-ce que je dois faire, Kael ? »
+> maintenant : « Parle-lui ce soir. » | Mira essaie de pardonner tout de suite
+> plustard : « Prends ton temps. » | Mira attendra d'être prête
+
+== a3.e6.maintenant
+## Devant l'auberge
+Mira se lève et rejoint sa mère. Elles restent longtemps l'une en face de l'autre.
+Mira : « Je t'en veux encore. Mais je ne veux plus t'en vouloir. C'est un début ? »
+Hilde : « C'est le plus beau début du monde. »
+
+== a3.e6.plustard
+## Devant l'auberge
+Mira : « Tu as raison. Je ne suis pas prête. Pas encore. »
+Elle regarde Hilde de loin, qui fait semblant de ne pas les voir. Mira esquisse un petit signe de la main, puis rentre.
+
+== a3.e6.volcan
+## Le lendemain
+Un mineur trace une carte dans la cendre avec son doigt.
+« Le sentier du volcan part derrière les forges. Il monte jusqu'au bord du cratère. Faites attention aux lézards, ils ne dorment jamais, eux. »
+
+== a3.e6.message
+Le *Volcan endormi* apparaît sur la carte. Le cristal de braise dort dans son cratère.
+
+# ---------- Étape 7 : Volcan endormi, les pentes ----------
+
+== a3.e7.titre
+Gravir le Volcan endormi
+
+== a3.e7.bouton
+Monter vers le cratère
+
+== a3.e7.pentes
+## Volcan endormi
+La pente est noire et chaude sous les semelles. Des coulées de lave fument encore entre les rochers.
+Des lézards de lave gardent le sentier, avec une sentinelle qui a pris du retard. [Combattre]
+
+== a3.e7.ordre
+## Volcan endormi
+Plus haut, des traces de bottes dans la cendre. Beaucoup de bottes.
+Nev : « Ils sont déjà en haut. Il faut se dépêcher. » [Combattre]
+
+== a3.e7.bord
+## Le bord du cratère
+Le sentier débouche au bord du cratère. En bas, au milieu d'un lac de lave figée, un cristal rouge bat comme un cœur.
+Les soldats de l'Ordre installent une cage autour. Ils n'ont pas encore fini.
+Kael : « On a une chance. Une seule. »
+
+== a3.e7.message
+Le cristal de braise est au fond du *cratère*. L'Ordre n'a pas fini de l'encager.
+
+# ---------- Étape 8 : le cristal de braise, Varen ----------
+
+== a3.e8.titre
+Atteindre le cristal de braise
+
+== a3.e8.bouton
+Descendre dans le cratère
+
+== a3.e8.cristal
+## Le cristal de braise
+Vous dévalez la pente au milieu des soldats surpris. Kael pose la main sur le cristal juste avant que la cage se referme.
+La chaleur te traverse sans brûler. L'éclat de la lanterne répond, rouge et or.
+Mira : « Je le sens… Il nous apprend quelque chose. »
+
+== a3.e8.classes
+## Le cristal de braise
+? Nouvelles classes : *Berserker* (Furie, Rage), *Alchimiste* (Corrosion, Mixture) et *Invocateur* (Invocation, Offrande). Change de classe dans le menu Équipe.
+
+== a3.e8.varen
+## Le cratère
+Des applaudissements lents. Varen descend le long des rochers, sa lame courbe à la main.
+Varen : « Joli. Mais un cristal se touche, il ne s'emporte pas si facilement. »
+Varen : « Nev, rentre avec moi et j'oublierai que tu es partie. Quant à toi, le garde, on a un compte à régler. »
+Nev : « Kael, on le fait ensemble. Les autres, gardez le cristal ! »
+
+== a3.e8.conseil
+Duel à deux : *Kael et Nev* contre Varen. Varen est faible à la *Terre* et à la *Lame*, et résiste au Vent. Il est très rapide et frappe parfois deux fois.
+
+== a3.e8.fuite
+## Le cratère
+Varen recule, une main sur l'épaule. Il regarde Nev longtemps.
+Varen : « Tu as appris à te battre. Pas grâce à moi. » Il siffle, et ses soldats se replient vers le haut du cratère.
+Kael : « Il est parti trop vite. Comme s'il savait que quelque chose d'autre arrive. »
+
+== a3.e8.repos
+## Au bord du cratère
+Vous vous abritez dans une grotte au bord du cratère. Sol soigne les blessures. Mira s'assoit à côté de Nev.
+Mira : « Varen te parle comme s'il te connaissait depuis toujours. »
+Nev : « C'est mon frère. Il m'a emmenée dans l'Ordre quand j'avais dix ans. Il disait que là-bas, on n'aurait plus jamais mal. »
+Mira : « Les familles, c'est compliqué. Je commence à le savoir. »
+? Repos au bord du cratère : l'équipe a récupéré tous ses PV et ses PP.
+
+== a3.e8.message
+Varen s'est replié. Quelque chose approche du *cratère*.
+
+# ---------- Étape 9 : le Sans-Nom ----------
+
+== a3.e9.titre
+Défendre le cristal de braise
+
+== a3.e9.bouton
+Retourner près du cristal
+
+== a3.e9.sansnom
+## Le cratère
+Le sol tremble. Une silhouette énorme descend dans le cratère, une masse sur l'épaule. Le Sans-Nom.
+Kael serre l'épée de son père. Au col, il n'avait rien pu faire.
+Kael : « Cette fois, on est quatre. Et on ne recule pas. »
+
+== a3.e9.conseil
+Le Sans-Nom est faible au *Feu* et au *Vent*, et résiste à la Terre et à l'Eau. Il prépare un coup terrible sur toute l'équipe : brise sa garde pour l'annuler. Cette fois, il peut être vaincu.
+
+== a3.e9.masque
+## Le masque brisé
+Le dernier coup de Kael fend le masque d'acier. Il tombe en deux morceaux dans la cendre.
+Dessous, un visage fatigué, une barbe grise, des yeux qui ne savent plus où ils sont.
+Kael : « Non… Papa ? »
+L'homme le regarde sans le reconnaître. « Je n'ai pas de nom. Je n'ai pas de fils. »
+
+== a3.e9.fuite
+## Le cratère
+Pendant que Kael reste figé, le Sans-Nom brise la cage d'un coup de masse et arrache le cristal de braise.
+Il disparaît dans la fumée, vers le nord. Personne ne le poursuit.
+Mira : « Kael… » Kael ne répond pas. Il ramasse les deux morceaux du masque.
+
+== a3.e9.message
+L'Ordre a emporté le cristal de braise. Rentre à *Forgecendre*, à la forge de Hilde.
+
+# ---------- Étape 10 : Forgecendre, l'épée d'Aldric ----------
+
+== a3.e10.titre
+Rentrer à la forge de Hilde
+
+== a3.e10.bouton
+Montrer l'épée à Hilde
+
+== a3.e10.forge
+## La forge
+Hilde : « Aldric… J'ai connu ton père, Kael. Un homme qui riait fort et ne lâchait jamais rien. »
+Hilde : « Si l'Ordre lui a volé sa mémoire, il faudra qu'il reconnaisse quelque chose. Donne-moi son épée. »
+Hilde remet le feu dans la forge. Mira prend le soufflet sans qu'on lui demande. Elles travaillent toute la nuit sans se parler.
+
+== a3.e10.epee
+## La forge
+Au matin, l'épée brille d'un éclat neuf. Sur la garde, Hilde a gravé une lanterne.
+Hilde : « Le métal est le sien, la lanterne est la tienne. S'il voit les deux, peut-être qu'il se souviendra. »
+Mira : « Merci, maman. » Hilde sourit, et ne dit rien pour ne pas gâcher le moment.
+
+== a3.e10.nev
+## La forge
+Nev : « L'Ordre a l'ambre et la braise. L'écume est à Salvent. Il ne lui manque plus que le cristal d'azur. »
+Nev : « Il dort à Aerie, dans les Hauts-Vents. C'est là que Varen et moi sommes nés. »
+Kael : « Alors on va à Aerie. Et cette fois, on arrive avant eux. »
+
+== a3.e10.charrette
+## La forge
+Hilde : « Ma charrette connaît toutes les routes, de Lanterval à Salvent. Prenez-la quand vous voulez. »
+? *Charrette de Hilde* : depuis la carte, tu peux maintenant aller directement dans n'importe quel village déjà visité, sans traverser les zones.
+
+== a3.e10.message
+L'acte 3 est terminé ! L'épée d'Aldric est reforgée, et le *Pont des Nuées* mène aux Hauts-Vents.
+
+# ---------- Fin de la version 0.4 ----------
+
+== fin.version
+## Fin de la version 0.4
+L'acte 3 est terminé ! Nev a rejoint l'équipe, et le Sans-Nom a retrouvé un visage : celui d'Aldric.
+L'acte 4 arrive dans une prochaine version. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.
+
+# ---------- Ce que disent les gens selon l'avancée ----------
+# pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.
+
+== pnj.goran.accueil
+Goran : « Une nuit, {prix} po. Le lit est dur, mais la soupe est brûlante. »
+
+== pnj.agathe.accueil
+Agathe : « Potions, éthers, herbes. Tout ce qu'il faut pour remonter d'une mine. Ou d'un volcan. »
+
+== pnj.hilde.accueil.a3.e3
+Hilde : « Des haches, des épées, des bâtons. Le fer de Cendre est le meilleur du monde. Choisissez bien. »
+
+== pnj.hilde.accueil.a3.e6
+Hilde : « Mira a pris ses armes sans me regarder. Elle a raison. Prends ce qu'il te faut, Kael. »
+
+== pnj.hilde.accueil.a3.e10
+Hilde : « Tu reviens d'où je pense que tu reviens. Assieds-toi, et montre-moi cette épée. »
+
+== pnj.dorn
+Dorn : « Je n'y vois plus, mais j'entends tout. Les marteaux, la roche, et ton cœur qui bat trop vite. »
+
+== pnj.dorn.a3.e6
+Dorn : « Les mineurs sont remontés. Je les ai comptés à l'oreille. Il en manque quelques-uns. »
+
+== pnj.tobi
+Tobi : « Mon père est descendu dans la galerie profonde. Il va remonter. Il remonte toujours. »
+
+== pnj.orvan.a3.e2
+Orvan : « Hilde est partie à l'aube avec sa charrette. Elle a dit : ma fille a besoin de moi. Je n'ai pas osé l'arrêter. »
+
+== pnj.orvan.a3.e10
+Orvan : « Aldric… vivant, sous ce masque. L'Ordre lui a tout pris. Comme il a failli tout me prendre. »
+
+== pnj.brann.a3.e10
+Brann : « Le Sans-Nom, c'est Aldric ? J'ai cherché mon ami dix ans. Il était devant moi au col, et je ne l'ai pas vu. »
+
+== pnj.tilo.a3.e2
+Tilo : « Hilde est partie ! Qui va réparer ma luge, maintenant ? »

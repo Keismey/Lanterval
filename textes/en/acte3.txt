@@ -1,0 +1,398 @@
+# Lanterval · Act 3: The Forges of Cendre (English texts)
+# Same format as acte1.txt (see the help at the top of that file).
+
+== a3.titre
+The Forges of Cendre
+
+# ---------- Step 1: Burnt Fields ----------
+
+== a3.e1.titre
+Cross the Burnt Fields
+
+== a3.e1.bouton
+Take the road to Cendre
+
+== a3.e1.lisiere
+## Act 3 · The Forges of Cendre
+East of Lanterval, the wheat turns grey. Then black. A smell of smoke hangs over fields that burned long ago.
+Mira: “The Cendre Plains. My mother never talks about them. She changes the subject as soon as anyone says the name.”
+Sol: “Listen. Someone is running, over there.” [Cross the fields]
+
+== a3.e1.nev
+## Burnt Fields
+A white-haired girl tumbles down a bank of ash. Behind her come Order soldiers and two Shadows.
+Kael: “It's the novice from the lighthouse! The one who let us through.”
+Nev: “You again? Good. They want to drag me back, and I'm not going.”
+Nev: “My name is Nev. We'll talk later.” [Fight]
+
+== a3.e1.varen
+## Burnt Fields
+A silver-haired man watches from the top of a charred wall. Varen.
+Varen: “You pick such weak friends, Nev. I'll let you play for a while. You'll come back on your own.”
+Nev: “Never. Do you hear me, Varen? Never!”
+Varen vanishes into the smoke.
+
+== a3.e1.ferme
+## The burnt farm
+Nev catches her breath against a blackened wall.
+Nev: “In Salvent, I saw mothers forget their own children. The Order calls that healing. I call it theft.”
+Nev: “They take the crystals to Forgecendre, the mining town. I know the way. I'm coming with you.”
+Mira: “Forgecendre… So we're going to see where my mother grew up.”
+
+== a3.e1.message
+*Nev* joins the team. *Forgecendre* appears on the map of the Cendre Plains.
+
+# ---------- Step 2: Forgecendre ----------
+
+== a3.e2.titre
+Discover Forgecendre
+
+== a3.e2.bouton
+Enter Goran's inn
+
+== a3.e2.arrivee
+## Forgecendre
+Forgecendre smokes through a hundred chimneys. Hammers ring day and night, and banners with a closed eye hang from every door.
+Grey-faced miners walk by in silence, escorted by sentinels.
+Nev: “The whole town works for the Order. Those who refuse go down to the bottom of the mines and never come back up.”
+
+== a3.e2.hilde
+## Forgecendre
+A cart creaks over the cobblestones. On the bench, a woman with red braids holds the reins.
+Mira: “Mum? What are you doing here?”
+Hilde: “I told you I'd come. I'm not letting my daughter walk into this town alone.”
+An old miner stops and stares at her. “Hilde the smith? We thought you'd been dead for eighteen years.”
+
+== a3.e2.ville
+## Goran's inn
+Goran: “Hilde's back… Some people here will be glad. And some will be scared.”
+Hilde: “I'm not here for old memories, Goran. I'm here for my children. All four of them.”
+Kael: “Nev says the stolen crystals are here. Where does the Order keep them?”
+Goran: “At the bottom of the Red Mines. They force our miners to forge cages down there.”
+
+== a3.e2.forge
+## The forge
+Hilde: “My father's old forge is still standing. I'll light it again.”
+Hilde: “Come and see me before you go down the mines. Here, I can make much better weapons than in Lanterval.”
+Mira looks at her mother without a word. She has a thousand questions, and none of them come out.
+
+== a3.e2.message
+Hilde has lit her forge in *Forgecendre*. The *Red Mines* appear on the map.
+
+# ---------- Step 3: Red Mines, the entrance ----------
+
+== a3.e3.titre
+Free the miners at the entrance
+
+== a3.e3.bouton
+Go down into the mines
+
+== a3.e3.entree
+## Red Mines
+The rock is red as embers. Rails run down into the dark, and far below, hammers strike in rhythm.
+At the entrance, chained miners push iron carts. Sentinels and an automaton watch over them. [Fight]
+
+== a3.e3.mineurs
+## Red Mines
+The chains fall. A miner points at the tunnel going deeper.
+“Thank you… The others are further down, where they cast the cages. And the thing that forges them never sleeps.”
+Nev: “The Cage Forger. I saw it once. It was built never to stop.”
+
+== a3.e3.message
+More miners are held further down: cross the *Red Mines* to the *deep gallery*.
+
+# ---------- Step 4: Red Mines, Hilde's confession ----------
+
+== a3.e4.titre
+Go down to the deep gallery
+
+== a3.e4.bouton
+Follow the rails down
+
+== a3.e4.descente
+## Red Mines
+Hilde is waiting by the rails, a lamp in her hand.
+Hilde: “I know these tunnels better than anyone. I'm coming with you all the way down.”
+Mira: “Do you know the cages too, Mum?” Hilde doesn't answer. [Go down]
+
+== a3.e4.atelier
+## The workshop
+Halfway down, a great hall carved into the rock. In the middle, under a dusty sheet, stands a cage of black iron.
+Hilde stops in front of it. Her lamp trembles.
+
+== a3.e4.aveu
+## The first cage
+Hilde: “I forged that one. The very first. The Order promised me it would protect the crystals.”
+Hilde: “When I understood it was meant to steal them, I fled in the night. With you, Mira. You were three months old.”
+Mira: “You lied to me my whole life.”
+Hilde: “I protected you your whole life. It isn't the same… but I know it looks like it.”
+
+== a3.e4.alerte
+## The workshop
+A hiss of steam. Rock worms crawl out of the walls, and an automaton starts to move. [Fight]
+
+== a3.e4.galerie
+## The deep gallery
+At the end of the rails, the tunnel opens onto a huge forge. Dozens of miners beat iron under the whip.
+In the middle, an iron figure as tall as three men pours metal into a cage-shaped mould.
+Mira walks ahead without a glance at her mother.
+
+== a3.e4.message
+The *Cage Forger* is waiting in the *deep gallery*.
+
+# ---------- Step 5: the Cage Forger ----------
+
+== a3.e5.titre
+Stop the Cage Forger
+
+== a3.e5.bouton
+Face the Cage Forger
+
+== a3.e5.forgeur
+## The deep gallery
+The Cage Forger turns its anvil head towards you. Its eyes light up like furnaces.
+Nev: “It was built to obey. Not to think.”
+Hilde: “I know that metal. Water cracks it, and wind keeps it from heating. Go for its guard!”
+
+== a3.e5.conseil
+The Cage Forger is weak to *Water* and *Wind*, and resists Fire and Blade. It charges big blows against the whole team and can call automatons. Break its guard to cancel a charged blow.
+
+== a3.e5.libres
+## The deep gallery
+The Forger collapses in a crash of iron. The forge fire goes out all at once.
+The miners look up. Then one throws down his hammer, and all the others follow.
+“Free! We're free!” The shouts echo all the way to the surface.
+
+== a3.e5.message
+The miners are free. Go back up to *Forgecendre*, to Goran's inn.
+
+# ---------- Step 6: Forgecendre, Mira's anger ----------
+
+== a3.e6.titre
+Return to Forgecendre
+
+== a3.e6.bouton
+Join the miners' celebration
+
+== a3.e6.fete
+## Goran's inn
+Tonight, Forgecendre celebrates its miners. The Order's banners burn in a barrel, and Goran pours drinks for free.
+Goran: “The sentinels fled towards the volcano. All of them. As if something was calling them.”
+Nev: “The ember crystal. It sleeps in the crater of the Sleeping Volcano. The Order wants to take it before you get there.”
+
+== a3.e6.mira
+## Outside the inn
+Mira sits alone on the steps. Hilde comes closer, then stops three paces away.
+Hilde: “I'm not asking for anything. I just wanted you to know I'm here.”
+Mira doesn't look up. Kael sits down next to her.
+Kael: “Do you want to talk about it?”
+
+== a3.e6.choix
+## Outside the inn
+Mira: “She ran away to protect me, I know that. But she forged the cage that stole our crystal. What should I do, Kael?”
+> maintenant : “Talk to her tonight.” | Mira tries to forgive right away
+> plustard : “Take your time.” | Mira will wait until she's ready
+
+== a3.e6.maintenant
+## Outside the inn
+Mira gets up and joins her mother. They stand face to face for a long time.
+Mira: “I'm still angry with you. But I don't want to be anymore. Is that a start?”
+Hilde: “It's the best start in the world.”
+
+== a3.e6.plustard
+## Outside the inn
+Mira: “You're right. I'm not ready. Not yet.”
+She watches Hilde from afar, who pretends not to see them. Mira gives a small wave, then goes inside.
+
+== a3.e6.volcan
+## The next day
+A miner draws a map in the ash with his finger.
+“The volcano path starts behind the forges. It climbs to the edge of the crater. Watch out for the lizards, they never sleep.”
+
+== a3.e6.message
+The *Sleeping Volcano* appears on the map. The ember crystal sleeps in its crater.
+
+# ---------- Step 7: Sleeping Volcano, the slopes ----------
+
+== a3.e7.titre
+Climb the Sleeping Volcano
+
+== a3.e7.bouton
+Climb towards the crater
+
+== a3.e7.pentes
+## Sleeping Volcano
+The slope is black and warm underfoot. Lava flows still smoke between the rocks.
+Lava lizards guard the path, along with a sentinel who fell behind. [Fight]
+
+== a3.e7.ordre
+## Sleeping Volcano
+Further up, boot prints in the ash. A lot of boots.
+Nev: “They're already at the top. We have to hurry.” [Fight]
+
+== a3.e7.bord
+## The crater's edge
+The path comes out at the edge of the crater. Below, in the middle of a lake of cooled lava, a red crystal beats like a heart.
+Order soldiers are building a cage around it. They haven't finished yet.
+Kael: “We have a chance. Just one.”
+
+== a3.e7.message
+The ember crystal is at the bottom of the *crater*. The Order hasn't finished caging it.
+
+# ---------- Step 8: the ember crystal, Varen ----------
+
+== a3.e8.titre
+Reach the ember crystal
+
+== a3.e8.bouton
+Go down into the crater
+
+== a3.e8.cristal
+## The ember crystal
+You rush down the slope among the startled soldiers. Kael lays his hand on the crystal just before the cage closes.
+The heat runs through you without burning. The lantern shard answers, red and gold.
+Mira: “I can feel it… It's teaching us something.”
+
+== a3.e8.classes
+## The ember crystal
+? New classes: *Berserker* (Fury, Rage), *Alchemist* (Corrosion, Mixture) and *Summoner* (Summon, Offering). Change class in the Team menu.
+
+== a3.e8.varen
+## The crater
+Slow applause. Varen climbs down the rocks, his curved blade in hand.
+Varen: “Nice. But you can touch a crystal without getting to keep it.”
+Varen: “Nev, come back with me and I'll forget you ever left. As for you, guard, we have a score to settle.”
+Nev: “Kael, we do this together. The rest of you, guard the crystal!”
+
+== a3.e8.conseil
+Two-on-one duel: *Kael and Nev* against Varen. Varen is weak to *Earth* and *Blade*, and resists Wind. He is very fast and sometimes strikes twice.
+
+== a3.e8.fuite
+## The crater
+Varen steps back, a hand on his shoulder. He looks at Nev for a long time.
+Varen: “You learned to fight. Not from me.” He whistles, and his soldiers fall back to the top of the crater.
+Kael: “He left too quickly. As if he knew something else was coming.”
+
+== a3.e8.repos
+## The crater's edge
+You take shelter in a cave at the edge of the crater. Sol tends the wounds. Mira sits down next to Nev.
+Mira: “Varen talks to you as if he'd always known you.”
+Nev: “He's my brother. He took me into the Order when I was ten. He said that there, we'd never hurt again.”
+Mira: “Families are complicated. I'm starting to learn that.”
+? Rest at the crater's edge: the team has recovered all its HP and PP.
+
+== a3.e8.message
+Varen has fallen back. Something is coming towards the *crater*.
+
+# ---------- Step 9: the Nameless ----------
+
+== a3.e9.titre
+Defend the ember crystal
+
+== a3.e9.bouton
+Go back to the crystal
+
+== a3.e9.sansnom
+## The crater
+The ground shakes. A huge figure climbs down into the crater, a mace on its shoulder. The Nameless.
+Kael grips his father's sword. At the pass, he could do nothing.
+Kael: “This time there are four of us. And we're not backing down.”
+
+== a3.e9.conseil
+The Nameless is weak to *Fire* and *Wind*, and resists Earth and Water. He charges a terrible blow against the whole team: break his guard to cancel it. This time, he can be defeated.
+
+== a3.e9.masque
+## The broken mask
+Kael's last blow splits the steel mask. It falls in two pieces into the ash.
+Beneath it, a tired face, a grey beard, eyes that no longer know where they are.
+Kael: “No… Dad?”
+The man looks at him without recognising him. “I have no name. I have no son.”
+
+== a3.e9.fuite
+## The crater
+While Kael stands frozen, the Nameless smashes the cage with his mace and tears out the ember crystal.
+He disappears into the smoke, heading north. Nobody follows him.
+Mira: “Kael…” Kael doesn't answer. He picks up the two halves of the mask.
+
+== a3.e9.message
+The Order has taken the ember crystal. Go back to *Forgecendre*, to Hilde's forge.
+
+# ---------- Step 10: Forgecendre, Aldric's sword ----------
+
+== a3.e10.titre
+Go back to Hilde's forge
+
+== a3.e10.bouton
+Show the sword to Hilde
+
+== a3.e10.forge
+## The forge
+Hilde: “Aldric… I knew your father, Kael. A man who laughed loudly and never gave up.”
+Hilde: “If the Order stole his memory, he'll need to recognise something. Give me his sword.”
+Hilde stokes the forge. Mira takes the bellows without being asked. They work all night without a word.
+
+== a3.e10.epee
+## The forge
+By morning, the sword shines like new. On the guard, Hilde has engraved a lantern.
+Hilde: “The metal is his, the lantern is yours. If he sees both, maybe he'll remember.”
+Mira: “Thank you, Mum.” Hilde smiles, and says nothing so as not to spoil the moment.
+
+== a3.e10.nev
+## The forge
+Nev: “The Order has the amber and the ember. The sea-foam is in Salvent. All it lacks now is the azure crystal.”
+Nev: “It sleeps in Aerie, in the High Winds. That's where Varen and I were born.”
+Kael: “Then we go to Aerie. And this time, we get there first.”
+
+== a3.e10.charrette
+## The forge
+Hilde: “My cart knows every road, from Lanterval to Salvent. Take it whenever you like.”
+? *Hilde's cart*: from the map, you can now go straight to any village you've already visited, without crossing the areas.
+
+== a3.e10.message
+Act 3 is over! Aldric's sword has been reforged, and the *Cloud Bridge* leads to the High Winds.
+
+# ---------- End of version 0.4 ----------
+
+== fin.version
+## End of version 0.4
+Act 3 is over! Nev has joined the team, and the Nameless has a face again: Aldric's.
+Act 4 is coming in a future version. Until then, you can finish the side quests and explore every area to 100%.
+
+# ---------- What people say as the story moves on ----------
+# pnj.<who>.<current step>: if the step has no text, the game uses the one from the step before.
+
+== pnj.goran.accueil
+Goran: “A night is {prix} gold. The bed is hard, but the soup is scalding.”
+
+== pnj.agathe.accueil
+Agathe: “Potions, ethers, herbs. Everything you need to climb out of a mine. Or a volcano.”
+
+== pnj.hilde.accueil.a3.e3
+Hilde: “Axes, swords, staves. Cendre iron is the best in the world. Choose well.”
+
+== pnj.hilde.accueil.a3.e6
+Hilde: “Mira took her weapons without looking at me. She's right to. Take what you need, Kael.”
+
+== pnj.hilde.accueil.a3.e10
+Hilde: “You're back from where I think you're back from. Sit down, and show me that sword.”
+
+== pnj.dorn
+Dorn: “I can't see anymore, but I hear everything. The hammers, the rock, and your heart beating too fast.”
+
+== pnj.dorn.a3.e6
+Dorn: “The miners came back up. I counted them by ear. A few are missing.”
+
+== pnj.tobi
+Tobi: “My dad went down into the deep gallery. He'll come back up. He always does.”
+
+== pnj.orvan.a3.e2
+Orvan: “Hilde left at dawn with her cart. She said: my daughter needs me. I didn't dare stop her.”
+
+== pnj.orvan.a3.e10
+Orvan: “Aldric… alive, under that mask. The Order took everything from him. As it nearly took everything from me.”
+
+== pnj.brann.a3.e10
+Brann: “The Nameless is Aldric? I looked for my friend for ten years. He was right in front of me at the pass, and I didn't see him.”
+
+== pnj.tilo.a3.e2
+Tilo: “Hilde's gone! Who's going to fix my sled now?”

@@ -196,6 +196,9 @@ then
 == carte.cout.maitrise
 0 to 2 fights
 
+== carte.charrette
+By cart, no fights
+
 == trav.titre
 Crossing
 
@@ -542,7 +545,7 @@ The enemy's *guard*. Each hit on a weakness removes 1 point.
 Guard at 0: the enemy loses its next turn and takes +50 % damage. A charged attack is cancelled.
 
 == aide.elements
-*Elements*: Blade, Earth, Fire, Water. Each hero has their own (Kael Earth, Mira Fire, Sol Water); the normal Attack is always Blade.
+*Elements*: Blade, Earth, Fire, Water, Wind. Each hero has their own (Kael Earth, Mira Fire, Sol Water, Nev Wind); the normal Attack is always Blade.
 
 == aide.inconnue
 Weakness not discovered yet. Hit it once and it stays shown, here and in the bestiary.
@@ -754,6 +757,9 @@ Balanced stats.
 == codex.el.X
 hero's element
 
+== codex.el.Z
+region's element
+
 == journal.acte
 Act {n} · {titre}
 
@@ -801,6 +807,9 @@ Sold: {nom}
 
 == journal.log.arrivee
 Arrived at {lieu}
+
+== journal.log.charrette
+By cart to {lieu}
 
 == journal.log.entree
 Entered: {lieu}
@@ -863,7 +872,7 @@ side quests done
 new game+
 
 == fin.titre
-End of version 0.3
+End of version 0.4
 
 == fin.continuer
 Keep playing
@@ -962,6 +971,17 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.4.0
+Act 3, “The Forges of Cendre”, is playable: the Burnt Fields, Forgecendre, the Red Mines and the Sleeping Volcano, on the Cendre Plains map.
+Nev joins the team: four heroes now fight together. New element: Wind.
+Three bosses (the Cage Forger, Varen in a duel, the Nameless), eight new monsters and three side-quest bosses.
+New classes: Berserker, Alchemist and Summoner, granted by the ember crystal. Secret class: Geomancer, whose magic takes the region's element.
+New techniques: Fury, Rage, Corrosion, Mixture, Summon, Offering, Lay of the Land and Rockslide. New weapons: axes.
+New side quests in Forgecendre: “The singing stone” (Dorn) and “The missing miners” (Tobi).
+“The lantern seed”, “The hunter's logbook” and “The peddler” continue; “The lullaby” comes to an end.
+Hilde settles in Forgecendre. At the end of the act, her cart goes straight to any village already visited, from the map.
+New consumables: Cendre potion and Ether. The Miner's lamp helps find treasures and places.
+Images: everything new is provisional.
 ## Version 0.3.5
 Updates arrive faster: a new version installs on the first refresh, and the title screen reloads by itself.
 ## Version 0.3.4
@@ -1029,6 +1049,24 @@ Zzz
 
 == combat.courage.court
 Courage
+
+== combat.rage.court
+Rage
+
+== combat.rage
+{nom} flies into a *rage*: Attack ×1.4 for 3 actions, but Defence drops.
+
+== combat.mixture
+{nom} throws a mixture: the whole team recovers HP and 4 PP.
+
+== combat.offrande
+{nom} offers {n} HP to {cible}: +{p} PP.
+
+== combat.recul
+{nom} takes {n} HP of recoil.
+
+== combat.corrode
+Corroded!
 
 == combat.esquive.court
 Dodge

@@ -1,18 +1,21 @@
 /* Lanterval · Héros, classes et techniques.
    Les noms, âges et descriptions sont dans textes/<langue>/noms.txt (heros.<id>, classe.<id>, tech.<id>).
-   Éléments : L Lame, T Terre, F Feu, E Eau. L'élément reste attaché au héros quelle que soit sa classe. */
+   Éléments : L Lame, T Terre, F Feu, E Eau, V Vent. L'élément reste attaché au héros quelle que soit sa classe. */
 
 const HEROS = {
-  // base : statistiques au niveau 1 ; gain : ce qui s'ajoute à chaque niveau
+  // base : statistiques au niveau 1 ; gain : ce qui s'ajoute à chaque niveau ; armure : armure de départ (tunique sinon)
   kael: { el: 'T', classe: 'apprenti', arme: 'dague',
     base: { hp: 60, pp: 10, atk: 11, mag: 6, def: 7, spd: 10 }, gain: { hp: 8, pp: 2, atk: 2.4, mag: 1, def: 1.4, spd: .7 } },
   mira: { el: 'F', classe: 'mage', arme: 'baton',
     base: { hp: 48, pp: 18, atk: 8, mag: 12, def: 5, spd: 11 }, gain: { hp: 6, pp: 3, atk: 1.2, mag: 2.4, def: 1, spd: .8 } },
   sol: { el: 'E', classe: 'soigneur', arme: 'baton',
-    base: { hp: 54, pp: 16, atk: 8, mag: 10, def: 6, spd: 12 }, gain: { hp: 7, pp: 3, atk: 1.2, mag: 2, def: 1.2, spd: .8 } }
+    base: { hp: 54, pp: 16, atk: 8, mag: 10, def: 6, spd: 12 }, gain: { hp: 7, pp: 3, atk: 1.2, mag: 2, def: 1.2, spd: .8 } },
+  // acte 3 : Nev rejoint dans les Champs brûlés, en Moine
+  nev: { el: 'V', classe: 'moine', arme: 'bandes', armure: 'veste',
+    base: { hp: 52, pp: 14, atk: 10, mag: 9, def: 6, spd: 14 }, gain: { hp: 7, pp: 2.5, atk: 2, mag: 1.6, def: 1.2, spd: 1 } }
 };
 // ordre d'affichage dans l'équipe
-const ORDRE_HEROS = ['kael', 'mira', 'sol'];
+const ORDRE_HEROS = ['kael', 'mira', 'sol', 'nev'];
 
 const CLASSES = {
   // mod : multiplicateurs de statistiques ; tech : techniques ; armes : types d'armes portables
@@ -25,16 +28,25 @@ const CLASSES = {
   moine: { mod: { hp: 1.15, atk: 1.2, spd: 1.1, mag: .6, pp: .7 }, tech: ['rafale', 'meditation'], armes: ['poing', 'baton'] },
   voleur: { mod: { hp: .9, atk: 1.05, def: .9, spd: 1.45, mag: .8, pp: .8 }, tech: ['vol', 'esquive'], armes: ['dague'] },
   barde: { mod: { hp: .9, atk: .8, mag: 1.2, pp: 1.3 }, tech: ['courage', 'berceuse'], armes: ['harpe', 'dague'] },
+  // acte 3 : débloquées par le cristal de braise
+  berserker: { mod: { hp: 1.25, atk: 1.4, def: .8, mag: .5, pp: .6 }, tech: ['furie', 'rage'], armes: ['hache', 'epee'] },
+  alchimiste: { mod: { pp: 1.2, atk: .9, mag: 1.15 }, tech: ['corrosion', 'mixture'], armes: ['dague', 'baton'] },
+  invocateur: { mod: { hp: .85, pp: 1.5, atk: .6, mag: 1.45, def: .85, spd: .9 }, tech: ['invocation', 'offrande'], armes: ['baton', 'harpe'] },
   // classes cachées (quêtes annexes)
   rodeur: { mod: { hp: .95, atk: 1.15, spd: 1.3, def: .9, pp: .8 }, tech: ['double', 'lynx'], armes: ['dague', 'arc'], cachee: true },
   // corsaire : vole parfois en frappant, dégâts doublés sur une garde brisée (pirate dans combat.js)
-  corsaire: { mod: { hp: 1.05, atk: 1.2, spd: 1.15, mag: .7, pp: .8 }, tech: ['abordage', 'vol'], armes: ['sabre', 'dague'], cachee: true, pirate: true }
+  corsaire: { mod: { hp: 1.05, atk: 1.2, spd: 1.15, mag: .7, pp: .8 }, tech: ['abordage', 'vol'], armes: ['sabre', 'dague'], cachee: true, pirate: true },
+  // géomancien : ses sorts prennent l'élément de la région (Terre dans la vallée, Eau sur la côte, Feu à Cendre)
+  geomancien: { mod: { pp: 1.25, atk: .8, mag: 1.3 }, tech: ['terroir', 'eboulement'], armes: ['baton'], cachee: true }
 };
 
 const TECHNIQUES = {
-  // el : X = élément du héros, LX = Lame + élément ; cible : ennemi, tous, allie, allies, soi, hasard2 ; poids : lenteur du tour
+  // el : X = élément du héros, LX = Lame + élément, Z = élément de la région ; cible : ennemi, tous, allie, allies, soi, hasard2 ; poids : lenteur du tour
   // types : phys, mag, soin, soins, provoc, rempart, scan, meditation (PV et PP du héros), vol (objet ou or),
-  //         esquive (évite le prochain coup), courage (Attaque et Magie de l'équipe +25 % pendant 3 actions), sommeil
+  //         esquive (évite le prochain coup), courage (Attaque et Magie de l'équipe +25 % pendant 3 actions), sommeil,
+  //         rage (Attaque +40 %, Défense −30 % pendant 3 actions), mixture (soigne l'équipe et rend 4 PP),
+  //         offrande (le héros donne 15 % de ses PV, l'allié gagne 15 PP)
+  // recul : part des PV max que le héros perd en frappant ; corrode : enlève un point de garde même sans faiblesse
   frappe: { el: 'X', type: 'phys', pow: 1.3, pp: 2, cible: 'ennemi', poids: 1 },
   provoc: { type: 'provoc', pp: 0, cible: 'soi', poids: .8 },
   sort: { el: 'X', type: 'mag', pow: 1.3, pp: 3, cible: 'ennemi', poids: 1 },
@@ -52,5 +64,16 @@ const TECHNIQUES = {
   esquive: { type: 'esquive', pp: 3, cible: 'soi', poids: .6 },
   courage: { type: 'courage', pp: 6, cible: 'allies', poids: 1 },
   berceuse: { type: 'sommeil', pp: 5, cible: 'ennemi', poids: 1 },
-  abordage: { el: 'L', type: 'phys', pow: 1.45, pp: 4, cible: 'ennemi', poids: 1.1 }
+  abordage: { el: 'L', type: 'phys', pow: 1.45, pp: 4, cible: 'ennemi', poids: 1.1 },
+  // acte 3
+  furie: { el: 'L', type: 'phys', pow: 2.1, pp: 6, cible: 'ennemi', poids: 1.2, recul: .1 },
+  rage: { type: 'rage', pp: 4, cible: 'soi', poids: .7 },
+  corrosion: { el: 'X', type: 'mag', pow: .9, pp: 5, cible: 'ennemi', poids: 1, corrode: true },
+  mixture: { type: 'mixture', pow: .7, pp: 10, cible: 'allies', poids: 1.2 },
+  invocation: { el: 'X', type: 'mag', pow: 1.35, pp: 16, cible: 'tous', poids: 1.7 },
+  offrande: { type: 'offrande', pp: 0, cible: 'allie', poids: .8 },
+  terroir: { el: 'Z', type: 'mag', pow: 1.5, pp: 5, cible: 'ennemi', poids: 1 },
+  eboulement: { el: 'Z', type: 'mag', pow: .95, pp: 10, cible: 'tous', poids: 1.3 }
 };
+// élément de chaque région (techniques du Géomancien)
+const ELEMENT_REGION = { vallee: 'T', cote: 'E', cendre: 'F', vents: 'V' };

@@ -213,6 +213,9 @@ puis
 == carte.cout.maitrise
 0 à 2 combats
 
+== carte.charrette
+En charrette, sans combat
+
 == trav.titre
 Traversée
 
@@ -529,6 +532,24 @@ Zzz
 == combat.courage.court
 Courage
 
+== combat.rage.court
+Rage
+
+== combat.rage
+{nom} entre en *rage* : Attaque ×1,4 pendant 3 actions, mais sa Défense baisse.
+
+== combat.mixture
+{nom} lance une mixture : toute l'équipe récupère des PV et 4 PP.
+
+== combat.offrande
+{nom} offre {n} PV à {cible} : +{p} PP.
+
+== combat.recul
+{nom} subit {n} PV de recul.
+
+== combat.corrode
+Corrosion !
+
 == combat.esquive.court
 Esquive
 
@@ -624,7 +645,7 @@ Compris, au combat !
 Garde à 0 : l'ennemi perd son prochain tour et subit +50 % de dégâts. Une attaque chargée est annulée.
 
 == aide.elements
-*Éléments* : Lame, Terre, Feu, Eau. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau) ; l'Attaque normale est toujours Lame.
+*Éléments* : Lame, Terre, Feu, Eau, Vent. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau, Nev Vent) ; l'Attaque normale est toujours Lame.
 
 == aide.inconnue
 Faiblesse pas encore découverte. Touche-la une fois et elle reste affichée, ici et dans le bestiaire.
@@ -851,6 +872,9 @@ Statistiques équilibrées.
 == codex.el.X
 élément du héros
 
+== codex.el.Z
+élément de la région
+
 # ================= Journal =================
 
 == journal.acte
@@ -900,6 +924,9 @@ Vente : {nom}
 
 == journal.log.arrivee
 Arrivée à {lieu}
+
+== journal.log.charrette
+En charrette jusqu'à {lieu}
 
 == journal.log.entree
 Entrée : {lieu}
@@ -964,7 +991,7 @@ quêtes annexes finies
 partie+
 
 == fin.titre
-Fin de la version 0.3
+Fin de la version 0.4
 
 == fin.continuer
 Continuer à jouer
@@ -1068,6 +1095,17 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.4.0
+L'acte 3, « Les forges de Cendre », est jouable : les Champs brûlés, Forgecendre, les Mines rouges et le Volcan endormi, sur la carte des Plaines de Cendre.
+Nev rejoint l'équipe : quatre héros se battent désormais ensemble. Nouvel élément : le Vent.
+Trois boss (le Forgeur de cages, Varen en duel, le Sans-Nom), huit nouveaux monstres et trois boss de quêtes annexes.
+Nouvelles classes : Berserker, Alchimiste et Invocateur, données par le cristal de braise. Classe secrète : Géomancien, dont la magie prend l'élément de la région.
+Nouvelles techniques : Furie, Rage, Corrosion, Mixture, Invocation, Offrande, Terroir et Éboulement. Nouvelles armes : les haches.
+Nouvelles quêtes annexes à Forgecendre : « La pierre qui chante » (Dorn) et « Les mineurs disparus » (Tobi).
+Suite de « La graine-lanterne », « Le carnet du chasseur » et « Le colporteur » ; « La berceuse » se termine.
+Hilde s'installe à Forgecendre. À la fin de l'acte, sa charrette mène directement dans un village déjà visité, depuis la carte.
+Nouveaux consommables : Potion de Cendre et Éther. La Lampe de mineur aide à découvrir les trésors et les lieux.
+Images : tout ce qui est nouveau est provisoire.
 ## Version 0.3.5
 Les mises à jour arrivent plus vite : une nouvelle version s'installe dès la première actualisation, et l'écran titre se recharge tout seul.
 ## Version 0.3.4

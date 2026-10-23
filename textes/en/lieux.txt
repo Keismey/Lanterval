@@ -761,3 +761,304 @@ The beam passes over the group and warms their hearts: *+8 PP* for everyone.
 
 == phare.ev.embruns
 The sea spray lashes faces and wakes everyone up: *+20 HP* for everyone.
+
+# ================= Act 3: Cendre Plains =================
+
+== carte.titre.cendre
+Cendre Plains map
+
+== lieu.pont.nom
+Cloud Bridge
+
+# ================= Burnt Fields =================
+
+== lieu.champs.le
+the fields
+
+== lieu.champs.v
+valley side
+
+== lieu.champs.c
+Cendre side
+
+== lieu.champs.sous
+Between the valley and Cendre
+
+== lieu.champs.desc
+Blackened farms, fallen fences, wheat burnt to the horizon. The wind lifts the ash like grey snow.
+
+== lieu.champs.intro
+## Burnt Fields
+The Order set fire to these lands. You cross from the valley side to the Cendre Plains, and the beasts here have grown fond of the heat.
+
+== champs.b1.nom
+Farm cellar
+
+== champs.b1.texte
+Under a trapdoor the fire spared, jars and vials: *2 elixirs*.
+
+== champs.b2.nom
+Overturned trough
+
+== champs.b2.texte
+Around a trough, paw prints running from the spilled water. Ash hounds hate cold wind too. *Ash hound weaknesses added to the codex.*
+
+== champs.b3.nom
+Brookside willow
+
+== champs.b3.texte
+An old willow still green by a brook. The team *recovers all its strength*. You can rest here on every visit.
+
+== champs.b4.nom
+Farmer's hiding place
+
+== champs.b4.texte
+An iron box buried under a farm's doorstep: *220 gold*. The farmer never came back for it.
+
+== champs.b5.nom
+Split shell
+
+== champs.b5.texte
+A beetle shell split in two, next to a bucket of water and a pickaxe. *Ember beetle weaknesses added to the codex.*
+
+== champs.b6.nom
+Pedlar's sack
+
+== champs.b6.texte
+A canvas sack wedged under a burnt cart: *2 ethers*.
+
+== champs.m50
+## 50% milestone reached
+In a barn still standing: *2 elixirs and 1 ether*.
+
+== champs.m100
+## 100% milestone reached
+You know every furrow of the fields. You find a *Salamander claw* (accessory, Attack +7). Fields mastered: crossing them will now bring only 0 to 2 fights.
+
+== champs.ev.combat
+Something growls behind a blackened wall…
+
+== champs.ev.braises
+The wind rekindles embers under the ash! *Everyone loses 14 HP.*
+
+== champs.ev.puits
+A well still full of cool water: *+30 HP* for everyone.
+
+== champs.ev.grange
+In an empty barn, a forgotten purse: *+60 gold*.
+
+== champs.ev.cendres
+The wind drops and the silence comes back all at once. Minds rest: *+10 PP* for everyone.
+
+# ================= Forgecendre =================
+
+== lieu.forgecendre.nom
+Forgecendre
+
+== lieu.forgecendre.sous
+Under the Order's guard
+
+== lieu.forgecendre.sous.libre
+The forges sing again
+
+== lieu.forgecendre.desc
+A town of black stone at the foot of the volcano. The chimneys smoke, but the streets are empty: Order soldiers guard every crossroads.
+
+== lieu.forgecendre.desc.libre
+Hammers ring in every forge. The miners have gone home and the Order's banners are burning in a brazier.
+
+== pnj.goran.nom
+Goran
+
+== pnj.goran.sous
+Full rest · {prix} g
+
+== pnj.agathe.nom
+Agathe
+
+== pnj.agathe.sous
+Remedies and supplies
+
+== pnj.dorn.nom
+Dorn
+
+== pnj.dorn.sous
+The old miner
+
+== pnj.tobi.nom
+Tobi
+
+== pnj.tobi.sous
+A miner's son
+
+# ================= Red Mines =================
+
+== lieu.mines.nom
+Red Mines
+
+== lieu.mines.le
+the mines
+
+== lieu.mines.e
+entrance
+
+== lieu.mines.g
+great gallery
+
+== lieu.mines.sous
+Miners are forced to work here
+
+== lieu.mines.sous.libre
+The galleries belong to the miners again
+
+== lieu.mines.desc
+Tunnels dug into rock as red as embers. Chains, carts, and the endless noise of hammers.
+
+== lieu.mines.desc.libre
+The chains have been thrown down a shaft. The miners sing as they push their carts.
+
+== lieu.mines.intro
+## Red Mines
+You go down from the entrance to the great gallery. The deeper you go, the hotter it gets.
+
+== mines.r1.nom
+Miners' infirmary
+
+== mines.r1.texte
+A shelf hidden behind a tarp: *2 Cendre potions*.
+
+== mines.r2.nom
+Collapsed tunnel
+
+== mines.r2.texte
+A rock worm stuck under the rubble, dried out by an icy draught. It fears water too. *Rock worm weaknesses added to the codex.*
+
+== mines.r3.nom
+Hot spring
+
+== mines.r3.texte
+A warm spring at the end of a tunnel, where the miners washed in secret. The team *recovers all its strength*. You can rest here on every visit.
+
+== mines.r4.nom
+Payroll chest
+
+== mines.r4.texte
+The wages the Order never paid the miners: *280 gold*. You'll give it back by spending it in Forgecendre.
+
+== mines.r5.nom
+Rusty automaton
+
+== mines.r5.texte
+An automaton frozen in a puddle, covered in rust, with burn marks on its chest. *Iron automaton weaknesses added to the codex.*
+
+== mines.r6.nom
+Foreman's chest
+
+== mines.r6.texte
+Under the foreman's desk: *2 ethers and 1 elixir*.
+
+== mines.m50
+## 50% milestone reached
+In the miners' storeroom: *2 elixirs and 1 ether*.
+
+== mines.m100
+## 100% milestone reached
+You know every tunnel of the mines. You find a *Lode stone* (accessory, Defence +5, HP +15). Mines mastered: crossing them will now bring only 0 to 2 fights.
+
+== mines.ev.combat
+Metal clanks approach in the dark…
+
+== mines.ev.grisou
+A pocket of gas catches fire! *Everyone loses 15 HP.*
+
+== mines.ev.pepite
+A nugget glints in the wall: *+70 gold*.
+
+== mines.ev.source
+A trickle of cool water runs down the rock: *+30 HP* for everyone.
+
+== mines.ev.cristaux
+Red crystals glow softly and calm the mind: *+10 PP* for everyone.
+
+# ================= Sleeping Volcano =================
+
+== lieu.volcan.nom
+Sleeping Volcano
+
+== lieu.volcan.le
+the volcano
+
+== lieu.volcan.p
+slopes
+
+== lieu.volcan.c
+crater
+
+== lieu.volcan.sous
+Still smoking
+
+== lieu.volcan.desc
+Slopes of black rock and cooled lava. At the top, the crater glows red and the ground sometimes shakes underfoot.
+
+== lieu.volcan.intro
+## Sleeping Volcano
+You climb from the slopes to the crater's edge. The heat weighs on every step, and fire beasts are at home here.
+
+== volcan.v1.nom
+Lookouts' shelter
+
+== volcan.v1.texte
+A stone shelter abandoned by the Order: *2 Cendre potions and 1 ether*.
+
+== volcan.v2.nom
+Rain pool
+
+== volcan.v2.texte
+A lava lizard turned to stone when it fell into a rain pool. The summit wind drives it off too. *Lava lizard weaknesses added to the codex.*
+
+== volcan.v3.nom
+Cool cave
+
+== volcan.v3.texte
+A small cave where fresh mountain air blows. The team *recovers all its strength*. You can rest here on every visit.
+
+== volcan.v4.nom
+Ancient offerings
+
+== volcan.v4.texte
+A stone altar covered in gold coins melted together: *350 gold*.
+
+== volcan.v5.nom
+Steaming puddle
+
+== volcan.v5.texte
+A puddle that still hisses. An ember spirit went out in it all at once. *Ember spirit weaknesses added to the codex.*
+
+== volcan.v6.nom
+Nest in the rock
+
+== volcan.v6.texte
+In a warm hollow of the rock, an abandoned nest. In the middle, a *Warm egg* as big as a head. It moves a little when you pick it up.
+
+== volcan.m50
+## 50% milestone reached
+In an Order soldier's bag: *2 Cendre potions*.
+
+== volcan.m100
+## 100% milestone reached
+You know every lava flow of the volcano. You find a *Lava heart* (accessory, Attack +3, Magic +6). Volcano mastered: crossing it will now bring only 0 to 2 fights.
+
+== volcan.ev.combat
+The air starts to shimmer with heat…
+
+== volcan.ev.coulee
+A lava flow blocks the path! *Everyone loses 16 HP.*
+
+== volcan.ev.geyser
+A geyser bursts out and falls back as warm rain: *+12 PP* for everyone.
+
+== volcan.ev.obsidienne
+A perfect shard of obsidian a merchant will pay well for: *+80 gold*.
+
+== volcan.ev.brise
+A cool breeze comes down from the summit: *+35 HP* for everyone.

@@ -114,6 +114,7 @@ function dessinerSprites() {
   SPR.f_brann = face({ skin: '#c99a74', helm: '#8a93a8', mous: '#4a3020', cl: '#5a6478', cl2: '#3a4258' });
   SPR.f_inconnu = face({ dark: true, hood: '#2a2440', cl: '#2a2440' });
   spritesActe2();
+  spritesActe3();
   for (const k in SPR) SPRURL[k] = SPR[k].toDataURL();
 }
 
@@ -234,6 +235,99 @@ function bgMapCote(c, W, H) { const n1 = vnoise(14, 22), n2 = vnoise(18, 8), im 
 
 
 
+/* ---------- Acte 3 : Plaines de Cendre ---------- */
+function salamandreSpr(w, h, s, couronne) { return mk(w, h, x => {
+  const cy = h * .62;
+  for (let k = 0; k < w * .38; k++) P(x, '#c8501a', 2 + k, cy + Math.round(Math.sin(k / 3) * 2) - 1, 2, Math.max(2, 5 * s - k * .2));
+  E(x, '#e8742a', w * .5, cy, w * .22, h * .16); E(x, '#f2a040', w * .5, cy + h * .05, w * .16, h * .07);
+  E(x, '#e8742a', w * .8, cy - h * .08, w * .12, h * .12); P(x, '#1b1830', w * .84, cy - h * .12, 2, 2); P(x, '#ffe080', w * .92, cy - h * .05, 2, 1);
+  for (const lx of [.36, .46, .6, .7]) P(x, '#a83a14', w * lx, cy + h * .12, 3, h * .14);
+  for (const [fx, fy] of [[.4, -.14], [.5, -.18], [.6, -.14]]) { P(x, '#1b1830', w * fx, cy + h * fy + 4, 3, 2); P(x, '#ffd060', w * fx, cy + h * fy, 2, 4); }
+  if (couronne) for (let i = 0; i < 5; i++) { const cx = w * .74 + i * 3; for (let k = 0; k < 6 + (i % 2) * 3; k++) P(x, k < 3 ? '#fff0a0' : '#ff8a2a', cx, cy - h * .2 - k, 2, 1); }
+}); }
+function spritesActe3() {
+  SPR.chien = wolf('#7a7470', '#4e4844', '#a8a29a', '#ff7a2a', false);
+  SPR.scarabee = mk(36, 28, x => { E(x, '#2a1e1e', 18, 16, 13, 9); P(x, '#ff6a2a', 18, 8, 1, 17); for (const [cx, cy] of [[12, 13], [23, 12], [14, 19], [22, 19]]) P(x, '#c8401a', cx, cy, 3, 1);
+    E(x, '#3a2a28', 31, 15, 4, 4); P(x, '#ffb040', 32, 13, 1, 1); for (const lx of [8, 14, 21, 27]) P(x, '#1a1212', lx, 23, 2, 4); P(x, '#3a2a28', 34, 10, 1, 4); });
+  SPR.salamandre = salamandreSpr(36, 26, 1, false);
+  SPR.salreine = salamandreSpr(60, 44, 1.6, true);
+  SPR.ver = mk(40, 40, x => { for (let k = 0; k < 26; k++) { const cx = 20 + Math.round(Math.sin(k / 5) * 7), cy = 38 - k; D(x, k % 4 ? '#9a6a5a' : '#7a4a3e', cx, cy, 6 - Math.round(k / 13)); }
+    D(x, '#5a2a24', 22, 10, 5); D(x, '#2a0e0e', 22, 10, 3); for (let i = 0; i < 6; i++) P(x, '#f4e8d8', 19 + i, 7 + (i % 2) * 5, 1, 2); });
+  SPR.automate = mk(36, 44, x => { P(x, '#4a4440', 10, 34, 6, 9); P(x, '#4a4440', 20, 34, 6, 9); E(x, '#6a625a', 18, 24, 11, 11); E(x, '#8a8278', 15, 21, 6, 6);
+    D(x, '#ff7a2a', 18, 26, 3); P(x, '#3a3430', 13, 6, 10, 8); P(x, '#ffb040', 15, 9, 2, 2); P(x, '#ffb040', 20, 9, 2, 2); P(x, '#5a5450', 17, 1, 2, 5);
+    P(x, '#5a5450', 2, 18, 5, 12); P(x, '#3a3430', 0, 28, 9, 7); P(x, '#5a5450', 29, 18, 5, 12); P(x, '#3a3430', 27, 28, 9, 7); });
+  SPR.sentinelle = mk(32, 44, x => { P(x, '#2a2228', 10, 34, 5, 9); P(x, '#2a2228', 17, 34, 5, 9); P(x, '#3a3038', 8, 16, 16, 19); P(x, '#2a2228', 18, 16, 6, 19); P(x, '#a83a2a', 8, 26, 16, 3);
+    D(x, '#3a3038', 16, 10, 6); P(x, '#e8e0d0', 12, 9, 8, 3); P(x, '#1b1830', 13, 10, 6, 1); P(x, '#c8b8a8', 15, 2, 2, 4);
+    P(x, '#5a4a3a', 26, 2, 2, 38); for (let k = 0; k < 6; k++) P(x, '#d8d0c8', 24 + k, 2 + k, 5 - Math.abs(3 - k), 1); P(x, '#3a3038', 4, 18, 4, 12); });
+  SPR.lezard = mk(44, 28, x => { for (let k = 0; k < 14; k++) P(x, '#2a2222', 2 + k, 15 + Math.round(k / 5), 2, 4 - Math.round(k / 6)); E(x, '#2a2222', 22, 16, 11, 6); E(x, '#3a2e2a', 36, 13, 6, 5);
+    for (const [cx, cy, w] of [[16, 13, 5], [24, 15, 6], [30, 12, 3], [20, 18, 4]]) P(x, '#ff6a1a', cx, cy, w, 1); P(x, '#ffd040', 38, 11, 2, 1);
+    for (const lx of [14, 20, 26, 31]) P(x, '#1a1414', lx, 20, 3, 6); });
+  SPR.esprit = mk(26, 32, x => { for (let k = 0; k < 22; k++) { const w = Math.round(9 * Math.sin(Math.PI * Math.min(1, (k + 2) / 24)) * (k < 6 ? k / 6 : 1)); P(x, k < 8 ? '#ffe8a0' : '#ff5a2a', 13 - w + Math.round(Math.sin(k * .6)), 4 + k, 2 * w, 1); }
+    E(x, '#fff0c0', 13, 20, 5, 5); P(x, '#6a1a0a', 10, 19, 2, 3); P(x, '#6a1a0a', 15, 19, 2, 3); P(x, '#c83a1a', 9, 28, 8, 2); });
+  SPR.forgeur = mk(64, 64, x => { P(x, '#3a3632', 18, 46, 11, 16); P(x, '#3a3632', 36, 46, 11, 16); P(x, '#2a2622', 16, 60, 14, 3); P(x, '#2a2622', 35, 60, 14, 3);
+    P(x, '#5a544c', 14, 22, 37, 26); P(x, '#4a443e', 40, 22, 11, 26); P(x, '#7a7268', 14, 22, 37, 3); D(x, '#ff6a1a', 32, 34, 5); D(x, '#ffd060', 32, 34, 2);
+    P(x, '#6a6258', 24, 8, 17, 15); P(x, '#4a443e', 35, 8, 6, 15); P(x, '#ffb040', 28, 14, 3, 2); P(x, '#ffb040', 34, 14, 3, 2);
+    P(x, '#5a544c', 4, 24, 10, 22); P(x, '#5a544c', 51, 24, 10, 22); P(x, '#2a2622', 46, 6, 16, 8); P(x, '#2a2622', 52, 14, 4, 12);
+    for (const cx of [6, 12]) { for (let k = 0; k < 10; k++) P(x, '#8a8278', cx, 46 + k, 1, 1); P(x, '#8a8278', cx - 2, 46, 5, 1); P(x, '#8a8278', cx - 2, 55, 5, 1); P(x, '#8a8278', cx + 2, 46, 1, 10); } });
+  SPR.statue = mk(32, 44, x => { P(x, '#7b7266', 8, 6, 16, 37); P(x, '#5c544a', 18, 6, 6, 37); P(x, '#9a9080', 8, 6, 16, 3); P(x, '#8ff3ff', 11, 14, 3, 2); P(x, '#8ff3ff', 18, 14, 3, 2);
+    for (const cy of [24, 31]) P(x, '#5c544a', 9, cy, 13, 1); P(x, '#7b7266', 2, 20, 6, 14); P(x, '#7b7266', 24, 20, 6, 14); });
+  SPR.tellure = mk(60, 60, x => { E(x, '#8a3a2a', 30, 38, 22, 18); E(x, '#a84a32', 26, 32, 14, 10); P(x, '#6a2a1e', 18, 52, 10, 7); P(x, '#6a2a1e', 34, 52, 10, 7);
+    E(x, '#8a3a2a', 30, 14, 10, 9); P(x, '#ffd0a0', 25, 13, 3, 2); P(x, '#ffd0a0', 33, 13, 3, 2);
+    for (const [cx, cy, h] of [[16, 26, 9], [44, 24, 11], [30, 30, 7], [22, 44, 6], [40, 42, 7]]) for (let k = 0; k < h; k++) { const ww = Math.max(1, Math.round(3 * k / h)); P(x, '#ff6a8a', cx - ww / 2, cy - h + k, ww, 1); } });
+  SPR.f_goran = face({ skin: '#d8a078', beard: '#1f1a1a', cl: '#7a5233', cl2: '#3a2a1a' });
+  SPR.f_agathe = face({ skin: '#ecc8b0', hair: '#a8a8b0', cl: '#5a3a6a', cl2: '#8a6aa0', scarf: '#c8a040' });
+  SPR.f_dorn = face({ skin: '#c89a7a', helm: '#c8a040', beard: '#9a9aa0', cl: '#5a4a3a' });
+  SPR.f_tobi = face({ skin: '#b8907a', helm: '#c8a040', cl: '#6a5a4a', cl2: '#4a3a2a' });
+}
+
+function bgChamps(c, W, H) { const r = rng(103);
+  dgrad(c, 0, 0, W, H * .6, ['#3a2a3a', '#8a4a3a', '#e08a4a', '#f2b070']);
+  const gy = Math.round(H * .6); dgrad(c, 0, gy, W, H - gy, ['#4a3a2e', '#2a201a']);
+  for (let i = 0; i < 90; i++) { const x = r() * W, y = gy + r() * (H - gy); P(c, i % 3 ? '#1e1612' : '#6a4a2a', x, y - 5, 1, 5); }
+  P(c, '#2a1e18', W * .7, gy - 26, 30, 26); for (let k = 0; k < 10; k++) P(c, '#1a1210', W * .7 - 3 + k, gy - 36 + k, 36 - 2 * k, 1); P(c, '#ff7a2a', W * .74, gy - 14, 4, 6);
+  for (let i = 0; i < 4; i++) { const x = W * (.1 + i * .22); for (let k = 0; k < 30; k++) P(c, 'rgba(80,70,70,.35)', x + Math.sin(k / 4) * 4, gy - 10 - k * 2, 5, 2); }
+  for (let i = 0; i < 26; i++) P(c, i % 2 ? '#ffb040' : '#ff6a2a', r() * W, gy - r() * H * .4, 1, 1); }
+function bgForgecendre(c, W, H, libre) { const r = rng(107);
+  dgrad(c, 0, 0, W, H * .58, libre ? ['#4a3a5a', '#a86a5a', '#f0b080'] : ['#2a1a1e', '#6a2a22', '#b8482a']);
+  const gy = Math.round(H * .62); dgrad(c, 0, gy, W, H - gy, ['#4a3e36', '#2a221e']);
+  for (let i = 0; i < 7; i++) { const x = i * W * .15 - 4, h = H * (.18 + r() * .1), w = W * .12; P(c, '#5a4a40', x, gy - h, w, h); P(c, '#3a302a', x + w * .7, gy - h, w * .3, h);
+    P(c, libre ? '#ffd070' : '#ff7a3a', x + w * .3, gy - h * .5, 3, 4); const ch = x + w * .2; P(c, '#2a2220', ch, gy - h - 14, 5, 14);
+    for (let k = 0; k < 14; k++) P(c, libre ? 'rgba(200,190,190,.3)' : 'rgba(140,60,50,.45)', ch + Math.sin(k / 3 + i) * 3, gy - h - 16 - k * 2, 5, 2); }
+  if (!libre) for (const f of [.24, .7]) { P(c, '#3a3038', W * f, gy - H * .3, 2, H * .3); P(c, '#7a52a0', W * f + 2, gy - H * .3, 10, 14); D(c, '#f4f4f4', W * f + 7, gy - H * .3 + 7, 2); }
+  for (let x = 0; x < W; x += 12) P(c, '#5a4a3e', x, gy + 4, 8, 3);
+  for (let i = 0; i < 20; i++) P(c, '#ffb040', r() * W, r() * H * .5, 1, 1); }
+function bgMines(c, W, H, libre) { const r = rng(109);
+  dgrad(c, 0, 0, W, H, ['#1a0e0c', '#3a1a14', '#5a2a1e']);
+  for (let i = 0; i < 20; i++) E(c, '#4a1e16', r() * W, r() * H * .7, 10 + (r() * 18 | 0), 6 + (r() * 10 | 0));
+  for (const f of [.12, .5, .88]) { const x = W * f; P(c, '#5a3a22', x - 3, H * .18, 6, H * .62); P(c, '#5a3a22', x - 14, H * .18, 28, 5);
+    if (libre) { D(c, 'rgba(255,200,90,.2)', x, H * .26, 10); D(c, '#ffd070', x, H * .26, 2); } }
+  const gy = Math.round(H * .8); dgrad(c, 0, gy, W, H - gy, ['#3a2018', '#1a0e0a']);
+  P(c, '#6a6a70', 0, gy + 8, W, 2); P(c, '#6a6a70', 0, gy + 16, W, 2); for (let x = 2; x < W; x += 9) P(c, '#4a2a1a', x, gy + 6, 3, 14);
+  for (const [f, sz] of [[.3, 18], [.68, 14]]) { const x = W * f, y = gy - sz; for (let k = 0; k <= sz; k += 4) { P(c, '#8a8278', x + k, y, 1, sz); P(c, '#8a8278', x, y + k, sz, 1); }
+    if (!libre) { D(c, '#ff6a2a', x + sz / 2, y + sz / 2, 3); } }
+  for (let i = 0; i < 16; i++) P(c, '#ff6a4a', r() * W, r() * H * .7, 1, 1); }
+function bgVolcan(c, W, H) { const r = rng(113);
+  dgrad(c, 0, 0, W, H * .6, ['#1a0e1a', '#4a1a1e', '#a83a1e', '#e8702a']);
+  const base = H * .7;
+  for (let k = 0; k < H * .5; k++) { const w = W * .2 + k * 1.6; P(c, k % 7 ? '#2a1e1e' : '#3a2a26', W * .5 - w / 2, base - H * .5 + k, w, 1); }
+  P(c, '#ff6a1a', W * .5 - W * .1, base - H * .5, W * .2, 2); for (let k = 0; k < 20; k++) P(c, 'rgba(120,90,90,.35)', W * .5 + Math.sin(k / 3) * 6, base - H * .5 - 4 - k * 2, 8, 2);
+  for (const f of [.42, .55]) for (let k = 0; k < H * .45; k += 2) P(c, k % 4 ? '#ff7a1a' : '#ffc040', W * f + Math.sin(k / 6) * 5 + k * (f < .5 ? -.2 : .2), base - H * .48 + k, 2, 2);
+  dgrad(c, 0, base, W, H - base, ['#2a1e1a', '#140c0a']);
+  for (let i = 0; i < 30; i++) P(c, i % 2 ? '#ffb040' : '#ff5a1a', r() * W, r() * H * .6, 1, 1); }
+function bgMapCendre(c, W, H) { const n1 = vnoise(24, 22), n2 = vnoise(28, 8), im = c.getImageData(0, 0, W, H), d = im.data;
+  const pal = { c1: hex('#7a5a4a'), c2: hex('#6a4a3c'), c3: hex('#5a3e32'), m1: hex('#3a2a28'), lave: hex('#e8642a') };
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const nx = x / W, ny = y / H, v = n1(x, y) * .7 + n2(x, y) * .3, th = (BY[(y & 3) * 4 + (x & 3)] + .5) / 16;
+    const mont = Math.hypot((nx - .55) * 1.4, ny - .2) < .2 + v * .06, lave = Math.hypot((nx - .55) * 1.4, ny - .2) < .04;
+    const tt = lave ? pal.lave : mont ? pal.m1 : v + th * .2 < .5 ? pal.c3 : v + th * .2 < .62 ? pal.c2 : pal.c1;
+    const k = (y * W + x) * 4; d[k] = tt[0]; d[k + 1] = tt[1]; d[k + 2] = tt[2]; d[k + 3] = 255; }
+  c.putImageData(im, 0, 0); const r = rng(32);
+  const at = (id, dx, dy) => { const p = surCarte(id, 'cendre'); return [p.x * W + dx, p.y * H + dy]; };
+  for (let i = 0; i < 18; i++) { const [x, y] = at('champs', (r() - .5) * 30, (r() - .5) * 18); P(c, '#2a1e18', x, y - 3, 1, 3); P(c, '#ff8a2a', x, y - 4, 1, 1); }
+  for (const [dx, dy] of [[-6, -2], [1, -5], [5, 2], [-2, 4]]) { const [x, y] = at('forgecendre', dx, dy); P(c, '#8a7a6a', x - 2, y - 2, 5, 3); P(c, '#3a2a28', x - 3, y - 4, 7, 2); P(c, '#2a2220', x + 1, y - 8, 2, 4); }
+  { const [x, y] = at('mines', 0, 0); P(c, '#1a0e0a', x - 3, y - 2, 6, 4); P(c, '#5a3a22', x - 4, y - 3, 8, 1); }
+  { const [x, y] = at('pont', 0, 0); P(c, '#d8d0c0', x - 8, y, 16, 1); for (let k = -8; k < 8; k += 4) P(c, '#a89a80', x + k, y - 2, 1, 3); } }
+
+
 /* ---------- Décors ---------- */
 function bgForest(c, W, H, calm) { const r = rng(21);
   dgrad(c, 0, 0, W, H, calm ? ['#1c3b3a', '#2f5e4a', '#5c8f5a', '#8fb86a'] : ['#0d201d', '#173a30', '#2a5a40', '#3e6e46']);
@@ -307,5 +401,12 @@ Object.assign(DECORS_PROVISOIRES, {
   'epave': bgEpave,
   'phare': (c, w, h) => bgPhare(c, w, h, false),
   'phare-libre': (c, w, h) => bgPhare(c, w, h, true),
-  'carte-cote': bgMapCote
+  'carte-cote': bgMapCote,
+  'champs': bgChamps,
+  'forgecendre': (c, w, h) => bgForgecendre(c, w, h, false),
+  'forgecendre-libre': (c, w, h) => bgForgecendre(c, w, h, true),
+  'mines': (c, w, h) => bgMines(c, w, h, false),
+  'mines-libre': (c, w, h) => bgMines(c, w, h, true),
+  'volcan': bgVolcan,
+  'carte-cendre': bgMapCendre
 });

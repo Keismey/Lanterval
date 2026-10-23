@@ -787,3 +787,401 @@ Eel
 
 == monstre.anguille.desc
 It spits lightning and strikes twice as long as its guard holds. Earth puts it out.
+
+# ================= Act 3: Cendre Plains =================
+
+== parle.goran
+Goran
+
+== parle.agathe
+Agathe
+
+== parle.dorn
+Dorn
+
+== parle.tobi
+Tobi
+
+== parle.ulric
+Ulric
+
+== heros.nev.age
+16 years old
+
+== heros.nev.bio
+A former novice of the Order of the Eyelid, born in Aerie in the High Winds. Quick and blunt, she deserted after seeing Salvent forget its children.
+
+== element.V
+Wind
+
+== classe.berserker
+Berserker
+
+== classe.berserker.desc
+Hits very hard, at the cost of defence and HP.
+
+== classe.berserker.verrou
+Unlocked by the ember crystal
+
+== classe.alchimiste
+Alchemist
+
+== classe.alchimiste.desc
+Eats away at enemy guards and heals the whole team.
+
+== classe.alchimiste.verrou
+Unlocked by the ember crystal
+
+== classe.invocateur
+Summoner
+
+== classe.invocateur.desc
+Great spells on every enemy, slow and costly in PP.
+
+== classe.invocateur.verrou
+Unlocked by the ember crystal
+
+== classe.geomancien
+Geomancer
+
+== classe.geomancien.desc
+Their spells take the element of the region: Earth in the valley, Water on the coast, Fire in Cendre.
+
+== classe.geomancien.verrou
+Secret class: someone in Forgecendre knows how to listen to the rock
+
+== tech.furie
+Fury
+
+== tech.furie.desc
+A very powerful Blade strike. The hero loses 10% of their HP.
+
+== tech.rage
+Rage
+
+== tech.rage.desc
+Attack +40% and Defence −30% for the next 3 actions.
+
+== tech.corrosion
+Corrosion
+
+== tech.corrosion.desc
+A spell of the hero's element that removes one guard point, even without a weakness.
+
+== tech.mixture
+Mixture
+
+== tech.mixture.desc
+Heals the whole team and gives everyone 4 PP.
+
+== tech.invocation
+Summon
+
+== tech.invocation.desc
+A spirit of the hero's element strikes every enemy. Slow.
+
+== tech.offrande
+Offering
+
+== tech.offrande.desc
+The hero gives 15% of their HP; an ally gains 15 PP.
+
+== tech.terroir
+Lay of the Land
+
+== tech.terroir.desc
+A powerful spell of the region's element on one enemy.
+
+== tech.eboulement
+Rockslide
+
+== tech.eboulement.desc
+A spell of the region's element on every enemy.
+
+== objet.potion
+Cendre potion
+
+== objet.potion.desc
++180 HP
+
+== objet.ether
+Ether
+
+== objet.ether.desc
++30 PP
+
+== equip.hache
+Miner's axe
+
+== equip.cendre
+Ash sword
+
+== equip.magma
+Magma staff
+
+== equip.gantelets
+Iron gauntlets
+
+== equip.stylet
+Burning stiletto
+
+== equip.lyre
+Copper lyre
+
+== equip.ardente
+Blazing sword
+
+== equip.cratere
+Crater staff
+
+== equip.fendoir
+Forge cleaver
+
+== equip.marees
+Staff of Tides
+
+== equip.dorn
+Dorn's staff
+
+== equip.plates
+Plate armour
+
+== equip.manteau
+Ash mantle
+
+== equip.salamandre
+Salamander leather
+
+== equip.griffe
+Salamander claw
+
+== equip.filon
+Lode stone
+
+== equip.lave
+Lava heart
+
+== equip.lampe
+Miner's lamp
+
+== important.epee-aldric
+Aldric's sword
+
+== important.epee-aldric.desc
+Kael's father's sword, reforged by Hilde. A lantern is engraved on the guard: if he sees it, maybe he'll remember.
+
+== important.bourgeon
+Lantern bud
+
+== important.bourgeon.desc
+Pia's sprout, warmed in the ash. The bud glows red. It still needs a very strong wind.
+
+== important.peau-salamandre
+Salamander Queen's skin
+
+== important.peau-salamandre.desc
+Proof of the third beast in Roxane's notebook. Still warm.
+
+== important.lingot
+Star ingot
+
+== important.lingot.desc
+A small ingot that glows in the dark, traded by Dorn for the foghorn. Fennel wants it badly.
+
+== important.plume-roc
+Roc feather
+
+== important.plume-roc.desc
+A huge feather, hard as stone and light as air. Fennel says it is woven in Aerie.
+
+== important.boite-reparee
+Repaired music box
+
+== important.boite-reparee.desc
+Naïa's box, repaired by Hilde and Mira. The painted gull looks brand new. It plays the lullaby again.
+
+== important.pierre
+Singing stone
+
+== important.pierre.desc
+A grey stone from the Stone Pass. Held close to your ear, it hums.
+
+== important.cristal-chantant
+Singing crystal
+
+== important.cristal-chantant.desc
+A red shard from the singing vein of the Red Mines. It vibrates with the stone.
+
+== important.casque-mineur
+Dented helmet
+
+== important.casque-mineur.desc
+A miner's helmet found in the deep gallery. A name is carved inside: Bram, Tobi's father.
+
+== important.oeuf
+Warm egg
+
+== important.oeuf.desc
+A big scaly egg found on the Sleeping Volcano. It is warm and, sometimes, it moves.
+
+== monstre.chien
+Ash hound
+
+== monstre.chien.court
+Hound
+
+== monstre.chien.desc
+A thin hound with ash-grey fur and ember eyes. It hunts in packs in the burnt fields.
+
+== monstre.scarabee
+Ember beetle
+
+== monstre.scarabee.court
+Beetle
+
+== monstre.scarabee.desc
+A black shell split by red glows. Fire doesn't bother it.
+
+== monstre.scarabee.special
+Horn strike
+
+== monstre.salamandre
+Salamander
+
+== monstre.salamandre.desc
+A little orange lizard that spits sparks. Water puts it out.
+
+== monstre.salamandre.special
+The {nom} spits sparks at the whole team!
+
+== monstre.ver
+Rock worm
+
+== monstre.ver.court
+Worm
+
+== monstre.ver.desc
+A giant worm with stone skin. It digs the tunnels and bites anything that passes.
+
+== monstre.automate
+Iron automaton
+
+== monstre.automate.court
+Automaton
+
+== monstre.automate.desc
+A boiler on legs with hammer arms, built by the Order to guard the mines.
+
+== monstre.automate.charge
+The {nom} builds up pressure… *it will strike the whole team next turn*, unless you break its guard first.
+
+== monstre.automate.special
+The {nom} releases all its steam on the team!
+
+== monstre.sentinelle
+Order sentinel
+
+== monstre.sentinelle.court
+Sentinel
+
+== monstre.sentinelle.desc
+A guard in black and red armour, halberd in hand. She watches over the miners of Forgecendre.
+
+== monstre.sentinelle.special
+Halberd blow
+
+== monstre.lezard
+Lava lizard
+
+== monstre.lezard.court
+Lizard
+
+== monstre.lezard.desc
+A big black lizard cracked with lava. Unlike its volcano, it never sleeps.
+
+== monstre.lezard.special
+Burning bite
+
+== monstre.esprit
+Ember spirit
+
+== monstre.esprit.court
+Spirit
+
+== monstre.esprit.desc
+A flame with a face, born from the crystal's heat. Blades pass right through it.
+
+== monstre.esprit.special
+The {nom} flares up and burns the whole team!
+
+== monstre.forgeur
+Cage Forger
+
+== monstre.forgeur.desc
+An iron golem built to cast crystal cages, day and night, without ever stopping.
+
+== monstre.forgeur.charge
+The Forger raises its anvil… *it will crush the whole team next turn*, unless you break its guard first.
+
+== monstre.forgeur.special
+The Forger slams its anvil down on the whole team!
+
+== monstre.forgeur.appel
+The Forger strikes the ground: an {renfort} comes out of the forge!
+
+== monstre.varen2
+Varen
+
+== monstre.varen2.desc
+Nev's older brother. Faster than at the pass, and far more serious.
+
+== monstre.varen2.special
+Wind blade
+
+== monstre.sansnom2
+The Nameless
+
+== monstre.sansnom2.desc
+The Order's masked giant. This time, the team is complete.
+
+== monstre.sansnom2.charge
+The Nameless raises his mace above his head… *he will strike the whole team next turn*, unless you break his guard first.
+
+== monstre.sansnom2.special
+The Nameless smashes the ground with his mace!
+
+== monstre.salreine
+Salamander Queen
+
+== monstre.salreine.desc
+A huge salamander crowned with flames. She calls her young to the rescue.
+
+== monstre.salreine.special
+The Salamander Queen spits a torrent of flames at the whole team!
+
+== monstre.salreine.appel
+The Salamander Queen hisses: a {renfort} crawls out of the ash!
+
+== monstre.statue
+Stone golem
+
+== monstre.statue.court
+Golem
+
+== monstre.statue.desc
+A standing stone from the Pass that started walking. Its eyes glow blue.
+
+== monstre.statue.special
+Standing-stone slam
+
+== monstre.tellure
+Earth elemental
+
+== monstre.tellure.desc
+Guardian of the singing vein, a mountain of red rock threaded with crystals.
+
+== monstre.tellure.charge
+The Elemental sinks into the ground… *it will shake the whole gallery next turn*, unless you break its guard first.
+
+== monstre.tellure.special
+The Elemental shakes the gallery!

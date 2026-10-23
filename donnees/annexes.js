@@ -3,7 +3,7 @@
    offre : ce qui se passe quand on parle au donneur (un choix dont la réponse « non » ne lance pas la quête).
    etapes : comme celles de la quête principale (voir acte1.js). Une quête annexe ne bloque jamais l'histoire.
    Une étape attend sans « ! » tant que son lieu n'est pas ouvert, ou que sa condition si n'est pas remplie
-   (la suite de « La berceuse » se joue à l'acte 3).
+   (« drapeau acte3 » : la suite se joue à l'acte 3 ; « drapeau acte4 » : elle attend l'acte 4).
    Le donneur peut afficher sous son nom ce qu'il attend : texte <quête>.e<n>.sous (ce que cherche Fennel). */
 
 const ANNEXES = {
@@ -47,9 +47,18 @@ const ANNEXES = {
         ['dialogue', 'graine.e1.fin'],
         ['message', 'graine.e1.message']
       ] },
-      // suite à l'acte 3 : la cendre chaude des Champs brûlés
+      // acte 3 : la cendre chaude des Champs brûlés
       { lieu: 'champs', si: 'drapeau acte3', evenements: [
-        ['dialogue', 'graine.e2.scene']
+        ['dialogue', 'graine.e2.cendre'],
+        ['combat', 'chien chien salamandre'],
+        ['perd', 'pousse'],
+        ['gagne', 'bourgeon'],
+        ['dialogue', 'graine.e2.fin'],
+        ['message', 'graine.e2.message']
+      ] },
+      // suite à l'acte 4 : le vent du Pont des Nuées
+      { lieu: 'pont', si: 'drapeau acte4', evenements: [
+        ['dialogue', 'graine.e3.scene']
       ] }
     ]
   },
@@ -88,9 +97,23 @@ const ANNEXES = {
         ['dialogue', 'chasse.e4.scene'],
         ['message', 'chasse.e4.message']
       ] },
-      // suite à l'acte 3 : la Salamandre reine des Champs brûlés
-      { lieu: 'champs', si: 'drapeau acte3', evenements: [
-        ['dialogue', 'chasse.e5.scene']
+      // acte 3 : la Salamandre reine, côté ferme brûlée des Champs brûlés ; Roxane attend à Forgecendre
+      { lieu: 'champs.c', si: 'drapeau acte3', evenements: [
+        ['dialogue', 'chasse.e5.traque'],
+        ['combat', 'salamandre salreine salamandre', { boss: true }],
+        ['gagne', 'peau-salamandre'],
+        ['dialogue', 'chasse.e5.fin'],
+        ['message', 'chasse.e5.message']
+      ] },
+      { lieu: 'roxane', evenements: [
+        ['perd', 'peau-salamandre'],
+        ['gagne', '500 or'],
+        ['dialogue', 'chasse.e6.scene'],
+        ['message', 'chasse.e6.message']
+      ] },
+      // suite à l'acte 4 : le Roc ailé du Pont des Nuées
+      { lieu: 'pont', si: 'drapeau acte4', evenements: [
+        ['dialogue', 'chasse.e7.scene']
       ] }
     ]
   },
@@ -125,9 +148,22 @@ const ANNEXES = {
         ['dialogue', 'colporteur.e4.scene'],
         ['message', 'colporteur.e4.message']
       ] },
-      // suite à l'acte 3 : les mineurs de Forgecendre
-      { lieu: 'fennel', si: 'drapeau acte3', evenements: [
-        ['dialogue', 'colporteur.e5.scene']
+      // acte 3 : Dorn, le vieux mineur aveugle, troque la corne de brume contre un lingot d'étoile
+      { lieu: 'dorn', si: 'drapeau acte3 et fini a3.e2', evenements: [
+        ['perd', 'corne-brume'],
+        ['gagne', 'lingot'],
+        ['dialogue', 'colporteur.e5.scene'],
+        ['message', 'colporteur.e5.message']
+      ] },
+      { lieu: 'fennel', evenements: [
+        ['perd', 'lingot'],
+        ['gagne', 'plume-roc'],
+        ['dialogue', 'colporteur.e6.scene'],
+        ['message', 'colporteur.e6.message']
+      ] },
+      // suite à l'acte 4 : à Aerie, Ilse tisse la plume en cape
+      { lieu: 'fennel', si: 'drapeau acte4', evenements: [
+        ['dialogue', 'colporteur.e7.scene']
       ] }
     ]
   },
@@ -196,7 +232,8 @@ const ANNEXES = {
     ]
   },
 
-  // 6. La berceuse (Maëlle ; Sol et Naïa). La boîte se trouve à l'acte 2, Hilde la répare à l'acte 3.
+  // 6. La berceuse (Maëlle ; Sol et Naïa). La boîte se trouve à l'acte 2, Hilde la répare à l'acte 3,
+  // puis Sol la rend à Naïa (dès l'acte 3, comme prévu dans l'onglet Rythme de la bible).
   berceuse: {
     donneur: 'maelle', ouvre: 'fini a2.e8',
     offre: [
@@ -210,9 +247,85 @@ const ANNEXES = {
         ['dialogue', 'berceuse.e1.boite'],
         ['message', 'berceuse.e1.message']
       ] },
-      // suite à l'acte 3 : Hilde répare la boîte à Forgecendre (drapeau posé par l'acte 3)
-      { lieu: 'hilde', si: 'drapeau acte3', evenements: [
-        ['dialogue', 'berceuse.e2.scene']
+      // acte 3 : Hilde répare la boîte à Forgecendre
+      { lieu: 'hilde', si: 'drapeau acte3 et fini a3.e2', evenements: [
+        ['dialogue', 'berceuse.e2.scene'],
+        ['perd', 'boite'],
+        ['gagne', 'boite-reparee'],
+        ['dialogue', 'berceuse.e2.fin'],
+        ['message', 'berceuse.e2.message']
+      ] },
+      { lieu: 'naia', evenements: [
+        ['dialogue', 'berceuse.e3.quai'],
+        ['perd', 'boite-reparee'],
+        ['panorama', 'pano.berceuse'],
+        ['dialogue', 'berceuse.e3.chant'],
+        ['decor'],
+        ['gagne', 'marees'],
+        ['dialogue', 'berceuse.e3.fin']
+      ] }
+    ]
+  },
+
+  // ---------- Plaines de Cendre ----------
+  // 8. La pierre qui chante (Dorn, classe Géomancien). La pierre se cherche sous le rocher fendu du Col.
+  pierre: {
+    donneur: 'dorn', ouvre: 'fini a3.e2',
+    offre: [
+      ['choix', 'pierre.offre', { oui: [['message', 'pierre.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'col', evenements: [
+        ['dialogue', 'pierre.e1.rocher'],
+        ['combat', 'statue statue'],
+        ['gagne', 'pierre'],
+        ['dialogue', 'pierre.e1.fin'],
+        ['message', 'pierre.e1.message']
+      ] },
+      { lieu: 'mines', evenements: [
+        ['dialogue', 'pierre.e2.ecoute'],
+        ['combat', 'tellure', { boss: true }],
+        ['panorama', 'pano.veine'],
+        ['dialogue', 'pierre.e2.veine'],
+        ['decor'],
+        ['gagne', 'cristal-chantant'],
+        ['message', 'pierre.e2.message']
+      ] },
+      { lieu: 'dorn', evenements: [
+        ['perd', 'pierre, cristal-chantant'],
+        ['dialogue', 'pierre.e3.scene'],
+        ['classes', 'geomancien'],
+        ['gagne', 'dorn'],
+        ['dialogue', 'pierre.e3.fin']
+      ] }
+    ]
+  },
+
+  // 11. Les mineurs disparus (Tobi). La galerie profonde des Mines rouges débouche sur les Champs brûlés.
+  mineurs: {
+    donneur: 'tobi', ouvre: 'fini a3.e6',
+    offre: [
+      ['choix', 'mineurs.offre', { oui: [['message', 'mineurs.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'mines.g', evenements: [
+        ['dialogue', 'mineurs.e1.galerie'],
+        ['combat', 'ver ver ver'],
+        ['gagne', 'casque-mineur'],
+        ['dialogue', 'mineurs.e1.fin'],
+        ['message', 'mineurs.e1.message']
+      ] },
+      { lieu: 'champs.c', evenements: [
+        ['dialogue', 'mineurs.e2.ferme'],
+        ['combat', 'chien scarabee chien'],
+        ['dialogue', 'mineurs.e2.fin'],
+        ['message', 'mineurs.e2.message']
+      ] },
+      { lieu: 'tobi', evenements: [
+        ['perd', 'casque-mineur'],
+        ['dialogue', 'mineurs.e3.scene'],
+        ['gagne', 'lampe, 200 or'],
+        ['dialogue', 'mineurs.e3.fin']
       ] }
     ]
   }

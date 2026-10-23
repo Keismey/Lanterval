@@ -330,7 +330,7 @@ Loïc: “The lanterns are shining and my wife recognised me twice today. That's
 == pnj.loic.a2.e7
 Loïc: “You're going up to the lighthouse? Say hello to Erwan for me. If he remembers me, that is.”
 
-== pnj.loic.fin
+== pnj.loic.a3.e1
 Loïc: “I'm back at sea! And this time, I wrote my name on my boat.”
 
 == pnj.rosal
@@ -342,7 +342,7 @@ Naïa: “My father says the sea keeps everything you give it. Even memories.”
 == pnj.naia.a2.e7
 Naïa: “If you see my father up there, tell him I'm waiting. Every evening.”
 
-== pnj.naia.fin
+== pnj.naia.a3.e1
 Naïa: “Sol, is it? You look at me as if you knew me. Funny, I feel the same way.”
 
 # Lanterval during act 2 (the “a2.e1” texts in acte1.txt are used at the start)
@@ -350,24 +350,17 @@ Naïa: “Sol, is it? You look at me as if you knew me. Funny, I feel the same w
 == pnj.orvan.a2.e3
 Orvan: “Salvent forgets, you say? Then the Order is already there. Be careful.”
 
-== pnj.orvan.fin
+== pnj.orvan.a3.e1
 Orvan: “You got my letter. I have no excuse, Kael. Only the hope of mending what I started.”
 
 == pnj.tilo.a2.e3
 Tilo: “Is it true that in Salvent people forget their names? My name is Tilo. Tilo!”
 
-== pnj.tilo.fin
+== pnj.tilo.a3.e1
 Tilo: “Did you bring me a shell? No? Well, next time.”
 
 == pnj.hilde.accueil.a2.e3
 Hilde: “Any news from the coast? Is Mira at least eating? Take what you need, and bring her back in one piece.”
 
-== pnj.hilde.accueil.fin
+== pnj.hilde.accueil.a3.e1
 Hilde: “Cendre… If you're going there, I'm coming. Don't argue.”
-
-# ---------- End of version 0.3 ----------
-
-== fin.version
-## End of version 0.3
-Act 2 is over! The sea-foam crystal protects Salvent, Naïa hums the lullaby, and Orvan has confessed his past.
-Act 3 is coming in a future version. Until then, you can finish the side quests and explore every area to 100%.

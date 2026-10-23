@@ -805,3 +805,401 @@ Anguille
 
 == monstre.anguille.desc
 Elle crache la foudre et frappe deux fois tant que sa garde tient. La Terre l'éteint.
+
+# ================= Acte 3 : Plaines de Cendre =================
+
+== parle.goran
+Goran
+
+== parle.agathe
+Agathe
+
+== parle.dorn
+Dorn
+
+== parle.tobi
+Tobi
+
+== parle.ulric
+Ulric
+
+== heros.nev.age
+16 ans
+
+== heros.nev.bio
+Ancienne novice de l'Ordre de la Paupière, née à Aerie dans les Hauts-Vents. Rapide et franche, elle a déserté après avoir vu Salvent oublier ses enfants.
+
+== element.V
+Vent
+
+== classe.berserker
+Berserker
+
+== classe.berserker.desc
+Frappe très fort, au prix de sa défense et de ses PV.
+
+== classe.berserker.verrou
+Débloquée par le cristal de braise
+
+== classe.alchimiste
+Alchimiste
+
+== classe.alchimiste.desc
+Ronge la garde des ennemis et soigne toute l'équipe.
+
+== classe.alchimiste.verrou
+Débloquée par le cristal de braise
+
+== classe.invocateur
+Invocateur
+
+== classe.invocateur.desc
+Grands sorts sur tous les ennemis, lents et chers en PP.
+
+== classe.invocateur.verrou
+Débloquée par le cristal de braise
+
+== classe.geomancien
+Géomancien
+
+== classe.geomancien.desc
+Ses sorts prennent l'élément de la région : Terre dans la vallée, Eau sur la côte, Feu à Cendre.
+
+== classe.geomancien.verrou
+Classe secrète : quelqu'un à Forgecendre sait écouter la roche
+
+== tech.furie
+Furie
+
+== tech.furie.desc
+Un coup de Lame très puissant. Le héros perd 10 % de ses PV.
+
+== tech.rage
+Rage
+
+== tech.rage.desc
+Attaque +40 % et Défense −30 % pendant les 3 prochaines actions.
+
+== tech.corrosion
+Corrosion
+
+== tech.corrosion.desc
+Sort de l'élément du héros qui enlève un point de garde, même sans faiblesse.
+
+== tech.mixture
+Mixture
+
+== tech.mixture.desc
+Soigne toute l'équipe et rend 4 PP à chacun.
+
+== tech.invocation
+Invocation
+
+== tech.invocation.desc
+Un esprit de l'élément du héros frappe tous les ennemis. Lent.
+
+== tech.offrande
+Offrande
+
+== tech.offrande.desc
+Le héros donne 15 % de ses PV ; un allié gagne 15 PP.
+
+== tech.terroir
+Terroir
+
+== tech.terroir.desc
+Un sort puissant de l'élément de la région sur un ennemi.
+
+== tech.eboulement
+Éboulement
+
+== tech.eboulement.desc
+Un sort de l'élément de la région sur tous les ennemis.
+
+== objet.potion
+Potion de Cendre
+
+== objet.potion.desc
++180 PV
+
+== objet.ether
+Éther
+
+== objet.ether.desc
++30 PP
+
+== equip.hache
+Hache de mineur
+
+== equip.cendre
+Épée de cendre
+
+== equip.magma
+Bâton de magma
+
+== equip.gantelets
+Gantelets de fer
+
+== equip.stylet
+Stylet ardent
+
+== equip.lyre
+Lyre de cuivre
+
+== equip.ardente
+Épée ardente
+
+== equip.cratere
+Bâton du cratère
+
+== equip.fendoir
+Fendoir de forge
+
+== equip.marees
+Bâton des marées
+
+== equip.dorn
+Bâton de Dorn
+
+== equip.plates
+Armure de plates
+
+== equip.manteau
+Manteau de cendre
+
+== equip.salamandre
+Cuir de salamandre
+
+== equip.griffe
+Griffe de salamandre
+
+== equip.filon
+Pierre de filon
+
+== equip.lave
+Cœur de lave
+
+== equip.lampe
+Lampe de mineur
+
+== important.epee-aldric
+Épée d'Aldric
+
+== important.epee-aldric.desc
+L'épée du père de Kael, reforgée par Hilde. Une lanterne est gravée sur la garde : s'il la voit, peut-être qu'il se souviendra.
+
+== important.bourgeon
+Bourgeon-lanterne
+
+== important.bourgeon.desc
+La pousse de Pia, réchauffée dans la cendre. Le bourgeon rougeoie. Il lui manque un vent très fort.
+
+== important.peau-salamandre
+Peau de Salamandre reine
+
+== important.peau-salamandre.desc
+La preuve de la troisième bête du carnet de Roxane. Encore tiède.
+
+== important.lingot
+Lingot d'étoile
+
+== important.lingot.desc
+Un petit lingot qui brille dans le noir, troqué par Dorn contre la corne de brume. Fennel en a très envie.
+
+== important.plume-roc
+Plume de roc
+
+== important.plume-roc.desc
+Une plume immense, dure comme la pierre et légère comme l'air. Fennel dit qu'on la tisse à Aerie.
+
+== important.boite-reparee
+Boîte à musique réparée
+
+== important.boite-reparee.desc
+La boîte de Naïa, réparée par Hilde et Mira. La mouette peinte est comme neuve. Elle joue de nouveau la berceuse.
+
+== important.pierre
+Pierre qui chante
+
+== important.pierre.desc
+Une pierre grise du Col des Pierres. Quand on la tient près de l'oreille, elle fredonne.
+
+== important.cristal-chantant
+Cristal chantant
+
+== important.cristal-chantant.desc
+Un éclat rouge de la veine chantante des Mines rouges. Il vibre avec la pierre.
+
+== important.casque-mineur
+Casque cabossé
+
+== important.casque-mineur.desc
+Un casque de mineur trouvé dans la galerie profonde. Un nom est gravé dedans : Bram, le père de Tobi.
+
+== important.oeuf
+Œuf chaud
+
+== important.oeuf.desc
+Un gros œuf écailleux, trouvé au Volcan endormi. Il est tiède et, parfois, il bouge.
+
+== monstre.chien
+Chien de cendre
+
+== monstre.chien.court
+Chien
+
+== monstre.chien.desc
+Un chien maigre au pelage de cendre, aux yeux de braise. Il chasse en meute dans les champs brûlés.
+
+== monstre.scarabee
+Scarabée de braise
+
+== monstre.scarabee.court
+Scarabée
+
+== monstre.scarabee.desc
+Une carapace noire fendue de lueurs rouges. Le feu ne lui fait rien.
+
+== monstre.scarabee.special
+Coup de corne
+
+== monstre.salamandre
+Salamandre
+
+== monstre.salamandre.desc
+Un petit lézard orange qui crache des flammèches. L'eau l'éteint.
+
+== monstre.salamandre.special
+La {nom} crache des flammèches sur toute l'équipe !
+
+== monstre.ver
+Ver de roche
+
+== monstre.ver.court
+Ver
+
+== monstre.ver.desc
+Un ver géant à la peau de pierre. Il creuse les galeries et mord tout ce qui passe.
+
+== monstre.automate
+Automate de fer
+
+== monstre.automate.court
+Automate
+
+== monstre.automate.desc
+Une chaudière sur pattes, aux bras-marteaux, construite par l'Ordre pour garder les mines.
+
+== monstre.automate.charge
+L'{nom} fait monter la pression… *il va frapper toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.automate.special
+L'{nom} lâche toute sa vapeur sur l'équipe !
+
+== monstre.sentinelle
+Sentinelle de l'Ordre
+
+== monstre.sentinelle.court
+Sentinelle
+
+== monstre.sentinelle.desc
+Une gardienne en armure noire et rouge, hallebarde à la main. Elle surveille les mineurs de Forgecendre.
+
+== monstre.sentinelle.special
+Coup de hallebarde
+
+== monstre.lezard
+Lézard de lave
+
+== monstre.lezard.court
+Lézard
+
+== monstre.lezard.desc
+Un gros lézard noir fendu de lave. Il ne dort jamais, contrairement à son volcan.
+
+== monstre.lezard.special
+Morsure brûlante
+
+== monstre.esprit
+Esprit de braise
+
+== monstre.esprit.court
+Esprit
+
+== monstre.esprit.desc
+Une flamme avec un visage, née de la chaleur du cristal. Les lames passent au travers.
+
+== monstre.esprit.special
+L'{nom} s'embrase et brûle toute l'équipe !
+
+== monstre.forgeur
+Forgeur de cages
+
+== monstre.forgeur.desc
+Un golem de fer construit pour couler des cages à cristal, jour et nuit, sans jamais s'arrêter.
+
+== monstre.forgeur.charge
+Le Forgeur lève son enclume… *il va écraser toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.forgeur.special
+Le Forgeur abat son enclume sur toute l'équipe !
+
+== monstre.forgeur.appel
+Le Forgeur frappe le sol : un {renfort} sort de la forge !
+
+== monstre.varen2
+Varen
+
+== monstre.varen2.desc
+Le frère aîné de Nev. Plus rapide qu'au col, et bien plus sérieux.
+
+== monstre.varen2.special
+Lame du vent
+
+== monstre.sansnom2
+Le Sans-Nom
+
+== monstre.sansnom2.desc
+Le colosse masqué de l'Ordre. Cette fois, l'équipe est au complet.
+
+== monstre.sansnom2.charge
+Le Sans-Nom lève sa masse au-dessus de sa tête… *il va frapper toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.sansnom2.special
+Le Sans-Nom écrase le sol de sa masse !
+
+== monstre.salreine
+Salamandre reine
+
+== monstre.salreine.desc
+Une salamandre énorme couronnée de flammes. Elle appelle ses petites à la rescousse.
+
+== monstre.salreine.special
+La Salamandre reine crache un torrent de flammes sur toute l'équipe !
+
+== monstre.salreine.appel
+La Salamandre reine siffle : une {renfort} sort de la cendre !
+
+== monstre.statue
+Golem de pierre
+
+== monstre.statue.court
+Golem
+
+== monstre.statue.desc
+Un menhir du Col qui s'est mis à marcher. Ses yeux brillent de bleu.
+
+== monstre.statue.special
+Coup de menhir
+
+== monstre.tellure
+Élémentaire de terre
+
+== monstre.tellure.desc
+Le gardien de la veine chantante, une montagne de roche rouge parcourue de cristaux.
+
+== monstre.tellure.charge
+L'Élémentaire s'enfonce dans le sol… *il va faire trembler toute la galerie à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.tellure.special
+L'Élémentaire fait trembler la galerie !

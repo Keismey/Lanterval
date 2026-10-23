@@ -1,7 +1,9 @@
 /* Lanterval · les cartes des régions et les déplacements.
    Une position est un village (« lanterval ») ou un côté de zone (« foret.v »). Les chemins de LIENS
    sont directs ; pour passer d'un côté à l'autre d'une zone, il faut la traverser (combats au hasard).
-   Chaque région (vallee, cote…) a sa carte : on y voit ses lieux ; le Marais salant relie la vallée et la côte. */
+   Chaque région (vallee, cote…) a sa carte : on y voit ses lieux ; le Marais salant relie la vallée et la côte.
+   La charrette de Hilde (drapeau charrette, fin de l'acte 3) mène directement dans un village, sans traversée. */
+const charrette = id => !!S.f.charrette && LIEUX[id].type === 'village';
 
 // toutes les positions d'un lieu : ses côtés pour une zone qui en a, sinon le lieu lui-même
 function positions(id) { const L = LIEUX[id]; return L.cotes ? L.cotes.map(c => id + '.' + c) : [id]; }
@@ -90,7 +92,7 @@ function renderMap() {
   };
   ovc().querySelectorAll('.node').forEach(b => b.onclick = () => clic(b.dataset.n));
   // boutons : les lieux de cette carte, et les villages des autres régions
-  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(viaTxt(r.via)), bang: queteSur(id) }));
+  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(charrette(id) ? t('carte.charrette') : viaTxt(r.via)), bang: queteSur(id) }));
   opts.push({ k: 'back', ic: 'back', label: esc(t('carte.rester')), sub: esc(ouSuisJe()), cls: 'ghost' });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomCarte(reg))}</div><p class="ptext">${tx('carte.ici', { lieu: ouSuisJe() })}</p>
@@ -101,6 +103,7 @@ function renderMap() {
 
 // aller jusqu'à un lieu en traversant les zones sur le chemin
 async function voyager(dest) {
+  if (charrette(dest)) { S.loc = dest; S.screen = 'village'; logR('journal.log.charrette', { lieu: 'lieu.' + dest + '.nom' }); return; }
   const r = route(dest); if (!r) return;
   for (const [z, de, vers] of r.via) { S.loc = z + '.' + de; await traverse(z, de, vers); S.loc = z + '.' + vers; }
   S.loc = r.vers;

@@ -16,6 +16,12 @@ Son père est parti dans la brume une nuit et n'est jamais revenu. Brann lui a r
 == perso.kael.5
 À Salvent, l'éclat de la lanterne lui a montré une vision : Orvan à vingt ans, à côté d'une femme, devant un œil immense gravé dans la pierre.
 
+== perso.kael.6
+Au cratère du Volcan endormi, il a brisé le masque du Sans-Nom. Dessous, il a reconnu son père, Aldric, qui ne se souvient plus de lui.
+
+== perso.kael.7
+Hilde a reforgé l'épée de son père et gravé une lanterne sur la garde. Kael la porte pour qu'Aldric la reconnaisse un jour.
+
 == perso.mira.1
 Fille de Hilde la forgeronne, 18 ans, élément Feu. Elle suivait seule la brume dans la forêt quand Kael l'a tirée d'un cercle de loups.
 
@@ -24,6 +30,12 @@ C'est elle qui a compris que la brume sortait de la Grotte de cristal.
 
 == perso.mira.3
 Les forges de Cendre, où l'Ordre a emporté le cristal d'ambre, sont dans la ville natale de sa mère.
+
+== perso.mira.4
+Dans les Mines rouges, elle a appris que sa mère avait forgé la première cage de l'Ordre, puis s'était enfuie avec elle, bébé.
+
+== perso.mira.5
+Elle a aidé sa mère à reforger l'épée d'Aldric, toute une nuit, sans un mot. Entre elles, quelque chose commence à se réparer.
 
 == perso.sol.1
 Ermite du lac souterrain, 20 ans, élément Eau. Calme et peu bavard, il gardait le lac depuis le réveil du Gardien de cristal.
@@ -36,6 +48,9 @@ Il avait six ans lors du naufrage, et sa petite sœur deux. D'après le journal 
 
 == perso.sol.4
 Il a retrouvé sa sœur sans rien lui dire : elle ne se souvient de rien et vient de retrouver son père adoptif. Il a choisi de rester avec Kael et Mira.
+
+== perso.sol.5
+La berceuse de leur mère a rendu à Naïa le souvenir de son frère. Elle lui a donné le Bâton des marées, repêché dans l'épave.
 
 == perso.orvan.1
 L'Ancien de Lanterval, gardien de la lanterne. Il a confié à Kael un éclat de son cristal.
@@ -70,6 +85,15 @@ Quand elle a entendu parler de l'insigne à l'œil fermé, elle a demandé à Ka
 == perso.hilde.3
 Elle vient de Cendre, la ville des forges, et compte bien y accompagner l'équipe.
 
+== perso.hilde.4
+Elle est née à Forgecendre, où on la croyait morte depuis dix-huit ans. Elle y a rallumé la vieille forge de son père.
+
+== perso.hilde.5
+Elle a forgé la toute première cage de l'Ordre en croyant protéger les cristaux. Quand elle a compris, elle s'est enfuie avec Mira, qui avait trois mois.
+
+== perso.hilde.6
+Elle a connu Aldric, le père de Kael. Sa charrette conduit désormais l'équipe de village en village.
+
 == perso.silhouette.1
 Une silhouette encapuchonnée qui rôdait dans la forêt quand les loups ont encerclé Mira.
 
@@ -82,8 +106,17 @@ Un jeune homme de l'Ordre de la Paupière, rapide et arrogant. Au sommet du col,
 == perso.varen.2
 Le Héraut de Salvent le connaît : Varen lui a parlé de l'équipe.
 
+== perso.varen.3
+Il traque Nev, qui a quitté l'Ordre. Il est sûr qu'elle reviendra d'elle-même.
+
+== perso.varen.4
+C'est le grand frère de Nev. Il l'a emmenée dans l'Ordre quand elle avait dix ans, en lui promettant qu'elle n'aurait plus jamais mal. Kael et Nev l'ont battu en duel au bord du cratère.
+
 == perso.sansnom.1
 Un colosse au masque d'acier marqué d'un œil fermé, qui obéit à Varen. Au col, il a terrassé l'équipe d'un seul coup de masse.
+
+== perso.sansnom.2
+Sous le masque brisé : Aldric, le père de Kael, parti dans la brume il y a des années. L'Ordre lui a pris sa mémoire et son nom. Il a emporté le cristal de braise vers le nord.
 
 == perso.maelle.1
 La vieille aubergiste de Salvent, trop âgée, dit-elle, pour que la brume trouve la place de s'installer. Elle a reconnu Sol, l'enfant du naufrage.
@@ -100,11 +133,23 @@ Elle fredonne une berceuse que personne d'autre ne connaît : celle que leur mè
 == perso.naia.3
 Sa boîte à musique, retrouvée dans l'épave, est cassée. Il faudra des doigts de forgeron pour la réparer.
 
+== perso.naia.4
+En entendant la berceuse de la boîte réparée, elle s'est souvenue de Sol, son grand frère.
+
 == perso.erwan.1
 Le gardien du phare de Salvent, que l'Ordre retenait prisonnier. Il a recueilli Naïa et l'a élevée comme sa fille.
 
 == perso.nev.1
 Une novice de l'Ordre, de garde au pied du phare. Troublée par ce que l'Ordre fait à Salvent, elle a laissé passer l'équipe sans sonner l'alerte.
+
+== perso.nev.2
+Elle a fui l'Ordre et rejoint l'équipe dans les Champs brûlés. 16 ans, élément Vent. Elle ne veut plus jamais y retourner.
+
+== perso.nev.3
+Varen est son frère. Elle l'a affronté en duel au bord du cratère, aux côtés de Kael.
+
+== perso.nev.4
+Elle est née à Aerie, dans les Hauts-Vents, où dort le seul cristal que l'Ordre n'a pas encore pris : le cristal d'azur.
 
 == perso.heraut.1
 L'officier de l'Ordre qui tenait le phare de Salvent. Il croit sincèrement offrir la paix en effaçant les chagrins. Vaincu, il s'est enfui en barque.
@@ -120,8 +165,26 @@ Une chasseuse qui tient le carnet des bêtes que personne n'ose chasser, une par
 == perso.roxane.2
 Elle a appris à chasser auprès d'un vieux maître des Hauts-Vents. Elle dit qu'il ne lui a jamais appris à avoir peur, seulement à être prudente.
 
+== perso.roxane.3
+Trois bêtes de son carnet sont tombées : le Sanglier-roc, l'Anguille-tonnerre et la Salamandre reine. Il ne reste que le Roc ailé des Hauts-Vents.
+
 == perso.fennel.1
 Un colporteur qui ne vend jamais rien : il troque. Il dit que chaque village a ce qu'un autre désire.
 
 == perso.fennel.2
 Fennel connaît tout le monde, de Lanterval à la côte. Personne ne sait d'où il vient, et il change de réponse chaque fois qu'on lui pose la question.
+
+== perso.fennel.3
+Contre le lingot d'étoile de Dorn, il a donné sa plume de roc, son plus beau trésor. Il a donné rendez-vous à l'équipe à Aerie.
+
+== perso.dorn.1
+Un vieux mineur aveugle de Forgecendre. Il n'y voit plus, mais il entend tout : les marteaux, la roche, et les cœurs qui battent trop vite.
+
+== perso.dorn.2
+Grâce à la pierre qui chante, il a retrouvé la voix de la montagne, et il a appris à l'équipe l'art du géomancien.
+
+== perso.tobi.1
+Le fils d'un mineur de Forgecendre. Son père n'est pas remonté des mines avec les autres.
+
+== perso.tobi.2
+Son père, Ulric, avait fui les mines par un vieux puits et se cachait dans les Champs brûlés. Ils sont de nouveau réunis.

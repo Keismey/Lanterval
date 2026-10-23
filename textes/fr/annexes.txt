@@ -89,13 +89,37 @@ Sol : « Elle a encore faim. De la cendre chaude, d'après la petite. Il faudra 
 Quête annexe : la graine est devenue une *pousse-lanterne*. *La suite à l'acte 3*, dans la cendre chaude.
 
 == graine.e2.titre
-Réchauffer la pousse dans la cendre (acte 3)
+Réchauffer la pousse dans la cendre chaude
 
-== graine.e2.scene
-Kael couvre la pousse de cendre chaude. Un bourgeon rougeoie.
+== graine.e2.bouton
+Planter la pousse dans la cendre
 
 == graine.e2.attente
 Pia : « Elle a poussé ? Grand-mère dit qu'après l'eau, il lui faut de la cendre chaude. Il y en a plein à Cendre, c'est écrit dans le nom ! »
+
+== graine.e2.cendre
+## La graine-lanterne
+Au milieu des champs, la cendre est encore tiède sous la croûte grise. Kael y creuse un petit lit pour la pousse.
+La minuscule lanterne s'allume, rouge comme une braise. Tout autour, des yeux s'allument aussi. [Combattre]
+
+== graine.e2.fin
+## La graine-lanterne
+Les bêtes chassées, la pousse a grandi d'une main. Au bout de sa tige, un bourgeon rougeoie doucement.
+Nev : « Une fleur qui pousse dans la cendre… Je croyais que plus rien ne poussait ici. »
+Sol : « De l'eau salée, de la cendre chaude, et un vent très fort. Il ne manque plus que le vent. »
+
+== graine.e2.message
+Quête annexe : la pousse est devenue un *bourgeon-lanterne*. Il lui faut maintenant un vent très fort. *La suite à l'acte 4*.
+
+== graine.e3.titre
+Ouvrir le bourgeon dans un vent très fort (acte 4)
+
+== graine.e3.attente
+Pia : « Un bourgeon ! Grand-mère dit que le vent le plus fort souffle sur un pont, tout là-haut, dans les nuages. Ça existe, un pont dans les nuages ? »
+
+== graine.e3.scene
+## La graine-lanterne
+Le vent des Nuées s'engouffre dans le bourgeon, qui s'ouvre d'un coup.
 
 == graine.apres
 Pia : « Tous les soirs, je regarde ma fleur. Grand-mère dit qu'elle éclaire mieux que la lanterne. Ne lui répète pas que j'ai dit ça. »
@@ -185,13 +209,47 @@ Roxane : « Je t'attendrai là-bas. Une chasseuse suit toujours le gibier, et to
 Quête annexe : deux bêtes sur quatre. *La suite à l'acte 3*, dans les Champs brûlés.
 
 == chasse.e5.titre
-Traquer la Salamandre reine aux Champs brûlés (acte 3)
+Traquer la Salamandre reine aux Champs brûlés
 
-== chasse.e5.scene
-Roxane : « La Salamandre reine. Fais attention à ses petites. »
+== chasse.e5.bouton
+Traquer la Salamandre reine
 
 == chasse.e5.attente
-Roxane : « La Salamandre reine vit dans les Champs brûlés. Quand la route de Cendre sera ouverte, je te suivrai. »
+Roxane : « La Salamandre reine niche dans les Champs brûlés, côté Cendre. Le feu ne lui fait rien : il faut de l'eau, beaucoup d'eau. »
+
+== chasse.e5.traque
+## Le carnet du chasseur
+Au fond d'une ferme effondrée, la cendre bouge toute seule. Des dizaines de petites salamandres s'en échappent.
+Puis la cendre se soulève d'un coup : une salamandre grande comme un cheval, la gorge rouge de feu. [Combattre]
+
+== chasse.e5.fin
+## Le carnet du chasseur
+La Salamandre reine s'éteint comme une braise sous la pluie. Sa peau reste tiède, souple comme du cuir.
+Kael : « Trois sur quatre. Roxane va devoir acheter un deuxième carnet. »
+
+== chasse.e5.message
+Quête annexe : rapporte la peau de la Salamandre reine à *Roxane*.
+
+== chasse.e6.titre
+Rapporter la peau à Roxane
+
+== chasse.e6.scene
+Roxane : « Une peau de Salamandre reine, encore chaude ! Trois bêtes dans le carnet. »
+Roxane : « Voici 500 pièces. La dernière est la plus dangereuse : un roc ailé qui niche sous le Pont des Nuées, au-dessus des Hauts-Vents. »
+Roxane : « Je n'ai jamais osé y monter. Avec toi, peut-être. »
+
+== chasse.e6.message
+Quête annexe : trois bêtes sur quatre. *La suite à l'acte 4*, au Pont des Nuées.
+
+== chasse.e7.titre
+Traquer le Roc ailé au Pont des Nuées (acte 4)
+
+== chasse.e7.attente
+Roxane : « Le Roc ailé, sous le Pont des Nuées. Il paraît qu'il emporte des bœufs entiers. J'ai hâte. »
+
+== chasse.e7.scene
+## Le carnet du chasseur
+Sous le Pont des Nuées, un cri immense déchire le vent.
 
 == chasse.apres
 Roxane : « Ton nom est dans mon carnet quatre fois. Personne d'autre n'y est plus d'une fois. »
@@ -267,13 +325,36 @@ Fennel : « Quelqu'un à Cendre en rêve depuis des années. Garde-la bien, on s
 Quête annexe : Fennel a troqué la perle contre une *corne de brume*. *La suite à l'acte 3*, à Forgecendre.
 
 == colporteur.e5.titre
-Troquer la corne de brume à Forgecendre (acte 3)
+Troquer la corne de brume à Forgecendre
 
 == colporteur.e5.sous
 Cherche : quelqu'un qui a besoin d'une corne de brume
 
 == colporteur.e5.scene
-Fennel : « Forgecendre ! Les mineurs ont besoin de ta corne. »
+Dorn : « Ce son-là… Une corne de brume ! Au fond des mines, on s'appelait avec ça, avant que l'Ordre nous les prenne. »
+Dorn : « Je n'y vois plus, mais avec elle, les jeunes me trouveront toujours. Tiens, prends ce lingot d'étoile. Il brille dans le noir, et moi, je n'en ai plus l'usage. »
+
+== colporteur.e5.message
+Quête annexe : apporte le *lingot d'étoile* à *Fennel*.
+
+== colporteur.e6.titre
+Troquer le lingot avec Fennel
+
+== colporteur.e6.scene
+Fennel : « Un lingot d'étoile ! On dit qu'il en tombe un tous les cent ans. Contre ça, je te donne mon trésor : une plume de roc. »
+Fennel : « Elle vient du Roc ailé des Hauts-Vents. Là-haut, à Aerie, une tisserande sait en faire une cape qui ne pèse rien. On se retrouvera là-bas. »
+
+== colporteur.e6.message
+Quête annexe : Fennel a troqué le lingot contre une *plume de roc*. *La suite à l'acte 4*, à Aerie.
+
+== colporteur.e7.titre
+Faire tisser la plume à Aerie (acte 4)
+
+== colporteur.e7.attente
+Fennel : « Garde bien ta plume. À Aerie, Ilse la tisserande en fera une merveille. Il faut juste réussir à monter jusque-là. »
+
+== colporteur.e7.scene
+Fennel : « Aerie, enfin ! Ilse, regarde ce que je t'apporte. »
 
 == colporteur.e5.attente
 Fennel : « Garde ta corne de brume. À Forgecendre, les mineurs s'appellent d'une galerie à l'autre. Ils en rêvent. »
@@ -462,10 +543,199 @@ Mira : « Ma mère a des doigts de forgeron. »
 Quête annexe : la boîte à musique est cassée. *La suite à l'acte 3*, quand quelqu'un pourra la réparer.
 
 == berceuse.e2.titre
-Faire réparer la boîte à musique (acte 3)
+Faire réparer la boîte à musique
 
 == berceuse.e2.scene
-Hilde : « Les ressorts, c'est comme les épées. Il faut de la patience, et des doigts plus fins que les miens. Mira, aide-moi. »
+## La berceuse
+Sol pose la boîte cassée sur l'établi. Hilde la tourne entre ses gros doigts et ouvre le couvercle fendu.
+Hilde : « Les ressorts, c'est comme les épées : il faut de la patience. Et des doigts plus fins que les miens. Mira, aide-moi. »
+Mira hésite, puis s'assoit à côté de sa mère. Elles travaillent longtemps, sans un mot.
+
+== berceuse.e2.fin
+## La berceuse
+Un petit déclic. La mouette peinte tourne, et quelques notes s'échappent, fragiles comme du verre.
+Sol : « C'est elle. C'est la berceuse de Naïa. »
+Hilde : « Va la lui faire entendre, petit. Une chanson, ça se souvient mieux que nous. »
+
+== berceuse.e2.message
+Quête annexe : la boîte à musique joue de nouveau. Apporte-la à *Naïa*, à Salvent.
+
+== berceuse.e3.titre
+Faire écouter la berceuse à Naïa
+
+== berceuse.e3.quai
+## La berceuse
+Naïa est assise au bout du quai, les pieds au-dessus de l'eau. Elle regarde Sol comme un inconnu poli.
+Naïa : « Encore toi ? Tu as l'air triste chaque fois que tu me vois. »
+Sol ne répond pas. Il s'assoit près d'elle, ouvre la boîte et la pose entre eux.
+
+== berceuse.e3.chant
+## La berceuse
+La mélodie s'élève au-dessus de la mer. Naïa ferme les yeux et, tout bas, se met à chanter les paroles.
+Naïa : « Dors, petit poisson, la mer te garde… Je connais cette chanson. Maman nous la chantait. »
+Naïa : « Sol… Sol, c'est toi ! Pourquoi tu as grandi sans moi ? »
+Sol rit et pleure en même temps. Il ne dit rien. Il n'en a pas besoin.
+
+== berceuse.e3.fin
+## Quête annexe terminée
+Naïa : « Erwan a repêché ce bâton dans l'épave, le jour où il m'a trouvée. Il disait qu'il était à quelqu'un qui reviendrait. Tu es revenu. »
+? Tu reçois le *Bâton des marées*, le bâton le plus puissant pour Sol (Magie +27, PP +12).
+
+== berceuse.apres
+Maëlle : « Naïa chante tous les soirs sur le quai, maintenant. Les pêcheurs s'arrêtent pour l'écouter. »
 
 == berceuse.e2.attente
 Maëlle : « Prends soin de cette boîte, petit. Un jour, elle chantera de nouveau. »
+
+# ---------- 8. La pierre qui chante (Dorn, classe Géomancien) ----------
+
+== pierre.titre
+La pierre qui chante
+
+== pierre.offre
+Dorn : « Quand j'étais jeune, la roche me parlait. Je savais où creuser rien qu'en écoutant. Puis les marteaux de l'Ordre ont couvert sa voix. »
+Dorn : « Au Col des Pierres, dans ta vallée, il y a une pierre qui chante. Avec elle, je retrouverais la veine qui chante, au fond des mines. »
+Dorn : « Et je t'apprendrais à écouter la terre. Ça t'intéresse ? »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== pierre.message
+Quête annexe : trouver la *pierre qui chante* au *Col des Pierres*, dans la vallée.
+
+== pierre.e1.titre
+Trouver la pierre qui chante au Col des Pierres
+
+== pierre.e1.bouton
+Écouter les pierres
+
+== pierre.e1.attente
+Dorn : « Au Col des Pierres, il y a des menhirs. L'un d'eux fredonne quand le vent passe. Tu l'entendras si tu te tais. »
+
+== pierre.e1.rocher
+## La pierre qui chante
+Entre les menhirs, le vent siffle. Puis, sous le sifflement, un fredonnement très doux monte d'un rocher couvert de mousse.
+Quand Kael s'approche, deux menhirs se redressent en grondant. Ils gardent le rocher. [Combattre]
+
+== pierre.e1.fin
+## La pierre qui chante
+Les golems retombent en tas de cailloux. Au cœur du rocher, une pierre grise tient dans la main. Elle fredonne toujours.
+Nev : « Elle chante plus fort quand on la tourne vers Cendre. Comme si elle voulait rentrer chez elle. »
+
+== pierre.e1.message
+Quête annexe : la pierre chante plus fort vers les *Mines rouges*. Elle cherche peut-être la veine dont parle Dorn.
+
+== pierre.e2.titre
+Suivre le chant de la pierre dans les Mines rouges
+
+== pierre.e2.bouton
+Suivre le chant de la pierre
+
+== pierre.e2.attente
+Dorn : « La veine qui chante est au fond des mines, plus bas que les galeries de l'Ordre. Laisse la pierre te guider. »
+
+== pierre.e2.ecoute
+## La pierre qui chante
+Dans les galeries, la pierre chante de plus en plus fort. Elle mène l'équipe vers un mur qui n'a rien de particulier.
+Kael pose la main sur la roche. Le mur tremble et se détache : une créature de terre et de cristal se dresse devant vous. [Combattre]
+
+== pierre.e2.veine
+## La veine qui chante
+Derrière l'élémentaire, une veine de cristal court dans la roche comme une rivière. Elle chante, et la pierre lui répond.
+Sol : « On dirait un chœur. Toute la montagne chante. »
+Un éclat de cristal se détache tout seul et tombe dans la main de Kael.
+
+== pierre.e2.message
+Quête annexe : rapporte la pierre et le *cristal chantant* à *Dorn*, à Forgecendre.
+
+== pierre.e3.titre
+Rapporter le chant de la montagne à Dorn
+
+== pierre.e3.scene
+Dorn tient la pierre d'une main et le cristal de l'autre. Il sourit pour la première fois.
+Dorn : « Je l'entends… La montagne n'a pas oublié comment on chante. Écoute avec moi. »
+Dorn : « La terre n'a pas un seul élément. Dans la vallée, elle est roche ; sur la côte, elle est eau ; ici, elle est feu. Le géomancien prend ce qu'elle lui donne. »
+
+== pierre.e3.fin
+## Quête annexe terminée
+Dorn : « Prends mon vieux bâton. Il a sondé plus de roche que toutes les pioches de Forgecendre. »
+? *Classe secrète débloquée : Géomancien*. Sa magie prend l'élément de la région où tu te bats : Terre dans la vallée, Eau sur la côte, Feu à Cendre. Tu reçois le *Bâton de Dorn* (pour le Géomancien).
+
+== pierre.apres
+Dorn : « Tous les matins, je descends écouter la veine. Elle chante mieux depuis que les marteaux de l'Ordre se sont tus. »
+
+# ---------- 11. Les mineurs disparus (Tobi) ----------
+
+== mineurs.titre
+Les mineurs disparus
+
+== mineurs.offre
+Tobi : « Tous les mineurs sont remontés. Sauf mon père et quatre hommes de son équipe. »
+Tobi : « Ils travaillaient dans une vieille galerie, sur le côté de la grande galerie. Personne n'ose y retourner. »
+Tobi : « Tu veux bien chercher mon père ? Il s'appelle Ulric. Il a une moustache comme un balai. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== mineurs.message
+Quête annexe : chercher *Ulric* et son équipe dans la *grande galerie* des Mines rouges.
+
+== mineurs.e1.titre
+Chercher les mineurs dans la grande galerie
+
+== mineurs.e1.bouton
+Fouiller la vieille galerie
+
+== mineurs.e1.attente
+Tobi : « La vieille galerie part sur le côté de la grande galerie. Papa dit qu'elle respire, parce qu'il y a toujours du vent dedans. »
+
+== mineurs.e1.galerie
+## Les mineurs disparus
+Une vieille galerie, à moitié effondrée. Un courant d'air frais vient du fond. Sur le sol, des traces de bottes, et d'autres bien plus larges.
+Les vers de roche ont fait leur nid dans les éboulis. [Combattre]
+
+== mineurs.e1.fin
+## Les mineurs disparus
+Derrière les éboulis, un casque cabossé. À l'intérieur, gravé au couteau : « Ulric ».
+Le courant d'air vient d'un vieux puits d'aération. Les traces de bottes y montent, vers la surface.
+Nev : « Ce puits débouche dans les Champs brûlés. Ils ont fui par là, en se cachant de l'Ordre. »
+
+== mineurs.e1.message
+Quête annexe : les mineurs sont sortis par un vieux puits. Cherche-les du *côté Cendre des Champs brûlés*.
+
+== mineurs.e2.titre
+Retrouver les mineurs dans les Champs brûlés
+
+== mineurs.e2.bouton
+Chercher la sortie du puits
+
+== mineurs.e2.attente
+Tobi : « Les Champs brûlés ? Papa dit que là-bas, les chiens de cendre sont plus gros que des loups. Il doit avoir un peu peur. »
+
+== mineurs.e2.ferme
+## Les mineurs disparus
+Près d'une ferme en ruine, un puits d'aération sort de terre. De la fumée monte de la cheminée : quelqu'un vit là.
+Mais des chiens de cendre tournent autour de la ferme, et un scarabée de braise garde la porte. [Combattre]
+
+== mineurs.e2.fin
+## Les mineurs disparus
+La porte s'entrouvre. Cinq mineurs maigres sortent, une pioche à la main. Le premier a une moustache comme un balai.
+Ulric : « L'Ordre est parti ? Les mines sont libres ? On n'osait pas rentrer, on croyait à un piège. »
+Ulric : « Et mon fils… Tobi va bien ? Alors on rentre tout de suite. »
+
+== mineurs.e2.message
+Quête annexe : les mineurs rentrent à Forgecendre. Va voir *Tobi*.
+
+== mineurs.e3.titre
+Retrouver Tobi à Forgecendre
+
+== mineurs.e3.scene
+Tobi court vers un mineur couvert de cendre, qui le soulève comme une plume.
+Tobi : « Papa ! Tu es revenu ! »
+Ulric : « Grâce à vous autres. Rends-moi ce casque, je l'avais perdu en fuyant. Et prends ma lampe de mineur : avec elle, on trouve ce qui se cache dans le noir. »
+
+== mineurs.e3.fin
+## Quête annexe terminée
+Ulric : « En fuyant, on a trouvé un filon de roche de feu. Je vais en porter à Hilde : elle saura quoi en faire. »
+? Tu reçois la *Lampe de mineur* (accessoire : Défense +2, et l'exploration découvre plus souvent un trésor ou un lieu) et *200 po*. Hilde vend désormais trois nouvelles armes à Forgecendre.
+
+== mineurs.apres
+Tobi : « Papa dit que je descendrai à la mine quand j'aurai douze ans. Moi, je veux être forgeron, comme Hilde. »

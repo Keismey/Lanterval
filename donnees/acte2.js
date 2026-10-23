@@ -114,8 +114,7 @@ ACTES.push({
       ['gagne', 'lettre-orvan'],
       ['dialogue', 'a2.e8.aveu'],
       ['dialogue', 'a2.e8.est'],
-      ['message', 'a2.e8.message'],
-      ['fin_version']
+      ['message', 'a2.e8.message']
     ] }
   ]
 });

@@ -16,6 +16,12 @@ His father went off into the mist one night and never came back. Brann gave him 
 == perso.kael.5
 In Salvent, the lantern shard showed him a vision: Orvan at twenty, beside a woman, before a huge eye carved in stone.
 
+== perso.kael.6
+In the crater of the Sleeping Volcano, he broke the Nameless's mask. Underneath, he recognised his father, Aldric, who no longer remembers him.
+
+== perso.kael.7
+Hilde reforged his father's sword and engraved a lantern on the guard. Kael carries it so that Aldric might recognise it one day.
+
 == perso.mira.1
 Daughter of Hilde the blacksmith, 18, Fire element. She was following the mist alone in the forest when Kael pulled her out of a ring of wolves.
 
@@ -24,6 +30,12 @@ She was the one who worked out that the mist was pouring out of the Crystal Cave
 
 == perso.mira.3
 The forges of Cendre, where the Order took the amber crystal, are in her mother's home town.
+
+== perso.mira.4
+In the Red Mines, she learned that her mother forged the Order's first cage, then fled with her when she was a baby.
+
+== perso.mira.5
+She helped her mother reforge Aldric's sword, all night long, without a word. Between them, something is starting to mend.
 
 == perso.sol.1
 Hermit of the underground lake, 20, Water element. Calm and quiet, he had guarded the lake since the Crystal Guardian woke up.
@@ -36,6 +48,9 @@ He was six at the time of the shipwreck, and his little sister two. According to
 
 == perso.sol.4
 He found his sister without telling her anything: she remembers nothing and has just got her adoptive father back. He chose to stay with Kael and Mira.
+
+== perso.sol.5
+Their mother's lullaby gave Naïa back the memory of her brother. She gave him the Staff of Tides, fished out of the wreck.
 
 == perso.orvan.1
 The Elder of Lanterval, keeper of the lantern. He gave Kael a shard of its crystal.
@@ -70,6 +85,15 @@ When she heard about the closed-eye badge, she asked Kael not to show it to anyo
 == perso.hilde.3
 She comes from Cendre, the forge town, and fully intends to go there with the team.
 
+== perso.hilde.4
+She was born in Forgecendre, where people thought she had been dead for eighteen years. She relit her father's old forge there.
+
+== perso.hilde.5
+She forged the Order's very first cage, thinking it would protect the crystals. When she understood, she fled with Mira, who was three months old.
+
+== perso.hilde.6
+She knew Aldric, Kael's father. Her cart now takes the team from village to village.
+
 == perso.silhouette.1
 A hooded figure who was prowling the forest when the wolves surrounded Mira.
 
@@ -82,8 +106,17 @@ A young man of the Order of the Eyelid, fast and arrogant. At the top of the pas
 == perso.varen.2
 The Herald of Salvent knows him: Varen told him about the team.
 
+== perso.varen.3
+He is hunting Nev, who left the Order. He is sure she will come back of her own accord.
+
+== perso.varen.4
+He is Nev's older brother. He took her into the Order when she was ten, promising she would never hurt again. Kael and Nev beat him in a duel at the crater's edge.
+
 == perso.sansnom.1
 A colossus in a steel mask marked with a closed eye, who obeys Varen. At the pass, he struck the team down with a single blow of his mace.
+
+== perso.sansnom.2
+Under the broken mask: Aldric, Kael's father, who left into the mist years ago. The Order took his memory and his name. He carried the ember crystal off to the north.
 
 == perso.maelle.1
 The old innkeeper of Salvent, too old, she says, for the mist to find room to settle. She recognised Sol, the child of the shipwreck.
@@ -100,11 +133,23 @@ She hums a lullaby nobody else knows: the one their mother sang every evening.
 == perso.naia.3
 Her music box, found in the wreck, is broken. It will take a blacksmith's fingers to fix it.
 
+== perso.naia.4
+Hearing the lullaby from the repaired box, she remembered Sol, her older brother.
+
 == perso.erwan.1
 The keeper of the Salvent lighthouse, held prisoner by the Order. He took Naïa in and raised her as his daughter.
 
 == perso.nev.1
 A novice of the Order, on guard at the foot of the lighthouse. Troubled by what the Order is doing to Salvent, she let the team through without raising the alarm.
+
+== perso.nev.2
+She fled the Order and joined the team in the Burnt Fields. 16 years old, Wind element. She never wants to go back.
+
+== perso.nev.3
+Varen is her brother. She faced him in a duel at the crater's edge, side by side with Kael.
+
+== perso.nev.4
+She was born in Aerie, in the High Winds, where the only crystal the Order hasn't taken yet sleeps: the azure crystal.
 
 == perso.heraut.1
 The Order officer who held the Salvent lighthouse. He sincerely believes he is offering peace by wiping away sorrow. Defeated, he fled in a boat.
@@ -120,8 +165,26 @@ A hunter who keeps a logbook of the beasts nobody dares to hunt, one per region.
 == perso.roxane.2
 She learned to hunt from an old master in the High Winds. She says he never taught her to be afraid, only to be careful.
 
+== perso.roxane.3
+Three beasts from her logbook have fallen: the Rock Boar, the Thunder Eel and the Salamander Queen. Only the Winged Roc of the High Winds remains.
+
 == perso.fennel.1
 A peddler who never sells anything: he trades. He says every village has what another one wants.
 
 == perso.fennel.2
 Fennel knows everyone, from Lanterval to the coast. Nobody knows where he comes from, and his answer changes every time someone asks.
+
+== perso.fennel.3
+For Dorn's star ingot, he gave up his roc feather, his finest treasure. He has arranged to meet the team in Aerie.
+
+== perso.dorn.1
+A blind old miner from Forgecendre. He can't see any more, but he hears everything: the hammers, the rock, and hearts beating too fast.
+
+== perso.dorn.2
+Thanks to the singing stone, he found the mountain's voice again, and taught the team the art of the geomancer.
+
+== perso.tobi.1
+A Forgecendre miner's son. His father didn't come back up from the mines with the others.
+
+== perso.tobi.2
+His father, Ulric, had fled the mines through an old shaft and was hiding in the Burnt Fields. They are together again.

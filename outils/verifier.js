@@ -11,11 +11,11 @@ const lire = f => fs.readFileSync(path.join(RACINE, f), 'utf8');
 const ctx = { console };
 vm.createContext(ctx);
 vm.runInContext('const ACTES = [];', ctx);
-for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'acte2', 'annexes', 'personnages']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
+for (const f of ['heros', 'objets', 'monstres', 'monde', 'images', 'acte1', 'acte2', 'acte3', 'annexes', 'personnages']) vm.runInContext(lire(`donnees/${f}.js`), ctx, { filename: f });
 const D = vm.runInContext('({ ACTES, ANNEXES, LIEUX, LIENS, IMAGES, MONSTRES, OBJETS, EQUIPEMENT, IMPORTANTS, HEROS, CLASSES, TECHNIQUES, PERSONNAGES })', ctx);
 
 // textes
-const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'annexes', 'personnages'];
+const FICHIERS = ['interface', 'noms', 'lieux', 'acte1', 'acte2', 'acte3', 'annexes', 'personnages'];
 const TXT = {};
 for (const lg of ['fr', 'en']) {
   TXT[lg] = {};
@@ -45,7 +45,7 @@ function gain(spec, ou) {
     if (id !== 'or' && !D.OBJETS[id] && !D.EQUIPEMENT[id] && !D.IMPORTANTS[id]) erreur(`gain inconnu « ${id} » (${ou})`);
   }
 }
-function effet(spec, ou) { if (!/^(soin|pp)( \d+)?$|^degats (tous|kael|mira|sol) \d+$/.test(spec)) erreur(`effet illisible « ${spec} » (${ou})`); }
+function effet(spec, ou) { if (!/^(soin|pp)( \d+)?$|^degats (tous|kael|mira|sol|nev) \d+$/.test(spec)) erreur(`effet illisible « ${spec} » (${ou})`); }
 function condition(c, ou) {
   if (c === undefined || c === true || c === false) return;
   for (const p of String(c).split(/\s+et\s+/)) {
@@ -87,6 +87,7 @@ function evenements(evts, ou) {
       for (const k in b) { if (!ids.includes(k)) erreur(`choix « ${k} » absent du texte ${a} (${o})`); evenements(b[k], `${o} → ${k}`); }
       for (const k of ids) if (!b[k]) erreur(`réponse « ${k} » sans suite (${o})`);
     }
+    else if (type === 'drapeau') { if (!/^[\w-]+$/.test(a)) erreur(`drapeau illisible « ${a} » (${o})`); }
     else if (!['decor', 'soin', 'stop', 'fin_version'].includes(type)) erreur(`événement inconnu « ${type} » (${ou})`);
   }
 }
@@ -176,7 +177,7 @@ for (const f of fs.readdirSync(path.join(RACINE, 'moteur'))) {
 const PARLE = { fr: {}, en: {} };
 for (const lg of ['fr', 'en']) for (const k in TXT[lg]) if (k.startsWith('parle.')) PARLE[lg][TXT[lg][k].l.join(' ')] = 1;
 for (const lg of ['fr', 'en']) for (const [k, { f, l }] of Object.entries(TXT[lg])) {
-  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
+  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
   const bulles = l.filter(x => !x.startsWith('##') && !x.startsWith('>'));
   if (bulles.length > 5) averti(`${f} « ${k} » : ${bulles.length} bulles (5 au plus)`);
   for (const b of bulles) {
