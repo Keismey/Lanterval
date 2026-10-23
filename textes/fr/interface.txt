@@ -1068,6 +1068,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.3.5
+Les mises à jour arrivent plus vite : une nouvelle version s'installe dès la première actualisation, et l'écran titre se recharge tout seul.
 ## Version 0.3.4
 Sur ordinateur, l'image est désormais en haut et les dialogues et boutons en dessous, comme sur téléphone : les panoramas et la carte s'affichent en entier.
 ## Version 0.3.3
