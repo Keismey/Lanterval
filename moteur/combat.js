@@ -147,13 +147,33 @@ async function battle(ids, o) {
   S.gold += gold;
   for (const e of B.enemies) S.codex[e.id].kills++;
   for (const h of B.team) if (h.hp <= 0) h.hp = 1;
-  const ups = gainXP(xp), wasAuto = S.auto && B.autoOk;
+  const avant = team().map(h => ({ h, lvl: h.lvl, xp: h.xp })), wasAuto = S.auto && B.autoOk;
+  gainXP(xp);
   logR(o.boss ? 'journal.log.boss' : o.quest ? 'journal.log.combat.quete' : 'journal.log.combat', { noms: nomsEnnemis(), tours: B.turns, duree: fmt(S.st.time - t0), auto: wasAuto ? ' ' + t('journal.auto') : '' });
-  bCards(); bMsg(tx('combat.victoire', { xp, or: gold }) + (ups.length ? '<br>' + ups.join('<br>') : ''));
-  if (wasAuto && !ups.length) await Promise.race([menu([{ k: 1, ic: 'run', label: esc(t('continuer')), sub: esc(t('combat.suite.auto')), cls: 'wide' }]), wait(1300)]);
-  else await menu([{ k: 1, ic: 'run', label: esc(t('continuer')), cls: 'wide main' }]);
+  await ecranVictoire(xp, gold, avant);
   finCombat();
   return 'win';
+}
+// fin d'un combat gagné : l'XP et l'or gagnés, la barre d'XP de chaque héros, les niveaux ; un appui pour continuer
+async function ecranVictoire(xp, gold, avant) {
+  const pc = (x, lvl) => Math.min(100, x / need(lvl) * 100).toFixed(1);
+  $('#panel').innerHTML = `<div class="vict"><div class="ptitle">${esc(t('combat.victoire.titre'))}</div>
+    <div class="vgain"><span class="pill">${esc(t('combat.victoire.xp', { xp }))}</span><span class="pill or">${esc(t('combat.victoire.or', { or: gold }))}</span></div>
+    <div class="vrows">${avant.map(({ h, lvl, xp: x0 }) => `<div class="vrow" data-h="${h.id}">${av(h.id, 'sm')}<div class="vn"><b>${esc(nomH(h))}</b><span class="vlv">${esc(t('combat.victoire.niv', { n: lvl }))}</span></div>
+      <div class="vx"><div class="xtrack"><i style="width:${pc(x0, lvl)}%"></i></div><span class="vup"></span></div></div>`).join('')}</div></div>
+    <div class="cmds" id="bcmd"></div>`;
+  hud();
+  const choix = menu([{ k: 1, ic: 'run', label: esc(t('continuer')), cls: 'wide main' }]);
+  // les barres se remplissent ; un niveau gagné remplit la barre, puis elle repart du nouveau niveau
+  await wait(250);
+  for (const { h, lvl } of avant) {
+    const row = document.querySelector(`.vrow[data-h="${h.id}"]`); if (!row) continue;
+    const bar = row.querySelector('.xtrack>i');
+    if (h.lvl === lvl) { bar.style.width = pc(h.xp, h.lvl) + '%'; continue; }
+    bar.style.width = '100%';
+    setTimeout(() => { row.classList.add('up'); row.querySelector('.vlv').textContent = t('combat.victoire.niv', { n: h.lvl }); row.querySelector('.vup').textContent = t('combat.victoire.up', { n: h.lvl }); bar.style.transition = 'none'; bar.style.width = '0%'; void bar.offsetWidth; bar.style.transition = ''; bar.style.width = pc(h.xp, h.lvl) + '%'; }, 650);
+  }
+  await choix;
 }
 function mkEnnemi(id, nom) {
   const d = MONSTRES[id], fp = forcePlus(), pv = Math.round(d.pv * fp);

@@ -240,6 +240,27 @@ Zone maîtrisée : 0 à 2 combats.
 == trav.monstres
 Des monstres te barrent la route !
 
+== trav.combattre
+Combattre
+
+== trav.etape
+Étape {n}/{total}
+
+== trav.marche
+en route…
+
+== trav.log.calme
+rien à signaler
+
+== trav.log.combat
+combat gagné : {noms}
+
+== trav.log.or
+*{or} po* ramassés
+
+== trav.log.rencontre
+une rencontre en chemin
+
 == trav.fin
 Traversée de {zone} terminée : {n} combats.
 
@@ -412,14 +433,23 @@ L'équipe est à terre…
 == combat.perdu
 L'équipe est à terre…
 
-== combat.victoire
-*Victoire !* +{xp} XP, +{or} po.
+== combat.victoire.titre
+Victoire !
+
+== combat.victoire.xp
++{xp} XP
+
+== combat.victoire.or
++{or} po
+
+== combat.victoire.niv
+Niv. {n}
+
+== combat.victoire.up
+Niveau {n} !
 
 == combat.niveau
 *{nom}* passe au niveau {n} !
-
-== combat.suite.auto
-Suite automatique…
 
 == combat.cmd.tech
 Techniques
@@ -1125,6 +1155,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.5.1
+Les traversées prennent leur temps : quatre étapes, chacune affichée avec ce qui s'y passe (combat, or trouvé, rien à signaler). Les monstres sont annoncés avant chaque combat, et un bilan s'affiche à l'arrivée.
+À la fin de chaque combat gagné, un écran montre l'XP et l'or gagnés, la barre d'XP de chaque héros et les niveaux gagnés ; on continue d'un appui, même en combat automatique.
 ## Version 0.5.0
 L'acte 4, « L'Œil », commence : le Pont des Nuées, Aerie, les Ruines du monastère et le Pic hurlant, sur la carte des Hauts-Vents. L'histoire va jusqu'à la nuit avant l'assaut.
 Kael peut enfin se battre avec l'épée de son père, l'Épée d'Aldric, réservée à lui.

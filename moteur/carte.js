@@ -146,20 +146,36 @@ async function traverse(id, de, vers, o) {
   while (at.size < n) at.add(ri(0, segs - 1));
   if (o.milieu) at.delete(2);
   n = at.size;
-  const dest = t(`lieu.${id}.${vers}`);
+  const dest = t(`lieu.${id}.${vers}`), fait = [];
   let trouve = 0;
-  const dessiner = f => {
-    ovc().innerHTML = lbl(nomLieu(id), t('trav.vers', { lieu: dest })) + `<div class="trav glass">${esc(t('trav.avance', { p: Math.round(f * 100) }))}<div class="xtrack"><i style="width:${f * 100}%"></i></div></div>`;
-    $('#panel').innerHTML = `<div class="ptitle">${esc(t('trav.titre'))}</div><p class="ptext">${tx('trav.texte', { zone: t('lieu.' + id + '.le'), lieu: dest })}</p><p class="note">${tx(z.m100 ? 'trav.note.maitrise' : 'trav.note')}</p>`;
+  // la barre avance d'une étape à l'autre ; le panneau garde la liste de ce qui s'est passé
+  const dessiner = (de, a, enCours) => {
+    ovc().innerHTML = lbl(nomLieu(id), t('trav.vers', { lieu: dest })) + `<div class="trav glass">${esc(t('trav.avance', { p: Math.round(a * 100) }))}<div class="xtrack"><i style="width:${de * 100}%"></i></div></div>`;
+    $('#panel').innerHTML = `<div class="ptitle">${esc(t('trav.titre'))}</div><p class="ptext">${tx('trav.texte', { zone: t('lieu.' + id + '.le'), lieu: dest })}</p>
+      <ul class="travlog">${fait.map(l => `<li>${l}</li>`).join('')}${enCours ? `<li class="now">${enCours}</li>` : ''}</ul><p class="note">${tx(z.m100 ? 'trav.note.maitrise' : 'trav.note')}</p>`;
+    const i = ovc().querySelector('.trav .xtrack>i'); void i.offsetWidth; i.style.width = a * 100 + '%';
   };
+  const etape = s => esc(t('trav.etape', { n: s + 1, total: segs }));
   setDecor(decorDuLieu(id));
   for (let s = 0; s < segs; s++) {
-    for (const f of [s / segs, (s + .5) / segs]) { dessiner(f); await wait(380); }
-    if (o.milieu && s === 2) { await o.milieu(); setDecor(decorDuLieu(id)); n++; }
-    else if (at.has(s)) { await flash(esc(t('trav.monstres'))); await battle(groupFor(id), { zone: id }); setDecor(decorDuLieu(id)); }
-    else if (Math.random() < .2) { const g = ri(4, 9); S.gold += g; trouve += g; hud(); }
+    dessiner(s / segs, (s + 1) / segs, `${etape(s)} · ${esc(t('trav.marche'))}`); await wait(1400);
+    if (o.milieu && s === 2) { await o.milieu(); setDecor(decorDuLieu(id)); n++; fait.push(`${etape(s)} · ${esc(t('trav.log.rencontre'))}`); }
+    else if (at.has(s)) {
+      const g = groupFor(id), noms = listeMonstres(g);
+      await show(`${tx('trav.monstres')}<br><b>${esc(noms)}</b>`, { title: t('trav.titre'), choices: [{ label: esc(t('trav.combattre')), ic: 'sword', k: 0 }] });
+      await battle(g, { zone: id }); setDecor(decorDuLieu(id));
+      fait.push(`${etape(s)} · ${tx('trav.log.combat', { noms })}`);
+    }
+    else if (Math.random() < .2) { const g = ri(4, 9); S.gold += g; trouve += g; hud(); fait.push(`${etape(s)} · ${tx('trav.log.or', { or: g })}`); }
+    else fait.push(`${etape(s)} · ${esc(t('trav.log.calme'))}`);
   }
-  dessiner(1); await wait(300);
+  dessiner(1, 1);
   logR('journal.log.traversee', { lieu: 'lieu.' + id + '.nom', n, duree: fmt(S.st.time - t0) });
-  S.msg = tx(n === 1 ? 'trav.fin.un' : 'trav.fin', { zone: t('lieu.' + id + '.le'), n }) + (trouve ? ' ' + tx('trav.or', { or: trouve }) : '');
+  // bilan : un appui pour arriver
+  await show(tx(n === 1 ? 'trav.fin.un' : 'trav.fin', { zone: t('lieu.' + id + '.le'), n }) + (trouve ? ' ' + tx('trav.or', { or: trouve }) : '') + `<ul class="travlog">${fait.map(l => `<li>${l}</li>`).join('')}</ul>`, { title: t('trav.titre') });
+}
+// « 2 × Loup des brumes, Chauve-souris »
+function listeMonstres(ids) {
+  const n = {}; for (const id of ids) n[id] = (n[id] || 0) + 1;
+  return Object.entries(n).map(([id, k]) => (k > 1 ? k + ' × ' : '') + t('monstre.' + id)).join(', ');
 }
