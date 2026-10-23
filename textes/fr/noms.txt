@@ -868,6 +868,12 @@ Ses sorts prennent l'élément de la région : Terre dans la vallée, Eau sur la
 == classe.geomancien.verrou
 Classe secrète : quelqu'un à Forgecendre sait écouter la roche
 
+== classe.forgeronne
+Forgeronne
+
+== classe.forgeronne.desc
+La classe de Hilde : son marteau ronge la garde des ennemis, sa trempe protège l'équipe.
+
 == tech.furie
 Furie
 
@@ -915,6 +921,18 @@ Un sort puissant de l'élément de la région sur un ennemi.
 
 == tech.eboulement.desc
 Un sort de l'élément de la région sur tous les ennemis.
+
+== tech.marteau
+Coup de marteau
+
+== tech.marteau.desc
+Un gros coup de Lame qui enlève un point de garde, même sans faiblesse.
+
+== tech.trempe
+Trempe
+
+== tech.trempe.desc
+Dégâts subis par l'équipe ÷2 jusqu'au prochain tour de Hilde.
 
 == objet.potion
 Potion de Cendre
@@ -982,6 +1000,18 @@ Cœur de lave
 == equip.lampe
 Lampe de mineur
 
+== equip.coeurforge
+Cœur de forge
+
+== equip.marteau
+Marteau de Hilde
+
+== equip.tablier
+Tablier de forge
+
+== equip.bouclier
+Bouclier d'Aldric
+
 == important.epee-aldric
 Épée d'Aldric
 
@@ -1034,13 +1064,49 @@ Un éclat rouge de la veine chantante des Mines rouges. Il vibre avec la pierre.
 Casque cabossé
 
 == important.casque-mineur.desc
-Un casque de mineur trouvé dans la galerie profonde. Un nom est gravé dedans : Bram, le père de Tobi.
+Un casque de mineur trouvé dans la galerie profonde. Un nom est gravé dedans : Ulric, le père de Tobi.
 
 == important.oeuf
 Œuf chaud
 
 == important.oeuf.desc
 Un gros œuf écailleux, trouvé au Volcan endormi. Il est tiède et, parfois, il bouge.
+
+== important.moule
+Premier moule
+
+== important.moule.desc
+Le moule de bronze de la toute première cage de l'Ordre, forgé par Hilde. Il est bien plus lourd qu'il n'en a l'air.
+
+== important.metal-ardent
+Métal ardent
+
+== important.metal-ardent.desc
+Un creuset de métal rouge, nourri par la braise du cristal. Il ne refroidit jamais tout à fait.
+
+== important.page-aldric
+Page d'Aldric
+
+== important.page-aldric.desc
+Une page roulée dans la garde de l'épée : « Dites à Kael que je ne suis pas parti par lâcheté. Brann sait le reste. »
+
+== important.pages-aldric2
+Deux pages d'Aldric
+
+== important.pages-aldric2.desc
+La page de l'épée et celle que Brann gardait dans son coffre. Aldric a caché la suivante au fond de la Grotte de Cristal.
+
+== important.pages-aldric3
+Trois pages d'Aldric
+
+== important.pages-aldric3.desc
+Il en manque une, sous la pierre plate du sommet du Col des Pierres.
+
+== important.carnet-aldric
+Carnet d'Aldric
+
+== important.carnet-aldric.desc
+Les quatre pages du père de Kael, enfin réunies. Kael les lira à son père.
 
 == monstre.chien
 Chien de cendre
@@ -1203,3 +1269,27 @@ L'Élémentaire s'enfonce dans le sol… *il va faire trembler toute la galerie 
 
 == monstre.tellure.special
 L'Élémentaire fait trembler la galerie !
+
+== monstre.gardien
+Gardien de cage
+
+== monstre.gardien.court
+Gardien
+
+== monstre.gardien.desc
+Une statue de fer forgée par Hilde pour garder le premier moule. Elle ne reconnaît plus personne.
+
+== monstre.gardien.charge
+Le Gardien lève ses deux bras de fer… *il va frapper toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.gardien.special
+Le Gardien abat ses bras sur toute l'équipe !
+
+== monstre.brume
+Ombre de brume
+
+== monstre.brume.court
+Ombre
+
+== monstre.brume.desc
+Une ombre de la Grotte de Cristal, grandie dans la brume. Elle boit la force de ceux qu'elle touche.

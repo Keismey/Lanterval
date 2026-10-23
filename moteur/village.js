@@ -4,15 +4,17 @@ function nomLieu(id) { return t('lieu.' + id + '.nom'); }
 function varianteLieu(id, quoi) { const e = etatLieu(id); return e && existe(`lieu.${id}.${quoi}.${e}`) ? `lieu.${id}.${quoi}.${e}` : `lieu.${id}.${quoi}`; }
 
 // Que propose ce personnage en ce moment ?
+// Un personnage qui a deux quêtes à offrir (Hilde) propose l'autre quand on vient d'en refuser une.
+const offresRefusees = new Set();
 function quetesDuPnj(pnj) {
   const e = etapeCourante();
   if (e && e.lieu === pnj) return { type: 'etape', etape: e };
-  for (const id in ANNEXES) {
-    const a = annexeDispo(id);
-    if (a && a.lieu === pnj) return { type: 'annexe', id };
-    if (ANNEXES[id].donneur === pnj && annexeEtat(id) === 0 && annexeOuverte(id)) return { type: 'offre', id };
-  }
-  return null;
+  for (const id in ANNEXES) { const a = annexeDispo(id); if (a && a.lieu === pnj) return { type: 'annexe', id }; }
+  const offres = Object.keys(ANNEXES).filter(id => ANNEXES[id].donneur === pnj && annexeEtat(id) === 0 && annexeOuverte(id));
+  if (!offres.length) return null;
+  let id = offres.find(x => !offresRefusees.has(x));
+  if (!id) { offres.forEach(x => offresRefusees.delete(x)); id = offres[0]; }
+  return { type: 'offre', id };
 }
 
 // sous-titre d'un donneur dont la quête attend ailleurs : <quête>.e<n>.sous s'il existe (ce que cherche Fennel)
@@ -51,7 +53,7 @@ async function parler(pnj) {
   if (q && q.type === 'etape') return jouerEtape(q.etape);
   if (q && q.type === 'annexe') return jouerAnnexe(q.id);
   // une offre refusée laisse la place au métier du personnage (boutique, auberge)
-  if (q && q.type === 'offre') { await jouerOffre(q.id); if (annexeEtat(q.id) || !pnj.role) return; }
+  if (q && q.type === 'offre') { await jouerOffre(q.id); if (annexeEtat(q.id)) return; offresRefusees.add(q.id); if (!pnj.role) return; }
   if (pnj.role === 'auberge') return auberge(pnj);
   if (pnj.role === 'boutique') return boutique(pnj);
   for (const id in ANNEXES) if (ANNEXES[id].donneur === pnj.id) {
@@ -83,7 +85,7 @@ function nomEq(id) { return t('equip.' + id); }
 function stTxt(st, el) { return (el ? t('element.' + el) + ' · ' : '') + Object.entries(st).map(([k, v]) => `${t('stat.' + k)} ${v > 0 ? '+' : ''}${v}`).join(', '); }
 function wearers(id) {
   const e = EQUIPEMENT[id];
-  if (e.place === 'arme') return Object.keys(CLASSES).filter(j => CLASSES[j].armes.includes(e.type)).map(j => CLASSES[j].cachee && !S.jobs.includes(j) ? '???' : t('classe.' + j)).join(', ');
+  if (e.place === 'arme') return classesJouables().filter(j => CLASSES[j].armes.includes(e.type)).map(j => CLASSES[j].cachee && !S.jobs.includes(j) ? '???' : t('classe.' + j)).join(', ');
   return e.classes ? e.classes.map(j => t('classe.' + j)).join(', ') : t('equipe.toutes');
 }
 function icEq(id) { const p = EQUIPEMENT[id].place; return p === 'arme' ? 'sword' : p === 'armure' ? 'shield' : 'spark'; }

@@ -663,6 +663,181 @@ Dorn: “Take my old staff. It has sounded more rock than every pickaxe in Forge
 == pierre.apres
 Dorn: “Every morning I go down to listen to the vein. It sings better since the Order's hammers fell silent.”
 
+# ---------- 9. The first mould (Hilde; Mira and Hilde) ----------
+
+== moule.titre
+The first mould
+
+== moule.offre
+Hilde: “The Forger has fallen, but one thing is still down in the mines: the mould of the very first cage. The one I made with my own hands.”
+Hilde: “Before I fled, I locked it behind a door only I can open. As long as it exists, the Order can cast more cages.”
+Hilde: “I want to destroy it with you, Mira. And this time, I fight at your side.”
+> oui : Accept | Side quest
+> non : Later
+
+== moule.message
+Side quest: find the *sealed room* deep in the *Red Mines*. Hilde comes with you.
+
+== moule.e1.titre
+Open the sealed room in the Red Mines
+
+== moule.e1.bouton
+Sealed room
+
+== moule.e1.porte
+## The first mould
+At the end of the great gallery stands a door of black iron, with no handle and no lock. Hammer blows have dented it, but it held.
+Hilde: “The Order knocked on this door for eighteen years. It only listens to me.”
+Hilde presses three times on the same spot, like knocking at a friend's house. The door opens with a long sigh.
+
+== moule.e1.salle
+## The sealed room
+In the middle of the room, on an anvil, lies a bronze mould shaped like a cage. Two tall iron statues stand around it.
+Mira: “Mum… They're moving.”
+Hilde: “These are my first guardians. I forged them to protect the mould. They recognise no one any more, not even me.”
+
+== moule.e1.conseil
+Hilde fights with you: you choose her actions like the others'. The Cage guardians are weak to *Water* and *Wind*, and resist Fire and Earth. Break their guard to cancel the big blows they charge.
+
+== moule.e1.fin
+## The sealed room
+The guardians collapse in a crash of scrap iron. Hilde lifts the mould with both hands: it is much heavier than it looks.
+Hilde: “This bronze won't melt in an ordinary forge. It needs a fire older than us.”
+Mira: “The volcano. We throw it into the crater.”
+
+== moule.e1.message
+Side quest: throw the *first mould* into the crater of the *Sleeping Volcano*. Hilde comes with you.
+
+== moule.e2.titre
+Throw the mould into the Sleeping Volcano's crater
+
+== moule.e2.bouton
+Throw the mould
+
+== moule.e2.bord
+## The first mould
+At the crater's edge, lava still bubbles where the ember crystal lay. Hilde hands the mould to her daughter.
+Mira: “Don't you want to do it yourself?”
+Hilde: “You carried it longer than I did, without knowing. It's yours to get rid of.”
+Mira throws the mould with all her strength. The lava swallows it, then rumbles: ember spirits burst from the crater. [Fight]
+
+== moule.e2.fin
+## The crater
+The mould is gone. In its place, a stream of red metal rises to the surface, brighter than iron.
+Hilde: “Metal fed by the ember crystal… I had only ever seen it in my father's books.”
+Hilde gathers it in a crucible. Mira holds the tongs without being asked.
+
+== moule.e2.message
+Side quest: bring the *burning metal* back to *Hilde*'s forge in Forgecendre.
+
+== moule.e3.titre
+Forge with Hilde in Forgecendre
+
+== moule.e3.forge
+## The forge
+All night, the forge sings. Hilde holds the tongs, Mira strikes. They barely talk, but they laugh twice.
+Hilde: “Gentler… There. You have your grandfather's hand.”
+Mira: “You never told me about him.”
+Hilde: “I was afraid you'd ask why we left. Now you know.”
+
+== moule.e3.arme
+## The forge
+By morning, a staff of red metal cools on the anvil. At its tip, a small flame glows without burning anything.
+Mira: “Nobody will ever lock this one in a cage.”
+Hilde hugs her daughter. For once, Mira doesn't pull away.
+
+== moule.e3.fin
+## Side quest complete
+Hilde: “The first mould is melted. The worst thing I ever forged has become the best.”
+? You receive the *Forgeheart*, Mira's most powerful staff (Magic +29, PP +10).
+
+# ---------- 10. Aldric's notebook (Hilde; Kael and Aldric) ----------
+
+== aldric.titre
+Aldric's notebook
+
+== aldric.offre
+Hilde: “Kael, wait. When I reforged the sword, I found this rolled up in the hilt. A page torn from a notebook.”
+Hilde: “It's Aldric's handwriting. I think you should be the one to read it.”
+> oui : Read the page | Side quest
+> non : Later
+
+== aldric.page
+## The page in the sword
+“If anyone finds these words, tell Kael I didn't leave out of cowardice. Brann knows the rest.”
+Kael reads the page three times. Then he folds it carefully and keeps it against the sword.
+Nev: “Brann? The guard from your village? Then we know where to go.”
+
+== aldric.message
+Side quest: Aldric's page says that *Brann*, in Lanterval, knows the rest.
+
+== aldric.e1.titre
+Show Aldric's page to Brann
+
+== aldric.e1.coffre
+## Aldric's notebook
+Brann reads the page without a word. Then he opens the old chest that serves as a bench outside the guard post.
+Brann: “He gave me this the night before he left. I was to give it to you when you were ready. I think you are.”
+
+== aldric.e1.page
+## The second page
+“The Order is prowling around the Stone Pass. They want the amber crystal, and after it, our lantern.”
+“I've hidden what I know where the light sleeps, deep in the Crystal Cave. If I don't come back, Brann, watch over the boy.”
+Brann: “I watched over you as best I could. But you're the one watching over us now.”
+
+== aldric.e1.message
+Side quest: Aldric hid a page deep in the *Crystal Cave*.
+
+== aldric.e2.titre
+Look for Aldric's page deep in the Crystal Cave
+
+== aldric.e2.bouton
+The page in the crystal
+
+== aldric.e2.cristal
+## Aldric's notebook
+At the far end of the cave, a dark crystal holds a scrap of paper, caught in the stone like a leaf in ice.
+Sol: “The crystal grew around it. He must have slipped it into a crack ten years ago.”
+But the mist has thickened. Three shadows peel away from the walls, bigger than the ones from before. [Fight]
+
+== aldric.e2.page
+## The third page
+Kael lays his hand on the crystal. It splits without a sound and gives up the page.
+“The Order has a name for those who have forgotten everything: the nameless. If they catch me, I'll end up behind a mask.”
+“Kael, if you ever cross my path, don't let me forget your voice.”
+“I'll wait for them at the top of the pass. If I don't come back down, look under the flat stone.”
+
+== aldric.e2.message
+Side quest: the last page is under the flat stone at the top of the *Stone Pass*.
+
+== aldric.e3.titre
+Find the last page at the top of the Stone Pass
+
+== aldric.e3.bouton
+Aldric's stone
+
+== aldric.e3.pierre
+## Aldric's notebook
+At the top of the pass, near the empty pedestal, lies a large flat stone. Two Order sentinels and an automaton are digging all around it.
+Nev: “They're looking for the same thing we are. Ysold wants to know what Aldric wrote.”
+Kael: “This notebook belongs to my father. Nobody else is reading it.”
+
+== aldric.e3.page
+## The last page
+Under the flat stone, an iron box. Inside, the last page and a round shield bearing the lantern of the Lanterval guard.
+“I didn't leave. I'm following them. As long as I walk behind them, they won't reach Lanterval.”
+
+== aldric.e3.carnet
+## Aldric's notebook
+Kael gathers the four pages. They fit together as if they had never been apart.
+Kael: “He didn't abandon us. He was protecting us. For ten years.”
+Mira puts a hand on his shoulder. Nobody speaks for a long while.
+
+== aldric.e3.fin
+## Side quest complete
+Kael: “I'll read him these words. Even if he remembers nothing, he'll hear my voice.”
+? You receive *Aldric's shield* (accessory: Defence +8, HP +25). *Aldric's notebook* is kept with your key items.
+
 # ---------- 11. The missing miners (Tobi) ----------
 
 == mineurs.titre

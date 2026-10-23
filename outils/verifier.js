@@ -72,7 +72,7 @@ function evenements(evts, ou) {
     const o = `${ou}, ${type}`;
     if (type === 'dialogue' || type === 'message') texte(a, o);
     else if (type === 'panorama') { if (!D.IMAGES[a]) erreur(`image inconnue « ${a} » (${o})`); }
-    else if (type === 'combat') { a.split(/\s+/).forEach(id => monstre(id, o)); if (a.split(/\s+/).length > 3) erreur(`plus de 3 monstres (${o})`); if (b && b.conseil) texte(b.conseil, o); if (b && b.equipe) b.equipe.split(/\s+/).forEach(h => { if (!D.HEROS[h]) erreur(`héros inconnu « ${h} » (${o})`); }); }
+    else if (type === 'combat') { a.split(/\s+/).forEach(id => monstre(id, o)); if (a.split(/\s+/).length > 3) erreur(`plus de 3 monstres (${o})`); if (b && b.conseil) texte(b.conseil, o); if (b && b.equipe) b.equipe.split(/\s+/).forEach(h => { if (!D.HEROS[h]) erreur(`héros inconnu « ${h} » (${o})`); }); if (b && b.invitee && !(D.HEROS[b.invitee] || {}).invite) erreur(`invitée inconnue « ${b.invitee} » (${o})`); }
     else if (type === 'rejoint' || type === 'presente') { if (!D.HEROS[a]) erreur(`héros inconnu « ${a} » (${o})`); }
     else if (type === 'gagne') gain(a, o);
     else if (type === 'perd') a.split(',').forEach(x => { if (!D.IMPORTANTS[x.trim()]) erreur(`objet important inconnu « ${x} » (${o})`); });
@@ -146,7 +146,14 @@ for (const id in D.LIEUX) {
 for (const [a, b] of D.LIENS) { lieu(a, 'LIENS'); lieu(b, 'LIENS'); }
 
 // noms et images
-for (const id in D.HEROS) { texte('parle.' + id, id); texte(`heros.${id}.age`, id); texte(`heros.${id}.bio`, id); if (!D.IMAGES['heros.' + id]) erreur(`image manquante heros.${id}`); }
+for (const id in D.HEROS) {
+  const h = D.HEROS[id]; texte('parle.' + id, id);
+  for (const k of ['arme', 'armure']) if (h[k] && !D.EQUIPEMENT[h[k]]) erreur(`équipement inconnu « ${h[k]} » (${id})`);
+  if (!D.CLASSES[h.classe]) erreur(`classe inconnue « ${h.classe} » (${id})`);
+  // une invitée (Hilde) n'a pas de fiche de héros : son visage est celui de pnj.<id>
+  if (h.invite) { if (!D.IMAGES['pnj.' + id]) erreur(`image manquante pnj.${id}`); continue; }
+  texte(`heros.${id}.age`, id); texte(`heros.${id}.bio`, id); if (!D.IMAGES['heros.' + id]) erreur(`image manquante heros.${id}`);
+}
 for (const id in D.CLASSES) { texte('classe.' + id, 'classes'); texte(`classe.${id}.desc`, 'classes'); D.CLASSES[id].tech.forEach(t => { if (!D.TECHNIQUES[t]) erreur(`technique inconnue « ${t} »`); }); }
 for (const id in D.TECHNIQUES) { texte('tech.' + id, 'techniques'); texte(`tech.${id}.desc`, 'techniques'); }
 for (const id in D.OBJETS) { texte('objet.' + id, 'objets'); texte(`objet.${id}.desc`, 'objets'); }
@@ -177,7 +184,7 @@ for (const f of fs.readdirSync(path.join(RACINE, 'moteur'))) {
 const PARLE = { fr: {}, en: {} };
 for (const lg of ['fr', 'en']) for (const k in TXT[lg]) if (k.startsWith('parle.')) PARLE[lg][TXT[lg][k].l.join(' ')] = 1;
 for (const lg of ['fr', 'en']) for (const [k, { f, l }] of Object.entries(TXT[lg])) {
-  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
+  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
   const bulles = l.filter(x => !x.startsWith('##') && !x.startsWith('>'));
   if (bulles.length > 5) averti(`${f} « ${k} » : ${bulles.length} bulles (5 au plus)`);
   for (const b of bulles) {

@@ -42,7 +42,7 @@ const EVENEMENTS = {
     if (ctx.silencieux) return;
     o = o || {};
     if (o.conseil) await show(encadreTuto(tx(o.conseil)), { title: t('combat.conseil'), choices: [{ label: esc(t('combattre')), ic: 'sword', cls: 'main' }] });
-    await battle(ids.split(/\s+/), { zone: lieuActuel(), canFlee: false, quest: true, boss: !!o.boss, perdu: !!o.perdu, equipe: o.equipe ? o.equipe.split(/\s+/) : null });
+    await battle(ids.split(/\s+/), { zone: lieuActuel(), canFlee: false, quest: true, boss: !!o.boss, perdu: !!o.perdu, equipe: o.equipe ? o.equipe.split(/\s+/) : null, invitee: o.invitee || null });
   },
   async gagne([spec]) { gagner(spec); hud(); },
   async perd([spec]) { perdre(spec); },

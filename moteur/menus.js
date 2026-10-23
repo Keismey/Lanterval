@@ -46,7 +46,7 @@ function openParty() {
       bind(mi, io, k => { utiliserObjet(k, h); draw(); });
     }
     if (vue === 'job') {
-      const o = Object.keys(CLASSES).map(j => {
+      const o = classesJouables().map(j => {
         const J = CLASSES[j];
         if (!S.jobs.includes(j)) return { k: j, ic: 'lock', label: esc(J.cachee ? '???' : t('classe.' + j)), sub: esc(existe('classe.' + j + '.verrou') ? t('classe.' + j + '.verrou') : t('equipe.verrouillee')), dis: true };
         const tmp = { ...h, job: j, eq: { ...h.eq } };
@@ -151,7 +151,7 @@ function openCodex(tab) {
 function classesHtml() {
   const pct = (k, v) => t('codex.pct', { stat: t('stat.' + k), v: (v > 1 ? '+' : '−') + Math.round(Math.abs(v - 1) * 100) });
   const elTxt = el => el === 'X' ? t('codex.el.X') : el === 'LX' ? t('element.L') + ' + ' + t('codex.el.X') : el === 'Z' ? t('codex.el.Z') : el ? t('element.' + el) : '';
-  return `<p class="note">${esc(t('codex.classes.aide'))}</p><div class="list">${Object.keys(CLASSES).map(j => {
+  return `<p class="note">${esc(t('codex.classes.aide'))}</p><div class="list">${classesJouables().map(j => {
     const J = CLASSES[j];
     if (!S.jobs.includes(j)) return `<div class="cls unseen"><h4>???</h4><p>${esc(t('codex.classe.inconnue'))}</p></div>`;
     const qui = team().filter(h => h.job === j).map(nomH), mods = Object.entries(J.mod).filter(([, v]) => v !== 1);

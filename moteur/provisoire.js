@@ -274,6 +274,13 @@ function spritesActe3() {
   SPR.tellure = mk(60, 60, x => { E(x, '#8a3a2a', 30, 38, 22, 18); E(x, '#a84a32', 26, 32, 14, 10); P(x, '#6a2a1e', 18, 52, 10, 7); P(x, '#6a2a1e', 34, 52, 10, 7);
     E(x, '#8a3a2a', 30, 14, 10, 9); P(x, '#ffd0a0', 25, 13, 3, 2); P(x, '#ffd0a0', 33, 13, 3, 2);
     for (const [cx, cy, h] of [[16, 26, 9], [44, 24, 11], [30, 30, 7], [22, 44, 6], [40, 42, 7]]) for (let k = 0; k < h; k++) { const ww = Math.max(1, Math.round(3 * k / h)); P(x, '#ff6a8a', cx - ww / 2, cy - h + k, ww, 1); } });
+  SPR.gardien = mk(48, 56, x => { P(x, '#2e2a2a', 13, 44, 8, 11); P(x, '#2e2a2a', 27, 44, 8, 11); P(x, '#3e3836', 10, 16, 28, 29); P(x, '#1a1616', 13, 19, 22, 23);
+    for (const bx of [15, 20, 25, 30]) P(x, '#7a6e64', bx, 19, 2, 23); P(x, '#ff8a3a', 22, 28, 4, 4); P(x, '#5a504a', 10, 16, 28, 3); P(x, '#5a504a', 10, 42, 28, 3);
+    P(x, '#3e3836', 17, 4, 14, 12); P(x, '#ffb040', 20, 9, 3, 2); P(x, '#ffb040', 26, 9, 3, 2); P(x, '#3e3836', 2, 17, 8, 18); P(x, '#3e3836', 38, 17, 8, 18);
+    P(x, '#2a2424', 0, 33, 12, 9); P(x, '#2a2424', 36, 33, 12, 9); });
+  SPR.brume = mk(36, 42, x => { for (let y = 8; y < 41; y++) { const w = 5 + Math.round((y - 8) * .38 + Math.sin(y / 3) * 1.5); P(x, y % 4 === 0 ? '#4a5a72' : '#5e6e88', 18 - w, y, 2 * w, 1); }
+    D(x, '#5e6e88', 18, 10, 7); D(x, '#1a2230', 18, 11, 4); P(x, '#d8f0ff', 16, 11, 1, 1); P(x, '#d8f0ff', 20, 11, 1, 1);
+    for (let k = 0; k < 12; k++) { P(x, '#4a5a72', 6 - Math.round(k / 4), 16 + k, 2, 1); P(x, '#4a5a72', 29 + Math.round(k / 4), 16 + k, 2, 1); } });
   SPR.f_goran = face({ skin: '#d8a078', beard: '#1f1a1a', cl: '#7a5233', cl2: '#3a2a1a' });
   SPR.f_agathe = face({ skin: '#ecc8b0', hair: '#a8a8b0', cl: '#5a3a6a', cl2: '#8a6aa0', scarf: '#c8a040' });
   SPR.f_dorn = face({ skin: '#c89a7a', helm: '#c8a040', beard: '#9a9aa0', cl: '#5a4a3a' });
