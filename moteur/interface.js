@@ -15,6 +15,7 @@ function hud() {
 }
 
 // Affiche un texte dans le panneau et attend un choix. Renvoie la clé du bouton choisi.
+// o.instant : tout le texte d'un coup, sans l'écrire lettre par lettre (bilans)
 function show(text, o = {}) {
   return new Promise(res => {
     const p = $('#panel');
@@ -25,7 +26,7 @@ function show(text, o = {}) {
     const choisir = k => { if (fini) return; fini = true; document.removeEventListener('click', partout); res(k); };
     bind(p, ch, choisir);
     // onglets (boutiques) : renvoie 'tab:<clé>'
-    p.querySelectorAll('.ptabs .tab').forEach(b => b.onclick = () => choisir('tab:' + b.dataset.t)); p.scrollTop = 0; hud(); typeIn(p);
+    p.querySelectorAll('.ptabs .tab').forEach(b => b.onclick = () => choisir('tab:' + b.dataset.t)); p.scrollTop = 0; hud(); if (!o.instant) typeIn(p);
     // un seul bouton (« Continuer », « Combattre »…) : un appui n'importe où dans la scène ou le texte suffit
     const t0 = performance.now();
     const partout = e => {

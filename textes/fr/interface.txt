@@ -1156,7 +1156,7 @@ Sauter à une étape, donner de l'or…
 
 == notes.version
 ## Version 0.5.1
-Les traversées prennent leur temps : quatre étapes, chacune affichée avec ce qui s'y passe (combat, or trouvé, rien à signaler). Les monstres sont annoncés avant chaque combat, et un bilan s'affiche à l'arrivée.
+Les traversées prennent leur temps : quatre étapes, chacune affichée avec ce qui s'y passe (combat, or trouvé, rien à signaler). Les monstres sont annoncés avant chaque combat, et un bilan s'affiche d'un coup à l'arrivée.
 À la fin de chaque combat gagné, un écran montre l'XP et l'or gagnés, la barre d'XP de chaque héros et les niveaux gagnés ; on continue d'un appui, même en combat automatique.
 ## Version 0.5.0
 L'acte 4, « L'Œil », commence : le Pont des Nuées, Aerie, les Ruines du monastère et le Pic hurlant, sur la carte des Hauts-Vents. L'histoire va jusqu'à la nuit avant l'assaut.
