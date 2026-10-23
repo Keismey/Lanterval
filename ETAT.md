@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.3.5 (2026-10-23)
+
+- Mise à jour du jeu sur le site public : le service worker télécharge les fichiers sans le cache du navigateur (`cache: 'reload'`, GitHub Pages les garde 10 minutes), et la page se recharge toute seule à l'écran titre quand une nouvelle version s'installe.
+
 ## Version 0.3.4 (2026-10-23)
 
 - Demande de Keismey : sur grand écran (paysage d'au moins 560 px de haut), même mise en page que sur téléphone, image en haut au format des décors (16:9, jusqu'à 60 % de la hauteur) et panneau de dialogues et boutons dessous, largeur bornée (720 à 1100 px). Seul le téléphone couché garde la scène à gauche et le panneau à droite (css/jeu.css).

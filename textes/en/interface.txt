@@ -962,6 +962,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.3.5
+Updates arrive faster: a new version installs on the first refresh, and the title screen reloads by itself.
 ## Version 0.3.4
 On computers, the picture now sits on top with dialogue and buttons below, as on phones: panoramas and the map are shown in full.
 ## Version 0.3.3
