@@ -11,7 +11,7 @@
   --line:rgba(255,255,255,.11); --line2:rgba(255,255,255,.24); --glass:rgba(9,11,26,.62);
   --text:#eef0fa; --muted:#9ca3c7; --gold:#e9b949; --gold2:#ffd77a; --ink-gold:#2a1b00; --side:#6fb6ff; --crystal:#7fe3f0;
   --hp:#5fd38a; --pp:#6fa8ff; --danger:#ff6b6b;
-  --el-L:#cfd5e0; --el-T:#d6a457; --el-F:#ff7d4a; --el-E:#55b8ff;
+  --el-L:#cfd5e0; --el-T:#d6a457; --el-F:#ff7d4a; --el-E:#55b8ff; --el-V:#8fe0a8;
   --f-title:"Cinzel",Georgia,serif; --f-ui:"Figtree",system-ui,sans-serif;
   color-scheme:dark;
 }
@@ -134,7 +134,7 @@ button{font:inherit;color:inherit}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 6px}
 .pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--surface3);border:1px solid var(--line)}
 .elc{display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;font:800 10px var(--f-ui);color:#10132a;background:#6b6f88;flex:none}
-.elc.L{background:var(--el-L)}.elc.T{background:var(--el-T)}.elc.F{background:var(--el-F)}.elc.E{background:var(--el-E)}
+.elc.L{background:var(--el-L)}.elc.T{background:var(--el-T)}.elc.F{background:var(--el-F)}.elc.E{background:var(--el-E)}.elc.V{background:var(--el-V)}
 .elc.unk{background:transparent;color:#cfd5ff;border:1.5px dashed #8d96cc}
 .elc.res{opacity:.55;position:relative}
 .elc.res::after{content:"";position:absolute;left:-2px;right:-2px;top:50%;height:2px;background:#fff;transform:rotate(-35deg)}
@@ -192,6 +192,11 @@ button{font:inherit;color:inherit}
 .fnum.brk{color:var(--danger);font-size:14px}
 @keyframes fup{0%{opacity:0;margin-top:6px}15%{opacity:1}100%{opacity:0;margin-top:-28px}}
 .pcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.pcards.n4{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+.pcards.n4 .pcard{padding:6px 5px}
+.pcards.n4 .pc-top{gap:4px}
+.pcards.n4 .av.sm{width:24px;height:24px;border-radius:7px}
+.pcards.n4 .pc-n span{font-size:10px;letter-spacing:-.2px}
 .pcard{position:relative;background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:7px;display:flex;flex-direction:column;gap:4px;min-width:0}
 .pcard.act{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold),0 0 14px rgba(233,185,73,.25)}
 .pcard.ko{opacity:.45}
@@ -328,5 +333,6 @@ img[src^="img/"]{image-rendering:auto!important}
 .btn.el-T .ic,.ctech.el-T .ic{color:var(--el-T);background:color-mix(in srgb,var(--el-T) 22%,transparent)}
 .btn.el-F .ic,.ctech.el-F .ic{color:var(--el-F);background:color-mix(in srgb,var(--el-F) 22%,transparent)}
 .btn.el-E .ic,.ctech.el-E .ic{color:var(--el-E);background:color-mix(in srgb,var(--el-E) 22%,transparent)}
+.btn.el-V .ic,.ctech.el-V .ic{color:var(--el-V);background:color-mix(in srgb,var(--el-V) 22%,transparent)}
 .zz{color:#151a33;background:#b9d8ff;border-radius:6px;padding:1px 5px;font-size:10px;font-weight:800}
 .cher{color:var(--danger);font-weight:800}.bon{color:var(--hp);font-weight:800}

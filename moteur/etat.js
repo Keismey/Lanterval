@@ -16,7 +16,7 @@ function sauverOptions() { try { localStorage.setItem(CLE_OPTIONS, JSON.stringif
 
 /* ---------- Nouvelle partie ---------- */
 function mkZ() { return { found: [], rnd: 0, streak: 0, visits: 0, m50: false, m100: false, rest: false }; }
-function mkC(id) { const h = HEROS[id]; const c = { id, lvl: 1, xp: 0, hp: 0, pp: 0, job: h.classe, eq: { arme: h.arme, armure: 'tunique', acc: null }, joined: false }; fullC(c); return c; }
+function mkC(id) { const h = HEROS[id]; const c = { id, lvl: 1, xp: 0, hp: 0, pp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure || 'tunique', acc: null }, joined: false }; fullC(c); return c; }
 function newState() {
   const s = { v: FORMAT, version: VERSION, gold: 40, inv: { herbe: 3, tonique: 1 }, bag: {}, imp: [],
     etapes: [], annexes: {}, f: {}, jobs: ['apprenti'], chars: {}, z: {}, loc: 'lanterval', screen: 'title',

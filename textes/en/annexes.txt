@@ -89,13 +89,37 @@ Sol: “It's still hungry. Hot ash, the little one said. We'll have to wait unti
 Side quest: the seed has become a *lantern shoot*. *To be continued in act 3*, in hot ash.
 
 == graine.e2.titre
-Warm the shoot in the ash (act 3)
+Warm the shoot in hot ash
 
-== graine.e2.scene
-Kael covers the shoot with hot ash. A bud starts to glow.
+== graine.e2.bouton
+Plant the shoot in the ash
 
 == graine.e2.attente
 Pia: “Has it grown? Grandma says after the water, it needs hot ash. There's lots of it in Cendre, it's in the name!”
+
+== graine.e2.cendre
+## The lantern seed
+In the middle of the fields, the ash is still warm under the grey crust. Kael digs a little bed for the shoot.
+The tiny lantern lights up, red as an ember. All around, eyes light up too. [Fight]
+
+== graine.e2.fin
+## The lantern seed
+With the beasts driven off, the shoot has grown a hand taller. At the tip of its stem, a bud glows softly.
+Nev: “A flower growing in ash… I thought nothing grew here any more.”
+Sol: “Salt water, hot ash, and a very strong wind. All it needs now is the wind.”
+
+== graine.e2.message
+Side quest: the shoot has become a *lantern bud*. Now it needs a very strong wind. *To be continued in act 4*.
+
+== graine.e3.titre
+Open the bud in a very strong wind (act 4)
+
+== graine.e3.attente
+Pia: “A bud! Grandma says the strongest wind blows on a bridge, way up in the clouds. Is there really a bridge in the clouds?”
+
+== graine.e3.scene
+## The lantern seed
+The wind of the Clouds rushes into the bud, which opens all at once.
 
 == graine.apres
 Pia: “Every evening I look at my flower. Grandma says it shines brighter than the lantern. Don't tell her I said that.”
@@ -185,13 +209,47 @@ Roxane: “I'll wait for you there. A hunter always follows the game, and you fi
 Side quest: two beasts out of four. *To be continued in act 3*, in the Burnt Fields.
 
 == chasse.e5.titre
-Hunt the Salamander Queen in the Burnt Fields (act 3)
+Hunt the Salamander Queen in the Burnt Fields
 
-== chasse.e5.scene
-Roxane: “The Salamander Queen. Watch out for her young.”
+== chasse.e5.bouton
+Hunt the Salamander Queen
 
 == chasse.e5.attente
-Roxane: “The Salamander Queen lives in the Burnt Fields. When the road to Cendre opens, I'll follow you.”
+Roxane: “The Salamander Queen nests in the Burnt Fields, on the Cendre side. Fire does nothing to her: you need water, lots of water.”
+
+== chasse.e5.traque
+## The hunter's logbook
+At the back of a collapsed farm, the ash moves by itself. Dozens of little salamanders scurry out of it.
+Then the ash heaves all at once: a salamander as big as a horse, its throat red with fire. [Fight]
+
+== chasse.e5.fin
+## The hunter's logbook
+The Salamander Queen goes out like an ember in the rain. Her skin stays warm, supple as leather.
+Kael: “Three out of four. Roxane will need to buy a second logbook.”
+
+== chasse.e5.message
+Side quest: bring the Salamander Queen's skin to *Roxane*.
+
+== chasse.e6.titre
+Bring the skin to Roxane
+
+== chasse.e6.scene
+Roxane: “A Salamander Queen's skin, still warm! Three beasts in the logbook.”
+Roxane: “Here are 500 coins. The last one is the most dangerous: a winged roc that nests under the Cloud Bridge, above the High Winds.”
+Roxane: “I never dared climb up there. With you, maybe.”
+
+== chasse.e6.message
+Side quest: three beasts out of four. *To be continued in act 4*, at the Cloud Bridge.
+
+== chasse.e7.titre
+Hunt the Winged Roc at the Cloud Bridge (act 4)
+
+== chasse.e7.attente
+Roxane: “The Winged Roc, under the Cloud Bridge. They say it carries off whole oxen. I can't wait.”
+
+== chasse.e7.scene
+## The hunter's logbook
+Under the Cloud Bridge, a huge cry tears through the wind.
 
 == chasse.apres
 Roxane: “Your name is in my logbook four times. Nobody else is in it more than once.”
@@ -267,13 +325,36 @@ Fennel: “Someone in Cendre has been dreaming of one for years. Keep it safe, w
 Side quest: Fennel traded the pearl for a *foghorn*. *To be continued in act 3*, in Forgecendre.
 
 == colporteur.e5.titre
-Trade the foghorn in Forgecendre (act 3)
+Trade the foghorn in Forgecendre
 
 == colporteur.e5.sous
 Looking for: someone who needs a foghorn
 
 == colporteur.e5.scene
-Fennel: “Forgecendre! The miners need your horn.”
+Dorn: “That sound… A foghorn! Down in the mines, we used to call each other with those, before the Order took them.”
+Dorn: “I can't see any more, but with this, the young ones will always find me. Here, take this star ingot. It glows in the dark, and I have no use for it now.”
+
+== colporteur.e5.message
+Side quest: bring the *star ingot* to *Fennel*.
+
+== colporteur.e6.titre
+Trade the ingot with Fennel
+
+== colporteur.e6.scene
+Fennel: “A star ingot! They say one falls every hundred years. For that, I'll give you my treasure: a roc feather.”
+Fennel: “It comes from the Winged Roc of the High Winds. Up there, in Aerie, a weaver can make it into a cloak that weighs nothing. We'll meet again there.”
+
+== colporteur.e6.message
+Side quest: Fennel traded the ingot for a *roc feather*. *To be continued in act 4*, in Aerie.
+
+== colporteur.e7.titre
+Have the feather woven in Aerie (act 4)
+
+== colporteur.e7.attente
+Fennel: “Keep that feather safe. In Aerie, Ilse the weaver will make a wonder of it. We just have to make it up there.”
+
+== colporteur.e7.scene
+Fennel: “Aerie, at last! Ilse, look what I've brought you.”
 
 == colporteur.e5.attente
 Fennel: “Keep your foghorn. In Forgecendre, the miners call to each other from tunnel to tunnel. They dream of one.”
@@ -462,10 +543,199 @@ Mira: “My mother has a blacksmith's fingers.”
 Side quest: the music box is broken. *To be continued in act 3*, when someone can repair it.
 
 == berceuse.e2.titre
-Get the music box repaired (act 3)
+Get the music box repaired
 
 == berceuse.e2.scene
-Hilde: “Springs are like swords. You need patience, and fingers finer than mine. Mira, help me.”
+## The lullaby
+Sol sets the broken box on the workbench. Hilde turns it in her big fingers and opens the cracked lid.
+Hilde: “Springs are like swords: they take patience. And fingers finer than mine. Mira, help me.”
+Mira hesitates, then sits down next to her mother. They work for a long time, without a word.
+
+== berceuse.e2.fin
+## The lullaby
+A small click. The painted gull turns, and a few notes slip out, fragile as glass.
+Sol: “That's it. That's Naïa's lullaby.”
+Hilde: “Go and play it for her, lad. A song remembers better than we do.”
+
+== berceuse.e2.message
+Side quest: the music box plays again. Bring it to *Naïa*, in Salvent.
+
+== berceuse.e3.titre
+Play the lullaby for Naïa
+
+== berceuse.e3.quai
+## The lullaby
+Naïa sits at the end of the quay, her feet above the water. She looks at Sol like a polite stranger.
+Naïa: “You again? You always look sad when you see me.”
+Sol doesn't answer. He sits down next to her, opens the box and sets it between them.
+
+== berceuse.e3.chant
+## The lullaby
+The melody rises over the sea. Naïa closes her eyes and, very softly, starts to sing the words.
+Naïa: “Sleep, little fish, the sea keeps you safe… I know this song. Mum used to sing it to us.”
+Naïa: “Sol… Sol, it's you! Why did you grow up without me?”
+Sol laughs and cries at the same time. He says nothing. He doesn't need to.
+
+== berceuse.e3.fin
+## Side quest complete
+Naïa: “Erwan fished this staff out of the wreck the day he found me. He said it belonged to someone who would come back. You came back.”
+? You receive the *Staff of Tides*, the most powerful staff for Sol (Magic +27, PP +12).
+
+== berceuse.apres
+Maëlle: “Naïa sings on the quay every evening now. The fishermen stop to listen.”
 
 == berceuse.e2.attente
 Maëlle: “Take care of that box, kid. One day, it will sing again.”
+
+# ---------- 8. The singing stone (Dorn, Geomancer class) ----------
+
+== pierre.titre
+The singing stone
+
+== pierre.offre
+Dorn: “When I was young, the rock spoke to me. I knew where to dig just by listening. Then the Order's hammers drowned out its voice.”
+Dorn: “At the Stone Pass, in your valley, there's a stone that sings. With it, I could find the singing vein again, deep in the mines.”
+Dorn: “And I'd teach you to listen to the earth. Interested?”
+> oui : Accept | Side quest
+> non : Later
+
+== pierre.message
+Side quest: find the *singing stone* at the *Stone Pass*, in the valley.
+
+== pierre.e1.titre
+Find the singing stone at the Stone Pass
+
+== pierre.e1.bouton
+Listen to the stones
+
+== pierre.e1.attente
+Dorn: “At the Stone Pass there are standing stones. One of them hums when the wind blows. You'll hear it if you keep quiet.”
+
+== pierre.e1.rocher
+## The singing stone
+The wind whistles between the standing stones. Then, beneath the whistling, a very soft hum rises from a mossy boulder.
+When Kael comes closer, two standing stones rise up with a rumble. They guard the boulder. [Fight]
+
+== pierre.e1.fin
+## The singing stone
+The golems collapse into piles of pebbles. In the heart of the boulder lies a grey stone that fits in a hand. It is still humming.
+Nev: “It sings louder when you turn it towards Cendre. As if it wanted to go home.”
+
+== pierre.e1.message
+Side quest: the stone sings louder towards the *Red Mines*. Maybe it is looking for the vein Dorn spoke of.
+
+== pierre.e2.titre
+Follow the stone's song in the Red Mines
+
+== pierre.e2.bouton
+Follow the stone's song
+
+== pierre.e2.attente
+Dorn: “The singing vein is deep in the mines, lower than the Order's tunnels. Let the stone guide you.”
+
+== pierre.e2.ecoute
+## The singing stone
+In the tunnels, the stone sings louder and louder. It leads the team to a wall with nothing special about it.
+Kael lays a hand on the rock. The wall shakes and comes away: a creature of earth and crystal rises before you. [Fight]
+
+== pierre.e2.veine
+## The singing vein
+Behind the elemental, a vein of crystal runs through the rock like a river. It sings, and the stone answers.
+Sol: “It's like a choir. The whole mountain is singing.”
+A shard of crystal breaks off by itself and falls into Kael's hand.
+
+== pierre.e2.message
+Side quest: bring the stone and the *singing crystal* to *Dorn*, in Forgecendre.
+
+== pierre.e3.titre
+Bring the mountain's song to Dorn
+
+== pierre.e3.scene
+Dorn holds the stone in one hand and the crystal in the other. He smiles for the first time.
+Dorn: “I can hear it… The mountain hasn't forgotten how to sing. Listen with me.”
+Dorn: “The earth doesn't have just one element. In the valley it is rock; on the coast it is water; here it is fire. A geomancer takes what it gives.”
+
+== pierre.e3.fin
+## Side quest complete
+Dorn: “Take my old staff. It has sounded more rock than every pickaxe in Forgecendre.”
+? *Secret class unlocked: Geomancer*. Its magic takes the element of the region you fight in: Earth in the valley, Water on the coast, Fire in Cendre. You receive *Dorn's staff* (for the Geomancer).
+
+== pierre.apres
+Dorn: “Every morning I go down to listen to the vein. It sings better since the Order's hammers fell silent.”
+
+# ---------- 11. The missing miners (Tobi) ----------
+
+== mineurs.titre
+The missing miners
+
+== mineurs.offre
+Tobi: “All the miners came back up. Except my dad and four men from his crew.”
+Tobi: “They worked in an old tunnel, off the side of the great gallery. Nobody dares go back there.”
+Tobi: “Will you look for my dad? His name is Ulric. He has a moustache like a broom.”
+> oui : Accept | Side quest
+> non : Later
+
+== mineurs.message
+Side quest: look for *Ulric* and his crew in the *great gallery* of the Red Mines.
+
+== mineurs.e1.titre
+Look for the miners in the great gallery
+
+== mineurs.e1.bouton
+Search the old tunnel
+
+== mineurs.e1.attente
+Tobi: “The old tunnel branches off the great gallery. Dad says it breathes, because there's always wind in it.”
+
+== mineurs.e1.galerie
+## The missing miners
+An old tunnel, half collapsed. A cool draught comes from the far end. On the ground, boot prints, and other prints much wider.
+Rock worms have nested in the rubble. [Fight]
+
+== mineurs.e1.fin
+## The missing miners
+Behind the rubble, a dented helmet. Inside, carved with a knife: “Ulric”.
+The draught comes from an old air shaft. The boot prints climb it, towards the surface.
+Nev: “That shaft comes out in the Burnt Fields. They fled that way, hiding from the Order.”
+
+== mineurs.e1.message
+Side quest: the miners got out through an old shaft. Look for them on the *Cendre side of the Burnt Fields*.
+
+== mineurs.e2.titre
+Find the miners in the Burnt Fields
+
+== mineurs.e2.bouton
+Look for the shaft's exit
+
+== mineurs.e2.attente
+Tobi: “The Burnt Fields? Dad says the ash hounds there are bigger than wolves. He must be a bit scared.”
+
+== mineurs.e2.ferme
+## The missing miners
+Near a ruined farm, an air shaft pokes out of the ground. Smoke rises from the chimney: someone lives there.
+But ash hounds are circling the farm, and an ember beetle guards the door. [Fight]
+
+== mineurs.e2.fin
+## The missing miners
+The door creaks open. Five thin miners come out, pickaxes in hand. The first one has a moustache like a broom.
+Ulric: “The Order is gone? The mines are free? We didn't dare go home, we thought it was a trap.”
+Ulric: “And my son… Is Tobi all right? Then we're going home right now.”
+
+== mineurs.e2.message
+Side quest: the miners are heading back to Forgecendre. Go and see *Tobi*.
+
+== mineurs.e3.titre
+Find Tobi in Forgecendre
+
+== mineurs.e3.scene
+Tobi runs to a miner covered in ash, who lifts him up like a feather.
+Tobi: “Dad! You came back!”
+Ulric: “Thanks to you lot. Give me that helmet, I lost it while running. And take my miner's lamp: with it, you find what hides in the dark.”
+
+== mineurs.e3.fin
+## Side quest complete
+Ulric: “While we were running, we found a seam of fire rock. I'll take some to Hilde: she'll know what to do with it.”
+? You receive the *Miner's lamp* (accessory: Defence +2, and exploring finds a treasure or a place more often) and *200 gold*. Hilde now sells three new weapons in Forgecendre.
+
+== mineurs.apres
+Tobi: “Dad says I'll go down the mine when I'm twelve. I want to be a smith, like Hilde.”

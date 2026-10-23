@@ -48,8 +48,8 @@ function cerveau(graine) {
     if (bas.length >= 2 && tech('soins')) return { type: 'skill', sk: 'soins' };
     if (bas.length && tech('soin')) return { type: 'skill', sk: 'soin', t: bas[0] };
     const tresBas = T.filter(x => pvp(x) < .3).sort((a, b) => pvp(a) - pvp(b))[0];
-    if (tresBas) for (const it of ['elixir', 'herbe']) if (S.inv[it] > 0) return { type: 'item', it, t: tresBas };
-    if (h.pp < 4 && S.inv.tonique > 0 && Math.random() < .5) return { type: 'item', it: 'tonique', t: h };
+    if (tresBas) for (const it of ['potion', 'elixir', 'herbe']) if (S.inv[it] > 0) return { type: 'item', it, t: tresBas };
+    if (h.pp < 4 && Math.random() < .5) for (const it of ['ether', 'tonique']) if (S.inv[it] > 0) return { type: 'item', it, t: h };
     const he = HEROS[h.id].el;
     // une technique de l'élément du héros sur une faiblesse ; sinon l'Attaque (Lame) sur une faiblesse ; sinon le plus faible
     const faibleA = el => E.filter(e => e.weak.includes(el) && !e.broken).sort((a, b) => a.shield - b.shield || a.hp - b.hp)[0];
@@ -62,7 +62,8 @@ function cerveau(graine) {
   };
 
   // ---------- préparation ----------
-  const score = (id, h) => { const st = EQUIPEMENT[id].st; return (st.atk || 0) * (h.id === 'kael' ? 1.4 : .4) + (st.mag || 0) * (h.id === 'kael' ? .2 : 1.2) + (st.def || 0) * 1.1 + (st.hp || 0) * .25 + (st.pp || 0) * .3 + (st.spd || 0) * .5; };
+  const PHYSIQUES = ['kael', 'nev'];
+  const score = (id, h) => { const st = EQUIPEMENT[id].st, ph = PHYSIQUES.includes(h.id); return (st.atk || 0) * (ph ? 1.4 : .4) + (st.mag || 0) * (ph ? .2 : 1.2) + (st.def || 0) * 1.1 + (st.hp || 0) * .25 + (st.pp || 0) * .3 + (st.spd || 0) * .5; };
   function equiper() {
     for (const h of team()) for (const id of Object.keys(S.bag).filter(k => S.bag[k] > 0)) {
       const pl = EQUIPEMENT[id].place, cur = h.eq[pl];
@@ -70,7 +71,7 @@ function cerveau(graine) {
     }
   }
   function choisirClasses() {
-    const veut = { kael: ['guerrier', 'apprenti'], mira: ['mage'], sol: ['soigneur'] };
+    const veut = { kael: ['guerrier', 'apprenti'], mira: ['mage'], sol: ['soigneur'], nev: ['moine'] };
     for (const h of team()) { const j = veut[h.id].find(x => S.jobs.includes(x)); if (j && h.job !== j) { h.job = j; for (const pl of PLACES_EQ) if (h.eq[pl] && !canWear(h, h.eq[pl])) { addEq(h.eq[pl]); h.eq[pl] = null; } clampC(h); } }
   }
   function acheter(vid) {
@@ -195,6 +196,8 @@ function cerveau(graine) {
     await page.screenshot({ path: path.join(process.env.CAPTURES, 'lanterval.png') });
     await page.evaluate(() => { S.loc = 'salvent'; S.screen = 'village'; renderStable(); });
     await page.screenshot({ path: path.join(process.env.CAPTURES, 'salvent.png') });
+    await page.evaluate(() => { S.loc = 'forgecendre'; S.screen = 'village'; renderStable(); });
+    await page.screenshot({ path: path.join(process.env.CAPTURES, 'forgecendre.png') });
     await page.evaluate(() => openJournal());
     await page.screenshot({ path: path.join(process.env.CAPTURES, 'journal.png') });
   }

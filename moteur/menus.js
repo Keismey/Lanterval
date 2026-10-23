@@ -150,7 +150,7 @@ function openCodex(tab) {
 // classes débloquées, leurs armes, leurs statistiques et leurs techniques ; les autres restent verrouillées
 function classesHtml() {
   const pct = (k, v) => t('codex.pct', { stat: t('stat.' + k), v: (v > 1 ? '+' : '−') + Math.round(Math.abs(v - 1) * 100) });
-  const elTxt = el => el === 'X' ? t('codex.el.X') : el === 'LX' ? t('element.L') + ' + ' + t('codex.el.X') : el ? t('element.' + el) : '';
+  const elTxt = el => el === 'X' ? t('codex.el.X') : el === 'LX' ? t('element.L') + ' + ' + t('codex.el.X') : el === 'Z' ? t('codex.el.Z') : el ? t('element.' + el) : '';
   return `<p class="note">${esc(t('codex.classes.aide'))}</p><div class="list">${Object.keys(CLASSES).map(j => {
     const J = CLASSES[j];
     if (!S.jobs.includes(j)) return `<div class="cls unseen"><h4>???</h4><p>${esc(t('codex.classe.inconnue'))}</p></div>`;
@@ -178,7 +178,7 @@ function helpHtml() {
   <span><span class="chip h ${(IMAGES['heros.kael'] || {}).portrait ? 'face' : ''}"><img alt="" src="${vignette({ id: 'kael' })}"></span><span class="chip e"><img alt="" src="${imgSrc('monstre.loup')}"></span></span><span>${L('tours')}</span>
   <span><span class="shield">2</span></span><span>${L('garde')}</span>
   <span><span class="brk">${esc(t('combat.brise.court'))}</span></span><span>${L('brise')}</span>
-  <span>${elChip('L')}${elChip('T')}${elChip('F')}${elChip('E')}</span><span>${L('elements')}</span>
+  <span>${elChip('L')}${elChip('T')}${elChip('F')}${elChip('E')}${elChip('V')}</span><span>${L('elements')}</span>
   <span><span class="elc unk">?</span></span><span>${L('inconnue')}</span>
   <span><span class="elc F res">F</span></span><span>${L('resistance')}</span>
   <span><span class="pips"><b class="on"></b><b class="on"></b><b></b></span></span><span>${L('union')}</span>

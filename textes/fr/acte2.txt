@@ -331,7 +331,7 @@ Loïc : « Les lanternes brillent et ma femme m'a reconnu deux fois aujourd'hui.
 == pnj.loic.a2.e7
 Loïc : « Vous montez au phare ? Saluez Erwan de ma part. Enfin, s'il se souvient de moi. »
 
-== pnj.loic.fin
+== pnj.loic.a3.e1
 Loïc : « J'ai repris la mer ! Et cette fois, j'ai écrit mon nom sur ma barque. »
 
 == pnj.rosal
@@ -343,7 +343,7 @@ Naïa : « Mon père dit que la mer garde tout ce qu'on lui donne. Même les sou
 == pnj.naia.a2.e7
 Naïa : « Si vous voyez mon père là-haut, dites-lui que je l'attends. Tous les soirs. »
 
-== pnj.naia.fin
+== pnj.naia.a3.e1
 Naïa : « Sol, c'est ça ? Tu me regardes comme si tu me connaissais. C'est drôle, j'ai la même impression. »
 
 # Lanterval pendant l'acte 2 (les textes « a2.e1 » de l'acte 1 servent au début)
@@ -351,24 +351,17 @@ Naïa : « Sol, c'est ça ? Tu me regardes comme si tu me connaissais. C'est dr�
 == pnj.orvan.a2.e3
 Orvan : « Salvent oublie, dis-tu ? Alors l'Ordre y est déjà. Soyez prudents. »
 
-== pnj.orvan.fin
+== pnj.orvan.a3.e1
 Orvan : « Tu as reçu ma lettre. Je n'ai pas d'excuse, Kael. Seulement l'espoir de réparer ce que j'ai commencé. »
 
 == pnj.tilo.a2.e3
 Tilo : « C'est vrai qu'à Salvent les gens oublient leur nom ? Moi je m'appelle Tilo. Tilo ! »
 
-== pnj.tilo.fin
+== pnj.tilo.a3.e1
 Tilo : « Tu m'as rapporté un coquillage ? Non ? Bon, la prochaine fois. »
 
 == pnj.hilde.accueil.a2.e3
 Hilde : « Des nouvelles de la côte ? Mira mange au moins ? Prends ce qu'il te faut, et ramène-la entière. »
 
-== pnj.hilde.accueil.fin
+== pnj.hilde.accueil.a3.e1
 Hilde : « Cendre… Si vous allez là-bas, je viendrai. Ne discute pas. »
-
-# ---------- Fin de la version 0.3 ----------
-
-== fin.version
-## Fin de la version 0.3
-L'acte 2 est terminé ! Le cristal d'écume protège Salvent, Naïa fredonne la berceuse, et Orvan a avoué son passé.
-L'acte 3 arrive dans une prochaine version. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.

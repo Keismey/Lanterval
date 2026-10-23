@@ -1,6 +1,6 @@
 /* Lanterval · Monstres et boss.
    Les noms sont dans textes/<langue>/noms.txt (monstre.<id>, .court, .desc, .special).
-   garde : coups sur une faiblesse pour la briser ; faible / resiste : éléments (L Lame, T Terre, F Feu, E Eau) ;
+   garde : coups sur une faiblesse pour la briser ; faible / resiste : éléments (L Lame, T Terre, F Feu, E Eau, V Vent) ;
    taille : hauteur à l'écran, en part de la scène ; f : nom féminin (« vaincue »).
    capacites :
      spores  : touche toute l'équipe (chance, mult)
@@ -65,5 +65,37 @@ const MONSTRES = {
   sanglier: { pv: 520, atk: 27, def: 12, vit: 9, garde: 7, faible: ['F'], resiste: ['T'], xp: 90, or: 50, taille: .24, vol: 'tonique',
     capacites: [{ type: 'fort', chance: .35, mult: 1.45 }] },
   anguille: { pv: 600, atk: 32, def: 8, vit: 17, garde: 5, faible: ['T'], resiste: ['E', 'F'], xp: 130, or: 80, taille: .26, f: true, vol: 'elixir',
-    capacites: [{ type: 'double', chance: .6, garde: true }] }
+    capacites: [{ type: 'double', chance: .6, garde: true }] },
+
+  // ---------- Acte 3 : Plaines de Cendre ----------
+  chien: { pv: 120, atk: 54, def: 8, vit: 22, garde: 2, faible: ['E', 'V'], resiste: ['F'], xp: 24, or: 18, taille: .17, vol: 'herbe',
+    capacites: [{ type: 'double', chance: .3 }] },
+  scarabee: { pv: 160, atk: 52, def: 16, vit: 9, garde: 5, faible: ['E', 'T'], resiste: ['F', 'L'], xp: 27, or: 22, taille: .16, vol: 'tonique',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  salamandre: { pv: 105, atk: 55, def: 7, vit: 16, garde: 2, faible: ['E'], resiste: ['F'], xp: 22, or: 16, taille: .14, f: true, vol: 'tonique',
+    capacites: [{ type: 'spores', chance: .3, mult: .7 }] },
+  ver: { pv: 170, atk: 58, def: 10, vit: 10, garde: 3, faible: ['V', 'E'], resiste: ['T', 'L'], xp: 29, or: 22, taille: .2, vol: 'herbe',
+    capacites: [{ type: 'drain', chance: .35 }] },
+  automate: { pv: 195, atk: 60, def: 18, vit: 8, garde: 5, faible: ['E', 'F'], resiste: ['L', 'T'], xp: 32, or: 28, taille: .21, vol: 'elixir',
+    capacites: [{ type: 'charge', mult: 1.25 }] },
+  sentinelle: { pv: 170, atk: 58, def: 14, vit: 13, garde: 4, faible: ['V', 'E'], resiste: ['T'], xp: 30, or: 26, taille: .21, f: true, vol: 'tonique',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.35 }] },
+  lezard: { pv: 190, atk: 63, def: 12, vit: 14, garde: 3, faible: ['E', 'V'], resiste: ['F'], xp: 35, or: 26, taille: .19, vol: 'herbe',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  esprit: { pv: 145, atk: 64, def: 6, vit: 20, garde: 3, faible: ['E'], resiste: ['F', 'L'], xp: 34, or: 24, taille: .16, vol: 'ether',
+    capacites: [{ type: 'spores', chance: .35, mult: .7 }] },
+  // boss de l'acte 3
+  forgeur: { pv: 3200, atk: 80, def: 18, vit: 24, garde: 13, faible: ['E', 'V'], resiste: ['F', 'L'], xp: 260, or: 220, taille: .4, boss: true, vol: 'potion',
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'appel', id: 'automate', chance: .3 }] },
+  varen2: { pv: 2000, atk: 80, def: 12, vit: 30, garde: 7, faible: ['T', 'L'], resiste: ['V'], xp: 240, or: 0, taille: .3, boss: true, vol: 'ether',
+    capacites: [{ type: 'fort', chance: .35, mult: 1.45 }, { type: 'double', chance: .25 }] },
+  sansnom2: { pv: 5200, atk: 94, def: 20, vit: 22, garde: 14, faible: ['F', 'V'], resiste: ['T', 'E'], xp: 360, or: 0, taille: .42, boss: true, vol: 'potion',
+    capacites: [{ type: 'charge', mult: 1.7 }, { type: 'fort', chance: .3, mult: 1.4 }, { type: 'double', chance: .25, garde: true }] },
+  // quêtes annexes de Cendre
+  salreine: { pv: 1500, atk: 64, def: 10, vit: 15, garde: 6, faible: ['E'], resiste: ['F', 'T'], xp: 210, or: 120, taille: .3, f: true, vol: 'potion',
+    capacites: [{ type: 'appel', id: 'salamandre', chance: .4 }, { type: 'spores', chance: .3, mult: .75 }] },
+  statue: { pv: 150, atk: 55, def: 16, vit: 7, garde: 5, faible: ['V', 'E'], resiste: ['T', 'L'], xp: 27, or: 20, taille: .22, vol: 'tonique',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  tellure: { pv: 3000, atk: 84, def: 16, vit: 24, garde: 14, faible: ['V'], resiste: ['T', 'L'], xp: 240, or: 150, taille: .38, boss: true, vol: 'ether',
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'regen', seuil: .5, chance: .3, v: 60 }] }
 };

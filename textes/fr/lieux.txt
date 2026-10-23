@@ -761,3 +761,304 @@ La lumière passe sur le groupe et réchauffe le cœur : *+8 PP* pour tous.
 
 == phare.ev.embruns
 Les embruns fouettent le visage et réveillent : *+20 PV* pour tous.
+
+# ================= Acte 3 : Plaines de Cendre =================
+
+== carte.titre.cendre
+Carte des Plaines de Cendre
+
+== lieu.pont.nom
+Pont des Nuées
+
+# ================= Champs brûlés =================
+
+== lieu.champs.le
+les champs
+
+== lieu.champs.v
+côté vallée
+
+== lieu.champs.c
+côté Cendre
+
+== lieu.champs.sous
+Entre la vallée et Cendre
+
+== lieu.champs.desc
+Des fermes noircies, des clôtures tombées, du blé brûlé jusqu'à l'horizon. Le vent soulève la cendre comme de la neige grise.
+
+== lieu.champs.intro
+## Champs brûlés
+L'Ordre a mis le feu à ces terres. On traverse du côté de la vallée jusqu'aux Plaines de Cendre, et les bêtes y ont pris goût à la chaleur.
+
+== champs.b1.nom
+Cave d'une ferme
+
+== champs.b1.texte
+Sous une trappe épargnée par le feu, des bocaux et des fioles : *2 élixirs*.
+
+== champs.b2.nom
+Abreuvoir renversé
+
+== champs.b2.texte
+Autour d'un abreuvoir, des traces de pattes qui fuient l'eau répandue. Les chiens de cendre détestent aussi le vent froid. *Faiblesses du Chien de cendre ajoutées au codex.*
+
+== champs.b3.nom
+Saule du ruisseau
+
+== champs.b3.texte
+Un vieux saule resté vert au bord d'un ruisseau. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== champs.b4.nom
+Cachette du fermier
+
+== champs.b4.texte
+Une boîte en fer enterrée sous le seuil d'une ferme : *220 po*. Le fermier n'est jamais revenu la chercher.
+
+== champs.b5.nom
+Carapace fendue
+
+== champs.b5.texte
+Une carapace de scarabée fendue en deux, à côté d'un seau d'eau et d'une pioche. *Faiblesses du Scarabée de braise ajoutées au codex.*
+
+== champs.b6.nom
+Sac du colporteur
+
+== champs.b6.texte
+Un sac de toile coincé sous une charrette brûlée : *2 éthers*.
+
+== champs.m50
+## Palier 50 % atteint
+Dans une grange restée debout : *2 élixirs et 1 éther*.
+
+== champs.m100
+## Palier 100 % atteint
+Tu connais chaque sillon des champs. Tu trouves une *Griffe de salamandre* (accessoire, Attaque +7). Champs maîtrisés : leur traversée ne donnera plus que 0 à 2 combats.
+
+== champs.ev.combat
+Quelque chose grogne derrière un muret noirci…
+
+== champs.ev.braises
+Le vent rallume des braises sous la cendre ! *Tout le monde perd 14 PV.*
+
+== champs.ev.puits
+Un puits encore plein d'eau fraîche : *+30 PV* pour tous.
+
+== champs.ev.grange
+Dans une grange vide, une bourse oubliée : *+60 po*.
+
+== champs.ev.cendres
+Le vent tombe et le silence revient, d'un coup. L'esprit se repose : *+10 PP* pour tous.
+
+# ================= Forgecendre =================
+
+== lieu.forgecendre.nom
+Forgecendre
+
+== lieu.forgecendre.sous
+Sous la garde de l'Ordre
+
+== lieu.forgecendre.sous.libre
+Les forges chantent de nouveau
+
+== lieu.forgecendre.desc
+Une ville de pierre noire au pied du volcan. Les cheminées fument, mais les rues sont vides : les soldats de l'Ordre gardent chaque carrefour.
+
+== lieu.forgecendre.desc.libre
+Les marteaux sonnent dans toutes les forges. Les mineurs sont rentrés chez eux et les bannières de l'Ordre brûlent dans un brasero.
+
+== pnj.goran.nom
+Goran
+
+== pnj.goran.sous
+Repos complet · {prix} po
+
+== pnj.agathe.nom
+Agathe
+
+== pnj.agathe.sous
+Remèdes et provisions
+
+== pnj.dorn.nom
+Dorn
+
+== pnj.dorn.sous
+Le vieux mineur
+
+== pnj.tobi.nom
+Tobi
+
+== pnj.tobi.sous
+Le fils d'un mineur
+
+# ================= Mines rouges =================
+
+== lieu.mines.nom
+Mines rouges
+
+== lieu.mines.le
+les mines
+
+== lieu.mines.e
+entrée
+
+== lieu.mines.g
+grande galerie
+
+== lieu.mines.sous
+Les mineurs y travaillent de force
+
+== lieu.mines.sous.libre
+Les galeries sont rendues aux mineurs
+
+== lieu.mines.desc
+Des galeries creusées dans une roche rouge comme de la braise. Des chaînes, des wagonnets, et le bruit des marteaux qui ne s'arrête jamais.
+
+== lieu.mines.desc.libre
+Les chaînes ont été jetées au fond d'un puits. Les mineurs chantent en poussant leurs wagonnets.
+
+== lieu.mines.intro
+## Mines rouges
+On descend de l'entrée jusqu'à la grande galerie. Plus on s'enfonce, plus il fait chaud.
+
+== mines.r1.nom
+Infirmerie des mineurs
+
+== mines.r1.texte
+Une étagère cachée derrière une bâche : *2 potions de Cendre*.
+
+== mines.r2.nom
+Galerie effondrée
+
+== mines.r2.texte
+Un ver de roche coincé sous l'éboulement, asséché par un courant d'air glacé. Il craint aussi l'eau. *Faiblesses du Ver de roche ajoutées au codex.*
+
+== mines.r3.nom
+Source chaude
+
+== mines.r3.texte
+Une source tiède au fond d'une galerie, où les mineurs se lavaient en secret. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== mines.r4.nom
+Caisse de la paie
+
+== mines.r4.texte
+La paie que l'Ordre n'a jamais versée aux mineurs : *280 po*. Tu la rendras en dépensant à Forgecendre.
+
+== mines.r5.nom
+Automate rouillé
+
+== mines.r5.texte
+Un automate figé dans une flaque, plein de rouille, avec des traces de brûlure sur la poitrine. *Faiblesses de l'Automate de fer ajoutées au codex.*
+
+== mines.r6.nom
+Coffre du contremaître
+
+== mines.r6.texte
+Sous le bureau du contremaître : *2 éthers et 1 élixir*.
+
+== mines.m50
+## Palier 50 % atteint
+Dans la réserve des mineurs : *2 élixirs et 1 éther*.
+
+== mines.m100
+## Palier 100 % atteint
+Tu connais chaque galerie des mines. Tu trouves une *Pierre de filon* (accessoire, Défense +5, PV +15). Mines maîtrisées : leur traversée ne donnera plus que 0 à 2 combats.
+
+== mines.ev.combat
+Des cliquetis de métal approchent dans le noir…
+
+== mines.ev.grisou
+Une poche de gaz s'enflamme ! *Tout le monde perd 15 PV.*
+
+== mines.ev.pepite
+Une pépite brille dans la paroi : *+70 po*.
+
+== mines.ev.source
+Un filet d'eau fraîche coule de la roche : *+30 PV* pour tous.
+
+== mines.ev.cristaux
+Des cristaux rouges luisent doucement et apaisent l'esprit : *+10 PP* pour tous.
+
+# ================= Volcan endormi =================
+
+== lieu.volcan.nom
+Volcan endormi
+
+== lieu.volcan.le
+le volcan
+
+== lieu.volcan.p
+pentes
+
+== lieu.volcan.c
+cratère
+
+== lieu.volcan.sous
+Il fume encore
+
+== lieu.volcan.desc
+Des pentes de roche noire et de lave refroidie. Au sommet, le cratère rougeoie et la terre tremble parfois sous les pieds.
+
+== lieu.volcan.intro
+## Volcan endormi
+On monte des pentes jusqu'au bord du cratère. La chaleur pèse à chaque pas, et les bêtes du feu sont chez elles ici.
+
+== volcan.v1.nom
+Abri des guetteurs
+
+== volcan.v1.texte
+Un abri de pierre abandonné par l'Ordre : *2 potions de Cendre et 1 éther*.
+
+== volcan.v2.nom
+Bassin de pluie
+
+== volcan.v2.texte
+Un lézard de lave s'est figé en pierre en tombant dans un bassin de pluie. Le vent du sommet le fait fuir aussi. *Faiblesses du Lézard de lave ajoutées au codex.*
+
+== volcan.v3.nom
+Grotte fraîche
+
+== volcan.v3.texte
+Une petite grotte où souffle un air frais venu de la montagne. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== volcan.v4.nom
+Offrandes anciennes
+
+== volcan.v4.texte
+Un autel de pierre couvert de pièces d'or fondues ensemble : *350 po*.
+
+== volcan.v5.nom
+Flaque de vapeur
+
+== volcan.v5.texte
+Une flaque d'eau qui siffle encore. Un esprit de braise s'y est éteint d'un coup. *Faiblesses de l'Esprit de braise ajoutées au codex.*
+
+== volcan.v6.nom
+Nid dans la roche
+
+== volcan.v6.texte
+Dans un creux tiède de la roche, un nid abandonné. Au milieu, un *Œuf chaud*, gros comme une tête. Il bouge un peu quand tu le prends.
+
+== volcan.m50
+## Palier 50 % atteint
+Dans le sac d'un soldat de l'Ordre : *2 potions de Cendre*.
+
+== volcan.m100
+## Palier 100 % atteint
+Tu connais chaque coulée du volcan. Tu trouves un *Cœur de lave* (accessoire, Attaque +3, Magie +6). Volcan maîtrisé : sa traversée ne donnera plus que 0 à 2 combats.
+
+== volcan.ev.combat
+L'air se met à trembler de chaleur…
+
+== volcan.ev.coulee
+Une coulée de lave barre le chemin ! *Tout le monde perd 16 PV.*
+
+== volcan.ev.geyser
+Un geyser jaillit et retombe en pluie tiède : *+12 PP* pour tous.
+
+== volcan.ev.obsidienne
+Un éclat d'obsidienne parfait, qu'un marchand paiera cher : *+80 po*.
+
+== volcan.ev.brise
+Une brise fraîche descend du sommet : *+35 PV* pour tous.

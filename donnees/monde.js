@@ -9,7 +9,7 @@
    Plusieurs conditions se joignent avec « et ». Sans condition : toujours vrai.
 
    Personnage (pnj) : si = condition pour qu'il soit là. Un même personnage peut être dans plusieurs villages
-   avec des conditions qui se suivent (Roxane, Fennel) : il suit l'équipe.
+   avec des conditions qui se suivent (Roxane, Fennel, Hilde) : il suit l'équipe.
    Boutique : equipement liste les pièces en vente ; ['acier', 'fini a1.e7'] n'arrive en rayon qu'avec la condition.
    fous : condition pendant laquelle les prix sont tirés au hasard à chaque visite ; remise : condition d'une remise de 10 %.
 
@@ -25,7 +25,8 @@ const LIEUX = {
       { id: 'orvan', portrait: 'orvan', large: true },
       { id: 'brann', portrait: 'brann' },
       { id: 'auberge', role: 'auberge', portrait: 'aubergiste', prix: 10 },
-      { id: 'hilde', role: 'boutique', portrait: 'hilde',
+      // Hilde part pour Forgecendre à l'acte 3 (sa forge de Lanterval ferme)
+      { id: 'hilde', role: 'boutique', portrait: 'hilde', si: 'pas fini a3.e2',
         objets: [], equipement: ['epee', 'braise', 'mailles', 'robe', ['acier', 'fini a1.e7'], ['chene', 'fini a1.e7'], ['brigandine', 'fini a1.e7'], ['cape', 'fini a1.e7']] },
       { id: 'berthe', role: 'boutique', portrait: 'berthe',
         objets: [['herbe', 8], ['tonique', 12]], equipement: [] },
@@ -156,8 +157,8 @@ const LIEUX = {
       { id: 'naia', portrait: 'naia', si: 'fini a2.e4' },
       { id: 'rosal', portrait: 'rosal' },
       { id: 'loic', portrait: 'loic' },
-      { id: 'roxane', portrait: 'roxane' },
-      { id: 'fennel', portrait: 'fennel' }
+      { id: 'roxane', portrait: 'roxane', si: 'pas fini a3.e2' },
+      { id: 'fennel', portrait: 'fennel', si: 'pas fini a3.e2' }
     ]
   },
 
@@ -243,9 +244,110 @@ const LIEUX = {
     }
   },
 
+  // ---------- Plaines de Cendre (acte 3) ----------
+  // Champs brûlés : zone à deux côtés, la lisière (vallée) et la ferme brûlée (Cendre)
+  champs: {
+    type: 'zone', x: .62, y: .9, cotes: ['v', 'c'], region: { v: 'vallee', c: 'cendre' }, carte: { cendre: [.14, .78] },
+    visible: 'fini a2.e8', ouvert: 'fini a2.e8',
+    maxEvenements: 3,
+    tresors: [
+      { id: 'b1', type: 'tresor', gagne: '2 elixir' },
+      { id: 'b2', type: 'lieu', revele: 'chien' },
+      { id: 'b3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'b4', type: 'tresor', gagne: '220 or' },
+      { id: 'b5', type: 'lieu', revele: 'scarabee' },
+      { id: 'b6', type: 'tresor', gagne: '2 ether' }
+    ],
+    palier50: { gagne: '2 elixir, ether' },
+    palier100: { gagne: 'griffe' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'braises', poids: 1.5, effet: 'degats tous 14' },
+      { id: 'puits', poids: 1.5, effet: 'soin 30' },
+      { id: 'grange', poids: 1, gagne: '60 or' },
+      { id: 'cendres', poids: 1.5, effet: 'pp 10' }
+    ],
+    groupes: {
+      normal: [['chien', 'chien'], ['scarabee'], ['chien', 'salamandre'], ['salamandre', 'scarabee', 'salamandre'], ['chien', 'chien', 'salamandre']]
+    }
+  },
+
+  forgecendre: {
+    type: 'village', region: 'cendre', x: .42, y: .58,
+    visible: 'fini a3.e1',
+    etats: [{ id: 'libre', si: 'fini a3.e5' }],   // les mineurs sont libres, l'Ordre a quitté la ville
+    pnj: [
+      { id: 'goran', role: 'auberge', portrait: 'goran', prix: 30 },
+      { id: 'hilde', role: 'boutique', portrait: 'hilde', si: 'fini a3.e2',
+        objets: [],
+        equipement: ['hache', 'cendre', 'magma', 'gantelets', 'stylet', 'lyre', 'plates', 'manteau', 'salamandre',
+          ['ardente', 'annexe mineurs 4'], ['cratere', 'annexe mineurs 4'], ['fendoir', 'annexe mineurs 4']] },
+      { id: 'agathe', role: 'boutique', portrait: 'agathe',
+        objets: [['herbe', 8], ['tonique', 12], ['elixir', 25], ['potion', 50], ['ether', 30]], equipement: [] },
+      { id: 'dorn', portrait: 'dorn', si: 'fini a3.e2' },
+      { id: 'tobi', portrait: 'tobi', si: 'fini a3.e6' },
+      { id: 'roxane', portrait: 'roxane', si: 'fini a3.e2' },
+      { id: 'fennel', portrait: 'fennel', si: 'fini a3.e2' }
+    ]
+  },
+
+  mines: {
+    type: 'zone', region: 'cendre', x: .8, y: .5, cotes: ['e', 'g'],
+    visible: 'fini a3.e2', ouvert: 'fini a3.e2',
+    etats: [{ id: 'libre', si: 'fini a3.e5' }],
+    maxEvenements: 3,
+    tresors: [
+      { id: 'r1', type: 'tresor', gagne: '2 potion' },
+      { id: 'r2', type: 'lieu', revele: 'ver' },
+      { id: 'r3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'r4', type: 'tresor', gagne: '280 or' },
+      { id: 'r5', type: 'lieu', revele: 'automate' },
+      { id: 'r6', type: 'tresor', gagne: '2 ether, elixir' }
+    ],
+    palier50: { gagne: '2 elixir, ether' },
+    palier100: { gagne: 'filon' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'grisou', poids: 1.5, effet: 'degats tous 15' },
+      { id: 'pepite', poids: 1, gagne: '70 or' },
+      { id: 'source', poids: 1.5, effet: 'soin 30' },
+      { id: 'cristaux', poids: 1.5, effet: 'pp 10' }
+    ],
+    groupes: {
+      normal: [['ver'], ['automate', 'sentinelle'], ['sentinelle', 'ver'], ['ver', 'sentinelle', 'ver'], ['automate']],
+      libre: [['ver', 'ver'], ['automate'], ['ver', 'automate', 'ver'], ['scarabee', 'ver']]
+    }
+  },
+
+  volcan: {
+    type: 'zone', region: 'cendre', x: .55, y: .2, cotes: ['p', 'c'],
+    visible: 'fini a3.e6', ouvert: 'fini a3.e6',
+    maxEvenements: 3,
+    tresors: [
+      { id: 'v1', type: 'tresor', gagne: '2 potion, ether' },
+      { id: 'v2', type: 'lieu', revele: 'lezard' },
+      { id: 'v3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'v4', type: 'tresor', gagne: '350 or' },
+      { id: 'v5', type: 'lieu', revele: 'esprit' },
+      { id: 'v6', type: 'tresor', gagne: 'oeuf' }   // objet mystère : « L'œuf de wyverne », acte 4
+    ],
+    palier50: { gagne: '2 potion' },
+    palier100: { gagne: 'lave' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'coulee', poids: 1.5, effet: 'degats tous 16' },
+      { id: 'geyser', poids: 1.5, effet: 'pp 12' },
+      { id: 'obsidienne', poids: 1, gagne: '80 or' },
+      { id: 'brise', poids: 1.5, effet: 'soin 35' }
+    ],
+    groupes: {
+      normal: [['lezard'], ['esprit', 'esprit'], ['lezard', 'esprit'], ['esprit', 'lezard', 'esprit'], ['sentinelle', 'lezard']]
+    }
+  },
+
   // Lieux de la suite, visibles sur la carte mais pas encore jouables
   prof: { type: 'zone', x: .9, y: .62, visible: 'fini a1.e3', ouvert: false },
-  champs: { type: 'zone', x: .62, y: .9, visible: 'fini a2.e8', bientot: true }
+  pont: { type: 'zone', region: 'cendre', x: .88, y: .14, visible: 'fini a3.e10', bientot: true }
 };
 
 // Chemins de la carte. « foret.v » = la forêt côté village : on change de côté en traversant la zone.
@@ -255,10 +357,15 @@ const LIENS = [
   ['foret.g', 'col.p'],
   ['lanterval', 'marais.v'],
   ['grotte.f', 'prof'],
-  ['lanterval', 'champs'],
+  ['lanterval', 'champs.v'],
   // Côte de Salvent
   ['marais.c', 'salvent'],
   ['salvent', 'lanternes.b'],
   ['salvent', 'epave.p'],
-  ['salvent', 'phare.c']
+  ['salvent', 'phare.c'],
+  // Plaines de Cendre
+  ['champs.c', 'forgecendre'],
+  ['forgecendre', 'mines.e'],
+  ['forgecendre', 'volcan.p'],
+  ['forgecendre', 'pont']
 ];

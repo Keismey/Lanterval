@@ -48,11 +48,12 @@ const EVENEMENTS = {
   async perd([spec]) { perdre(spec); },
   async classes([liste]) { liste.split(/\s+/).forEach(unlockJob); },
   async soin() { healAll(); },
+  async drapeau([id]) { S.f[id] = true; },
   async degats([spec]) { appliquerEffet('degats ' + spec); },
   async revele([spec]) { const [id, el] = spec.split(/\s+/); if (el) { reveal(id, el); seen(id); } else revealAll(id); },
   async position([pos]) { S.loc = pos; },
   async traversee([vers, o], ctx, suite, id) {
-    if (ctx.silencieux) { S.loc = vers; return; }
+    if (ctx.silencieux) { if (o && o.milieu) await jouer(o.milieu, ctx, id + '.'); S.loc = vers; return; }
     const milieu = o && o.milieu ? () => jouer(o.milieu, ctx, id + '.') : null;
     // reprise au milieu de la traversée : on ne refait pas le trajet
     if (ctx.reprise && ctx.reprise.fait.some(f => f.startsWith(id + '.'))) { if (milieu) await milieu(); }

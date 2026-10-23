@@ -6,22 +6,25 @@
    le visage de heros.<id> ou pnj.<id> dans donnees/images.js.
    Une info nouvelle met une pastille sur l'icône du Codex, l'onglet et le personnage, jusqu'à ce qu'on déplie sa fiche. */
 const PERSONNAGES = {
-  kael: [true, 'fini a1.e7', 'fini a1.e9', 'fini a1.e10', 'fini a2.e8'],
-  mira: ['fini a1.e2', 'fini a1.e3', 'fini a2.e8'],
-  sol: ['fini a1.e4', 'fini a2.e2', 'fini a2.e4', 'fini a2.e8'],
+  kael: [true, 'fini a1.e7', 'fini a1.e9', 'fini a1.e10', 'fini a2.e8', 'fini a3.e9', 'fini a3.e10'],
+  mira: ['fini a1.e2', 'fini a1.e3', 'fini a2.e8', 'fini a3.e4', 'fini a3.e10'],
+  sol: ['fini a1.e4', 'fini a2.e2', 'fini a2.e4', 'fini a2.e8', 'annexe berceuse 4'],
   orvan: [true, 'fini a1.e3', 'fini a1.e7', 'fini a2.e8'],
   brann: [true, 'fini a1.e9', 'fini a1.e10', 'fini a2.e8'],
-  hilde: [true, 'fini a1.e3', 'fini a2.e8'],
+  hilde: [true, 'fini a1.e3', 'fini a2.e8', 'fini a3.e2', 'fini a3.e4', 'fini a3.e10'],
   silhouette: ['fini a1.e2', 'fini a1.e6'],
-  varen: ['fini a1.e9', 'fini a2.e7'],
-  sansnom: ['fini a1.e9'],
+  varen: ['fini a1.e9', 'fini a2.e7', 'fini a3.e1', 'fini a3.e8'],
+  sansnom: ['fini a1.e9', 'fini a3.e9'],
   maelle: ['fini a2.e2', 'fini a2.e5'],
-  naia: ['fini a2.e5', 'fini a2.e8', 'annexe berceuse 2'],
+  naia: ['fini a2.e5', 'fini a2.e8', 'annexe berceuse 2', 'annexe berceuse 4'],
   erwan: ['fini a2.e7'],
-  nev: ['fini a2.e6'],
+  nev: ['fini a2.e6', 'fini a3.e1', 'fini a3.e8', 'fini a3.e10'],
   heraut: ['fini a2.e7'],
   ysold: ['fini a2.e8'],
   // quêtes annexes de la vallée
-  roxane: ['annexe chasse 1', 'annexe chasse 3'],
-  fennel: ['annexe colporteur 1', 'annexe colporteur 5']
+  roxane: ['annexe chasse 1', 'annexe chasse 3', 'annexe chasse 7'],
+  fennel: ['annexe colporteur 1', 'annexe colporteur 5', 'annexe colporteur 7'],
+  // acte 3 et quêtes annexes de Cendre
+  dorn: ['fini a3.e2', 'annexe pierre 4'],
+  tobi: ['fini a3.e6', 'annexe mineurs 4']
 };

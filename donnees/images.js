@@ -25,6 +25,14 @@ const IMAGES = {
   'decor.phare': { provisoire: 'phare', sujet: 'Phare noyé sur un rocher, mer haute, bannières de l\'Ordre' },
   'decor.phare.libre': { provisoire: 'phare-libre', sujet: 'Phare noyé, la lumière brille, mer calme' },
   'decor.carte.cote': { provisoire: 'carte-cote', sujet: 'Carte de la Côte de Salvent' },
+  // acte 3 : Plaines de Cendre
+  'decor.champs': { provisoire: 'champs', sujet: 'Champs brûlés, blé calciné, ferme en ruine, fumée et ciel orange' },
+  'decor.forgecendre': { provisoire: 'forgecendre', sujet: 'Forgecendre, ville minière, cheminées, fumée rouge, bannières de l\'Ordre' },
+  'decor.forgecendre.libre': { provisoire: 'forgecendre-libre', sujet: 'Forgecendre libérée, forges allumées, sans bannières de l\'Ordre' },
+  'decor.mines': { provisoire: 'mines', sujet: 'Mines rouges, galerie étayée, roche rouge, rails, cages à cristal' },
+  'decor.mines.libre': { provisoire: 'mines-libre', sujet: 'Mines rouges, galerie éclairée de lampes, cages ouvertes' },
+  'decor.volcan': { provisoire: 'volcan', sujet: 'Volcan endormi, pentes noires, coulées de lave, cratère qui fume' },
+  'decor.carte.cendre': { provisoire: 'carte-cendre', sujet: 'Carte des Plaines de Cendre' },
 
   // ---------- Panoramas (format large ~2,4:1) ----------
   'pano.ouverture': { fichier: 'img/panoramas/ouverture.webp', sujet: 'Lanterval au crépuscule, la lanterne vacille' },
@@ -42,10 +50,18 @@ const IMAGES = {
   'pano.phare': { sujet: 'Le phare noyé aux mains de l\'Ordre, Nev sur l\'escalier' },
   'pano.vision': { sujet: 'Vision : Ysold et le jeune Orvan côte à côte, devant l\'Œil' },
   'pano.rosal': { sujet: 'Rosal à la barre de la Salicorne, voiles dans la brume' },
+  'pano.nev-champs': { sujet: 'Nev qui court dans les champs brûlés, Ombres de l\'Ordre à ses trousses' },
+  'pano.forgecendre': { sujet: 'Forgecendre, cheminées et fumée rouge, vue de la route' },
+  'pano.cage-hilde': { sujet: 'Hilde devant la première cage à cristal, au fond des Mines rouges' },
+  'pano.braise': { sujet: 'Le cratère du Volcan endormi et le cristal de braise' },
+  'pano.masque': { sujet: 'Le masque brisé du Sans-Nom, le visage d\'Aldric dessous' },
+  'pano.berceuse': { sujet: 'Sol et Naïa au pied du phare, la boîte à musique ouverte entre eux' },
+  'pano.veine': { sujet: 'La veine chantante, des cristaux rouges qui vibrent dans la galerie' },
 
   // ---------- Héros (tournés vers la gauche) ----------
   'heros.kael': { fichier: 'img/heros/kael.webp', portrait: 'img/heros/kael-portrait.webp', provisoire: 'kael', sujet: 'Kael, 17 ans, apprenti garde, cape bleue' },
   'heros.mira': { fichier: 'img/heros/mira.webp', portrait: 'img/heros/mira-portrait.webp', provisoire: 'mira', sujet: 'Mira, 18 ans, cheveux roux, flammes dans les mains' },
+  'heros.nev': { provisoire: 'f_nev', sujet: 'Nev, 16 ans, cheveux blancs courts, capuche violette, bandes aux poings' },
   'heros.sol': { fichier: 'img/heros/sol.webp', portrait: 'img/heros/sol-portrait.webp', provisoire: 'sol', sujet: 'Sol, 20 ans, cheveux bleus, bâton' },
 
   // ---------- Personnages du village (portraits) ----------
@@ -72,6 +88,10 @@ const IMAGES = {
   'pnj.pia': { provisoire: 'f_pia', sujet: 'Pia, 9 ans, petite jardinière, nattes brunes, tablier vert, arrosoir' },
   'pnj.roxane': { provisoire: 'f_roxane', sujet: 'Roxane, chasseuse, la quarantaine, cheveux noirs courts, cicatrice sur la joue, manteau de fourrure' },
   'pnj.fennel': { provisoire: 'f_fennel', sujet: 'Fennel, colporteur souriant, chapeau à large bord, hotte chargée de bibelots' },
+  'pnj.goran': { provisoire: 'f_goran', sujet: 'Goran, aubergiste de Forgecendre, grand et chauve, barbe noire, tablier de cuir' },
+  'pnj.agathe': { provisoire: 'f_agathe', sujet: 'Agathe, apothicaire de Forgecendre, lunettes rondes, chignon gris, fioles à la ceinture' },
+  'pnj.dorn': { provisoire: 'f_dorn', sujet: 'Dorn, vieux mineur aveugle, yeux blancs, barbe grise, casque de mineur' },
+  'pnj.tobi': { provisoire: 'f_tobi', sujet: 'Tobi, 10 ans, fils de mineur, visage couvert de suie, casque trop grand' },
   'pnj.ysold': { provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
 
   // ---------- Monstres (tournés vers la droite) ----------
@@ -102,5 +122,21 @@ const IMAGES = {
   'monstre.bosco': { provisoire: 'bosco', sujet: 'Le Bosco, contrebandier costaud, crochet et sabre' },
   // bêtes du « Carnet du chasseur »
   'monstre.sanglier': { provisoire: 'sanglier', sujet: 'Sanglier-roc, énorme sanglier au dos couvert de plaques de pierre, défenses blanches' },
-  'monstre.anguille': { provisoire: 'anguille', sujet: 'Anguille-tonnerre, longue anguille sombre parcourue d\'éclairs jaunes' }
+  'monstre.anguille': { provisoire: 'anguille', sujet: 'Anguille-tonnerre, longue anguille sombre parcourue d\'éclairs jaunes' },
+
+  // ---------- Monstres de l'acte 3 ----------
+  'monstre.chien': { provisoire: 'chien', sujet: 'Chien de cendre, chien maigre au pelage gris de cendre, yeux de braise' },
+  'monstre.scarabee': { provisoire: 'scarabee', sujet: 'Scarabée de braise, carapace noire fendue de lueurs rouges' },
+  'monstre.salamandre': { provisoire: 'salamandre', sujet: 'Salamandre, petit lézard orange tacheté de noir, flammes sur le dos' },
+  'monstre.ver': { provisoire: 'ver', sujet: 'Ver de roche, ver géant à la peau de pierre, bouche ronde pleine de dents' },
+  'monstre.automate': { provisoire: 'automate', sujet: 'Automate de fer de l\'Ordre, corps de chaudière, bras-marteaux' },
+  'monstre.sentinelle': { provisoire: 'sentinelle', sujet: 'Sentinelle de l\'Ordre, armure noire et rouge, hallebarde, masque à l\'œil fermé' },
+  'monstre.lezard': { provisoire: 'lezard', sujet: 'Lézard de lave, gros lézard noir aux fissures de lave' },
+  'monstre.esprit': { provisoire: 'esprit', sujet: 'Esprit de braise, flamme rouge avec un visage, étincelles' },
+  'monstre.forgeur': { provisoire: 'forgeur', sujet: 'Forgeur de cages, golem de fer géant, enclume sur l\'épaule, cages pendues à sa ceinture' },
+  'monstre.varen2': { fichier: 'img/monstres/varen.webp', provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre (même image que monstre.varen)' },
+  'monstre.sansnom2': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse (même image que monstre.sansnom)' },
+  'monstre.salreine': { provisoire: 'salreine', sujet: 'Salamandre reine, énorme salamandre couronnée de flammes' },
+  'monstre.statue': { provisoire: 'statue', sujet: 'Golem de pierre du Col, menhir vivant aux yeux bleus' },
+  'monstre.tellure': { provisoire: 'tellure', sujet: 'Élémentaire de terre, colosse de roche rouge veiné de cristaux qui chantent' }
 };
