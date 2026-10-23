@@ -172,7 +172,7 @@ async function traverse(id, de, vers, o) {
   dessiner(1, 1);
   logR('journal.log.traversee', { lieu: 'lieu.' + id + '.nom', n, duree: fmt(S.st.time - t0) });
   // bilan : un appui pour arriver
-  await show(tx(n === 1 ? 'trav.fin.un' : 'trav.fin', { zone: t('lieu.' + id + '.le'), n }) + (trouve ? ' ' + tx('trav.or', { or: trouve }) : '') + `<ul class="travlog">${fait.map(l => `<li>${l}</li>`).join('')}</ul>`, { title: t('trav.titre') });
+  await show(tx(n === 1 ? 'trav.fin.un' : 'trav.fin', { zone: t('lieu.' + id + '.le'), n }) + (trouve ? ' ' + tx('trav.or', { or: trouve }) : '') + `<ul class="travlog">${fait.map(l => `<li>${l}</li>`).join('')}</ul>`, { title: t('trav.titre'), instant: true });
 }
 // « 2 × Loup des brumes, Chauve-souris »
 function listeMonstres(ids) {

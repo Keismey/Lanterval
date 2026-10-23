@@ -2,7 +2,7 @@
 
 ## Version 0.5.1 (2026-10-23)
 
-- Demande de Keismey : les traversées allaient trop vite. `traverse` (moteur/carte.js) avance en 4 étapes de 1,4 s ; le panneau garde la liste de ce qui s'est passé à chaque étape (combat gagné et contre qui, or ramassé, rien à signaler) ; avant chaque combat, les monstres sont annoncés avec un bouton « Combattre » ; à l'arrivée, un bilan à valider d'un appui.
+- Demande de Keismey : les traversées allaient trop vite. `traverse` (moteur/carte.js) avance en 4 étapes de 1,4 s ; le panneau garde la liste de ce qui s'est passé à chaque étape (combat gagné et contre qui, or ramassé, rien à signaler) ; avant chaque combat, les monstres sont annoncés avec un bouton « Combattre » ; à l'arrivée, un bilan affiché d'un coup (option `instant` de `show`, demande de Keismey) et validé d'un appui.
 - Demande de Keismey : fin de combat toujours validée d'un appui (avant, le combat automatique sans niveau gagné continuait tout seul). Écran de victoire (`ecranVictoire` dans moteur/combat.js) : XP et or gagnés, barre d'XP de chaque héros qui se remplit, « Niveau N ! » quand un niveau est gagné.
 - Correction : un bouton doré (principal) restait gris quand le pointeur était encore dessus après un appui.
 

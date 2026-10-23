@@ -1008,7 +1008,7 @@ Jump to a step, give gold…
 
 == notes.version
 ## Version 0.5.1
-Crossings take their time: four legs, each showing what happens (a fight, gold found, nothing to report). Monsters are announced before each fight, and a summary appears on arrival.
+Crossings take their time: four legs, each showing what happens (a fight, gold found, nothing to report). Monsters are announced before each fight, and a summary appears all at once on arrival.
 At the end of each won fight, a screen shows the XP and gold earned, each hero's XP bar and any levels gained; tap to continue, even in auto battle.
 ## Version 0.5.0
 Act 4, “The Eye”, begins: the Cloud Bridge, Aerie, the Monastery ruins and the Howling Peak, on the High Winds map. The story runs until the night before the assault.
