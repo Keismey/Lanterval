@@ -50,6 +50,10 @@ LISTE = [
     ('perso-brann.jpg', 'pnj/brann.webp', 'portrait', {'boite': (230, 50, 580), 'cote': 192}),
     ('perso-hilde.jpg', 'pnj/hilde.webp', 'portrait', {'boite': (280, 60, 560), 'cote': 192}),
     ('perso-berthe.jpg', 'pnj/berthe.webp', 'portrait', {'boite': (220, 20, 580), 'cote': 192}),
+    ('perso-nell.jpg', 'pnj/nell.webp', 'portrait', {'boite': (230, 60, 580), 'cote': 192}),
+    ('perso-tilo.jpg', 'pnj/tilo.webp', 'portrait', {'boite': (220, 40, 580), 'cote': 192}),
+    ('perso-aubergiste.jpg', 'pnj/aubergiste.webp', 'portrait', {'boite': (220, 10, 580), 'cote': 192}),
+    ('perso-silhouette.jpg', 'pnj/silhouette.webp', 'portrait', {'boite': (250, 70, 600), 'cote': 192}),
 ]
 
 
