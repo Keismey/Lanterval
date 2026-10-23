@@ -592,5 +592,56 @@ const ANNEXES = {
         ['dialogue', 'larmes.e2.fin']
       ] }
     ]
+  },
+
+  // 16. Les Échos (Garrick, le vieux maître de Roxane, à Aerie). Seulement après la fin (finvue, gardé en partie+)
+  // et le carnet du chasseur fini. Quatre Échos dans l'ordre qu'on veut, puis l'Écho du Sans-Nom au Col des Pierres.
+  echos: {
+    donneur: 'garrick', ouvre: 'finvue et annexe chasse 9',
+    offre: [
+      ['choix', 'echos.offre', { oui: [['message', 'echos.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { parmi: [
+        { lieu: 'foret', evenements: [
+          ['dialogue', 'echos.e1.m1.brume'],
+          ['combat', 'echogolem', { boss: true, conseil: 'echos.e1.m1.conseil' }],
+          ['dialogue', 'echos.e1.m1.fin'],
+          ['message', 'echos.e1.m1.message']
+        ] },
+        { lieu: 'lanternes', evenements: [
+          ['dialogue', 'echos.e1.m2.brume'],
+          ['combat', 'echovouivre', { boss: true, conseil: 'echos.e1.m2.conseil' }],
+          ['dialogue', 'echos.e1.m2.fin'],
+          ['message', 'echos.e1.m2.message']
+        ] },
+        { lieu: 'champs', evenements: [
+          ['dialogue', 'echos.e1.m3.brume'],
+          ['combat', 'echoforgeur', { boss: true, conseil: 'echos.e1.m3.conseil' }],
+          ['dialogue', 'echos.e1.m3.fin'],
+          ['message', 'echos.e1.m3.message']
+        ] },
+        { lieu: 'pont', evenements: [
+          ['dialogue', 'echos.e1.m4.brume'],
+          ['combat', 'echoheraut', { boss: true, conseil: 'echos.e1.m4.conseil' }],
+          ['dialogue', 'echos.e1.m4.fin'],
+          ['message', 'echos.e1.m4.message']
+        ] }
+      ] },
+      { lieu: 'col.s', evenements: [
+        ['panorama', 'pano.echo'],
+        ['dialogue', 'echos.e2.col'],
+        ['decor'],
+        ['combat', 'echosansnom', { boss: true, conseil: 'echos.e2.conseil' }],
+        ['dialogue', 'echos.e2.fin'],
+        ['message', 'echos.e2.message']
+      ] },
+      { lieu: 'garrick', evenements: [
+        ['dialogue', 'echos.e3.retour'],
+        ['codex'],
+        ['gagne', 'talecho, 2000 or'],
+        ['dialogue', 'echos.e3.fin']
+      ] }
+    ]
   }
 };

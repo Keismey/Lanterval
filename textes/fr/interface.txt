@@ -980,7 +980,7 @@ Aucune quête en cours.
 Quêtes terminées ({n})
 
 == journal.tout.fini
-Toute l'histoire de cette version est terminée.
+Toute l'histoire est terminée.
 
 == journal.bilan
 Bilan
@@ -1081,16 +1081,16 @@ quêtes annexes finies
 partie+
 
 == fin.titre
-Fin de la version 0.4
+Fin
 
 == fin.continuer
-Continuer à jouer
+Revenir à Aerie
 
 == fin.continuer.annexes
-Finir les quêtes annexes
+Juste avant l'Escalier de brume · il reste {n} quêtes annexes
 
 == fin.continuer.zones
-Explorer les zones à 100 %
+Juste avant l'Escalier de brume · finir l'exploration des zones
 
 == fin.plus
 Commencer une partie+
@@ -1185,91 +1185,60 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
-## Version 0.5.2
-Trois nouvelles quêtes annexes à Aerie : « L'œuf de wyverne » (Ilse), « Le cerf-volant » (Liss, la grand-mère de Nev et Varen) et « Les larmes de l'Œil » (Tavor).
-Nouvelles classes cachées : Dragonnier (Saut et Souffle) et la classe ultime, Gardien des souvenirs (Rappel et Sceau de mémoire). Nev reçoit sa dague ultime, Fil-de-vent ; le Moine et le Berserker peuvent maintenant porter des dagues.
-Les quatre larmes de l'Œil se cherchent dans l'ordre que tu veux. L'Ancien Orvan reste à Aerie après le feu de camp.
-## Version 0.5.1
-Les traversées prennent leur temps : quatre étapes, chacune affichée avec ce qui s'y passe (combat, or trouvé, rien à signaler). Les monstres sont annoncés avant chaque combat, et un bilan s'affiche d'un coup à l'arrivée.
-À la fin de chaque combat gagné, un écran montre l'XP et l'or gagnés, la barre d'XP de chaque héros et les niveaux gagnés ; on continue d'un appui, même en combat automatique.
-## Version 0.5.0
-L'acte 4, « L'Œil », commence : le Pont des Nuées, Aerie, les Ruines du monastère et le Pic hurlant, sur la carte des Hauts-Vents. L'histoire va jusqu'à la nuit avant l'assaut.
-Kael peut enfin se battre avec l'épée de son père, l'Épée d'Aldric, réservée à lui.
-Deux boss (le Serpent d'azur, puis Varen en duel contre Nev seule), six nouveaux monstres et la dernière bête de Roxane, le Roc ailé, qui s'envole un tour sur deux.
-Nouvelles classes : Sage, Ninja et Lame-mage, données par le cristal d'azur. Le Géomancien prend l'élément Vent dans les Hauts-Vents.
-Varen change de camp : il se bat désormais avec l'équipe, dans tous les combats sauf les duels.
-« La graine-lanterne », « Le carnet du chasseur » et « Le colporteur » se terminent : Fleur-lanterne, Œil du traqueur et Cape des quatre vents.
-Nouvelle quête annexe à Aerie : « Le courrier des falaises » (Pell). Sa Plume du facteur mène directement dans une zone déjà visitée.
-Aerie a la boutique la plus complète du jeu, et un nouveau remède : le Baume des vents.
-Images : tout ce qui est nouveau est provisoire.
-## Version 0.4.2
-Les armes ultimes sont réservées à leur personnage : le Bâton des marées pour Sol, le Cœur de forge pour Mira.
-## Version 0.4.1
-Deux nouvelles quêtes annexes données par Hilde à Forgecendre : « Le premier moule » (Hilde se bat avec l'équipe) et « Le carnet d'Aldric ».
-## Version 0.4.0
-L'acte 3, « Les forges de Cendre », est jouable : les Champs brûlés, Forgecendre, les Mines rouges et le Volcan endormi, sur la carte des Plaines de Cendre.
-Nev rejoint l'équipe : quatre héros se battent désormais ensemble. Nouvel élément : le Vent.
-Trois boss (le Forgeur de cages, Varen en duel, le Sans-Nom), huit nouveaux monstres et trois boss de quêtes annexes.
-Nouvelles classes : Berserker, Alchimiste et Invocateur, données par le cristal de braise. Classe secrète : Géomancien, dont la magie prend l'élément de la région.
-Nouvelles techniques : Furie, Rage, Corrosion, Mixture, Invocation, Offrande, Terroir et Éboulement. Nouvelles armes : les haches.
-Nouvelles quêtes annexes à Forgecendre : « La pierre qui chante » (Dorn) et « Les mineurs disparus » (Tobi).
-Suite de « La graine-lanterne », « Le carnet du chasseur » et « Le colporteur » ; « La berceuse » se termine.
-Hilde s'installe à Forgecendre. À la fin de l'acte, sa charrette mène directement dans un village déjà visité, depuis la carte.
-Nouveaux consommables : Potion de Cendre et Éther. La Lampe de mineur aide à découvrir les trésors et les lieux.
-Images : tout ce qui est nouveau est provisoire.
-Sur la carte, le « ! » marque aussi le village d'une autre région quand une quête attend dans cette région (par exemple Forgecendre vu depuis Salvent).
-## Version 0.3.5
-Les mises à jour arrivent plus vite : une nouvelle version s'installe dès la première actualisation, et l'écran titre se recharge tout seul.
-## Version 0.3.4
-Sur ordinateur, l'image est désormais en haut et les dialogues et boutons en dessous, comme sur téléphone : les panoramas et la carte s'affichent en entier.
-## Version 0.3.3
-Les astuces de jeu (quêtes, classes, récompenses, conseils avant un boss) sont encadrées à part, avec une icône « ? », pour ne pas se mêler au récit.
-## Version 0.3.2
-Trois nouvelles quêtes annexes à Lanterval, qui traversent toutes les régions : « La graine-lanterne » (Pia), « Le carnet du chasseur » (Roxane) et « Le colporteur » (Fennel). Leur suite arrive avec l'acte 3.
-Deux bêtes redoutables à traquer : le Sanglier-roc au Col des Pierres et l'Anguille-tonnerre au Marais des Lanternes.
-Roxane et Fennel suivent l'équipe de village en village, et le menu du village affiche ce que Fennel cherche.
-Le Codex présente Roxane et Fennel dans l'onglet Personnages.
-## Version 0.3.1
-Le Codex a un onglet Personnages : les personnages importants de l'histoire, chacun avec une fiche à déplier qui s'enrichit au fil de l'aventure.
-Une pastille rouge sur l'icône du Codex, l'onglet et le personnage signale une info nouvelle, jusqu'à ce qu'on lise sa fiche.
-## Version 0.3.0
-L'acte 2, « La ville qui oublie », est jouable : le Marais salant, Salvent, le Marais des Lanternes, l'Épave engloutie et le Phare noyé.
-La Côte de Salvent a sa propre carte. Le Marais salant relie la vallée et la côte, et le menu de la carte propose aussi de rentrer à Lanterval.
-Trois boss (la Vouivre des marais, la Mère-des-abysses, le Héraut de la Paupière), sept nouveaux monstres et deux boss de quêtes annexes.
-Nouvelles classes : Moine, Voleur et Barde, données par le cristal d'écume. Classe secrète : Corsaire.
-Nouvelles techniques : Rafale, Méditation, Vol, Esquive, Chant de courage, Berceuse, Abordage.
-Quêtes annexes : « Le navire oublié » et « Les prix perdus » ; « La berceuse » commence (la suite à l'acte 3).
-Chez Gaspard, les prix changent à chaque visite : en rouge s'ils sont gonflés, en vert s'ils sont réduits, jusqu'à ce que son registre soit retrouvé.
-Les boutiques ont des onglets : Armes, Armures, Accessoires et Consommables (à l'achat comme à la vente).
-En cas de défaite, l'équipe se réveille à l'auberge du dernier village visité.
-Images : tout ce qui est nouveau est provisoire.
-## Version 0.2.2
-Plus de bouton qui emmène l'équipe tout seul vers la quête : un « ! » jaune (quête principale) ou bleu (quête annexe) marque le bouton Carte, le bouton Traverser et le lieu sur la carte.
-## Version 0.2.1
-Dans le Codex, chaque classe se déplie d'un appui pour montrer ses armes, ses statistiques et ses techniques.
-## Version 0.2.0
-L'acte 1 est complet : le Col des Pierres est ouvert, avec ses trésors, ses événements et deux nouveaux monstres.
-Au sommet du col, un duel contre Varen, puis une rencontre avec le Sans-Nom qui ne peut pas être gagnée (sans perte d'or).
-Kael se réveille à l'auberge, Brann lui confie l'épée de son père, et le Marais salant apparaît sur la carte.
-Hilde, la mère de Mira, tient la forge du village : elle vend les armes et les armures, et de nouvelles pièces arrivent après la fête.
-Berthe vend désormais les herbes et les toniques.
-## Version 0.1.2
-Le Codex a un onglet Classes : les classes débloquées, leurs armes, leurs statistiques et leurs techniques.
-Le Bâton de braise n'est plus une arme de Feu : l'Attaque normale reste Lame, sans couleur ; seules les techniques à élément gardent leur couleur.
-Le menu Équipe montre des jauges de PV, PP et XP avec les chiffres.
-Toucher une statistique dans l'Équipe explique à quoi elle sert ; l'aide du Codex les explique toutes.
-Le Journal range les quêtes en cours et terminées dans des listes repliables ; les classes sont dans le Codex, celles pas encore débloquées en ???.
-Les fenêtres de menu gardent la même taille quel que soit l'onglet.
-Correction : si la page est fermée en pleine étape, l'étape reprend où elle en était (un combat gagné n'est plus rejoué).
-## Version 0.1.1
-Le texte s'écrit sans faire bouger l'écran ni les boutons.
-Un appui n'importe où passe à la suite d'un dialogue.
-Les monstres sont deux fois plus petits en combat.
-Les icônes de combat prennent la couleur de leur élément.
-## Version 0.1.0
-Premier vrai jeu, construit à partir de la maquette.
-L'acte 1 se joue jusqu'à la fête de la lanterne, avec la quête annexe du loup alpha.
-Sauvegarde automatique, copie de secours et export de la partie dans les Options.
-Partie+ : recommence l'histoire en gardant classes, niveaux, équipement et codex.
-Le jeu marche hors ligne et en anglais.
-Images : le village, Kael, le loup et la fête sont définitifs ; le reste est provisoire.
+## Version 0.5.3
+Le final de Lanterval : l'Escalier de brume, le Sans-Nom, puis Ysold et la Paupière du monde au Cœur de l'Œil. Un épilogue par héros, qui change selon les quêtes annexes finies.
+Avant de monter, le jeu te prévient : une fois sur l'Escalier, plus de carte ni de village jusqu'à la fin. Après le générique, tu reviens à Aerie juste avant l'Escalier, avec tout ce que tu as gagné, et une étoile « fin vue ».
+Nouvelle quête annexe après la fin : « Les Échos » (Garrick, à Aerie, une fois le carnet du chasseur fini). Les Profondeurs, qui n'avaient pas de suite, quittent la carte de la vallée.
+
+# ---------- Version 0.5.3 : le final ----------
+
+== titre.finvue
+★ fin vue
+
+== zone.nonretour
+Plus de retour : l'Escalier ne se redescend pas avant la fin
+
+== defaite.escalier
+L'équipe se relève sur une marche de l'Escalier, soignée. Rien n'est perdu : vous pouvez reprendre la montée.
+
+== journal.log.releve
+L'équipe se relève sur l'Escalier de brume
+
+== journal.log.fin
+Fin de l'histoire : l'Œil s'est ouvert
+
+== journal.log.avantfinal
+Retour à Aerie, avant l'Escalier de brume
+
+== fin.texte
+L'Œil s'est ouvert, et le monde se souvient. Merci d'avoir joué à Lanterval !
+
+== fin.astuce
+Tu peux revenir à Aerie juste avant l'Escalier : tu gardes tes niveaux, ton or et ton équipement, et tu peux refaire le final. Garrick, le vieux maître de Roxane, a une dernière chasse à te proposer.
+
+== combat.oubli
+*{nom} oublie ses techniques* pendant ses 2 prochaines actions.
+
+== combat.oubli.court
+Oubli
+
+== combat.oubli.sceau
+Le *Sceau de mémoire* protège {nom} : il n'oublie rien.
+
+== combat.cmd.tech.oubli
+Oubliées ({n})
+
+== combat.cristal
+{nom} change de cristal : *{cristal}*.
+
+== combat.cristal.ambre
+Ambre
+
+== combat.cristal.ecume
+Écume
+
+== combat.cristal.braise
+Braise
+
+== combat.cristal.azur
+Azur

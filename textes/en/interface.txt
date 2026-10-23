@@ -812,7 +812,7 @@ No current quest.
 Completed quests ({n})
 
 == journal.tout.fini
-The whole story of this version is complete.
+The whole story is complete.
 
 == journal.bilan
 Summary
@@ -908,16 +908,16 @@ side quests done
 new game+
 
 == fin.titre
-End of version 0.4
+The End
 
 == fin.continuer
-Keep playing
+Back to Aerie
 
 == fin.continuer.annexes
-Finish the side quests
+Just before the Stair of Mist · {n} side quests left
 
 == fin.continuer.zones
-Explore the zones to 100 %
+Just before the Stair of Mist · finish exploring the zones
 
 == fin.plus
 Start a new game+
@@ -1007,94 +1007,10 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
-## Version 0.5.2
-Three new side quests in Aerie: “The wyvern egg” (Ilse), “The kite” (Liss, Nev and Varen's grandmother) and “The tears of the Eye” (Tavor).
-New hidden classes: Dragoon (Jump and Breath) and the ultimate class, Keeper of memories (Recall and Memory seal). Nev receives her ultimate dagger, Windstring; Monks and Berserkers can now wield daggers.
-The four tears of the Eye can be gathered in any order. Elder Orvan stays in Aerie after the campfire.
-## Version 0.5.1
-Crossings take their time: four legs, each showing what happens (a fight, gold found, nothing to report). Monsters are announced before each fight, and a summary appears all at once on arrival.
-At the end of each won fight, a screen shows the XP and gold earned, each hero's XP bar and any levels gained; tap to continue, even in auto battle.
-## Version 0.5.0
-Act 4, “The Eye”, begins: the Cloud Bridge, Aerie, the Monastery ruins and the Howling Peak, on the High Winds map. The story runs until the night before the assault.
-Kael can at last fight with his father's sword, Aldric's sword, reserved for him.
-Two bosses (the Azure serpent, then Varen in a duel against Nev alone), six new monsters and Roxane's last beast, the Winged Roc, which takes off every other turn.
-New classes: Sage, Ninja and Spellblade, granted by the azure crystal. The Geomancer takes the Wind element in the High Winds.
-Varen changes sides: he now fights with the team, in every fight except duels.
-“The lantern seed”, “The hunter's logbook” and “The peddler” come to an end: Lantern flower, Tracker's eye and Cloak of the four winds.
-New side quest in Aerie: “The cliff mail” (Pell). Its Mail quill leads straight into an area already visited.
-Aerie has the most complete shop in the game, and a new remedy: the Wind balm.
-Images: everything new is provisional.
-## Version 0.4.2
-Ultimate weapons are reserved for their character: the Staff of Tides for Sol, the Forgeheart for Mira.
-## Version 0.4.1
-Two new side quests given by Hilde in Forgecendre: “The first mould” (Hilde fights with the team) and “Aldric's notebook”.
-## Version 0.4.0
-Act 3, “The Forges of Cendre”, is playable: the Burnt Fields, Forgecendre, the Red Mines and the Sleeping Volcano, on the Cendre Plains map.
-Nev joins the team: four heroes now fight together. New element: Wind.
-Three bosses (the Cage Forger, Varen in a duel, the Nameless), eight new monsters and three side-quest bosses.
-New classes: Berserker, Alchemist and Summoner, granted by the ember crystal. Secret class: Geomancer, whose magic takes the region's element.
-New techniques: Fury, Rage, Corrosion, Mixture, Summon, Offering, Lay of the Land and Rockslide. New weapons: axes.
-New side quests in Forgecendre: “The singing stone” (Dorn) and “The missing miners” (Tobi).
-“The lantern seed”, “The hunter's logbook” and “The peddler” continue; “The lullaby” comes to an end.
-Hilde settles in Forgecendre. At the end of the act, her cart goes straight to any village already visited, from the map.
-New consumables: Cendre potion and Ether. The Miner's lamp helps find treasures and places.
-Images: everything new is provisional.
-On the map, the “!” also marks the village of another region when a quest is waiting in that region (for example Forgecendre seen from Salvent).
-## Version 0.3.5
-Updates arrive faster: a new version installs on the first refresh, and the title screen reloads by itself.
-## Version 0.3.4
-On computers, the picture now sits on top with dialogue and buttons below, as on phones: panoramas and the map are shown in full.
-## Version 0.3.3
-Game tips (quests, classes, rewards, advice before a boss) are now framed separately with a “?” icon, so they don't mix with the story.
-## Version 0.3.2
-Three new side quests in Lanterval that cross every region: “The lantern seed” (Pia), “The hunter's logbook” (Roxane) and “The peddler” (Fennel). They continue in act 3.
-Two fearsome beasts to hunt: the Rock Boar at Stone Pass and the Thunder Eel in the Lantern Marsh.
-Roxane and Fennel follow the team from village to village, and the village menu shows what Fennel is looking for.
-The Codex introduces Roxane and Fennel in the Characters tab.
-## Version 0.3.1
-The Codex has a Characters tab: the key characters of the story, each with an expandable entry that grows as the adventure goes on.
-A red dot on the Codex icon, the tab and the character marks new information, until you read their entry.
-## Version 0.3.0
-Act 2, “The town that forgets”, is playable: the Salt Marsh, Salvent, the Lantern Marsh, the Sunken Wreck and the Drowned Lighthouse.
-The Salvent Coast has its own map. The Salt Marsh links the valley and the coast, and the map menu also offers to go back to Lanterval.
-Three bosses (the Marsh Wyvern, the Abyssal Mother, the Herald of the Eyelid), seven new monsters and two side-quest bosses.
-New classes: Monk, Thief and Bard, granted by the sea-foam crystal. Secret class: Corsair.
-New techniques: Flurry, Meditation, Steal, Dodge, Song of courage, Lullaby, Boarding strike.
-Side quests: “The forgotten ship” and “The lost prices”; “The lullaby” begins (it continues in act 3).
-At Gaspard's, prices change on every visit: in red when inflated, in green when reduced, until his ledger is found.
-Shops have tabs: Weapons, Armour, Accessories and Consumables (when buying and when selling).
-After a defeat, the team wakes up at the inn of the last village visited.
-Images: everything new is provisional.
-## Version 0.2.2
-No more buttons that take the team to the quest automatically: a yellow (main quest) or blue (side quest) “!” marks the Map button, the Cross button and the place on the map.
-## Version 0.2.1
-In the Codex, each class expands with a tap to show its weapons, stats and techniques.
-## Version 0.2.0
-Act 1 is complete: the Stone Pass is open, with its treasures, events and two new monsters.
-At the top of the pass, a duel against Varen, then an encounter with the Nameless that cannot be won (no gold lost).
-Kael wakes up at the inn, Brann gives him his father's sword, and the Salt Marsh appears on the map.
-Hilde, Mira's mother, runs the village forge: she sells weapons and armour, and new pieces arrive after the celebration.
-Berthe now sells herbs and tonics.
-## Version 0.1.2
-The Codex has a Classes tab: unlocked classes, their weapons, stats and techniques.
-The Ember staff is no longer a Fire weapon: the normal Attack stays Blade, with no colour; only techniques with an element keep their colour.
-The Team menu shows HP, PP and XP gauges with numbers.
-Tap a stat in the Team menu to see what it does; the Codex help explains them all.
-The Journal sorts current and completed quests into folding lists; classes are in the Codex, locked ones shown as ???.
-Menu windows keep the same size whatever the tab.
-Fix: if the page is closed in the middle of a step, the step resumes where it was (a won fight is no longer replayed).
-## Version 0.1.1
-Text now appears without moving the screen or the buttons.
-Tap anywhere to move on in a dialogue.
-Monsters are half the size in combat.
-Combat icons take the colour of their element.
-## Version 0.1.0
-First real game, built from the prototype.
-Act 1 plays up to the lantern festival, with the alpha wolf side quest.
-Autosave, backup copy and game export in the Options.
-New game+: start the story over while keeping classes, levels, gear and codex.
-The game works offline and in English.
-Images: the village, Kael, the wolf and the festival are final; the rest is temporary.
+## Version 0.5.3
+The finale of Lanterval: the Stair of Mist, the Nameless, then Ysold and the Eyelid of the World at the Heart of the Eye. One epilogue per hero, which changes with the side quests you finished.
+Before you climb, the game warns you: once on the Stair, no more map or village until the end. After the credits, you come back to Aerie just before the Stair, with everything you earned, and an “ending seen” star.
+New side quest after the end: “The Echoes” (Garrick, in Aerie, once the hunter's logbook is complete). The Depths, which led nowhere, leave the valley map.
 
 == boutique.fous
 Prices change on every visit: *in red* when inflated, *in green* when reduced.
@@ -1241,3 +1157,56 @@ MISS
 
 == journal.log.plume
 With the Mail quill to {lieu}
+
+# ---------- Version 0.5.3: the finale ----------
+
+== titre.finvue
+★ ending seen
+
+== zone.nonretour
+No way back: the Stair cannot be climbed down before the end
+
+== defaite.escalier
+The team gets back up on a step of the Stair, healed. Nothing is lost: you can resume the climb.
+
+== journal.log.releve
+The team gets back up on the Stair of Mist
+
+== journal.log.fin
+End of the story: the Eye has opened
+
+== journal.log.avantfinal
+Back to Aerie, before the Stair of Mist
+
+== fin.texte
+The Eye has opened, and the world remembers. Thank you for playing Lanterval!
+
+== fin.astuce
+You can return to Aerie just before the Stair: you keep your levels, gold and gear, and you can replay the finale. Garrick, Roxane's old teacher, has one last hunt for you.
+
+== combat.oubli
+*{nom} forgets their techniques* for their next 2 actions.
+
+== combat.oubli.court
+Oblivion
+
+== combat.oubli.sceau
+The *Memory Seal* protects {nom}: nothing is forgotten.
+
+== combat.cmd.tech.oubli
+Forgotten ({n})
+
+== combat.cristal
+{nom} switches crystals: *{cristal}*.
+
+== combat.cristal.ambre
+Amber
+
+== combat.cristal.ecume
+Foam
+
+== combat.cristal.braise
+Ember
+
+== combat.cristal.azur
+Azure

@@ -288,3 +288,41 @@ She kept their childhood kite in the attic, torn, for six years.
 
 == perso.liss.3
 She forgave Nev and Varen, and promised them to mend the rest like the sail.
+
+# ---------- Version 0.5.3: the finale ----------
+
+== perso.kael.10
+On the Stair of Mist, he lowered his weapon before the Nameless and held out the reforged sword. His father remembered him.
+
+== perso.kael.11
+At the Heart of the Eye, he kept the Eye open with his three friends. He went home to Lanterval, where the mist no longer returns.
+
+== perso.mira.8
+At the Heart of the Eye, her fire split the Eyelid of the World. She has chosen to go home to Forgecendre, sooner or later.
+
+== perso.sol.7
+At the Heart of the Eye, he healed his friends until the very last blow. He settled in Salvent, near the lighthouse and his sister.
+
+== perso.orvan.7
+At the Heart of the Eye, he helped Ysold remember her family. He stayed up there with her, to make up for fifty years.
+
+== perso.varen.7
+Struck by Ysold's Oblivion at the Heart of the Eye, he forgot even his sister's name. When the Eye opened, he remembered everything.
+
+== perso.sansnom.4
+On the Stair of Mist, before his son's sword, he found his name again: Aldric. He stayed alone on the landing to hold back the Shadows.
+
+== perso.sansnom.5
+He held the Stair to the end, and came back down. He took up the guard of Lanterval again, at Kael's side.
+
+== perso.nev.8
+At the Heart of the Eye, she saw her brother forget her, then remember. She went home to Aerie, where the wind still sings.
+
+== perso.ysold.4
+At the Heart of the Eye, the Eyelid of the World crumbled to dust and the Eye opened. Ysold remembered her mother, her brother and Orvan.
+
+== perso.garrick.1
+Roxane's old teacher, in Aerie. He says the mist copies the beasts you bring down, only worse: they are called Echoes.
+
+== perso.garrick.2
+Thanks to the team, the five Echoes have fallen. He gave away his talisman and the notebook of his whole hunting life.

@@ -41,7 +41,7 @@ const EVENEMENTS = {
   async combat([ids, o], ctx) {
     if (ctx.silencieux) return;
     o = o || {};
-    if (o.conseil) await show(encadreTuto(tx(o.conseil)), { title: t('combat.conseil'), choices: [{ label: esc(t('combattre')), ic: 'sword', cls: 'main' }] });
+    if (o.conseil) await show(encadreTuto(tx(o.conseil).replace(/^\?\s+/, '')), { title: t('combat.conseil'), choices: [{ label: esc(t('combattre')), ic: 'sword', cls: 'main' }] });
     await battle(ids.split(/\s+/), { zone: lieuActuel(), canFlee: false, quest: true, boss: !!o.boss, perdu: !!o.perdu, equipe: o.equipe ? o.equipe.split(/\s+/) : null, invitee: o.invitee || null });
   },
   async gagne([spec]) { gagner(spec); hud(); },
@@ -69,7 +69,15 @@ const EVENEMENTS = {
   },
   async stop(a, ctx) { ctx.stop = true; },
   async message([cle], ctx) { if (!ctx.silencieux) S.msg = tx(cle); },
-  async fin_version(a, ctx) { S.fins = (S.fins || 0) + 1; if (!ctx.silencieux) S.screen = 'fin'; }
+  // « si » : joue la première liste si la condition est vraie, sinon la seconde (épilogues selon les quêtes finies)
+  async si([c, alors, sinon], ctx, suite, id) {
+    const oui = cond(c), evts = oui ? alors : sinon;
+    if (evts) await jouer(evts, ctx, id + (oui ? '.a.' : '.s.'));
+  },
+  // tous les monstres du Codex, faiblesses et résistances comprises (récompense des Échos)
+  async codex() { for (const id in MONSTRES) revealAll(id); },
+  // fin du jeu : générique, puis l'écran de fin (retour à Aerie avant l'Escalier, partie+)
+  async fin_jeu(a, ctx) { S.fins = (S.fins || 0) + 1; S.finVue = (S.finVue || 0) + 1; if (!ctx.silencieux) { logR('journal.log.fin'); S.screen = 'fin'; } }
 };
 
 /* Point de reprise : chaque événement joué est noté dans S.reprise (sauvegardé avec la partie).

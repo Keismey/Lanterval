@@ -127,7 +127,7 @@ function openCodex(tab) {
       const c = S.codex[id], d = MONSTRES[id], b = best(id);
       if (!c) return `<div class="bst unseen"><span></span><div><h4>???</h4><p>${esc(t('codex.inconnu'))}</p></div></div>`;
       const w = d.faible.map(el => b.weak.includes(el) ? elChip(el) : '<span class="elc unk">?</span>').join(''), r = b.res.map(el => `<span class="elc ${el} res">${el}</span>`).join('');
-      return `<div class="bst"><img alt="" src="${imgSrc('monstre.' + id)}"><div><h4>${esc(t('monstre.' + id))}</h4><p>${tx('monstre.' + id + '.desc')} ${esc(t('codex.vaincus', { n: c.kills }))}</p><div class="erow"><span class="note">${esc(t('codex.faiblesses'))}</span>${w}${r ? `<span class="note gauche">${esc(t('codex.resiste'))}</span>${r}` : ''}</div></div></div>`;
+      return `<div class="bst"><img alt="" class="${(IMAGES['monstre.' + id] || {}).brume ? 'echo' : ''}" src="${imgSrc('monstre.' + id)}"><div><h4>${esc(t('monstre.' + id))}</h4><p>${tx('monstre.' + id + '.desc')} ${esc(t('codex.vaincus', { n: c.kills }))}</p><div class="erow"><span class="note">${esc(t('codex.faiblesses'))}</span>${w}${r ? `<span class="note gauche">${esc(t('codex.resiste'))}</span>${r}` : ''}</div></div></div>`;
     }).join('')}</div>`;
     else if (tab === 'classes') body = classesHtml();
     else if (tab === 'perso') body = persoHtml();

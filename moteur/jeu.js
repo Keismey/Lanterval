@@ -10,6 +10,16 @@ async function run(fn) {
   renderStable();
 }
 async function defaite() {
+  // dans le final, l'équipe se relève au dernier palier de l'Escalier, sans perdre d'or,
+  // et l'étape reprend au combat perdu (Ysold vaincue ne se rejoue pas si la Paupière l'emporte)
+  if (dansLeFinal()) {
+    healAll(); restorePP();
+    S.loc = fini(FINAL.palier) ? 'escalier.s' : 'escalier.b'; S.screen = 'zone';
+    logR('journal.log.releve');
+    setDecor(decorDuLieu('escalier')); ovc().innerHTML = '';
+    await show(tx('defaite.escalier'), { title: t('defaite.titre') });
+    return;
+  }
   S.reprise = null; // l'étape perdue se rejoue depuis le début
   S.gold = Math.floor(S.gold / 2); healAll(); restorePP();
   const v = S.auberge && LIEUX[S.auberge] ? S.auberge : 'lanterval';   // l'auberge du dernier village visité
@@ -23,6 +33,8 @@ async function defaite() {
 function renderStable() {
   $('#app').classList.remove('inb');
   if (!S) S = newState();
+  // la fin vue (écran fermé, ou partie reprise depuis le titre) : la partie revient à Aerie avant l'Escalier
+  if (!['title', 'fin', 'intro'].includes(S.screen) && dansLeFinal() && fini(FINAL.fin)) retourAvantFinal();
   hud();
   if (S.screen !== 'title') save();
   if (S.screen === 'title') renderTitle();
@@ -42,7 +54,7 @@ function renderTitle() {
     const opts = [];
     if (partieEnCours()) {
       const e = etapeCourante();
-      opts.push({ k: 'go', ic: 'play', label: esc(t('titre.continuer')), sub: esc((e ? t(e.id + '.titre') : t('journal.tout.fini')) + ' · ' + fmt(S.st.time) + (S.plus ? ' · ' + t('titre.plus', { n: S.plus }) : '')), cls: 'main' });
+      opts.push({ k: 'go', ic: 'play', label: esc(t('titre.continuer')), sub: esc((e ? t(e.id + '.titre') : t('journal.tout.fini')) + ' · ' + fmt(S.st.time) + (S.plus ? ' · ' + t('titre.plus', { n: S.plus }) : '') + (S.finVue ? ' · ' + t('titre.finvue') : '')), cls: 'main' });
       opts.push({ k: 'new', ic: 'star', label: esc(t(confirmer ? 'titre.nouvelle.confirmer' : 'titre.nouvelle')), sub: esc(t(confirmer ? 'options.reset.confirmer.sous' : 'titre.nouvelle.sous')), cls: confirmer ? 'danger' : 'ghost' });
     } else opts.push({ k: 'new', ic: 'play', label: esc(t('titre.commencer')), sub: esc(t('titre.commencer.sous')), cls: 'main' });
     const p = $('#panel');
@@ -62,22 +74,21 @@ async function commencer() {
   S.screen = 'village';
 }
 
-/* ---------- Fin de la version ---------- */
+/* ---------- Fin du jeu ---------- */
+// après le générique : le bilan de la partie, puis retour à Aerie avant l'Escalier, partie+ ou écran titre
 function renderFin() {
-  const v = LIEUX[lieuActuel()].type === 'village' ? lieuActuel() : 'lanterval';
-  setDecor(decorDuLieu(v), { lueur: lueurDuLieu(v) });
-  ovc().innerHTML = lbl(nomLieu(v), t(varianteLieu(v, 'sous')));
+  setDecor('pano.oeil', { pano: true });
+  ovc().innerHTML = '';
   const st = S.st, zones = Object.keys(S.z).filter(lieuVisible);
-  // quêtes annexes encore jouables dans cette version (une étape qui attend l'acte suivant ne compte pas)
   const annexes = Object.keys(ANNEXES), finies = annexes.filter(annexeFinie).length;
-  const reste = annexes.filter(a => !annexeFinie(a) && (annexeEtat(a) ? annexeDispo(a) : annexeOuverte(a))).length;
+  const reste = annexes.length - finies;
   const opts = [
-    { k: 'go', ic: 'run', label: esc(t('fin.continuer')), sub: esc(t(reste ? 'fin.continuer.annexes' : 'fin.continuer.zones')), cls: 'main' },
+    { k: 'go', ic: 'run', label: esc(t('fin.continuer')), sub: esc(t(reste ? 'fin.continuer.annexes' : 'fin.continuer.zones', { n: reste })), cls: 'main' },
     { k: 'plus', ic: 'star', label: esc(t('fin.plus')), sub: esc(t('fin.plus.sous')) },
     { k: 'titre', ic: 'home', label: esc(t('options.titre')), cls: 'ghost' }
   ];
   const p = $('#panel');
-  p.innerHTML = `<div class="ptitle">${esc(t('fin.titre'))}</div><p class="ptext">${tx('fin.version')}</p>
+  p.innerHTML = `<div class="ptitle">${esc(t('fin.titre'))}</div><p class="ptext">${tx('fin.texte')}</p><p class="ptext">${encadreTuto(tx('fin.astuce'))}</p>
   <div class="stats"><div class="stat"><b>${fmt(st.time)}</b><span>${esc(t('stats.temps'))}</span></div><div class="stat"><b>${st.taps}</b><span>${esc(t('stats.appuis'))}</span></div>
   <div class="stat"><b>${st.fights}</b><span>${esc(t('stats.combats.quete', { n: st.qfights }))}</span></div><div class="stat"><b>${st.autoTurns}</b><span>${esc(t('stats.auto'))}</span></div>
   <div class="stat"><b>${st.explores}</b><span>${esc(t('stats.explorations'))}</span></div><div class="stat"><b>${st.trav}</b><span>${esc(t('stats.traversees'))}</span></div>
@@ -85,9 +96,10 @@ function renderFin() {
   <h3 class="sec">${esc(t('fin.chronologie'))}</h3><div class="log">${st.log.map(ligneJournal).join('')}</div>
   <div class="acts">${btns(opts)}</div>`;
   bind(p, opts, k => {
-    if (k === 'go') { S.screen = 'village'; renderStable(); }
-    else if (k === 'plus') { partiePlus(); run(commencer); }
-    else { S.screen = 'title'; save(); renderStable(); }
+    if (k === 'plus') { partiePlus(); run(commencer); return; }
+    retourAvantFinal();
+    if (k === 'titre') S.screen = 'title';
+    save(); renderStable();
   });
 }
 

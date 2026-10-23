@@ -14,7 +14,10 @@
                quand sa garde se brise, et pique sur l'équipe en redescendant (mult)
    vol : ce qu'on peut lui voler (Voleur, Corsaire) ; sans vol, on lui prend de l'or.
    endormi : résiste à la Berceuse (les boss y résistent toujours)
-   intouchable : ne descend jamais sous 1 PV et sa garde ne se brise pas (combat perdu d'avance, voir acte1.js) */
+     oubli   : frappe un héros qui oublie ses techniques pendant 2 actions (chance) ; le Sceau de mémoire l'en protège
+     cristaux : porte un cristal à la fois (ordre : c, faible, resiste) et en change après chaque action (Ysold)
+   intouchable : ne descend jamais sous 1 PV et sa garde ne se brise pas (combat perdu d'avance, voir acte1.js)
+   fin : part des PV sous laquelle le combat s'arrête sur une scène (texte monstre.<id>.fin), comme une victoire (Aldric) */
 
 const MONSTRES = {
   loup: { pv: 34, atk: 10, def: 3, vit: 12, garde: 2, faible: ['L', 'F'], resiste: [], xp: 8, or: 6, taille: .17 },
@@ -143,5 +146,32 @@ const MONSTRES = {
   larmef: { pv: 4400, atk: 142, def: 16, vit: 20, garde: 7, faible: ['E', 'V'], resiste: ['F', 'T'], xp: 300, or: 180, taille: .3, boss: true, vol: 'potion',
     capacites: [{ type: 'charge', mult: 1.35 }] },
   larmev: { pv: 4400, atk: 120, def: 14, vit: 24, garde: 7, faible: ['T', 'F'], resiste: ['V', 'E'], xp: 300, or: 180, taille: .3, boss: true, vol: 'baume',
-    capacites: [{ type: 'double', chance: .3, garde: true }, { type: 'fort', chance: .3, mult: 1.4 }] }
+    capacites: [{ type: 'double', chance: .3, garde: true }, { type: 'fort', chance: .3, mult: 1.4 }] },
+
+  // ---------- Le final : l'Escalier de brume et le Cœur de l'Œil (0.5.3) ----------
+  veilleur: { pv: 420, atk: 112, def: 18, vit: 18, garde: 5, faible: ['V', 'F'], resiste: ['T'], xp: 60, or: 44, taille: .24, vol: 'potion',
+    capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
+  nueeoubli: { pv: 330, atk: 106, def: 8, vit: 24, garde: 3, faible: ['F', 'L'], resiste: ['T', 'E'], xp: 54, or: 38, taille: .2, f: true, vol: 'ether',
+    capacites: [{ type: 'spores', chance: .35, mult: .7 }, { type: 'drain', chance: .3 }] },
+  // Aldric sous le masque : le combat s'arrête quand Kael l'a assez affaibli pour lui tendre l'épée
+  sansnom3: { pv: 9200, atk: 205, def: 20, vit: 22, garde: 14, faible: ['F', 'V'], resiste: ['T', 'E'], xp: 480, or: 0, taille: .42, boss: true, fin: .4, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.6 }, { type: 'double', chance: .3, garde: true }] },
+  // Ysold fusionnée aux quatre cristaux : sa faiblesse tourne avec le cristal qu'elle porte
+  ysold: { pv: 7000, atk: 138, def: 18, vit: 26, garde: 10, faible: ['V', 'F', 'E', 'T'], resiste: [], xp: 520, or: 0, taille: .34, boss: true, f: true, vol: 'baume',
+    capacites: [{ type: 'cristaux', ordre: [{ c: 'ambre', faible: ['V'], resiste: ['T'] }, { c: 'ecume', faible: ['F'], resiste: ['E'] }, { c: 'braise', faible: ['E'], resiste: ['F'] }, { c: 'azur', faible: ['T'], resiste: ['V'] }] },
+      { type: 'fort', chance: .3, mult: 1.45 }, { type: 'double', chance: .2, garde: true }] },
+  // la Paupière du monde, contre les quatre héros seuls : sa garde cède aux quatre éléments, pas à la Lame
+  paupiere: { pv: 9500, atk: 172, def: 20, vit: 22, garde: 16, faible: ['T', 'F', 'E', 'V'], resiste: ['L'], xp: 600, or: 0, taille: .44, f: true, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'oubli', chance: .35 }, { type: 'double', chance: .25, garde: true }] },
+  // « Les Échos » (après la fin) : la brume copie les grands monstres abattus, en pire
+  echogolem: { pv: 6000, atk: 128, def: 22, vit: 18, garde: 12, faible: ['T', 'E'], resiste: ['F', 'L'], xp: 500, or: 300, taille: .38, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.6 }, { type: 'double', chance: .25, garde: true }] },
+  echovouivre: { pv: 7000, atk: 176, def: 16, vit: 22, garde: 10, faible: ['T'], resiste: ['E', 'F'], xp: 500, or: 300, taille: .36, f: true, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'drain', chance: .3 }] },
+  echoforgeur: { pv: 8200, atk: 215, def: 22, vit: 22, garde: 13, faible: ['E', 'V'], resiste: ['F', 'L'], xp: 500, or: 300, taille: .4, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.5 }, { type: 'appel', id: 'automate', chance: .3 }] },
+  echoheraut: { pv: 7000, atk: 150, def: 18, vit: 24, garde: 10, faible: ['E', 'T'], resiste: ['F'], xp: 500, or: 300, taille: .3, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.6 }, { type: 'double', chance: .3 }] },
+  echosansnom: { pv: 15000, atk: 225, def: 22, vit: 24, garde: 16, faible: ['F', 'V'], resiste: ['T', 'E'], xp: 800, or: 500, taille: .42, boss: true, vol: 'baume',
+    capacites: [{ type: 'charge', mult: 1.7 }, { type: 'double', chance: .25, garde: true }, { type: 'drain', chance: .25 }] }
 };

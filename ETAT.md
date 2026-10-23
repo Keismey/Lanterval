@@ -1,5 +1,19 @@
 # État du projet
 
+## Version 0.5.3 (2026-10-23) : le final
+
+- Plan validé par Keismey (« Ok pour tout », 2026-10-23) : https://claude.ai/artifact/NjYEq1ntrxxS94XnKeHMHo
+- Quête principale : a4.e8 (pied de l'Escalier de brume : point de non-retour « Monter / Pas encore », Veilleurs de la Paupière), a4.e9 (le Sans-Nom : le combat s'arrête sous 40 % de ses PV, Kael lui tend l'épée et lit le carnet si `annexe aldric 4` ; Aldric retient les Ombres ; soin et point de reprise au sommet), a4.e10 (Ysold et ses quatre cristaux, puis la Paupière du monde contre les quatre héros seuls ; Varen frappé par l'Oubli reste avec Orvan ; l'Œil s'ouvre ; épilogues).
+- Épilogues (`['si', condition, alors, sinon]`) : Kael (`annexe aldric 4` : Aldric rentre), Mira (`annexe moule 4`, sinon drapeau `pardon`, sinon « plus tard »), Sol (`annexe berceuse 4`), Nev (`annexe cerfvolant 5` : Varen reste chez Liss), Lanterval fleuri (`annexe graine 5`). Puis `['fin_jeu']`.
+- Après la fin : écran de fin (bilan, chronologie) avec « Revenir à Aerie » (juste avant l'Escalier : on garde niveaux, or, objets, équipement ; `retourAvantFinal` dans etat.js retire a4.e8 à a4.e10 des étapes faites), « Partie+ » et l'écran titre. Étoile « fin vue » (`S.finVue`, gardée en partie+, condition `finvue`). Défaite dans le final : relève au palier de l'Escalier, sans perte d'or, l'étape reprend au combat perdu. Réglages dans `FINAL` (acte4.js).
+- L'Escalier de brume est une vraie zone (`nonRetour` dans monde.js) : on n'y explore qu'une fois monté, et plus de carte ni de traversée libre jusqu'à la fin. Six découvertes, paliers (Étoile de brume), Veilleur de la Paupière et Nuée d'oubli, décor « sommet » après a4.e9.
+- Quête 16 « Les Échos » (`echos`, Garrick, nouveau PNJ d'Aerie) : ouverte par `finvue et annexe chasse 9`. Quatre Échos dans l'ordre qu'on veut (Forêt, Marais des Lanternes, Champs brûlés, Pont des Nuées), puis l'Écho du Sans-Nom au Col des Pierres. Récompense : Talisman de l'écho (le porteur agit le premier, sa première technique est gratuite), 2 000 po, Codex complet (événement `codex`).
+- Combat : seuil `fin` (le combat s'arrête sur une scène), capacité `cristaux` (Ysold change de cristal et de faiblesse après chaque action), capacité `oubli` (un héros perd ses techniques pendant 2 actions ; le Sceau de mémoire l'en protège). Conditions : `ou` et `finvue`. Les textes `monstre.<id>.coup` et `.soin` évitent qu'un coup puissant ou un soin reprenne le texte `.special` d'une charge (Héraut, Sans-Nom, Élémentaire de terre).
+- Corrections : la fin de l'acte 3 n'affiche plus l'écran « fin de version » ; le « ? » des conseils de boss ne s'affiche plus en double. Les Profondeurs quittent la carte.
+- Codex, onglet Personnages : Garrick, et nouvelles infos pour Kael, Mira, Sol, Nev, Orvan, Varen, Aldric (Sans-Nom) et Ysold (conditions `fini a4.e9 ou finvue` pour qu'elles restent après le retour à Aerie).
+- Images provisoires : décor de l'Escalier (et du sommet), Veilleur, Nuée d'oubli, Ysold, Paupière du monde (pixel art), visages d'Aldric et de Garrick ; les Échos réutilisent les images des boss d'origine « en brume » (`brume: true`, filtre CSS) ; panoramas en cadre nommé : `pano.aldric`, `pano.ysold`, `pano.oeil`, `pano.epilogue.kael/mira/sol/nev`, `pano.echo`.
+- Équilibrage au bot (graines 1 à 9, niveaux 38 à 45) : Sans-Nom entre 0 et 53 % de PV au plus bas, Ysold entre 0 et 60 %, Paupière entre 2 et 65 % (après Ysold, sans repos), Échos entre 0 et 64 %. Le bot ne profite pas du changement de cristal d'Ysold.
+
 ## Version 0.5.2 (2026-10-23)
 
 - Quêtes annexes des Hauts-Vents (bible, quêtes 12, 13 et 15 ; plan validé par Keismey) :
@@ -132,6 +146,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.5.3)
+## Prochaine étape
 
-0.5.3 : l'Escalier de brume, l'assaut final et l'épilogue, qui lira `annexe aldric 4` (Aldric survit), `annexe moule 4` (réconciliation de Mira et Hilde) et `annexe cerfvolant 5` (Varen reste à Aerie avec Liss). Le Sceau de mémoire pourra bloquer un « Oubli » d'Ysold si on lui en donne un.
+Le jeu est complet. Reste : les images définitives du final (fil des images), puis la fiche du jeu sur le hub, dans une étape à part sur le dépôt du hub, après les images.

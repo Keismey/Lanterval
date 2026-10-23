@@ -693,6 +693,9 @@ The Herald raises his mace… *“Closed eyelid” next turn*, unless you break 
 == monstre.heraut.special
 *Closed eyelid!* A dark wave hits the whole team.
 
+== monstre.heraut.coup
+Mace of the Eyelid
+
 == monstre.pie
 Mist magpie
 
@@ -1216,6 +1219,9 @@ The Nameless raises his mace above his head… *he will strike the whole team ne
 == monstre.sansnom2.special
 The Nameless smashes the ground with his mace!
 
+== monstre.sansnom2.coup
+Mace blow
+
 == monstre.salreine
 Salamander Queen
 
@@ -1251,6 +1257,9 @@ The Elemental sinks into the ground… *it will shake the whole gallery next tur
 
 == monstre.tellure.special
 The Elemental shakes the gallery!
+
+== monstre.tellure.soin
+The Elemental's crystals sing, and its rock closes up: *+{v} HP*.
 
 == monstre.gardien
 Cage guardian
@@ -1711,3 +1720,143 @@ The monastery's last prior, turned to mist. He still guards the banner on the fo
 
 == monstre.prieur.appel
 The Spectral prior raises his crozier: a {renfort} rises from the mist!
+
+# ---------- Version 0.5.3: the finale ----------
+
+== parle.aldric
+Aldric
+
+== parle.garrick
+Garrick
+
+== equip.etoile
+Mist star
+
+== equip.talecho
+Echo talisman
+
+== monstre.veilleur
+Watcher of the Eyelid
+
+== monstre.veilleur.desc
+An Order knight posted on the Stair, his helm engraved with a closed eye. He has guarded the climb for fifty years.
+
+== monstre.veilleur.special
+Halberd of the Eyelid
+
+== monstre.nueeoubli
+Oblivion swarm
+
+== monstre.nueeoubli.court
+Swarm
+
+== monstre.nueeoubli.desc
+A thick mist full of erased faces. It wraps around the whole team and feeds on what it touches.
+
+== monstre.nueeoubli.special
+The Oblivion swarm wraps around the whole team!
+
+== monstre.sansnom3
+The Nameless
+
+== monstre.sansnom3.desc
+Aldric, under the Order's mask, on the last landing of the Stair. He strikes twice while his guard holds.
+
+== monstre.sansnom3.charge
+The Nameless raises his mace above his head… *he will strike the whole team on his next turn*, unless you break his guard first.
+
+== monstre.sansnom3.special
+The Nameless brings his mace down on the steps, and the Stair shakes!
+
+== monstre.sansnom3.fin
+The Nameless takes a step back and lowers his mace. Under the mask, his breath trembles.
+
+== monstre.ysold
+Ysold
+
+== monstre.ysold.desc
+The founder of the Order, fused with the four crystals. She wears one at a time and switches after each action: her weakness changes with it.
+
+== monstre.ysold.special
+Light of the four crystals
+
+== monstre.paupiere
+Eyelid of the World
+
+== monstre.paupiere.court
+Eyelid
+
+== monstre.paupiere.desc
+The stone eyelid the Order drew over the Eye. Whoever it strikes forgets their techniques; its guard only gives way to the four elements.
+
+== monstre.paupiere.charge
+The Eyelid of the World slowly closes… *it will crush the whole team on its next turn*, unless you break its guard first.
+
+== monstre.paupiere.special
+The Eyelid of the World slams shut on the whole team!
+
+== monstre.paupiere.oubli
+The Eyelid of the World casts its shadow over {cible}.
+
+== monstre.echogolem
+Echo of the Guardian
+
+== monstre.echogolem.desc
+The mist copied the cave's Crystal Guardian, only worse. It gathers light and strikes twice while its guard holds.
+
+== monstre.echogolem.charge
+The Echo of the Guardian gathers a grey light… *powerful attack on its next turn*, unless you break its guard first.
+
+== monstre.echogolem.special
+*Mist ray!* A grey light strikes the whole team.
+
+== monstre.echovouivre
+Echo of the Wyvern
+
+== monstre.echovouivre.desc
+The Marsh Wyvern, remade of cold mist. It breathes on the whole team and bites to heal itself.
+
+== monstre.echovouivre.charge
+The Echo of the Wyvern swells its throat… *breath on the whole team on its next turn*, unless you break its guard first.
+
+== monstre.echovouivre.special
+*Breath of oblivion!* An icy vapour strikes the whole team.
+
+== monstre.echoforgeur
+Echo of the Forger
+
+== monstre.echoforgeur.desc
+The Cage Forger, remade of mist and grey iron. It still calls its automatons.
+
+== monstre.echoforgeur.charge
+The Echo of the Forger raises its anvil… *it will crush the whole team on its next turn*, unless you break its guard first.
+
+== monstre.echoforgeur.special
+The Echo of the Forger brings its anvil down on the whole team!
+
+== monstre.echoforgeur.appel
+The Echo of the Forger strikes the ground: a {renfort} rises from the mist!
+
+== monstre.echoheraut
+Echo of the Herald
+
+== monstre.echoheraut.desc
+The Herald of the Eyelid, remade of mist. It strikes twice, faster than the original.
+
+== monstre.echoheraut.charge
+The Echo of the Herald raises its mace… *“Closed eyelid” on its next turn*, unless you break its guard first.
+
+== monstre.echoheraut.special
+*Closed eyelid!* A grey wave strikes the whole team.
+
+== monstre.echosansnom
+Echo of the Nameless
+
+== monstre.echosansnom.desc
+The mist kept the shape of the Nameless, without Aldric inside. The strongest of all the Echoes.
+
+== monstre.echosansnom.charge
+The Echo of the Nameless raises a mace of mist… *it will strike the whole team on its next turn*, unless you break its guard first.
+
+== monstre.echosansnom.special
+The Echo of the Nameless crushes the pass under its mace of mist!

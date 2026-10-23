@@ -79,7 +79,7 @@ function poserMonstres(ennemis) {
   ennemis.forEach((e, i) => { [e.px, e.py] = PLACES[n][i]; });
   $('#units').innerHTML = ennemis.map((e, i) => {
     const f = IMAGES['monstre.' + e.id] || {};
-    return `<div class="unit ${f.fichier ? '' : 'pix'}" data-u="${i}" style="left:${e.px * 100}%;top:${e.py * 100}%;height:${MONSTRES[e.id].taille * 100}%"><img alt="" src="${imgSrc('monstre.' + e.id)}"></div>`;
+    return `<div class="unit ${f.fichier ? '' : 'pix'} ${f.brume ? 'echo' : ''}" data-u="${i}" style="left:${e.px * 100}%;top:${e.py * 100}%;height:${MONSTRES[e.id].taille * 100}%"><img alt="" src="${imgSrc('monstre.' + e.id)}"></div>`;
   }).join('');
 }
 // un monstre en vol (capacité envol) monte au-dessus de sa place, sans sortir de l'écran ; son cadre d'infos reste en bas

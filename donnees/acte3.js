@@ -126,8 +126,7 @@ ACTES.push({
       ['dialogue', 'a3.e10.nev'],
       ['drapeau', 'charrette'],
       ['dialogue', 'a3.e10.charrette'],
-      ['message', 'a3.e10.message'],
-      ['fin_version']
+      ['message', 'a3.e10.message']
     ] }
   ]
 });

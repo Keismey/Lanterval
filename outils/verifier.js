@@ -49,9 +49,10 @@ function gain(spec, ou) {
 function effet(spec, ou) { if (!/^(soin|pp)( \d+)?$|^degats (tous|kael|mira|sol|nev) \d+$/.test(spec)) erreur(`effet illisible « ${spec} » (${ou})`); }
 function condition(c, ou) {
   if (c === undefined || c === true || c === false) return;
-  for (const p of String(c).split(/\s+et\s+/)) {
+  for (const p of String(c).split(/\s+(?:et|ou)\s+/)) {
     const m = p.trim().split(/\s+/); if (m[0] === 'pas') m.shift();
-    if (m[0] === 'fini') { if (!etapes.has(m[1])) erreur(`condition : étape inconnue « ${m[1]} » (${ou})`); }
+    if (m[0] === 'finvue') { if (m.length > 1) erreur(`condition illisible « ${p} » (${ou})`); }
+    else if (m[0] === 'fini') { if (!etapes.has(m[1])) erreur(`condition : étape inconnue « ${m[1]} » (${ou})`); }
     else if (m[0] === 'annexe') { if (!D.ANNEXES[m[1]]) erreur(`condition : quête annexe inconnue « ${m[1]} » (${ou})`); }
     else if (m[0] === 'objet') { if (!D.IMPORTANTS[m[1]]) erreur(`condition : objet important inconnu « ${m[1]} » (${ou})`); }
     else if (m[0] !== 'drapeau') erreur(`condition illisible « ${p} » (${ou})`);
@@ -70,7 +71,7 @@ const etapes = new Set();
 for (const a of D.ACTES) for (const e of a.etapes) { if (etapes.has(e.id)) erreur(`étape en double « ${e.id} »`); etapes.add(e.id); }
 
 function evenements(evts, ou) {
-  for (const [type, a, b] of evts) {
+  for (const [type, a, b, c] of evts) {
     const o = `${ou}, ${type}`;
     if (type === 'dialogue' || type === 'message') texte(a, o);
     else if (type === 'panorama') { if (!D.IMAGES[a]) erreur(`image inconnue « ${a} » (${o})`); }
@@ -91,7 +92,8 @@ function evenements(evts, ou) {
     }
     else if (type === 'drapeau') { if (!/^[\w-]+$/.test(a)) erreur(`drapeau illisible « ${a} » (${o})`); }
     else if (type === 'trouve') { const [z, f] = a.split(/\s+/); if (!D.LIEUX[z] || !(D.LIEUX[z].tresors || []).some(x => x.id === f)) erreur(`découverte inconnue « ${a} » (${o})`); }
-    else if (!['decor', 'soin', 'stop', 'fin_version'].includes(type)) erreur(`événement inconnu « ${type} » (${ou})`);
+    else if (type === 'si') { condition(a, o); evenements(b, o + ' (alors)'); if (c) evenements(c, o + ' (sinon)'); }
+    else if (!['decor', 'soin', 'stop', 'fin_jeu', 'codex'].includes(type)) erreur(`événement inconnu « ${type} » (${ou})`);
   }
 }
 for (const a of D.ACTES) {
@@ -123,7 +125,7 @@ for (const id in D.PERSONNAGES) {
 for (const id in D.LIEUX) {
   const L = D.LIEUX[id];
   texte(`lieu.${id}.nom`, 'monde');
-  condition(L.visible, id); condition(L.ouvert, id);
+  condition(L.visible, id); condition(L.ouvert, id); condition(L.nonRetour, id);
   for (const e of L.etats || []) condition(e.si, id);
   if (L.type === 'village') for (const p of L.pnj) {
     texte(`pnj.${p.id}.nom`, id); texte(p.sous || `pnj.${p.id}.sous`, id); condition(p.si, p.id); condition(p.fous, p.id); condition(p.remise, p.id);
@@ -173,10 +175,18 @@ for (const id in D.MONSTRES) {
   if (!D.IMAGES['monstre.' + id]) erreur(`image manquante monstre.${id}`);
   for (const c of D.MONSTRES[id].capacites || []) {
     if (c.type === 'charge') texte(`monstre.${id}.charge`, id);
+    if (c.type === 'oubli') texte(`monstre.${id}.oubli`, id);
+    if (c.type === 'cristaux') c.ordre.forEach(x => texte(`combat.cristal.${x.c}`, id));
     if (c.type === 'appel') { texte(`monstre.${id}.appel`, id); monstre(c.id, id + ' appel'); }
     if (['charge', 'spores', 'regen', 'fort'].includes(c.type)) texte(`monstre.${id}.special`, id);
     if (c.type === 'envol') { texte(`monstre.${id}.envol`, id); texte(`monstre.${id}.pique`, id); if (!D.IMAGES[`monstre.${id}.vol`]) erreur(`image en vol manquante monstre.${id}.vol`); }
   }
+  if (D.MONSTRES[id].fin) texte(`monstre.${id}.fin`, id);
+  // une seule capacité parmi charge, spores, regen et fort : elles partagent le texte .special
+  // charge, spores, regen et fort partagent monstre.<id>.special : avec une autre, fort prend .coup et regen .soin
+  const types = (D.MONSTRES[id].capacites || []).map(c => c.type), autres = x => types.some(y => y !== x && ['charge', 'spores', 'regen', 'fort'].includes(y));
+  if (types.includes('fort') && autres('fort')) texte(`monstre.${id}.coup`, id);
+  if (types.includes('regen') && autres('regen')) texte(`monstre.${id}.soin`, id);
   if (D.MONSTRES[id].vol && !D.OBJETS[D.MONSTRES[id].vol] && !D.EQUIPEMENT[D.MONSTRES[id].vol]) erreur(`vol inconnu « ${D.MONSTRES[id].vol} » (${id})`);
 }
 for (const [id, f] of Object.entries(D.IMAGES)) {
@@ -194,7 +204,7 @@ for (const f of fs.readdirSync(path.join(RACINE, 'moteur'))) {
 const PARLE = { fr: {}, en: {} };
 for (const lg of ['fr', 'en']) for (const k in TXT[lg]) if (k.startsWith('parle.')) PARLE[lg][TXT[lg][k].l.join(' ')] = 1;
 for (const lg of ['fr', 'en']) for (const [k, { f, l }] of Object.entries(TXT[lg])) {
-  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|courrier|wyverne|cerfvolant|larmes|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
+  if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|courrier|wyverne|cerfvolant|larmes|echos|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
   const bulles = l.filter(x => !x.startsWith('##') && !x.startsWith('>'));
   if (bulles.length > 5) averti(`${f} « ${k} » : ${bulles.length} bulles (5 au plus)`);
   for (const b of bulles) {
