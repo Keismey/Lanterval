@@ -20,7 +20,7 @@ function mkC(id) { const h = HEROS[id]; const c = { id, lvl: 1, xp: 0, hp: 0, pp
 function newState() {
   const s = { v: FORMAT, version: VERSION, gold: 40, inv: { herbe: 3, tonique: 1 }, bag: {}, imp: [],
     etapes: [], annexes: {}, f: {}, jobs: ['apprenti'], chars: {}, z: {}, loc: 'lanterval', screen: 'title',
-    best: {}, codex: {}, vus: {}, auto: false, msg: '', plus: 0, fins: 0, auberge: 'lanterval',
+    best: {}, codex: {}, vus: {}, auto: false, msg: '', plus: 0, fins: 0, auberge: 'lanterval', perso: {},
     st: { time: 0, fights: 0, qfights: 0, explores: 0, trav: 0, taps: 0, autoTurns: 0, log: [] } };
   for (const id of ORDRE_HEROS) s.chars[id] = mkC(id);
   for (const id in LIEUX) if (LIEUX[id].type === 'zone' && LIEUX[id].tresors) s.z[id] = mkZ();
@@ -40,6 +40,7 @@ function migrer(s) {
   for (const id of ORDRE_HEROS) if (!s.chars[id]) s.chars[id] = mkC(id);
   if (!s.vus) s.vus = {};
   if (!s.auberge) s.auberge = 'lanterval';
+  if (!s.perso) s.perso = {};
   s.v = FORMAT; s.version = VERSION;
   return s;
 }
@@ -141,6 +142,12 @@ function lieuVisible(id) { return cond(LIEUX[id].visible); }
 function lieuOuvert(id) { return lieuVisible(id) && cond(LIEUX[id].ouvert); }
 
 // Quêtes annexes : 0 = pas commencée, 1 à n = étape en cours, n + 1 = terminée
+// Personnages du Codex : une info apparaît quand sa condition est vraie ; S.perso[id] = nombre d'infos déjà lues
+function infosPerso(id) { return PERSONNAGES[id].map((c, i) => [c, i]).filter(([c]) => cond(c)).map(([, i]) => i); }
+function persoConnus() { return Object.keys(PERSONNAGES).filter(id => cond(PERSONNAGES[id][0])); }
+function persoNouveau(id) { return infosPerso(id).length > (S.perso[id] || 0); }
+function persoNouveautes() { return persoConnus().some(persoNouveau); }
+
 function annexeEtat(id) { return S.annexes[id] || 0; }
 function annexeOuverte(id) { return cond(ANNEXES[id].ouvre); }
 function annexeFinie(id) { return annexeEtat(id) > ANNEXES[id].etapes.length; }

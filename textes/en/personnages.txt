@@ -1,0 +1,113 @@
+# Lanterval · key characters (Characters tab of the Codex)
+# perso.<id>.<n>: info n about the character, in the order of donnees/personnages.js. One or two sentences, no spoilers.
+
+== perso.kael.1
+Apprentice guard of Lanterval, 17, Earth element. Stubborn and protective, he had never left the valley before the lantern began to fade.
+
+== perso.kael.2
+He brought the crystal heart back from the depths of the cave, and the lantern shone again.
+
+== perso.kael.3
+At the top of the pass, the Order took the amber crystal from him and the Nameless struck him down with a single blow.
+
+== perso.kael.4
+His father went off into the mist one night and never came back. Brann gave him his sword, too damaged to fight with.
+
+== perso.kael.5
+In Salvent, the lantern shard showed him a vision: Orvan at twenty, beside a woman, before a huge eye carved in stone.
+
+== perso.mira.1
+Daughter of Hilde the blacksmith, 18, Fire element. She was following the mist alone in the forest when Kael pulled her out of a ring of wolves.
+
+== perso.mira.2
+She was the one who worked out that the mist was pouring out of the Crystal Cave.
+
+== perso.mira.3
+The forges of Cendre, where the Order took the amber crystal, are in her mother's home town.
+
+== perso.sol.1
+Hermit of the underground lake, 20, Water element. Calm and quiet, he had guarded the lake since the Crystal Guardian woke up.
+
+== perso.sol.2
+In Salvent, Maëlle recognised him: he is the child of a shipwreck, the one everyone thought lost at sea.
+
+== perso.sol.3
+He was six at the time of the shipwreck, and his little sister two. According to the wreck's logbook, a little girl was taken in at Salvent: she is alive.
+
+== perso.sol.4
+He found his sister without telling her anything: she remembers nothing and has just got her adoptive father back. He chose to stay with Kael and Mira.
+
+== perso.orvan.1
+The Elder of Lanterval, keeper of the lantern. He gave Kael a shard of its crystal.
+
+== perso.orvan.2
+He recognised the closed-eye badge: the symbol of the Order of the Eyelid, which vanished fifty years ago.
+
+== perso.orvan.3
+He admitted that the crystal heart would only last a season, and sent the team to find the amber crystal at the Stone Pass.
+
+== perso.orvan.4
+In a letter, he admitted he founded the Order of the Eyelid with Ysold fifty years ago, before leaving out of fear.
+
+== perso.brann.1
+Lanterval's guard and Kael's captain. A former hunter, he knows the forest and its beasts better than anyone.
+
+== perso.brann.2
+He brought the team down from the pass on a cart after their defeat against the Nameless.
+
+== perso.brann.3
+Kael's father left him his sword the night he went off into the mist: “For Kael, when he's ready.”
+
+== perso.brann.4
+His scouts followed the amber crystal to the forges of Cendre, in the east.
+
+== perso.hilde.1
+Mira's mother. She runs the Lanterval forge and sells weapons and armour.
+
+== perso.hilde.2
+When she heard about the closed-eye badge, she asked Kael not to show it to anyone else.
+
+== perso.hilde.3
+She comes from Cendre, the forge town, and fully intends to go there with the team.
+
+== perso.silhouette.1
+A hooded figure who was prowling the forest when the wolves surrounded Mira.
+
+== perso.silhouette.2
+It set an ambush in the cave to take back the crystal heart. On its sleeve, the same closed eye as on the badge.
+
+== perso.varen.1
+A young man of the Order of the Eyelid, fast and arrogant. At the top of the pass, he took the amber crystal. To him, forgetting your sorrows in the mist is a cure.
+
+== perso.varen.2
+The Herald of Salvent knows him: Varen told him about the team.
+
+== perso.sansnom.1
+A colossus in a steel mask marked with a closed eye, who obeys Varen. At the pass, he struck the team down with a single blow of his mace.
+
+== perso.maelle.1
+The old innkeeper of Salvent, too old, she says, for the mist to find room to settle. She recognised Sol, the child of the shipwreck.
+
+== perso.maelle.2
+She revealed that the little girl from the shipwreck was taken in by Erwan, the lighthouse keeper.
+
+== perso.naia.1
+Sol's sister, 16, lost in the shipwreck. Erwan, the lighthouse keeper, took her in and raised her in Salvent. She does not remember her family from before.
+
+== perso.naia.2
+She hums a lullaby nobody else knows: the one their mother sang every evening.
+
+== perso.naia.3
+Her music box, found in the wreck, is broken. It will take a blacksmith's fingers to fix it.
+
+== perso.erwan.1
+The keeper of the Salvent lighthouse, held prisoner by the Order. He took Naïa in and raised her as his daughter.
+
+== perso.nev.1
+A novice of the Order, on guard at the foot of the lighthouse. Troubled by what the Order is doing to Salvent, she let the team through without raising the alarm.
+
+== perso.heraut.1
+The Order officer who held the Salvent lighthouse. He sincerely believes he is offering peace by wiping away sorrow. Defeated, he fled in a boat.
+
+== perso.ysold.1
+She founded the Order of the Eyelid with Orvan fifty years ago. After losing her whole family in the war, she wanted to close the Eye, the source of the world's memory.

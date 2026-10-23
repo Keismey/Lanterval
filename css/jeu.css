@@ -221,6 +221,13 @@ button{font:inherit;color:inherit}
 .sheet-h .ptitle{flex:1}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}
 .ptabs{margin:10px 0 2px}
+/* pastille : une info nouvelle dans le Codex (icône, onglet, personnage) */
+.pastille{position:absolute;top:-3px;right:-3px;width:11px;height:11px;border-radius:50%;background:var(--danger);box-shadow:0 0 0 2px var(--bg);pointer-events:none}
+.tab .pastille,summary .pastille{position:static;width:8px;height:8px;box-shadow:none;flex:none}
+.tab .pastille{margin-left:6px}summary .pastille{margin-left:auto}
+details.perso>summary{gap:10px}
+.perso .cls-corps p{font-size:13.5px;line-height:1.5}
+.perso .cls-corps p.neuf{color:var(--text);border-left:2px solid var(--gold);padding-left:9px}
 .tab{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 5px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);cursor:pointer;font-weight:600;font-size:13.5px}
 .tab.txt{padding:7px 14px}
 .tab.on{background:var(--gold);color:var(--ink-gold);border-color:transparent}

@@ -69,6 +69,7 @@ const IMAGES = {
   'pnj.pecheur': { provisoire: 'f_loic', sujet: 'Loïc, pêcheur, bonnet de laine, barbe rousse (même portrait que pnj.loic)' },
   'pnj.bosco': { provisoire: 'f_bosco', sujet: 'Le Bosco, contrebandier, bandana rouge, moustache' },
   'pnj.erwan': { provisoire: 'f_erwan', sujet: 'Erwan, gardien du phare, vieil homme, ciré et barbe grise' },
+  'pnj.ysold': { provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
 
   // ---------- Monstres (tournés vers la droite) ----------
   'monstre.loup': { fichier: 'img/monstres/loup.webp', provisoire: 'loup', sujet: 'Loup des brumes' },

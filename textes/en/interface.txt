@@ -721,6 +721,12 @@ Class not unlocked yet.
 == codex.classes
 Classes
 
+== codex.perso
+Characters
+
+== codex.perso.aide
+The key characters of the story: tap a name to read their entry. It grows as the adventure goes on; a red dot marks something new.
+
 == codex.classes.aide
 Unlocked classes and their techniques: tap a class to expand it. A technique of “the hero's element” takes the element of whoever uses it.
 
@@ -956,6 +962,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.3.1
+The Codex has a Characters tab: the key characters of the story, each with an expandable entry that grows as the adventure goes on.
+A red dot on the Codex icon, the tab and the character marks new information, until you read their entry.
 ## Version 0.3.0
 Act 2, “The town that forgets”, is playable: the Salt Marsh, Salvent, the Lantern Marsh, the Sunken Wreck and the Drowned Lighthouse.
 The Salvent Coast has its own map. The Salt Marsh links the valley and the coast, and the map menu also offers to go back to Lanterval.
