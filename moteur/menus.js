@@ -65,7 +65,7 @@ function openParty() {
       const ids = Object.keys(S.bag).filter(k => S.bag[k] > 0 && EQUIPEMENT[k].place === place);
       const o = ids.map(id => {
         const ok = canWear(h, id), tmp = { ...h, eq: { ...h.eq, [place]: id } };
-        return { k: id, ic: icPlace(place), label: esc(`${nomEq(id)} ×${S.bag[id]}`), sub: ok ? diffTxt(s, stats(tmp)) : esc(t('equipe.pas.pour', { classe: t('classe.' + h.job), qui: wearers(id) })), dis: !ok };
+        return { k: id, ic: icPlace(place), label: esc(`${nomEq(id)} ×${S.bag[id]}`), sub: ok ? diffTxt(s, stats(tmp)) : esc(EQUIPEMENT[id].heros && EQUIPEMENT[id].heros !== h.id ? t('equipe.pas.heros', { nom: t('parle.' + EQUIPEMENT[id].heros) }) : t('equipe.pas.pour', { classe: t('classe.' + h.job), qui: wearers(id) })), dis: !ok };
       });
       if (actuel) o.unshift({ k: '__off', ic: 'x', label: esc(t('equipe.retirer')), sub: esc(t('equipe.retour.sac', { nom: nomEq(actuel) })) + ' · ' + diffTxt(s, stats({ ...h, eq: { ...h.eq, [place]: null } })), cls: 'ghost' });
       const el = sh.querySelector('#m-list'); el.innerHTML = o.length ? btns(o) : `<p class="note">${esc(t('equipe.place.vide'))}</p>`;

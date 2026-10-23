@@ -15,7 +15,8 @@ const OBJETS = {
 const MAGES = ['apprenti', 'mage', 'soigneur', 'barde', 'alchimiste', 'invocateur', 'geomancien'];
 
 const EQUIPEMENT = {
-  // place : arme, armure ou acc (accessoire) ; type : famille d'arme ; st : bonus ; classes : qui peut porter cette armure
+  // place : arme, armure ou acc (accessoire) ; type : famille d'arme ; st : bonus ; classes : qui peut porter cette armure ;
+  // heros : arme d'un seul personnage (son arme ultime), quelle que soit sa classe tant qu'elle porte ce type d'arme
   // el : arme élémentaire (L, T, F, E, V) : l'Attaque prend cet élément au lieu de Lame
   dague: { place: 'arme', type: 'dague', v: 6, st: { atk: 3 } },
   baton: { place: 'arme', type: 'baton', v: 6, st: { atk: 1, mag: 3 } },
@@ -43,10 +44,10 @@ const EQUIPEMENT = {
   cratere: { place: 'arme', type: 'baton', prix: 580, st: { atk: 6, mag: 24 } },
   fendoir: { place: 'arme', type: 'hache', prix: 620, st: { atk: 29, spd: -1 } },
   // armes des quêtes annexes : Bâton des marées (Sol, « La berceuse »), Bâton de Dorn (Géomancien)
-  marees: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 6, mag: 27, pp: 12 } },
+  marees: { place: 'arme', type: 'baton', heros: 'sol', cadeau: true, st: { atk: 6, mag: 27, pp: 12 } },
   dorn: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 5, mag: 21, def: 3 } },
   // Cœur de forge (Mira, « Le premier moule »)
-  coeurforge: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 7, mag: 29, pp: 10 } },
+  coeurforge: { place: 'arme', type: 'baton', heros: 'mira', cadeau: true, st: { atk: 7, mag: 29, pp: 10 } },
   // marteau et tablier de Hilde (invitée, jamais dans le sac)
   marteau: { place: 'arme', type: 'marteau', cadeau: true, st: { atk: 24 } },
   tablier: { place: 'armure', cadeau: true, st: { def: 16, hp: 20 } },

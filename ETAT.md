@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.4.2 (2026-10-23)
+
+- Demande de Keismey : les armes ultimes sont réservées à leur personnage (`heros` dans donnees/objets.js) : Bâton des marées pour Sol, Cœur de forge pour Mira. Le sac, l'inventaire et le menu Équipe l'indiquent (« Seulement pour Sol », « Réservée à Mira ») ; une arme portée par quelqu'un d'autre retourne au sac au chargement de la partie. L'épée d'Aldric (Kael) et la dague de Nev suivront la même règle à l'acte 4.
+
 ## Version 0.4.1 (2026-10-23)
 
 - Quêtes annexes 9 et 10 de la bible, données par Hilde à Forgecendre après l'épée reforgée (`ouvre: 'fini a3.e10'`), choix validés par Keismey :
