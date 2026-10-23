@@ -982,6 +982,7 @@ New side quests in Forgecendre: “The singing stone” (Dorn) and “The missin
 Hilde settles in Forgecendre. At the end of the act, her cart goes straight to any village already visited, from the map.
 New consumables: Cendre potion and Ether. The Miner's lamp helps find treasures and places.
 Images: everything new is provisional.
+On the map, the “!” also marks the village of another region when a quest is waiting in that region (for example Forgecendre seen from Salvent).
 ## Version 0.3.5
 Updates arrive faster: a new version installs on the first refresh, and the title screen reloads by itself.
 ## Version 0.3.4

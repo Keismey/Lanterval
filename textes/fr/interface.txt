@@ -1106,6 +1106,7 @@ Suite de « La graine-lanterne », « Le carnet du chasseur » et « Le colporte
 Hilde s'installe à Forgecendre. À la fin de l'acte, sa charrette mène directement dans un village déjà visité, depuis la carte.
 Nouveaux consommables : Potion de Cendre et Éther. La Lampe de mineur aide à découvrir les trésors et les lieux.
 Images : tout ce qui est nouveau est provisoire.
+Sur la carte, le « ! » marque aussi le village d'une autre région quand une quête attend dans cette région (par exemple Forgecendre vu depuis Salvent).
 ## Version 0.3.5
 Les mises à jour arrivent plus vite : une nouvelle version s'installe dès la première actualisation, et l'écran titre se recharge tout seul.
 ## Version 0.3.4

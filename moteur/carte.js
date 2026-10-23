@@ -43,14 +43,24 @@ function viaTxt(via) {
 }
 function ouSuisJe() { const c = coteActuel(); return nomLieu(lieuActuel()) + (c ? ', ' + t(`lieu.${lieuActuel()}.${c}`) : ''); }
 
-// un lieu où une quête attend l'équipe (point d'exclamation sur la carte)
-function queteSur(id) {
+// les lieux où une quête attend l'équipe, quête principale d'abord : [lieu ou personnage, 'main' ou 'side']
+function lieuxQuete() {
   const e = etapeCourante(), lieux = [];
   if (e) lieux.push([e.lieu, 'main']);
   for (const a in ANNEXES) { const x = annexeDispo(a); if (x) lieux.push([x.lieu, 'side']); }
-  for (const [l, k] of lieux) {
-    const v = villageDuPnj(l);
-    if ((v || lieuDe(l)) === id) return k;
+  return lieux;
+}
+// un lieu où une quête attend l'équipe (point d'exclamation sur la carte)
+function queteSur(id) {
+  for (const [l, k] of lieuxQuete()) if ((villageDuPnj(l) || lieuDe(l)) === id) return k;
+  return '';
+}
+// une quête attend dans une région dont on ne voit pas la carte (« ! » sur le bouton de son village)
+function queteRegion(reg, ids) {
+  for (const [l, k] of lieuxQuete()) {
+    const v = villageDuPnj(l), id = v || lieuDe(l);
+    if (ids.includes(id)) continue;
+    if ((v ? regionsDu(v) : l.includes('.') ? [regionDe(l)] : regionsDu(id)).includes(reg)) return k;
   }
   return '';
 }
@@ -92,7 +102,7 @@ function renderMap() {
   };
   ovc().querySelectorAll('.node').forEach(b => b.onclick = () => clic(b.dataset.n));
   // boutons : les lieux de cette carte, et les villages des autres régions
-  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(charrette(id) ? t('carte.charrette') : viaTxt(r.via)), bang: queteSur(id) }));
+  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(charrette(id) ? t('carte.charrette') : viaTxt(r.via)), bang: queteSur(id) || (ids.includes(id) ? '' : queteRegion(regionsDu(id)[0], ids)) }));
   opts.push({ k: 'back', ic: 'back', label: esc(t('carte.rester')), sub: esc(ouSuisJe()), cls: 'ghost' });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomCarte(reg))}</div><p class="ptext">${tx('carte.ici', { lieu: ouSuisJe() })}</p>
