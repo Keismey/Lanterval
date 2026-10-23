@@ -1,0 +1,317 @@
+# Lanterval · Acte 4 : L'Œil (textes en français)
+# Même format que acte1.txt (voir l'aide en haut de ce fichier).
+
+== a4.titre
+L'Œil
+
+# ---------- Étape 1 : Pont des Nuées ----------
+
+== a4.e1.titre
+Franchir le Pont des Nuées
+
+== a4.e1.bouton
+Monter vers les Hauts-Vents
+
+== a4.e1.depart
+## Acte 4 · L'Œil
+Au-dessus de Forgecendre, la route grimpe jusqu'aux nuages. Puis il n'y a plus de route : seulement un pont de cordes qui disparaît dans le blanc.
+Nev : « Le Pont des Nuées. De l'autre côté, c'est Aerie. C'est chez moi. »
+Nev : « Enfin, c'était chez moi. Avant que je parte avec Varen pour rejoindre l'Ordre. »
+
+== a4.e1.epee
+## Pont des Nuées
+Kael sort l'épée reforgée de son fourreau. La lame brille comme de l'eau claire, et la lanterne gravée sur la garde accroche la lumière.
+Kael : « Jusqu'ici, je n'osais pas m'en servir. Comme si elle était encore à lui. »
+Mira : « Elle est à toi, maintenant. Ma mère ne forge pas pour les vitrines. »
+? L'*Épée d'Aldric* est dans ton sac : équipe-la à Kael dans le menu Équipe. Elle est réservée à Kael, avec une classe qui manie l'épée.
+
+== a4.e1.pell
+## Pont des Nuées
+Au milieu du pont, un planeur de toile pique vers l'équipe, poursuivi par des rapaces et des soldats de l'Ordre accrochés aux cordes.
+Le planeur se pose dans un fracas de planches. Un jeune homme roux en saute, une sacoche serrée contre lui.
+Pell : « Pell, facteur des Hauts-Vents ! Désolé de tomber sur vous comme ça. Littéralement. » [Combattre]
+
+== a4.e1.nouvelles
+## Pont des Nuées
+Pell : « Merci. J'arrive de Salvent. L'Ordre a attaqué le port il y a trois jours : ils ont pris le cristal d'écume. »
+Sol : « Et Naïa ? La fille du gardien du phare ? »
+Pell : « Saine et sauve. Elle s'est cachée chez Maëlle avec les enfants du port. C'est elle qui m'a donné le message pour vous. »
+Sol ferme les yeux un instant. Ses mains tremblent encore quand il les rouvre.
+
+== a4.e1.aerie
+## Pont des Nuées
+Au bout du pont, le vent ouvre les nuages. Un village de bois est accroché à la falaise, sur des pilotis, avec des moulins et des cerfs-volants.
+Nev : « Aerie. Ils vont tous me regarder. »
+Kael : « Alors on marchera devant toi. »
+
+== a4.e1.message
+Le *Pont des Nuées* est franchi. *Aerie* apparaît sur la carte des Hauts-Vents.
+
+# ---------- Étape 2 : Aerie ----------
+
+== a4.e2.titre
+Arriver à Aerie
+
+== a4.e2.bouton
+Parler au vieux moine
+
+== a4.e2.arrivee
+## Aerie
+Les maisons d'Aerie tiennent sur des pilotis au-dessus du vide. Les passerelles grincent, les moulins tournent, et le vent ne s'arrête jamais.
+Sur une place de planches, un vieux moine en robe bleu ciel attend, comme s'il savait que l'équipe allait venir.
+
+== a4.e2.accueil
+## Aerie
+Les volets claquent les uns après les autres. Une femme tire son enfant à l'intérieur en voyant Nev.
+On chuchote derrière les portes : « La petite de Liss. La déserteuse. La sœur de Varen. »
+Nev : « Je vous avais prévenus. Ici, on n'oublie rien. Même avec la brume. »
+
+== a4.e2.tavor
+## Aerie
+Tavor : « Je suis Tavor, le dernier moine du monastère. Nev a fui l'Ordre, et ce village ne sait pas encore si c'est une honte ou un courage. »
+Tavor : « Moi, je le sais. Le cristal d'azur dort dans les ruines du monastère. Je vous y conduirai. »
+Tavor : « Mais avant, il faut que vous voyiez les fresques. L'Ordre ne vous a pas tout dit sur l'Œil. Personne ne vous a tout dit. »
+
+== a4.e2.village
+## Aerie
+Tavor : « Reposez-vous au Nid, chez Edda. Joran vous vendra ce qu'il a de mieux : les marchands ne montent plus jusqu'ici. »
+Tavor : « Je vous attendrai sur le parvis du monastère. Suivez le sentier des cerfs-volants. »
+
+== a4.e2.message
+Les *Ruines du monastère* apparaissent sur la carte. Le Nid d'Edda et la boutique de Joran sont ouverts.
+
+# ---------- Étapes 3 à 5 : Ruines du monastère ----------
+
+== a4.e3.titre
+Entrer dans le monastère
+
+== a4.e3.bouton
+Rejoindre Tavor sur le parvis
+
+== a4.e3.parvis
+## Ruines du monastère
+Le monastère s'est effondré dans les nuages il y a longtemps. Il n'en reste qu'un parvis, des colonnes et une grande porte de pierre.
+Tavor : « Les moines ont scellé cette porte il y a cinquante ans. Les gardiens de pierre veillent encore. »
+Sur le toit, deux gargouilles ouvrent les yeux. [Combattre]
+
+== a4.e3.porte
+## Ruines du monastère
+Tavor pose la main sur la porte. Elle s'ouvre sans un bruit, comme si elle l'avait reconnu.
+Tavor : « Derrière, il y a le cloître des fresques. Et au fond, le sanctuaire où dort l'azur. »
+
+== a4.e3.message
+La porte du monastère est ouverte. Le *cloître des fresques* mène au sanctuaire.
+
+== a4.e4.titre
+Traverser le cloître des fresques
+
+== a4.e4.bouton
+Suivre Tavor dans le cloître
+
+== a4.e4.cloitre
+## Ruines du monastère
+Le cloître est envahi de brume. Des formes en robe glissent entre les colonnes, le visage effacé.
+Tavor : « Mes frères. Ce qu'il en reste. La brume les a pris un par un, et ils gardent encore le monastère. » [Traverser le cloître]
+
+== a4.e4.fresques
+## Le cloître des fresques
+Sur les murs, des fresques immenses : un œil ouvert au-dessus du monde, d'où coulent des fleuves de lumière jusque dans chaque village.
+Tavor : « L'Œil n'est pas un monstre. C'est la mémoire du monde. Tout ce qu'on vit, il le garde, et il nous le rend quand on oublie. »
+Sur la fresque suivante, des moines tirent une paupière de pierre sur l'Œil. Et la brume se met à couler.
+
+== a4.e4.verite
+## Le cloître des fresques
+Tavor : « Il y a cinquante ans, l'Œil s'est entrouvert. Quelques moines ont eu peur de ce qu'il montrait. Ils ont fondé l'Ordre de la Paupière pour le fermer. »
+Tavor : « La brume, c'est l'Œil qui se ferme. S'il se ferme tout à fait, plus personne ne se souviendra de rien. Jamais. »
+Mira : « Et Ysold veut le fermer pour de bon. Avec les quatre cristaux. »
+Tavor : « Ysold, et un jeune homme qui l'aimait. Il s'appelait Orvan. »
+
+== a4.e4.sanctuaire
+## Ruines du monastère
+Kael : « Orvan… Il nous a avoué avoir cofondé l'Ordre. Il ne nous a pas dit qu'il savait ce que ça voulait dire. »
+Tavor : « Il est parti le lendemain. Il a passé sa vie à allumer des lanternes contre la brume qu'il avait aidé à faire naître. »
+Devant eux, la porte du sanctuaire. Derrière, quelque chose d'énorme respire.
+
+== a4.e4.message
+Les fresques ont parlé : l'Œil est la *mémoire du monde*. Le cristal d'azur attend au *sanctuaire*.
+
+== a4.e5.titre
+Le cristal d'azur
+
+== a4.e5.bouton
+Entrer dans le sanctuaire
+
+== a4.e5.serpent
+## Le sanctuaire
+Au centre du sanctuaire, le cristal d'azur flotte au-dessus d'un autel. Un serpent immense s'enroule autour du pilier, les écailles bleues comme le ciel.
+Tavor : « Le Serpent d'azur. Il garde le cristal depuis que les moines sont partis. La brume l'a rendu fou. »
+Le Serpent ouvre ses yeux pâles et siffle. Le vent tourne dans la salle.
+
+== a4.e5.conseil
+? Le Serpent d'azur résiste au *Vent* et à l'*Eau*. La *Terre* et le *Feu* fendent sa garde. Brise-la avant qu'il ne déchaîne sa tempête.
+
+== a4.e5.cristal
+## Le sanctuaire
+Le Serpent s'effondre en anneaux de lumière bleue, et sa folie s'en va avec le vent. Le cristal d'azur descend doucement vers Nev.
+Nev : « Il chante. Comme le vent sur le pic, quand on était petits. »
+
+== a4.e5.classes
+## Le sanctuaire
+La lumière bleue traverse l'équipe. Kael sent ses gestes devenir plus légers, plus rapides.
+? Nouvelles classes : *Sage*, *Ninja* et *Lame-mage*. Change de classe dans le menu Équipe.
+
+== a4.e5.vol
+## Le sanctuaire
+Une ombre tombe du plafond et arrache le cristal des mains de Nev. Sur la corniche, Varen le fait sauter dans sa paume.
+Varen : « Merci d'avoir fait le travail, petite sœur. Le Serpent, c'était le plus difficile. »
+Varen : « Si tu le veux, viens le chercher au Pic hurlant. Seule. Comme quand on était enfants. »
+Il disparaît dans le vent avant que Kael n'ait atteint la corniche.
+
+== a4.e5.message
+Varen a volé le *cristal d'azur*. Le *Pic hurlant* apparaît sur la carte.
+
+# ---------- Étape 6 : Pic hurlant ----------
+
+== a4.e6.titre
+Rattraper Varen au Pic hurlant
+
+== a4.e6.bouton
+Monter au sommet
+
+== a4.e6.montee
+## Pic hurlant
+Le vent hurle si fort dans les rochers qu'il faut crier pour s'entendre. Le sentier monte en lacets jusqu'au sommet, dans la glace.
+Nev : « On montait ici avec Varen, avec notre cerf-volant. Le vent était trop fort pour les autres enfants. » [Monter au sommet]
+
+== a4.e6.vent
+## Pic hurlant
+Nev s'arrête et regarde le sommet. Ses poings sont serrés dans ses bandes.
+Nev : « Il a dit seule. Il a toujours aimé les règles, quand c'est lui qui les fait. »
+
+== a4.e6.varen
+## Le sommet
+Au sommet, Varen attend, le cristal d'azur pendu à sa ceinture. Le vent fait claquer sa cape.
+Nev : « Restez en arrière. C'est entre lui et moi. »
+Kael : « Nev… »
+Nev : « Fais-moi confiance, Kael. Pour une fois, c'est moi qui protège quelqu'un. »
+
+== a4.e6.conseil
+? Nev se bat *seule*. Varen résiste au *Vent* : frappe avec l'*Attaque* (Lame), qui fend sa garde. Garde des objets de soin sous la main.
+
+== a4.e6.refus
+## Le sommet
+Varen tombe à genoux. Nev lui tourne le dos pour reprendre son souffle, et il ramasse sa lame.
+Il la lève, un instant. Puis il la laisse tomber dans la neige.
+Varen : « Je n'y arrive pas. Je n'y suis jamais arrivé. Tu es ma sœur, Nev. »
+
+== a4.e6.ysold
+## Le sommet
+Une femme aux cheveux argentés sort de la brume, sans bruit. Ysold. Elle arrache le cristal de la ceinture de Varen.
+Ysold : « Tu as échoué, Varen. Je t'ai tout donné, et tu choisis ta sœur. »
+Ysold : « Garde-la. Je n'ai plus besoin de toi. Il me reste un escalier à monter. »
+Elle disparaît. Varen ne la regarde même pas partir.
+
+== a4.e6.ombres
+## Le sommet
+La brume se referme sur le sommet. Des ombres en sortent, et elles ne regardent pas que l'équipe : elles regardent Varen.
+Varen ramasse sa lame et se met à côté de Nev.
+Varen : « Ysold ne laisse jamais de témoins. Battons-nous ensemble. Juste cette fois. » [Combattre]
+
+== a4.e6.invite
+## Le sommet
+Les ombres s'effacent dans le vent. Varen regarde ses mains comme s'il ne les reconnaissait pas.
+Nev : « Juste cette fois, hein ? »
+Varen : « … Peut-être deux. »
+? *Varen* se bat maintenant avec l'équipe, dans tous les combats sauf les duels. Il n'est pas dans le menu Équipe et ne gagne pas d'expérience : il est toujours au niveau de Kael.
+
+== a4.e6.message
+*Varen* a changé de camp. Ysold a les quatre cristaux. Retourne à *Aerie* avant l'assaut.
+
+# ---------- Étape 7 : la veille de l'assaut ----------
+
+== a4.e7.titre
+La nuit avant l'assaut
+
+== a4.e7.bouton
+Rejoindre le feu au Nid
+
+== a4.e7.feu
+## Le feu de camp
+La nuit tombe sur Aerie. Edda a allumé un grand feu sur la plateforme du Nid, et pour une fois, le vent se tait.
+Tavor : « Ysold est montée par l'Escalier de brume, derrière le Pic. Là-haut, il y a le Cœur de l'Œil. »
+Tavor : « Demain, vous la suivrez. Ce soir, mangez, et parlez. Les souvenirs, c'est ce qu'on défend. »
+
+== a4.e7.kael
+## Kael
+Kael fait tourner l'épée d'Aldric dans la lumière du feu.
+Kael : « Le Sans-Nom sera là-haut. Mon père sera là-haut. Je ne sais pas si je dois le combattre ou le ramener. »
+Mira : « Les deux, peut-être. Tu as bien ramené une lanterne, une fois. »
+
+== a4.e7.mira
+## Mira
+Mira : « Avant de partir de Forgecendre, ma mère m'a serrée dans ses bras. Je l'ai laissée faire. »
+Mira : « Je lui en veux encore. Mais je veux rentrer pour pouvoir lui en vouloir longtemps. »
+
+== a4.e7.sol
+## Sol
+Sol : « Naïa ne sait toujours pas qui je suis. Ou peut-être qu'elle le sait, et qu'elle attend que je le dise. »
+Sol : « Si l'Œil se ferme, elle ne s'en souviendra jamais. Alors il ne se fermera pas. »
+
+== a4.e7.nev
+## Nev
+Varen est assis à l'écart, au bord de la plateforme. Nev lui apporte un bol de soupe et s'assoit à côté de lui, sans rien dire.
+Varen : « Grand-mère ne m'a pas encore parlé. »
+Nev : « Elle ne m'a pas parlé pendant trois jours, moi. Laisse-lui le temps. »
+
+== a4.e7.orvan
+## Le feu de camp
+Des pas sur la passerelle. Un vieil homme à barbe blanche, appuyé sur un bâton, le souffle court.
+Kael : « Ancien Orvan ? Vous êtes monté jusqu'ici ? »
+Orvan : « Il y a cinquante ans, j'ai aidé à fermer cet Œil. Laisse-moi au moins t'aider à le garder ouvert. »
+Orvan : « Demain, je monte avec vous. Ne discute pas, Kael. Ton père n'a jamais discuté non plus. »
+
+== a4.e7.message
+L'équipe s'est reposée. Demain, l'*Escalier de brume*.
+
+# ---------- Fin de la version 0.5.0 ----------
+
+== fin.version
+## Fin de la version 0.5.0
+Le cristal d'azur est aux mains d'Ysold, et Varen se bat désormais avec l'équipe. Demain, l'Escalier de brume.
+La suite arrive dans les prochaines versions : d'abord les dernières quêtes annexes des Hauts-Vents, puis le final. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.
+
+# ---------- Ce que disent les gens selon l'avancée ----------
+# pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.
+
+== pnj.tavor
+Tavor : « Le vent emporte tout, sauf ce qu'on lui confie. C'est ce que disaient les moines. »
+
+== pnj.tavor.a4.e7
+Tavor : « Mangez. Dormez. Demain, vous aurez besoin de chaque souvenir que vous avez. »
+
+== pnj.tavor.fin
+Tavor : « L'Escalier de brume vous attend. Je prierai pour vous, même si je ne sais plus très bien qui écoute. »
+
+== pnj.edda.accueil
+Edda : « Bienvenue au Nid ! Une nuit, {prix} po, avec une couverture en plumes et le meilleur ragoût des falaises. »
+
+== pnj.joran.accueil
+Joran : « Les marchands ne montent plus jusqu'ici, alors je forge tout moi-même. Ce que tu vois, c'est le meilleur des Hauts-Vents. »
+
+== pnj.ilse
+Ilse : « Je tisse les toiles des planeurs et je soigne les wyvernes. Les deux n'aiment pas l'orage. »
+
+== pnj.orvan.a4.e2
+Orvan : « Hilde m'a écrit par le facteur des falaises : vous êtes à Aerie. Alors vous allez voir les fresques du monastère. »
+
+== pnj.brann.a4.e2
+Brann : « Il paraît que l'Ordre a frappé Salvent. Ici, on monte la garde jour et nuit. Fais attention là-haut, Kael. »
+
+== pnj.naia.a4.e2
+Naïa : « Pell vous a trouvés, tant mieux. Dis à Sol que je vais bien. Je ne sais pas pourquoi, mais je voulais qu'il le sache. »
+
+== pnj.roxane.a4.e2
+Roxane : « Aerie ! Mon vieux maître vit ici. Garrick ne sort plus beaucoup, mais il entend tout ce qui se passe dans les falaises. »
+
+== pnj.fennel.a4.e2
+Fennel : « J'ai pris le planeur de Pell pour monter. Plus jamais. Mon estomac est resté au milieu du pont. »

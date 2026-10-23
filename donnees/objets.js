@@ -8,11 +8,13 @@ const OBJETS = {
   elixir: { hp: 90, v: 12 },
   // acte 3 (Forgecendre)
   potion: { hp: 180, v: 25 },
-  ether: { pp: 30, v: 15 }
+  ether: { pp: 30, v: 15 },
+  // acte 4 (Aerie)
+  baume: { hp: 400, v: 45 }
 };
 
 // les classes qui portent robes et manteaux
-const MAGES = ['apprenti', 'mage', 'soigneur', 'barde', 'alchimiste', 'invocateur', 'geomancien'];
+const MAGES = ['apprenti', 'mage', 'soigneur', 'barde', 'alchimiste', 'invocateur', 'geomancien', 'sage'];
 
 const EQUIPEMENT = {
   // place : arme, armure ou acc (accessoire) ; type : famille d'arme ; st : bonus ; classes : qui peut porter cette armure ;
@@ -48,7 +50,18 @@ const EQUIPEMENT = {
   dorn: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 5, mag: 21, def: 3 } },
   // Cœur de forge (Mira, « Le premier moule »)
   coeurforge: { place: 'arme', type: 'baton', heros: 'mira', cadeau: true, st: { atk: 7, mag: 29, pp: 10 } },
-  // marteau et tablier de Hilde (invitée, jamais dans le sac)
+  // acte 4 (boutique de Joran à Aerie)
+  vent: { place: 'arme', type: 'epee', prix: 820, st: { atk: 31 } },
+  nuee: { place: 'arme', type: 'baton', prix: 800, st: { atk: 7, mag: 26 } },
+  zephyr: { place: 'arme', type: 'dague', prix: 760, st: { atk: 22, spd: 4 } },
+  serres: { place: 'arme', type: 'poing', prix: 790, st: { atk: 26, spd: 3 } },
+  eolienne: { place: 'arme', type: 'harpe', prix: 770, st: { atk: 4, mag: 21, pp: 14 } },
+  tempete: { place: 'arme', type: 'hache', prix: 880, st: { atk: 37, spd: -1 } },
+  // l'épée d'Aldric, reforgée par Hilde : l'arme ultime de Kael
+  aldric: { place: 'arme', type: 'epee', heros: 'kael', cadeau: true, st: { atk: 36, def: 4 } },
+  // marteau et tablier de Hilde, lame courbe et cuir noir de Varen (invités, jamais dans le sac)
+  courbe: { place: 'arme', type: 'sabre', cadeau: true, st: { atk: 30, spd: 3 } },
+  cuirnoir: { place: 'armure', cadeau: true, st: { def: 20, hp: 25 } },
   marteau: { place: 'arme', type: 'marteau', cadeau: true, st: { atk: 24 } },
   tablier: { place: 'armure', cadeau: true, st: { def: 16, hp: 20 } },
   tunique: { place: 'armure', v: 5, st: { def: 2 } },
@@ -63,6 +76,11 @@ const EQUIPEMENT = {
   salamandre: { place: 'armure', prix: 360, st: { def: 13, hp: 10, spd: 2 } },
   nacre: { place: 'armure', prix: 260, st: { def: 14, hp: 15, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
   houle: { place: 'armure', prix: 220, st: { def: 8, mag: 6, pp: 10 }, classes: MAGES },
+  // acte 4 (Aerie) ; la Cape des quatre vents vient du « Colporteur »
+  plumacier: { place: 'armure', prix: 950, st: { def: 27, hp: 30, spd: -2 }, classes: ['guerrier', 'chevalier', 'berserker'] },
+  soie: { place: 'armure', prix: 880, st: { def: 17, mag: 11, pp: 16 }, classes: MAGES },
+  cuirvent: { place: 'armure', prix: 860, st: { def: 18, hp: 15, spd: 3 } },
+  cape4: { place: 'armure', cadeau: true, st: { def: 21, hp: 20, mag: 6, spd: 5 } },
   plume: { place: 'acc', v: 25, st: { spd: 2 } },
   anneau: { place: 'acc', v: 30, st: { mag: 3 } },
   eclat: { place: 'acc', v: 40, st: { atk: 4 } },
@@ -80,7 +98,17 @@ const EQUIPEMENT = {
   // Lampe de mineur (« Les mineurs disparus ») : plus de découvertes avec Explorer (voir zone.js)
   lampe: { place: 'acc', cadeau: true, st: { def: 2 }, lampe: true },
   // Bouclier d'Aldric (« Le carnet d'Aldric ») : le jeu n'a pas d'emplacement de bouclier, c'est un accessoire
-  bouclier: { place: 'acc', cadeau: true, st: { def: 8, hp: 25 } }
+  bouclier: { place: 'acc', cadeau: true, st: { def: 8, hp: 25 } },
+  // acte 4 : paliers des zones des Hauts-Vents, réserve de Pell (« Le courrier des falaises »)
+  nuage: { place: 'acc', v: 130, st: { def: 4, spd: 4 } },
+  chapelet: { place: 'acc', v: 140, st: { mag: 7, pp: 8 } },
+  crocgivre: { place: 'acc', v: 150, st: { atk: 9 } },
+  plumevent: { place: 'acc', prix: 520, st: { atk: 4, spd: 5 } },
+  amulette: { place: 'acc', prix: 540, st: { mag: 8, pp: 10 } },
+  // Fleur-lanterne (« La graine-lanterne ») : regen = part des PV max rendue à chaque action du porteur
+  fleur: { place: 'acc', cadeau: true, st: { hp: 20, def: 3 }, regen: .05 },
+  // Œil du traqueur (« Le carnet du chasseur ») : faiblesses et résistances des monstres connues dès le début du combat
+  traqueur: { place: 'acc', cadeau: true, st: { atk: 4, mag: 4 }, traqueur: true }
 };
 
 // Objets importants (onglet « Importants » de l'inventaire), dans l'ordre d'affichage.
@@ -125,5 +153,11 @@ const IMPORTANTS = {
   'pages-aldric2': {},
   'pages-aldric3': {},
   'carnet-aldric': {},
-  oeuf: { mystere: 'drapeau acte4' }
+  oeuf: { mystere: 'drapeau acte4' },
+  // acte 4 : la fleur ouverte au vent du Pont (« La graine-lanterne »), la serre du Roc ailé (« Le carnet du chasseur »),
+  // les lettres de Pell et sa plume (« Le courrier des falaises » : voyage direct vers une zone déjà visitée, moteur/carte.js)
+  fleurie: {},
+  'serre-roc': {},
+  lettres: {},
+  'plume-facteur': {}
 };

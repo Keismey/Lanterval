@@ -203,3 +203,62 @@ Le fils d'un mineur de Forgecendre. Son père n'est pas remonté des mines avec 
 
 == perso.tobi.2
 Son père, Ulric, avait fui les mines par un vieux puits et se cachait dans les Champs brûlés. Ils sont de nouveau réunis.
+
+# ---------- Acte 4 ----------
+
+== perso.kael.9
+La veille de l'assaut, il ne savait pas s'il devait combattre son père ou le ramener. Mira lui a répondu : les deux, peut-être.
+
+== perso.mira.7
+Au feu de camp d'Aerie, elle a avoué qu'elle en voulait encore à sa mère, mais qu'elle voulait rentrer pour pouvoir lui en vouloir longtemps.
+
+== perso.sol.6
+Naïa a survécu à l'attaque de Salvent et lui a fait passer un message. Pour elle, il a juré que l'Œil ne se fermerait pas.
+
+== perso.orvan.5
+Il est monté jusqu'à Aerie pour se battre aux côtés de l'équipe. Il a aidé à fermer l'Œil il y a cinquante ans ; il veut aider à le garder ouvert.
+
+== perso.varen.5
+Battu par Nev au sommet du Pic hurlant, il n'a pas pu lever sa lame sur sa sœur. Ysold l'a abandonné, et il se bat désormais avec l'équipe.
+
+== perso.naia.5
+Quand l'Ordre a attaqué Salvent, elle a caché les enfants du port chez Maëlle. Elle a demandé à Pell de dire à Sol qu'elle allait bien.
+
+== perso.nev.5
+À Aerie, son village natal, on l'appelle la déserteuse et la sœur de Varen. Sa grand-mère Liss y vit toujours.
+
+== perso.nev.6
+Elle a affronté Varen seule au sommet du Pic hurlant, et elle a gagné. Pour une fois, c'est elle qui protégeait quelqu'un.
+
+== perso.ysold.2
+Les fresques du monastère le disent : si l'Œil se ferme tout à fait, plus personne ne se souviendra de rien, jamais. C'est ce qu'elle veut.
+
+== perso.ysold.3
+Au sommet du Pic hurlant, elle a arraché le cristal d'azur à Varen et l'a abandonné. Elle a maintenant les quatre cristaux.
+
+== perso.roxane.4
+Grâce à l'équipe, son carnet est complet : une bête par région. Son vieux maître, Garrick, vit à Aerie.
+
+== perso.fennel.4
+Son plus beau troc est fini : du miel de Lanterval jusqu'à la Cape des quatre vents, tissée par Ilse à Aerie.
+
+== perso.tavor.1
+Le dernier moine du monastère d'Aerie. Il a accepté de guider l'équipe jusqu'au cristal d'azur, malgré la méfiance du village envers Nev.
+
+== perso.tavor.2
+Il a montré les fresques à l'équipe : l'Œil est la mémoire du monde, et la brume, c'est l'Œil qui se ferme.
+
+== perso.tavor.3
+Il a vu Ysold et Orvan quitter le monastère il y a cinquante ans. Il n'a jamais cessé d'attendre que quelqu'un vienne rouvrir l'Œil.
+
+== perso.pell.1
+Facteur des Hauts-Vents, il vole d'un village à l'autre en planeur. Il a apporté à l'équipe les nouvelles de Salvent.
+
+== perso.pell.2
+L'équipe a porté ses dernières lettres à Lanterval, Salvent et Forgecendre. Il lui a laissé sa plume, qui connaît tous les chemins.
+
+== perso.ilse.1
+Tisserande d'Aerie, elle tisse les toiles des planeurs et soigne les dernières wyvernes des falaises.
+
+== perso.ilse.2
+D'une plume de roc, elle a tissé la Cape des quatre vents. Fennel est son plus vieux client.

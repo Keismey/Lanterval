@@ -1062,3 +1062,300 @@ Un éclat d'obsidienne parfait, qu'un marchand paiera cher : *+80 po*.
 
 == volcan.ev.brise
 Une brise fraîche descend du sommet : *+35 PV* pour tous.
+
+# ================= Acte 4 : Hauts-Vents =================
+
+== carte.titre.vents
+Carte des Hauts-Vents
+
+# ================= Pont des Nuées =================
+
+== lieu.pont.le
+le pont
+
+== lieu.pont.c
+côté Cendre
+
+== lieu.pont.a
+côté Aerie
+
+== lieu.pont.sous
+Entre Cendre et les Hauts-Vents
+
+== lieu.pont.desc
+Un pont de cordes et de planches tendu au-dessus des nuages. Le vent le fait danser comme une balançoire, et les rapaces nichent sous les planches.
+
+== lieu.pont.intro
+## Pont des Nuées
+On traverse de la route de Cendre jusqu'aux falaises d'Aerie. Ne regarde pas en bas : il n'y a que du blanc, très loin.
+
+== pont.n1.nom
+Sacoche accrochée
+
+== pont.n1.texte
+Une sacoche de voyageur accrochée à une corde, battue par le vent : *2 potions de Cendre et 1 éther*.
+
+== pont.n2.nom
+Nid sous les planches
+
+== pont.n2.texte
+Un nid de rapace sous le pont, plein de bijoux volés. La terre et le feu leur font peur : ils nichent loin des deux. *Faiblesses du Rapace voleur ajoutées au codex.*
+
+== pont.n3.nom
+Pilier de pierre
+
+== pont.n3.texte
+Un pilier de pierre au milieu du pont, avec un abri contre le vent. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== pont.n4.nom
+Péage abandonné
+
+== pont.n4.texte
+La caisse d'un vieux péage, oubliée depuis des années : *420 po*.
+
+== pont.n5.nom
+Ruban dans la corde
+
+== pont.n5.texte
+Un sylphe s'est pris dans une corde lestée de pierres et s'est dissous. La terre les alourdit, la lame les déchire. *Faiblesses du Sylphe ajoutées au codex.*
+
+== pont.n6.nom
+Caisse de remèdes
+
+== pont.n6.texte
+Une caisse de remèdes destinée à Aerie, tombée d'un planeur : *1 baume des vents*.
+
+== pont.m50
+## Palier 50 % atteint
+Dans un sac de facteur perdu : *2 potions de Cendre et 2 éthers*.
+
+== pont.m100
+## Palier 100 % atteint
+Tu connais chaque planche du pont. Tu trouves un *Nuage captif* (accessoire, Défense +4, Vitesse +4). Pont maîtrisé : sa traversée ne donnera plus que 0 à 2 combats.
+
+== pont.ev.combat
+Des cris d'oiseaux sortent des nuages…
+
+== pont.ev.rafale
+Une rafale secoue le pont et plaque tout le monde contre les cordes ! *Tout le monde perd 18 PV.*
+
+== pont.ev.nuage
+Un nuage tiède traverse le pont et réchauffe les mains : *+40 PV* pour tous.
+
+== pont.ev.sacoche
+Une bourse accrochée aux cordes, oubliée par un voyageur : *+90 po*.
+
+== pont.ev.silence
+Le vent tombe d'un coup, et le silence est immense. L'esprit se repose : *+12 PP* pour tous.
+
+# ================= Aerie =================
+
+== lieu.aerie.nom
+Aerie
+
+== lieu.aerie.sous
+Village des falaises
+
+== lieu.aerie.desc
+Des maisons de bois sur pilotis, accrochées à la falaise au-dessus des nuages. Des passerelles relient les maisons, et des cerfs-volants dansent au-dessus des toits.
+
+== pnj.tavor.nom
+Tavor
+
+== pnj.tavor.sous
+Le dernier moine du monastère
+
+== pnj.edda.nom
+Edda
+
+== pnj.edda.sous
+Le Nid · repos complet · {prix} po
+
+== pnj.joran.nom
+Joran
+
+== pnj.joran.sous
+Armes, armures et remèdes
+
+== pnj.pell.nom
+Pell
+
+== pnj.pell.sous
+Facteur en planeur
+
+== pnj.ilse.nom
+Ilse
+
+== pnj.ilse.sous
+Tisserande et dresseuse de wyvernes
+
+# ================= Ruines du monastère =================
+
+== lieu.ruines.nom
+Ruines du monastère
+
+== lieu.ruines.le
+les ruines
+
+== lieu.ruines.p
+parvis
+
+== lieu.ruines.s
+sanctuaire
+
+== lieu.ruines.sous
+Le monastère tombé dans les nuages
+
+== lieu.ruines.desc
+Des colonnes brisées, des cloîtres ouverts sur le vide et des fresques effacées par la brume. Les gardiens de pierre et les moines spectraux veillent encore.
+
+== lieu.ruines.intro
+## Ruines du monastère
+On traverse du parvis jusqu'au sanctuaire, par le cloître des fresques. Les moines sont partis depuis cinquante ans ; leurs gardiens, non.
+
+== ruines.u1.nom
+Réfectoire
+
+== ruines.u1.texte
+Dans le réfectoire, un coffre de moine intact : *2 potions de Cendre et 1 baume des vents*.
+
+== ruines.u2.nom
+Gargouille fendue
+
+== ruines.u2.texte
+Une gargouille fendue par une racine, à côté d'une flaque. La terre et l'eau rongent leur pierre. *Faiblesses de la Gargouille ajoutées au codex.*
+
+== ruines.u3.nom
+Jardin suspendu
+
+== ruines.u3.texte
+Un petit jardin de moines, encore vert au bord du vide. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== ruines.u4.nom
+Tronc des offrandes
+
+== ruines.u4.texte
+Le tronc des offrandes du monastère, jamais vidé : *480 po*.
+
+== ruines.u5.nom
+Cierges éteints
+
+== ruines.u5.texte
+Des cierges éteints devant une chapelle. Les moines spectraux fuient la flamme et les lames bénites. *Faiblesses du Moine spectral ajoutées au codex.*
+
+== ruines.u6.nom
+Bibliothèque
+
+== ruines.u6.texte
+Entre deux étagères effondrées, la réserve du copiste : *3 éthers*.
+
+== ruines.m50
+## Palier 50 % atteint
+Dans la sacristie : *2 potions de Cendre et 1 éther*.
+
+== ruines.m100
+## Palier 100 % atteint
+Tu connais chaque couloir du monastère. Tu trouves un *Chapelet de nacre* (accessoire, Magie +7, PP +8). Ruines maîtrisées : leur traversée ne donnera plus que 0 à 2 combats.
+
+== ruines.ev.combat
+Une cloche sonne toute seule, quelque part dans les ruines…
+
+== ruines.ev.eboulis
+Une colonne s'effondre près de l'équipe ! *Tout le monde perd 18 PV.*
+
+== ruines.ev.cloche
+Le chant du vent dans une cloche fendue apaise l'esprit : *+12 PP* pour tous.
+
+== ruines.ev.tronc
+Une pièce d'or brille entre deux dalles, puis une autre : *+100 po*.
+
+== ruines.ev.source
+Une source coule dans un bassin de pierre : *+40 PV* pour tous.
+
+# ================= Pic hurlant =================
+
+== lieu.pic.nom
+Pic hurlant
+
+== lieu.pic.le
+le pic
+
+== lieu.pic.b
+base
+
+== lieu.pic.s
+sommet
+
+== lieu.pic.sous
+Là où le vent hurle
+
+== lieu.pic.desc
+Une crête de roche et de glace qui monte au-dessus des nuages. Le vent hurle dans les rochers sans jamais s'arrêter.
+
+== lieu.pic.intro
+## Pic hurlant
+On monte de la base jusqu'au sommet, par un sentier de glace. Les griffons y chassent, et le givre y prend vie.
+
+== pic.k1.nom
+Refuge de berger
+
+== pic.k1.texte
+Un refuge de pierre où les bergers laissaient des provisions : *2 baumes des vents*.
+
+== pic.k2.nom
+Plumes arrachées
+
+== pic.k2.texte
+Des plumes de griffon autour d'un rocher fendu et d'un feu éteint. La terre et le feu les tiennent à distance. *Faiblesses du Griffon des cimes ajoutées au codex.*
+
+== pic.k3.nom
+Grotte tiède
+
+== pic.k3.texte
+Une grotte où une source chaude fait fondre la glace. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== pic.k4.nom
+Cairn des voyageurs
+
+== pic.k4.texte
+Sous les pierres d'un cairn, les pièces laissées par les voyageurs pour la chance : *550 po*.
+
+== pic.k5.nom
+Flaque gelée
+
+== pic.k5.texte
+Un élémentaire de givre a fondu près d'un vieux feu de camp. *Faiblesses de l'Élémentaire de givre ajoutées au codex.*
+
+== pic.k6.nom
+Sac d'alpiniste
+
+== pic.k6.texte
+Un sac pris dans la glace : *2 potions de Cendre et 2 éthers*.
+
+== pic.m50
+## Palier 50 % atteint
+Dans une crevasse : *1 baume des vents et 2 éthers*.
+
+== pic.m100
+## Palier 100 % atteint
+Tu connais chaque prise du pic. Tu trouves un *Croc de givre* (accessoire, Attaque +9). Pic maîtrisé : sa traversée ne donnera plus que 0 à 2 combats.
+
+== pic.ev.combat
+Le vent hurle plus fort, et quelque chose hurle avec lui…
+
+== pic.ev.avalanche
+Une coulée de neige dévale la pente ! *Tout le monde perd 20 PV.*
+
+== pic.ev.hurlement
+Le hurlement du vent devient un chant, puis se tait. L'esprit se repose : *+14 PP* pour tous.
+
+== pic.ev.cairn
+Une pièce d'or gelée dans la glace d'un cairn : *+110 po*.
+
+== pic.ev.soleil
+Un rayon de soleil perce les nuages et réchauffe tout le monde : *+45 PV* pour tous.
+
+# ================= Escalier de brume =================
+
+== lieu.escalier.nom
+Escalier de brume

@@ -56,9 +56,22 @@ const ANNEXES = {
         ['dialogue', 'graine.e2.fin'],
         ['message', 'graine.e2.message']
       ] },
-      // suite à l'acte 4 : le vent du Pont des Nuées
+      // acte 4 : le vent du Pont des Nuées ouvre la fleur, puis Pia la plante au pied de la lanterne
       { lieu: 'pont', si: 'drapeau acte4', evenements: [
-        ['dialogue', 'graine.e3.scene']
+        ['dialogue', 'graine.e3.vent'],
+        ['combat', 'sylphe sylphe sylphe'],
+        ['perd', 'bourgeon'],
+        ['gagne', 'fleurie'],
+        ['dialogue', 'graine.e3.fin'],
+        ['message', 'graine.e3.message']
+      ] },
+      { lieu: 'pia', evenements: [
+        ['perd', 'fleurie'],
+        ['panorama', 'pano.fleur'],
+        ['dialogue', 'graine.e4.lanterne'],
+        ['decor'],
+        ['gagne', 'fleur'],
+        ['dialogue', 'graine.e4.fin']
       ] }
     ]
   },
@@ -111,9 +124,19 @@ const ANNEXES = {
         ['dialogue', 'chasse.e6.scene'],
         ['message', 'chasse.e6.message']
       ] },
-      // suite à l'acte 4 : le Roc ailé du Pont des Nuées
+      // acte 4 : le Roc ailé du Pont des Nuées ; Roxane attend à Aerie
       { lieu: 'pont', si: 'drapeau acte4', evenements: [
-        ['dialogue', 'chasse.e7.scene']
+        ['dialogue', 'chasse.e7.traque'],
+        ['combat', 'rocaile', { boss: true, conseil: 'chasse.e7.conseil' }],
+        ['gagne', 'serre-roc'],
+        ['dialogue', 'chasse.e7.fin'],
+        ['message', 'chasse.e7.message']
+      ] },
+      { lieu: 'roxane', si: 'fini a4.e2', evenements: [
+        ['perd', 'serre-roc'],
+        ['dialogue', 'chasse.e8.scene'],
+        ['gagne', 'traqueur, 800 or'],
+        ['dialogue', 'chasse.e8.fin']
       ] }
     ]
   },
@@ -161,9 +184,12 @@ const ANNEXES = {
         ['dialogue', 'colporteur.e6.scene'],
         ['message', 'colporteur.e6.message']
       ] },
-      // suite à l'acte 4 : à Aerie, Ilse tisse la plume en cape
-      { lieu: 'fennel', si: 'drapeau acte4', evenements: [
-        ['dialogue', 'colporteur.e7.scene']
+      // acte 4 : à Aerie, Ilse tisse la plume de roc en Cape des quatre vents
+      { lieu: 'ilse', si: 'drapeau acte4 et fini a4.e2', evenements: [
+        ['dialogue', 'colporteur.e7.scene'],
+        ['perd', 'plume-roc'],
+        ['gagne', 'cape4'],
+        ['dialogue', 'colporteur.e7.fin']
       ] }
     ]
   },
@@ -399,6 +425,45 @@ const ANNEXES = {
         ['dialogue', 'mineurs.e3.scene'],
         ['gagne', 'lampe, 200 or'],
         ['dialogue', 'mineurs.e3.fin']
+      ] }
+    ]
+  },
+
+  // ---------- Hauts-Vents ----------
+  // 14. Le courrier des falaises (Pell, le facteur en planeur). Les lettres sont sur le Pont des Nuées ;
+  // la Plume du facteur arrive tout de suite (voyage direct vers une zone déjà visitée), puis une lettre par village.
+  courrier: {
+    donneur: 'pell', ouvre: 'fini a4.e2',
+    offre: [
+      ['choix', 'courrier.offre', { oui: [['message', 'courrier.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'pont', evenements: [
+        ['dialogue', 'courrier.e1.lettres'],
+        ['combat', 'rapace rapace rapace'],
+        ['gagne', 'lettres'],
+        ['dialogue', 'courrier.e1.pell'],
+        ['gagne', 'plume-facteur'],
+        ['dialogue', 'courrier.e1.plume'],
+        ['message', 'courrier.e1.message']
+      ] },
+      { lieu: 'brann', evenements: [
+        ['dialogue', 'courrier.e2.scene'],
+        ['message', 'courrier.e2.message']
+      ] },
+      { lieu: 'maelle', evenements: [
+        ['dialogue', 'courrier.e3.scene'],
+        ['message', 'courrier.e3.message']
+      ] },
+      { lieu: 'dorn', evenements: [
+        ['dialogue', 'courrier.e4.scene'],
+        ['message', 'courrier.e4.message']
+      ] },
+      { lieu: 'pell', evenements: [
+        ['perd', 'lettres'],
+        ['dialogue', 'courrier.e5.scene'],
+        ['gagne', '300 or'],
+        ['dialogue', 'courrier.e5.fin']
       ] }
     ]
   }

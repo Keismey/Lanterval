@@ -59,6 +59,8 @@ function face(o) { return mk(24, 24, x => {
   if (o.scarf) P(x, o.scarf, 5, 18, 14, 2);
   if (o.hat) { P(x, o.hat, 2, 5, 20, 2); E(x, o.hat, 12, 3, 6, 3); P(x, o.hat, 2, 3, 2, 3); P(x, o.hat, 20, 3, 2, 3); }
   if (o.patch) { P(x, '#1b1830', 8, 10, 4, 3); P(x, '#1b1830', 6, 8, 12, 1); }
+  if (o.lunettes) { P(x, '#5a4030', 5, 8, 14, 2); D(x, o.lunettes, 9, 8, 2); D(x, o.lunettes, 15, 8, 2); }
+  if (o.tresse) for (let k = 0; k < 9; k++) P(x, k % 2 ? o.tresse : o.hair, 17 + (k % 2), 10 + k, 3, 1);
 }); }
 function wolf(body, shade, belly, eye, scar) { return mk(40, 32, x => { E(x, body, 19, 19, 12, 7); E(x, shade, 19, 15, 11, 3); E(x, belly, 20, 23, 8, 3);
   E(x, body, 31, 14, 6, 5); P(x, body, 34, 14, 5, 4); P(x, '#2a2a3a', 38, 14, 1, 1); P(x, shade, 28, 6, 2, 5); P(x, shade, 32, 6, 2, 5);
@@ -115,6 +117,7 @@ function dessinerSprites() {
   SPR.f_inconnu = face({ dark: true, hood: '#2a2440', cl: '#2a2440' });
   spritesActe2();
   spritesActe3();
+  spritesActe4();
   for (const k in SPR) SPRURL[k] = SPR[k].toDataURL();
 }
 
@@ -335,6 +338,101 @@ function bgMapCendre(c, W, H) { const n1 = vnoise(24, 22), n2 = vnoise(28, 8), i
   { const [x, y] = at('pont', 0, 0); P(c, '#d8d0c0', x - 8, y, 16, 1); for (let k = -8; k < 8; k += 4) P(c, '#a89a80', x + k, y - 2, 1, 3); } }
 
 
+/* ---------- Acte 4 : Hauts-Vents ---------- */
+function rocSpr(vol) { return mk(vol ? 64 : 52, 48, x => {
+  const st = '#8a8a90', sd = '#606068', hi = '#b4b4bc', cx = vol ? 32 : 24;
+  if (vol) { for (let k = 0; k < 26; k++) { const yy = 10 + Math.floor(k / 2.2), hh = Math.max(3, 18 - Math.floor(k / 1.5)); P(x, k % 4 ? st : sd, cx - 6 - k, yy, 1, hh); P(x, k % 4 ? st : sd, cx + 5 + k, yy, 1, hh); }
+    for (let k = 0; k < 6; k++) { P(x, hi, cx - 30 + k * 4, 21 + k, 3, 2); P(x, hi, cx + 27 - k * 4, 21 + k, 3, 2); } }
+  E(x, st, cx, 25, 9, 12); E(x, hi, cx, 28, 6, 7);
+  if (!vol) { E(x, sd, cx - 7, 24, 5, 11); E(x, sd, cx + 7, 24, 5, 11); for (let k = 0; k < 4; k++) P(x, hi, cx - 10, 18 + k * 4, 4, 1); P(x, sd, cx - 16, 32, 8, 3); }
+  D(x, st, cx, 11, 6); P(x, '#ffb040', cx - 3, 9, 2, 2); P(x, '#ffb040', cx + 2, 9, 2, 2);
+  P(x, '#d8c890', cx - 2, 13, 5, 3); P(x, '#d8c890', cx - 1, 16, 3, 2); P(x, '#b8a870', cx, 18, 1, 1);
+  for (const dx of [-4, 3]) { P(x, '#c8a040', cx + dx, 36, 2, vol ? 6 : 8); P(x, '#2a2a30', cx + dx - 2, vol ? 41 : 44, 6, 2); }
+}); }
+function spritesActe4() {
+  SPR.rapace = mk(42, 32, x => { for (let k = 0; k < 15; k++) { const hh = Math.max(2, 11 - Math.floor(k / 1.6)); P(x, k % 3 ? '#8a5a32' : '#6a4022', 15 - k, 5 + Math.floor(k / 2.5), 1, hh); P(x, k % 3 ? '#8a5a32' : '#6a4022', 26 + k, 5 + Math.floor(k / 2.5), 1, hh); }
+    E(x, '#7a4a2a', 21, 17, 6, 8); E(x, '#d8b890', 21, 19, 3, 5); D(x, '#6a4022', 21, 8, 4); P(x, '#f2c14e', 23, 8, 4, 2); P(x, '#c9962e', 26, 10, 1, 1); P(x, '#ffdd55', 20, 7, 1, 1);
+    P(x, '#f2c14e', 18, 25, 2, 5); P(x, '#f2c14e', 23, 25, 2, 5); P(x, '#c9962e', 17, 29, 4, 1); P(x, '#c9962e', 22, 29, 4, 1); P(x, '#5a3a1a', 18, 25, 7, 1); });
+  SPR.sylphe = mk(30, 36, x => { for (let k = 0; k < 26; k++) { const w = Math.round(8 * Math.sin(Math.PI * Math.min(1, (k + 2) / 28)) * (k < 6 ? k / 6 : 1)); P(x, k < 10 ? '#f4fbff' : '#bfe6f2', 15 - w + Math.round(Math.sin(k * .45) * 3), 4 + k, 2 * w, 1); }
+    for (let k = 0; k < 14; k++) { P(x, '#d8f2fa', 3 + k, 14 + Math.round(Math.sin(k / 2) * 2), 1, 1); P(x, '#d8f2fa', 26 - k, 20 + Math.round(Math.cos(k / 2) * 2), 1, 1); }
+    P(x, '#3a6a8a', 12, 12, 2, 2); P(x, '#3a6a8a', 17, 12, 2, 2); });
+  SPR.gargouille = mk(40, 40, x => { for (let k = 0; k < 10; k++) { P(x, '#6a6a72', 9 - k, 6 + k, 1, 12 - k); P(x, '#6a6a72', 30 + k, 6 + k, 1, 12 - k); }
+    E(x, '#80808a', 20, 26, 10, 10); P(x, '#6a6a72', 12, 32, 6, 7); P(x, '#6a6a72', 22, 32, 6, 7); P(x, '#4a4a52', 10, 38, 20, 2);
+    D(x, '#8e8e98', 20, 12, 6); P(x, '#5a5a62', 14, 3, 2, 5); P(x, '#5a5a62', 24, 3, 2, 5); P(x, '#ffcc40', 17, 11, 2, 2); P(x, '#ffcc40', 22, 11, 2, 2);
+    P(x, '#2a2a30', 17, 15, 6, 2); P(x, '#f4f4f4', 18, 15, 1, 2); P(x, '#f4f4f4', 21, 15, 1, 2); for (let k = 0; k < 4; k++) P(x, '#9e9ea8', 15 + k * 3, 22 + (k % 2), 2, 1); });
+  SPR.spectre = mk(32, 42, x => { for (let y = 10; y < 41; y++) { const w = 5 + Math.round((y - 10) * .36); P(x, y % 5 === 0 ? '#8aa6c8' : '#a8c2dc', 16 - w, y, 2 * w, 1); }
+    for (let i = 0; i < 5; i++) x.clearRect(5 + i * 5, 38 + (i % 2), 2, 4);
+    D(x, '#a8c2dc', 16, 11, 7); D(x, '#2a3448', 16, 12, 4); P(x, '#e8f4ff', 14, 12, 1, 1); P(x, '#e8f4ff', 18, 12, 1, 1);
+    for (let k = 0; k < 7; k++) P(x, '#f0e8d0', 12 + k, 20 + Math.round(Math.sin(k / 2) * 2), 1, 1); P(x, '#f0e8d0', 15, 23, 2, 3); });
+  SPR.griffon = mk(50, 40, x => { for (let k = 0; k < 16; k++) { const x0 = 8 + Math.round(k * .45); P(x, '#e8e0d0', x0, 2 + k, 4 + Math.round(k * 1.1), 1); if (k > 3 && k % 3 === 0) P(x, '#b8ac98', x0 + 2, 2 + k, Math.round(k * .9), 1); }
+    E(x, '#c89a5a', 22, 24, 13, 7); E(x, '#a87a3a', 22, 20, 12, 3); for (const lx of [12, 17, 26, 31]) P(x, '#a87a3a', lx, 28, 3, 9);
+    for (let k = 0; k < 8; k++) P(x, '#c89a5a', 4 - Math.round(k / 3), 18 + k, 3, 1); E(x, '#8a5a2a', 2, 26, 2, 3);
+    E(x, '#f0ece4', 38, 13, 6, 6); P(x, '#f2c14e', 43, 13, 5, 2); P(x, '#c9962e', 46, 15, 2, 2); P(x, '#1b1830', 39, 11, 2, 2); P(x, '#d8d0c0', 34, 18, 6, 5);
+    P(x, '#f2c14e', 32, 34, 3, 3); P(x, '#f2c14e', 37, 34, 3, 3); P(x, '#c89a5a', 32, 24, 7, 10); });
+  SPR.givre = mk(40, 46, x => { P(x, '#7ab8e0', 10, 34, 8, 11); P(x, '#7ab8e0', 22, 34, 8, 11); P(x, '#a8d8f4', 8, 14, 24, 21); P(x, '#7ab8e0', 24, 14, 8, 21);
+    for (const [cx, cy, h] of [[10, 14, 7], [18, 14, 9], [27, 14, 6], [4, 18, 5], [36, 20, 6]]) for (let k = 0; k < h; k++) { const ww = Math.max(1, Math.round(4 * k / h)); P(x, '#e8f8ff', cx - ww / 2, cy - h + k, ww, 1); }
+    P(x, '#a8d8f4', 13, 4, 14, 11); P(x, '#ffffff', 16, 8, 3, 2); P(x, '#ffffff', 22, 8, 3, 2);
+    P(x, '#a8d8f4', 1, 16, 7, 16); P(x, '#a8d8f4', 32, 16, 7, 16); P(x, '#d8f0ff', 12, 20, 2, 10); P(x, '#d8f0ff', 18, 24, 6, 2); });
+  SPR.serpent = mk(64, 64, x => { P(x, '#9a9aa8', 26, 4, 12, 60); P(x, '#b8b8c4', 26, 4, 3, 60); P(x, '#7a7a88', 35, 4, 3, 60);
+    for (let k = 0; k < 120; k++) { const a = k / 9, cx = 32 + Math.cos(a) * 15, cy = 60 - k * .38; if (Math.sin(a) < 0 && k < 104) continue; D(x, k % 6 < 3 ? '#4aa8e8' : '#3a88c8', cx, cy, 5 - Math.round(k / 60)); if (k % 8 === 0) P(x, '#c8f4ff', cx, cy - 2, 2, 1); }
+    E(x, '#4aa8e8', 44, 10, 9, 6); E(x, '#3a88c8', 50, 13, 6, 3); P(x, '#ffffff', 44, 8, 3, 2); P(x, '#1b1830', 45, 8, 1, 2); P(x, '#f4f4f4', 52, 15, 1, 2); P(x, '#f4f4f4', 55, 15, 1, 2);
+    for (let k = 0; k < 5; k++) P(x, '#8ff3ff', 36 + k * 3, 2 + (k % 2) * 2, 2, 4); P(x, '#ff5a6a', 57, 13, 4, 1); });
+  SPR.rocaile = rocSpr(false);
+  SPR.rocaile_vol = rocSpr(true);
+  SPR.f_tavor = face({ skin: '#e6bf9c', beard: '#f2f2f2', cl: '#7ab8e0', cl2: '#5a98c8' });
+  SPR.f_edda = face({ skin: '#f0b898', hair: '#8a4a2a', hood: '#c84a4a', cl: '#d8b070', scarf: '#f4ece0' });
+  SPR.f_joran = face({ skin: '#e0b090', hair: '#3a2a1a', cl: '#7a5233', cl2: '#5a3a22', lunettes: '#8ad0e8' });
+  SPR.f_pell = face({ skin: '#f4d0b0', hair: '#d8642a', hat: '#6a4a2a', cl: '#4a6a8a', cl2: '#8a5a32', lunettes: '#f2c14e' });
+  SPR.f_ilse = face({ skin: '#d8a880', hair: '#a8a8b0', tresse: '#8a8a92', cl: '#5a7a6a', cl2: '#3a5a4a' });
+}
+
+function nuages(c, W, H, y0, y1, seed, col) { const r = rng(seed); for (let i = 0; i < 14; i++) { const x = r() * W, y = y0 + r() * (y1 - y0), w = 20 + r() * 40; E(c, col, x, y, w, 5 + r() * 6); } }
+function bgPont(c, W, H) { const r = rng(127);
+  dgrad(c, 0, 0, W, H, ['#4a7ac8', '#8ab8e8', '#d8ecf8', '#f4f8fc']);
+  nuages(c, W, H, H * .55, H, 131, '#ffffff'); nuages(c, W, H, H * .1, H * .35, 137, 'rgba(255,255,255,.7)');
+  const vx = W * .5, vy = H * .42;
+  for (let k = 0; k < 40; k++) { const f = k / 40, y = H - (H - vy) * f * f * .2 - (H - vy) * f * .8, hw = W * .42 * (1 - f) + 3; P(c, k % 2 ? '#8a5a32' : '#a8743a', vx - hw, y, hw * 2, Math.max(1, 6 * (1 - f))); }
+  for (const s of [-1, 1]) { for (let k = 0; k < 60; k++) { const f = k / 60, hw = W * .44 * (1 - f) + 4, y = H - (H - vy) * f - 22 * (1 - f) - Math.sin(f * Math.PI) * 6; P(c, '#5a3a22', vx + s * hw, y, 2, 2); }
+    for (let k = 0; k < 8; k++) { const f = k / 8, hw = W * .44 * (1 - f) + 4, y = H - (H - vy) * f; P(c, '#5a3a22', vx + s * hw, y - 22 * (1 - f), 1, 22 * (1 - f)); } }
+  for (let i = 0; i < 6; i++) { const x = r() * W, y = r() * H * .4; P(c, '#2a2a3a', x, y, 5, 1); P(c, '#2a2a3a', x + 2, y - 1, 1, 1); } }
+function bgAerie(c, W, H) { const r = rng(139);
+  dgrad(c, 0, 0, W, H * .7, ['#5a8ad0', '#9ac4ec', '#e8f0f4']); nuages(c, W, H, H * .62, H, 141, '#ffffff');
+  for (let k = 0; k < H; k++) { const w = W * .38 + Math.sin(k / 9) * 10 + k * .12; P(c, k % 9 ? '#8a7a6a' : '#6a5a4a', 0, k, w, 1); }
+  for (let i = 0; i < 6; i++) { const x = W * (.06 + i * .1) + (r() - .5) * 10, y = H * (.3 + (i % 3) * .14), w = 22, h = 16;
+    P(c, '#5a3a22', x + 3, y + h, 2, H * .2); P(c, '#5a3a22', x + w - 5, y + h, 2, H * .2); P(c, '#b8865a', x, y, w, h); P(c, '#8a5a32', x + w * .7, y, w * .3, h); P(c, '#a8423a', x - 2, y - 4, w + 4, 4); P(c, '#ffd070', x + 6, y + 6, 3, 4);
+    if (i < 5) P(c, '#d8c8a8', x + w, y + h - 2, W * .1 - w + 6, 1); }
+  for (const [kx, ky, col] of [[.62, .18, '#ff7a45'], [.78, .1, '#f2c14e'], [.88, .26, '#52b6ff']]) { const x = W * kx, y = H * ky;
+    for (let k = 0; k < 5; k++) P(c, col, x - k, y + k, 2 * k + 1, 1); for (let k = 0; k < 4; k++) P(c, col, x - 3 + k, y + 5 + k, 7 - 2 * k, 1); for (let k = 0; k < 24; k++) P(c, '#f4f4f4', x - k * .6, y + 9 + k, 1, 1); } }
+function bgRuines(c, W, H) { const r = rng(149);
+  dgrad(c, 0, 0, W, H * .65, ['#6a7aa8', '#a8b8d8', '#e0e4f0']); nuages(c, W, H, H * .55, H * .8, 151, 'rgba(255,255,255,.85)');
+  const gy = Math.round(H * .72); dgrad(c, 0, gy, W, H - gy, ['#8a8478', '#5a5650']);
+  for (let x = 0; x < W; x += 14) P(c, '#6e6a62', x, gy + 6 + (x % 28 ? 0 : 8), 12, 1);
+  for (let i = 0; i < 6; i++) { const x = W * (.08 + i * .17), h = H * (.2 + r() * .32), w = 12; P(c, '#c8c0b0', x, gy - h, w, h); P(c, '#a8a090', x + w - 4, gy - h, 4, h); P(c, '#d8d0c0', x - 3, gy - h, w + 6, 4); P(c, '#d8d0c0', x - 3, gy - 4, w + 6, 4);
+    if (i % 2) for (let k = 0; k < 5; k++) P(c, '#a8a090', x + w + k * 3, gy - h + k * 2, 3, 2); }
+  P(c, '#c8c0b0', W * .25, gy - H * .5, W * .5, 6); for (let k = 0; k < 12; k++) P(c, 'rgba(255,255,255,.25)', 0, gy - 6 - k * 3, W, 1);
+  for (let i = 0; i < 20; i++) P(c, '#4a7a3a', r() * W, gy - r() * 6, 2, 3); }
+function bgPic(c, W, H) { const r = rng(157);
+  dgrad(c, 0, 0, W, H * .7, ['#2a2a48', '#4a4a6a', '#8a8ea8', '#c8d0dc']);
+  for (let k = 0; k < H * .7; k++) { const w = 6 + k * 1.3; P(c, k % 6 ? '#4a4a58' : '#5a5a68', W * .5 - w / 2 + Math.sin(k / 7) * 4, H * .1 + k, w, 1); P(c, '#e8f0f8', W * .5 - w / 2 + Math.sin(k / 7) * 4, H * .1 + k, Math.max(2, w * .35), 1); }
+  const gy = Math.round(H * .78); dgrad(c, 0, gy, W, H - gy, ['#e8f0f8', '#a8b8cc']);
+  for (let i = 0; i < 50; i++) { const x = r() * W, y = r() * H; P(c, 'rgba(255,255,255,.7)', x, y, 4 + r() * 6, 1); }
+  for (let i = 0; i < 30; i++) P(c, '#ffffff', r() * W, r() * H, 1, 1); }
+function bgMapVents(c, W, H) { const n1 = vnoise(34, 26), n2 = vnoise(38, 9), im = c.getImageData(0, 0, W, H), d = im.data;
+  const pal = { c1: hex('#8ab4e0'), c2: hex('#b8d4ee'), c3: hex('#e8f2fa'), r1: hex('#8a8478'), r2: hex('#6e6a62'), g: hex('#f4f8fc') };
+  const iles = ['pont', 'aerie', 'ruines', 'pic', 'escalier'].map(id => surCarte(id, 'vents'));
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) { const nx = x / W, ny = y / H, v = n1(x, y) * .7 + n2(x, y) * .3, th = (BY[(y & 3) * 4 + (x & 3)] + .5) / 16;
+    const dmin = Math.min(...iles.map(p => Math.hypot((nx - p.x) * 1.6, ny - p.y))), roc = dmin < .09 + v * .05, glace = roc && ny < .3;
+    const tt = glace ? pal.g : roc ? (v + th * .2 < .62 ? pal.r1 : pal.r2) : v + th * .25 < .5 ? pal.c1 : v + th * .25 < .62 ? pal.c2 : pal.c3;
+    const k = (y * W + x) * 4; d[k] = tt[0]; d[k + 1] = tt[1]; d[k + 2] = tt[2]; d[k + 3] = 255; }
+  c.putImageData(im, 0, 0);
+  const at = (id, dx, dy) => { const p = surCarte(id, 'vents'); return [p.x * W + dx, p.y * H + dy]; };
+  { const [x, y] = at('pont', 0, 0); P(c, '#8a5a32', x - 14, y, 28, 1); for (let k = -14; k < 14; k += 4) P(c, '#5a3a22', x + k, y - 2, 1, 3); }
+  for (const [dx, dy] of [[-6, -2], [1, -5], [5, 2]]) { const [x, y] = at('aerie', dx, dy); P(c, '#b8865a', x - 2, y - 2, 5, 3); P(c, '#a8423a', x - 3, y - 4, 7, 2); P(c, '#5a3a22', x - 1, y + 1, 1, 3); }
+  for (let k = 0; k < 4; k++) { const [x, y] = at('ruines', -6 + k * 4, 0); P(c, '#d8d0c0', x, y - 5 + (k % 2) * 2, 2, 5 - (k % 2) * 2); }
+  { const [x, y] = at('pic', 0, 0); for (let k = 0; k < 8; k++) P(c, k < 3 ? '#ffffff' : '#5a5a68', x - k, y - 8 + k, 2 * k + 1, 1); }
+  { const [x, y] = at('escalier', 0, 0); for (let k = 0; k < 6; k++) P(c, 'rgba(160,140,200,.8)', x - 3 + k, y - k * 2, 3, 1); } }
+
+
 /* ---------- Décors ---------- */
 function bgForest(c, W, H, calm) { const r = rng(21);
   dgrad(c, 0, 0, W, H, calm ? ['#1c3b3a', '#2f5e4a', '#5c8f5a', '#8fb86a'] : ['#0d201d', '#173a30', '#2a5a40', '#3e6e46']);
@@ -415,5 +513,10 @@ Object.assign(DECORS_PROVISOIRES, {
   'mines': (c, w, h) => bgMines(c, w, h, false),
   'mines-libre': (c, w, h) => bgMines(c, w, h, true),
   'volcan': bgVolcan,
-  'carte-cendre': bgMapCendre
+  'carte-cendre': bgMapCendre,
+  'pont': bgPont,
+  'aerie': bgAerie,
+  'ruines': bgRuines,
+  'pic': bgPic,
+  'carte-vents': bgMapVents
 });

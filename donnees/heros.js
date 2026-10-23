@@ -16,7 +16,11 @@ const HEROS = {
   // invitée : se bat avec l'équipe dans certains combats de quête (['combat', …, { invitee: 'hilde' }]),
   // au niveau de Kael ; elle n'est pas dans le menu Équipe et ne gagne pas d'expérience
   hilde: { el: 'F', classe: 'forgeronne', arme: 'marteau', armure: 'tablier', invite: true,
-    base: { hp: 62, pp: 12, atk: 12, mag: 6, def: 8, spd: 9 }, gain: { hp: 8.5, pp: 2, atk: 2.4, mag: 1, def: 1.5, spd: .8 } }
+    base: { hp: 62, pp: 12, atk: 12, mag: 6, def: 8, spd: 9 }, gain: { hp: 8.5, pp: 2, atk: 2.4, mag: 1, def: 1.5, spd: .8 } },
+  // acte 4 : Varen, invité après le Pic hurlant (drapeau varen) : il se bat dans tous les combats, sauf les duels
+  // et ceux où une autre invitée est là (voir battle dans moteur/combat.js)
+  varen: { el: 'V', classe: 'duelliste', arme: 'courbe', armure: 'cuirnoir', invite: true,
+    base: { hp: 58, pp: 12, atk: 12, mag: 7, def: 7, spd: 14 }, gain: { hp: 7.5, pp: 2, atk: 2.3, mag: 1.1, def: 1.3, spd: 1 } }
 };
 // ordre d'affichage dans l'équipe
 const ORDRE_HEROS = ['kael', 'mira', 'sol', 'nev'];
@@ -36,6 +40,10 @@ const CLASSES = {
   berserker: { mod: { hp: 1.25, atk: 1.4, def: .8, mag: .5, pp: .6 }, tech: ['furie', 'rage'], armes: ['hache', 'epee'] },
   alchimiste: { mod: { pp: 1.2, atk: .9, mag: 1.15 }, tech: ['corrosion', 'mixture'], armes: ['dague', 'baton'] },
   invocateur: { mod: { hp: .85, pp: 1.5, atk: .6, mag: 1.45, def: .85, spd: .9 }, tech: ['invocation', 'offrande'], armes: ['baton', 'harpe'] },
+  // acte 4 : débloquées par le cristal d'azur
+  sage: { mod: { hp: .95, pp: 1.4, atk: .7, mag: 1.35 }, tech: ['priere', 'jugement'], armes: ['baton', 'harpe'] },
+  ninja: { mod: { hp: .95, atk: 1.25, def: .9, spd: 1.4, mag: .9, pp: .8 }, tech: ['kunai', 'ninjutsu'], armes: ['dague', 'poing'] },
+  lamemage: { mod: { hp: 1.1, atk: 1.15, mag: 1.15 }, tech: ['tranchesort', 'enchant'], armes: ['epee', 'dague'] },
   // classes cachées (quêtes annexes)
   rodeur: { mod: { hp: .95, atk: 1.15, spd: 1.3, def: .9, pp: .8 }, tech: ['double', 'lynx'], armes: ['dague', 'arc'], cachee: true },
   // corsaire : vole parfois en frappant, dégâts doublés sur une garde brisée (pirate dans combat.js)
@@ -43,7 +51,9 @@ const CLASSES = {
   // géomancien : ses sorts prennent l'élément de la région (Terre dans la vallée, Eau sur la côte, Feu à Cendre)
   geomancien: { mod: { pp: 1.25, atk: .8, mag: 1.3 }, tech: ['terroir', 'eboulement'], armes: ['baton'], cachee: true },
   // classe d'une invitée (Hilde) : jamais débloquée, absente du Codex et du menu Équipe
-  forgeronne: { mod: { hp: 1.2, atk: 1.2, def: 1.2, mag: .7 }, tech: ['marteau', 'trempe'], armes: ['marteau'], invite: true }
+  forgeronne: { mod: { hp: 1.2, atk: 1.2, def: 1.2, mag: .7 }, tech: ['marteau', 'trempe'], armes: ['marteau'], invite: true },
+  // classe de Varen (invité)
+  duelliste: { mod: { hp: 1.15, atk: 1.25, spd: 1.15, mag: .8 }, tech: ['croisee', 'parade'], armes: ['sabre'], invite: true }
 };
 
 const TECHNIQUES = {
@@ -51,8 +61,10 @@ const TECHNIQUES = {
   // types : phys, mag, soin, soins, provoc, rempart, scan, meditation (PV et PP du héros), vol (objet ou or),
   //         esquive (évite le prochain coup), courage (Attaque et Magie de l'équipe +25 % pendant 3 actions), sommeil,
   //         rage (Attaque +40 %, Défense −30 % pendant 3 actions), mixture (soigne l'équipe et rend 4 PP),
-  //         offrande (le héros donne 15 % de ses PV, l'allié gagne 15 PP)
-  // recul : part des PV max que le héros perd en frappant ; corrode : enlève un point de garde même sans faiblesse
+  //         offrande (le héros donne 15 % de ses PV, l'allié gagne 15 PP),
+  //         enchant (l'Attaque du héros prend son élément pendant 3 actions)
+  // recul : part des PV max que le héros perd en frappant ; corrode : enlève un point de garde même sans faiblesse ;
+  // mixte : coup physique qui compte aussi la Magie (moyenne de l'Attaque et de la Magie)
   frappe: { el: 'X', type: 'phys', pow: 1.3, pp: 2, cible: 'ennemi', poids: 1 },
   provoc: { type: 'provoc', pp: 0, cible: 'soi', poids: .8 },
   sort: { el: 'X', type: 'mag', pow: 1.3, pp: 3, cible: 'ennemi', poids: 1 },
@@ -80,9 +92,19 @@ const TECHNIQUES = {
   offrande: { type: 'offrande', pp: 0, cible: 'allie', poids: .8 },
   terroir: { el: 'Z', type: 'mag', pow: 1.5, pp: 5, cible: 'ennemi', poids: 1 },
   eboulement: { el: 'Z', type: 'mag', pow: .95, pp: 10, cible: 'tous', poids: 1.3 },
+  // acte 4
+  priere: { type: 'soins', pow: 1.3, pp: 14, cible: 'allies', poids: 1.3 },
+  jugement: { el: 'X', type: 'mag', pow: 1.85, pp: 8, cible: 'ennemi', poids: 1.15 },
+  kunai: { el: 'L', type: 'phys', pow: .8, pp: 6, cible: 'tous', poids: 1 },
+  ninjutsu: { el: 'X', type: 'mag', pow: 1.3, pp: 6, cible: 'ennemi', poids: .9, corrode: true },
+  tranchesort: { el: 'LX', type: 'phys', mixte: true, pow: 1.45, pp: 5, cible: 'ennemi', poids: 1.05 },
+  enchant: { type: 'enchant', pp: 4, cible: 'soi', poids: .7 },
   // Hilde (invitée)
   marteau: { el: 'L', type: 'phys', pow: 1.6, pp: 4, cible: 'ennemi', poids: 1.1, corrode: true },
-  trempe: { type: 'rempart', pp: 5, cible: 'soi', poids: 1 }
+  trempe: { type: 'rempart', pp: 5, cible: 'soi', poids: 1 },
+  // Varen (invité)
+  croisee: { el: 'L', type: 'phys', pow: .85, coups: 2, pp: 4, cible: 'ennemi', poids: 1 },
+  parade: { type: 'esquive', pp: 3, cible: 'soi', poids: .6 }
 };
 // élément de chaque région (techniques du Géomancien)
 const ELEMENT_REGION = { vallee: 'T', cote: 'E', cendre: 'F', vents: 'V' };

@@ -845,7 +845,7 @@ Unlocked by the ember crystal
 Geomancer
 
 == classe.geomancien.desc
-Their spells take the element of the region: Earth in the valley, Water on the coast, Fire in Cendre.
+Their spells take the element of the region: Earth in the valley, Water on the coast, Fire in Cendre, Wind in the High Winds.
 
 == classe.geomancien.verrou
 Secret class: someone in Forgecendre knows how to listen to the rock
@@ -1275,3 +1275,290 @@ Shade
 
 == monstre.brume.desc
 A shade of the Crystal Cave, grown in the mist. It drinks the strength of whoever it touches.
+
+# ---------- Act 4 ----------
+
+== parle.tavor
+Tavor
+
+== parle.edda
+Edda
+
+== parle.joran
+Joran
+
+== parle.pell
+Pell
+
+== parle.ilse
+Ilse
+
+== classe.sage
+Sage
+
+== classe.sage.desc
+Heals the whole team and casts the most powerful spell on a single enemy.
+
+== classe.sage.verrou
+Unlocked by the azure crystal
+
+== classe.ninja
+Ninja
+
+== classe.ninja.desc
+Very fast: strikes every enemy at once and wears down their guard.
+
+== classe.ninja.verrou
+Unlocked by the azure crystal
+
+== classe.lamemage
+Spellblade
+
+== classe.lamemage.desc
+Blends sword and magic: their blows count both Attack and Magic, and their weapon takes the hero's element.
+
+== classe.lamemage.verrou
+Unlocked by the azure crystal
+
+== classe.duelliste
+Duellist
+
+== classe.duelliste.desc
+Varen's class: two quick blade strikes, and a parry that avoids the next blow.
+
+== tech.priere
+Prayer
+
+== tech.priere.desc
+Heals a lot of HP to the whole team.
+
+== tech.jugement
+Judgement
+
+== tech.jugement.desc
+A very powerful spell of the hero's element on one enemy.
+
+== tech.kunai
+Kunai
+
+== tech.kunai.desc
+Blades thrown at every enemy.
+
+== tech.ninjutsu
+Ninjutsu
+
+== tech.ninjutsu.desc
+A quick spell of the hero's element that removes one guard point, even without a weakness.
+
+== tech.tranchesort
+Spellslash
+
+== tech.tranchesort.desc
+A Blade strike with the hero's element, counting both Attack and Magic.
+
+== tech.enchant
+Enchant
+
+== tech.enchant.desc
+Attack takes the hero's element for the next 3 actions.
+
+== tech.croisee
+Crossed blades
+
+== tech.croisee.desc
+Two quick Blade strikes on one enemy.
+
+== tech.parade
+Parry
+
+== tech.parade.desc
+Completely avoids the next blow received.
+
+== objet.baume
+Wind balm
+
+== objet.baume.desc
++400 HP
+
+== equip.vent
+Wind sword
+
+== equip.nuee
+Cloudstaff
+
+== equip.zephyr
+Zephyr dagger
+
+== equip.serres
+Griffin talons
+
+== equip.eolienne
+Aeolian harp
+
+== equip.tempete
+Storm axe
+
+== equip.aldric
+Aldric's sword
+
+== equip.courbe
+Varen's curved blade
+
+== equip.cuirnoir
+Black leather of the Order
+
+== equip.plumacier
+Steelfeather armour
+
+== equip.soie
+Cloud-silk robe
+
+== equip.cuirvent
+Cliff leather
+
+== equip.cape4
+Cloak of the four winds
+
+== equip.nuage
+Captive cloud
+
+== equip.chapelet
+Mother-of-pearl rosary
+
+== equip.crocgivre
+Frost fang
+
+== equip.plumevent
+Wind feather
+
+== equip.amulette
+Cloud amulet
+
+== equip.fleur
+Lantern flower
+
+== equip.traqueur
+Tracker's eye
+
+== important.fleurie
+Lantern flower
+
+== important.fleurie.desc
+Pia's seed, in bloom at last. Its golden petals shine without flickering, even in the wind.
+
+== important.serre-roc
+Winged Roc talon
+
+== important.serre-roc.desc
+A stone talon as long as an arm. Proof that the Winged Roc will never fly again.
+
+== important.lettres
+Pell's letters
+
+== important.lettres.desc
+Three letters picked up on the Cloud Bridge: for Brann in Lanterval, Maëlle in Salvent and Dorn in Forgecendre.
+
+== important.plume-facteur
+Mail quill
+
+== important.plume-facteur.desc
+Pell's quill. It remembers every road: from the map, it leads straight into an area already visited.
+
+== monstre.rapace
+Thieving raptor
+
+== monstre.rapace.court
+Raptor
+
+== monstre.rapace.desc
+A big cliff bird that steals anything shiny, and strikes twice when it dives.
+
+== monstre.sylphe
+Sylph
+
+== monstre.sylphe.desc
+A wind spirit made of ribbons of air. It blows gusts at the whole team.
+
+== monstre.sylphe.special
+The Sylph unleashes a gust on the whole team!
+
+== monstre.gargouille
+Gargoyle
+
+== monstre.gargouille.desc
+A stone guardian of the monastery. Its guard is as thick as a wall.
+
+== monstre.gargouille.special
+Stone blow
+
+== monstre.spectre
+Spectral monk
+
+== monstre.spectre.court
+Monk
+
+== monstre.spectre.desc
+A monk of the monastery, taken by the mist. It drinks the strength of whoever it touches.
+
+== monstre.griffon
+Peak griffin
+
+== monstre.griffon.court
+Griffin
+
+== monstre.griffon.desc
+Half lion, half eagle, master of the Howling Peak. Its talons strike very hard.
+
+== monstre.griffon.special
+Diving talons
+
+== monstre.givre
+Frost elemental
+
+== monstre.givre.court
+Frost
+
+== monstre.givre.desc
+Ice from the Peak that started walking. It brews hailstorms.
+
+== monstre.givre.charge
+The Frost elemental bristles with ice spikes… *it will strike the whole team on its next turn*, unless you break its guard first.
+
+== monstre.givre.special
+The Frost elemental rains hail on the whole team!
+
+== monstre.serpent
+Azure serpent
+
+== monstre.serpent.desc
+Guardian of the azure crystal, driven mad by the mist. It unleashes storms and strikes twice as long as its guard holds.
+
+== monstre.serpent.charge
+The Azure serpent coils around the pillar and the wind spins faster and faster… *it will strike the whole team on its next turn*, unless you break its guard first.
+
+== monstre.serpent.special
+The Azure serpent unleashes a storm in the sanctuary!
+
+== monstre.varen3
+Varen
+
+== monstre.varen3.desc
+Nev's brother, alone against her at the top of the Howling Peak. He no longer holds back.
+
+== monstre.varen3.special
+Dawn blade
+
+== monstre.rocaile
+Winged Roc
+
+== monstre.rocaile.desc
+A giant bird with stone feathers, the last beast in Roxane's logbook. In the air, only Wind can reach it.
+
+== monstre.rocaile.special
+Stone beak
+
+== monstre.rocaile.envol
+The Winged Roc takes off with a great beat of its wings! *In the air, only Wind attacks can hit it.*
+
+== monstre.rocaile.pique
+The Winged Roc dives on the whole team!

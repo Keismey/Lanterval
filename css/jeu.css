@@ -65,10 +65,11 @@ button{font:inherit;color:inherit}
 @keyframes pulse{50%{opacity:.8;transform:translate(-50%,-50%) scale(1.06)}}
 #app.inb #decor::after{content:"";position:absolute;inset:0;background:rgba(8,6,26,.3)}
 /* monstres en combat : posés par le bas, hauteur en part de la scène */
-.unit{position:absolute;transform:translate(-50%,-100%);aspect-ratio:auto;transition:opacity .35s}
+.unit{position:absolute;transform:translate(-50%,-100%);aspect-ratio:auto;transition:opacity .35s,top .45s ease-out}
 .unit img{height:100%;width:auto;display:block;filter:drop-shadow(0 6px 6px rgba(0,0,0,.45))}
 .unit.pix img{image-rendering:pixelated}
-.unit::after{content:"";position:absolute;left:15%;right:15%;bottom:-3px;height:8px;border-radius:50%;background:rgba(0,0,0,.35);z-index:-1}
+.unit::after{content:"";position:absolute;left:15%;right:15%;bottom:-3px;height:8px;border-radius:50%;background:rgba(0,0,0,.35);z-index:-1;transition:bottom .45s ease-out,opacity .45s,transform .45s}
+.unit.vol::after{bottom:calc(-3px - var(--lev,0%));opacity:.55;transform:scaleX(.6)}
 .unit.touche img{animation:touche .3s}
 @keyframes touche{0%{filter:brightness(3)}30%{transform:translateX(-4px)}60%{transform:translateX(4px)}100%{filter:none}}
 .unit.mourant{opacity:.35}

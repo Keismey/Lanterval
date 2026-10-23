@@ -112,14 +112,42 @@ Sol: “Salt water, hot ash, and a very strong wind. All it needs now is the win
 Side quest: the shoot has become a *lantern bud*. Now it needs a very strong wind. *To be continued in act 4*.
 
 == graine.e3.titre
-Open the bud in a very strong wind (act 4)
+Open the bud in a very strong wind
 
 == graine.e3.attente
 Pia: “A bud! Grandma says the strongest wind blows on a bridge, way up in the clouds. Is there really a bridge in the clouds?”
 
-== graine.e3.scene
+== graine.e3.bouton
+Hold the bud up to the wind
+
+== graine.e3.vent
 ## The lantern seed
-The wind of the Clouds rushes into the bud, which opens all at once.
+In the middle of the Cloud Bridge, Kael raises the bud into the wind. The planks sway under his feet.
+The bud trembles, glows red, then bursts open into golden petals.
+Shapes made of wind whirl around the light, drawn to it like moths. [Fight]
+
+== graine.e3.fin
+## The lantern seed
+With the sylphs scattered, the flower stays open. It shines with a soft light that doesn't flicker in the wind.
+Mira: “It shines right through the clouds. Pia is going to cry with joy.”
+
+== graine.e3.message
+Side quest: the *lantern flower* has opened. Bring it back to *Pia*, in Lanterval.
+
+== graine.e4.titre
+Bring the lantern flower back to Pia
+
+== graine.e4.lanterne
+## The lantern seed
+Pia runs to the village lantern, holding the flower tight. She plants it between two cobblestones, at the foot of the great pillar.
+Pia: “Grandma was right! It shines in the mist. Look, look!”
+The flower lights up, and the mist steps back around it.
+
+== graine.e4.fin
+## The lantern seed
+Pia: “It's already grown a tiny flower, here on the side. That one is for you.”
+Pia: “Keep it with you. That way, you'll always have a bit of Lanterval in the mist.”
+? Reward: *Lantern flower* (accessory). Its wearer gets back a little HP with each of their actions.
 
 == graine.apres
 Pia: “Every evening I look at my flower. Grandma says it shines brighter than the lantern. Don't tell her I said that.”
@@ -242,14 +270,42 @@ Roxane: “I never dared climb up there. With you, maybe.”
 Side quest: three beasts out of four. *To be continued in act 4*, at the Cloud Bridge.
 
 == chasse.e7.titre
-Hunt the Winged Roc at the Cloud Bridge (act 4)
+Hunt the Winged Roc at the Cloud Bridge
 
 == chasse.e7.attente
 Roxane: “The Winged Roc, under the Cloud Bridge. They say it carries off whole oxen. I can't wait.”
 
-== chasse.e7.scene
+== chasse.e7.bouton
+Track the Winged Roc
+
+== chasse.e7.traque
 ## The hunter's logbook
-Under the Cloud Bridge, a huge cry tears through the wind.
+Under the Cloud Bridge, a huge cry tears through the wind. A shadow passes beneath the planks, then climbs back up with one beat of its wings.
+The Winged Roc lands on the bridge ropes, which groan under its weight. Its feathers are as hard as stone.
+Nev: “It won't stay on the ground for long. Up there, it's at home.”
+
+== chasse.e7.conseil
+? Every other turn, the Winged Roc takes off: in the air, only *Wind* attacks can hit it. Breaking its guard makes it fall.
+
+== chasse.e7.fin
+## The hunter's logbook
+The Winged Roc crashes onto the bridge and doesn't get up. Kael tears off a talon as long as his arm.
+Kael: “Four out of four. Roxane is in Aerie, says Fennel. She won't believe it.”
+
+== chasse.e7.message
+Side quest: bring the Winged Roc's talon to *Roxane*, in Aerie.
+
+== chasse.e8.titre
+Bring the talon to Roxane
+
+== chasse.e8.scene
+Roxane: “The Winged Roc's talon… The logbook is complete. Four beasts, one per region, and you got them all.”
+Roxane: “My old master lives here, in Aerie. Garrick. He's the one who taught me to track.”
+Roxane: “He says the mist copies the beasts we bring down, only worse. When all this is over, go and see him.”
+
+== chasse.e8.fin
+Roxane: “Take this too. The Tracker's eye, my oldest lucky charm. With it, you know where to strike before you even raise your weapon.”
+? Reward: *800 g* and the *Tracker's eye* (accessory). In combat, every monster's weaknesses and resistances are known from the start.
 
 == chasse.apres
 Roxane: “Your name is in my logbook four times. Nobody else is in it more than once.”
@@ -348,13 +404,22 @@ Fennel: “It comes from the Winged Roc of the High Winds. Up there, in Aerie, a
 Side quest: Fennel traded the ingot for a *roc feather*. *To be continued in act 4*, in Aerie.
 
 == colporteur.e7.titre
-Have the feather woven in Aerie (act 4)
+Have Ilse weave the roc feather
+
+== colporteur.e7.sous
+Looking for: Ilse, the weaver of Aerie
 
 == colporteur.e7.attente
 Fennel: “Keep that feather safe. In Aerie, Ilse the weaver will make a wonder of it. We just have to make it up there.”
 
 == colporteur.e7.scene
-Fennel: “Aerie, at last! Ilse, look what I've brought you.”
+Ilse: “A roc feather? Fennel trusted you with that one? Then he must like you, the old fox.”
+Ilse takes the feather and splits it into a thousand threads in one move. Her fingers dance over the loom.
+Ilse: “A cloak of the four winds. It weighs nothing, and nothing gets through it.”
+
+== colporteur.e7.fin
+Fennel: “From Lanterval honey to a cloak of the four winds! I knew you'd go all the way.”
+? Reward: *Cloak of the four winds* (light armour, for every class).
 
 == colporteur.e5.attente
 Fennel: “Keep your foghorn. In Forgecendre, the miners call to each other from tunnel to tunnel. They dream of one.”
@@ -914,3 +979,117 @@ Ulric: “While we were running, we found a seam of fire rock. I'll take some to
 
 == mineurs.apres
 Tobi: “Dad says I'll go down the mine when I'm twelve. I want to be a smith, like Hilde.”
+
+# ---------- The cliff mail (Pell, Aerie, act 4) ----------
+
+== courrier.titre
+The cliff mail
+
+== courrier.offre
+Pell: “The wind emptied my satchel on the Cloud Bridge! Letters for the whole continent, stuck between the planks.”
+Pell: “And the raptors love paper. They build their nests with it.”
+Pell: “Help me pick them up, and I'll lend you a quill that knows every road.”
+> oui : Accept | Side quest
+> non : Later
+
+== courrier.message
+Side quest: pick up Pell's letters on the *Cloud Bridge*.
+
+== courrier.e1.titre
+Pick up the letters on the Cloud Bridge
+
+== courrier.e1.bouton
+Pick up the letters
+
+== courrier.e1.attente
+Pell: “The letters are on the bridge, between the planks. Watch out for the raptors, they dive without warning.”
+
+== courrier.e1.lettres
+## The cliff mail
+Letters flap in the wind, stuck between the planks and in the bridge ropes.
+Sol grabs three, Nev five. Then three big raptors swoop down on the satchel, talons first. [Fight]
+
+== courrier.e1.pell
+## The cliff mail
+A glider lands on the bridge with a loud snap of canvas. Pell jumps down and counts the letters.
+Pell: “All here, except three. One for Lanterval, one for Salvent, one for Forgecendre. Nobody will take them there with the mist.”
+Pell: “Except you. Here, take my mail quill.”
+
+== courrier.e1.plume
+## The cliff mail
+Pell: “It remembers every road you've already taken. Just tell it where to go.”
+? *Mail quill*: from the map, you can now go straight into an area you've already visited, without crossing it.
+
+== courrier.e1.message
+Side quest: three letters to deliver, for *Brann* (Lanterval), *Maëlle* (Salvent) and *Dorn* (Forgecendre).
+
+== courrier.e2.titre
+Deliver Brann's letter in Lanterval
+
+== courrier.e2.sous
+Letters for: Brann, Maëlle, Dorn
+
+== courrier.e2.attente
+Pell: “Start with Lanterval, it's the oldest letter. It looks like it's been waiting a long time.”
+
+== courrier.e2.scene
+## The cliff mail
+Brann unfolds the letter in front of the guardhouse. The village children play in the square, unafraid of the mist.
+Brann: “It's from my sister, who left for Aerie twenty years ago. She's well. She's had three little ones.”
+Brann: “Three nephews and I knew nothing about it. Thank you, Kael. Your father would have liked to see you carry the mail.”
+
+== courrier.e2.message
+Side quest: two letters left, for *Maëlle* (Salvent) and *Dorn* (Forgecendre).
+
+== courrier.e3.titre
+Deliver Maëlle's letter in Salvent
+
+== courrier.e3.sous
+Letters for: Maëlle, Dorn
+
+== courrier.e3.attente
+Pell: “The Salvent letter smells of salt. Someone over there is waiting for news from the sea.”
+
+== courrier.e3.scene
+## The cliff mail
+The port of Salvent is mending its boats, broken by the Order's attack. But the fishermen sing as they work.
+Maëlle: “A letter for me? From my son, aboard a whaler! He's coming home in spring.”
+Maëlle: “Before you came, I'd have forgotten I had a son. Go on, off you go, Naïa is waiting for you on the quay.”
+
+== courrier.e3.message
+Side quest: one letter left, for *Dorn* (Forgecendre).
+
+== courrier.e4.titre
+Deliver Dorn's letter in Forgecendre
+
+== courrier.e4.sous
+Letters for: Dorn
+
+== courrier.e4.attente
+Pell: “The last one goes to Forgecendre. The envelope is black with soot. That doesn't surprise me.”
+
+== courrier.e4.scene
+## The cliff mail
+In Forgecendre, the forges ring from morning to night. Tobi is learning to strike iron at Hilde's.
+Dorn: “A letter? I can't read it, lad. Read it to me.”
+Kael reads it aloud. It's an old friend from the mines, who went to live in Aerie: he has kept a place for Dorn, in the sun.
+
+== courrier.e4.message
+Side quest: every letter has arrived. Go back and see *Pell* in Aerie.
+
+== courrier.e5.titre
+Give Pell back the empty satchel
+
+== courrier.e5.scene
+## The cliff mail
+Pell: “Every letter delivered? Even Dorn's? You'd make a better postman than me.”
+Pell: “Keep the quill, it has adopted you. And Joran will show you my stock: I leave him everything customers never came back for.”
+
+== courrier.e5.fin
+? Reward: *300 g*. *Joran*'s shop now sells the Wind feather and the Cloud amulet. You keep the Mail quill.
+
+== courrier.apres
+Pell: “If you ever have a letter to send, anywhere, just tell me. For you, it's free. For life.”
+
+== pnj.pell
+Pell: “I've been flying from village to village since I was twelve. The wind is my horse.”

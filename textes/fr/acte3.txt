@@ -351,13 +351,6 @@ Hilde : « Ma charrette connaît toutes les routes, de Lanterval à Salvent. Pre
 == a3.e10.message
 L'acte 3 est terminé ! L'épée d'Aldric est reforgée, et le *Pont des Nuées* mène aux Hauts-Vents.
 
-# ---------- Fin de la version 0.4 ----------
-
-== fin.version
-## Fin de la version 0.4
-L'acte 3 est terminé ! Nev a rejoint l'équipe, et le Sans-Nom a retrouvé un visage : celui d'Aldric.
-L'acte 4 arrive dans une prochaine version. D'ici là, tu peux finir les quêtes annexes et explorer chaque zone à 100 %.
-
 # ---------- Ce que disent les gens selon l'avancée ----------
 # pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.
 

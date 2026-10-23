@@ -33,6 +33,12 @@ const IMAGES = {
   'decor.mines.libre': { provisoire: 'mines-libre', sujet: 'Mines rouges, galerie éclairée de lampes, cages ouvertes' },
   'decor.volcan': { provisoire: 'volcan', sujet: 'Volcan endormi, pentes noires, coulées de lave, cratère qui fume' },
   'decor.carte.cendre': { provisoire: 'carte-cendre', sujet: 'Carte des Plaines de Cendre' },
+  // acte 4 : Hauts-Vents
+  'decor.pont': { provisoire: 'pont', sujet: 'Pont des Nuées, long pont suspendu de cordes et de planches au-dessus des nuages, vent violent' },
+  'decor.aerie': { provisoire: 'aerie', sujet: 'Aerie, village de maisons de bois sur pilotis accrochées aux falaises, moulins et cerfs-volants' },
+  'decor.ruines': { provisoire: 'ruines', sujet: 'Ruines du monastère, cloître effondré dans les nuages, colonnes, fresques effacées' },
+  'decor.pic': { provisoire: 'pic', sujet: 'Pic hurlant, crête de roche et de glace, vent qui hurle, ciel d\'orage' },
+  'decor.carte.vents': { provisoire: 'carte-vents', sujet: 'Carte des Hauts-Vents' },
 
   // ---------- Panoramas (format large ~2,4:1) ----------
   'pano.ouverture': { fichier: 'img/panoramas/ouverture.webp', sujet: 'Lanterval au crépuscule, la lanterne vacille' },
@@ -59,6 +65,13 @@ const IMAGES = {
   'pano.veine': { sujet: 'La veine chantante, des cristaux rouges qui vibrent dans la galerie' },
   'pano.forge': { sujet: 'Mira et Hilde à la forge de Forgecendre, la nuit, dans une pluie d\'étincelles' },
   'pano.carnet': { sujet: 'Kael au sommet du Col des Pierres, le carnet de son père complet entre les mains' },
+  // acte 4
+  'pano.pont': { sujet: 'Le Pont des Nuées dans le vent, un planeur qui pique vers le groupe' },
+  'pano.aerie': { sujet: 'Aerie sur ses pilotis au bord des falaises, cerfs-volants dans le ciel' },
+  'pano.fresques': { sujet: 'Les fresques de l\'Œil dans le monastère : un œil immense ouvert sur le monde, des moines qui le ferment' },
+  'pano.ysold-azur': { sujet: 'Au sommet du Pic hurlant, Ysold arrache le cristal d\'azur, Varen à genoux' },
+  'pano.feu': { sujet: 'Le feu de camp à Aerie, la veille de l\'assaut, les quatre héros autour des flammes' },
+  'pano.fleur': { sujet: 'La fleur-lanterne qui brille au pied de la lanterne de Lanterval, Pia à genoux à côté' },
 
   // ---------- Héros (tournés vers la gauche) ----------
   'heros.kael': { fichier: 'img/heros/kael.webp', portrait: 'img/heros/kael-portrait.webp', provisoire: 'kael', sujet: 'Kael, 17 ans, apprenti garde, cape bleue' },
@@ -94,6 +107,11 @@ const IMAGES = {
   'pnj.agathe': { provisoire: 'f_agathe', sujet: 'Agathe, apothicaire de Forgecendre, lunettes rondes, chignon gris, fioles à la ceinture' },
   'pnj.dorn': { provisoire: 'f_dorn', sujet: 'Dorn, vieux mineur aveugle, yeux blancs, barbe grise, casque de mineur' },
   'pnj.tobi': { provisoire: 'f_tobi', sujet: 'Tobi, 10 ans, fils de mineur, visage couvert de suie, casque trop grand' },
+  'pnj.tavor': { provisoire: 'f_tavor', sujet: 'Tavor, vieux moine d\'Aerie, crâne rasé, longue barbe blanche, robe bleu ciel' },
+  'pnj.edda': { provisoire: 'f_edda', sujet: 'Edda, aubergiste du Nid à Aerie, joues rouges, bonnet de laine, châle à plumes' },
+  'pnj.joran': { provisoire: 'f_joran', sujet: 'Joran, forgeron d\'Aerie, grand et maigre, lunettes de vol, tablier de cuir' },
+  'pnj.pell': { provisoire: 'f_pell', sujet: 'Pell, facteur en planeur, jeune homme roux, casquette de cuir, lunettes de vol, sacoche de lettres' },
+  'pnj.ilse': { provisoire: 'f_ilse', sujet: 'Ilse, dresseuse de wyvernes et tisserande, la cinquantaine, tresse grise, cicatrices de griffes sur les bras' },
   'pnj.ysold': { fichier: 'img/pnj/ysold.webp', portrait: 'img/pnj/ysold.webp', provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
 
   // ---------- Monstres (tournés vers la droite) ----------
@@ -142,5 +160,18 @@ const IMAGES = {
   'monstre.statue': { provisoire: 'statue', sujet: 'Golem de pierre du Col, menhir vivant aux yeux bleus' },
   'monstre.tellure': { provisoire: 'tellure', sujet: 'Élémentaire de terre, colosse de roche rouge veiné de cristaux qui chantent' },
   'monstre.gardien': { provisoire: 'gardien', sujet: 'Gardien de cage, grande statue de fer noir dont le torse est une cage, bras comme des marteaux' },
-  'monstre.brume': { provisoire: 'brume', sujet: 'Ombre de brume, silhouette de fumée grise et bleue, longs bras, yeux pâles' }
+  'monstre.brume': { provisoire: 'brume', sujet: 'Ombre de brume, silhouette de fumée grise et bleue, longs bras, yeux pâles' },
+
+  // ---------- Monstres de l'acte 4 ----------
+  'monstre.rapace': { provisoire: 'rapace', sujet: 'Rapace voleur, grand oiseau brun aux serres jaunes, qui vole les sacoches' },
+  'monstre.sylphe': { provisoire: 'sylphe', sujet: 'Sylphe, esprit du vent, silhouette blanche et translucide faite de rubans d\'air' },
+  'monstre.gargouille': { provisoire: 'gargouille', sujet: 'Gargouille du monastère, statue de pierre grise ailée, cornes, crocs' },
+  'monstre.spectre': { provisoire: 'spectre', sujet: 'Moine spectral, robe bleu pâle déchirée, visage effacé, chapelet' },
+  'monstre.griffon': { provisoire: 'griffon', sujet: 'Griffon des cimes, corps de lion fauve, tête et ailes d\'aigle' },
+  'monstre.givre': { provisoire: 'givre', sujet: 'Élémentaire de givre, amas de glace bleue en forme de géant, yeux blancs' },
+  'monstre.serpent': { provisoire: 'serpent', sujet: 'Serpent d\'azur, immense serpent bleu ciel aux écailles de cristal, enroulé autour d\'un pilier' },
+  'monstre.varen3': { fichier: 'img/monstres/varen.webp', provisoire: 'varen', sujet: 'Varen, lame courbe, cape de l\'Ordre (même image que monstre.varen)' },
+  'monstre.rocaile': { provisoire: 'rocaile', sujet: 'Roc ailé posé au sol, oiseau géant au plumage de pierre grise, bec crochu, ailes repliées' },
+  // image en vol d'un monstre qui s'envole (capacité envol) : même cadrage, ailes grandes ouvertes, sans ombre au sol
+  'monstre.rocaile.vol': { provisoire: 'rocaile_vol', sujet: 'Roc ailé en plein vol, vu de face, ailes de pierre grandes ouvertes, serres en avant' }
 };

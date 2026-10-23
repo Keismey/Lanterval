@@ -36,7 +36,7 @@ function bOverlay() {
   const m = chaine();
   const ei = B.enemies.map((e, i) => e.hp <= 0 ? '' : `<div class="einfo glass ${B.targeting ? 'tg' : ''}" data-ei="${i}" style="left:${e.px * 100}%;top:${(e.py * 100 + 1.5).toFixed(1)}%">
     <div class="nm">${esc(e.name)}</div><div class="bar ${e.hp / e.mhp < .3 ? 'low' : ''}"><i style="width:${e.hp / e.mhp * 100}%"></i></div>
-    <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${MONSTRES[e.id].intouchable ? '∞' : e.shield}</span>`}${elChips(e)}${e.dort ? `<span class="zz">${esc(t('combat.dort.court'))}</span>` : ''}</div></div>`).join('');
+    <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${MONSTRES[e.id].intouchable ? '∞' : e.shield}</span>`}${elChips(e)}${e.dort ? `<span class="zz">${esc(t('combat.dort.court'))}</span>` : ''}${e.air ? `<span class="zz">${esc(t('combat.air.court'))}</span>` : ''}</div></div>`).join('');
   ovc().innerHTML = `<div class="tl glass"><span class="tll">${esc(t('combat.tours'))}</span>${chips}</div>
    <div class="bmeta">${B.team.length > 1 ? `<span class="glass pips">${esc(t('combat.union'))} ${[0, 1, 2].map(i => `<b class="${B.union > i ? 'on' : ''}"></b>`).join('')}</span>` : ''}${m ? `<span class="glass chain">${esc(t('combat.chaine', { m }))}</span>` : ''}${B.auto ? `<span class="glass autoflag">${esc(t('combat.auto'))}</span>` : ''}</div>${ei}`;
   majMonstres();
@@ -45,7 +45,7 @@ function bCards() {
   const el = $('#pcards'); if (!el) return;
   el.innerHTML = B.team.map(h => {
     const s = hs(h);
-    return `<div class="pcard ${B.cur === h ? 'act' : ''} ${h.hp <= 0 ? 'ko' : ''}" data-h="${h.id}"><div class="pc-top">${av(h.id, 'sm')}<div class="pc-n"><b>${esc(nomH(h))}</b><span>${esc(t('classe.' + h.job))}${h.courage > 0 ? ' · ' + esc(t('combat.courage.court')) : ''}${h.rage > 0 ? ' · ' + esc(t('combat.rage.court')) : ''}${h.esquive ? ' · ' + esc(t('combat.esquive.court')) : ''}</span></div></div>
+    return `<div class="pcard ${B.cur === h ? 'act' : ''} ${h.hp <= 0 ? 'ko' : ''}" data-h="${h.id}"><div class="pc-top">${av(h.id, 'sm')}<div class="pc-n"><b>${esc(nomH(h))}</b><span>${esc(t('classe.' + h.job))}${h.courage > 0 ? ' · ' + esc(t('combat.courage.court')) : ''}${h.rage > 0 ? ' · ' + esc(t('combat.rage.court')) : ''}${h.esquive ? ' · ' + esc(t('combat.esquive.court')) : ''}${h.enchant > 0 ? ' · ' + esc(t('combat.enchant.court')) : ''}</span></div></div>
    <div class="bar ${h.hp / s.hp < .3 ? 'low' : ''}"><i style="width:${h.hp / s.hp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.hp'))}</span><b>${h.hp}/${s.hp}</b></div>
    <div class="bar pp"><i style="width:${h.pp / s.pp * 100}%"></i></div><div class="pc-v"><span>${esc(t('stat.pp'))}</span><b>${h.pp}/${s.pp}</b></div></div>`;
   }).join('') + (B.team.length < 3 ? Array(3 - B.team.length).fill(`<div class="pcard empty">${esc(t('combat.vide'))}</div>`).join('') : '');
@@ -83,12 +83,14 @@ document.addEventListener('click', e => { const x = e.target.closest('#ov [data-
 // o : { zone, canFlee, quest, boss, equipe, perdu, invitee }. Renvoie 'win', 'fled' ou 'perdu' (combat perdu d'avance) ;
 // lance DEFAITE si l'équipe tombe dans un combat normal. equipe : ids des seuls héros qui se battent ;
 // invitee : un personnage (Hilde) qui se bat avec l'équipe le temps du combat, au niveau de Kael, sans gagner d'expérience.
+// Varen (drapeau varen, acte 4) se bat ainsi dans tous les combats, sauf les duels (equipe) et ceux d'une autre invitée.
 async function battle(ids, o) {
   const t0 = S.st.time, cnt = {}, vus = {};
   S.st.fights++; if (o.quest) S.st.qfights++;
   ids.forEach(id => { cnt[id] = (cnt[id] || 0) + 1; seen(id); });
   const T = o.equipe ? team().filter(h => o.equipe.includes(h.id)) : team();
   if (o.invitee) T.push(mkInvite(o.invitee));
+  else if (S.f.varen && !o.equipe) T.push(mkInvite('varen'));
   B = { zone: o.zone, canFlee: o.canFlee !== false, boss: !!o.boss, quest: !!o.quest, perdu: !!o.perdu, union: 0, streak: 0, turns: 0, cur: null, targeting: false, team: T, st: {}, auto: false, wall: null,
     enemies: ids.map(id => {
       vus[id] = (vus[id] || 0) + 1;
@@ -96,6 +98,8 @@ async function battle(ids, o) {
     }) };
   B.autoOk = !B.boss && !B.quest; if (!B.autoOk) S.auto = false;
   for (const h of T) { B.st[h.id] = stats(h); h.guard = h.taunt = false; }
+  // Œil du traqueur : faiblesses et résistances de chaque monstre connues dès le début
+  if (T.some(h => h.eq.acc && EQUIPEMENT[h.eq.acc].traqueur)) for (const e of B.enemies) revealAll(e.id);
   for (const u of units()) u.next = 100 / spd(u) * rnd(.25, 1);
   $('#app').classList.add('inb');
   setDecor(decorDuLieu(o.zone || lieuActuel()));
@@ -157,7 +161,7 @@ function mkEnnemi(id, nom) {
     xp: Math.round(d.xp * fp), gold: Math.round(d.or * fp), broken: false, charged: false, cnt: 0, dort: false, vole: false };
 }
 function mkInvite(id) { const h = HEROS[id], c = { id, lvl: char('kael').lvl, xp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure, acc: null }, invite: true }; fullC(c); return c; }
-function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
+function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
 function gainXP(x) {
   const ups = [];
   for (const h of team()) {
@@ -171,7 +175,7 @@ function gainXP(x) {
 /* ---------- Commandes du héros ---------- */
 const icTech = x => x.type === 'soin' || x.type === 'soins' || x.type === 'meditation' ? 'heart' : x.type === 'scan' ? 'search' : x.type === 'provoc' || x.type === 'rempart' ? 'shield'
   : x.type === 'vol' ? 'bag' : x.type === 'esquive' ? 'run' : x.type === 'courage' || x.type === 'rage' ? 'star' : x.type === 'sommeil' ? 'drop'
-  : x.type === 'mixture' ? 'heart' : x.type === 'offrande' ? 'link' : 'spark';
+  : x.type === 'mixture' ? 'heart' : x.type === 'offrande' ? 'link' : x.type === 'enchant' ? 'star' : 'spark';
 function elTech(h, el) { const he = t('element.' + HEROS[h.id].el); return el === 'X' ? he : el === 'LX' ? t('element.L') + ' + ' + he : el === 'Z' ? t('element.' + elRegion()) : el ? t('element.' + el) : ''; }
 async function heroCommand(h) {
   while (true) {
@@ -212,6 +216,8 @@ function heroFx(h, texte, cls) { const c = document.querySelector(`.pcard[data-h
 // corrode (Corrosion de l'Alchimiste) : enlève un point de garde même sans faiblesse
 async function strike(e, els, base, mult, brise = 1.5, corrode = false) {
   if (e.dort) e.dort = false;
+  // en l'air (envol) : seul le Vent l'atteint
+  if (e.air && !els.includes('V')) { const [x, y] = epos(e); fx(x, y, esc(t('combat.fx.rate')), 'res'); return esc(t('combat.air.rate', { nom: e.name })); }
   const weak = els.some(x => e.weak.includes(x)), res = !weak && els.some(x => e.res.includes(x));
   let m = mult, cls = '', tag = '';
   if (weak) { m *= 1.5; els.filter(x => e.weak.includes(x)).forEach(x => reveal(e.id, x)); cls = 'weak'; tag = t('combat.faiblesse') + ' '; if (!e.broken) { e.shield--; if (!B.inUnion) B.union = Math.min(3, B.union + 1); } }
@@ -225,6 +231,7 @@ async function strike(e, els, base, mult, brise = 1.5, corrode = false) {
   if ((weak || corrode) && e.shield <= 0 && !e.broken && e.hp > 0) {
     e.broken = true; e.next += 50 / e.spd; fx(x, y - 10, esc(t('combat.fx.brise')), 'brk'); if (!B.inUnion) B.union = Math.min(3, B.union + 1);
     line += ' ' + tx('combat.brise');
+    if (e.air) { e.air = false; line += ' ' + tx('combat.air.chute', { nom: e.name }); }
     if (e.charged) { e.charged = false; line += ' ' + tx('combat.charge.annulee'); }
   }
   if (e.hp <= 0) { e.dying = true; line += ' ' + esc(t(MONSTRES[e.id].f ? 'combat.vaincue' : 'combat.vaincu', { nom: e.name })); bOverlay(); await wait(200); e.dying = false; }
@@ -232,7 +239,8 @@ async function strike(e, els, base, mult, brise = 1.5, corrode = false) {
   return line;
 }
 // élément de l'Attaque : celui de l'arme si elle en a un, sinon Lame
-function elArme(h) { const a = h.eq.arme && EQUIPEMENT[h.eq.arme]; return (a && a.el) || 'L'; }
+// Enchantement (Lame-mage) : l'Attaque prend l'élément du héros pendant 3 actions
+function elArme(h) { if (h.enchant > 0) return HEROS[h.id].el; const a = h.eq.arme && EQUIPEMENT[h.eq.arme]; return (a && a.el) || 'L'; }
 function elsOf(h, el) { const he = HEROS[h.id].el; return el === 'X' ? [he] : el === 'LX' ? ['L', he] : el === 'Z' ? [elRegion()] : [el]; }
 // élément de la région où l'équipe se trouve (techniques du Géomancien)
 function elRegion() { return ELEMENT_REGION[regionDe(S.loc)] || 'T'; }
@@ -254,6 +262,9 @@ async function heroAct(h, a) {
   if (h.courage > 0) { s = { ...s, atk: s.atk * 1.25, mag: s.mag * 1.25 }; h.courage--; }
   // Rage (Berserker) : Attaque +40 % pendant 3 actions (la Défense baisse dans dmgHero)
   if (h.rage > 0) { s = { ...s, atk: s.atk * 1.4 }; h.rage--; }
+  // Fleur-lanterne : le porteur reprend une part de ses PV à chaque action
+  const acc = h.eq.acc && EQUIPEMENT[h.eq.acc];
+  if (acc && acc.regen && h.hp < s.hp) { const v = Math.min(Math.round(s.hp * acc.regen), s.hp - h.hp); h.hp += v; bCards(); heroFx(h, '+' + v, 'heal'); }
   // la cible est tombée entre-temps : on vise un autre ennemi
   if (a.t && a.t.isEnemy && a.t.hp <= 0) { const al = aliveE(); if (al.length) a.t = pick(al); }
   if (a.type === 'garde') { h.guard = true; bMsg(esc(t('combat.garde.texte', { nom: nm }))); bCards(); await wait(500); return .6; }
@@ -283,6 +294,7 @@ async function heroAct(h, a) {
   }
   const sk = a.sk === 'attaque' ? { el: elArme(h), type: 'phys', pow: 1, pp: 0, cible: 'ennemi', poids: 1 } : TECHNIQUES[a.sk], nomT = t('tech.' + a.sk);
   h.pp -= sk.pp; bCards();
+  if (h.enchant > 0 && a.sk !== 'enchant') h.enchant--;
   if (sk.type === 'scan') {
     revealAll(a.t.id);
     bMsg(tx('combat.scan', { nom: nm, cible: a.t.name, faibles: a.t.weak.map(e => t('element.' + e)).join(', ') }) + (a.t.res.length ? esc(t('combat.scan.res', { res: a.t.res.map(e => t('element.' + e)).join(', ') })) : '') + '.');
@@ -302,6 +314,7 @@ async function heroAct(h, a) {
     bMsg(tx('combat.courage', { nom: nm })); bCards(); await wait(700); return sk.poids;
   }
   if (sk.type === 'vol') { bMsg(voler(a.t)); await wait(750); return sk.poids; }
+  if (sk.type === 'enchant') { h.enchant = 3; heroFx(h, esc(t('combat.enchant.court')), ''); bMsg(tx('combat.enchant', { nom: nm, el: t('element.' + HEROS[h.id].el) })); bCards(); await wait(600); return sk.poids; }
   if (sk.type === 'rage') { h.rage = 3; heroFx(h, esc(t('combat.rage.court')), ''); bMsg(tx('combat.rage', { nom: nm })); bCards(); await wait(600); return sk.poids; }
   if (sk.type === 'mixture') {
     const vs = []; for (const c of aliveH()) { const v = Math.min(Math.round(s.mag * sk.pow + 10), hs(c).hp - c.hp); c.hp += v; c.pp = Math.min(hs(c).pp, c.pp + 4); vs.push([c, v]); }
@@ -325,7 +338,7 @@ async function heroAct(h, a) {
   for (let e of cibles) {
     if (!e) { const al = aliveE(); if (!al.length) break; e = pick(al); }
     if (e.hp <= 0) continue;
-    const base = sk.type === 'phys' ? s.atk * sk.pow - e.def * .6 : s.mag * sk.pow - e.def * .3;
+    const base = sk.mixte ? (s.atk + s.mag) / 2 * sk.pow - e.def * .45 : sk.type === 'phys' ? s.atk * sk.pow - e.def * .6 : s.mag * sk.pow - e.def * .3;
     lines.push(await strike(e, els, Math.max(2, base), mult, brise, !!sk.corrode));
   }
   // Furie (Berserker) : le héros perd une part de ses PV en frappant
@@ -357,6 +370,13 @@ async function enemyAct(e) {
   }
   const tn = al.find(h => h.taunt);
   const cible = () => { const v = aliveH(); return tn && tn.hp > 0 ? tn : Math.random() < .4 ? v.reduce((a, b) => a.hp < b.hp ? a : b) : pick(v); };
+  // envol : il pique en redescendant, puis remonte au tour suivant (sa garde brisée le fait tomber, voir strike)
+  const envol = capacite(e, 'envol');
+  if (envol && e.air) {
+    e.air = false; bMsg(tx(`monstre.${e.id}.pique`, { nom: e.name })); await wait(400);
+    for (const h of al) await dmgHero(h, e.atk * envol.mult * .6); bDraw(); await wait(600); return 1;
+  }
+  if (envol && !e.broken) { e.cnt++; if (e.cnt % 2 === 0) { e.air = true; bMsg(tx(`monstre.${e.id}.envol`, { nom: e.name })); bDraw(); await wait(800); return .8; } }
   const charge = capacite(e, 'charge');
   if (charge) {
     if (e.charged) { e.charged = false; bMsg(tx(`monstre.${e.id}.special`, { nom: e.name })); await wait(400); for (const h of al) await dmgHero(h, e.atk * charge.mult); bDraw(); await wait(600); return 1; }

@@ -1,5 +1,19 @@
 # État du projet
 
+## Version 0.5.0 (2026-10-23)
+
+- Acte 4 « L'Œil », première partie (donnees/acte4.js, étapes a4.e1 à a4.e7, plan validé par Keismey) : carte `vents` avec le Pont des Nuées (zone à deux côtés Cendre/Aerie), Aerie, les Ruines du monastère (parvis/sanctuaire) et le Pic hurlant (base/sommet) ; l'Escalier de brume est visible en « bientôt ». L'histoire va jusqu'au feu de camp, la veille de l'assaut.
+- a4.e1 pose le drapeau `acte4` ; Kael reçoit l'Épée d'Aldric (`aldric`, réservée à Kael, Attaque +36).
+- Boss : Serpent d'azur (a4.e5, charge + double garde), Varen en duel contre Nev seule (a4.e6, `equipe: 'nev'`). Monstres : rapace, sylphe, gargouille, moine spectral, griffon, élémentaire de givre.
+- Classes Sage, Ninja et Lame-mage (cristal d'azur, a4.e5). Techniques : prière, jugement, kunaï, ninjutsu, taille-sort (Attaque et Magie), enchantement (l'Attaque prend l'élément du héros pendant 3 actions).
+- Varen invité : après a4.e6 (drapeau `varen`), il se bat avec l'équipe dans tous les combats, sauf les duels (`equipe`) et les combats avec une autre invitée. Classe Duelliste (lames croisées, parade).
+- Capacité `envol` (Roc ailé) : un tour sur deux il s'envole ; en l'air seul le Vent le touche, briser sa garde le fait tomber, et il pique sur toute l'équipe en redescendant. Demande de Keismey : deux images (`monstre.rocaile` au sol, `monstre.rocaile.vol` en vol) ; en vol, le monstre monte au-dessus de sa place sans sortir de l'écran (`levee` dans moteur/scene.js), son ombre et son cadre d'infos restent au sol.
+- Quêtes annexes : fin de la graine (Fleur-lanterne, accessoire qui rend des PV à chaque action), du carnet du chasseur (Roc ailé au Pont, Œil du traqueur : faiblesses connues dès le début du combat, 800 po) et du colporteur (Ilse tisse la Cape des quatre vents). Nouvelle quête 14 « Le courrier des falaises » (`courrier`, Pell) : Plume du facteur (depuis la carte, aller directement dans une zone déjà visitée, sans combat de traversée) ; à la fin, Joran vend la Plume de vent et l'Amulette des nuées.
+- Aerie : auberge d'Edda, boutique de Joran (armes et armures des vents, Baume des vents +400 PV). Roxane, Fennel, Pell et Ilse y sont après a4.e2.
+- Codex, onglet Personnages : Tavor, Pell, Ilse, et nouvelles infos pour Kael, Mira, Sol, Nev, Orvan, Varen, Naïa, Ysold, Roxane, Fennel.
+- Images de l'acte 4 : toutes provisoires (pixel art pour les monstres, les visages et les décors, cadre nommé pour les panoramas).
+- Le vérificateur signale désormais les repères de texte en double sans planter.
+- Équilibrage au bot (graines 1 à 3, le bot sait maintenant viser un monstre en l'air avec le Vent) : l'équipe arrive au Pont vers le niveau 29 et au sommet du Pic vers 33 ; le Serpent d'azur descend l'équipe entre 7 et 43 % de PV, Varen (Nev seule) entre 16 et 35 %, le Roc ailé entre 36 et 74 % (le bot se soigne beaucoup avec Sol).
 ## Version 0.4.2 (2026-10-23)
 
 - Demande de Keismey : les armes ultimes sont réservées à leur personnage (`heros` dans donnees/objets.js) : Bâton des marées pour Sol, Cœur de forge pour Mira. Le sac, l'inventaire et le menu Équipe l'indiquent (« Seulement pour Sol », « Réservée à Mira ») ; une arme portée par quelqu'un d'autre retourne au sac au chargement de la partie. L'épée d'Aldric (Kael) et la dague de Nev suivront la même règle à l'acte 4.
@@ -100,6 +114,6 @@
 - FR et EN complets, hors ligne, mode test.
 - Images définitives : place du village, Kael (+ portrait), loup des brumes, panorama de la fête. Le reste est provisoire (pixel art de la maquette ou cadre nommé).
 
-## Prochaine étape (0.5)
+## Prochaine étape (0.5.1)
 
-0.5 : acte 4 (Hauts-Vents, Aerie, Pont des Nuées) ; il posera le drapeau `acte4` attendu par la dernière étape de la graine, du carnet du chasseur et du colporteur. Les larmes de l'Œil attendent l'acte 4. L'épilogue lira `annexe aldric 4` (Aldric survit) et `annexe moule 4` (réconciliation de Mira et Hilde). Armes ultimes à venir (validées par Keismey, 2026-10-23) : épée d'Aldric pour Kael (tank), dague pour Nev (quête du cerf-volant), en ajoutant la dague aux armes du Moine et du Berserker.
+0.5.1 : quêtes annexes 12 (l'œuf de wyverne), 13 (le cerf-volant : dague ultime de Nev, réservée à Nev, en ajoutant la dague aux armes du Moine et du Berserker) et 15 (les larmes de l'Œil). Puis 0.5.2 : l'Escalier de brume, l'assaut final et l'épilogue, qui lira `annexe aldric 4` (Aldric survit) et `annexe moule 4` (réconciliation de Mira et Hilde).

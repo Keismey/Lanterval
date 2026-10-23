@@ -353,11 +353,6 @@ Act 3 is over! Aldric's sword has been reforged, and the *Cloud Bridge* leads to
 
 # ---------- End of version 0.4 ----------
 
-== fin.version
-## End of version 0.4
-Act 3 is over! Nev has joined the team, and the Nameless has a face again: Aldric's.
-Act 4 is coming in a future version. Until then, you can finish the side quests and explore every area to 100%.
-
 # ---------- What people say as the story moves on ----------
 # pnj.<who>.<current step>: if the step has no text, the game uses the one from the step before.
 

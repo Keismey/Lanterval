@@ -216,6 +216,9 @@ puis
 == carte.charrette
 En charrette, sans combat
 
+== carte.plume
+Avec la Plume du facteur, sans combat
+
 == trav.titre
 Traversée
 
@@ -549,6 +552,24 @@ Rage
 
 == combat.corrode
 Corrosion !
+
+== combat.enchant.court
+Enchantée
+
+== combat.enchant
+{nom} enchante son arme : son *Attaque* prend l'élément {el} pendant 3 actions.
+
+== combat.air.court
+En l'air
+
+== combat.air.rate
+{nom} est en l'air : hors d'atteinte, sauf pour le Vent.
+
+== combat.air.chute
+*{nom} tombe au sol !*
+
+== combat.fx.rate
+RATÉ
 
 == combat.esquive.court
 Esquive
@@ -934,6 +955,9 @@ Arrivée à {lieu}
 == journal.log.charrette
 En charrette jusqu'à {lieu}
 
+== journal.log.plume
+Avec la Plume du facteur jusqu'à {lieu}
+
 == journal.log.entree
 Entrée : {lieu}
 
@@ -1101,6 +1125,20 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.5.0
+L'acte 4, « L'Œil », commence : le Pont des Nuées, Aerie, les Ruines du monastère et le Pic hurlant, sur la carte des Hauts-Vents. L'histoire va jusqu'à la nuit avant l'assaut.
+Kael peut enfin se battre avec l'épée de son père, l'Épée d'Aldric, réservée à lui.
+Deux boss (le Serpent d'azur, puis Varen en duel contre Nev seule), six nouveaux monstres et la dernière bête de Roxane, le Roc ailé, qui s'envole un tour sur deux.
+Nouvelles classes : Sage, Ninja et Lame-mage, données par le cristal d'azur. Le Géomancien prend l'élément Vent dans les Hauts-Vents.
+Varen change de camp : il se bat désormais avec l'équipe, dans tous les combats sauf les duels.
+« La graine-lanterne », « Le carnet du chasseur » et « Le colporteur » se terminent : Fleur-lanterne, Œil du traqueur et Cape des quatre vents.
+Nouvelle quête annexe à Aerie : « Le courrier des falaises » (Pell). Sa Plume du facteur mène directement dans une zone déjà visitée.
+Aerie a la boutique la plus complète du jeu, et un nouveau remède : le Baume des vents.
+Images : tout ce qui est nouveau est provisoire.
+## Version 0.4.2
+Les armes ultimes sont réservées à leur personnage : le Bâton des marées pour Sol, le Cœur de forge pour Mira.
+## Version 0.4.1
+Deux nouvelles quêtes annexes données par Hilde à Forgecendre : « Le premier moule » (Hilde se bat avec l'équipe) et « Le carnet d'Aldric ».
 ## Version 0.4.0
 L'acte 3, « Les forges de Cendre », est jouable : les Champs brûlés, Forgecendre, les Mines rouges et le Volcan endormi, sur la carte des Plaines de Cendre.
 Nev rejoint l'équipe : quatre héros se battent désormais ensemble. Nouvel élément : le Vent.

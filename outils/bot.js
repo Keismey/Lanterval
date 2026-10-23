@@ -52,13 +52,18 @@ function cerveau(graine) {
     if (h.pp < 4 && Math.random() < .5) for (const it of ['ether', 'tonique']) if (S.inv[it] > 0) return { type: 'item', it, t: h };
     const he = HEROS[h.id].el;
     // une technique de l'élément du héros sur une faiblesse ; sinon l'Attaque (Lame) sur une faiblesse ; sinon le plus faible
-    const faibleA = el => E.filter(e => e.weak.includes(el) && !e.broken).sort((a, b) => a.shield - b.shield || a.hp - b.hp)[0];
-    const cibleX = faibleA(he), cibleL = faibleA(elArme(h)), cassé = E.find(e => e.broken), faible = [...E].sort((a, b) => a.hp - b.hp)[0];
-    if (E.length >= 3 && tech('deluge')) return { type: 'skill', sk: 'deluge' };
-    for (const sk of ['sort', 'frappe', 'sacree', 'rafale', 'abordage', 'marteau']) if (tech(sk) && (cibleX || cassé)) return { type: 'skill', sk, t: cassé || cibleX };
+    // un monstre en l'air (envol) n'est touché que par le Vent
+    const EX = E.filter(e => !e.air || he === 'V'), EL = E.filter(e => !e.air || elArme(h) === 'V');
+    const faibleA = (el, L) => L.filter(e => e.weak.includes(el) && !e.broken).sort((a, b) => a.shield - b.shield || a.hp - b.hp)[0];
+    const cibleX = faibleA(he, EX), cibleL = faibleA(elArme(h), EL), casséX = EX.find(e => e.broken), casséL = EL.find(e => e.broken);
+    const faibleX = [...EX].sort((a, b) => a.hp - b.hp)[0], faibleL = [...EL].sort((a, b) => a.hp - b.hp)[0];
+    if (EX.length >= 3 && tech('deluge')) return { type: 'skill', sk: 'deluge' };
+    for (const sk of ['sort', 'frappe', 'sacree', 'rafale', 'abordage', 'marteau']) if (tech(sk) && (cibleX || casséX)) return { type: 'skill', sk, t: casséX || cibleX };
     if (cibleL) return { type: 'skill', sk: 'attaque', t: cibleL };
-    if (tech('sort')) return { type: 'skill', sk: 'sort', t: cassé || faible };
-    return { type: 'skill', sk: 'attaque', t: cassé || faible };
+    if (tech('sort') && faibleX) return { type: 'skill', sk: 'sort', t: casséX || faibleX };
+    if (faibleL) return { type: 'skill', sk: 'attaque', t: casséL || faibleL };
+    if (faibleX && tech('rafale')) return { type: 'skill', sk: 'rafale', t: faibleX };
+    return { type: 'garde' };
   };
 
   // ---------- préparation ----------

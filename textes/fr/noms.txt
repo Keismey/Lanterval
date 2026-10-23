@@ -863,7 +863,7 @@ Débloquée par le cristal de braise
 Géomancien
 
 == classe.geomancien.desc
-Ses sorts prennent l'élément de la région : Terre dans la vallée, Eau sur la côte, Feu à Cendre.
+Ses sorts prennent l'élément de la région : Terre dans la vallée, Eau sur la côte, Feu à Cendre, Vent dans les Hauts-Vents.
 
 == classe.geomancien.verrou
 Classe secrète : quelqu'un à Forgecendre sait écouter la roche
@@ -1293,3 +1293,291 @@ Ombre
 
 == monstre.brume.desc
 Une ombre de la Grotte de Cristal, grandie dans la brume. Elle boit la force de ceux qu'elle touche.
+
+# ================= Acte 4 : Hauts-Vents =================
+
+== parle.tavor
+Tavor
+
+== parle.edda
+Edda
+
+== parle.joran
+Joran
+
+== parle.pell
+Pell
+
+== parle.ilse
+Ilse
+
+== classe.sage
+Sage
+
+== classe.sage.desc
+Soigne toute l'équipe et lance le plus puissant sort sur un seul ennemi.
+
+== classe.sage.verrou
+Débloquée par le cristal d'azur
+
+== classe.ninja
+Ninja
+
+== classe.ninja.desc
+Très rapide : frappe tous les ennemis à la fois et ronge leur garde.
+
+== classe.ninja.verrou
+Débloquée par le cristal d'azur
+
+== classe.lamemage
+Lame-mage
+
+== classe.lamemage.desc
+Mêle l'épée et la magie : ses coups comptent l'Attaque et la Magie, et son arme prend l'élément du héros.
+
+== classe.lamemage.verrou
+Débloquée par le cristal d'azur
+
+== classe.duelliste
+Duelliste
+
+== classe.duelliste.desc
+La classe de Varen : deux coups de lame rapides, et une parade qui évite le prochain coup.
+
+== tech.priere
+Prière
+
+== tech.priere.desc
+Soigne beaucoup de PV à toute l'équipe.
+
+== tech.jugement
+Jugement
+
+== tech.jugement.desc
+Un sort très puissant de l'élément du héros sur un ennemi.
+
+== tech.kunai
+Kunaï
+
+== tech.kunai.desc
+Des lames lancées sur tous les ennemis.
+
+== tech.ninjutsu
+Ninjutsu
+
+== tech.ninjutsu.desc
+Sort rapide de l'élément du héros qui enlève un point de garde, même sans faiblesse.
+
+== tech.tranchesort
+Taille-sort
+
+== tech.tranchesort.desc
+Un coup de Lame et de l'élément du héros, qui compte l'Attaque et la Magie.
+
+== tech.enchant
+Enchantement
+
+== tech.enchant.desc
+L'Attaque prend l'élément du héros pendant les 3 prochaines actions.
+
+== tech.croisee
+Lames croisées
+
+== tech.croisee.desc
+Deux coups de Lame rapides sur un ennemi.
+
+== tech.parade
+Parade
+
+== tech.parade.desc
+Évite complètement le prochain coup reçu.
+
+== objet.baume
+Baume des vents
+
+== objet.baume.desc
++400 PV
+
+== equip.vent
+Épée des vents
+
+== equip.nuee
+Bâton des nuées
+
+== equip.zephyr
+Dague zéphyr
+
+== equip.serres
+Serres de griffon
+
+== equip.eolienne
+Harpe éolienne
+
+== equip.tempete
+Hache de tempête
+
+== equip.aldric
+Épée d'Aldric
+
+== equip.courbe
+Lame courbe de Varen
+
+== equip.cuirnoir
+Cuir noir de l'Ordre
+
+== equip.plumacier
+Armure de plumacier
+
+== equip.soie
+Robe de soie des nuages
+
+== equip.cuirvent
+Cuir des falaises
+
+== equip.cape4
+Cape des quatre vents
+
+== equip.nuage
+Nuage captif
+
+== equip.chapelet
+Chapelet de nacre
+
+== equip.crocgivre
+Croc de givre
+
+== equip.plumevent
+Plume de vent
+
+== equip.amulette
+Amulette des nuées
+
+== equip.fleur
+Fleur-lanterne
+
+== equip.traqueur
+Œil du traqueur
+
+== important.fleurie
+Fleur-lanterne
+
+== important.fleurie.desc
+La graine de Pia, enfin en fleur. Ses pétales d'or brillent sans vaciller, même dans le vent.
+
+== important.serre-roc
+Serre du Roc ailé
+
+== important.serre-roc.desc
+Une serre de pierre longue comme un bras. La preuve que le Roc ailé ne volera plus.
+
+== important.lettres
+Lettres de Pell
+
+== important.lettres.desc
+Trois lettres ramassées sur le Pont des Nuées : pour Brann à Lanterval, Maëlle à Salvent et Dorn à Forgecendre.
+
+== important.plume-facteur
+Plume du facteur
+
+== important.plume-facteur.desc
+La plume de Pell. Elle se souvient de tous les chemins : depuis la carte, elle mène directement dans une zone déjà visitée.
+
+== monstre.rapace
+Rapace voleur
+
+== monstre.rapace.court
+Rapace
+
+== monstre.rapace.desc
+Un grand oiseau des falaises qui vole tout ce qui brille, et frappe deux fois quand il pique.
+
+== monstre.sylphe
+Sylphe
+
+== monstre.sylphe.desc
+Un esprit du vent fait de rubans d'air. Il souffle des rafales sur toute l'équipe.
+
+== monstre.sylphe.special
+Le Sylphe déchaîne une rafale sur toute l'équipe !
+
+== monstre.gargouille
+Gargouille
+
+== monstre.gargouille.desc
+Une gardienne de pierre du monastère. Sa garde est épaisse comme un mur.
+
+== monstre.gargouille.special
+Coup de pierre
+
+== monstre.spectre
+Moine spectral
+
+== monstre.spectre.court
+Moine
+
+== monstre.spectre.desc
+Un moine du monastère, pris par la brume. Il boit la force de ceux qu'il touche.
+
+== monstre.griffon
+Griffon des cimes
+
+== monstre.griffon.court
+Griffon
+
+== monstre.griffon.desc
+Moitié lion, moitié aigle, le maître du Pic hurlant. Ses serres frappent très fort.
+
+== monstre.griffon.special
+Serres plongeantes
+
+== monstre.givre
+Élémentaire de givre
+
+== monstre.givre.court
+Givre
+
+== monstre.givre.desc
+De la glace du Pic qui s'est mise à marcher. Il prépare des tempêtes de grêle.
+
+== monstre.givre.charge
+L'Élémentaire de givre se couvre de pointes de glace… *il va frapper toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.givre.special
+L'Élémentaire de givre fait pleuvoir la grêle sur toute l'équipe !
+
+== monstre.serpent
+Serpent d'azur
+
+== monstre.serpent.desc
+Le gardien du cristal d'azur, rendu fou par la brume. Il déchaîne des tempêtes et frappe deux fois tant que sa garde tient.
+
+== monstre.serpent.charge
+Le Serpent d'azur s'enroule autour du pilier et le vent tourne de plus en plus vite… *il va frapper toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
+
+== monstre.serpent.special
+Le Serpent d'azur déchaîne une tempête dans le sanctuaire !
+
+== monstre.varen3
+Varen
+
+== monstre.varen3.desc
+Le frère de Nev, seul face à elle au sommet du Pic hurlant. Il ne retient plus ses coups.
+
+== monstre.varen3.special
+Lame de l'aube
+
+== monstre.rocaile
+Roc ailé
+
+== monstre.rocaile.desc
+Un oiseau géant au plumage de pierre, la dernière bête du carnet de Roxane. En l'air, seul le Vent l'atteint.
+
+== monstre.rocaile.special
+Bec de pierre
+
+== monstre.rocaile.envol
+Le Roc ailé s'envole d'un grand coup d'ailes ! *En l'air, seules les attaques de Vent le touchent.*
+
+== monstre.rocaile.pique
+Le Roc ailé pique sur toute l'équipe !
+
