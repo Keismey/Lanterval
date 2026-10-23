@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.3.3 (2026-10-23)
+
+- Demande de Keismey (ne pas casser le 4e mur) : une bulle « ? texte » est une astuce de jeu, affichée dans un encadré avec une icône « ? » (`encadreTuto` dans moteur/textes.js). Les conseils avant un boss (`conseil`) sont encadrés de la même façon. Appliqué au prologue (les « ! »), aux deux annonces de classes et aux récompenses des quêtes annexes.
+
 ## Version 0.3.2 (2026-10-23)
 
 - Quêtes annexes de la vallée (bible, quêtes 2, 3 et 4), jouées aux actes 1 et 2 ; leur dernière étape attend l'acte 3 (`si: 'drapeau acte3'`) :

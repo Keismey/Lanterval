@@ -25,7 +25,7 @@ async function dialogue(cle, ctx, suite) {
     else if (b.bouton) o.choices = [{ label: html(b.bouton), ic: i === dernier && suite === 'combat' ? 'sword' : 'run', cls: i === dernier && suite === 'combat' ? 'main' : '' }];
     else if (i === dernier && suite === 'combat') o.choices = [{ label: esc(t('combattre')), ic: 'sword', cls: 'main' }];
     if (passable && i < dernier) o.choices = [...(o.choices || [{ label: esc(t('continuer')), k: 0, ic: 'run' }]), { k: '__passer', label: esc(t('recit.passer')), ic: 'play', cls: 'ghost' }];
-    choix = await show(html(b.texte), o);
+    choix = await show(b.tuto ? encadreTuto(html(b.texte)) : html(b.texte), o);
     if (choix === '__passer') { if (opts.length) { i = dernier - 1; continue; } break; }
   }
   if (S && S.vus) S.vus[cle] = 1;
@@ -41,7 +41,7 @@ const EVENEMENTS = {
   async combat([ids, o], ctx) {
     if (ctx.silencieux) return;
     o = o || {};
-    if (o.conseil) await show(tx(o.conseil), { title: t('combat.conseil'), choices: [{ label: esc(t('combattre')), ic: 'sword', cls: 'main' }] });
+    if (o.conseil) await show(encadreTuto(tx(o.conseil)), { title: t('combat.conseil'), choices: [{ label: esc(t('combattre')), ic: 'sword', cls: 'main' }] });
     await battle(ids.split(/\s+/), { zone: lieuActuel(), canFlee: false, quest: true, boss: !!o.boss, perdu: !!o.perdu, equipe: o.equipe ? o.equipe.split(/\s+/) : null });
   },
   async gagne([spec]) { gagner(spec); hud(); },

@@ -46,7 +46,7 @@ Go back to Brann
 == loup.e2.scene
 Brann: “You got it! Your father would have been proud. Take my old bow, I'll show you how a ranger fights.”
 ## Side quest complete
-*Secret class unlocked: Ranger*, very fast, with Double shot to break guards. You also receive *Brann's bow* (only a Ranger can equip it) and *40 gold*.
+? *Secret class unlocked: Ranger*, very fast, with Double shot to break guards. You also receive *Brann's bow* (only a Ranger can equip it) and *40 gold*.
 
 == loup.apres
 Brann: “The sheep sleep soundly thanks to you. If you come across other strange beasts, you know where to find me.”
@@ -352,7 +352,7 @@ Rosal: “The Salicorne! I remember everything. My voyages, my loves, and even m
 == navire.e3.scene
 Rosal: “Come here, I'll teach you to fight like a corsair. You strike, you take, and you strike twice as hard when the other one drops their guard.”
 ## Side quest complete
-*Secret class unlocked: Corsair*, who sometimes steals an item when striking and deals double damage on a broken guard. You receive *Rosal's sabre* (for the Corsair) and *100 gold*.
+? *Secret class unlocked: Corsair*, who sometimes steals an item when striking and deals double damage on a broken guard. You receive *Rosal's sabre* (for the Corsair) and *100 gold*.
 
 == navire.apres
 Rosal: “When the mist is gone, I'll take you to see the other end of the world. My head remembers it very well now.”
@@ -419,7 +419,7 @@ Give Gaspard his ledger back
 Gaspard: “My ledger! A potion is twenty coins. For you, eighteen.”
 Gaspard: “And I'd forgotten a whole shelf at the back of the shop. Pearl claws, no less!”
 ## Side quest complete
-Gaspard's shop shows the real prices again, with a *10% discount* for you, and sells *Pearl claws* (Monk fists).
+? Gaspard's shop shows the real prices again, with a *10% discount* for you, and sells *Pearl claws* (Monk fists).
 
 == prix.apres
 Gaspard: “Twenty coins a potion, not one more. It's written down now!”
