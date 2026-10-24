@@ -1073,6 +1073,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.3
+Five new tracks: Lanterval in the mist (before the lantern is relit), Salvent, Forgecendre, Aerie, and the journey on the world maps (also in the zones, until each region gets its own music).
 ## Version 0.6.2
 End credits after the story ends, before your game summary.
 ## Version 0.6.1

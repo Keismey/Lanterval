@@ -1251,6 +1251,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.3
+Cinq nouvelles musiques : Lanterval dans la brume (avant que la lanterne soit rallumée), Salvent, Forgecendre, Aerie, et le voyage sur les cartes du monde (aussi dans les zones, en attendant la musique de chaque région).
 ## Version 0.6.2
 Un générique après la fin de l'histoire, avant le bilan de ta partie.
 ## Version 0.6.1
