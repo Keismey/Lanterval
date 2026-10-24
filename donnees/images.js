@@ -207,12 +207,12 @@ const IMAGES = {
   'monstre.echosansnom': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', brume: true, sujet: 'Écho du Sans-Nom (image du Sans-Nom en brume)' },
   'pnj.aldric': { fichier: 'img/pnj/aldric.webp', portrait: 'img/pnj/aldric.webp', provisoire: 'f_aldric', sujet: 'Aldric, père de Kael, la quarantaine, cheveux blonds grisonnants, barbe courte, armure noire de l\'Ordre fendue, sans masque' },
   'pnj.garrick': { fichier: 'img/pnj/garrick.webp', portrait: 'img/pnj/garrick.webp', provisoire: 'f_garrick', sujet: 'Garrick, vieux chasseur d\'Aerie, cheveux gris en bataille, bandeau sur un œil, manteau de plumes et de fourrure' },
-  'pano.aldric': { sujet: 'Sur l\'Escalier de brume, Aldric sans masque, l\'épée de Kael à la main, retient seul une marée d\'Ombres pour laisser passer l\'équipe' },
-  'pano.ysold': { sujet: 'Au Cœur de l\'Œil, Ysold flotte au-dessus d\'une plateforme de pierre, fusionnée aux quatre cristaux qui tournent autour d\'elle' },
-  'pano.oeil': { sujet: 'L\'Œil du monde s\'ouvre au-dessus des nuages : la paupière de pierre se fend, la lumière coule vers les quatre régions' },
-  'pano.epilogue.kael': { sujet: 'Épilogue de Kael : Lanterval au matin, Kael en garde sur les remparts, l\'épée à la lanterne au côté, la vallée claire sans brume' },
-  'pano.epilogue.mira': { sujet: 'Épilogue de Mira : la forge de Forgecendre au matin, une flamme dans l\'âtre, Mira sur le pas de la porte' },
-  'pano.epilogue.sol': { sujet: 'Épilogue de Sol : le port de Salvent sous un ciel clair, Sol au bout du quai, le phare qui brille' },
-  'pano.epilogue.nev': { sujet: 'Épilogue de Nev : Aerie au vent, des cerfs-volants dans le ciel, Nev sur une plateforme au bord des falaises' },
-  'pano.echo': { sujet: 'Au sommet du Col des Pierres, une silhouette géante de brume bleu-gris prend la forme du Sans-Nom' }
+  'pano.aldric': { fichier: 'img/panoramas/aldric.webp', sujet: 'Sur l\'Escalier de brume, Aldric sans masque, l\'épée de Kael à la main, retient seul une marée d\'Ombres pour laisser passer l\'équipe' },
+  'pano.ysold': { fichier: 'img/panoramas/ysold.webp', sujet: 'Au Cœur de l\'Œil, Ysold flotte au-dessus d\'une plateforme de pierre, fusionnée aux quatre cristaux qui tournent autour d\'elle' },
+  'pano.oeil': { fichier: 'img/panoramas/oeil.webp', sujet: 'L\'Œil du monde s\'ouvre au-dessus des nuages : la paupière de pierre se fend, la lumière coule vers les quatre régions' },
+  'pano.epilogue.kael': { fichier: 'img/panoramas/epilogue-kael.webp', sujet: 'Épilogue de Kael : Lanterval au matin, Kael en garde sur les remparts, l\'épée à la lanterne au côté, la vallée claire sans brume' },
+  'pano.epilogue.mira': { fichier: 'img/panoramas/epilogue-mira.webp', sujet: 'Épilogue de Mira : la forge de Forgecendre au matin, une flamme dans l\'âtre, Mira sur le pas de la porte' },
+  'pano.epilogue.sol': { fichier: 'img/panoramas/epilogue-sol.webp', sujet: 'Épilogue de Sol : le port de Salvent sous un ciel clair, Sol au bout du quai, le phare qui brille' },
+  'pano.epilogue.nev': { fichier: 'img/panoramas/epilogue-nev.webp', sujet: 'Épilogue de Nev : Aerie au vent, des cerfs-volants dans le ciel, Nev sur une plateforme au bord des falaises' },
+  'pano.echo': { fichier: 'img/panoramas/echo.webp', sujet: 'Au sommet du Col des Pierres, une silhouette géante de brume bleu-gris prend la forme du Sans-Nom' }
 };
