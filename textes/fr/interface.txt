@@ -1317,6 +1317,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.8
+Les dernières musiques : les boss, le dernier combat, l'épilogue (épilogues et générique), et deux musiques de scène, l'une pour les moments d'émotion, l'autre pour les menaces, qui accompagnent certaines grandes images du récit.
+Nouveaux petits airs : victoire, défaite, quête annexe terminée, objet important reçu et nuit à l'auberge.
 ## Version 0.6.7
 Équipe : l'onglet Classe montre la classe du héros et ses techniques ; un bouton « Changer de classe » en bas ouvre la liste de toutes les classes.
 ## Version 0.6.6

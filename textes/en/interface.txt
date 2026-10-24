@@ -1139,6 +1139,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.8
+The last tracks: bosses, the final battle, the epilogue (epilogues and credits), and two scene themes, one for moving moments and one for threats, which play over some of the story's big pictures.
+New short tunes: victory, defeat, side quest completed, key item received and a night at the inn.
 ## Version 0.6.7
 Team: the Class tab shows the hero's class and its techniques; a “Change class” button at the bottom opens the list of all classes.
 ## Version 0.6.6

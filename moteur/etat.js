@@ -110,7 +110,7 @@ function gagner(spec) {
     if (id === 'or') S.gold += n;
     else if (OBJETS[id]) addItem(id, n);
     else if (EQUIPEMENT[id]) for (let i = 0; i < n; i++) addEq(id);
-    else if (IMPORTANTS[id]) { if (!S.imp.includes(id)) S.imp.push(id); }
+    else if (IMPORTANTS[id]) { if (!S.imp.includes(id)) { S.imp.push(id); SON.jingle('objet'); } }
     else console.warn('Gain inconnu :', id);
   }
 }

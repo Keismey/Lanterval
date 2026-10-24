@@ -1,5 +1,11 @@
 # État du projet
 
+## Version 0.6.8 (2026-10-24) : musiques, lot 4 et jingles
+
+- Lot 4 de Gemini dans son/ : boss, final, emotion, menace, epilogue. Toutes les pistes prévues sont là.
+- Musiques de scène : `PANO_MUSIQUE` (donnees/musiques.js) associe un panorama de récit à `emotion`, `menace` ou `epilogue` ; l'événement `panorama` appelle `SON.panorama`, et `decor` (retour au lieu), un combat ou la fin de la séquence remettent la musique du lieu.
+- Jingles faits en code (Gemini ne sait pas faire de morceaux de quelques secondes, d'après Keismey) : victoire, défaite, quête annexe finie (`quete`, recit.js), objet important reçu (`objet`, `gagner` dans etat.js), nuit à l'auberge (`auberge`). La musique baisse pendant `DUREE_JINGLE`. Lot 5 de prompts-musique.md abandonné.
+
 ## Version 0.6.7 (2026-10-24) : onglet Classe
 
 - Demande de Keismey : Classe et Techniques fusionnés dans `openParty` (onglet `job` : carte de la classe avec ses techniques), bouton « Changer de classe » en bas → vue `job` (liste de toutes les classes, Retour) ; choisir une classe revient à l'onglet avec le message.
