@@ -10,6 +10,7 @@
 
 ## Version 0.5.5 (2026-10-24) : écran titre
 
+- Aperçu de partage : balises og: et twitter: dans index.html (comme Pas ce soir), image img/affiche.jpg (1200×630, fil des images).
 - Demande de Keismey : l'ancien écran titre (scène + panneau) disparaît. Tout est en plein écran par-dessus le jeu (`.accueil`, moteur/jeu.js) : logo Keismey Studio au lancement, puis fond `titre.paix` et « Touche pour commencer », puis fond `titre.brume` (village embrumé sans le cristal ; `titre.paix` une fois `S.finVue`) avec les boutons en liste. Fondu entre les deux fonds.
 - Boutons : sans partie, Nouvelle partie (doré) + Options (gris). Avec une partie : Continuer (doré, « Acte N » ou « Fin · Complétion X % »), Nouvelle partie + (bleu brillant, si fin vue, avec confirmation), Nouvelle partie (gris, avec confirmation), Options (gris).
 - `completion()` : moitié découvertes de toutes les zones visibles, moitié quêtes annexes finies ; aussi dans le bilan de fin. `S.finPartie` (posé par `fin_jeu`, pas gardé en partie+) dit si la fin a été atteinte dans cette partie ; les anciennes sauvegardes sans partie+ se fient à `finVue`.
