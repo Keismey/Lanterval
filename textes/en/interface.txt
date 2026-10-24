@@ -742,6 +742,9 @@ Class
 == equipe.equipement
 Gear
 
+== equipe.classe.techniques
+Class
+
 == equipe.techniques
 Techniques
 
@@ -1136,6 +1139,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.7
+Team: the Class tab shows the hero's class and its techniques; a “Change class” button at the bottom opens the list of all classes.
 ## Version 0.6.6
 Each region now has its own exploration music: the Valley, the Coast, the Cendre Plains, the High Winds, and the Stair of Mist.
 ## Version 0.6.5

@@ -41,12 +41,16 @@ function openParty() {
       <div class="statg q4">${['atk', 'mag', 'def', 'spd'].map(k => `<div class="st" data-st="${k}"><span>${esc(t('stat.' + k))}</span><b>${s[k]}</b></div>`).join('')}</div>
       <p class="note" id="m-stinfo">${esc(t('equipe.stat.toucher'))}</p>
       ${note ? `<div class="msgline">${note}</div>` : ''}
-      <div class="tabs souso">${[['eq', 'equipe.equipement'], ['job', 'equipe.classe'], ['tech', 'equipe.techniques']].map(([k, c]) => `<button class="tab txt ${onglet === k ? 'on' : ''}" data-o="${k}">${esc(t(c))}</button>`).join('')}</div>
-      ${onglet === 'tech' ? `<div class="list">${CLASSES[h.job].tech.map(id => `<p class="note"><b class="clair">${esc(t('tech.' + id))}</b> · ${TECHNIQUES[id].pp} ${esc(t('stat.pp'))} · ${tx('tech.' + id + '.desc')}</p>`).join('')}</div>` : `<div class="acts" id="m-list"></div>`}
-      ${onglet === 'eq' ? `<div class="acts bas"><button class="btn side wide" id="m-opt"><span class="ic">${ic('star')}</span><span class="tx"><span>${esc(t('equipe.optimiser', { nom }))}</span></span></button></div>` : ''}`;
-    } else body = `<p class="note">${tx('equipe.place.aide', { place: t('place.' + place), nom, classe: t('classe.' + h.job) })}</p><div class="acts" id="m-list"></div>
+      <div class="tabs souso">${[['eq', 'equipe.equipement'], ['job', 'equipe.classe.techniques']].map(([k, c]) => `<button class="tab txt ${onglet === k ? 'on' : ''}" data-o="${k}">${esc(t(c))}</button>`).join('')}</div>
+      ${onglet === 'job' ? `<div class="cls"><h4>${esc(t('classe.' + h.job))}</h4><p>${esc(t('classe.' + h.job + '.desc'))}</p>${CLASSES[h.job].tech.map(id => {
+        const x = TECHNIQUES[id], c = x.el ? ' el-' + x.el.slice(-1) : '';
+        return `<div class="ctech${c}"><span class="ic">${ic(icTech(x))}</span><div><b>${esc(t('tech.' + id))}</b><small>${esc(`${x.pp} ${t('stat.pp')} · ${t('tech.' + id + '.desc')}`)}</small></div></div>`;
+      }).join('')}</div>
+      <div class="acts bas"><button class="btn side wide" id="m-job"><span class="ic">${ic('star')}</span><span class="tx"><span>${esc(t('equipe.changer.classe'))}</span></span></button></div>` : `<div class="acts" id="m-list"></div>
+      <div class="acts bas"><button class="btn side wide" id="m-opt"><span class="ic">${ic('star')}</span><span class="tx"><span>${esc(t('equipe.optimiser', { nom }))}</span></span></button></div>`}`;
+    } else body = `<p class="note">${vue === 'job' ? tx('equipe.classe.aide', { nom, el: t('element.' + el) }) : tx('equipe.place.aide', { place: t('place.' + place), nom, classe: t('classe.' + h.job) })}</p><div class="acts" id="m-list"></div>
       <div class="acts"><button class="btn ghost wide" id="m-back"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('retour'))}</span></span></button></div>`;
-    const titre = vue === 'main' ? t('menu.equipe') : t('equipe.changer', { place: t('place.' + place) });
+    const titre = vue === 'main' ? t('menu.equipe') : vue === 'job' ? t('equipe.changer.classe') : t('equipe.changer', { place: t('place.' + place) });
     const sh = modal('grand', sheetHead(titre) + `<div class="tabs">${T.map(x => `<button class="tab ${x.id === cur ? 'on' : ''}" data-c="${x.id}">${av(x.id, 'sm')}${esc(t('parle.' + x.id))}</button>`).join('')}</div>` + body);
     note = '';
     sh.querySelector('#mclose').onclick = fermerFenetre;
@@ -64,7 +68,10 @@ function openParty() {
         ml.innerHTML = btns(eo); bind(ml, eo, k => { place = k; vue = 'place'; draw(); });
         sh.querySelector('#m-opt').onclick = () => { const pris = optimiser(h); note = esc(pris.length ? t('equipe.optimise', { nom, liste: pris.join(', ') }) : t('equipe.optimise.rien', { nom })); draw(); };
       }
-      if (onglet === 'job') {
+      if (onglet === 'job') sh.querySelector('#m-job').onclick = () => { vue = 'job'; draw(); };
+    }
+    if (vue === 'job') {
+      {
         const o = classesJouables().map(j => {
           const J = CLASSES[j];
           if (!S.jobs.includes(j)) return { k: j, ic: 'lock', label: esc(J.cachee ? '???' : t('classe.' + j)), sub: esc(existe('classe.' + j + '.verrou') ? t('classe.' + j + '.verrou') : t('equipe.verrouillee')), dis: true };
@@ -77,7 +84,7 @@ function openParty() {
           if (j === h.job) return;
           h.job = j; let msg = '';
           for (const p of ['arme', 'armure']) { const id = h.eq[p]; if (id && !canWear(h, id)) { addEq(id); h.eq[p] = null; msg += ' ' + t('equipe.retour.sac', { nom: nomEq(id) }); } }
-          clampC(h); save(); note = esc(t('equipe.devient', { nom, classe: t('classe.' + j) }) + msg); draw();
+          clampC(h); save(); note = esc(t('equipe.devient', { nom, classe: t('classe.' + j) }) + msg); vue = 'main'; draw();
         });
       }
     }
