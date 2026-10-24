@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.6.7 (2026-10-24) : onglet Classe
+
+- Demande de Keismey : Classe et Techniques fusionnés dans `openParty` (onglet `job` : carte de la classe avec ses techniques), bouton « Changer de classe » en bas → vue `job` (liste de toutes les classes, Retour) ; choisir une classe revient à l'onglet avec le message.
+
 ## Version 0.6.6 (2026-10-24) : musiques, lot 3
 
 - Lot 3 de Gemini dans son/ : vallee, cote, cendre, vents (zones, par région) et escalier. Reste : boss, final, émotion, menace, épilogue (lot 4) et jingles (lot 5).

@@ -895,6 +895,9 @@ Classe
 == equipe.equipement
 Équipement
 
+== equipe.classe.techniques
+Classe
+
 == equipe.techniques
 Techniques
 
@@ -1314,6 +1317,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.7
+Équipe : l'onglet Classe montre la classe du héros et ses techniques ; un bouton « Changer de classe » en bas ouvre la liste de toutes les classes.
 ## Version 0.6.6
 Chaque région a maintenant sa musique d'exploration : la vallée, la Côte, les Plaines de Cendre, les Hauts-Vents, et l'Escalier de brume.
 ## Version 0.6.5
