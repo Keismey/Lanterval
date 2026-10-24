@@ -35,7 +35,7 @@ function renderStable() {
   if (!S) S = newState();
   // la fin vue (écran fermé, ou partie reprise depuis le titre) : la partie revient à Aerie avant l'Escalier
   if (!['title', 'fin', 'intro'].includes(S.screen) && dansLeFinal() && fini(FINAL.fin)) retourAvantFinal();
-  hud();
+  hud(); SON.ambiance();
   if (S.screen !== 'title') save();
   if (S.screen !== 'title') fermerAccueil();
   if (S.screen === 'title') renderTitle();

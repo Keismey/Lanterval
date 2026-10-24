@@ -236,6 +236,7 @@ function openJournal() {
 
 /* ---------- Options ---------- */
 const VITESSES = ['normal', 'rapide', 'instant'];
+const volTexte = v => v ? v + ' / 10' : t('options.coupe');
 function openOptions(vue) {
   let confirmer = false;
   const draw = () => {
@@ -245,10 +246,23 @@ function openOptions(vue) {
       sh.querySelector('#mclose').onclick = closeModal; sh.querySelector('#m-back').onclick = () => { vue = null; draw(); };
       return;
     }
+    if (vue === 'son') {
+      const ligne = k => `<div class="vol"><div class="vol-h"><b>${esc(t('options.' + k))}</b><span id="v-${k}">${esc(volTexte(OPT[k]))}</span></div>
+        <input type="range" min="0" max="10" step="1" value="${OPT[k]}" data-k="${k}" aria-label="${esc(t('options.' + k))}"></div>`;
+      const sh = modal('grand', sheetHead(t('options.son')) + `<div class="vols">${ligne('musique')}${ligne('bruitages')}</div><p class="note">${esc(t('options.son.note'))}</p>
+        <div class="acts"><button class="btn ghost wide" id="m-back"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('retour'))}</span></span></button></div>`);
+      sh.querySelectorAll('input[type=range]').forEach(r => {
+        r.oninput = () => { OPT[r.dataset.k] = +r.value; sh.querySelector('#v-' + r.dataset.k).textContent = volTexte(OPT[r.dataset.k]); SON.volumes(); };
+        r.onchange = () => { sauverOptions(); if (r.dataset.k === 'bruitages') SON.bruitage('trouve'); };
+      });
+      sh.querySelector('#mclose').onclick = closeModal; sh.querySelector('#m-back').onclick = () => { vue = null; draw(); };
+      return;
+    }
     const enJeu = S && S.screen !== 'title', libre = !busy && !B;
     const o = [
       { k: 'lang', ic: 'globe', label: esc(t('options.langue')), sub: esc(t('options.langue.sous')) },
       { k: 'texte', ic: 'scroll', label: esc(t('options.texte', { v: t('options.texte.' + OPT.texte) })), sub: esc(t('options.texte.sous')) },
+      { k: 'son', ic: 'note', label: esc(t('options.son')), sub: esc(t('options.son.sous', { m: volTexte(OPT.musique), b: volTexte(OPT.bruitages) })) },
       { k: 'rapide', ic: 'play', label: esc(t(OPT.rapide ? 'options.combats.rapides' : 'options.combats.normaux')), sub: esc(t('options.combats.sous')) },
       { k: 'save', ic: 'save', label: esc(t('options.sauvegarde')), sub: esc(t('options.sauvegarde.sous')) },
       { k: 'notes', ic: 'book', label: esc(t('options.notes')), sub: esc(t('options.notes.sous', { v: VERSION })) },
@@ -267,6 +281,7 @@ function openOptions(vue) {
       else if (k === 'rapide') { OPT.rapide = !OPT.rapide; sauverOptions(); draw(); }
       else if (k === 'save') { if (S && S.screen !== 'title') save(); KS.saveDialog({ jeu: 'Lanterval', keys: [CLE, CLE_SECOURS], lang: LANG }); }
       else if (k === 'notes') { vue = 'notes'; draw(); }
+      else if (k === 'son') { vue = 'son'; draw(); }
       else if (k === 'bug') KS.bug('Lanterval', LANG);
       else if (k === 'soutien') KS.support();
       else if (k === 'titre') { save(); closeModal(); S.screen = 'title'; renderStable(); }

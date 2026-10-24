@@ -77,7 +77,7 @@ async function auberge(pnj) {
   const v = { prix: pnj.prix }, qui = pnj.portrait === 'aubergiste' ? 'auberge' : pnj.id;
   const k = await show(html(bulle(t(`pnj.${qui}.accueil`, v)).texte), { who: t('parle.' + pnj.portrait), portrait: pnj.portrait,
     choices: [{ k: 'y', label: esc(t('pnj.auberge.dormir')), sub: esc(t('pnj.auberge.dormir.sous', v)), ic: 'bed', dis: S.gold < pnj.prix }, { k: 'n', label: esc(t('retour')), ic: 'back', cls: 'ghost' }] });
-  if (k === 'y') { S.gold -= pnj.prix; healAll(); restorePP(); logR('journal.log.auberge'); S.msg = tx('pnj.auberge.message'); }
+  if (k === 'y') { SON.bruitage('or'); S.gold -= pnj.prix; healAll(); restorePP(); logR('journal.log.auberge'); S.msg = tx('pnj.auberge.message'); }
 }
 
 /* ---------- Boutiques ---------- */
@@ -133,7 +133,7 @@ async function boutique(pnj) {
     if (k.startsWith('tab:')) { tab = k.slice(4); continue; }
     if (k === 'sell') { line = await vendre(pnj); continue; }
     const [ty, id] = k.split(':');
-    S.gold -= P[k];
+    S.gold -= P[k]; SON.bruitage('or');
     if (ty === 'i') { addItem(id, 1); line = tx('boutique.achete', { nom: t('objet.' + id) }); }
     else { addEq(id); line = tx('boutique.achete.eq', { nom: nomEq(id) }); logR('journal.log.achat', { nom: 'equip.' + id }); }
   }
@@ -154,6 +154,7 @@ async function vendre(pnj) {
     if (k === 'x') return tx('boutique.autre');
     if (k.startsWith('tab:')) { tab = k.slice(4); continue; }
     const [ty, id] = k.split(':');
+    SON.bruitage('or');
     if (ty === 'i') { S.inv[id]--; S.gold += OBJETS[id].v; line = tx('boutique.vendu', { nom: t('objet.' + id), prix: OBJETS[id].v }); }
     else { const v = eqVal(id); S.bag[id]--; S.gold += v; line = tx('boutique.vendu', { nom: nomEq(id), prix: v }); logR('journal.log.vente', { nom: 'equip.' + id }); }
   }

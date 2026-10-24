@@ -33,7 +33,7 @@ function show(text, o = {}) {
       if (e.timeStamp <= t0 || !document.body.contains(p) || modalOuverte() || document.getElementById('ks-dlg')) return;
       if (e.target.closest('button,a,input,#hud,#modal')) return;
       if (!e.target.closest('#scene,#panel')) return;
-      const o = ch[0]; choisir(o.k !== undefined ? o.k : 0);
+      const o = ch[0]; SON.bruitage('page'); choisir(o.k !== undefined ? o.k : 0);
     };
     if (ch.length === 1 && !ch[0].dis) document.addEventListener('click', partout);
   });
@@ -47,8 +47,8 @@ async function joinCard(id, titre) {
 }
 
 /* ---------- Fenêtres ---------- */
-function closeModal() { $('#modal').innerHTML = ''; }
+function closeModal() { if (modalOuverte()) SON.bruitage('ferme'); $('#modal').innerHTML = ''; }
 function modalOuverte() { return !!$('#modal .modal'); }
 // modal(html) s'adapte au contenu ; modal('grand', html) garde la même taille quel que soit l'onglet
-function modal(taille, html) { if (html === undefined) { html = taille; taille = ''; } $('#modal').innerHTML = `<div class="modal"><div class="sheet ${taille}">${html}</div></div>`; return $('#modal .sheet'); }
+function modal(taille, html) { if (html === undefined) { html = taille; taille = ''; } if (!modalOuverte()) SON.bruitage('ouvre'); $('#modal').innerHTML = `<div class="modal"><div class="sheet ${taille}">${html}</div></div>`; return $('#modal .sheet'); }
 function sheetHead(titre) { return `<div class="sheet-h"><div class="ptitle">${esc(titre)}</div><button class="ibtn" id="mclose" aria-label="${esc(t('fermer'))}">${ic('x')}</button></div>`; }

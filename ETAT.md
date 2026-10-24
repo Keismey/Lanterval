@@ -1,5 +1,13 @@
 # État du projet
 
+## Version 0.6.0 (2026-10-24) : musique et bruitages
+
+- Demande de Keismey : musiques générées par lui avec Gemini (prompts : /mnt/project-files/rpg-retro/musique/prompts-musique.md, sources MP3 dans /mnt/project-files/rpg-retro/musique/sources/, nommées NN-<piste>.mp3). `node outils/musiques.js <dossier>` retire les silences, ramène chaque piste à −18 LUFS et écrit son/<piste>.m4a (AAC 96 kb/s).
+- donnees/musiques.js : une entrée par piste (`fichier`, `sinon` = piste jouée tant que le fichier manque, `fin` facultatif = point de bouclage). Pistes présentes : theme, lanterval, combat.
+- moteur/son.js (`SON`) : la musique est lue en entier (fetch → blob, donc gardée hors ligne par le service worker), jouée via Web Audio (le volume marche aussi sur iPhone), boucle en fondu enchaîné de 3 s, change de piste en fondu. `SON.ambiance()` (appelé par renderStable et finCombat) choisit la piste du lieu : titre, carte (`voyage`), village (Lanterval embrumé = `brume` tant que l'état n'est pas `fete`), zone (sa piste si elle existe, sinon sa région), fin (`epilogue`). Combat : `combat`, `boss`, `final` (MUSIQUE_FINAL : ysold, paupiere).
+- Bruitages fabriqués en Web Audio (aucun fichier) : boutons (doré plus marqué), dialogue suivant, fenêtres, coups, faiblesse, résistance, garde brisée, monstre vaincu, coup reçu, K.O., esquive, soin, bonus, Union, un son par élément (T, F, E, V), or, découverte, palier, niveau ; fanfares de victoire et de défaite en attendant les jingles de Gemini.
+- Options › Musique et bruitages : curseurs 0 à 10 (`OPT.musique`, `OPT.bruitages`, 7 par défaut). Le son démarre au premier appui et se coupe quand la page est cachée.
+
 ## Version 0.5.5 (2026-10-24) : écran titre
 
 - Demande de Keismey : l'ancien écran titre (scène + panneau) disparaît. Tout est en plein écran par-dessus le jeu (`.accueil`, moteur/jeu.js) : logo Keismey Studio au lancement, puis fond `titre.paix` et « Touche pour commencer », puis fond `titre.brume` (village embrumé sans le cristal ; `titre.paix` une fois `S.finVue`) avec les boutons en liste. Fondu entre les deux fonds.

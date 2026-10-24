@@ -94,6 +94,7 @@ async function paliers(id, silencieux) {
     if (pc >= p && !z[cle]) {
       z[cle] = true; recompense(L[palier] || {});
       if (silencieux) continue;
+      SON.bruitage('palier');
       ovc().innerHTML = zoneOverlay(id);
       await dialogue(`${id}.${cle}`, { titre: nomLieu(id) });
       logR('journal.log.palier', { lieu: 'lieu.' + id + '.nom', p });
@@ -113,7 +114,7 @@ async function explore(id) {
   if (fixe) {
     z.streak = 0;
     const f = pick(reste);
-    recompense(f); z.found.push(f.id);
+    recompense(f); z.found.push(f.id); SON.bruitage('trouve');
     ovc().innerHTML = zoneOverlay(id);
     await show(`<span class="tag ${f.type === 'lieu' ? 'lieu' : ''}">${esc(t('zone.tag.' + f.type))}</span><b>${esc(t(`${id}.${f.id}.nom`))}</b><br>${tx(`${id}.${f.id}.texte`)}`, { title: nomLieu(id) });
     logR('journal.log.decouverte', { lieu: 'lieu.' + id + '.nom', nom: `${id}.${f.id}.nom`, p: pct(id) });

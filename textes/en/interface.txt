@@ -985,6 +985,24 @@ instant
 == options.texte.sous
 Dialogue display speed
 
+== options.son
+Music and sound effects
+
+== options.son.sous
+Music {m} · Sound effects {b}
+
+== options.musique
+Music
+
+== options.bruitages
+Sound effects
+
+== options.coupe
+off
+
+== options.son.note
+Sound starts on your first tap and stops when you leave the game.
+
 == options.combats.normaux
 Fights: normal speed
 
@@ -1043,6 +1061,10 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.0
+Lanterval has sound: the main theme on the title screen, the Lanterval village theme, and the battle music. Other places borrow these tracks until they get their own.
+Sound effects for buttons, dialogue, windows, hits, weaknesses, broken guards, each element's magic, healing, gold and discoveries.
+Options › Music and sound effects: two settings from 0 (off) to 10. Sound starts on your first tap and stops when you leave the game.
 ## Version 0.5.5
 New title screen: the village at peace for “Tap to start”, then the village in the mist behind the buttons (it stays at peace once you've seen the ending).
 Continue shows the current act, or “The End” and your completion (zones explored and side quests). New Game + appears once you've seen the ending.

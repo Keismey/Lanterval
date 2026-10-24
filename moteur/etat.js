@@ -10,7 +10,7 @@ let B = null;      // le combat en cours
 let busy = false;  // une séquence (dialogue, combat, trajet) est en cours
 
 /* ---------- Options (gardées même si la partie est effacée) ---------- */
-const OPT = { lang: null, texte: 'normal', rapide: false, notes: '' };
+const OPT = { lang: null, texte: 'normal', rapide: false, notes: '', musique: 7, bruitages: 7 };
 function chargerOptions() { try { Object.assign(OPT, JSON.parse(localStorage.getItem(CLE_OPTIONS) || '{}')); } catch (e) {} }
 function sauverOptions() { try { localStorage.setItem(CLE_OPTIONS, JSON.stringify(OPT)); } catch (e) {} }
 
