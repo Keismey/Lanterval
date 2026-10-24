@@ -186,11 +186,11 @@ const IMAGES = {
   'monstre.rocaile.vol': { fichier: 'img/monstres/rocaile-vol.webp', provisoire: 'rocaile_vol', sujet: 'Roc ailé en plein vol, vu de face, ailes de pierre grandes ouvertes, serres en avant' },
   // quêtes annexes des Hauts-Vents (0.5.2)
   'monstre.prieur': { fichier: 'img/monstres/prieur.webp', provisoire: 'prieur', sujet: 'Prieur spectral, grand moine fantôme en robe bleu pâle et chape brodée, capuche sur un visage effacé, crosse de pierre' },
-  'monstre.wyverne': { provisoire: 'wyverne', sujet: 'Wyverne mère, dragon à deux pattes aux écailles gris-bleu, ailes membraneuses, yeux voilés de brume' },
-  'monstre.larmet': { provisoire: 'larmet', sujet: 'Gardien de cristal, silhouette massive faite de cristaux bleus de la grotte, une larme de lumière au milieu du torse' },
-  'monstre.larmee': { provisoire: 'larmee', sujet: 'Gardien d\'écume, forme d\'écume et de coquillages qui se dresse de l\'eau, une larme de lumière au milieu du torse' },
-  'monstre.larmef': { provisoire: 'larmef', sujet: 'Gardien de braise, silhouette de métal en fusion aux bras brûlants, une larme de lumière au milieu du torse' },
-  'monstre.larmev': { provisoire: 'larmev', sujet: 'Gardien d\'azur, grand oiseau de vent et de brume aux ailes de lames, une larme de lumière au milieu du corps' },
+  'monstre.wyverne': { fichier: 'img/monstres/wyverne.webp', provisoire: 'wyverne', sujet: 'Wyverne mère, dragon à deux pattes aux écailles gris-bleu, ailes membraneuses, yeux voilés de brume' },
+  'monstre.larmet': { fichier: 'img/monstres/larmet.webp', provisoire: 'larmet', sujet: 'Gardien de cristal, silhouette massive faite de cristaux bleus de la grotte, une larme de lumière au milieu du torse' },
+  'monstre.larmee': { fichier: 'img/monstres/larmee.webp', provisoire: 'larmee', sujet: 'Gardien d\'écume, forme d\'écume et de coquillages qui se dresse de l\'eau, une larme de lumière au milieu du torse' },
+  'monstre.larmef': { fichier: 'img/monstres/larmef.webp', provisoire: 'larmef', sujet: 'Gardien de braise, silhouette de métal en fusion aux bras brûlants, une larme de lumière au milieu du torse' },
+  'monstre.larmev': { fichier: 'img/monstres/larmev.webp', provisoire: 'larmev', sujet: 'Gardien d\'azur, grand oiseau de vent et de brume aux ailes de lames, une larme de lumière au milieu du corps' },
 
   // ---------- Le final (0.5.3) : l'Escalier de brume, le Cœur de l'Œil, les épilogues, les Échos ----------
   'decor.escalier': { provisoire: 'escalier', sujet: 'Escalier de brume, marches de pierre pâle qui montent dans les nuages au-dessus du Pic, brume violette, piliers brisés' },
