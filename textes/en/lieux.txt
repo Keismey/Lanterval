@@ -1363,7 +1363,7 @@ Before the Heart of the Eye
 After the campfire in Aerie
 
 == lieu.escalier.desc
-Pale stone steps climb into the mist, higher than the clouds. No one has ever come back down to tell what waits at the top.
+Pale stone steps climb into the mist, higher than the clouds. Those who came back down never told what waits at the top.
 
 == lieu.escalier.desc.sommet
 The last step opens onto a stone platform. Above it, a huge eye of light, half hidden under an eyelid of stone.

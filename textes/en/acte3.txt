@@ -27,7 +27,7 @@ Nev: “My name is Nev. We'll talk later.” [Fight]
 
 == a3.e1.varen
 ## Burnt Fields
-A silver-haired man watches from the top of a charred wall. Varen.
+A silver-haired young man watches from the top of a charred wall. Varen.
 Varen: “You pick such weak friends, Nev. I'll let you play for a while. You'll come back on your own.”
 Nev: “Never. Do you hear me, Varen? Never!”
 Varen vanishes into the smoke.
@@ -196,7 +196,7 @@ Mira: “She ran away to protect me, I know that. But she forged the cage that s
 == a3.e6.maintenant
 ## Outside the inn
 Mira gets up and joins her mother. They stand face to face for a long time.
-Mira: “I'm still angry with you. But I don't want to be anymore. Is that a start?”
+Mira: “I'm still angry with you. But I don't want to be any more. Is that a start?”
 Hilde: “It's the best start in the world.”
 
 == a3.e6.plustard
@@ -372,7 +372,7 @@ Hilde: “Mira took her weapons without looking at me. She's right to. Take what
 Hilde: “You're back from where I think you're back from. Sit down, and show me that sword.”
 
 == pnj.dorn
-Dorn: “I can't see anymore, but I hear everything. The hammers, the rock, and your heart beating too fast.”
+Dorn: “I can't see any more, but I hear everything. The hammers, the rock, and your heart beating too fast.”
 
 == pnj.dorn.a3.e6
 Dorn: “The miners came back up. I counted them by ear. A few are missing.”

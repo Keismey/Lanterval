@@ -885,7 +885,7 @@ La pierre d'Aldric
 == aldric.e3.pierre
 ## Le carnet d'Aldric
 Au sommet du col, près du socle vide, une grande pierre plate. Deux sentinelles de l'Ordre et un automate creusent tout autour.
-Nev : « Elles cherchent la même chose que nous. Ysold veut savoir ce qu'Aldric a écrit. »
+Nev : « Ils cherchent la même chose que nous. Ysold veut savoir ce qu'Aldric a écrit. »
 Kael : « Ce carnet est à mon père. Personne d'autre ne le lira. »
 
 == aldric.e3.page
@@ -1055,7 +1055,7 @@ Pell : « La lettre de Salvent sent le sel. Quelqu'un là-bas attend des nouvell
 ## Le courrier des falaises
 Le port de Salvent répare ses barques, cassées par l'attaque de l'Ordre. Mais les pêcheurs chantent en travaillant.
 Maëlle : « Une lettre pour moi ? De mon fils, à bord d'un baleinier ! Il rentre au printemps. »
-Maëlle : « Avant votre passage, j'aurais oublié que j'avais un fils. Allez, file, Naïa t'attend sur le quai. »
+Maëlle : « Sans vous, la brume aurait fini par me faire oublier que j'avais un fils. Allez, file, Naïa t'attend sur le quai. »
 
 == courrier.e3.message
 Quête annexe : il reste une lettre, pour *Dorn* (Forgecendre).
@@ -1128,7 +1128,7 @@ Trois lézards de lave tournent autour, la langue sortie. [Combattre]
 == wyverne.e1.fin
 ## L'œuf de wyverne
 Kael soulève l'œuf à deux mains. Il est lourd, et tiède comme une pierre au soleil.
-Nev : « Il bouge ! Il faut se dépêcher, il ne va pas attendre la fin de la guerre. »
+Nev : « Il bouge ! Il faut se dépêcher, il ne va pas attendre qu'on ait sauvé le monde. »
 
 == wyverne.e1.message
 Quête annexe : l'*œuf chaud* est dans ton sac. Le nid de la mère est au pied du *Pic hurlant*.

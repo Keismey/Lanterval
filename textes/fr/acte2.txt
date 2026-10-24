@@ -210,7 +210,7 @@ Des soldats de l'Ordre gardent l'entrée. [Combattre]
 
 == a2.e6.nev
 ## L'escalier
-Sur les premières marches, une novice de l'Ordre lève sa lance. Elle n'a pas seize ans.
+Sur les premières marches, une novice de l'Ordre lève sa lance. Elle a à peine seize ans.
 Nev : « Halte ! Je dois… je dois sonner l'alerte. »
 Elle regarde Sol, puis le port, puis ses propres mains.
 Nev : « Ils ont dit qu'on venait sauver Salvent de ses souvenirs. Mais les gens ne savent même plus le nom de leurs enfants. »
@@ -309,7 +309,7 @@ Maëlle : « Kael ! Le coche de la vallée a apporté une lettre pour toi. L'éc
 « Ysold a perdu toute sa famille à la guerre. Elle a voulu fermer l'Œil, la source de la mémoire du monde. »
 « J'ai eu peur, et je suis parti. Je ne vous l'ai jamais dit. Pardonnez-moi. »
 « Les éclaireurs de Brann sont formels : le cristal d'ambre du col a été emmené aux forges de Cendre, à l'est. »
-Mira : « Cendre… La ville de ma mère. »
+Mira : « Cendre… Le pays de ma mère. »
 
 == a2.e8.est
 ## Cap à l'est

@@ -34,7 +34,7 @@ function bOverlay() {
     return `<span class="chipw ${ch ? 'ch' : ''}" title="${esc(p.u.isEnemy ? p.u.name : nomH(p.u))}"><span class="chip ${p.u.isEnemy ? 'e' : 'h'} ${!p.u.isEnemy && (ficheDe(p.u.id) || {}).portrait ? 'face' : ''} ${i === 0 ? 'now' : ''}"><img alt="" src="${vignette(p.u)}"></span>${p.rec ? '<i class="rec">KO</i>' : p.chg ? '<i class="chg">!</i>' : ''}</span>`;
   }).join('');
   const m = chaine();
-  const ei = B.enemies.map((e, i) => e.hp <= 0 ? '' : `<div class="einfo glass ${B.targeting ? 'tg' : ''}" data-ei="${i}" style="left:${e.px * 100}%;top:${(e.py * 100 + 1.5).toFixed(1)}%">
+  const ei = B.enemies.map((e, i) => e.hp <= 0 ? '' : `<div class="einfo glass ${B.targeting ? 'tg' : ''} ${B.enemies.length === 1 ? 'seul' : ''}" data-ei="${i}" style="left:${e.px * 100}%;top:${(e.py * 100 + 1.5).toFixed(1)}%">
     <div class="nm">${esc(e.name)}</div><div class="bar ${e.hp / e.mhp < .3 ? 'low' : ''}"><i style="width:${e.hp / e.mhp * 100}%"></i></div>
     <div class="erow">${e.broken ? `<span class="brk">${esc(t('combat.brise.court'))}</span>` : `<span class="shield" title="${esc(t('combat.garde.titre'))}">${MONSTRES[e.id].intouchable ? '∞' : e.shield}</span>`}${elChips(e)}${e.dort ? `<span class="zz">${esc(t('combat.dort.court'))}</span>` : ''}${e.air ? `<span class="zz">${esc(t('combat.air.court'))}</span>` : ''}${e.cristal !== undefined ? `<span class="zz">${esc(t('combat.cristal.' + cristalDe(e).c))}</span>` : ''}</div></div>`).join('');
   ovc().innerHTML = `<div class="tl glass"><span class="tll">${esc(t('combat.tours'))}</span>${chips}</div>

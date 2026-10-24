@@ -1373,7 +1373,7 @@ Devant le Cœur de l'Œil
 Après le feu de camp d'Aerie
 
 == lieu.escalier.desc
-Des marches de pierre pâle montent dans la brume, plus haut que les nuages. Personne n'en est jamais redescendu pour raconter ce qu'il y a en haut.
+Des marches de pierre pâle montent dans la brume, plus haut que les nuages. Ceux qui en sont redescendus n'ont jamais raconté ce qu'il y a en haut.
 
 == lieu.escalier.desc.sommet
 La dernière marche donne sur une plateforme de pierre. Au-dessus, un œil de lumière immense, à demi caché sous une paupière de pierre.

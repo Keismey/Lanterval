@@ -9,7 +9,7 @@ The lantern
 
 == prologue
 ## Prologue
-Lanterval is a village nestled at the foot of the mountains. For as long as anyone remembers, the lantern on the square has kept the mist away, thanks to the crystal glowing at its heart.
+Lanterval is a village nestled at the foot of the mountains. For fifty years, the lantern on the square has kept the mist away, thanks to the crystal glowing at its heart.
 Tonight, its light is flickering.
 
 == prologue.suite
@@ -34,7 +34,7 @@ Orvan: “This crystal recognises brave hearts. It will teach you other ways to 
 ? Each character keeps their element: Kael strikes with Earth whatever his class.
 
 == a1.e1.message
-Quest: *find Mira* in the Whispering Forest. Try out the Warrior class.
+Quest: *find Mira* in the Whispering Forest.
 
 # ---------- Step 2: Whispering Forest ----------
 
@@ -173,7 +173,7 @@ Reward: *100 gold* and the *Lanterval medallion* (accessory, HP +10). The team i
 
 == a1.e7.aveu
 Orvan: “Thank you, all three of you. But I must be honest: this heart will only last one season.”
-Orvan: “The valley's true crystal, the amber crystal, rests in the Stone Pass, to the north. If the Order is looking for it too, you must reach it before them.”
+Orvan: “The valley's true crystal, the amber crystal, rests at the Stone Pass, to the north. If the Order is looking for it too, you must reach it before them.”
 Mira: “Then we leave tomorrow.” Sol nods without a word.
 
 == a1.e7.message
@@ -297,7 +297,7 @@ Orvan: “I should never have sent you up there alone. Go and see Brann, he's wa
 Orvan: “The heart will last the season. Until then, find the amber crystal, wherever the Order takes it.”
 
 == pnj.brann
-Brann: “Stay careful, Kael. The mist makes the beasts nervous.”
+Brann: “Be careful, Kael. The mist makes the beasts nervous.”
 
 == pnj.tilo.a1.e1
 Tilo: “Brann, the guard, is looking for someone brave. They say he knows secret hunter techniques!”

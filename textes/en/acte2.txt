@@ -210,7 +210,7 @@ Soldiers of the Order guard the entrance. [Fight]
 
 == a2.e6.nev
 ## The stairs
-On the first steps, a novice of the Order raises her spear. She isn't even sixteen.
+On the first steps, a novice of the Order raises her spear. She is barely sixteen.
 Nev: “Halt! I have to… I have to raise the alarm.”
 She looks at Sol, then at the harbour, then at her own hands.
 Nev: “They said we came to save Salvent from its memories. But people don't even know their children's names any more.”
@@ -309,7 +309,7 @@ Maëlle: “Kael! The valley coach brought a letter for you. The handwriting sha
 “Ysold lost her whole family in the war. She wanted to close the Eye, the source of the world's memory.”
 “I was afraid, and I left. I never told you. Forgive me.”
 “Brann's scouts are certain: the amber crystal from the pass was taken to the forges of Cendre, in the east.”
-Mira: “Cendre… My mother's town.”
+Mira: “Cendre… My mother's homeland.”
 
 == a2.e8.est
 ## Heading east

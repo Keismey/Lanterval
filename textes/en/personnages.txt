@@ -92,7 +92,7 @@ Mira's mother. She runs the Lanterval forge and sells weapons and armour.
 When she heard about the closed-eye badge, she asked Kael not to show it to anyone else.
 
 == perso.hilde.3
-She comes from Cendre, the forge town, and fully intends to go there with the team.
+She comes from the Cendre Plains, the land of forges, and fully intends to go there with the team.
 
 == perso.hilde.4
 She was born in Forgecendre, where people thought she had been dead for eighteen years. She relit her father's old forge there.
