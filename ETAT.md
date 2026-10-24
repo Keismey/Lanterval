@@ -1,5 +1,13 @@
 # État du projet
 
+## Version 0.6.5 (2026-10-24) : ergonomie des menus
+
+- Maquettes validées par Keismey (Design canvas https://claude.ai/artifact/TKFSxLeSGVdbW7zNnbtXog).
+- Village (`renderVillage`) : `.acts.village` en deux colonnes, la quête principale (`main wide`) triée en tête, « Partir » (`.partir`) collé en bas du panneau.
+- Boutiques (`boutique`, moteur/village.js) : lignes compactes `ligneArticle` (nom, effet, prix ; visages de l'équipe avec `gainEq` dessous), onglet « Vendre » à la place de l'écran de vente, bourse dans l'en-tête (`show` : options `bourse`, `court` = réplique sur une ligne qui se déplie au toucher, `acts`). Fiches en fenêtre : `ficheEquipement` (comparaison par héros, « Acheter et équiper sur X » sur le meilleur gain, on peut toucher un autre héros) et `ficheObjet` (×1, ×5, ×10).
+- Équipe (`openParty`, moteur/menus.js) : en-tête compact (visage, niveau, classe, élément, jauges), onglets Équipement / Classe / Techniques ; « mieux dans le sac » et « Optimiser » (`valeurPour` : Attaque et Magie pondérées par ce que le héros a sans équipement). La bio reste dans le Codex › Personnages ; les objets de soin passent par l'Inventaire.
+- Inventaire (`openInv`) : objets en cartes, un bouton par héros avec la jauge utile (PV ou PP) ; équipement en lignes avec filtres et meilleur gain ; bourse dans l'en-tête ; plus de grand vide (`.sheet .acts` sans `margin-top:auto`).
+
 ## Version 0.6.4 (2026-10-24) : relecture des textes
 
 - Relecture complète FR (et EN en regard) : Cendre = la région (Plaines de Cendre), Forgecendre = la ville ; Nev « a à peine seize ans » au phare ; prologue « depuis cinquante ans » (la brume naît avec l'Ordre) ; l'Escalier : « ceux qui en sont redescendus n'ont rien raconté » (Orvan en est redescendu) ; Maëlle ne dit plus qu'elle aurait oublié son fils (la brume ne la touche pas) ; plus de « guerre » dans la quête de l'œuf ; conseil « essaie la classe Guerrier » retiré du message de quête (4e mur) ; accords (Vouivre, Mère-des-abysses, sentinelles).

@@ -20,8 +20,11 @@ function show(text, o = {}) {
   return new Promise(res => {
     const p = $('#panel');
     const ch = (o.choices || [{ label: esc(t('continuer')), k: 0, ic: 'run' }]).map(x => typeof x === 'string' ? { label: x, ic: 'run' } : x);
-    p.innerHTML = `${o.title ? `<div class="ptitle">${esc(o.title)}</div>` : ''}${o.who ? `<div class="who">${av(o.portrait)}<b>${esc(o.who)}</b></div>` : ''}
-      <div class="ptext">${text}</div>${o.note ? `<p class="note">${o.note}</p>` : ''}${o.tabs ? `<div class="tabs ptabs">${o.tabs.map(x => `<button class="tab txt ${x.k === o.tab ? 'on' : ''}" data-t="${x.k}">${esc(x.label)}</button>`).join('')}</div>` : ''}<div class="acts">${btns(ch)}</div>`;
+    // o.bourse : l'or à côté du nom ; o.court : la réplique tient sur une ligne (un appui la déplie) ; o.acts : classe de la liste
+    const bourse = o.bourse ? `<span class="pillv gold">${ic('coin')}${S.gold} ${esc(t('po'))}</span>` : '';
+    p.innerHTML = `${o.title ? `<div class="ptitle">${esc(o.title)}</div>` : ''}${o.who ? `<div class="who ${o.court ? 'court' : ''}">${av(o.portrait)}<div class="who-t"><b>${esc(o.who)}</b>${o.court ? `<div class="ptext ligne">${text}</div>` : ''}</div>${bourse}</div>` : ''}
+      ${o.court && o.who ? '' : `<div class="ptext">${text}</div>`}${o.note ? `<p class="note">${o.note}</p>` : ''}${o.tabs ? `<div class="tabs ptabs">${o.tabs.map(x => `<button class="tab txt ${x.cls || ''} ${x.k === o.tab ? 'on' : ''}" data-t="${x.k}">${esc(x.label)}</button>`).join('')}</div>` : ''}<div class="acts ${o.acts || ''}">${btns(ch)}</div>`;
+    const ligne = p.querySelector('.ptext.ligne'); if (ligne) ligne.onclick = () => ligne.classList.toggle('ouverte');
     let fini = false;
     const choisir = k => { if (fini) return; fini = true; document.removeEventListener('click', partout); res(k); };
     bind(p, ch, choisir);
