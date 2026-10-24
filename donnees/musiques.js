@@ -5,11 +5,11 @@ const FONDU_BOUCLE = 3;
 const MUSIQUES = {
   theme:      { fichier: 'son/theme.m4a' },                // écran d'accueil, écran titre
   lanterval:  { fichier: 'son/lanterval.m4a', sinon: 'theme' },           // village de Lanterval
-  brume:      { fichier: null, sinon: 'lanterval' },       // Lanterval tant que la lanterne n'est pas rallumée
-  salvent:    { fichier: null, sinon: 'lanterval' },
-  forgecendre:{ fichier: null, sinon: 'lanterval' },
-  aerie:      { fichier: null, sinon: 'lanterval' },
-  voyage:     { fichier: null, sinon: 'theme' },           // cartes du monde
+  brume:      { fichier: 'son/brume.m4a', sinon: 'lanterval' },       // Lanterval tant que la lanterne n'est pas rallumée
+  salvent:    { fichier: 'son/salvent.m4a', sinon: 'lanterval' },
+  forgecendre:{ fichier: 'son/forgecendre.m4a', sinon: 'lanterval' },
+  aerie:      { fichier: 'son/aerie.m4a', sinon: 'lanterval' },
+  voyage:     { fichier: 'son/voyage.m4a', sinon: 'theme' },           // cartes du monde
   vallee:     { fichier: null, sinon: 'voyage' },          // zones, par région
   cote:       { fichier: null, sinon: 'voyage' },
   cendre:     { fichier: null, sinon: 'voyage' },
