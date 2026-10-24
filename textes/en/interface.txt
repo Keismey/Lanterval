@@ -88,6 +88,33 @@ Start again from the beginning
 == titre.nouvelle.confirmer
 Confirm: new game?
 
+== titre.toucher
+Tap to start
+
+== titre.cliquer
+Click to start
+
+== retour.hub
+Back to the hub?
+
+== retour.hub.texte
+You're leaving Lanterval for the Keismey Studio hub. Your game is saved.
+
+== retour.hub.oui
+Go to the hub
+
+== retour.titre
+Back to the title screen?
+
+== retour.titre.texte
+Your game is saved, you'll pick it up right here.
+
+== retour.titre.oui
+Title screen
+
+== retour.rester
+Stay
+
 == titre.version
 Version {v} · autosave
 
@@ -1007,6 +1034,10 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.5.4
+Start screen: the Keismey Studio logo, then the game's picture and “Tap to start”.
+Phone back button: it closes windows one at a time, steps back in shops, battle menus and the map, then offers the title screen. From the title screen, it offers to go to the hub.
+The top bar fits on small phones (play time is still shown on the title screen and in the Journal).
 ## Version 0.5.3
 The finale of Lanterval: the Stair of Mist, the Nameless, then Ysold and the Eyelid of the World at the Heart of the Eye. One epilogue per hero, which changes with the side quests you finished.
 Before you climb, the game warns you: once on the Stair, no more map or village until the end. After the credits, you come back to Aerie just before the Stair, with everything you earned, and an “ending seen” star.
