@@ -16,10 +16,17 @@ const MUSIQUES = {
   vents:      { fichier: 'son/vents.m4a', sinon: 'voyage' },
   escalier:   { fichier: 'son/escalier.m4a', sinon: 'vents' },
   combat:     { fichier: 'son/combat.m4a' },
-  boss:       { fichier: null, sinon: 'combat' },
-  final:      { fichier: null, sinon: 'boss' },            // Ysold et la Paupière du monde
-  emotion:    { fichier: null, sinon: null },              // scènes (plus tard)
-  menace:     { fichier: null, sinon: null },
-  epilogue:   { fichier: null, sinon: 'theme' }            // écran de fin
+  boss:       { fichier: 'son/boss.m4a', sinon: 'combat' },
+  final:      { fichier: 'son/final.m4a', sinon: 'boss' },            // Ysold et la Paupière du monde
+  emotion:    { fichier: 'son/emotion.m4a', sinon: null },              // scènes (plus tard)
+  menace:     { fichier: 'son/menace.m4a', sinon: null },
+  epilogue:   { fichier: 'son/epilogue.m4a', sinon: 'theme' }            // écran de fin
 };
 const MUSIQUE_FINAL = ['ysold', 'paupiere'];   // le dernier combat a sa propre musique
+// panoramas de récit qui changent la musique jusqu'au retour au lieu (événement `decor`, fin de la scène ou combat)
+const PANO_MUSIQUE = {
+  vision: 'emotion', masque: 'emotion', berceuse: 'emotion', carnet: 'emotion', 'cage-hilde': 'emotion', feu: 'emotion',
+  larmes: 'emotion', cerfvolant: 'emotion', aldric: 'emotion', fleur: 'emotion',
+  insigne: 'menace', cage: 'menace', phare: 'menace', 'nev-champs': 'menace', 'ysold-azur': 'menace', ysold: 'menace', oeil: 'menace', echo: 'menace',
+  'epilogue.kael': 'epilogue', 'epilogue.mira': 'epilogue', 'epilogue.sol': 'epilogue', 'epilogue.nev': 'epilogue'
+};

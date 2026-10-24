@@ -79,6 +79,8 @@ const SON = (() => {
     return regionDe(S.loc);
   }
   function ambiance() { musique(ici()); }
+  // un panorama de récit peut changer la musique (émotion, menace, épilogue) jusqu'au retour au lieu
+  function panorama(id) { const m = PANO_MUSIQUE[String(id).replace(/^pano\./, '')]; if (m) musique(m); }
   function combat(ids, o) { musique(ids.some(id => MUSIQUE_FINAL.includes(id)) ? 'final' : o.boss ? 'boss' : 'combat'); }
 
   /* ---------- Bruitages ---------- */
@@ -99,6 +101,11 @@ const SON = (() => {
     s.connect(fl); fl.connect(g); g.connect(gSfx); s.start(t, Math.random() * .5); s.stop(t + dur + .02);
   }
   const arpege = (fs, pas, dur, type, vol, at = 0) => fs.forEach((f, i) => note(f, dur, type, vol, at + i * pas));
+  // petites voix pour les jingles : [fréquence, départ, durée]
+  const cuivre = ns => ns.forEach(([f, at, d]) => { note(f, d + .08, 'sawtooth', .045, at, .02); note(f, d + .08, 'square', .03, at, .02); note(f / 2, d + .08, 'triangle', .06, at, .02); });
+  const flute = ns => ns.forEach(([f, at, d]) => { note(f, d + .1, 'sine', .16, at, .04); note(f * 2, d, 'sine', .02, at, .04); });
+  const harpe = (fs, at, pas) => fs.forEach((f, i) => { note(f, .9, 'triangle', .09, at + i * pas, .002); note(f * 2, .4, 'sine', .03, at + i * pas, .002); });
+  const accord = (fs, at, d, vol = .06) => fs.forEach(f => note(f, d, 'triangle', vol, at, .03));
   const BRUITS = {
     clic: () => note([900, 700], .05, 'triangle', .16),
     valider: () => { note(660, .06, 'triangle', .16); note(990, .09, 'triangle', .14, .045); },
@@ -125,23 +132,27 @@ const SON = (() => {
     trouve: () => arpege([784, 988, 1175, 1568], .07, .3, 'triangle', .13),
     palier: () => { arpege([523, 659, 784, 1047, 1319], .08, .5, 'triangle', .13); note(2093, .8, 'sine', .07, .4); },
     niveau: () => { arpege([523, 659, 784], .07, .2, 'square', .06); [1047, 1319, 1568].forEach(f => note(f, .7, 'triangle', .1, .24)); },
-    // petites fanfares en attendant les jingles de Gemini
-    victoire: () => { arpege([523, 523, 523], .1, .12, 'square', .06); [392, 523, 659].forEach(f => note(f, .25, 'square', .05, .32)); [440, 587, 698].forEach(f => note(f, .25, 'square', .05, .5)); [523, 659, 784, 1047].forEach(f => note(f, .9, 'triangle', .1, .7)); },
-    defaite: () => arpege([440, 415, 392, 330], .22, .5, 'triangle', .13)
+    // jingles : de courtes phrases jouées par-dessus la musique, qui s'efface un instant
+    victoire: () => { cuivre([[523, 0, .1], [523, .12, .1], [523, .24, .1], [523, .36, .3], [415, .7, .3], [466, 1.02, .3], [523, 1.34, .25], [466, 1.62, .1], [523, 1.74, 1.1]]); accord([262, 330, 392], 1.74, 1.2); harpe([1047, 1319, 1568, 2093], 1.8, .06); },
+    defaite: () => { flute([[440, 0, .5], [415, .5, .5], [392, 1, .5], [330, 1.5, 1.4]]); accord([220, 262, 330], 1.5, 1.6, .05); },
+    quete: () => { harpe([523, 659, 784, 1047, 1319, 1568, 2093], 0, .05); cuivre([[784, .4, .25], [1047, .66, .25], [988, .92, .2], [1047, 1.12, 1]]); accord([523, 659, 784], 1.12, 1.2); },
+    objet: () => { harpe([587, 740, 880, 1175, 1480, 1760, 2349], 0, .045); note(2349, 1.4, 'sine', .08, .4, .05); note(2960, 1.2, 'sine', .05, .5, .05); accord([587, 740, 880], .35, 1.3, .05); },
+    auberge: () => { [784, 659, 587, 523, 587, 659, 523].forEach((f, i) => { note(f, .6, 'sine', .14, i * .32); note(f * 2, .3, 'sine', .03, i * .32); }); flute([[523, 2.6, .18], [659, 2.8, .18], [784, 3, .18], [1047, 3.2, .7]]); }
   };
+  const DUREE_JINGLE = { victoire: 2.6, defaite: 2.8, quete: 2.2, objet: 1.8, auberge: 3.8 };
   let dernier = {};
   function bruitage(id) {
     if (!ctx || ctx.state !== 'running' || !BRUITS[id] || !OPT.bruitages) return;
     const t = performance.now(); if (dernier[id] && t - dernier[id] < 45) return;   // pas deux fois le même au même instant
     dernier[id] = t;
-    try { BRUITS[id](); } catch (e) {}
+    try { BRUITS[id](); } catch (e) { console.warn('Bruitage', id, e); }
   }
   // les sons de musique s'effacent un instant pour laisser passer un jingle
   function jingle(id) {
     bruitage(id);
     if (!ctx) return;
     const t = ctx.currentTime; gMus.gain.cancelScheduledValues(t); gMus.gain.setValueAtTime(gMus.gain.value, t);
-    gMus.gain.linearRampToValueAtTime(niveau(OPT.musique) * .25, t + .1); gMus.gain.setTargetAtTime(niveau(OPT.musique) * .9, t + 1.8, .4);
+    gMus.gain.linearRampToValueAtTime(niveau(OPT.musique) * .25, t + .1); gMus.gain.setTargetAtTime(niveau(OPT.musique) * .9, t + (DUREE_JINGLE[id] || 1.8), .4);
   }
 
   // un appui sur un bouton fait un petit bruit (le bouton doré un peu plus marqué)
@@ -150,5 +161,5 @@ const SON = (() => {
     if (b) bruitage(b.disabled ? 'erreur' : b.classList.contains('main') ? 'valider' : 'clic');
   }, true);
 
-  return { musique, ambiance, combat, bruitage, jingle, volumes, demarrer };
+  return { musique, ambiance, panorama, combat, bruitage, jingle, volumes, demarrer };
 })();

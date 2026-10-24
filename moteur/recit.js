@@ -34,8 +34,8 @@ async function dialogue(cle, ctx, suite) {
 
 const EVENEMENTS = {
   async dialogue([cle], ctx, suite) { if (!ctx.silencieux) await dialogue(cle, ctx, suite); },
-  async panorama([id], ctx) { if (!ctx.silencieux) { setDecor(id, { pano: true }); ovc().innerHTML = ''; } },
-  async decor(a, ctx) { if (!ctx.silencieux) { setDecor(decorDuLieu(lieuActuel()), { lueur: lueurDuLieu(lieuActuel()) }); ovc().innerHTML = ''; } },
+  async panorama([id], ctx) { if (!ctx.silencieux) { setDecor(id, { pano: true }); ovc().innerHTML = ''; SON.panorama(id); } },
+  async decor(a, ctx) { if (!ctx.silencieux) { SON.ambiance(); setDecor(decorDuLieu(lieuActuel()), { lueur: lueurDuLieu(lieuActuel()) }); ovc().innerHTML = ''; } },
   async rejoint([id]) { join(id); },
   async presente([id], ctx) { if (!ctx.silencieux) await joinCard(id, id === 'kael' ? t('recit.heros') : t('recit.rejoint', { nom: t('parle.' + id) })); },
   async combat([ids, o], ctx) {
@@ -146,7 +146,7 @@ async function jouerAnnexe(id, silencieux, morceau) {
     delete S.morceaux[id];
   }
   S.annexes[id] = n + 1;
-  if (annexeFinie(id) && !silencieux) logR('journal.log.annexeFinie', { titre: id + '.titre' });
+  if (annexeFinie(id) && !silencieux) { SON.jingle('quete'); logR('journal.log.annexeFinie', { titre: id + '.titre' }); }
 }
 
 /* Générique de fin, en plein écran sur le village en paix : les lignes de « generique » apparaissent une à une

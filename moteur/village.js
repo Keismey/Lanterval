@@ -79,7 +79,7 @@ async function auberge(pnj) {
   const v = { prix: pnj.prix }, qui = pnj.portrait === 'aubergiste' ? 'auberge' : pnj.id;
   const k = await show(html(bulle(t(`pnj.${qui}.accueil`, v)).texte), { who: t('parle.' + pnj.portrait), portrait: pnj.portrait,
     choices: [{ k: 'y', label: esc(t('pnj.auberge.dormir')), sub: esc(t('pnj.auberge.dormir.sous', v)), ic: 'bed', dis: S.gold < pnj.prix }, { k: 'n', label: esc(t('retour')), ic: 'back', cls: 'ghost' }] });
-  if (k === 'y') { SON.bruitage('or'); S.gold -= pnj.prix; healAll(); restorePP(); logR('journal.log.auberge'); S.msg = tx('pnj.auberge.message'); }
+  if (k === 'y') { SON.jingle('auberge'); S.gold -= pnj.prix; healAll(); restorePP(); logR('journal.log.auberge'); S.msg = tx('pnj.auberge.message'); }
 }
 
 /* ---------- Boutiques ---------- */
