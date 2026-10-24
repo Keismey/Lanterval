@@ -1160,6 +1160,24 @@ instantané
 == options.texte.sous
 Vitesse d'affichage des dialogues
 
+== options.son
+Musique et bruitages
+
+== options.son.sous
+Musique {m} · Bruitages {b}
+
+== options.musique
+Musique
+
+== options.bruitages
+Bruitages
+
+== options.coupe
+coupé
+
+== options.son.note
+Le son démarre au premier appui et se coupe quand tu quittes le jeu.
+
 == options.combats.normaux
 Combats : vitesse normale
 
@@ -1221,6 +1239,10 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.0
+Lanterval a du son : la musique du thème à l'écran titre, celle du village de Lanterval, et celle des combats. Les autres lieux reprennent ces musiques en attendant les leurs.
+Des bruitages pour les boutons, les dialogues, les fenêtres, les coups, les faiblesses, les gardes brisées, les magies de chaque élément, les soins, l'or et les découvertes.
+Options › Musique et bruitages : deux réglages de 0 (coupé) à 10. Le son démarre au premier appui et se coupe quand tu quittes le jeu.
 ## Version 0.5.5
 Nouvel écran titre : le village en paix pour « Touche pour commencer », puis le village dans la brume sous les boutons (il reste en paix une fois la fin vue).
 Continuer indique l'acte en cours, ou « Fin » et ta complétion (exploration des zones et quêtes annexes). Nouvelle partie + apparaît une fois la fin vue.

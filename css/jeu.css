@@ -395,3 +395,8 @@ img[src^="img/"]{image-rendering:auto!important}
 .travlog li{padding:6px 10px;border-radius:10px;background:var(--surface2);border:1px solid var(--line)}
 .travlog li.now{border-color:var(--gold);color:var(--gold2)}
 .travlog b{color:var(--gold2)}
+/* Options : volumes de la musique et des bruitages */
+.vols{display:flex;flex-direction:column;gap:18px;margin:6px 0 14px}
+.vol-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.vol-h span{color:var(--gold2);font-variant-numeric:tabular-nums}
+.vol input[type=range]{width:100%;accent-color:var(--gold);height:28px;margin:0}

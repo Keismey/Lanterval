@@ -19,7 +19,7 @@ function fichiers(dossier, ext) {
 // ---------- 1. service worker ----------
 const liste = ['index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'icon-maskable.png', 'css/jeu.css',
   ...fichiers('commun', /\.js$/), ...fichiers('moteur', /\.js$/), ...fichiers('donnees', /\.js$/),
-  ...fichiers('textes', /\.txt$/), ...fichiers('polices', /\.woff2$/), ...fichiers('img', /\.(webp|png|jpg)$/)];
+  ...fichiers('textes', /\.txt$/), ...fichiers('polices', /\.woff2$/), ...fichiers('img', /\.(webp|png|jpg)$/), ...fichiers('son', /\.m4a$/)];
 const h = crypto.createHash('sha1');
 for (const f of liste) h.update(fs.readFileSync(path.join(RACINE, f)));
 const version = /VERSION = '([^']+)'/.exec(lire('moteur/base.js'))[1] + '-' + h.digest('hex').slice(0, 8);

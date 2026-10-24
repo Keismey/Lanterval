@@ -12,7 +12,7 @@ const RACINE = path.join(__dirname, '..');
 const GRAINE = +(process.argv[2] || 1);
 
 // petit serveur de fichiers pour la page
-const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.woff2': 'font/woff2', '.webmanifest': 'application/manifest+json' };
+const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.woff2': 'font/woff2', '.webmanifest': 'application/manifest+json', '.m4a': 'audio/mp4' };
 const serveur = http.createServer((req, res) => {
   const p = path.join(RACINE, decodeURIComponent(req.url.split('?')[0]).replace(/\/$/, '/index.html'));
   if (!p.startsWith(RACINE) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) { res.writeHead(404); return res.end(); }
@@ -164,10 +164,13 @@ function cerveau(graine) {
   await page.route(/cloudflareinsights/, r => r.abort());
   await page.addInitScript(() => { try { localStorage.clear(); localStorage.setItem('lanterval-options', JSON.stringify({ lang: 'fr', texte: 'instant', rapide: true })); } catch (e) {} });
   await page.goto(`http://localhost:${port}/index.html`);
-  await page.waitForFunction(() => typeof S !== 'undefined' && S && S.screen === 'title' && document.querySelector('#panel button'));
+  await page.waitForFunction(() => typeof S !== 'undefined' && S && S.screen === 'title');
+  // écran d'accueil passé : l'écran titre et ses boutons
+  await page.evaluate(() => { accueilVu = true; renderTitle(); });
+  await page.waitForFunction(() => document.querySelector('#accueil button'));
   await page.evaluate(cerveau, GRAINE);
   // nouvelle partie
-  await page.click('#panel button');
+  await page.click('#accueil button');
 
   // les dialogues : on choisit la première réponse qui n'est pas « Plus tard » ; les fenêtres se ferment
   async function repondre() {

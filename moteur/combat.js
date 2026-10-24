@@ -103,7 +103,7 @@ async function battle(ids, o) {
   for (const u of units()) u.next = 100 / spd(u) * rnd(.25, 1);
   // Talisman de l'écho : son porteur agit le premier, et sa première technique ne coûte pas de PP
   for (const h of T) if (h.eq.acc && EQUIPEMENT[h.eq.acc].echo) { h.next = 0; h.echoLibre = true; }
-  $('#app').classList.add('inb');
+  $('#app').classList.add('inb'); SON.combat(ids, o);
   setDecor(decorDuLieu(o.zone || lieuActuel()));
   poserMonstres(B.enemies);
   $('#panel').innerHTML = `<div class="pcards" id="pcards"></div><div class="msgline" id="bmsg"></div><div class="cmds" id="bcmd"></div>`;
@@ -150,7 +150,7 @@ async function battle(ids, o) {
     for (const h of B.team) h.hp = 1;
     finCombat(); return 'perdu';
   }
-  if (!aliveH().length) { bMsg(esc(t('combat.defaite'))); await wait(1100); logR('journal.log.defaite', { noms: nomsEnnemis() }); finCombat(); throw DEFAITE; }
+  if (!aliveH().length) { SON.musique(null); SON.jingle('defaite'); bMsg(esc(t('combat.defaite'))); await wait(1100); logR('journal.log.defaite', { noms: nomsEnnemis() }); finCombat(); throw DEFAITE; }
   const xp = B.enemies.reduce((a, e) => a + e.xp, 0), gold = B.enemies.reduce((a, e) => a + e.gold, 0);
   S.gold += gold;
   for (const e of B.enemies) S.codex[e.id].kills++;
@@ -170,7 +170,7 @@ async function ecranVictoire(xp, gold, avant) {
     <div class="vrows">${avant.map(({ h, lvl, xp: x0 }) => `<div class="vrow" data-h="${h.id}">${av(h.id, 'sm')}<div class="vn"><b>${esc(nomH(h))}</b><span class="vlv">${esc(t('combat.victoire.niv', { n: lvl }))}</span></div>
       <div class="vx"><div class="xtrack"><i style="width:${pc(x0, lvl)}%"></i></div><span class="vup"></span></div></div>`).join('')}</div></div>
     <div class="cmds" id="bcmd"></div>`;
-  hud();
+  hud(); SON.musique(null); SON.jingle('victoire');
   const choix = menu([{ k: 1, ic: 'run', label: esc(t('continuer')), cls: 'wide main' }]);
   // les barres se remplissent ; un niveau gagné remplit la barre, puis elle repart du nouveau niveau
   await wait(250);
@@ -179,7 +179,7 @@ async function ecranVictoire(xp, gold, avant) {
     const bar = row.querySelector('.xtrack>i');
     if (h.lvl === lvl) { bar.style.width = pc(h.xp, h.lvl) + '%'; continue; }
     bar.style.width = '100%';
-    setTimeout(() => { row.classList.add('up'); row.querySelector('.vlv').textContent = t('combat.victoire.niv', { n: h.lvl }); row.querySelector('.vup').textContent = t('combat.victoire.up', { n: h.lvl }); bar.style.transition = 'none'; bar.style.width = '0%'; void bar.offsetWidth; bar.style.transition = ''; bar.style.width = pc(h.xp, h.lvl) + '%'; }, 650);
+    setTimeout(() => { SON.bruitage('niveau'); row.classList.add('up'); row.querySelector('.vlv').textContent = t('combat.victoire.niv', { n: h.lvl }); row.querySelector('.vup').textContent = t('combat.victoire.up', { n: h.lvl }); bar.style.transition = 'none'; bar.style.width = '0%'; void bar.offsetWidth; bar.style.transition = ''; bar.style.width = pc(h.xp, h.lvl) + '%'; }, 650);
   }
   await choix;
 }
@@ -199,7 +199,7 @@ async function tournerCristal(e) {
   bMsg(tx('combat.cristal', { nom: e.name, cristal: t('combat.cristal.' + cristalDe(e).c) })); bOverlay(); await wait(850);
 }
 function mkInvite(id) { const h = HEROS[id], c = { id, lvl: char('kael').lvl, xp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure, acc: null }, invite: true }; fullC(c); return c; }
-function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; delete h.saut; delete h.oubli; delete h.echoLibre; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); }
+function finCombat() { for (const h of B.team) { delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; delete h.saut; delete h.oubli; delete h.echoLibre; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); SON.ambiance(); }
 function gainXP(x) {
   const ups = [];
   for (const h of team()) {
@@ -250,12 +250,12 @@ async function heroCommand(h) {
 }
 
 /* ---------- Coups et effets ---------- */
-function heroFx(h, texte, cls) { const c = document.querySelector(`.pcard[data-h="${h.id}"]`); if (!c) return; const d = document.createElement('div'); d.className = 'fnum ' + (cls || ''); d.innerHTML = texte; c.appendChild(d); setTimeout(() => d.remove(), 1000); }
+function heroFx(h, texte, cls) { if (cls === 'heal') SON.bruitage(/^\+\d+$/.test(texte) ? 'soin' : 'bonus'); const c = document.querySelector(`.pcard[data-h="${h.id}"]`); if (!c) return; const d = document.createElement('div'); d.className = 'fnum ' + (cls || ''); d.innerHTML = texte; c.appendChild(d); setTimeout(() => d.remove(), 1000); }
 // corrode (Corrosion de l'Alchimiste) : enlève un point de garde même sans faiblesse ; aerien : touche un monstre en l'air (Saut)
 async function strike(e, els, base, mult, brise = 1.5, corrode = false, aerien = false) {
   if (e.dort) e.dort = false;
   // en l'air (envol) : seul le Vent l'atteint, ou un héros qui saute
-  if (e.air && !els.includes('V') && !aerien) { const [x, y] = epos(e); fx(x, y, esc(t('combat.fx.rate')), 'res'); return esc(t('combat.air.rate', { nom: e.name })); }
+  if (e.air && !els.includes('V') && !aerien) { const [x, y] = epos(e); fx(x, y, esc(t('combat.fx.rate')), 'res'); SON.bruitage('rate'); return esc(t('combat.air.rate', { nom: e.name })); }
   const weak = els.some(x => e.weak.includes(x)), res = !weak && els.some(x => e.res.includes(x));
   let m = mult, cls = '', tag = '';
   if (weak) { m *= 1.5; els.filter(x => e.weak.includes(x)).forEach(x => reveal(e.id, x)); cls = 'weak'; tag = t('combat.faiblesse') + ' '; if (!e.broken) { e.shield--; if (!B.inUnion) B.union = Math.min(3, B.union + 1); } }
@@ -264,15 +264,17 @@ async function strike(e, els, base, mult, brise = 1.5, corrode = false, aerien =
   if (e.broken) m *= brise;
   const dmg = Math.max(1, Math.round(base * rnd(.9, 1.1) * m));
   e.hp = Math.max(MONSTRES[e.id].intouchable || MONSTRES[e.id].fin ? 1 : 0, e.hp - dmg);
-  const [x, y] = epos(e); fx(x, y, dmg, cls); await hitFlash(e);
+  const [x, y] = epos(e); fx(x, y, dmg, cls); SON.bruitage(weak ? 'faiblesse' : res ? 'resiste' : 'coup');
+  for (const x of els) if ('TFEV'.includes(x)) { SON.bruitage('el' + x); break; }
+  await hitFlash(e);
   let line = esc(tag + t('combat.perd', { nom: e.name, n: dmg }));
   if ((weak || corrode) && e.shield <= 0 && !e.broken && e.hp > 0) {
-    e.broken = true; e.next += 50 / e.spd; fx(x, y - 10, esc(t('combat.fx.brise')), 'brk'); if (!B.inUnion) B.union = Math.min(3, B.union + 1);
+    e.broken = true; e.next += 50 / e.spd; fx(x, y - 10, esc(t('combat.fx.brise')), 'brk'); SON.bruitage('brise'); if (!B.inUnion) B.union = Math.min(3, B.union + 1);
     line += ' ' + tx('combat.brise');
     if (e.air) { e.air = false; line += ' ' + tx('combat.air.chute', { nom: e.name }); }
     if (e.charged) { e.charged = false; line += ' ' + tx('combat.charge.annulee'); }
   }
-  if (e.hp <= 0) { e.dying = true; line += ' ' + esc(t(MONSTRES[e.id].f ? 'combat.vaincue' : 'combat.vaincu', { nom: e.name })); bOverlay(); await wait(200); e.dying = false; }
+  if (e.hp <= 0) { e.dying = true; SON.bruitage('vaincu'); line += ' ' + esc(t(MONSTRES[e.id].f ? 'combat.vaincue' : 'combat.vaincu', { nom: e.name })); bOverlay(); await wait(200); e.dying = false; }
   bOverlay();
   return line;
 }
@@ -319,7 +321,7 @@ async function heroAct(h, a) {
     bMsg(line); await wait(650); return .8;
   }
   if (a.type === 'union') {
-    B.union = 0; B.streak++; B.inUnion = true;
+    B.union = 0; B.streak++; B.inUnion = true; SON.bruitage('union');
     bMsg(tx('combat.union.texte')); await wait(450);
     const lines = [];
     for (const e of aliveE()) for (const m of aliveH()) {
@@ -412,12 +414,12 @@ async function atterrir(h) {
 // renvoie les dégâts, ou null si le héros a esquivé
 async function dmgHero(c, raw) {
   const s = hs(c);
-  if (c.esquive) { c.esquive = false; bCards(); heroFx(c, esc(t('combat.esquive.court')), 'heal'); await wait(160); return null; }
+  if (c.esquive) { c.esquive = false; SON.bruitage('rate'); bCards(); heroFx(c, esc(t('combat.esquive.court')), 'heal'); await wait(160); return null; }
   let d = Math.max(1, Math.round((raw - s.def * (c.rage > 0 ? .7 : 1) * (c.taunt ? .9 : .6)) * rnd(.9, 1.1)));
   if (c.guard) d = Math.max(1, Math.round(d / 2));
   if (B.wall && B.wall.hp > 0) d = Math.max(1, Math.round(d / 2));
   if (B.sceau > 0) d = Math.max(1, Math.round(d * 2 / 3));
-  c.hp = Math.max(0, c.hp - d); bCards(); heroFx(c, d, ''); await hitFlash(c);
+  c.hp = Math.max(0, c.hp - d); bCards(); heroFx(c, d, ''); SON.bruitage(c.hp ? 'recu' : 'ko'); await hitFlash(c);
   return d;
 }
 
