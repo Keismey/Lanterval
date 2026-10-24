@@ -1,5 +1,11 @@
 # État du projet
 
+## Version 0.5.4 (2026-10-24) : peaufinage
+
+- Demande de Keismey : écran d'accueil comme ses autres jeux (même principe qu'Abysses) : au lancement, logo Keismey Studio sur fond noir (2,3 s, un appui le passe), puis l'image du jeu (`pano.ouverture`, fond flouté) avec le titre et « Touche pour commencer » (« Clique » à la souris) ; un appui ouvre l'écran titre habituel (Continuer / Nouvelle partie). `splash()` dans moteur/jeu.js, logo dans img/studio/keismey-studio.webp (copie de celui d'Abysses).
+- Bouton retour du téléphone (`retour()` dans moteur/jeu.js) : ferme la fenêtre « Sauvegarde », remonte d'un cran dans une fenêtre (`#m-back`, puis bouton « Retour » de la fenêtre, puis la croix), passe l'écran d'accueil, appuie sur le bouton « Retour » du panneau s'il y en a un (`data-back` posé par `btns` sur les boutons à icône `back` : boutiques, auberge, menus de combat, carte, refus d'une quête) ; sinon rien pendant un dialogue ou un combat ; écran de jeu → fenêtre « Revenir à l'écran titre ? » ; écran titre → « Retourner au hub ? ». `confirmer(cle, oui)` pour ces fenêtres.
+- Demande de Keismey : le bouton Options sortait de l'écran à droite sur son téléphone : le temps de jeu quitte la barre du haut (il reste sur l'écran titre, dans le Journal et le bilan de fin), et la bourse peut se réduire.
+
 ## Version 0.5.3 (2026-10-23) : le final
 
 - Plan validé par Keismey (« Ok pour tout », 2026-10-23) : https://claude.ai/artifact/NjYEq1ntrxxS94XnKeHMHo

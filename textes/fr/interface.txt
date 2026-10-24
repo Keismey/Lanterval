@@ -93,6 +93,33 @@ Recommencer depuis le début
 == titre.nouvelle.confirmer
 Confirmer : nouvelle partie ?
 
+== titre.toucher
+Touche pour commencer
+
+== titre.cliquer
+Clique pour commencer
+
+== retour.hub
+Retourner au hub ?
+
+== retour.hub.texte
+Tu quittes Lanterval pour le hub Keismey Studio. Ta partie est sauvegardée.
+
+== retour.hub.oui
+Aller au hub
+
+== retour.titre
+Revenir à l'écran titre ?
+
+== retour.titre.texte
+Ta partie est sauvegardée, tu la reprendras ici.
+
+== retour.titre.oui
+Écran titre
+
+== retour.rester
+Rester
+
 == titre.version
 Version {v} · sauvegarde automatique
 
@@ -1185,6 +1212,10 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.5.4
+Écran d'accueil : le logo Keismey Studio, puis l'image du jeu et « Touche pour commencer ».
+Bouton retour du téléphone : il ferme les fenêtres une par une, revient en arrière dans les boutiques, les menus de combat et la carte, puis propose l'écran titre. Depuis l'écran titre, il propose d'aller au hub.
+La barre du haut tient sur les petits téléphones (le temps de jeu reste affiché sur l'écran titre et dans le Journal).
 ## Version 0.5.3
 Le final de Lanterval : l'Escalier de brume, le Sans-Nom, puis Ysold et la Paupière du monde au Cœur de l'Œil. Un épilogue par héros, qui change selon les quêtes annexes finies.
 Avant de monter, le jeu te prévient : une fois sur l'Escalier, plus de carte ni de village jusqu'à la fin. Après le générique, tu reviens à Aerie juste avant l'Escalier, avec tout ce que tu as gagné, et une étoile « fin vue ».

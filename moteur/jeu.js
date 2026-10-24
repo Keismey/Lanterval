@@ -108,17 +108,52 @@ document.addEventListener('click', e => { if (S && S.screen !== 'title' && e.tar
 setInterval(() => {
   if (!S || S.screen === 'title' || document.hidden) return;
   S.st.time++;
-  const tm = $('#tm'); if (tm) tm.innerHTML = ic('clock') + fmt(S.st.time);
 }, 1000);
 window.addEventListener('pagehide', () => { if (S && S.screen !== 'title' && S.screen !== 'intro') save(); });
 
+// Bouton retour du téléphone (et touche Échap) : on remonte d'un cran à la fois.
+// fenêtre ouverte → son écran précédent, ou on la ferme ; menu avec un bouton « Retour » (boutique, combat, carte…) → ce bouton ;
+// dialogue ou combat en cours → rien ; écran de jeu → proposer l'écran titre ; écran titre → proposer le hub.
 function retour() {
   if (KS.closeDialog()) return;
-  if (modalOuverte()) { if (TW) TW(); fermerFenetre(); return; }
+  if (modalOuverte()) {
+    if (TW) TW();
+    const m = $('#modal'), b = m.querySelector('#m-back') || [...m.querySelectorAll('button[data-back]')].pop() || m.querySelector('#mclose');
+    if (b && !b.disabled) b.click(); else fermerFenetre();
+    return;
+  }
+  if ($('#spl')) { passerSplash(); return; }
+  const rb = [...$('#panel').querySelectorAll('button[data-back]')].filter(b => !b.disabled).pop();
+  if (rb) { if (TW) TW(); rb.click(); return; }
   if (busy || B || !S) return;
-  if (S.screen === 'title') return 'hub';
+  if (S.screen === 'title') { confirmer('retour.hub', () => KSBack.toHub()); return; }
   if (S.screen === 'map') { S.screen = LIEUX[lieuActuel()].type === 'village' ? 'village' : 'zone'; renderStable(); return; }
-  save(); S.screen = 'title'; renderStable();
+  confirmer('retour.titre', () => { save(); S.screen = 'title'; renderStable(); });
+}
+// petite fenêtre « Oui / Non » ; le bouton retour la ferme (Non)
+function confirmer(cle, oui) {
+  const sh = modal(sheetHead(t(cle)) + `<p class="ptext">${tx(cle + '.texte')}</p><div class="acts">
+    <button class="btn main wide" id="m-oui"><span class="tx"><span>${esc(t(cle + '.oui'))}</span></span></button>
+    <button class="btn ghost wide" id="m-back"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('retour.rester'))}</span></span></button></div>`);
+  sh.querySelector('#mclose').onclick = sh.querySelector('#m-back').onclick = closeModal;
+  sh.querySelector('#m-oui').onclick = () => { closeModal(); oui(); };
+}
+
+/* ---------- Écran d'accueil : logo Keismey Studio, puis l'image du jeu « Touche pour commencer » ---------- */
+function splash() {
+  const d = document.createElement('div'), fin = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  d.id = 'spl';
+  d.innerHTML = `<div class="tt"><img class="fond" alt="" src="${imgSrc('pano.ouverture')}"><div class="haut"><h1>Lanterval</h1><span>${esc(t('titre.sous'))}</span></div>
+    <img class="pano" alt="" src="${imgSrc('pano.ouverture')}"><p class="go">${esc(t(fin ? 'titre.cliquer' : 'titre.toucher'))}</p></div>
+    <div class="lg"><img alt="Keismey Studio" src="img/studio/keismey-studio.webp"></div>`;
+  document.body.appendChild(d);
+  setTimeout(passerLogo, 2300);
+  d.addEventListener('click', e => { e.stopPropagation(); passerSplash(); });
+}
+function passerLogo() { const d = $('#spl'); if (!d || d.dataset.etape) return false; d.dataset.etape = 'titre'; const lg = d.querySelector('.lg'); lg.style.opacity = 0; setTimeout(() => lg.remove(), 700); return true; }
+function passerSplash() {
+  const d = $('#spl'); if (!d || passerLogo() || d.dataset.etape === 'fin') return;
+  d.dataset.etape = 'fin'; d.classList.add('out'); setTimeout(() => d.remove(), 650);
 }
 
 /* ---------- Démarrage ---------- */
@@ -134,5 +169,6 @@ function retour() {
   KSBack.init({ back: retour, lang: () => LANG });
   if (document.fonts && document.fonts.ready) await document.fonts.ready;
   renderStable();
+  splash();
   $('#app').classList.add('pret');
 })();
