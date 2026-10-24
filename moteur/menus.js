@@ -8,57 +8,78 @@ function diffTxt(a, b) {
 function utiliserObjet(k, h) { const it = OBJETS[k], s = stats(h); S.inv[k]--; if (it.hp) h.hp = Math.min(s.hp, h.hp + it.hp); if (it.pp) h.pp = Math.min(s.pp, h.pp + it.pp); save(); hud(); }
 
 /* ---------- Équipe ---------- */
+// valeur d'un équipement complet pour la classe du héros : sert à « Optimiser »
+function valeurPour(h, eq) {
+  // Attaque et Magie comptent selon ce que le héros sait faire sans équipement (Kael frappe, Mira lance des sorts)
+  const s = stats({ ...h, eq }), nu = stats({ ...h, eq: {} }), m = Math.max(nu.atk, nu.mag), w = k => Math.pow(nu[k] / m, 2);
+  return s.hp * .25 + s.pp * .3 + s.atk * w('atk') + s.mag * w('mag') + s.def + s.spd;
+}
+// le meilleur du sac pour chaque emplacement, en gardant ce qu'il porte si rien n'est mieux
+function optimiser(h) {
+  const pris = [];
+  for (const p of PLACES_EQ) {
+    let mieux = h.eq[p], v = valeurPour(h, h.eq);
+    for (const id of Object.keys(S.bag).filter(k => S.bag[k] > 0 && EQUIPEMENT[k].place === p && canWear(h, k))) {
+      const w = valeurPour(h, { ...h.eq, [p]: id });
+      if (w > v + 1e-9) { v = w; mieux = id; }
+    }
+    if (mieux !== h.eq[p]) { if (h.eq[p]) addEq(h.eq[p]); S.bag[mieux]--; h.eq[p] = mieux; pris.push(nomEq(mieux)); }
+  }
+  clampC(h); save();
+  return pris;
+}
+function mieuxDansSac(h, p) { return Object.keys(S.bag).some(k => S.bag[k] > 0 && EQUIPEMENT[k].place === p && canWear(h, k) && valeurPour(h, { ...h.eq, [p]: k }) > valeurPour(h, h.eq) + 1e-9); }
+
 function openParty() {
-  const T = team(); let cur = T[0].id, vue = 'main', place = null, note = '';
+  const T = team(); let cur = T[0].id, vue = 'main', place = null, note = '', onglet = 'eq';
   const draw = () => {
     const h = char(cur), s = stats(h), el = HEROS[cur].el, nom = t('parle.' + cur);
     let body = '';
     if (vue === 'main') {
-      body = `<div class="join">${av(cur, 'lg')}<div><div class="jn">${esc(nom)} <small class="niv">${esc(t('equipe.niveau', { n: h.lvl }))}</small></div>
-        <div class="chips">${elChip(el)}<span class="pill">${esc(t('element.' + el))}</span><span class="pill">${esc(t('classe.' + h.job))}</span><span class="pill">${esc(t('heros.' + cur + '.age'))}</span></div><p class="note">${tx('heros.' + cur + '.bio')}</p></div></div>
-      ${note ? `<div class="msgline">${note}</div>` : ''}
-      <div class="jauges">${[['hp', t('stat.hp'), h.hp, s.hp], ['pp', t('stat.pp'), h.pp, s.pp], ['xp', t('equipe.xp'), h.xp, need(h.lvl)]].map(([k, n, v, m]) => `<div class="jauge" data-st="${k}"><div class="pc-v"><span>${esc(n)}</span><b>${v}/${m}</b></div><div class="bar ${k} ${k === 'hp' && v / m < .3 ? 'low' : ''}"><i style="width:${v / m * 100}%"></i></div></div>`).join('')}</div>
+      body = `<div class="etete">${av(cur, 'lg')}<div class="etete-d"><div><b class="jn">${esc(nom)}</b> <small class="note">${esc(t('equipe.niveau', { n: h.lvl }) + ' · ' + t('classe.' + h.job) + ' · ' + t('element.' + el))}</small></div>
+        <div class="jauges mini">${[['hp', t('stat.hp'), h.hp, s.hp], ['pp', t('stat.pp'), h.pp, s.pp], ['xp', t('equipe.xp'), h.xp, need(h.lvl)]].map(([k, n, v, m]) => `<div class="jauge" data-st="${k}"><span>${esc(n)}</span><div class="bar ${k} ${k === 'hp' && v / m < .3 ? 'low' : ''}"><i style="width:${v / m * 100}%"></i></div><b>${v}/${m}</b></div>`).join('')}</div></div></div>
       <div class="statg q4">${['atk', 'mag', 'def', 'spd'].map(k => `<div class="st" data-st="${k}"><span>${esc(t('stat.' + k))}</span><b>${s[k]}</b></div>`).join('')}</div>
       <p class="note" id="m-stinfo">${esc(t('equipe.stat.toucher'))}</p>
-      <h3 class="sec">${esc(t('equipe.classe'))}</h3><div class="acts" id="m-job"></div>
-      <h3 class="sec">${esc(t('equipe.equipement'))}</h3><div class="acts" id="m-eq"></div>
-      <h3 class="sec">${esc(t('equipe.techniques'))}</h3><div class="list">${CLASSES[h.job].tech.map(id => `<p class="note"><b class="clair">${esc(t('tech.' + id))}</b> · ${TECHNIQUES[id].pp} ${esc(t('stat.pp'))} · ${tx('tech.' + id + '.desc')}</p>`).join('')}</div>
-      <h3 class="sec">${esc(t('equipe.sac'))}</h3><div class="acts" id="m-items"></div>`;
-    } else body = `<p class="note">${vue === 'job' ? tx('equipe.classe.aide', { nom, el: t('element.' + el) }) : tx('equipe.place.aide', { place: t('place.' + place), nom, classe: t('classe.' + h.job) })}</p><div class="acts" id="m-list"></div>
+      ${note ? `<div class="msgline">${note}</div>` : ''}
+      <div class="tabs souso">${[['eq', 'equipe.equipement'], ['job', 'equipe.classe'], ['tech', 'equipe.techniques']].map(([k, c]) => `<button class="tab txt ${onglet === k ? 'on' : ''}" data-o="${k}">${esc(t(c))}</button>`).join('')}</div>
+      ${onglet === 'tech' ? `<div class="list">${CLASSES[h.job].tech.map(id => `<p class="note"><b class="clair">${esc(t('tech.' + id))}</b> · ${TECHNIQUES[id].pp} ${esc(t('stat.pp'))} · ${tx('tech.' + id + '.desc')}</p>`).join('')}</div>` : `<div class="acts" id="m-list"></div>`}
+      ${onglet === 'eq' ? `<div class="acts bas"><button class="btn side wide" id="m-opt"><span class="ic">${ic('star')}</span><span class="tx"><span>${esc(t('equipe.optimiser', { nom }))}</span></span></button></div>` : ''}`;
+    } else body = `<p class="note">${tx('equipe.place.aide', { place: t('place.' + place), nom, classe: t('classe.' + h.job) })}</p><div class="acts" id="m-list"></div>
       <div class="acts"><button class="btn ghost wide" id="m-back"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('retour'))}</span></span></button></div>`;
-    const titre = vue === 'main' ? t('menu.equipe') : vue === 'job' ? t('equipe.changer.classe') : t('equipe.changer', { place: t('place.' + place) });
+    const titre = vue === 'main' ? t('menu.equipe') : t('equipe.changer', { place: t('place.' + place) });
     const sh = modal('grand', sheetHead(titre) + `<div class="tabs">${T.map(x => `<button class="tab ${x.id === cur ? 'on' : ''}" data-c="${x.id}">${av(x.id, 'sm')}${esc(t('parle.' + x.id))}</button>`).join('')}</div>` + body);
     note = '';
     sh.querySelector('#mclose').onclick = fermerFenetre;
-    sh.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { cur = b.dataset.c; draw(); });
+    sh.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { cur = b.dataset.c; vue = 'main'; draw(); });
     if (vue !== 'main') sh.querySelector('#m-back').onclick = () => { vue = 'main'; draw(); };
+    const ml = sh.querySelector('#m-list');
     if (vue === 'main') {
       sh.querySelectorAll('[data-st]').forEach(x => x.onclick = () => {
         sh.querySelectorAll('[data-st]').forEach(y => y.classList.toggle('on', y === x));
         sh.querySelector('#m-stinfo').innerHTML = `<b class="clair">${esc(t(x.dataset.st === 'xp' ? 'equipe.xp' : 'stat.' + x.dataset.st))}</b> : ${esc(t('stat.' + x.dataset.st + '.aide'))}`;
       });
-      const jo = [{ k: 'job', ic: 'star', label: esc(t('classe.' + h.job)), sub: esc(t('classe.' + h.job + '.desc') + ' ' + t('equipe.toucher')), cls: 'wide' }];
-      const mj = sh.querySelector('#m-job'); mj.innerHTML = btns(jo); bind(mj, jo, () => { vue = 'job'; draw(); });
-      const eo = PLACES_EQ.map(p => { const id = h.eq[p]; return { k: p, ic: icPlace(p), label: esc(id ? nomEq(id) : t('equipe.rien')), sub: esc(t('place.' + p) + (id ? ' · ' + stTxt(EQUIPEMENT[id].st, EQUIPEMENT[id].el) : '')) }; });
-      const me = sh.querySelector('#m-eq'); me.innerHTML = btns(eo); bind(me, eo, k => { place = k; vue = 'place'; draw(); });
-      const io = Object.keys(OBJETS).filter(k => S.inv[k] > 0).map(k => ({ k, ic: 'heart', label: esc(`${t('objet.' + k)} ×${S.inv[k]}`), sub: esc(t('objet.' + k + '.desc') + ' · ' + t('equipe.utiliser', { nom })) }));
-      const mi = sh.querySelector('#m-items'); mi.innerHTML = io.length ? btns(io) : `<p class="note">${esc(t('equipe.sac.vide'))}</p>`;
-      bind(mi, io, k => { utiliserObjet(k, h); draw(); });
-    }
-    if (vue === 'job') {
-      const o = classesJouables().map(j => {
-        const J = CLASSES[j];
-        if (!S.jobs.includes(j)) return { k: j, ic: 'lock', label: esc(J.cachee ? '???' : t('classe.' + j)), sub: esc(existe('classe.' + j + '.verrou') ? t('classe.' + j + '.verrou') : t('equipe.verrouillee')), dis: true };
-        const tmp = { ...h, job: j, eq: { ...h.eq } };
-        for (const p of ['arme', 'armure']) if (tmp.eq[p] && !canWear(tmp, tmp.eq[p], j)) tmp.eq[p] = null;
-        return { k: j, ic: 'star', label: esc(t('classe.' + j)) + (j === h.job ? ' ' + esc(t('equipe.actuelle')) : ''), sub: esc(t('classe.' + j + '.desc')) + (j === h.job ? '' : ' ' + diffTxt(s, stats(tmp))), dis: j === h.job };
-      });
-      const el = sh.querySelector('#m-list'); el.innerHTML = btns(o);
-      bind(el, o, j => {
-        h.job = j; let msg = '';
-        for (const p of ['arme', 'armure']) { const id = h.eq[p]; if (id && !canWear(h, id)) { addEq(id); h.eq[p] = null; msg += ' ' + t('equipe.retour.sac', { nom: nomEq(id) }); } }
-        clampC(h); save(); note = esc(t('equipe.devient', { nom, classe: t('classe.' + j) }) + msg); vue = 'main'; draw();
-      });
+      sh.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { onglet = b.dataset.o; draw(); });
+      if (onglet === 'eq') {
+        const eo = PLACES_EQ.map(p => { const id = h.eq[p]; return { k: p, ic: icPlace(p), label: esc(id ? nomEq(id) : t('equipe.rien')), sub: esc(t('place.' + p) + (id ? ' · ' + stTxt(EQUIPEMENT[id].st, EQUIPEMENT[id].el) : ' · ' + t('equipe.choisir'))) + (mieuxDansSac(h, p) ? ` <b class="up">${esc(t('equipe.mieux'))}</b>` : ''), cls: 'wide' }; });
+        ml.innerHTML = btns(eo); bind(ml, eo, k => { place = k; vue = 'place'; draw(); });
+        sh.querySelector('#m-opt').onclick = () => { const pris = optimiser(h); note = esc(pris.length ? t('equipe.optimise', { nom, liste: pris.join(', ') }) : t('equipe.optimise.rien', { nom })); draw(); };
+      }
+      if (onglet === 'job') {
+        const o = classesJouables().map(j => {
+          const J = CLASSES[j];
+          if (!S.jobs.includes(j)) return { k: j, ic: 'lock', label: esc(J.cachee ? '???' : t('classe.' + j)), sub: esc(existe('classe.' + j + '.verrou') ? t('classe.' + j + '.verrou') : t('equipe.verrouillee')), dis: true };
+          const tmp = { ...h, job: j, eq: { ...h.eq } };
+          for (const p of ['arme', 'armure']) if (tmp.eq[p] && !canWear(tmp, tmp.eq[p], j)) tmp.eq[p] = null;
+          return { k: j, ic: 'star', label: esc(t('classe.' + j)) + (j === h.job ? ' ' + esc(t('equipe.actuelle')) : ''), sub: esc(t('classe.' + j + '.desc')) + (j === h.job ? '' : ' ' + diffTxt(s, stats(tmp))), cls: j === h.job ? 'main' : '' };
+        });
+        ml.innerHTML = btns(o);
+        bind(ml, o, j => {
+          if (j === h.job) return;
+          h.job = j; let msg = '';
+          for (const p of ['arme', 'armure']) { const id = h.eq[p]; if (id && !canWear(h, id)) { addEq(id); h.eq[p] = null; msg += ' ' + t('equipe.retour.sac', { nom: nomEq(id) }); } }
+          clampC(h); save(); note = esc(t('equipe.devient', { nom, classe: t('classe.' + j) }) + msg); draw();
+        });
+      }
     }
     if (vue === 'place') {
       const actuel = h.eq[place];
@@ -68,15 +89,14 @@ function openParty() {
         return { k: id, ic: icPlace(place), label: esc(`${nomEq(id)} ×${S.bag[id]}`), sub: ok ? diffTxt(s, stats(tmp)) : esc(EQUIPEMENT[id].heros && EQUIPEMENT[id].heros !== h.id ? t('equipe.pas.heros', { nom: t('parle.' + EQUIPEMENT[id].heros) }) : t('equipe.pas.pour', { classe: t('classe.' + h.job), qui: wearers(id) })), dis: !ok };
       });
       if (actuel) o.unshift({ k: '__off', ic: 'x', label: esc(t('equipe.retirer')), sub: esc(t('equipe.retour.sac', { nom: nomEq(actuel) })) + ' · ' + diffTxt(s, stats({ ...h, eq: { ...h.eq, [place]: null } })), cls: 'ghost' });
-      const el = sh.querySelector('#m-list'); el.innerHTML = o.length ? btns(o) : `<p class="note">${esc(t('equipe.place.vide'))}</p>`;
-      bind(el, o, id => { if (actuel) addEq(actuel); if (id === '__off') h.eq[place] = null; else { S.bag[id]--; h.eq[place] = id; } clampC(h); save(); vue = 'main'; draw(); });
+      ml.innerHTML = o.length ? btns(o) : `<p class="note">${esc(t('equipe.place.vide'))}</p>`;
+      bind(ml, o, id => { if (actuel) addEq(actuel); if (id === '__off') h.eq[place] = null; else { S.bag[id]--; h.eq[place] = id; } clampC(h); save(); vue = 'main'; draw(); });
     }
   };
   draw();
 }
 
 /* ---------- Inventaire ---------- */
-function irow(icon, name, sub, qty, cls) { return `<div class="irow ${cls || ''}"><span class="ic">${ic(icon)}</span><div><b>${name}</b>${sub ? `<small>${sub}</small>` : ''}</div><span class="qty">${qty || ''}</span></div>`; }
 function importants() {
   return Object.keys(IMPORTANTS).filter(id => S.imp.includes(id)).map(id => {
     const m = IMPORTANTS[id].mystere, cache = m && !cond(m);
@@ -84,37 +104,45 @@ function importants() {
   });
 }
 function openInv(tab) {
-  let pour = null, note = '';
+  let note = '', filtre = 'tout';
   const draw = () => {
     let body = '';
     if (tab === 'obj') {
       const ks = Object.keys(OBJETS).filter(k => S.inv[k] > 0);
-      if (pour) body = `<p class="note">${esc(t('combat.cible.allie', { quoi: t('objet.' + pour) }))}</p><div class="acts" id="i-who"></div>`;
-      else body = (note ? `<div class="msgline">${note}</div>` : '') + (ks.length ? `<div class="acts" id="i-list"></div><p class="note">${esc(t(B ? 'inventaire.combat' : 'inventaire.toucher'))}</p>` : `<p class="note">${esc(t('inventaire.vide'))}</p>`);
+      body = (note ? `<div class="msgline">${note}</div>` : '') + (ks.length ? `<p class="note">${esc(t(B ? 'inventaire.combat' : 'inventaire.visage'))}</p><div class="list">${ks.map(k => {
+        const it = OBJETS[k];
+        // la jauge qui compte pour cet objet : PV pour un soin, PP pour un tonique
+        const qui = team().map(h => {
+          const s = stats(h), pv = it.hp && !it.pp, v = pv || it.hp ? [h.hp, s.hp, 'stat.hp'] : [h.pp, s.pp, 'stat.pp'];
+          const plein = (!it.hp || h.hp >= s.hp) && (!it.pp || h.pp >= s.pp);
+          return `<button class="hdon ${plein ? 'plein' : ''}" data-u="${k}" data-h="${h.id}" ${B ? 'disabled' : ''}><img alt="" src="${vignette(h)}"><span><b>${esc(nomH(h))}</b><small>${v[0]}/${v[1]} ${esc(t(v[2]))}</small></span></button>`;
+        }).join('');
+        return `<div class="objc"><div class="objc-h"><b>${esc(`${t('objet.' + k)} ×${S.inv[k]}`)}</b><span class="note">${esc(t('objet.' + k + '.desc'))}</span></div><div class="hdons">${qui}</div></div>`;
+      }).join('')}</div>` : `<p class="note">${esc(t('inventaire.vide'))}</p>`);
     } else if (tab === 'eq') {
-      const sac = Object.keys(S.bag).filter(k => S.bag[k] > 0), porte = [];
-      for (const h of team()) for (const p of PLACES_EQ) if (h.eq[p]) porte.push([h, p, h.eq[p]]);
-      body = `<h3 class="sec">${esc(t('inventaire.sac'))}</h3><div class="list">${sac.length ? sac.map(k => irow(icPlace(EQUIPEMENT[k].place), esc(nomEq(k)), esc(`${t('place.' + EQUIPEMENT[k].place)} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)} · ${wearers(k)}`), '×' + S.bag[k])).join('') : `<p class="note">${esc(t('inventaire.sac.vide'))}</p>`}</div>
-        <h3 class="sec">${esc(t('inventaire.porte'))}</h3><div class="list">${porte.map(([h, p, k]) => irow(icPlace(p), esc(nomEq(k)), esc(`${t('parle.' + h.id)} · ${t('place.' + p)} · ${stTxt(EQUIPEMENT[k].st, EQUIPEMENT[k].el)}`))).join('')}</div>
+      const garde = id => filtre === 'tout' || EQUIPEMENT[id].place === filtre;
+      const sac = Object.keys(S.bag).filter(k => S.bag[k] > 0 && garde(k)), porte = [];
+      for (const h of team()) for (const p of PLACES_EQ) if (h.eq[p] && garde(h.eq[p])) porte.push([h, h.eq[p]]);
+      const ligne = (id, n, droite) => `<div class="eqr"><b>${esc(nomEq(id))}${n ? ' ×' + n : ''}</b><span class="note">${esc(stTxt(EQUIPEMENT[id].st, EQUIPEMENT[id].el))}</span>${droite}</div>`;
+      const meilleur = id => { const g = team().map(h => [h, gainEq(h, id)]).filter(([, g]) => g !== null && g > 0).sort((a, b) => b[1] - a[1])[0]; return g ? `<span class="up">${esc(nomH(g[0]))} +${g[1]}</span>` : ''; };
+      body = `<div class="tabs filtres">${['tout', ...PLACES_EQ].map(f => `<button class="tab txt ${filtre === f ? 'on' : ''}" data-f="${f}">${esc(t(f === 'tout' ? 'inventaire.tout' : 'boutique.onglet.' + f))}</button>`).join('')}</div>
+        <h3 class="sec">${esc(t('inventaire.sac'))}</h3><div class="list">${sac.length ? sac.map(k => ligne(k, S.bag[k], meilleur(k))).join('') : `<p class="note">${esc(t('inventaire.sac.vide'))}</p>`}</div>
+        <h3 class="sec">${esc(t('inventaire.porte'))}</h3><div class="list">${porte.map(([h, k]) => ligne(k, 0, `<span class="note">${esc(t('inventaire.porte.par', { nom: nomH(h) }))}</span>`)).join('')}</div>
         <p class="note">${esc(t('inventaire.eq.aide'))}</p>`;
     } else {
       const k = importants();
-      body = `<div class="list">${k.length ? k.map(([n, d]) => irow('star', esc(n), html(d), '', 'key')).join('') : `<p class="note">${esc(t('inventaire.imp.vide'))}</p>`}</div>`;
+      body = `<div class="list">${k.length ? k.map(([n, d]) => `<div class="irow key"><span class="ic">${ic('star')}</span><div><b>${esc(n)}</b><small>${html(d)}</small></div><span></span></div>`).join('') : `<p class="note">${esc(t('inventaire.imp.vide'))}</p>`}</div>`;
     }
-    const sh = modal('grand', sheetHead(t('menu.inventaire')) + `<div class="tabs">${[['obj', 'inventaire.objets'], ['eq', 'inventaire.equipement'], ['key', 'inventaire.importants']].map(([k, c]) => `<button class="tab txt ${tab === k ? 'on' : ''}" data-t="${k}">${esc(t(c))}</button>`).join('')}</div>
-      <div class="row bourse"><span class="note">${esc(t('inventaire.bourse'))}</span><b>${S.gold} ${esc(t('po'))}</b></div>` + body);
+    const sh = modal('grand', `<div class="sheet-h"><div class="ptitle">${esc(t('menu.inventaire'))}</div><span class="pillv gold">${ic('coin')}${S.gold} ${esc(t('po'))}</span><button class="ibtn" id="mclose" aria-label="${esc(t('fermer'))}">${ic('x')}</button></div>
+      <div class="tabs">${[['obj', 'inventaire.objets'], ['eq', 'inventaire.equipement'], ['key', 'inventaire.importants']].map(([k, c]) => `<button class="tab txt ${tab === k ? 'on' : ''}" data-t="${k}">${esc(t(c))}</button>`).join('')}</div>` + body);
     note = '';
     sh.querySelector('#mclose').onclick = fermerFenetre;
-    sh.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { tab = b.dataset.t; pour = null; draw(); });
-    const il = sh.querySelector('#i-list');
-    if (il) { const o = Object.keys(OBJETS).filter(k => S.inv[k] > 0).map(k => ({ k, ic: 'heart', label: esc(`${t('objet.' + k)} ×${S.inv[k]}`), sub: esc(t('objet.' + k + '.desc')), dis: !!B })); il.innerHTML = btns(o); bind(il, o, k => { pour = k; draw(); }); }
-    const iw = sh.querySelector('#i-who');
-    if (iw) {
-      const o = team().map(h => { const s = stats(h); return { k: h.id, img: vignette(h), label: esc(t('parle.' + h.id)), sub: esc(`${h.hp}/${s.hp} ${t('stat.hp')} · ${h.pp}/${s.pp} ${t('stat.pp')}`) }; });
-      o.push({ k: null, ic: 'back', label: esc(t('retour')), cls: 'ghost' });
-      iw.innerHTML = btns(o);
-      bind(iw, o, id => { if (id) { utiliserObjet(pour, char(id)); note = esc(t('inventaire.utilise', { nom: t('parle.' + id), objet: t('objet.' + pour) })); } pour = null; draw(); });
-    }
+    sh.querySelectorAll('[data-t]').forEach(b => b.onclick = () => { tab = b.dataset.t; draw(); });
+    sh.querySelectorAll('[data-f]').forEach(b => b.onclick = () => { filtre = b.dataset.f; draw(); });
+    sh.querySelectorAll('[data-u]').forEach(b => b.onclick = () => {
+      const k = b.dataset.u, id = b.dataset.h;
+      utiliserObjet(k, char(id)); SON.bruitage('soin'); note = esc(t('inventaire.utilise', { nom: t('parle.' + id), objet: t('objet.' + k) })); draw();
+    });
   };
   draw();
 }

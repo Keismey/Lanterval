@@ -193,6 +193,69 @@ There you go: *{nom}* put in your bag.
 == boutique.achete.eq
 There you go: *{nom}* put in your bag. Go to Team to wear it.
 
+== boutique.possede
+you have {n}
+
+== boutique.prix
+Price
+
+== boutique.acheter.n
+Buy ×{n}
+
+== boutique.acheter
+Just buy
+
+== boutique.acheter.equiper
+Buy and equip on {nom}
+
+== boutique.fiche.porte
+wears {nom}
+
+== boutique.fiche.rien
+has nothing in this slot
+
+== boutique.fiche.classe
+their class ({classe}) can't use it
+
+== boutique.fiche.qui
+Classes that can use it: {liste}.
+
+== boutique.fiche.sac
+{nom}'s {objet} goes back into the bag (you can sell it in the Sell tab).
+
+== boutique.choisir
+Tap a hero to choose who will wear it.
+
+== boutique.achete.n
+There you go: *{nom}* ×{n} packed in your bag.
+
+== boutique.achete.porte
+There you go: {heros} now wears *{nom}*.
+
+== equipe.mieux
+better in the bag
+
+== equipe.choisir
+tap to choose
+
+== equipe.optimiser
+Optimise: the best from the bag for {nom}
+
+== equipe.optimise
+{nom} now wears: {liste}.
+
+== equipe.optimise.rien
+{nom} already wears the best from the bag.
+
+== inventaire.visage
+Tap a hero's face to give them the item.
+
+== inventaire.tout
+All
+
+== inventaire.porte.par
+worn by {nom}
+
 == boutique.vente.accueil
 “Show me what you've got, I'll give you a fair price.”
 
@@ -1073,6 +1136,11 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.5
+Village: characters in two columns, the main quest on top, “Leave” always at the bottom.
+Shops: one line per item with its price and what it gives each hero (+ in green, = in grey, ✕ if they can't use it). Tapping an item opens its sheet: hero-by-hero comparison, “Buy and equip” in one go, or ×1, ×5, ×10 for consumables. Selling is now a tab.
+Team: compact header, Equipment, Class and Techniques tabs, and an Optimise button that equips the best from the bag.
+Inventory: give an item with a single tap on a hero's face; equipment can be filtered by type and shows who it helps.
 ## Version 0.6.4
 All texts proofread: a few story inconsistencies fixed (Cendre and Forgecendre, Nev's age, the mist for fifty years…) and clearer wording, in French and English.
 In combat, a lone boss's name is shown in full.

@@ -414,3 +414,56 @@ img[src^="img/"]{image-rendering:auto!important}
 .vol-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
 .vol-h span{color:var(--gold2);font-variant-numeric:tabular-nums}
 .vol input[type=range]{width:100%;accent-color:var(--gold);height:28px;margin:0}
+/* ergonomie 0.7 : moins de défilement dans le village, les boutiques, l'Équipe et l'Inventaire */
+.sheet .acts{margin-top:0}.sheet .acts.bas{margin-top:auto}
+.sheet-h .sp{flex:1}.sheet-h .ptitle+.pillv{flex:none}
+.acts.village{grid-template-columns:repeat(2,minmax(0,1fr))}
+.acts.village .btn{padding:7px 8px;gap:8px}
+.acts.village .btn small{font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acts.village .btn.partir{grid-column:1/-1;position:sticky;bottom:0;z-index:1;background:#1a1e38}
+.who.court{align-items:center}.who-t{flex:1;min-width:0}.who .pillv{flex:none}
+.ptext.ligne{font-size:13px;color:#d6d9ec;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.ptext.ligne.ouverte{white-space:normal}
+.tab.vendre{border-color:rgba(111,182,255,.55);color:var(--side);background:transparent}
+.tab.vendre.on{background:var(--side);color:#04203a}
+.acts.rayon{grid-template-columns:1fr;gap:6px}
+.btn.art{min-height:0;padding:8px 10px}.btn.art .tx{width:100%;gap:5px}
+.art-l{display:flex;align-items:baseline;gap:8px;width:100%}
+.art-l>b:first-child{flex:1;font-size:14px}
+.art-l .eff{font-weight:500;font-size:12px;color:var(--muted)}
+.art-l .prix{font-size:13.5px;color:var(--gold2);min-width:52px;text-align:right}
+.gains{display:flex;gap:10px;flex-wrap:wrap}
+.g{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700}
+.g img{width:20px;height:20px;border-radius:6px;object-fit:cover}
+.g.up{color:#7be3a0}.g.dn{color:var(--danger)}.g.eg{color:var(--muted)}.g.non{color:#7d84a8}.g.non img{opacity:.35}
+.prixl{display:grid;grid-template-columns:auto 1fr auto auto;gap:4px 10px;align-items:baseline;padding:8px 12px;border-radius:12px;background:var(--surface2)}
+.prixl span{color:var(--muted);font-size:13px}.prixl b{color:var(--gold2)}
+.hfiche{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:12px;border:1px solid var(--line);background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer;width:100%}
+.hfiche.on{border-color:var(--gold);background:rgba(233,185,73,.1)}
+.hfiche.non{opacity:.5;cursor:default}
+.hfiche img{width:32px;height:32px;border-radius:9px;object-fit:cover;flex:none}
+.hfiche>div{flex:1;min-width:0}.hfiche b{font-size:14px}
+.hfiche small{display:block;font-size:12px;color:var(--muted)}
+.hfiche .ecart{font-size:13px;text-align:right;color:#d6d9ec;font-variant-numeric:tabular-nums}
+.etete{display:flex;gap:12px;align-items:center}
+.etete .av.lg{width:72px;height:72px;border-radius:16px}
+.etete-d{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.etete .jn{font-family:var(--f-title);font-size:18px;color:var(--gold2)}
+.jauges.mini{background:none;border:0;padding:0;gap:4px}
+.jauges.mini .jauge{display:grid;grid-template-columns:26px 1fr 64px;align-items:center;gap:6px;font-size:11.5px;color:var(--muted)}
+.jauges.mini .bar{height:6px}.jauges.mini b{color:var(--text);text-align:right;font-variant-numeric:tabular-nums}
+.jauges.mini .jauge.on span{color:var(--gold2)}
+.souso{border-bottom:1px solid var(--line);padding-bottom:8px}.souso .tab{flex:1;justify-content:center}
+#m-stinfo{min-height:0}
+.objc{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:6px}
+.objc-h{display:flex;align-items:baseline;gap:8px}.objc-h b{flex:1;font-size:14px}
+.hdons{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:6px}
+.hdon{display:flex;align-items:center;gap:6px;min-height:44px;padding:4px 6px;border-radius:10px;background:rgba(9,11,26,.6);border:1px solid var(--line);color:inherit;font:inherit;text-align:left;cursor:pointer}
+.hdon img{width:26px;height:26px;border-radius:7px;object-fit:cover;flex:none}
+.hdon span{display:flex;flex-direction:column;min-width:0}.hdon b{font-size:12px}
+.hdon small{font-size:11px;color:var(--gold2)}.hdon.plein small{color:var(--muted)}
+.hdon:disabled{opacity:.45;cursor:default}
+.eqr{display:flex;gap:4px 8px;align-items:baseline;flex-wrap:wrap;padding:7px 10px;border-radius:10px;background:var(--surface2);font-size:13px}
+.eqr b{flex:1;min-width:40%}.eqr .note{font-size:12px}
+.panel .acts.rayon{margin-top:0}
+.tabs.filtres .tab.txt{padding:5px 10px;font-size:12.5px}

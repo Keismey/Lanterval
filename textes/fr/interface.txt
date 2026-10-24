@@ -208,6 +208,69 @@ Et voilà : *{nom}* rangé dans ton sac.
 == boutique.achete.eq
 Et voilà : *{nom}* rangé dans ton sac. Va dans Équipe pour le porter.
 
+== boutique.possede
+tu en as {n}
+
+== boutique.prix
+Prix
+
+== boutique.acheter.n
+Acheter ×{n}
+
+== boutique.acheter
+Acheter seulement
+
+== boutique.acheter.equiper
+Acheter et équiper sur {nom}
+
+== boutique.fiche.porte
+porte {nom}
+
+== boutique.fiche.rien
+n'a rien à cet emplacement
+
+== boutique.fiche.classe
+sa classe ({classe}) ne peut pas la porter
+
+== boutique.fiche.qui
+Classes qui la portent : {liste}.
+
+== boutique.fiche.sac
+{objet} de {nom} retourne dans le sac (tu peux la revendre dans l'onglet Vendre).
+
+== boutique.choisir
+Touche un héros pour choisir qui la portera.
+
+== boutique.achete.n
+Et voilà : *{nom}* ×{n} rangés dans ton sac.
+
+== boutique.achete.porte
+Et voilà : {heros} porte maintenant *{nom}*.
+
+== equipe.mieux
+mieux dans le sac
+
+== equipe.choisir
+toucher pour choisir
+
+== equipe.optimiser
+Optimiser : le meilleur du sac pour {nom}
+
+== equipe.optimise
+{nom} porte maintenant : {liste}.
+
+== equipe.optimise.rien
+{nom} porte déjà le meilleur du sac.
+
+== inventaire.visage
+Touche le visage d'un héros pour lui donner l'objet.
+
+== inventaire.tout
+Tout
+
+== inventaire.porte.par
+porté : {nom}
+
 == boutique.vente.accueil
 « Montre-moi ce que tu as, je t'en donne un prix honnête. »
 
@@ -1251,6 +1314,11 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.5
+Village : les personnages sur deux colonnes, la quête principale en tête, « Partir » toujours en bas.
+Boutiques : une ligne par article avec son prix et ce qu'il apporte à chaque héros (+ en vert, = en gris, ✕ s'il ne peut pas le porter). Toucher un article ouvre sa fiche : comparaison héros par héros, « Acheter et équiper » en un geste, ou ×1, ×5, ×10 pour les objets. Vendre devient un onglet.
+Équipe : en-tête compact, onglets Équipement, Classe et Techniques, et un bouton Optimiser qui équipe le meilleur du sac.
+Inventaire : un objet se donne d'un seul appui sur le visage d'un héros ; l'équipement se trie par type et indique à qui il profite.
 ## Version 0.6.4
 Relecture de tous les textes : quelques incohérences de l'histoire corrigées (Cendre et Forgecendre, l'âge de Nev, la brume depuis cinquante ans…) et des tournures plus nettes, en français et en anglais.
 En combat, le nom d'un boss seul s'affiche en entier.
