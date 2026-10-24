@@ -37,6 +37,7 @@ function renderStable() {
   if (!['title', 'fin', 'intro'].includes(S.screen) && dansLeFinal() && fini(FINAL.fin)) retourAvantFinal();
   hud();
   if (S.screen !== 'title') save();
+  if (S.screen !== 'title') fermerAccueil();
   if (S.screen === 'title') renderTitle();
   else if (S.screen === 'fin') renderFin();
   else if (S.screen === 'map') renderMap();
@@ -44,25 +45,89 @@ function renderStable() {
   else { S.screen = 'zone'; renderZone(); }
 }
 
-/* ---------- Écran titre ---------- */
+/* ---------- Écran d'accueil et écran titre ----------
+   Au lancement : logo Keismey Studio, puis le village en paix et « Touche pour commencer ».
+   Ensuite (et à chaque retour au titre) : le village embrumé, sans le cristal, avec les boutons par-dessus ;
+   une fois la fin vue, le village reste en paix. Tout est en plein écran, par-dessus le jeu (#accueil). */
+let accueilVu = false;
 function partieEnCours() { return S && (S.etapes.length > 0 || S.st.time > 0); }
+// la fin a été atteinte dans cette partie (les anciennes sauvegardes n'ont que finVue)
+function finAtteinte() { return !!S.finPartie || (!!S.finVue && !S.plus); }
+// complétion : moitié exploration (découvertes de toutes les zones), moitié quêtes annexes finies
+function completion() {
+  let n = 0, f = 0;
+  for (const id in LIEUX) {
+    const L = LIEUX[id];
+    if (L.type !== 'zone' || !(L.tresors || []).length || !lieuVisible(id)) continue;
+    n += L.tresors.length; f += S.z[id] ? S.z[id].found.length : 0;
+  }
+  const a = Object.keys(ANNEXES);
+  return Math.floor(50 * (n ? f / n : 1) + 50 * a.filter(annexeFinie).length / a.length);
+}
+function resumePartie() {
+  const e = etapeCourante(), plus = S.plus ? ' · ' + t('titre.plus', { n: S.plus }) : '';
+  if (finAtteinte() || !e) return t('titre.fin', { p: completion() }) + plus;
+  return t('titre.acte', { n: ACTES.findIndex(a => a.etapes.includes(e)) + 1 }) + plus;
+}
+function accueil() {
+  let d = $('#accueil');
+  if (d) return d;
+  d = document.createElement('div'); d.id = 'accueil'; d.className = 'accueil';
+  d.innerHTML = `<img class="fond" alt=""><img class="fond" alt=""><div class="voile"></div><div class="haut"><h1>Lanterval</h1><span></span></div><div class="bas"></div>`;
+  document.body.appendChild(d);
+  return d;
+}
+// fondu d'un fond à l'autre
+function fondAccueil(d, cle) {
+  const [a, b] = d.querySelectorAll('.fond'), vu = a.classList.contains('on') ? a : b.classList.contains('on') ? b : null;
+  if (vu && vu.dataset.k === cle) return;
+  const autre = vu === a ? b : a, f = IMAGES[cle] || {};
+  autre.src = imgSrc(cle); autre.dataset.k = cle; autre.style.objectPosition = f.centre || '';
+  autre.classList.add('on'); if (vu) vu.classList.remove('on');
+}
+function logoStudio() {
+  const lg = document.createElement('div'); lg.className = 'lg';
+  lg.innerHTML = `<img alt="Keismey Studio" src="img/studio/keismey-studio.webp">`;
+  accueil().appendChild(lg);
+  setTimeout(passerLogo, 2300);
+}
+function passerLogo() {
+  const lg = $('#accueil .lg'); if (!lg || lg.dataset.parti) return false;
+  lg.dataset.parti = 1; lg.style.opacity = 0; setTimeout(() => lg.remove(), 700); return true;
+}
+function fermerAccueil() { const d = $('#accueil'); if (!d) return; d.id = ''; d.classList.add('out'); setTimeout(() => d.remove(), 600); }
+
 function renderTitle() {
-  setDecor('decor.lanterval', { lueur: 'faible' });
-  ovc().innerHTML = `<div class="titre"><h1>Lanterval</h1><span>${esc(t('titre.sous'))}</span></div>`;
-  let confirmer = false;
+  setDecor('decor.lanterval', { lueur: 'faible' }); ovc().innerHTML = ''; $('#panel').innerHTML = '';
+  const d = accueil(), bas = d.querySelector('.bas');
+  d.querySelector('.haut span').textContent = t('titre.sous');
+  d.classList.toggle('menu', accueilVu);
+  if (!accueilVu) {
+    fondAccueil(d, 'titre.paix');
+    const souris = matchMedia('(hover:hover) and (pointer:fine)').matches;
+    bas.innerHTML = `<p class="go">${esc(t(souris ? 'titre.cliquer' : 'titre.toucher'))}</p>`;
+    d.onclick = () => { if (passerLogo() || $('#accueil .lg')) return; accueilVu = true; renderTitle(); };
+    return;
+  }
+  d.onclick = null;
+  fondAccueil(d, S.finVue ? 'titre.paix' : 'titre.brume');
+  let confirmer = null;   // 'new' ou 'plus' : bouton qui attend sa confirmation
   const draw = () => {
     const opts = [];
     if (partieEnCours()) {
-      const e = etapeCourante();
-      opts.push({ k: 'go', ic: 'play', label: esc(t('titre.continuer')), sub: esc((e ? t(e.id + '.titre') : t('journal.tout.fini')) + ' · ' + fmt(S.st.time) + (S.plus ? ' · ' + t('titre.plus', { n: S.plus }) : '') + (S.finVue ? ' · ' + t('titre.finvue') : '')), cls: 'main' });
-      opts.push({ k: 'new', ic: 'star', label: esc(t(confirmer ? 'titre.nouvelle.confirmer' : 'titre.nouvelle')), sub: esc(t(confirmer ? 'options.reset.confirmer.sous' : 'titre.nouvelle.sous')), cls: confirmer ? 'danger' : 'ghost' });
-    } else opts.push({ k: 'new', ic: 'play', label: esc(t('titre.commencer')), sub: esc(t('titre.commencer.sous')), cls: 'main' });
-    const p = $('#panel');
-    p.innerHTML = `<p class="ptext">${tx('titre.texte')}</p><div class="acts">${btns(opts)}</div><p class="note centre">${esc(t('titre.version', { v: VERSION }))}</p>`;
-    bind(p, opts, k => {
-      if (k === 'go') { const ici = LIEUX[lieuActuel()]; S.screen = ici.type === 'village' ? 'village' : 'zone'; renderStable(); const f = reprendre(); if (f) run(f); return; }
-      if (partieEnCours() && !confirmer) { confirmer = true; draw(); return; }
-      effacerPartie(); S = newState(); run(commencer);
+      opts.push({ k: 'go', ic: 'play', label: esc(t('titre.continuer')), sub: esc(resumePartie()), cls: 'main' });
+      if (S.finVue) opts.push({ k: 'plus', ic: 'star', label: esc(t(confirmer === 'plus' ? 'titre.plus.confirmer' : 'titre.nouvelle.plus')), sub: esc(t('titre.nouvelle.plus.sous')), cls: 'plus' });
+      opts.push({ k: 'new', ic: 'x', label: esc(t(confirmer === 'new' ? 'titre.nouvelle.confirmer' : 'titre.nouvelle')), sub: esc(t(confirmer === 'new' ? 'options.reset.confirmer.sous' : 'titre.nouvelle.sous')), cls: confirmer === 'new' ? 'danger' : 'gris' });
+    } else opts.push({ k: 'new', ic: 'play', label: esc(t('titre.nouvelle')), cls: 'main' });
+    opts.push({ k: 'opt', ic: 'gear', label: esc(t('menu.options')), cls: 'gris' });
+    bas.innerHTML = `<div class="acts">${btns(opts)}</div><p class="version">${esc(t('titre.version', { v: VERSION }))}</p>`;
+    bind(bas, opts, k => {
+      if (k === 'opt') { openOptions(); return; }
+      if (k === 'go') { fermerAccueil(); const ici = LIEUX[lieuActuel()]; S.screen = ici.type === 'village' ? 'village' : 'zone'; renderStable(); const f = reprendre(); if (f) run(f); return; }
+      if (partieEnCours() && confirmer !== k) { confirmer = k; draw(); return; }
+      fermerAccueil();
+      if (k === 'plus') partiePlus(); else { effacerPartie(); S = newState(); }
+      run(commencer);
     });
   };
   draw();
@@ -92,7 +157,7 @@ function renderFin() {
   <div class="stats"><div class="stat"><b>${fmt(st.time)}</b><span>${esc(t('stats.temps'))}</span></div><div class="stat"><b>${st.taps}</b><span>${esc(t('stats.appuis'))}</span></div>
   <div class="stat"><b>${st.fights}</b><span>${esc(t('stats.combats.quete', { n: st.qfights }))}</span></div><div class="stat"><b>${st.autoTurns}</b><span>${esc(t('stats.auto'))}</span></div>
   <div class="stat"><b>${st.explores}</b><span>${esc(t('stats.explorations'))}</span></div><div class="stat"><b>${st.trav}</b><span>${esc(t('stats.traversees'))}</span></div>
-  ${zones.map(id => `<div class="stat"><b>${pct(id)} %</b><span>${esc(nomLieu(id))}</span></div>`).join('')}<div class="stat"><b>${finies}/${annexes.length}</b><span>${esc(t('stats.annexes'))}</span></div></div>
+  ${zones.map(id => `<div class="stat"><b>${pct(id)} %</b><span>${esc(nomLieu(id))}</span></div>`).join('')}<div class="stat"><b>${finies}/${annexes.length}</b><span>${esc(t('stats.annexes'))}</span></div><div class="stat"><b>${completion()} %</b><span>${esc(t('stats.completion'))}</span></div></div>
   <h3 class="sec">${esc(t('fin.chronologie'))}</h3><div class="log">${st.log.map(ligneJournal).join('')}</div>
   <div class="acts">${btns(opts)}</div>`;
   bind(p, opts, k => {
@@ -122,7 +187,8 @@ function retour() {
     if (b && !b.disabled) b.click(); else fermerFenetre();
     return;
   }
-  if ($('#spl')) { passerSplash(); return; }
+  if (passerLogo()) return;
+  if (S && S.screen === 'title' && !accueilVu) { accueilVu = true; renderTitle(); return; }
   const rb = [...$('#panel').querySelectorAll('button[data-back]')].filter(b => !b.disabled).pop();
   if (rb) { if (TW) TW(); rb.click(); return; }
   if (busy || B || !S) return;
@@ -139,23 +205,6 @@ function confirmer(cle, oui) {
   sh.querySelector('#m-oui').onclick = () => { closeModal(); oui(); };
 }
 
-/* ---------- Écran d'accueil : logo Keismey Studio, puis l'image du jeu « Touche pour commencer » ---------- */
-function splash() {
-  const d = document.createElement('div'), fin = matchMedia('(hover:hover) and (pointer:fine)').matches;
-  d.id = 'spl';
-  d.innerHTML = `<div class="tt"><img class="fond" alt="" src="${imgSrc('pano.ouverture')}"><div class="haut"><h1>Lanterval</h1><span>${esc(t('titre.sous'))}</span></div>
-    <img class="pano" alt="" src="${imgSrc('pano.ouverture')}"><p class="go">${esc(t(fin ? 'titre.cliquer' : 'titre.toucher'))}</p></div>
-    <div class="lg"><img alt="Keismey Studio" src="img/studio/keismey-studio.webp"></div>`;
-  document.body.appendChild(d);
-  setTimeout(passerLogo, 2300);
-  d.addEventListener('click', e => { e.stopPropagation(); passerSplash(); });
-}
-function passerLogo() { const d = $('#spl'); if (!d || d.dataset.etape) return false; d.dataset.etape = 'titre'; const lg = d.querySelector('.lg'); lg.style.opacity = 0; setTimeout(() => lg.remove(), 700); return true; }
-function passerSplash() {
-  const d = $('#spl'); if (!d || passerLogo() || d.dataset.etape === 'fin') return;
-  d.dataset.etape = 'fin'; d.classList.add('out'); setTimeout(() => d.remove(), 650);
-}
-
 /* ---------- Démarrage ---------- */
 (async function demarrer() {
   chargerOptions();
@@ -169,6 +218,6 @@ function passerSplash() {
   KSBack.init({ back: retour, lang: () => LANG });
   if (document.fonts && document.fonts.ready) await document.fonts.ready;
   renderStable();
-  splash();
+  logoStudio();
   $('#app').classList.add('pret');
 })();

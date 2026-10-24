@@ -4,10 +4,14 @@
    provisoire : dessin de la maquette utilisé tant que le fichier manque ;
    sujet : ce que l'image doit montrer (pour le prompt Gemini) ;
    lueur : position du cristal de la lanterne dans l'image (en part de la largeur et de la hauteur) ;
+   centre : point de l'image gardé quand l'écran la coupe (écran d'accueil) ;
    brume : l'image passe « en brume » (bleu-gris, translucide) : les Échos réutilisent les images des boss d'origine.
    Sans fichier ni dessin provisoire, le jeu affiche un cadre avec le sujet. */
 
 const IMAGES = {
+  // ---------- Écran d'accueil (plein écran, en hauteur) : provisoires, en attendant deux images verticales ----------
+  'titre.paix': { fichier: 'img/panoramas/fete-lanterne.webp', centre: '66% 50%', sujet: 'Écran titre, format vertical 9:16 : Lanterval en paix, la lanterne monumentale allumée au centre avec son cristal lumineux, maisons à colombages, montagnes claires, ciel dégagé, place en fête' },
+  'titre.brume': { fichier: 'img/panoramas/ouverture.webp', centre: '50% 50%', sujet: 'Écran titre, format vertical 9:16 : le même Lanterval, même cadrage, envahi par la brume au crépuscule, la lanterne éteinte et sans son cristal, maisons sombres' },
   // ---------- Décors ----------
   'decor.lanterval': { fichier: 'img/decors/lanterval.webp', lueur: [.503, .29], sujet: 'La place de Lanterval et sa lanterne monumentale, de jour' },
   'decor.foret': { fichier: 'img/decors/foret.webp', provisoire: 'foret', sujet: 'Forêt des Murmures, troncs immenses et brume épaisse' },

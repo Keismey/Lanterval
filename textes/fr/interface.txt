@@ -69,15 +69,6 @@ Accessoire
 == titre.sous
 Un RPG de Keismey Studio
 
-== titre.texte
-La lanterne de Lanterval protège le val depuis toujours. Ce soir, sa lumière vacille.
-
-== titre.commencer
-Commencer l'aventure
-
-== titre.commencer.sous
-Nouvelle partie
-
 == titre.continuer
 Continuer
 
@@ -119,6 +110,24 @@ Ta partie est sauvegardée, tu la reprendras ici.
 
 == retour.rester
 Rester
+
+== titre.acte
+Acte {n}
+
+== titre.fin
+Fin · Complétion {p} %
+
+== titre.nouvelle.plus
+Nouvelle partie +
+
+== titre.nouvelle.plus.sous
+Tu gardes niveaux, classes et équipement ; les monstres sont plus forts
+
+== titre.plus.confirmer
+Confirmer : nouvelle partie + ?
+
+== stats.completion
+Complétion
 
 == titre.version
 Version {v} · sauvegarde automatique
@@ -1212,6 +1221,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.5.5
+Nouvel écran titre : le village en paix pour « Touche pour commencer », puis le village dans la brume sous les boutons (il reste en paix une fois la fin vue).
+Continuer indique l'acte en cours, ou « Fin » et ta complétion (exploration des zones et quêtes annexes). Nouvelle partie + apparaît une fois la fin vue.
 ## Version 0.5.4
 Écran d'accueil : le logo Keismey Studio, puis l'image du jeu et « Touche pour commencer ».
 Bouton retour du téléphone : il ferme les fenêtres une par une, revient en arrière dans les boutiques, les menus de combat et la carte, puis propose l'écran titre. Depuis l'écran titre, il propose d'aller au hub.
