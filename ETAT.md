@@ -1,5 +1,12 @@
 # État du projet
 
+## Version 0.5.5 (2026-10-24) : écran titre
+
+- Demande de Keismey : l'ancien écran titre (scène + panneau) disparaît. Tout est en plein écran par-dessus le jeu (`.accueil`, moteur/jeu.js) : logo Keismey Studio au lancement, puis fond `titre.paix` et « Touche pour commencer », puis fond `titre.brume` (village embrumé sans le cristal ; `titre.paix` une fois `S.finVue`) avec les boutons en liste. Fondu entre les deux fonds.
+- Boutons : sans partie, Nouvelle partie (doré) + Options (gris). Avec une partie : Continuer (doré, « Acte N » ou « Fin · Complétion X % »), Nouvelle partie + (bleu brillant, si fin vue, avec confirmation), Nouvelle partie (gris, avec confirmation), Options (gris).
+- `completion()` : moitié découvertes de toutes les zones visibles, moitié quêtes annexes finies ; aussi dans le bilan de fin. `S.finPartie` (posé par `fin_jeu`, pas gardé en partie+) dit si la fin a été atteinte dans cette partie ; les anciennes sauvegardes sans partie+ se fient à `finVue`.
+- Fonds provisoires dans donnees/images.js (`titre.paix` = fête de la lanterne, `titre.brume` = ouverture, champ `centre` pour le cadrage) : deux images verticales demandées au fil des images.
+
 ## Version 0.5.4 (2026-10-24) : peaufinage
 
 - Demande de Keismey : écran d'accueil comme ses autres jeux (même principe qu'Abysses) : au lancement, logo Keismey Studio sur fond noir (2,3 s, un appui le passe), puis l'image du jeu (`pano.ouverture`, fond flouté) avec le titre et « Touche pour commencer » (« Clique » à la souris) ; un appui ouvre l'écran titre habituel (Continuer / Nouvelle partie). `splash()` dans moteur/jeu.js, logo dans img/studio/keismey-studio.webp (copie de celui d'Abysses).

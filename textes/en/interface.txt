@@ -64,15 +64,6 @@ Accessory
 == titre.sous
 An RPG by Keismey Studio
 
-== titre.texte
-The lantern of Lanterval has always protected the valley. Tonight, its light is flickering.
-
-== titre.commencer
-Start the adventure
-
-== titre.commencer.sous
-New game
-
 == titre.continuer
 Continue
 
@@ -114,6 +105,24 @@ Title screen
 
 == retour.rester
 Stay
+
+== titre.acte
+Act {n}
+
+== titre.fin
+The End · {p}% complete
+
+== titre.nouvelle.plus
+New Game +
+
+== titre.nouvelle.plus.sous
+You keep levels, classes and equipment; monsters are stronger
+
+== titre.plus.confirmer
+Confirm: New Game +?
+
+== stats.completion
+Completion
 
 == titre.version
 Version {v} · autosave
@@ -1034,6 +1043,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.5.5
+New title screen: the village at peace for “Tap to start”, then the village in the mist behind the buttons (it stays at peace once you've seen the ending).
+Continue shows the current act, or “The End” and your completion (zones explored and side quests). New Game + appears once you've seen the ending.
 ## Version 0.5.4
 Start screen: the Keismey Studio logo, then the game's picture and “Tap to start”.
 Phone back button: it closes windows one at a time, steps back in shops, battle menus and the map, then offers the title screen. From the title screen, it offers to go to the hub.

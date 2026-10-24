@@ -82,25 +82,34 @@ button{font:inherit;color:inherit}
 /* panorama : image large ; on garde le texte lisible */
 .scene.pano::after{background:linear-gradient(180deg,transparent 70%,rgba(5,6,15,.35) 100%)}
 /* écran titre */
-.titre{position:absolute;left:0;right:0;bottom:12%;text-align:center;z-index:1;pointer-events:none}
-.titre h1{margin:0;font:700 clamp(34px,8vw,64px)/1 var(--f-title);color:#fff4d6;letter-spacing:.06em;text-shadow:0 2px 0 rgba(0,0,0,.4),0 0 24px rgba(255,200,90,.55)}
-.titre span{display:inline-block;margin-top:6px;font-size:13px;font-weight:600;color:#f0e6cc;text-shadow:0 1px 3px #000}
-/* écran d'accueil (au lancement) : logo Keismey Studio, puis l'image du jeu et « Touche pour commencer » */
-#spl{position:fixed;inset:0;z-index:15;background:#05060f;cursor:pointer;overflow:hidden;transition:opacity .6s}
-#spl.out{opacity:0;pointer-events:none}
-#spl .lg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000;transition:opacity .7s;z-index:2}
-#spl .lg img{width:min(62%,260px);height:auto;opacity:0;animation:spIn 1s ease .15s forwards}
-#spl .tt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:18px;
-  padding:calc(env(safe-area-inset-top,0px) + 11vh) 0 calc(env(safe-area-inset-bottom,0px) + 9vh)}
-#spl .fond{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(18px) brightness(.45);z-index:-1}
-#spl .pano{width:100%;max-width:1100px;max-height:52vh;object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.6);opacity:0;animation:spIn 1.4s ease .3s forwards}
-@media (orientation:portrait){#spl .pano{height:46vh;max-height:none;object-fit:cover;object-position:50% 60%}}
-#spl .haut{text-align:center;padding:0 16px}
-#spl h1{margin:0;font:700 clamp(40px,12vw,72px)/1 var(--f-title);color:#fff4d6;letter-spacing:.06em;text-shadow:0 2px 0 rgba(0,0,0,.4),0 0 24px rgba(255,200,90,.55);opacity:0;animation:spIn 1.4s ease .2s forwards}
-#spl .haut span{display:block;margin-top:8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#f0e6cc;text-shadow:0 1px 3px #000;opacity:0;animation:spIn 1.4s ease .6s forwards}
-#spl .go{margin:0;padding:0 16px;font:600 16px var(--f-title);color:#f2e6c9;text-shadow:0 1px 6px #000;opacity:0;animation:spIn 1s ease 1.2s forwards,spBl 2.2s ease-in-out 2.2s infinite}
+/* écran d'accueil et écran titre, en plein écran par-dessus le jeu : logo Keismey Studio, puis le village
+   en paix et « Touche pour commencer », puis le village embrumé (en paix après la fin) sous les boutons */
+.accueil{position:fixed;inset:0;z-index:15;background:#05060f;cursor:pointer;overflow:hidden;transition:opacity .6s;display:flex;flex-direction:column;justify-content:space-between;
+  padding:calc(env(safe-area-inset-top,0px) + 9vh) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 5vh) max(16px,env(safe-area-inset-left,0px))}
+.accueil.menu{cursor:default}
+.accueil.out{opacity:0;pointer-events:none}
+.accueil .fond{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
+.accueil .fond.on{opacity:1}
+.accueil .voile{position:absolute;inset:0;background:linear-gradient(rgba(5,6,15,.55),rgba(5,6,15,0) 32%,rgba(5,6,15,0) 52%,rgba(5,6,15,.8));transition:background .8s}
+.accueil.menu .voile{background:linear-gradient(rgba(5,6,15,.6),rgba(5,6,15,.05) 30%,rgba(5,6,15,.35) 50%,rgba(5,6,15,.9))}
+.accueil .haut,.accueil .bas{position:relative;width:100%;max-width:420px;margin:0 auto;text-align:center}
+.accueil h1{margin:0;font:700 clamp(40px,12vw,72px)/1 var(--f-title);color:#fff4d6;letter-spacing:.06em;text-shadow:0 2px 0 rgba(0,0,0,.4),0 0 24px rgba(255,200,90,.55);opacity:0;animation:spIn 1.4s ease .2s forwards}
+.accueil .haut span{display:block;margin-top:8px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#f0e6cc;text-shadow:0 1px 3px #000;opacity:0;animation:spIn 1.4s ease .6s forwards}
+.accueil .go{margin:0;font:600 16px var(--f-title);color:#f2e6c9;text-shadow:0 1px 6px #000;opacity:0;animation:spIn 1s ease 1.2s forwards,spBl 2.2s ease-in-out 2.2s infinite}
+.accueil .acts{display:flex;flex-direction:column;gap:10px;animation:spIn .6s ease both}
+.accueil .btn{min-height:56px}
+.accueil .btn.gris{background:rgba(20,24,46,.82);border-color:var(--line2);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.accueil .btn.gris .tx>span{color:#d6d9ec}
+.accueil .btn.plus{background:linear-gradient(135deg,#7fd3ff,#3f7cf0);color:#06142e;border-color:transparent;box-shadow:0 0 22px rgba(111,182,255,.55);animation:brille 2.6s ease-in-out infinite}
+.accueil .btn.plus small{color:rgba(6,20,46,.75)}
+.accueil .btn.plus .ic{background:rgba(255,255,255,.35)}
+.accueil .btn.danger{background:rgba(70,20,28,.9)}
+.accueil .version{margin:10px 0 0;font-size:11.5px;color:#c9cde6;text-shadow:0 1px 3px #000}
+.accueil .lg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000;transition:opacity .7s;z-index:2}
+.accueil .lg img{width:min(62%,260px);height:auto;opacity:0;animation:spIn 1s ease .15s forwards}
 @keyframes spIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
 @keyframes spBl{50%{opacity:.35}}
+@keyframes brille{50%{box-shadow:0 0 34px rgba(127,211,255,.85);filter:brightness(1.08)}}
 #app{opacity:0;transition:opacity .25s}
 #app.pret{opacity:1}
 .scene::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(5,6,15,.35) 0%,transparent 22%,transparent 70%,rgba(5,6,15,.45) 100%)}

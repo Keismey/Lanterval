@@ -77,7 +77,7 @@ const EVENEMENTS = {
   // tous les monstres du Codex, faiblesses et résistances comprises (récompense des Échos)
   async codex() { for (const id in MONSTRES) revealAll(id); },
   // fin du jeu : générique, puis l'écran de fin (retour à Aerie avant l'Escalier, partie+)
-  async fin_jeu(a, ctx) { S.fins = (S.fins || 0) + 1; S.finVue = (S.finVue || 0) + 1; if (!ctx.silencieux) { logR('journal.log.fin'); S.screen = 'fin'; } }
+  async fin_jeu(a, ctx) { S.fins = (S.fins || 0) + 1; S.finVue = (S.finVue || 0) + 1; S.finPartie = true; if (!ctx.silencieux) { logR('journal.log.fin'); S.screen = 'fin'; } }
 };
 
 /* Point de reprise : chaque événement joué est noté dans S.reprise (sauvegardé avec la partie).
