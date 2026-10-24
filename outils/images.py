@@ -159,6 +159,14 @@ LISTE = [
     ('perso-agathe.jpg', 'pnj/agathe.webp', 'portrait', {'boite': (250, 60, 580), 'cote': 192}),
     ('perso-dorn.jpg', 'pnj/dorn.webp', 'portrait', {'boite': (170, 40, 640), 'cote': 192}),
     ('perso-tobi.jpg', 'pnj/tobi.webp', 'portrait', {'boite': (230, 30, 600), 'cote': 192}),
+    ('perso-tavor.jpg', 'pnj/tavor.webp', 'portrait', {'boite': (200, 60, 600), 'cote': 192}),
+    ('perso-edda.jpg', 'pnj/edda.webp', 'portrait', {'boite': (250, 40, 620), 'cote': 192}),
+    ('perso-joran.jpg', 'pnj/joran.webp', 'portrait', {'boite': (260, 100, 600), 'cote': 192}),
+    ('perso-pell.jpg', 'pnj/pell.webp', 'portrait', {'boite': (200, 40, 620), 'cote': 192}),
+    ('perso-liss.jpg', 'pnj/liss.webp', 'portrait', {'boite': (200, 50, 600), 'cote': 192}),
+    ('perso-ilse.jpg', 'pnj/ilse.webp', 'portrait', {'boite': (180, 50, 600), 'cote': 192}),
+    ('perso-aldric.jpg', 'pnj/aldric.webp', 'portrait', {'boite': (230, 50, 600), 'cote': 192}),
+    ('perso-garrick.jpg', 'pnj/garrick.webp', 'portrait', {'boite': (200, 20, 620), 'cote': 192}),
 ]
 
 
