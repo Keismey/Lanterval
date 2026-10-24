@@ -10,11 +10,11 @@ const MUSIQUES = {
   forgecendre:{ fichier: 'son/forgecendre.m4a', sinon: 'lanterval' },
   aerie:      { fichier: 'son/aerie.m4a', sinon: 'lanterval' },
   voyage:     { fichier: 'son/voyage.m4a', sinon: 'theme' },           // cartes du monde
-  vallee:     { fichier: null, sinon: 'voyage' },          // zones, par région
-  cote:       { fichier: null, sinon: 'voyage' },
-  cendre:     { fichier: null, sinon: 'voyage' },
-  vents:      { fichier: null, sinon: 'voyage' },
-  escalier:   { fichier: null, sinon: 'vents' },
+  vallee:     { fichier: 'son/vallee.m4a', sinon: 'voyage' },          // zones, par région
+  cote:       { fichier: 'son/cote.m4a', sinon: 'voyage' },
+  cendre:     { fichier: 'son/cendre.m4a', sinon: 'voyage' },
+  vents:      { fichier: 'son/vents.m4a', sinon: 'voyage' },
+  escalier:   { fichier: 'son/escalier.m4a', sinon: 'vents' },
   combat:     { fichier: 'son/combat.m4a' },
   boss:       { fichier: null, sinon: 'combat' },
   final:      { fichier: null, sinon: 'boss' },            // Ysold et la Paupière du monde

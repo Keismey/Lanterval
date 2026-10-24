@@ -1136,6 +1136,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.6
+Each region now has its own exploration music: the Valley, the Coast, the Cendre Plains, the High Winds, and the Stair of Mist.
 ## Version 0.6.5
 Village: characters in two columns, the main quest on top, “Leave” always at the bottom.
 Shops: one line per item with its price and what it gives each hero (+ in green, = in grey, ✕ if they can't use it). Tapping an item opens its sheet: hero-by-hero comparison, “Buy and equip” in one go, or ×1, ×5, ×10 for consumables. Selling is now a tab.
