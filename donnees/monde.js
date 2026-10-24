@@ -399,7 +399,7 @@ const LIEUX = {
   },
 
   ruines: {
-    type: 'zone', region: 'vents', x: .7, y: .46, cotes: ['p', 's'],
+    type: 'zone', region: 'vents', x: .79, y: .56, cotes: ['p', 's'],
     visible: 'fini a4.e2', ouvert: 'fini a4.e2',
     maxEvenements: 3,
     tresors: [
@@ -425,7 +425,7 @@ const LIEUX = {
   },
 
   pic: {
-    type: 'zone', region: 'vents', x: .46, y: .2, cotes: ['b', 's'],
+    type: 'zone', region: 'vents', x: .6, y: .28, cotes: ['b', 's'],
     visible: 'fini a4.e5', ouvert: 'fini a4.e5',
     maxEvenements: 3,
     tresors: [

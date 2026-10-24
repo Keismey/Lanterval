@@ -39,11 +39,11 @@ const IMAGES = {
   'decor.volcan': { fichier: 'img/decors/volcan.webp', provisoire: 'volcan', sujet: 'Volcan endormi, pentes noires, coulées de lave, cratère qui fume' },
   'decor.carte.cendre': { fichier: 'img/decors/carte-cendre.webp', provisoire: 'carte-cendre', sujet: 'Carte des Plaines de Cendre' },
   // acte 4 : Hauts-Vents
-  'decor.pont': { provisoire: 'pont', sujet: 'Pont des Nuées, long pont suspendu de cordes et de planches au-dessus des nuages, vent violent' },
-  'decor.aerie': { provisoire: 'aerie', sujet: 'Aerie, village de maisons de bois sur pilotis accrochées aux falaises, moulins et cerfs-volants' },
-  'decor.ruines': { provisoire: 'ruines', sujet: 'Ruines du monastère, cloître effondré dans les nuages, colonnes, fresques effacées' },
-  'decor.pic': { provisoire: 'pic', sujet: 'Pic hurlant, crête de roche et de glace, vent qui hurle, ciel d\'orage' },
-  'decor.carte.vents': { provisoire: 'carte-vents', sujet: 'Carte des Hauts-Vents' },
+  'decor.pont': { fichier: 'img/decors/pont.webp', provisoire: 'pont', sujet: 'Pont des Nuées, long pont suspendu de cordes et de planches au-dessus des nuages, vent violent' },
+  'decor.aerie': { fichier: 'img/decors/aerie.webp', provisoire: 'aerie', sujet: 'Aerie, village de maisons de bois sur pilotis accrochées aux falaises, moulins et cerfs-volants' },
+  'decor.ruines': { fichier: 'img/decors/ruines.webp', provisoire: 'ruines', sujet: 'Ruines du monastère, cloître effondré dans les nuages, colonnes, fresques effacées' },
+  'decor.pic': { fichier: 'img/decors/pic.webp', provisoire: 'pic', sujet: 'Pic hurlant, crête de roche et de glace, vent qui hurle, ciel d\'orage' },
+  'decor.carte.vents': { fichier: 'img/decors/carte-vents.webp', provisoire: 'carte-vents', sujet: 'Carte des Hauts-Vents' },
 
   // ---------- Panoramas (format large ~2,4:1) ----------
   'pano.ouverture': { fichier: 'img/panoramas/ouverture.webp', sujet: 'Lanterval au crépuscule, la lanterne vacille' },
@@ -193,8 +193,8 @@ const IMAGES = {
   'monstre.larmev': { fichier: 'img/monstres/larmev.webp', provisoire: 'larmev', sujet: 'Gardien d\'azur, grand oiseau de vent et de brume aux ailes de lames, une larme de lumière au milieu du corps' },
 
   // ---------- Le final (0.5.3) : l'Escalier de brume, le Cœur de l'Œil, les épilogues, les Échos ----------
-  'decor.escalier': { provisoire: 'escalier', sujet: 'Escalier de brume, marches de pierre pâle qui montent dans les nuages au-dessus du Pic, brume violette, piliers brisés' },
-  'decor.escalier.sommet': { provisoire: 'escalier-sommet', sujet: 'Sommet de l\'Escalier de brume, plateforme de pierre devant un œil de lumière immense à demi fermé par une paupière de pierre' },
+  'decor.escalier': { fichier: 'img/decors/escalier.webp', provisoire: 'escalier', sujet: 'Escalier de brume, marches de pierre pâle qui montent dans les nuages au-dessus du Pic, brume violette, piliers brisés' },
+  'decor.escalier.sommet': { fichier: 'img/decors/escalier-sommet.webp', provisoire: 'escalier-sommet', sujet: 'Sommet de l\'Escalier de brume, plateforme de pierre devant un œil de lumière immense à demi fermé par une paupière de pierre' },
   'monstre.veilleur': { fichier: 'img/monstres/veilleur.webp', provisoire: 'veilleur', sujet: 'Veilleur de la Paupière, grand chevalier de l\'Ordre en armure grise, heaume à l\'œil fermé, hallebarde' },
   'monstre.nueeoubli': { fichier: 'img/monstres/nueeoubli.webp', provisoire: 'nueeoubli', sujet: 'Nuée d\'oubli, nuage de brume violette avec des visages effacés, longs filaments' },
   'monstre.sansnom3': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse (même image que monstre.sansnom)' },
