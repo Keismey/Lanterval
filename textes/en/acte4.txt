@@ -27,7 +27,7 @@ Mira: “It's yours now. My mother doesn't forge for display cases.”
 
 == a4.e1.pell
 ## Cloud Bridge
-Halfway across, a canvas glider dives toward the team, chased by raptors and Order soldiers clinging to the ropes.
+Halfway across, a canvas glider dives towards the team, chased by raptors and Order soldiers clinging to the ropes.
 The glider lands in a crash of planks. A red-haired young man jumps out, a satchel clutched to his chest.
 Pell: “Pell, postman of the High Winds! Sorry to drop in on you like this. Literally.” [Fight]
 
@@ -152,7 +152,7 @@ The Azure Serpent resists *Wind* and *Water*. *Earth* and *Fire* split its guard
 
 == a4.e5.cristal
 ## The sanctuary
-The Serpent collapses in coils of blue light, and its madness leaves with the wind. The azure crystal drifts gently down toward Nev.
+The Serpent collapses in coils of blue light, and its madness leaves with the wind. The azure crystal drifts gently down towards Nev.
 Nev: “It's singing. Like the wind on the peak, when we were little.”
 
 == a4.e5.classes
@@ -339,7 +339,7 @@ Kael: “It's your sword. Hilde reforged it. She engraved the lantern of Lanterv
 
 == a4.e9.carnet
 ## The last landing
-Kael takes the notebook from his coat and reads aloud, without trembling.
+Kael takes his father's notebook from his coat and reads aloud, without trembling.
 Kael: “I did not leave. I am following them. As long as I walk behind them, they will not reach Lanterval.”
 The mace falls onto the steps. The Nameless raises his hands to his mask.
 

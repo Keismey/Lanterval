@@ -1,5 +1,10 @@
 # État du projet
 
+## Version 0.6.4 (2026-10-24) : relecture des textes
+
+- Relecture complète FR (et EN en regard) : Cendre = la région (Plaines de Cendre), Forgecendre = la ville ; Nev « a à peine seize ans » au phare ; prologue « depuis cinquante ans » (la brume naît avec l'Ordre) ; l'Escalier : « ceux qui en sont redescendus n'ont rien raconté » (Orvan en est redescendu) ; Maëlle ne dit plus qu'elle aurait oublié son fils (la brume ne la touche pas) ; plus de « guerre » dans la quête de l'œuf ; conseil « essaie la classe Guerrier » retiré du message de quête (4e mur) ; accords (Vouivre, Mère-des-abysses, sentinelles).
+- Combat : `.einfo.seul` (moteur/combat.js, css/jeu.css) : avec un seul ennemi, son nom prend toute la largeur (noms de boss plus coupés).
+
 ## Version 0.6.3 (2026-10-24) : musiques, lot 2
 
 - Lot 2 de Gemini dans son/ : brume (Lanterval avant a1.e7), salvent, forgecendre, aerie, voyage (cartes ; aussi les zones tant que leur région n'a pas de piste). Reste : régions, Escalier, boss, final, émotion, menace, épilogue, jingles (lots 3 à 5 de prompts-musique.md).

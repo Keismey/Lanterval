@@ -673,7 +673,7 @@ The Wyvern swells her throat… *she will breathe on the whole team next turn*, 
 Abyssal Mother
 
 == monstre.mere.desc
-A giant crab covered in shells. She guards her nest deep in the wreck.
+A huge crab mother covered in shells. She guards her nest deep in the wreck.
 
 == monstre.mere.special
 Crushing claw

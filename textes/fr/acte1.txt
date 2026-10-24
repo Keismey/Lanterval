@@ -19,7 +19,7 @@ La lanterne
 
 == prologue
 ## Prologue
-Lanterval est un village perché au pied des monts. Depuis toujours, la lanterne de la place repousse la brume grâce au cristal qui brille en son cœur.
+Lanterval est un village perché au pied des monts. Depuis cinquante ans, la lanterne de la place repousse la brume grâce au cristal qui brille en son cœur.
 Ce soir, sa lueur vacille.
 
 == prologue.suite
@@ -44,7 +44,7 @@ Orvan : « Ce cristal reconnaît les cœurs vaillants. Il t'apprendra d'autres f
 ? Chaque personnage garde son élément : Kael frappe avec la Terre quelle que soit sa classe.
 
 == a1.e1.message
-Quête : *retrouver Mira* dans la Forêt des Murmures. Pense à essayer la classe Guerrier.
+Quête : *retrouver Mira* dans la Forêt des Murmures.
 
 # ---------- Étape 2 : Forêt des Murmures ----------
 

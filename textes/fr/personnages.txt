@@ -92,7 +92,7 @@ La mère de Mira. Elle tient la forge de Lanterval et vend armes et armures.
 Quand elle a entendu parler de l'insigne à l'œil fermé, elle a demandé à Kael de ne le montrer à personne.
 
 == perso.hilde.3
-Elle vient de Cendre, la ville des forges, et compte bien y accompagner l'équipe.
+Elle vient des Plaines de Cendre, le pays des forges, et compte bien y accompagner l'équipe.
 
 == perso.hilde.4
 Elle est née à Forgecendre, où on la croyait morte depuis dix-huit ans. Elle y a rallumé la vieille forge de son père.

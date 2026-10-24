@@ -1251,6 +1251,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.4
+Relecture de tous les textes : quelques incohérences de l'histoire corrigées (Cendre et Forgecendre, l'âge de Nev, la brume depuis cinquante ans…) et des tournures plus nettes, en français et en anglais.
+En combat, le nom d'un boss seul s'affiche en entier.
 ## Version 0.6.3
 Cinq nouvelles musiques : Lanterval dans la brume (avant que la lanterne soit rallumée), Salvent, Forgecendre, Aerie, et le voyage sur les cartes du monde (aussi dans les zones, en attendant la musique de chaque région).
 ## Version 0.6.2

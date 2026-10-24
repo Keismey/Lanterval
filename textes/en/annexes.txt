@@ -1054,7 +1054,7 @@ Pell: “The Salvent letter smells of salt. Someone over there is waiting for ne
 ## The cliff mail
 The port of Salvent is mending its boats, broken by the Order's attack. But the fishermen sing as they work.
 Maëlle: “A letter for me? From my son, aboard a whaler! He's coming home in spring.”
-Maëlle: “Before you came, I'd have forgotten I had a son. Go on, off you go, Naïa is waiting for you on the quay.”
+Maëlle: “Without you, the mist would have made me forget I had a son. Go on, off you go, Naïa is waiting for you on the quay.”
 
 == courrier.e3.message
 Side quest: one letter left, for *Dorn* (Forgecendre).
@@ -1126,7 +1126,7 @@ Three lava lizards circle around it, tongues flicking. [Fight]
 == wyverne.e1.fin
 ## The wyvern egg
 Kael lifts the egg with both hands. It is heavy, and warm like a stone in the sun.
-Nev: “It's moving! We have to hurry, it won't wait for the war to end.”
+Nev: “It's moving! We have to hurry, it won't wait for us to save the world.”
 
 == wyverne.e1.message
 Side quest: the *warm egg* is in your bag. The mother's nest is at the foot of the *Howling Peak*.
@@ -1334,7 +1334,7 @@ Side quest: the *crystal tear* is yours.
 The foam tear, in the Sunken Wreck
 
 == larmes.e1.m2.bouton
-Dive toward the glow
+Dive towards the glow
 
 == larmes.e1.m2.lueur
 ## The tears of the Eye
@@ -1381,7 +1381,7 @@ Side quest: the *ember tear* is yours.
 The azure tear, in the sanctuary of the ruins
 
 == larmes.e1.m4.bouton
-Climb toward the blue glow
+Climb towards the blue glow
 
 == larmes.e1.m4.lueur
 ## The tears of the Eye

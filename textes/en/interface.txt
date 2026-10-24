@@ -1073,6 +1073,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.4
+All texts proofread: a few story inconsistencies fixed (Cendre and Forgecendre, Nev's age, the mist for fifty years…) and clearer wording, in French and English.
+In combat, a lone boss's name is shown in full.
 ## Version 0.6.3
 Five new tracks: Lanterval in the mist (before the lantern is relit), Salvent, Forgecendre, Aerie, and the journey on the world maps (also in the zones, until each region gets its own music).
 ## Version 0.6.2

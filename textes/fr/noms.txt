@@ -738,7 +738,7 @@ Charge de lance
 Vouivre des marais
 
 == monstre.vouivre.desc
-Un serpent ailé couvert de mousse, gardienne de la brume du marais.
+Un serpent ailé couvert de mousse, gardien de la brume du marais.
 
 == monstre.vouivre.charge
 La Vouivre gonfle sa gorge… *souffle sur toute l'équipe à son prochain tour*, sauf si tu brises sa garde avant.
@@ -750,7 +750,7 @@ La Vouivre gonfle sa gorge… *souffle sur toute l'équipe à son prochain tour*
 Mère-des-abysses
 
 == monstre.mere.desc
-Un crabe géant couvert de coquillages. Elle protège son nid au fond de l'épave.
+Énorme et couverte de coquillages, elle protège son nid au fond de l'épave.
 
 == monstre.mere.special
 Pince broyeuse
