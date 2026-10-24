@@ -287,25 +287,24 @@ def taille(im, o):
 
 
 # Icônes de l'appli (dossier du jeu) : la tête de la lanterne détourée, sur fond nuit avec une lueur.
-ICONES = [('icon-192.png', 192, .06), ('icon-512.png', 512, .06), ('icon-maskable.png', 512, .2)]
+ICONES = [('icon-192.png', 192, 1), ('icon-512.png', 512, 1), ('icon-maskable.png', 512, .8)]
 
 
 def icones():
-    lanterne = detourer(Image.open(os.path.join(SRC, 'objet-lanterne.jpg')))
-    tete = lanterne.crop((0, 0, lanterne.width, round(lanterne.height * .5)))
-    tete = tete.crop(tete.getchannel('A').point(lambda v: 255 if v > 90 else 0).getbbox())
-    for nom, cote, marge in ICONES:
-        fond = Image.new('RGBA', (cote, cote), (11, 13, 26, 255))
-        lueur = Image.new('L', (cote, cote), 0)
-        from PIL import ImageDraw, ImageFilter
-        r = cote * .3
-        ImageDraw.Draw(lueur).ellipse((cote / 2 - r, cote * .45 - r, cote / 2 + r, cote * .45 + r), fill=150)
-        lueur = lueur.filter(ImageFilter.GaussianBlur(cote * .12))
-        fond.paste(Image.new('RGBA', (cote, cote), (150, 220, 255, 255)), (0, 0), lueur)
-        h = round(cote * (1 - 2 * marge))
-        im = tete.resize((round(tete.width * h / tete.height), h), Image.LANCZOS)
-        fond.alpha_composite(im, ((cote - im.width) // 2, (cote - im.height) // 2))
-        fond.convert('RGB').save(os.path.join(OUT, '..', nom), 'PNG', optimize=True)
+    """Icône Gemini (lot 35) : cadre rogné ; la version maskable réduit la lanterne dans la zone sûre
+    d'Android, sur la même nuit agrandie et floutée."""
+    from PIL import ImageDraw, ImageFilter
+    nuit = Image.open(os.path.join(SRC, 'icone.jpg')).convert('RGB').crop((46, 46, 978, 978))
+    for nom, cote, echelle in ICONES:
+        fond = nuit.resize((cote, cote), Image.LANCZOS)
+        if echelle < 1:
+            fond = fond.filter(ImageFilter.GaussianBlur(cote * .04))
+            c = round(cote * echelle)
+            fondu = Image.new('L', (c, c), 0)
+            ImageDraw.Draw(fondu).ellipse((c * .08, c * .08, c * .92, c * .92), fill=255)
+            fondu = fondu.filter(ImageFilter.GaussianBlur(c * .06))
+            fond.paste(nuit.resize((c, c), Image.LANCZOS), ((cote - c) // 2, (cote - c) // 2), fondu)
+        fond.save(os.path.join(OUT, '..', nom), 'PNG', optimize=True)
         print(f'{nom:32} {cote}×{cote}')
 
 
