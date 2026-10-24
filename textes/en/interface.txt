@@ -124,6 +124,18 @@ Confirm: New Game +?
 == stats.completion
 Completion
 
+== generique
+## Lanterval
+A game by | Keismey Studio
+Direction | Keismey
+Story, game design and development | Claude
+Art and music | Gemini
+Fonts | Cinzel and Figtree
+Thank you for relighting the lantern.
+
+== generique.fermer
+Tap to continue
+
 == titre.version
 Version {v} · autosave
 
@@ -1061,6 +1073,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.2
+End credits after the story ends, before your game summary.
 ## Version 0.6.1
 Lighter first launch: the game starts after about 4 MB, then downloads the rest (pictures and music) bit by bit while you play, so it works offline afterwards. An update now only downloads what changed.
 ## Version 0.6.0

@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.6.2 (2026-10-24) : générique
+
+- `fin_jeu` joue `generique()` (moteur/recit.js) avant l'écran de fin : plein écran sur `titre.paix`, musique `epilogue`, lignes du repère `generique` (interface.txt ; « ## » titre, « Rôle | Nom ») qui apparaissent une à une ; un appui affiche tout, un appui de plus ferme.
+
 ## Version 0.6.1 (2026-10-24) : peaufinage
 
 - Premier chargement léger (sw.js) : à l'installation, seul `BASE` est téléchargé (code, textes, polices, img/studio, img/titre, son/theme.m4a : ~4 Mo) ; le reste se met en cache quand le jeu s'en sert, et la page envoie toutes les 15 s (page visible, sauf mode économie de données) `{ remplir: 3000000 }` : le service worker télécharge ~3 Mo de fichiers manquants dans l'ordre de `FICHIERS` (décors, visages, PNJ, panoramas, monstres, musiques) et répond `{ reste }`.

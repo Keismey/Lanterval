@@ -77,7 +77,7 @@ const EVENEMENTS = {
   // tous les monstres du Codex, faiblesses et résistances comprises (récompense des Échos)
   async codex() { for (const id in MONSTRES) revealAll(id); },
   // fin du jeu : générique, puis l'écran de fin (retour à Aerie avant l'Escalier, partie+)
-  async fin_jeu(a, ctx) { S.fins = (S.fins || 0) + 1; S.finVue = (S.finVue || 0) + 1; S.finPartie = true; if (!ctx.silencieux) { logR('journal.log.fin'); S.screen = 'fin'; } }
+  async fin_jeu(a, ctx) { S.fins = (S.fins || 0) + 1; S.finVue = (S.finVue || 0) + 1; S.finPartie = true; if (!ctx.silencieux) { logR('journal.log.fin'); await generique(); S.screen = 'fin'; } }
 };
 
 /* Point de reprise : chaque événement joué est noté dans S.reprise (sauvegardé avec la partie).
@@ -148,3 +148,27 @@ async function jouerAnnexe(id, silencieux, morceau) {
   S.annexes[id] = n + 1;
   if (annexeFinie(id) && !silencieux) logR('journal.log.annexeFinie', { titre: id + '.titre' });
 }
+
+/* Générique de fin, en plein écran sur le village en paix : les lignes de « generique » apparaissent une à une
+   (« ## » : titre ; « Rôle | Nom »). Un appui accélère ; une fois tout affiché, un appui ferme. */
+function generique() {
+  return new Promise(res => {
+    const d = document.createElement('div'); d.className = 'accueil generique';
+    const L = lignes('generique') || [];
+    d.innerHTML = `<img class="fond on" alt="" src="${imgSrc('titre.paix')}"><div class="voile"></div><div class="defile">${L.map((l, i) => {
+      const [a, b] = l.split('|').map(x => x.trim());
+      const c = l.startsWith('##') ? `<h2>${html(l.replace(/^##\s*/, ''))}</h2>` : b ? `<span>${html(a)}</span><b>${html(b)}</b>` : `<p>${html(a)}</p>`;
+      return `<div class="cr" style="animation-delay:${(0.6 + i * 1.1).toFixed(1)}s">${c}</div>`;
+    }).join('')}</div><p class="go">${esc(t('generique.fermer'))}</p>`;
+    document.body.appendChild(d);
+    SON.musique('epilogue');
+    const fin = 600 + L.length * 1100 + 900;
+    let t0 = performance.now();
+    d.querySelector('.go').style.animationDelay = (fin / 1000).toFixed(1) + 's, ' + (fin / 1000 + 1).toFixed(1) + 's';
+    d.addEventListener('click', () => {
+      if (performance.now() - t0 < fin) { d.classList.add('vite'); t0 = -1e9; return; }   // tout afficher d'un coup
+      d.classList.add('out'); setTimeout(() => d.remove(), 600); res();
+    });
+  });
+}
+
