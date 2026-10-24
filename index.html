@@ -78,6 +78,14 @@
   var avant = !!navigator.serviceWorker.controller;
   navigator.serviceWorker.addEventListener('controllerchange', function () { if (avant && (typeof S === 'undefined' || !S || S.screen === 'title')) location.reload(); });
   navigator.serviceWorker.register('sw.js').catch(function () {});
+  // le reste du jeu (images, musiques) se télécharge petit à petit pendant qu'on joue, sauf en mode économie de données
+  if (navigator.connection && navigator.connection.saveData) return;
+  var fini = false, t = setInterval(function () {
+    var sw = navigator.serviceWorker.controller;
+    if (fini) return clearInterval(t);
+    if (sw && !document.hidden) sw.postMessage({ remplir: 3000000 });
+  }, 15000);
+  navigator.serviceWorker.addEventListener('message', function (e) { if (e.data && e.data.reste === 0) fini = true; });
 });</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdb82226cd1b401d9e4f4e899f9b8425"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

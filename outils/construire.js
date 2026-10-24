@@ -20,12 +20,21 @@ function fichiers(dossier, ext) {
 const liste = ['index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'icon-maskable.png', 'css/jeu.css',
   ...fichiers('commun', /\.js$/), ...fichiers('moteur', /\.js$/), ...fichiers('donnees', /\.js$/),
   ...fichiers('textes', /\.txt$/), ...fichiers('polices', /\.woff2$/), ...fichiers('img', /\.(webp|png|jpg)$/), ...fichiers('son', /\.m4a$/)];
-const h = crypto.createHash('sha1');
-for (const f of liste) h.update(fs.readFileSync(path.join(RACINE, f)));
+const h = crypto.createHash('sha1'), emp = {};
+for (const f of liste) {
+  const d = fs.readFileSync(path.join(RACINE, f));
+  h.update(d); emp[f] = crypto.createHash('sha1').update(d).digest('hex').slice(0, 8);
+}
 const version = /VERSION = '([^']+)'/.exec(lire('moteur/base.js'))[1] + '-' + h.digest('hex').slice(0, 8);
+// premier chargement : tout sauf les images et les musiques, plus l'écran titre et sa musique
+const base = f => !/^(img|son)\//.test(f) || /^img\/(studio|titre)\//.test(f) || f === 'son/theme.m4a';
+// ensuite, dans l'ordre où le jeu s'en sert le plus : décors et visages, panoramas, monstres, musiques
+const rang = f => ['img/decors', 'img/heros', 'img/pnj', 'img/panoramas', 'img/monstres', 'son'].findIndex(d => f.startsWith(d + '/'));
+const ordre = liste.filter(f => f !== 'index.html').sort((a, b) => (base(b) - base(a)) || (rang(a) - rang(b)) || (a < b ? -1 : 1));
 let sw = lire('sw.js');
 sw = sw.replace(/var VERSION = '[^']*';/, `var VERSION = '${version}';`)
-       .replace(/var FICHIERS = \[[^\]]*\];/, 'var FICHIERS = ' + JSON.stringify(['./', ...liste.filter(f => f !== 'index.html')]) + ';');
+       .replace(/var FICHIERS = \[.*\];/, 'var FICHIERS = ' + JSON.stringify([['./', emp['index.html']], ...ordre.map(f => [f, emp[f]])]) + ';')
+       .replace(/var BASE = \[.*\];/, 'var BASE = ' + JSON.stringify(['./', ...ordre.filter(base)]) + ';');
 fs.writeFileSync(path.join(RACINE, 'sw.js'), sw);
 console.log(`sw.js : version ${version}, ${liste.length} fichiers`);
 

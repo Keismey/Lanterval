@@ -1,5 +1,10 @@
 # État du projet
 
+## Version 0.6.1 (2026-10-24) : peaufinage
+
+- Premier chargement léger (sw.js) : à l'installation, seul `BASE` est téléchargé (code, textes, polices, img/studio, img/titre, son/theme.m4a : ~4 Mo) ; le reste se met en cache quand le jeu s'en sert, et la page envoie toutes les 15 s (page visible, sauf mode économie de données) `{ remplir: 3000000 }` : le service worker télécharge ~3 Mo de fichiers manquants dans l'ordre de `FICHIERS` (décors, visages, PNJ, panoramas, monstres, musiques) et répond `{ reste }`.
+- Un seul cache `lanterval-fichiers` ; chaque fichier y est rangé sous `<chemin>?h=<empreinte>` (sha1 du contenu, 8 caractères, calculé par outils/construire.js) : une mise à jour ne retélécharge que les fichiers changés, et l'activation retire les entrées périmées. `FICHIERS` = [chemin, empreinte] ; `BASE` = premier chargement.
+
 ## Version 0.6.0 (2026-10-24) : musique et bruitages
 
 - Demande de Keismey : musiques générées par lui avec Gemini (prompts : /mnt/project-files/rpg-retro/musique/prompts-musique.md, sources MP3 dans /mnt/project-files/rpg-retro/musique/sources/, nommées NN-<piste>.mp3). `node outils/musiques.js <dossier>` retire les silences, ramène chaque piste à −18 LUFS et écrit son/<piste>.m4a (AAC 96 kb/s).
