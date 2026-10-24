@@ -131,10 +131,9 @@ Complétion
 
 == generique
 ## Lanterval
-Un jeu de | Keismey Studio
-Direction | Keismey
-Scénario, game design et développement | Claude
-Images et musiques | Gemini
+Un jeu | Keismey Studio
+Conception et direction | Keismey
+Développé avec l'aide d'outils IA
 Polices | Cinzel et Figtree
 Merci d'avoir rallumé la lanterne.
 
