@@ -1239,6 +1239,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.1
+Premier lancement plus léger : le jeu démarre après environ 4 Mo, puis télécharge le reste (images et musiques) petit à petit pendant que tu joues, pour marcher ensuite hors ligne. Une mise à jour ne retélécharge plus que ce qui a changé.
 ## Version 0.6.0
 Lanterval a du son : la musique du thème à l'écran titre, celle du village de Lanterval, et celle des combats. Les autres lieux reprennent ces musiques en attendant les leurs.
 Des bruitages pour les boutons, les dialogues, les fenêtres, les coups, les faiblesses, les gardes brisées, les magies de chaque élément, les soins, l'or et les découvertes.

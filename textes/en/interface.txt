@@ -1061,6 +1061,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.1
+Lighter first launch: the game starts after about 4 MB, then downloads the rest (pictures and music) bit by bit while you play, so it works offline afterwards. An update now only downloads what changed.
 ## Version 0.6.0
 Lanterval has sound: the main theme on the title screen, the Lanterval village theme, and the battle music. Other places borrow these tracks until they get their own.
 Sound effects for buttons, dialogue, windows, hits, weaknesses, broken guards, each element's magic, healing, gold and discoveries.
