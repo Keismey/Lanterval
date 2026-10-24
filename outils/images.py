@@ -61,6 +61,8 @@ LISTE = [
     ('panorama-epilogue-sol.jpg', 'panoramas/epilogue-sol.webp', 'decor', {'largeur': 1584}),
     ('panorama-epilogue-nev.jpg', 'panoramas/epilogue-nev.webp', 'decor', {'largeur': 1584}),
     ('panorama-echo.jpg', 'panoramas/echo.webp', 'decor', {'largeur': 1584}),
+    ('titre-paix.jpg', 'titre/paix.webp', 'decor', {'largeur': 768}),
+    ('titre-brume.jpg', 'titre/brume.webp', 'decor', {'largeur': 768}),
     ('perso-kael.jpg', 'heros/kael.webp', 'detoure', {'hauteur': 420}),
     ('perso-kael.jpg', 'heros/kael-portrait.webp', 'portrait', {'boite': (612, 38, 186, 186), 'cote': 192}),
     ('monstre-loup-des-brumes.jpg', 'monstres/loup.webp', 'detoure', {'largeur': 640}),

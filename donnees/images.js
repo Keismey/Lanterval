@@ -10,8 +10,8 @@
 
 const IMAGES = {
   // ---------- Écran d'accueil (plein écran, en hauteur) : provisoires, en attendant deux images verticales ----------
-  'titre.paix': { fichier: 'img/panoramas/fete-lanterne.webp', centre: '66% 50%', sujet: 'Écran titre, format vertical 9:16 : Lanterval en paix, la lanterne monumentale allumée au centre avec son cristal lumineux, maisons à colombages, montagnes claires, ciel dégagé, place en fête' },
-  'titre.brume': { fichier: 'img/panoramas/ouverture.webp', centre: '50% 50%', sujet: 'Écran titre, format vertical 9:16 : le même Lanterval, même cadrage, envahi par la brume au crépuscule, la lanterne éteinte et sans son cristal, maisons sombres' },
+  'titre.paix': { fichier: 'img/titre/paix.webp', sujet: 'Écran titre, format vertical 9:16 : Lanterval en paix, la lanterne monumentale allumée au centre avec son cristal lumineux, maisons à colombages, montagnes claires, ciel dégagé, place en fête' },
+  'titre.brume': { fichier: 'img/titre/brume.webp', sujet: 'Écran titre, format vertical 9:16 : le même Lanterval, même cadrage, envahi par la brume au crépuscule, la lanterne éteinte et sans son cristal, maisons sombres' },
   // ---------- Décors ----------
   'decor.lanterval': { fichier: 'img/decors/lanterval.webp', lueur: [.503, .29], sujet: 'La place de Lanterval et sa lanterne monumentale, de jour' },
   'decor.foret': { fichier: 'img/decors/foret.webp', provisoire: 'foret', sujet: 'Forêt des Murmures, troncs immenses et brume épaisse' },
