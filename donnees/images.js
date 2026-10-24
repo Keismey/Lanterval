@@ -78,9 +78,9 @@ const IMAGES = {
   'pano.feu': { fichier: 'img/panoramas/feu.webp', sujet: 'Le feu de camp à Aerie, la veille de l\'assaut, les quatre héros autour des flammes' },
   // quêtes annexes des Hauts-Vents (0.5.2)
   'pano.wyverne': { fichier: 'img/panoramas/wyverne.webp', sujet: 'Au pied du Pic hurlant, une wyverne gris-bleu et son petit tout juste éclos volent au-dessus d\'un grand nid de cordes et de plumes accroché à la falaise' },
-  'pano.cerfvolant': { sujet: 'Au sommet enneigé du Pic hurlant, Nev et Varen de dos tiennent ensemble la ficelle d\'un grand cerf-volant bleu qui monte dans les nuages' },
-  'pano.larmes': { sujet: 'La nuit, au feu de camp d\'Aerie, quatre larmes de lumière (cristal, écume, braise, azur) flottent autour du vieil Orvan, au-dessus des flammes' },
-  'pano.fleur': { sujet: 'La fleur-lanterne qui brille au pied de la lanterne de Lanterval, Pia à genoux à côté' },
+  'pano.cerfvolant': { fichier: 'img/panoramas/cerfvolant.webp', sujet: 'Au sommet enneigé du Pic hurlant, Nev et Varen de dos tiennent ensemble la ficelle d\'un grand cerf-volant bleu qui monte dans les nuages' },
+  'pano.larmes': { fichier: 'img/panoramas/larmes.webp', sujet: 'La nuit, au feu de camp d\'Aerie, quatre larmes de lumière (cristal, écume, braise, azur) flottent autour du vieil Orvan, au-dessus des flammes' },
+  'pano.fleur': { fichier: 'img/panoramas/fleur.webp', sujet: 'La fleur-lanterne qui brille au pied de la lanterne de Lanterval, Pia à genoux à côté' },
 
   // ---------- Héros (tournés vers la gauche) ----------
   'heros.kael': { fichier: 'img/heros/kael.webp', portrait: 'img/heros/kael-portrait.webp', provisoire: 'kael', sujet: 'Kael, 17 ans, apprenti garde, cape bleue' },
