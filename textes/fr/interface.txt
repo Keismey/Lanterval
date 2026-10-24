@@ -129,6 +129,18 @@ Confirmer : nouvelle partie + ?
 == stats.completion
 Complétion
 
+== generique
+## Lanterval
+Un jeu de | Keismey Studio
+Direction | Keismey
+Scénario, game design et développement | Claude
+Images et musiques | Gemini
+Polices | Cinzel et Figtree
+Merci d'avoir rallumé la lanterne.
+
+== generique.fermer
+Touche pour continuer
+
 == titre.version
 Version {v} · sauvegarde automatique
 
@@ -1239,6 +1251,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.2
+Un générique après la fin de l'histoire, avant le bilan de ta partie.
 ## Version 0.6.1
 Premier lancement plus léger : le jeu démarre après environ 4 Mo, puis télécharge le reste (images et musiques) petit à petit pendant que tu joues, pour marcher ensuite hors ligne. Une mise à jour ne retélécharge plus que ce qui a changé.
 ## Version 0.6.0
