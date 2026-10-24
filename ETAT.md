@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.6.6 (2026-10-24) : musiques, lot 3
+
+- Lot 3 de Gemini dans son/ : vallee, cote, cendre, vents (zones, par région) et escalier. Reste : boss, final, émotion, menace, épilogue (lot 4) et jingles (lot 5).
+
 ## Version 0.6.5 (2026-10-24) : ergonomie des menus
 
 - Maquettes validées par Keismey (Design canvas https://claude.ai/artifact/TKFSxLeSGVdbW7zNnbtXog).

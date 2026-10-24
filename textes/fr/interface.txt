@@ -1314,6 +1314,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.6
+Chaque région a maintenant sa musique d'exploration : la vallée, la Côte, les Plaines de Cendre, les Hauts-Vents, et l'Escalier de brume.
 ## Version 0.6.5
 Village : les personnages sur deux colonnes, la quête principale en tête, « Partir » toujours en bas.
 Boutiques : une ligne par article avec son prix et ce qu'il apporte à chaque héros (+ en vert, = en gris, ✕ s'il ne peut pas le porter). Toucher un article ouvre sa fiche : comparaison héros par héros, « Acheter et équiper » en un geste, ou ×1, ×5, ×10 pour les objets. Vendre devient un onglet.
