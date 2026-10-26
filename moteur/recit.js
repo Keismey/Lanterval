@@ -155,7 +155,7 @@ function generique() {
   return new Promise(res => {
     const d = document.createElement('div'); d.className = 'accueil generique';
     const L = lignes('generique') || [];
-    d.innerHTML = `<img class="fond on" alt="" src="${imgSrc('titre.paix')}"><div class="voile"></div><div class="defile">${L.map((l, i) => {
+    d.innerHTML = `<img class="flou on" alt="" src="${imgSrc('titre.paix')}"><img class="fond on" alt="" src="${imgSrc('titre.paix')}"><div class="voile"></div><div class="defile">${L.map((l, i) => {
       const [a, b] = l.split('|').map(x => x.trim());
       const c = l.startsWith('##') ? `<h2>${html(l.replace(/^##\s*/, ''))}</h2>` : b ? `<span>${html(a)}</span><b>${html(b)}</b>` : `<p>${html(a)}</p>`;
       return `<div class="cr" style="animation-delay:${(0.6 + i * 1.1).toFixed(1)}s">${c}</div>`;

@@ -1316,6 +1316,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.6.9
+Sur ordinateur, l'écran titre a la taille du jeu : l'image n'est plus étirée, et les bords de l'écran sont comblés par la même image, floutée.
 ## Version 0.6.8
 Les dernières musiques : les boss, le dernier combat, l'épilogue (épilogues et générique), et deux musiques de scène, l'une pour les moments d'émotion, l'autre pour les menaces, qui accompagnent certaines grandes images du récit.
 Nouveaux petits airs : victoire, défaite, quête annexe terminée, objet important reçu et nuit à l'auberge.

@@ -1138,6 +1138,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.6.9
+On computers, the title screen now has the size of the game: the picture is no longer stretched, and the edges of the screen are filled with the same picture, blurred.
 ## Version 0.6.8
 The last tracks: bosses, the final battle, the epilogue (epilogues and credits), and two scene themes, one for moving moments and one for threats, which play over some of the story's big pictures.
 New short tunes: victory, defeat, side quest completed, key item received and a night at the inn.

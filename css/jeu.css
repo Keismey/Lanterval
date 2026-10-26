@@ -107,6 +107,16 @@ button{font:inherit;color:inherit}
 .accueil .version{margin:10px 0 0;font-size:11.5px;color:#c9cde6;text-shadow:0 1px 3px #000}
 .accueil .lg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000;transition:opacity .7s;z-index:2}
 .accueil .lg img{width:min(62%,260px);height:auto;opacity:0;animation:spIn 1s ease .15s forwards}
+.accueil .flou{display:none}
+/* grand écran : l'image du titre prend le cadre du jeu (même largeur que #app, mêmes marges, coins arrondis),
+   et les bords sont comblés par la même image floutée et assombrie */
+@media (orientation:landscape) and (min-height:560px){
+  .accueil{--cadre:min(calc(100vw - 32px),max(720px,min(1100px,calc((100dvh - 62px) * .6 * 1376 / 768))))}
+  .accueil .flou{display:block;position:absolute;left:-60px;top:-60px;width:calc(100% + 120px);height:calc(100% + 120px);max-width:none;object-fit:cover;filter:blur(30px) brightness(.38) saturate(.85);opacity:0;transition:opacity 1.2s ease}
+  .accueil .flou.on{opacity:1}
+  .accueil .fond,.accueil .voile{left:calc(50% - var(--cadre) / 2);top:8px;right:auto;bottom:auto;width:var(--cadre);height:calc(100% - 16px);border-radius:18px}
+  .accueil .voile{border:1px solid var(--line);box-shadow:0 12px 40px rgba(0,0,0,.5)}
+}
 /* générique de fin */
 .generique{justify-content:center;cursor:pointer}
 .generique .voile{background:rgba(5,6,15,.68)}

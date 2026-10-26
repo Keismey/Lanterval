@@ -48,7 +48,8 @@ function renderStable() {
 /* ---------- Écran d'accueil et écran titre ----------
    Au lancement : logo Keismey Studio, puis le village en paix et « Touche pour commencer ».
    Ensuite (et à chaque retour au titre) : le village embrumé, sans le cristal, avec les boutons par-dessus ;
-   une fois la fin vue, le village reste en paix. Tout est en plein écran, par-dessus le jeu (#accueil). */
+   une fois la fin vue, le village reste en paix. Tout est en plein écran, par-dessus le jeu (#accueil) ;
+   sur grand écran, l'image prend le cadre du jeu et ses bords sont comblés par l'image floutée (.flou). */
 let accueilVu = false;
 function partieEnCours() { return S && (S.etapes.length > 0 || S.st.time > 0); }
 // la fin a été atteinte dans cette partie (les anciennes sauvegardes n'ont que finVue)
@@ -73,7 +74,7 @@ function accueil() {
   let d = $('#accueil');
   if (d) return d;
   d = document.createElement('div'); d.id = 'accueil'; d.className = 'accueil';
-  d.innerHTML = `<img class="fond" alt=""><img class="fond" alt=""><div class="voile"></div><div class="haut"><h1>Lanterval</h1><span></span></div><div class="bas"></div>`;
+  d.innerHTML = `<img class="flou" alt=""><img class="fond" alt=""><img class="fond" alt=""><div class="voile"></div><div class="haut"><h1>Lanterval</h1><span></span></div><div class="bas"></div>`;
   document.body.appendChild(d);
   return d;
 }
@@ -84,6 +85,7 @@ function fondAccueil(d, cle) {
   const autre = vu === a ? b : a, f = IMAGES[cle] || {};
   autre.src = imgSrc(cle); autre.dataset.k = cle; autre.style.objectPosition = f.centre || '';
   autre.classList.add('on'); if (vu) vu.classList.remove('on');
+  const fl = d.querySelector('.flou'); fl.src = autre.src; fl.classList.add('on');   // bords sur grand écran (CSS)
 }
 function logoStudio() {
   const lg = document.createElement('div'); lg.className = 'lg';
