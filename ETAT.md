@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.6.9 (2026-10-26) : écran titre sur ordinateur
+
+- Demande de Keismey : sur PC, l'écran d'accueil était étiré (image 9:16 en `cover` sur tout l'écran, zoomée ~2,5×). Sur grand écran (`orientation:landscape` et `min-height:560px`, comme #app), `.fond` et `.voile` prennent le cadre du jeu (`--cadre` = même largeur que #app, 8 px en haut et en bas, coins de 18 px) ; les bords sont comblés par `.flou` (la même image, floutée et assombrie), posée par `fondAccueil` et dans `generique`. Logo Keismey Studio toujours en plein écran ; téléphone inchangé.
+
 ## Version 0.6.8 (2026-10-24) : musiques, lot 4 et jingles
 
 - Lot 4 de Gemini dans son/ : boss, final, emotion, menace, epilogue. Toutes les pistes prévues sont là.
