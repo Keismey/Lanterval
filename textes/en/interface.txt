@@ -1096,7 +1096,7 @@ Save
 Export or import your game
 
 == options.notes
-Release notes
+Patch notes
 
 == options.notes.sous
 Version {v}: what's new

@@ -1271,7 +1271,7 @@ Sauvegarde
 Exporter ou importer ta partie
 
 == options.notes
-Notes de version
+Notes de mise à jour
 
 == options.notes.sous
 Version {v} : ce qui a changé
@@ -1312,7 +1312,7 @@ Mode test
 == debug.sous
 Sauter à une étape, donner de l'or…
 
-# ================= Notes de version =================
+# ================= Notes de mise à jour =================
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
