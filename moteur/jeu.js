@@ -217,7 +217,11 @@ function confirmer(cle, oui) {
   dessinerSprites();
   S = loadSave() || newState();
   S.screen = 'title';
-  KSBack.init({ back: retour, lang: () => LANG });
+  KSBack.init({
+    back: retour,
+    lang: () => LANG,
+    title: () => !!S && S.screen === 'title' && !busy && !B && !modalOuverte() && !$('#accueil .lg:not([data-parti])')
+  });
   if (document.fonts && document.fonts.ready) await document.fonts.ready;
   renderStable();
   logoStudio();
