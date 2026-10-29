@@ -295,16 +295,17 @@ function openOptions(vue) {
     }
     const enJeu = S && S.screen !== 'title', libre = !busy && !B;
     const o = [
-      { k: 'lang', ic: 'globe', label: esc(t('options.langue')), sub: esc(t('options.langue.sous')) },
-      { k: 'texte', ic: 'scroll', label: esc(t('options.texte', { v: t('options.texte.' + OPT.texte) })), sub: esc(t('options.texte.sous')) },
       { k: 'son', ic: 'note', label: esc(t('options.son')), sub: esc(t('options.son.sous', { m: volTexte(OPT.musique), b: volTexte(OPT.bruitages) })) },
-      { k: 'rapide', ic: 'play', label: esc(t(OPT.rapide ? 'options.combats.rapides' : 'options.combats.normaux')), sub: esc(t('options.combats.sous')) },
+      { k: 'lang', ic: 'globe', label: esc(t('options.langue')), sub: esc(t('options.langue.sous')) },
       { k: 'save', ic: 'save', label: esc(t('options.sauvegarde')), sub: esc(t('options.sauvegarde.sous')) },
-      { k: 'notes', ic: 'book', label: esc(t('options.notes')), sub: esc(t('options.notes.sous', { v: VERSION })) },
-      { k: 'bug', ic: 'bug', label: esc(t('options.bug')), sub: esc(t('options.bug.sous')) },
-      { k: 'soutien', ic: 'heart', label: esc(t('options.soutien')), sub: esc(t('options.soutien.sous')) }
+      { k: 'texte', ic: 'scroll', label: esc(t('options.texte', { v: t('options.texte.' + OPT.texte) })), sub: esc(t('options.texte.sous')) },
+      { k: 'rapide', ic: 'play', label: esc(t(OPT.rapide ? 'options.combats.rapides' : 'options.combats.normaux')), sub: esc(t('options.combats.sous')) },
+      { k: 'notes', ic: 'book', label: esc(t('options.notes')), sub: esc(t('options.notes.sous', { v: VERSION })) }
     ];
-    if (enJeu) o.push({ k: 'titre', ic: 'home', label: esc(t('options.titre')), sub: esc(t('options.titre.sous')), dis: !libre });
+    if (enJeu) o.push({ k: 'titre', ic: 'back', label: esc(t('options.titre')), sub: esc(t('options.titre.sous')), dis: !libre });
+    o.push({ k: 'bug', ic: 'bug', label: esc(t('options.bug')), sub: esc(t('options.bug.sous')) },
+      { k: 'soutien', ic: 'heart', label: esc(t('options.soutien')), sub: esc(t('options.soutien.sous')) },
+      { k: 'hub', ic: 'home', label: esc(t('options.hub')), sub: esc(t('options.hub.sous')) });
     if (S && (enJeu || loadSave())) o.push({ k: 'reset', ic: 'x', label: esc(t(confirmer ? 'options.reset.confirmer' : 'options.reset')), sub: esc(t(confirmer ? 'options.reset.confirmer.sous' : 'options.reset.sous')), dis: !libre, cls: confirmer ? 'danger' : '' });
     if (DEBUG) o.push({ k: 'debug', ic: 'bug', label: esc(t('debug.titre')), sub: esc(t('debug.sous')), cls: 'ghost', dis: !libre });
     const sh = modal('grand', sheetHead(t('menu.options')) + `<div class="acts" id="o-list"></div><p class="note centre">Lanterval ${esc(VERSION)} · Keismey Studio</p>`);
@@ -319,6 +320,7 @@ function openOptions(vue) {
       else if (k === 'son') { vue = 'son'; draw(); }
       else if (k === 'bug') KS.bug('Lanterval', LANG);
       else if (k === 'soutien') KS.support();
+      else if (k === 'hub') { if (S && S.screen !== 'title') save(); KSBack.toHub(); }
       else if (k === 'titre') { save(); closeModal(); S.screen = 'title'; renderStable(); }
       else if (k === 'reset') {
         if (!confirmer) { confirmer = true; draw(); return; }

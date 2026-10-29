@@ -1288,6 +1288,12 @@ Soutenir le studio
 == options.soutien.sous
 Ko-fi, si le jeu te plaît
 
+== options.hub
+Retour au hub
+
+== options.hub.sous
+Les autres jeux de Keismey Studio
+
 == options.titre
 Écran titre
 
@@ -1316,6 +1322,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.0
+Options : bouton « Retour au hub », et le même ordre que dans les autres jeux du studio (son, langue, sauvegarde, puis le studio).
 ## Version 0.6.9
 Sur ordinateur, l'écran titre a la taille du jeu : l'image n'est plus étirée, et les bords de l'écran sont comblés par la même image, floutée.
 ## Version 0.6.8
