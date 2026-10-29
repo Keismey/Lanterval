@@ -1113,6 +1113,12 @@ Support the studio
 == options.soutien.sous
 Ko-fi, if you enjoy the game
 
+== options.hub
+Back to the hub
+
+== options.hub.sous
+The other Keismey Studio games
+
 == options.titre
 Title screen
 
@@ -1138,6 +1144,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.0
+Options: a “Back to the hub” button, in the same order as the studio’s other games (sound, language, save, then the studio).
 ## Version 0.6.9
 On computers, the title screen now has the size of the game: the picture is no longer stretched, and the edges of the screen are filled with the same picture, blurred.
 ## Version 0.6.8
