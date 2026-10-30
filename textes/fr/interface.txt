@@ -1264,6 +1264,15 @@ Combats : rapides
 == options.combats.sous
 Toucher pour changer
 
+== options.plein
+Plein écran
+
+== options.plein.quitter
+Quitter le plein écran
+
+== options.plein.sous
+Sans la barre du navigateur
+
 == options.sauvegarde
 Sauvegarde
 
@@ -1322,6 +1331,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.6
+Options : « Plein écran », pour jouer dans le navigateur sans sa barre (sur ordinateur et Android ; le jeu installé est déjà en plein écran).
 ## Version 0.7.5
 Au clavier : Entrée ou Espace font avancer les dialogues et les menus, et Tab reste dans la fenêtre ouverte. Les fenêtres sont annoncées par leur titre au lecteur d'écran.
 ## Version 0.7.4
