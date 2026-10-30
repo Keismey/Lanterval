@@ -176,7 +176,11 @@ setInterval(() => {
   if (!S || S.screen === 'title' || document.hidden) return;
   S.st.time++;
 }, 1000);
-window.addEventListener('pagehide', () => { if (S && S.screen !== 'title' && S.screen !== 'intro') save(); });
+// on sauve aussi au passage en arrière-plan : une appli fermée depuis les applis récentes ne reçoit souvent pas pagehide,
+// et la synchro du compte (ks-studio.js) envoie à ce moment-là la dernière sauvegarde
+function sauverEnSortant() { if (S && S.screen !== 'title' && S.screen !== 'intro') save(); }
+window.addEventListener('pagehide', sauverEnSortant);
+document.addEventListener('visibilitychange', () => { if (document.hidden) sauverEnSortant(); });
 
 // Bouton retour du téléphone (et touche Échap) : on remonte d'un cran à la fois.
 // fenêtre ouverte → son écran précédent, ou on la ferme ; menu avec un bouton « Retour » (boutique, combat, carte…) → ce bouton ;
