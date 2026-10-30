@@ -1144,6 +1144,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.5
+With a keyboard: Enter or Space moves dialogues and menus forward, and Tab stays inside the open window. Screen readers announce each window by its title.
 ## Version 0.7.4
 Slow or no connection: the game opens within 4 seconds with the copy kept on your phone, instead of staying on a black screen. Slightly lighter first load.
 ## Version 0.7.3

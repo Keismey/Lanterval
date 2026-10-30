@@ -1322,6 +1322,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.5
+Au clavier : Entrée ou Espace font avancer les dialogues et les menus, et Tab reste dans la fenêtre ouverte. Les fenêtres sont annoncées par leur titre au lecteur d'écran.
 ## Version 0.7.4
 Réseau lent ou coupé : le jeu s'ouvre au bout de 4 secondes au plus avec la version gardée sur le téléphone, au lieu de rester sur un écran noir. Premier chargement un peu plus léger.
 ## Version 0.7.3
