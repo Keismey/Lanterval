@@ -1322,6 +1322,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.2
+Boutons du haut plus grands, plus faciles à toucher. Au village, les descriptions ne sont plus coupées (le prix de l'auberge reste visible) ; textes de combat un peu plus grands.
 ## Version 0.7.1
 Sur iPhone, avec le jeu installé : la barre du haut et les boutons du bas ne passent plus sous l'encoche ni sous la barre d'accueil. Plus de zoom quand on touche deux fois vite.
 ## Version 0.7.0

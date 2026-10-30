@@ -1144,6 +1144,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.2
+Bigger buttons at the top, easier to tap. In villages, descriptions are no longer cut off (the inn price stays visible); combat text is slightly larger.
 ## Version 0.7.1
 On iPhone, with the game installed: the top bar and the bottom buttons no longer sit under the notch or the home bar. No more zooming when you tap twice quickly.
 ## Version 0.7.0
