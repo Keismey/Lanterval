@@ -157,6 +157,7 @@ button{font:inherit;color:inherit}
 .btn:hover:not(:disabled){background:var(--surface3);border-color:var(--line2)}
 .btn:active:not(:disabled){transform:scale(.985)}
 .btn:focus-visible,.ibtn:focus-visible,.tab:focus-visible,.node:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.sheet:focus,#ks-dlg .kb:focus{outline:none}   /* la fenêtre reçoit le focus à l'ouverture ; l'anneau va sur ses boutons */
 .btn:disabled{opacity:.42;cursor:default}
 .btn.main{background:linear-gradient(135deg,#f3cd63,#c8901f);color:var(--ink-gold);border-color:transparent;box-shadow:0 6px 18px rgba(233,185,73,.22)}
 .btn.main small{color:rgba(42,27,0,.72)}

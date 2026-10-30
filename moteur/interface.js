@@ -50,8 +50,83 @@ async function joinCard(id, titre) {
 }
 
 /* ---------- Fenêtres ---------- */
-function closeModal() { if (modalOuverte()) SON.bruitage('ferme'); $('#modal').innerHTML = ''; }
+function closeModal() { if (modalOuverte()) SON.bruitage('ferme'); $('#modal').innerHTML = ''; fenRendre(); }
 function modalOuverte() { return !!$('#modal .modal'); }
 // modal(html) s'adapte au contenu ; modal('grand', html) garde la même taille quel que soit l'onglet
-function modal(taille, html) { if (html === undefined) { html = taille; taille = ''; } if (!modalOuverte()) SON.bruitage('ouvre'); $('#modal').innerHTML = `<div class="modal"><div class="sheet ${taille}">${html}</div></div>`; return $('#modal .sheet'); }
+function modal(taille, html) {
+  if (html === undefined) { html = taille; taille = ''; }
+  const avant = modalOuverte() && $('#modal .sheet'), t0 = avant && avant.querySelector('.ptitle'), titre = t0 ? t0.textContent : null;
+  const liste = titre !== null && avant.contains(document.activeElement) ? fenElements(avant) : [], at = liste.indexOf(document.activeElement);
+  if (!avant) { SON.bruitage('ouvre'); fenGarder(); }
+  $('#modal').innerHTML = `<div class="modal"><div class="sheet ${taille}" role="dialog" aria-modal="true" tabindex="-1">${html}</div></div>`;
+  const sh = $('#modal .sheet'), t1 = sh.querySelector('.ptitle');
+  if (t1) { t1.id = 'm-titre'; sh.setAttribute('aria-labelledby', 'm-titre'); }
+  // même fenêtre redessinée (un réglage des Options, une quantité) : le focus reste sur le même bouton ;
+  // vérifié juste après, quand l'appelant a fini de remplir la fenêtre
+  fenFocus(sh);
+  if (at >= 0 && t1 && t1.textContent === titre) queueMicrotask(() => {
+    const apres = fenElements(sh);
+    if (document.contains(sh) && apres.length === liste.length && apres[at]) apres[at].focus({ preventScroll: true });
+  });
+  return sh;
+}
+
+/* Clavier et lecteur d'écran : à l'ouverture d'une fenêtre (la nôtre ou la « Sauvegarde » commune #ks-dlg), le focus y entre,
+   Tab et Maj+Tab restent dedans, et à la fermeture il revient au bouton qui l'a ouverte. Échap passe par retour() (ks-back.js).
+   Hors fenêtre, quand le panneau change (réplique suivante, menu de combat…), le focus va sur son premier bouton :
+   Entrée ou Espace font avancer. */
+let fenRetour = null, fenT = 0, ksRetour = null;
+function fenOuverte() { const k = document.getElementById('ks-dlg'); return k ? k.querySelector('.kb') || k : $('#modal .sheet'); }
+function fenGarder() {   // retient le bouton d'origine, sauf si le focus est déjà dans une fenêtre
+  clearTimeout(fenT);
+  const a = document.activeElement;
+  if (a && a !== document.body && !a.closest('#modal, #ks-dlg')) fenRetour = a;
+}
+function fenFocus(box) { if (box && !box.contains(document.activeElement)) box.focus({ preventScroll: true }); }
+function fenRendre() {
+  clearTimeout(fenT);
+  fenT = setTimeout(() => {   // après le rendu : le bouton d'origine a pu être redessiné (même id) ou disparaître
+    const box = fenOuverte(); if (box) return fenFocus(box);
+    let b = fenRetour; fenRetour = null;
+    if (b && !document.contains(b)) b = b.id ? document.getElementById(b.id) : null;
+    if (b && b.getClientRects().length && !b.disabled) b.focus({ preventScroll: true }); else focusPanneau();
+  }, 0);
+}
+function fenElements(box) {
+  return [...box.querySelectorAll('button, [href], input, select, textarea, summary, [tabindex]')]
+    .filter(e => e.tabIndex >= 0 && !e.disabled && e.getClientRects().length);   // rien de caché (ni dans un <details> fermé)
+}
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Tab') return;
+  const box = fenOuverte(); if (!box) return;
+  const liste = fenElements(box), a = document.activeElement;
+  if (!liste.length) { e.preventDefault(); fenFocus(box); return; }
+  if (!box.contains(a) || a === box) { e.preventDefault(); liste[e.shiftKey ? liste.length - 1 : 0].focus(); return; }
+  // au bout de la liste, on repart de l'autre côté
+  if (e.shiftKey && a === liste[0]) { e.preventDefault(); liste[liste.length - 1].focus(); }
+  else if (!e.shiftKey && a === liste[liste.length - 1]) { e.preventDefault(); liste[0].focus(); }
+}, true);
+// focus sur le premier bouton du panneau, seulement si le focus est perdu (rien n'est volé à la barre du haut) ;
+// un bouton de l'écran titre en train de disparaître (.accueil.out) compte comme perdu
+function focusPanneau() {
+  const a = document.activeElement;
+  if (fenOuverte() || (a && a !== document.body && !a.closest('.accueil.out'))) return;
+  // les boutons d'action avant les onglets (boutiques)
+  const b = $('#panel').querySelector('.acts button:not([disabled]), .cmds button:not([disabled])') || $('#panel').querySelector('button:not([disabled])');
+  if (b) b.focus({ preventScroll: true });
+}
+// Entrée maintenue : la répétition ne clique pas, pour ne pas choisir sans le vouloir la première réponse d'un choix
+document.addEventListener('keydown', e => { if (e.repeat && (e.key === 'Enter' || e.key === ' ') && e.target.closest && e.target.closest('#panel, #accueil')) e.preventDefault(); }, true);
+let panneauT = 0;
+new MutationObserver(() => { cancelAnimationFrame(panneauT); panneauT = requestAnimationFrame(focusPanneau); }).observe($('#panel'), { childList: true, subtree: true });
+// la fenêtre commune est ajoutée et retirée par ks-studio.js
+new MutationObserver(recs => recs.forEach(r => {
+  r.addedNodes.forEach(n => { if (n.id === 'ks-dlg') { ksRetour = document.activeElement; fenGarder(); const kb = n.querySelector('.kb') || n; kb.tabIndex = -1; fenFocus(kb); } });
+  r.removedNodes.forEach(n => {
+    if (n.id !== 'ks-dlg') return;
+    // ouverte depuis une de nos fenêtres (Options › Sauvegarde) : retour sur ce bouton-là
+    const b = ksRetour; ksRetour = null;
+    if (b && b.closest && b.closest('#modal') && document.contains(b)) b.focus({ preventScroll: true }); else fenRendre();
+  });
+})).observe(document.body, { childList: true });
 function sheetHead(titre) { return `<div class="sheet-h"><div class="ptitle">${esc(titre)}</div><button class="ibtn" id="mclose" aria-label="${esc(t('fermer'))}">${ic('x')}</button></div>`; }
