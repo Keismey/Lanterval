@@ -1264,6 +1264,15 @@ Combats : rapides
 == options.combats.sous
 Toucher pour changer
 
+== options.plein
+Plein écran
+
+== options.plein.quitter
+Quitter le plein écran
+
+== options.plein.sous
+Sans la barre du navigateur
+
 == options.sauvegarde
 Sauvegarde
 
@@ -1322,6 +1331,16 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.6
+Options : « Plein écran », pour jouer dans le navigateur sans sa barre (sur ordinateur et Android ; le jeu installé est déjà en plein écran).
+## Version 0.7.5
+Au clavier : Entrée ou Espace font avancer les dialogues et les menus, et Tab reste dans la fenêtre ouverte. Les fenêtres sont annoncées par leur titre au lecteur d'écran.
+## Version 0.7.4
+Réseau lent ou coupé : le jeu s'ouvre au bout de 4 secondes au plus avec la version gardée sur le téléphone, au lieu de rester sur un écran noir. Premier chargement un peu plus léger.
+## Version 0.7.3
+La partie est aussi sauvegardée quand tu passes à une autre appli : rien ne se perd si le téléphone la ferme ensuite.
+## Version 0.7.2
+Boutons du haut plus grands, plus faciles à toucher. Au village, les descriptions ne sont plus coupées (le prix de l'auberge reste visible) ; textes de combat un peu plus grands.
 ## Version 0.7.1
 Sur iPhone, avec le jeu installé : la barre du haut et les boutons du bas ne passent plus sous l'encoche ni sous la barre d'accueil. Plus de zoom quand on touche deux fois vite.
 ## Version 0.7.0

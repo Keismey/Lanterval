@@ -1089,6 +1089,15 @@ Fights: fast
 == options.combats.sous
 Tap to change
 
+== options.plein
+Full screen
+
+== options.plein.quitter
+Exit full screen
+
+== options.plein.sous
+Without the browser bar
+
 == options.sauvegarde
 Save
 
@@ -1144,6 +1153,16 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.6
+Options: “Full screen”, to play in the browser without its bar (on computers and Android; the installed game is already full screen).
+## Version 0.7.5
+With a keyboard: Enter or Space moves dialogues and menus forward, and Tab stays inside the open window. Screen readers announce each window by its title.
+## Version 0.7.4
+Slow or no connection: the game opens within 4 seconds with the copy kept on your phone, instead of staying on a black screen. Slightly lighter first load.
+## Version 0.7.3
+Your game is also saved when you switch to another app: nothing is lost if your phone closes it afterwards.
+## Version 0.7.2
+Bigger buttons at the top, easier to tap. In villages, descriptions are no longer cut off (the inn price stays visible); combat text is slightly larger.
 ## Version 0.7.1
 On iPhone, with the game installed: the top bar and the bottom buttons no longer sit under the notch or the home bar. No more zooming when you tap twice quickly.
 ## Version 0.7.0

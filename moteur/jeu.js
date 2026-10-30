@@ -97,6 +97,11 @@ function passerLogo() {
   const lg = $('#accueil .lg'); if (!lg || lg.dataset.parti) return false;
   lg.dataset.parti = 1; lg.style.opacity = 0; setTimeout(() => lg.remove(), 700); return true;
 }
+// au clavier, Entrée ou Espace font comme un appui sur l'écran d'accueil (logo, « Touche pour commencer »)
+document.addEventListener('keydown', e => {
+  const d = $('#accueil');
+  if ((e.key === 'Enter' || e.key === ' ') && !e.repeat && d && d.onclick && document.activeElement === document.body && !modalOuverte() && !document.getElementById('ks-dlg')) { e.preventDefault(); d.onclick(); }
+});
 function fermerAccueil() { const d = $('#accueil'); if (!d) return; d.id = ''; d.classList.add('out'); setTimeout(() => d.remove(), 600); }
 
 function renderTitle() {
@@ -123,6 +128,7 @@ function renderTitle() {
     } else opts.push({ k: 'new', ic: 'play', label: esc(t('titre.nouvelle')), cls: 'main' });
     opts.push({ k: 'opt', ic: 'gear', label: esc(t('menu.options')), cls: 'gris' });
     bas.innerHTML = `<div class="acts">${btns(opts)}</div><p class="version">${esc(t('titre.version', { v: VERSION }))}</p>`;
+    if (document.activeElement === document.body) bas.querySelector('button').focus({ preventScroll: true });   // clavier
     bind(bas, opts, k => {
       if (k === 'opt') { openOptions(); return; }
       if (k === 'go') { fermerAccueil(); const ici = LIEUX[lieuActuel()]; S.screen = ici.type === 'village' ? 'village' : 'zone'; renderStable(); const f = reprendre(); if (f) run(f); return; }
@@ -176,7 +182,11 @@ setInterval(() => {
   if (!S || S.screen === 'title' || document.hidden) return;
   S.st.time++;
 }, 1000);
-window.addEventListener('pagehide', () => { if (S && S.screen !== 'title' && S.screen !== 'intro') save(); });
+// on sauve aussi au passage en arrière-plan : une appli fermée depuis les applis récentes ne reçoit souvent pas pagehide,
+// et la synchro du compte (ks-studio.js) envoie à ce moment-là la dernière sauvegarde
+function sauverEnSortant() { if (S && S.screen !== 'title' && S.screen !== 'intro') save(); }
+window.addEventListener('pagehide', sauverEnSortant);
+document.addEventListener('visibilitychange', () => { if (document.hidden) sauverEnSortant(); });
 
 // Bouton retour du téléphone (et touche Échap) : on remonte d'un cran à la fois.
 // fenêtre ouverte → son écran précédent, ou on la ferme ; menu avec un bouton « Retour » (boutique, combat, carte…) → ce bouton ;

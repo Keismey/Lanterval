@@ -270,6 +270,15 @@ function openJournal() {
 }
 
 /* ---------- Options ---------- */
+// plein écran : seulement dans le navigateur (le jeu installé l'est déjà) et là où il existe (pas sur iPhone)
+// (display-mode: fullscreen) est aussi vrai pendant notre propre plein écran : on garde alors le bouton pour en sortir
+function pleinEcranPossible() { return !!document.fullscreenElement || (!!document.fullscreenEnabled && !matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches); }
+function basculerPleinEcran() {
+  const p = document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen({ navigationUI: 'hide' });
+  return Promise.resolve(p).catch(() => {});
+}
+// entrée ou sortie du plein écran (aussi par Échap ou le geste retour) : les Options ouvertes se mettent à jour
+document.addEventListener('fullscreenchange', () => { if ($('#o-list')) openOptions(); });
 const VITESSES = ['normal', 'rapide', 'instant'];
 const volTexte = v => v ? v + ' / 10' : t('options.coupe');
 function openOptions(vue) {
@@ -300,6 +309,7 @@ function openOptions(vue) {
       { k: 'save', ic: 'save', label: esc(t('options.sauvegarde')), sub: esc(t('options.sauvegarde.sous')) },
       { k: 'texte', ic: 'scroll', label: esc(t('options.texte', { v: t('options.texte.' + OPT.texte) })), sub: esc(t('options.texte.sous')) },
       { k: 'rapide', ic: 'play', label: esc(t(OPT.rapide ? 'options.combats.rapides' : 'options.combats.normaux')), sub: esc(t('options.combats.sous')) },
+      ...(pleinEcranPossible() ? [{ k: 'plein', ic: 'expand', label: esc(t(document.fullscreenElement ? 'options.plein.quitter' : 'options.plein')), sub: esc(t('options.plein.sous')) }] : []),
       { k: 'notes', ic: 'book', label: esc(t('options.notes')), sub: esc(t('options.notes.sous', { v: VERSION })) }
     ];
     if (enJeu) o.push({ k: 'titre', ic: 'back', label: esc(t('options.titre')), sub: esc(t('options.titre.sous')), dis: !libre });
@@ -315,6 +325,7 @@ function openOptions(vue) {
       if (k === 'lang') { OPT.lang = LANG === 'fr' ? 'en' : 'fr'; sauverOptions(); choisirLangue(OPT.lang); document.documentElement.lang = LANG; hud(); if (libre) { closeModal(); renderStable(); openOptions(); } else draw(); }
       else if (k === 'texte') { OPT.texte = VITESSES[(VITESSES.indexOf(OPT.texte) + 1) % VITESSES.length]; sauverOptions(); draw(); }
       else if (k === 'rapide') { OPT.rapide = !OPT.rapide; sauverOptions(); draw(); }
+      else if (k === 'plein') basculerPleinEcran();
       else if (k === 'save') { if (S && S.screen !== 'title') save(); KS.saveDialog({ jeu: 'Lanterval', keys: [CLE, CLE_SECOURS], lang: LANG }); }
       else if (k === 'notes') { vue = 'notes'; draw(); }
       else if (k === 'son') { vue = 'son'; draw(); }
