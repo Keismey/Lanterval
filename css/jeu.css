@@ -15,10 +15,11 @@
   --f-title:"Cinzel",Georgia,serif; --f-ui:"Figtree",system-ui,sans-serif;
   color-scheme:dark;
 }
-*{box-sizing:border-box}
+/* touch-action : pas de zoom au double appui (Safari ignore user-scalable=no) ; padding : encoche et barre d'accueil de l'iPhone */
+*{box-sizing:border-box;touch-action:manipulation}
 html,body{height:100%}
 body{margin:0;background:radial-gradient(120% 70% at 50% 0%,var(--glow) 0%,var(--bg) 62%);background-color:var(--bg);color:var(--text);font:15px/1.4 var(--f-ui);overflow:hidden;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:8px;
+  padding:max(8px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(8px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
   -webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
 button{font:inherit;color:inherit}
 #app{height:100%;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:8px}

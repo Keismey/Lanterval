@@ -1144,6 +1144,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.1
+On iPhone, with the game installed: the top bar and the bottom buttons no longer sit under the notch or the home bar. No more zooming when you tap twice quickly.
 ## Version 0.7.0
 Options: a “Back to the hub” button, in the same order as the studio’s other games (sound, language, save, then the studio).
 ## Version 0.6.9
