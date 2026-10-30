@@ -26,8 +26,9 @@ for (const f of liste) {
   h.update(d); emp[f] = crypto.createHash('sha1').update(d).digest('hex').slice(0, 8);
 }
 const version = /VERSION = '([^']+)'/.exec(lire('moteur/base.js'))[1] + '-' + h.digest('hex').slice(0, 8);
-// premier chargement : tout sauf les images et les musiques, plus l'écran titre et sa musique
-const base = f => !/^(img|son)\//.test(f) || /^img\/(studio|titre)\//.test(f) || f === 'son/theme.m4a';
+// premier chargement : tout sauf les images et les musiques, plus l'écran titre et sa musique ;
+// sans les grandes icônes (640 Ko), que le navigateur demande lui-même à l'installation
+const base = f => (!/^(img|son)\//.test(f) && !/^icon-(512|maskable)\.png$/.test(f)) || /^img\/(studio|titre)\//.test(f) || f === 'son/theme.m4a';
 // ensuite, dans l'ordre où le jeu s'en sert le plus : décors et visages, panoramas, monstres, musiques
 const rang = f => ['img/decors', 'img/heros', 'img/pnj', 'img/panoramas', 'img/monstres', 'son'].findIndex(d => f.startsWith(d + '/'));
 const ordre = liste.filter(f => f !== 'index.html').sort((a, b) => (base(b) - base(a)) || (rang(a) - rang(b)) || (a < b ? -1 : 1));
