@@ -1322,6 +1322,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.3
+La partie est aussi sauvegardée quand tu passes à une autre appli : rien ne se perd si le téléphone la ferme ensuite.
 ## Version 0.7.2
 Boutons du haut plus grands, plus faciles à toucher. Au village, les descriptions ne sont plus coupées (le prix de l'auberge reste visible) ; textes de combat un peu plus grands.
 ## Version 0.7.1

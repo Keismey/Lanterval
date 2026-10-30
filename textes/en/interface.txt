@@ -1144,6 +1144,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.3
+Your game is also saved when you switch to another app: nothing is lost if your phone closes it afterwards.
 ## Version 0.7.2
 Bigger buttons at the top, easier to tap. In villages, descriptions are no longer cut off (the inn price stays visible); combat text is slightly larger.
 ## Version 0.7.1
