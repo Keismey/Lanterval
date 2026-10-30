@@ -1322,6 +1322,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.1
+Sur iPhone, avec le jeu installé : la barre du haut et les boutons du bas ne passent plus sous l'encoche ni sous la barre d'accueil. Plus de zoom quand on touche deux fois vite.
 ## Version 0.7.0
 Options : bouton « Retour au hub », et le même ordre que dans les autres jeux du studio (son, langue, sauvegarde, puis le studio).
 ## Version 0.6.9
