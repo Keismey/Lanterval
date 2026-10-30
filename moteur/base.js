@@ -1,7 +1,7 @@
 /* Lanterval · petits outils communs (chargé en premier). */
 'use strict';
 
-const VERSION = '0.7.3';
+const VERSION = '0.7.4';
 const ACTES = [];   // rempli par donnees/acte1.js, acte2.js…
 
 const $ = s => document.querySelector(s);

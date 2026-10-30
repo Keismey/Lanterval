@@ -1144,6 +1144,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.4
+Slow or no connection: the game opens within 4 seconds with the copy kept on your phone, instead of staying on a black screen. Slightly lighter first load.
 ## Version 0.7.3
 Your game is also saved when you switch to another app: nothing is lost if your phone closes it afterwards.
 ## Version 0.7.2
