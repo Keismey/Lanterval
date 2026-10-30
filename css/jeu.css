@@ -23,12 +23,12 @@ body{margin:0;background:radial-gradient(120% 70% at 50% 0%,var(--glow) 0%,var(-
   -webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
 button{font:inherit;color:inherit}
 #app{height:100%;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
-.top{display:flex;align-items:center;gap:8px;min-height:38px;min-width:0}
+.top{display:flex;align-items:center;gap:8px;min-height:44px;min-width:0}
 .pillv{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);font-weight:600;font-size:13.5px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .pillv.gold{color:var(--gold2);min-width:0;overflow:hidden;text-overflow:ellipsis}
 .pillv svg{width:15px;height:15px}
 .top .sp{flex:1;min-width:0}
-.ibtn{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--surface2);border:1px solid var(--line);cursor:pointer;position:relative;flex:none}
+.ibtn{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--surface2);border:1px solid var(--line);cursor:pointer;position:relative;flex:none}
 .ibtn svg{width:19px;height:19px}
 .ibtn:disabled{opacity:.4}
 .brand{font-family:var(--f-title);font-weight:700;color:var(--muted);font-size:14px;letter-spacing:.04em}
@@ -205,7 +205,7 @@ button{font:inherit;color:inherit}
 .trav .xtrack{margin-top:8px}
 .trav .xtrack>i{background:linear-gradient(90deg,var(--gold),var(--gold2))}
 .tl{position:absolute;left:8px;right:8px;top:8px;display:flex;align-items:center;gap:4px;padding:5px 7px;overflow:hidden;z-index:1}
-.tll{font-size:11px;font-weight:700;color:var(--muted);margin-right:2px;text-transform:uppercase;letter-spacing:.06em}
+.tll{font-size:12px;font-weight:700;color:var(--muted);margin-right:2px;text-transform:uppercase;letter-spacing:.06em}
 .chip{position:relative;display:inline-block;width:28px;height:28px;flex:0 0 auto;border-radius:9px;overflow:hidden;border:1.5px solid rgba(255,255,255,.3)}
 .chip img{position:absolute;image-rendering:pixelated}
 .chip.h{background:linear-gradient(160deg,#3555b8,#1c2a66)}
@@ -225,7 +225,7 @@ button{font:inherit;color:inherit}
 .pips b.on{background:var(--gold);box-shadow:0 0 6px var(--gold)}
 .chain{color:var(--gold2)}
 .autoflag{color:#9ff0b8}
-.einfo{position:absolute;transform:translateX(-50%);width:max-content;max-width:31%;min-width:84px;padding:4px 7px 5px;font-size:11.5px;font-weight:600;text-align:center;line-height:1.2;z-index:1}
+.einfo{position:absolute;transform:translateX(-50%);width:max-content;max-width:31%;min-width:84px;padding:4px 7px 5px;font-size:12.5px;font-weight:600;text-align:center;line-height:1.2;z-index:1}
 .einfo.tg{pointer-events:auto;cursor:pointer;border-color:var(--gold);box-shadow:0 0 0 1.5px var(--gold),0 0 14px rgba(233,185,73,.5);animation:bob 1s infinite}
 .einfo .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* un monstre seul (boss) : son nom en entier */
@@ -272,16 +272,16 @@ button{font:inherit;color:inherit}
 .pc-v{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
 .pc-v b{color:var(--text);font-weight:600}
 .pcard .fnum{left:50%;top:40%}
-.pcard.empty{border-style:dashed;align-items:center;justify-content:center;color:var(--muted);font-size:11.5px;text-align:center;min-height:74px}
+.pcard.empty{border-style:dashed;align-items:center;justify-content:center;color:var(--muted);font-size:12.5px;text-align:center;min-height:74px}
 .cmds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:auto}
 .cmds .btn{flex-direction:column;justify-content:center;gap:4px;min-height:60px;padding:7px 4px;text-align:center;font-size:12.5px}
 .cmds .btn .ic{width:28px;height:28px;border-radius:9px}
-.cmds .btn small{font-size:10.5px}
+.cmds .btn small{font-size:12px}
 .cmds .btn .tx{align-items:center}
 .cmds.list{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 .cmds.list .btn{flex-direction:row;justify-content:flex-start;text-align:left;font-size:13.5px;min-height:50px;padding:6px 10px 6px 6px}
 .cmds.list .btn .tx{align-items:flex-start}
-.cmds.list .btn small{font-size:11.5px}
+.cmds.list .btn small{font-size:12.5px}
 .map svg{position:absolute;inset:0;width:100%;height:100%}
 .node{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;background:none;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-weight:700;font-size:12px;color:#fff;text-shadow:0 1px 2px #000,0 0 6px #000;z-index:1}
 .node .dot{width:22px;height:22px;border-radius:50%;background:#2a3a8a;border:3px solid #fff;box-shadow:0 0 0 3px rgba(0,0,0,.35)}
@@ -348,8 +348,10 @@ details.cls[open]>summary::before{transform:rotate(45deg)}details.cls>summary .n
 .irow small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
 .irow .qty{font-weight:700;color:var(--gold2);font-variant-numeric:tabular-nums}
 .irow.key{border-color:rgba(233,185,73,.45)}
-@media (max-width:400px){.top{gap:6px}.pillv{padding:0 9px;gap:5px}.ibtn{width:36px;height:36px}}
-@media (max-width:340px){.top{gap:4px}.ibtn{width:34px;height:34px}}
+/* boutons du haut : 44 px de haut partout ; sur téléphone étroit, un peu moins larges et « po » masqué (lu par le lecteur d'écran) pour que la somme tienne */
+@media (max-width:400px){.top{gap:5px}.pillv{padding:0 9px;gap:5px}.top .po{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+@media (max-width:374px){.ibtn{width:40px}}
+@media (max-width:359px){.top{gap:3px}.pillv{padding:0 7px;gap:4px}.ibtn{width:38px}}
 .legend{display:grid;grid-template-columns:auto 1fr;gap:10px 12px;align-items:center;font-size:13.5px}
 .legend>span:nth-child(odd){display:flex;gap:3px;justify-content:center;min-width:48px}
 .quete,.terminees{background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:0 10px}
@@ -430,7 +432,7 @@ img[src^="img/"]{image-rendering:auto!important}
 .sheet-h .sp{flex:1}.sheet-h .ptitle+.pillv{flex:none}
 .acts.village{grid-template-columns:repeat(2,minmax(0,1fr))}
 .acts.village .btn{padding:7px 8px;gap:8px}
-.acts.village .btn small{font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acts.village .btn small{font-size:12.5px}
 .acts.village .btn.partir{grid-column:1/-1;position:sticky;bottom:0;z-index:1;background:#1a1e38}
 .who.court{align-items:center}.who-t{flex:1;min-width:0}.who .pillv{flex:none}
 .ptext.ligne{font-size:13px;color:#d6d9ec;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}

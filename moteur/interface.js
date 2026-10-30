@@ -9,7 +9,7 @@ function bind(el, opts, res) { el.querySelectorAll('button[data-i]').forEach(b =
 function hud() {
   const h = $('#hud');
   if (!S || S.screen === 'title') { h.innerHTML = `<span class="brand">Keismey Studio</span><span class="sp"></span><button class="ibtn" id="hb-opt" aria-label="${esc(t('menu.options'))}" title="${esc(t('menu.options'))}">${ic('gear')}</button>`; $('#hb-opt').onclick = () => openOptions(); return; }
-  h.innerHTML = `<span class="pillv gold">${ic('coin')}${S.gold} ${esc(t('po'))}</span><span class="sp"></span>
+  h.innerHTML = `<span class="pillv gold">${ic('coin')}${S.gold}<span class="po"> ${esc(t('po'))}</span></span><span class="sp"></span>
   <button class="ibtn" id="hb-inv" aria-label="${esc(t('menu.inventaire'))}" title="${esc(t('menu.inventaire'))}">${ic('bag')}</button><button class="ibtn" id="hb-eq" aria-label="${esc(t('menu.equipe'))}" title="${esc(t('menu.equipe'))}" ${B ? 'disabled' : ''}>${ic('users')}</button><button class="ibtn" id="hb-cx" aria-label="${esc(t('menu.codex'))}" title="${esc(t('menu.codex'))}">${ic('book')}${persoNouveautes() ? '<span class="pastille"></span>' : ''}</button><button class="ibtn" id="hb-j" aria-label="${esc(t('menu.journal'))}" title="${esc(t('menu.journal'))}">${ic('scroll')}</button><button class="ibtn" id="hb-opt" aria-label="${esc(t('menu.options'))}" title="${esc(t('menu.options'))}">${ic('gear')}</button>`;
   $('#hb-inv').onclick = () => openInv('obj'); $('#hb-eq').onclick = () => { if (!B) openParty(); }; $('#hb-cx').onclick = () => openCodex(persoNouveautes() ? 'perso' : 'best'); $('#hb-j').onclick = openJournal; $('#hb-opt').onclick = () => openOptions();
 }
