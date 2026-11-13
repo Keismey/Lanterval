@@ -42,7 +42,7 @@ const MONSTRES = {
   cloporte: { pv: 70, atk: 14, def: 11, vit: 5, garde: 3, faible: ['E', 'F'], resiste: ['L', 'T'], xp: 10, or: 11, taille: .15 },
   taupe: { pv: 58, atk: 17, def: 5, vit: 9, garde: 2, faible: ['F', 'L'], resiste: ['T'], xp: 10, or: 10, taille: .18, f: true,
     capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
-  araignee: { pv: 42, atk: 15, def: 3, vit: 18, garde: 2, faible: ['F', 'E'], resiste: [], xp: 9, or: 9, taille: .14, f: true,
+  araignee: { pv: 42, atk: 15, def: 3, vit: 18, garde: 2, faible: ['F', 'E'], resiste: [], xp: 9, or: 9, taille: .2, f: true,
     capacites: [{ type: 'double', chance: .3 }] },
   tisseuse: { pv: 580, atk: 22, def: 8, vit: 11, garde: 5, faible: ['F', 'E'], resiste: ['T'], xp: 80, or: 80, taille: .36, boss: true, f: true,
     capacites: [{ type: 'appel', id: 'araignee', chance: .35 }, { type: 'spores', chance: .3, mult: .7 }] },

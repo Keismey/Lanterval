@@ -79,6 +79,14 @@ const nomCarte = reg => t(reg === 'vallee' ? 'carte.titre' : 'carte.titre.' + re
 // place d'un lieu sur la carte d'une région
 function surCarte(id, reg) { const L = LIEUX[id], c = L.carte && L.carte[reg]; return c ? { x: c[0], y: c[1] } : { x: L.x, y: L.y }; }
 
+// sceau du verrou de l'acte 2 sur la carte : un cadenas doré ciselé dans un médaillon sombre, à la place du point du lieu
+const SCEAU_VERROU = `<span class="dot sceau" aria-hidden="true"><svg viewBox="0 0 24 24"><defs><linearGradient id="sceauOr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b8"/><stop offset=".45" stop-color="#f3c95a"/><stop offset="1" stop-color="#a8721a"/></linearGradient></defs>`
+  + `<path d="M8.2 11.2V8.4a3.8 3.8 0 0 1 7.6 0v2.8" fill="none" stroke="#2a1b00" stroke-width="3.6" stroke-linecap="round"/>`
+  + `<path d="M8.2 11.2V8.4a3.8 3.8 0 0 1 7.6 0v2.8" fill="none" stroke="url(#sceauOr)" stroke-width="2.1" stroke-linecap="round"/>`
+  + `<rect x="5.2" y="10.6" width="13.6" height="10" rx="2.4" fill="url(#sceauOr)" stroke="#2a1b00" stroke-width="1"/>`
+  + `<path d="M6.6 12.4h10.8" stroke="#fff6d2" stroke-width=".8" opacity=".7"/>`
+  + `<circle cx="12" cy="14.8" r="1.55" fill="#2a1b00"/><path d="M11.25 15.4h1.5l.35 3h-2.2z" fill="#2a1b00"/></svg></span>`;
+
 function renderMap() {
   const reg = regionDe(S.loc);
   setDecor(reg === 'vallee' ? 'decor.carte' : 'decor.carte.' + reg);
@@ -91,7 +99,7 @@ function renderMap() {
   }).join('');
   const noeuds = ids.map(id => {
     const ferme = !lieuOuvert(id) || LIEUX[id].bientot, q = queteSur(id), v = verrou(id);
-    return `<button class="node ${id === ici ? 'here' : R[id] ? 'go' : ferme ? 'lock' : ''}${v ? ' verrou' : ''}" data-n="${id}" style="left:${pos(id).x * 100}%;top:${pos(id).y * 100}%"${v ? ` aria-label="${esc(nomLieu(id) + ' · ' + t('verrou.court'))}"` : ''}>${v && id === ZONE_VERROU ? `<span class="cadenas">${ic('lock')}</span>` : q ? `<span class="bang ${q}">!</span>` : ''}<span class="dot"></span><span>${esc(nomLieu(id))}${ferme ? ' ?' : ''}</span></button>`;
+    return `<button class="node ${id === ici ? 'here' : R[id] ? 'go' : ferme ? 'lock' : ''}${v ? ' verrou' : ''}" data-n="${id}" style="left:${pos(id).x * 100}%;top:${pos(id).y * 100}%"${v ? ` aria-label="${esc(nomLieu(id) + ' · ' + t('verrou.court'))}"` : ''}>${v ? '' : q ? `<span class="bang ${q}">!</span>` : ''}${v && id === ZONE_VERROU ? SCEAU_VERROU : '<span class="dot"></span>'}<span>${esc(nomLieu(id))}${ferme ? ' ?' : ''}</span></button>`;
   }).join('');
   ovc().innerHTML = `<div class="map"><svg viewBox="0 0 100 100" preserveAspectRatio="none">${traits}</svg>${noeuds}</div>` + (decorProvisoire() ? `<div class="ph glass">${esc(t('scene.provisoire'))}</div>` : '');
   const fermes = ids.filter(id => !lieuOuvert(id) || LIEUX[id].bientot);

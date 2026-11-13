@@ -482,8 +482,6 @@ img[src^="img/"]{image-rendering:auto!important}
 .panel .acts.rayon{margin-top:0}
 .tabs.filtres .tab.txt{padding:5px 10px;font-size:12.5px}
 /* verrou de l'acte 2 (moteur/verrou.js) : cadenas doré sur la carte, boutons et fenêtre */
-.node .cadenas{display:grid;place-items:center;width:30px;height:30px;margin-bottom:-2px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold2),var(--gold) 60%,#a77a1c);color:var(--ink-gold);box-shadow:0 0 0 3px rgba(0,0,0,.4),0 0 14px rgba(233,185,73,.75);animation:bob 1.6s ease-in-out infinite}
-.node .cadenas svg{width:17px;height:17px}
 .node.verrou .dot{background:var(--gold);border-color:var(--gold2)}
 .node.verrou::after{content:"";position:absolute;inset:-10px;}
 .btn.verrou .ic{color:var(--gold2)}
@@ -491,7 +489,11 @@ img[src^="img/"]{image-rendering:auto!important}
 .verrou-fen .verrou-ic{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold2),var(--gold) 60%,#a77a1c);color:var(--ink-gold);box-shadow:0 0 22px rgba(233,185,73,.55)}
 .verrou-fen .verrou-ic svg{width:28px;height:28px}
 .verrou-fen .ptext{margin:0}
-@media (prefers-reduced-motion:reduce){.node .cadenas{animation:none}}
+.node .dot.sceau{display:grid;place-items:center;width:34px;height:34px;margin:-6px 0 -1px;background:radial-gradient(circle at 50% 38%,#4a3714,#1b1206 72%);border:2px solid var(--gold2);box-shadow:0 0 0 2px #2a1b00,0 0 0 4px rgba(233,185,73,.45),0 2px 6px rgba(0,0,0,.6);animation:sceau 2.4s ease-in-out infinite}
+.map .node .dot.sceau svg{position:static;width:24px;height:24px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.6))}
+.node.verrou span:last-child{color:var(--gold2)}
+@keyframes sceau{50%{box-shadow:0 0 0 2px #2a1b00,0 0 0 4px rgba(233,185,73,.6),0 0 16px 3px rgba(255,215,122,.55)}}
+@media (prefers-reduced-motion:reduce){.node .dot.sceau{animation:none}}
 /* ---------- bande-annonce de fin d'acte 1 (moteur/trailer.js) ----------
    Les plans (.tr-vue) s'empilent ; celui qui entre passe au-dessus (.on), en fondu ou en coupe franche.
    Images cadrées par le code (.tr-cam dans .tr-cadre) : sur téléphone, cadre 3:4 sur le fond flou de la même image ;

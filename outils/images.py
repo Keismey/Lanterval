@@ -198,18 +198,19 @@ LISTE = [
     ('decor-carriere-libre.jpg', 'decors/carriere-libre.webp', 'decor', {'largeur': 1376}),
     ('monstre-cloporte.jpg', 'monstres/cloporte.webp', 'detoure', {'largeur': 640, 'trous': 400}),
     ('monstre-taupe-griffe.jpg', 'monstres/taupe.webp', 'detoure', {'largeur': 640, 'trous': 400}),
-    ('monstre-araignee-failles.jpg', 'monstres/araignee.webp', 'detoure', {'largeur': 640, 'trous': 400}),
-    ('monstre-tisseuse.jpg', 'monstres/tisseuse.webp', 'detoure', {'largeur': 760, 'trous': 6000}),
+    ('monstre-araignee-failles.jpg', 'monstres/araignee.webp', 'detoure', {'largeur': 640, 'trous': 400, 'contour': 2}),
+    ('monstre-tisseuse.jpg', 'monstres/tisseuse.webp', 'detoure', {'largeur': 760, 'trous': 150, 'garde': (.56, .02, .94, .58)}),
     ('panorama-chevre.jpg', 'panoramas/chevre.webp', 'decor', {'largeur': 1584}),
     ('panorama-tisseuse.jpg', 'panoramas/tisseuse.webp', 'decor', {'largeur': 1584}),
     ('panorama-toile-feu.jpg', 'panoramas/toile-feu.webp', 'decor', {'largeur': 1584}),
 ]
 
 
-def detourer(im, trous=False):
+def detourer(im, trous=False, garde=None):
     """Rend transparent le fond clair relié aux bords (papier blanc), en douceur sur les lavis.
     trous : vide aussi le blanc enfermé dans la brume ou la fumée (à éviter si le sujet a du blanc) ;
-    un nombre au lieu de True ne vide que les zones d'au moins ce nombre de pixels (garde les reflets)."""
+    un nombre au lieu de True ne vide que les zones d'au moins ce nombre de pixels (garde les reflets).
+    garde : ellipse (x0, y0, x1, y1, en part de l'image) où le blanc enfermé reste (reflets de l'abdomen de la Tisseuse)."""
     im = im.convert('RGBA')
     w, h = im.size
     px = im.load()
@@ -269,7 +270,9 @@ def detourer(im, trous=False):
                     if 0 <= nx < w and 0 <= ny < h and not vu[j] and not deja[j] and blanc(px[nx, ny]):
                         deja[j] = 1
                         file.append(j)
-            if len(zone) >= mini:
+            gx, gy = i0 % w / w, i0 // w / h
+            dans = garde and ((gx - (garde[0] + garde[2]) / 2) / ((garde[2] - garde[0]) / 2)) ** 2 + ((gy - (garde[1] + garde[3]) / 2) / ((garde[3] - garde[1]) / 2)) ** 2 < 1
+            if len(zone) >= mini and not dans:
                 for i in zone:
                     vu[i] = 1
     for y in range(h):
@@ -286,6 +289,17 @@ def detourer(im, trous=False):
             px[x, y] = (f(r), f(g), f(b), int(a * 255))
     # rognage sur les pixels bien visibles (ignore les traces de grain presque transparentes)
     return im.crop(im.getchannel('A').point(lambda v: 255 if v > 90 else 0).getbbox())
+
+
+def contourner(im, ep, couleur=(42, 36, 48)):
+    """Liseré sombre de ep pixels autour du sujet détouré : le détache d'un décor de la même couleur (araignées)."""
+    a = im.getchannel('A').point(lambda v: 255 if v > 90 else 0)
+    from PIL import ImageFilter
+    halo = a.filter(ImageFilter.MaxFilter(2 * ep + 1))
+    fond = Image.new('RGBA', im.size, couleur + (0,))
+    fond.putalpha(halo)
+    fond.alpha_composite(im)
+    return fond
 
 
 def taille(im, o):
@@ -324,7 +338,9 @@ def main():
         if mode == 'decor':
             im = taille(im.convert('RGB'), o)
         elif mode == 'detoure':
-            im = taille(detourer(im, o.get('trous', False)), o)
+            im = taille(detourer(im, o.get('trous', False), o.get('garde')), o)
+            if o.get('contour'):
+                im = contourner(im, o['contour'])
         elif mode == 'portrait':
             x, y, c = o['boite'][0], o['boite'][1], o['boite'][-1]
             im = im.convert('RGB').crop((x, y, x + c, y + c)).resize((o['cote'], o['cote']), Image.LANCZOS)
