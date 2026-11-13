@@ -492,3 +492,126 @@ img[src^="img/"]{image-rendering:auto!important}
 .verrou-fen .verrou-ic svg{width:28px;height:28px}
 .verrou-fen .ptext{margin:0}
 @media (prefers-reduced-motion:reduce){.node .cadenas{animation:none}}
+/* ---------- bande-annonce de fin d'acte 1 (moteur/trailer.js) ----------
+   Les plans (.tr-vue) s'empilent ; celui qui entre passe au-dessus (.on), en fondu ou en coupe franche.
+   Images cadrées par le code (.tr-cam dans .tr-cadre) : sur téléphone, cadre 3:4 sur le fond flou de la même image ;
+   sur grand écran, le cadre prend tout l'écran. */
+.trailer{position:fixed;inset:0;z-index:16;background:#000;overflow:hidden;transition:opacity .7s;color:#f6ecd2;
+  --tr-haut:calc(env(safe-area-inset-top,0px) + 11vh);--tr-cadre:min(63vh,150vw)}
+.trailer.out{opacity:0;pointer-events:none}
+.trailer.secoue{animation:trSecoue .3s linear}
+@keyframes trSecoue{20%{transform:translate(-8px,4px)}40%{transform:translate(7px,-5px)}60%{transform:translate(-5px,-2px)}80%{transform:translate(3px,3px)}}
+.tr-vue{position:absolute;inset:0;z-index:0;overflow:hidden;background:#000;opacity:0;visibility:hidden;transition:opacity 0s linear}
+.tr-vue.on{opacity:1;visibility:visible}
+.tr-vue img{position:absolute;max-width:none}
+.tr-flou{inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(22px) brightness(.34) saturate(.9)}
+.tr-fond{inset:0;width:100%;height:100%;object-fit:cover}
+.tr-cadre{position:absolute;left:0;right:0;top:var(--tr-haut);height:var(--tr-cadre);overflow:hidden;
+  -webkit-mask-image:linear-gradient(transparent,#000 7%,#000 90%,transparent);mask-image:linear-gradient(transparent,#000 7%,#000 90%,transparent)}
+.tr-cadre.plein{inset:0;height:auto;-webkit-mask-image:none;mask-image:none}
+.tr-cam{left:0;top:0;transform-origin:0 0;will-change:transform}
+.tr-plan.sombre .tr-cam{filter:brightness(.8) contrast(1.1)}
+/* légendes : sous le cadre sur téléphone */
+.tr-leg{position:absolute;z-index:2;left:0;right:0;top:calc(var(--tr-haut) + var(--tr-cadre) - 1vh);margin:0 auto;max-width:560px;padding:0 max(22px,env(safe-area-inset-left,0px));text-shadow:0 2px 10px #000,0 0 2px #000}
+.tr-narr{margin:0;text-align:center;font:600 clamp(21px,5.7vw,30px)/1.3 var(--f-title);color:#fff4d6;opacity:0}
+.tr-narr b,.tr-carton b{color:var(--gold2)}
+.tr-vue.on .tr-narr{animation:trLegende .7s ease .35s forwards}
+@keyframes trLegende{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.tr-rep{display:flex;align-items:flex-start;gap:12px;opacity:0}
+.tr-vue.on .tr-rep{animation:trLegende .6s ease .35s forwards}
+.tr-rep .tr-av{position:static;flex:none;width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 16px rgba(233,185,73,.45);background:#f4efe2}
+.tr-rep b{display:block;font:700 13px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.tr-rep p{margin:3px 0 0;font:600 clamp(19px,5.1vw,25px)/1.32 var(--f-ui);color:#fff}
+/* étiquette : petite mention dorée et grand nom (région, boss, alliée) */
+.tr-etiq{text-align:center}
+.tr-etiq span{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--gold);color:var(--ink-gold);font:800 11.5px var(--f-ui);letter-spacing:.14em;text-transform:uppercase;text-shadow:none}
+.tr-etiq h3{margin:9px 0 0;font:700 clamp(27px,8vw,44px)/1.08 var(--f-title);color:#fff4d6;letter-spacing:.02em}
+.tr-vue.on .tr-etiq span{animation:trEtiq .22s ease-out both}
+.tr-vue.on .tr-etiq h3{animation:trNom .32s cubic-bezier(.2,.9,.3,1.15) .05s both}
+@keyframes trEtiq{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes trNom{from{opacity:0;transform:scale(1.25);letter-spacing:.16em}to{opacity:1;transform:none}}
+/* carton */
+.tr-carton{display:flex;align-items:center;justify-content:center;padding:0 26px;background:radial-gradient(ellipse at 50% 50%,rgba(233,185,73,.14),transparent 62%) #000}
+.tr-carton p{margin:0;max-width:520px;text-align:center;font:600 clamp(26px,7.6vw,44px)/1.2 var(--f-title);color:#fff4d6;text-shadow:0 0 26px rgba(255,200,90,.35)}
+.tr-carton.on p{animation:trCarton 2.4s ease-out both}
+@keyframes trCarton{from{opacity:0;transform:scale(.94);filter:blur(5px)}25%{opacity:1;filter:none}to{opacity:1;transform:scale(1.03)}}
+/* boss et alliée : décor plein écran, personnage au centre */
+.tr-boss .tr-cam,.tr-alliee .tr-cam{filter:brightness(.62) saturate(1.1)}
+.tr-boss::after,.tr-alliee::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,transparent 30%,rgba(0,0,0,.6) 100%),linear-gradient(transparent 55%,rgba(0,0,0,.85))}
+.tr-boss.rival::after{background:radial-gradient(ellipse at 50% 42%,rgba(120,10,10,.0) 30%,rgba(40,0,0,.7) 100%),linear-gradient(transparent 55%,rgba(0,0,0,.88))}
+.tr-scene{position:absolute;z-index:1;left:0;right:0;top:var(--tr-haut);height:var(--tr-cadre);display:flex;align-items:center;justify-content:center}
+.tr-scene img{position:relative}
+.tr-scene .tr-mon{flex:none;width:auto;height:auto;max-width:min(92vw,620px);max-height:calc(var(--tr-cadre) * .82);object-fit:contain;filter:drop-shadow(0 14px 22px rgba(0,0,0,.7))}
+.tr-boss.on .tr-mon{animation:trSurgit .34s cubic-bezier(.15,.9,.3,1.1) both,trRespire 2.4s ease-in-out .34s infinite alternate}
+.tr-boss.coup .tr-mon{animation:trTouche .5s ease both}
+@keyframes trSurgit{from{opacity:0;transform:scale(1.7);filter:blur(8px) brightness(2.2)}to{opacity:1;transform:none;filter:drop-shadow(0 14px 22px rgba(0,0,0,.7))}}
+@keyframes trRespire{to{transform:scale(1.04)}}
+@keyframes trTouche{0%{filter:brightness(3.2) saturate(.2);transform:translateX(0) scale(1.04)}12%{filter:brightness(3.2) saturate(.2)}18%{filter:brightness(1.3);transform:translateX(-22px) rotate(-2deg) scale(1.02)}40%{transform:translateX(16px) rotate(1.5deg)}65%{transform:translateX(-7px)}100%{filter:drop-shadow(0 14px 22px rgba(0,0,0,.7));transform:none}}
+.tr-entaille{position:absolute;left:50%;top:50%;width:150vmax;height:10px;margin:-5px 0 0 -75vmax;border-radius:50%;background:linear-gradient(90deg,transparent,#fff 35%,#fff7d0 50%,#fff 65%,transparent);box-shadow:0 0 22px 6px rgba(255,220,140,.75);transform:rotate(-32deg) scaleX(0);opacity:0}
+.tr-entaille.deux{transform:rotate(28deg) scaleX(0)}
+.tr-boss.coup .tr-entaille{animation:trEntaille .36s ease-out both}
+.tr-boss.coup .tr-entaille.deux{animation:trEntaille2 .36s ease-out .07s both}
+@keyframes trEntaille{0%{opacity:1;transform:rotate(-32deg) scaleX(0)}35%{opacity:1;transform:rotate(-32deg) scaleX(1)}100%{opacity:0;transform:rotate(-32deg) scaleX(1) scaleY(.2)}}
+@keyframes trEntaille2{0%{opacity:1;transform:rotate(28deg) scaleX(0)}35%{opacity:1;transform:rotate(28deg) scaleX(1)}100%{opacity:0;transform:rotate(28deg) scaleX(1) scaleY(.2)}}
+.tr-degats{position:absolute;z-index:2;right:9%;top:9%;text-align:center;font:800 clamp(46px,14vw,84px)/1 var(--f-ui);color:#fff;-webkit-text-stroke:2px #3a1200;text-shadow:0 4px 0 #3a1200,0 0 22px rgba(255,170,60,.85);opacity:0;transform:rotate(6deg)}
+.tr-degats small{display:block;font-size:.3em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);-webkit-text-stroke:1px #3a1200;margin-bottom:3px}
+.tr-degats.faible{color:#ffe28a}
+.tr-boss.coup .tr-degats{animation:trDegats .75s ease-out forwards}
+@keyframes trDegats{0%{opacity:0;transform:rotate(6deg) scale(.3)}22%{opacity:1;transform:rotate(6deg) scale(1.3)}42%{transform:rotate(6deg) scale(1)}100%{opacity:1;transform:rotate(6deg) translateY(-14px)}}
+.tr-boss.rival .tr-etiq span{background:#c2372f;color:#fff}
+.tr-mot-rival{margin:10px 0 0;font:italic 600 clamp(18px,5vw,24px)/1.3 var(--f-title);color:#fff;opacity:0}
+.tr-boss.parle .tr-mot-rival{animation:trLegende .35s ease forwards}
+.tr-scene .tr-heroine{height:92%;width:auto;filter:drop-shadow(0 0 26px rgba(160,220,255,.55)) drop-shadow(0 14px 20px rgba(0,0,0,.7))}
+.tr-alliee.on .tr-heroine{animation:trHeroine .45s cubic-bezier(.15,.9,.3,1.15) both}
+@keyframes trHeroine{from{opacity:0;transform:translateX(45%) scale(.9)}to{opacity:1;transform:none}}
+.tr-alliee .tr-etiq span{background:#8fd6ff;color:#06203a}
+/* chiffres : classes et quêtes */
+.tr-chiffre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;background:radial-gradient(ellipse at 50% 46%,#33230a,#000 68%)}
+.tr-chiffre b{font:700 clamp(110px,36vw,220px)/.95 var(--f-title);color:var(--gold2);text-shadow:0 0 44px rgba(255,200,90,.6)}
+.tr-chiffre span{font:700 clamp(24px,7.4vw,42px)/1.1 var(--f-title);text-transform:uppercase;letter-spacing:.06em;color:#fff4d6}
+.tr-chiffre b,.tr-chiffre span{opacity:0}
+.tr-chiffre.on b{animation:trChoc .3s cubic-bezier(.2,.9,.3,1.3) forwards}
+.tr-chiffre.on span{animation:trEtiq .3s ease-out .1s forwards}
+@keyframes trChoc{from{opacity:0;transform:scale(2.2)}to{opacity:1;transform:none}}
+.tr-classe{display:block;min-height:1.5em;margin-top:22px;padding:8px 22px;border-radius:999px;border:1.5px solid var(--gold);font:700 clamp(20px,6vw,30px)/1.3 var(--f-ui);font-style:normal;color:#fff;background:rgba(233,185,73,.12)}
+.tr-classe:empty{visibility:hidden}
+.tr-classe.pop{animation:trPop .16s ease-out}
+.tr-classe.secret{background:var(--gold);color:var(--ink-gold)}
+@keyframes trPop{from{transform:scale(1.35);background:rgba(255,215,122,.55)}to{transform:none}}
+/* plans en plein écran sur grand écran */
+@media (orientation:landscape){
+  .trailer{--tr-haut:0px;--tr-cadre:100vh}
+  .tr-plan .tr-flou,.tr-region .tr-flou{display:none}
+  .tr-cadre{-webkit-mask-image:none;mask-image:none}
+  .tr-plan::after,.tr-region::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.85))}
+  .tr-leg{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 9vh);max-width:760px}
+  .tr-scene{top:6vh;height:66vh}
+}
+/* titre */
+.tr-titre .tr-fond{filter:brightness(.55) saturate(.9)}
+.tr-titre.on .tr-fond{animation:trFondTitre 7s ease-out both}
+@keyframes trFondTitre{from{transform:scale(1.18)}to{transform:scale(1.04)}}
+.tr-titre::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(233,185,73,.3),transparent 46%),linear-gradient(rgba(0,0,0,.5),transparent 22%,rgba(0,0,0,.25) 48%,rgba(0,0,0,.88) 78%)}
+.tr-bloc{position:absolute;z-index:2;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;padding:0 22px calc(env(safe-area-inset-bottom,0px) + 15vh);text-align:center}
+.tr-bloc span{font:700 12.5px var(--f-ui);letter-spacing:.24em;text-transform:uppercase;color:#f0e6cc;text-shadow:0 1px 4px #000}
+.tr-bloc h2{margin:0;font:700 clamp(48px,14.5vw,96px)/1 var(--f-title);color:#fff4d6;letter-spacing:.06em;text-shadow:0 2px 0 rgba(0,0,0,.4),0 0 34px rgba(255,200,90,.7)}
+.tr-bloc em{font:700 clamp(17px,4.8vw,24px) var(--f-title);font-style:normal;letter-spacing:.2em;color:var(--gold2);text-shadow:0 1px 6px #000}
+.tr-bloc p{margin:14px 0 0;max-width:460px;font:italic 600 clamp(18px,5vw,24px)/1.35 var(--f-title);color:#f2e6c9;text-shadow:0 1px 8px #000;opacity:0}
+.tr-titre.on span{animation:spIn .8s ease .2s both}
+.tr-titre.on h2{animation:trTitre 1.3s cubic-bezier(.2,.8,.3,1) both}
+.tr-titre.on em{animation:spIn .8s ease .7s both}
+.tr-titre.on p{animation:spIn 1s ease 1.6s forwards}
+@keyframes trTitre{from{opacity:0;transform:scale(1.5);letter-spacing:.34em;filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.tr-braises{position:absolute;z-index:1;inset:0;overflow:hidden}
+.tr-braises i{position:absolute;left:var(--x);bottom:-10px;width:5px;height:5px;border-radius:50%;background:#ffd77a;box-shadow:0 0 10px 3px rgba(255,190,80,.7);opacity:0}
+.tr-titre.on .tr-braises i{animation:trBraise var(--v) linear var(--d) infinite}
+@keyframes trBraise{0%{opacity:0;transform:translate(0,0)}15%{opacity:.9}100%{opacity:0;transform:translate(24px,-78vh) scale(.4)}}
+/* éclair blanc, bouton Passer */
+.tr-flash{position:absolute;inset:0;z-index:4;background:#fff;opacity:0;pointer-events:none}
+.tr-flash.go{animation:trFlash .2s ease-out}
+.tr-flash.fort{animation:trFlash .55s ease-out}
+.tr-flash.go{--f:.38}
+@keyframes trFlash{from{opacity:var(--f,.8)}to{opacity:0}}
+.tr-passer{position:absolute;z-index:5;top:calc(env(safe-area-inset-top,0px) + 10px);right:max(10px,env(safe-area-inset-right,0px));min-width:84px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.4);color:rgba(242,230,201,.85);font:600 14px var(--f-ui);cursor:pointer}
+.tr-passer:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.trailer.secoue{animation:none}.tr-flash.go,.tr-flash.fort{animation:none}}

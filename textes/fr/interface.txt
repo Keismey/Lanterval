@@ -1331,6 +1331,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.8
+Fin de l'acte 1 : une bande-annonce « Ce qui t'attend pour la suite », avant la fenêtre du cadenas. On peut la revoir depuis cette fenêtre.
 ## Version 0.7.7
 Fin de l'acte 1 : un cadenas doré ferme le Marais salant. Touche-le pour ouvrir la fenêtre « La suite de l'aventure » ; pendant les tests, la suite se déverrouille gratuitement.
 ## Version 0.7.6
@@ -1474,3 +1476,92 @@ Reverrouiller l'acte 2
 
 == verrou.refermer.sous
 Version de test : pour revoir la fenêtre du verrou
+
+== verrou.trailer
+Revoir la bande-annonce
+
+# ---------- Bande-annonce de fin d'acte 1 (moteur/trailer.js) ----------
+
+== trailer.surtitre
+Ce qui t'attend pour la suite
+
+# 1. l'histoire
+== trailer.n.lanterne
+Tu as rallumé la lanterne.
+
+== trailer.n.cristal
+Mais l'Ordre a volé le cristal d'ambre.
+
+== trailer.c.debut
+Et ton aventure ne fait *que commencer*.
+
+== trailer.n.salvent
+Salvent. La ville qui oublie jusqu'au nom de ses enfants.
+
+== trailer.q.sol
+« J'avais six ans. Ma sœur en avait deux. »
+
+== trailer.n.quai
+Chaque soir, quelqu'un attend sur le quai.
+
+== trailer.q.nev
+« Ils veulent me ramener. Et je ne reviendrai pas. »
+
+== trailer.q.mira
+« Tu m'as menti toute ma vie. »
+
+== trailer.n.sansnom
+Et *lui* n'en a pas fini avec toi.
+
+# 2. l'action
+== trailer.tag.region
+Nouvelle région
+
+== trailer.region.cote
+Côte de Salvent
+
+== trailer.region.cendre
+Plaines de Cendre
+
+== trailer.region.vents
+Hauts-Vents
+
+== trailer.tag.boss
+Boss · Acte {n}
+
+== trailer.tag.rival
+Le rival
+
+== trailer.tag.alliee
+Nouvelle alliée
+
+== trailer.faiblesse
+Faiblesse !
+
+== trailer.mot.classes
+nouvelles classes
+
+== trailer.mot.quetes
+quêtes annexes
+
+== trailer.q.varen
+« On a un compte à régler. »
+
+# 3. l'équipe, le titre
+== trailer.n.equipe
+Quatre héros. Quatre cristaux.
+
+== trailer.n.voyage
+Un dernier voyage.
+
+== trailer.titre.sur
+La suite de l'aventure
+
+== trailer.titre.actes
+Actes 2 · 3 · 4
+
+== trailer.titre.sous
+Jusqu'où iras-tu pour rallumer le monde ?
+
+== trailer.passer
+Passer

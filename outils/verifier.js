@@ -93,7 +93,7 @@ function evenements(evts, ou) {
     else if (type === 'drapeau') { if (!/^[\w-]+$/.test(a)) erreur(`drapeau illisible « ${a} » (${o})`); }
     else if (type === 'trouve') { const [z, f] = a.split(/\s+/); if (!D.LIEUX[z] || !(D.LIEUX[z].tresors || []).some(x => x.id === f)) erreur(`découverte inconnue « ${a} » (${o})`); }
     else if (type === 'si') { condition(a, o); evenements(b, o + ' (alors)'); if (c) evenements(c, o + ' (sinon)'); }
-    else if (!['decor', 'soin', 'stop', 'fin_jeu', 'codex'].includes(type)) erreur(`événement inconnu « ${type} » (${ou})`);
+    else if (!['decor', 'soin', 'stop', 'fin_jeu', 'codex', 'trailer'].includes(type)) erreur(`événement inconnu « ${type} » (${ou})`);
   }
 }
 for (const a of D.ACTES) {

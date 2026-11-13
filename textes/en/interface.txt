@@ -1153,6 +1153,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.8
+End of Act 1: a “What awaits you next” trailer, before the padlock window. You can watch it again from that window.
 ## Version 0.7.7
 End of Act 1: a golden padlock closes the Salt Marsh. Tap it to open the “The adventure continues” window; during testing, the rest unlocks for free.
 ## Version 0.7.6
@@ -1442,3 +1444,92 @@ Lock Act 2 again
 
 == verrou.refermer.sous
 Test version: to see the lock window again
+
+== verrou.trailer
+Watch the trailer again
+
+# ---------- End of Act 1 trailer (moteur/trailer.js) ----------
+
+== trailer.surtitre
+What awaits you next
+
+# 1. the story
+== trailer.n.lanterne
+You lit the lantern again.
+
+== trailer.n.cristal
+But the Order stole the amber crystal.
+
+== trailer.c.debut
+And your adventure has *only just begun*.
+
+== trailer.n.salvent
+Salvent. The town that forgets even its children's names.
+
+== trailer.q.sol
+“I was six. My sister was two.”
+
+== trailer.n.quai
+Every evening, someone waits on the pier.
+
+== trailer.q.nev
+“They want to take me back. And I'm not going back.”
+
+== trailer.q.mira
+“You lied to me my whole life.”
+
+== trailer.n.sansnom
+And *he* is not done with you.
+
+# 2. the action
+== trailer.tag.region
+New region
+
+== trailer.region.cote
+Salvent Coast
+
+== trailer.region.cendre
+Cendre Plains
+
+== trailer.region.vents
+High Winds
+
+== trailer.tag.boss
+Boss · Act {n}
+
+== trailer.tag.rival
+The rival
+
+== trailer.tag.alliee
+New ally
+
+== trailer.faiblesse
+Weakness!
+
+== trailer.mot.classes
+new classes
+
+== trailer.mot.quetes
+side quests
+
+== trailer.q.varen
+“We have a score to settle.”
+
+# 3. the team, the title
+== trailer.n.equipe
+Four heroes. Four crystals.
+
+== trailer.n.voyage
+One last journey.
+
+== trailer.titre.sur
+The adventure continues
+
+== trailer.titre.actes
+Acts 2 · 3 · 4
+
+== trailer.titre.sous
+How far will you go to relight the world?
+
+== trailer.passer
+Skip

@@ -1,12 +1,19 @@
 # État du projet
 
+## Version 0.7.8 (2026-11-13) : bande-annonce de fin d'acte 1
+
+- `moteur/trailer.js` : « Ce qui t'attend pour la suite », ~51 s, refait de zéro (4e version). Trois temps : l'histoire (musique `menace`, fondus : lanterne, cage, Salvent, Sol et l'épave, Naïa sur le quai, Nev en fuite, Mira et Hilde, le Sans-Nom), l'action (musique `boss`, coupes franches calées sur son tempo de 160 à la minute, `TR_TEMPS` = 375 ms : 3 régions, 5 boss + Varen avec entaille, éclair, secousse et dégâts au 3e temps, Nev « nouvelle alliée », 13 classes qui défilent, 12 quêtes annexes), puis l'équipe au feu, l'Escalier et le titre. Sans les grands retournements (ni Aldric, ni Ysold, ni la fin).
+- Cadrage : chaque image a sa caméra `cam = [départ, arrivée]`, chacun `[x, y, zoom]` (point de l'image placé au centre du cadre). Sur téléphone le cadre est un rectangle sur le fond flou de la même image (un panorama 2,36:1 ne tient pas en plein écran vertical) ; sur grand écran, plein écran. Les images sont toutes chargées avant le premier plan (6 s au plus).
+- `SON.musique(id, { coupe, fondu })` rend une promesse tenue quand la piste joue (l'horloge de l'action part de là) ; `SON.precharger(id)`.
+- Historique : v1 à v3 (panoramas qui glissent, puis combats mal cadrés) refusées par Keismey : trop lent, répétitif, zones plutôt qu'aventure, cadrage.
+- Événement `['trailer']` à la fin de a1.e10 : la bande-annonce, puis la fenêtre du verrou si la suite est fermée (`finActe1` dans verrou.js). Bouton « Revoir la bande-annonce » dans la fenêtre du verrou.
+
 ## Version 0.7.7 (2026-11-13) : verrou de l'acte 2 (préparation Play Store)
 
 - Monétisation prévue : acte 1 gratuit, la suite payante (achat Google Play en 1.1). Verrou à l'entrée du Marais salant (`moteur/verrou.js`), seul passage vers la côte, ouvert par `fini a1.e10` ; tout le reste de la vallée reste jouable.
 - Carte : cadenas doré au-dessus du marais, boutons des trajets par le marais avec un cadenas (« Acte 2 · verrouillé ») ; toucher l'un ou l'autre ouvre la fenêtre « La suite de l'aventure » (fermable). Garde-fou dans `voyager`.
 - Version de test (`VERROU_ACTIF = true`, `VERROU_ACHAT = false`) : la fenêtre propose « Déverrouiller la suite » gratuitement ; Options › « Reverrouiller l'acte 2 » pour la revoir. En 1.1 : `VERROU_ACHAT = true` et brancher Google Play Billing dans `acheterActe2`.
 - Déblocage gardé sur l'appareil (clé `lanterval-acte2`), jamais dans la sauvegarde ; une partie qui a déjà joué l'acte 2 (étape a2+ finie, fin vue, partie+, équipe hors de la vallée) n'est jamais bloquée.
-- À venir : trailer « Ce qui t'attend pour la suite » en fin d'acte 1, avant la fenêtre.
 
 ## Version 0.6.9 (2026-10-26) : écran titre sur ordinateur
 

@@ -25,6 +25,11 @@ function acte2DejaJoue() {
 }
 // le verrou ne se montre qu'une fois le marais ouvert par l'histoire (fin de l'acte 1)
 function acte2Verrouille() { return VERROU_ACTIF && !!S && lieuOuvert(ZONE_VERROU) && !acte2Achete() && !acte2DejaJoue(); }
+// fin de l'acte 1 (événement ['trailer'] de a1.e10) : la bande-annonce, puis la fenêtre du verrou si la suite est fermée
+async function finActe1() {
+  await trailer();
+  if (VERROU_ACTIF && !acte2Achete() && !acte2DejaJoue()) await ouvrirVerrou();
+}
 // un trajet vers dest passe par le marais (ou y mène)
 function trajetVerrouille(dest, r) {
   if (!acte2Verrouille()) return false;
@@ -32,18 +37,23 @@ function trajetVerrouille(dest, r) {
   return dest === ZONE_VERROU || !!(r && r.via.some(([z]) => z === ZONE_VERROU));
 }
 
+// renvoie une promesse tenue quand la fenêtre se ferme (true si la suite a été déverrouillée)
 function ouvrirVerrou() {
-  const achat = VERROU_ACHAT;
-  const sh = modal(sheetHead(t('verrou.titre')) + `<div class="verrou-fen">
-    <div class="verrou-ic">${ic('lock')}</div>
-    ${lignes('verrou.texte').map(l => `<p class="ptext">${html(l)}</p>`).join('')}
-    ${achat ? '' : `<p class="note">${html(t('verrou.test'))}</p>`}
-  </div><div class="acts">
-    <button class="btn main wide" id="v-ok"><span class="ic">${ic('lock')}</span><span class="tx"><span>${esc(t(achat ? 'verrou.acheter' : 'verrou.deverrouiller'))}</span></span></button>
-    <button class="btn ghost wide" id="v-non"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('verrou.plus.tard'))}</span><small>${esc(t('verrou.plus.tard.sous'))}</small></span></button>
-  </div>`);
-  sh.querySelector('#mclose').onclick = sh.querySelector('#v-non').onclick = fermerFenetre;
-  sh.querySelector('#v-ok').onclick = () => { if (achat) acheterActe2(); else { acte2Debloquer(true); acte2Ouvert(); } };
+  return new Promise(res => {
+    const achat = VERROU_ACHAT;
+    const sh = modal(sheetHead(t('verrou.titre')) + `<div class="verrou-fen">
+      <div class="verrou-ic">${ic('lock')}</div>
+      ${lignes('verrou.texte').map(l => `<p class="ptext">${html(l)}</p>`).join('')}
+      ${achat ? '' : `<p class="note">${html(t('verrou.test'))}</p>`}
+    </div><div class="acts">
+      <button class="btn main wide" id="v-ok"><span class="ic">${ic('lock')}</span><span class="tx"><span>${esc(t(achat ? 'verrou.acheter' : 'verrou.deverrouiller'))}</span></span></button>
+      <button class="btn wide" id="v-trailer"><span class="ic">${ic('play')}</span><span class="tx"><span>${esc(t('verrou.trailer'))}</span></span></button>
+      <button class="btn ghost wide" id="v-non"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('verrou.plus.tard'))}</span><small>${esc(t('verrou.plus.tard.sous'))}</small></span></button>
+    </div>`);
+    sh.querySelector('#mclose').onclick = sh.querySelector('#v-non').onclick = () => { fermerFenetre(); res(false); };
+    sh.querySelector('#v-trailer').onclick = async () => { closeModal(); await trailer(); res(await ouvrirVerrou()); };
+    sh.querySelector('#v-ok').onclick = () => { if (achat) acheterActe2(); else { acte2Debloquer(true); acte2Ouvert(); res(true); } };
+  });
 }
 function acte2Ouvert() {
   closeModal();
