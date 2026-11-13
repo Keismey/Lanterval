@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.7.9 (2026-11-13) : sceau du verrou sur la carte
+
+- Retour de Keismey : le cadenas doré au-dessus du Marais salant était très moche (boule dorée posée sur le point du lieu). Il est remplacé par un sceau à la place du point : médaillon sombre cerclé d'or, cadenas doré dessiné en SVG (`SCEAU_VERROU`, moteur/carte.js), halo qui pulse doucement, nom du lieu en doré. Toucher le sceau ouvre toujours la fenêtre du verrou. Les cadenas des boutons de trajet ne changent pas.
+
 ## Version 0.7.8 (2026-11-13) : bande-annonce de fin d'acte 1
 
 - `moteur/trailer.js` : « Ce qui t'attend pour la suite », ~51 s, refait de zéro (4e version). Trois temps : l'histoire (musique `menace`, fondus : lanterne, cage, Salvent, Sol et l'épave, Naïa sur le quai, Nev en fuite, Mira et Hilde, le Sans-Nom), l'action (musique `boss`, coupes franches calées sur son tempo de 160 à la minute, `TR_TEMPS` = 375 ms : 3 régions, 5 boss + Varen avec entaille, éclair, secousse et dégâts au 3e temps, Nev « nouvelle alliée », 13 classes qui défilent, 12 quêtes annexes), puis l'équipe au feu, l'Escalier et le titre. Sans les grands retournements (ni Aldric, ni Ysold, ni la fin).
