@@ -8,7 +8,7 @@
   - `fer` (Hilde) : trois filons en `parmi`, le troisième derrière la toile (`si` par morceau, nouveau). Hilde offre l'Épée de fer gris (`fergris`) et met en rayon le Bâton de quartz (`quartzb`) et la Cotte de fer gris (`cottegris`).
   - `gronde` (Brann) : boss la Tisseuse de pierre (`tisseuse` : appel d'Araignées des failles, toile sur toute l'équipe, résiste à la Terre, craint Feu et Eau). Mira brûle la toile : drapeau `toile`, état `libre` (décor sans toile), la galerie profonde ouvre les découvertes k7 et k8 (`si` sur une découverte, nouveau : `tresorsDispos`). Récompense : Soie de roche (`soieroche`, accessoire) et 100 po.
 - Monstres : Cloporte des roches, Taupe-griffe, Araignée des failles, Tisseuse de pierre. Accessoires : Quartz fumé (découverte), Géode (palier 100 %).
-- Images provisoires (pixel art pour les monstres et le décor, cadre nommé pour les 3 panoramas) ; prompts Gemini et références dans /mnt/project-files/lanterval-carriere/.
+- Images définitives de Keismey (Gemini) : 2 décors, 4 monstres, 3 panoramas (sources dans outils/sources/, entrées en fin de LISTE dans outils/images.py ; Tisseuse détourée avec `trous: 6000` pour garder les reflets de l'abdomen). Pixel art provisoire gardé en secours.
 
 ## Version 0.7.8 (2026-11-13) : bande-annonce de fin d'acte 1
 
