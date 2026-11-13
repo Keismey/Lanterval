@@ -84,18 +84,19 @@ function renderMap() {
   setDecor(reg === 'vallee' ? 'decor.carte' : 'decor.carte.' + reg);
   const ici = lieuActuel(), tous = Object.keys(LIEUX).filter(lieuVisible), ids = tous.filter(id => regionsDu(id).includes(reg)), R = {};
   for (const id of tous) if (id !== ici && lieuOuvert(id) && !LIEUX[id].bientot) { const r = route(id); if (r) R[id] = r; }
-  const pos = id => surCarte(id, reg);
+  const pos = id => surCarte(id, reg), verrou = id => !!R[id] && trajetVerrouille(id, R[id]);
   const traits = LIENS.filter(([a, b]) => regionDe(a) === reg && regionDe(b) === reg).map(([a, b]) => [lieuDe(a), lieuDe(b)]).filter(([a, b]) => ids.includes(a) && ids.includes(b)).map(([a, b]) => {
     const ferme = !lieuOuvert(a) || !lieuOuvert(b) || LIEUX[a].bientot || LIEUX[b].bientot;
     return `<line x1="${pos(a).x * 100}" y1="${pos(a).y * 100}" x2="${pos(b).x * 100}" y2="${pos(b).y * 100}" stroke="${ferme ? '#aab0c8' : '#fff1c0'}" stroke-width="${ferme ? 2 : 3}" stroke-dasharray="${ferme ? '3 5' : '7 5'}" vector-effect="non-scaling-stroke" opacity="${ferme ? .6 : .95}"/>`;
   }).join('');
   const noeuds = ids.map(id => {
-    const ferme = !lieuOuvert(id) || LIEUX[id].bientot, q = queteSur(id);
-    return `<button class="node ${id === ici ? 'here' : R[id] ? 'go' : ferme ? 'lock' : ''}" data-n="${id}" style="left:${pos(id).x * 100}%;top:${pos(id).y * 100}%">${q ? `<span class="bang ${q}">!</span>` : ''}<span class="dot"></span><span>${esc(nomLieu(id))}${ferme ? ' ?' : ''}</span></button>`;
+    const ferme = !lieuOuvert(id) || LIEUX[id].bientot, q = queteSur(id), v = verrou(id);
+    return `<button class="node ${id === ici ? 'here' : R[id] ? 'go' : ferme ? 'lock' : ''}${v ? ' verrou' : ''}" data-n="${id}" style="left:${pos(id).x * 100}%;top:${pos(id).y * 100}%"${v ? ` aria-label="${esc(nomLieu(id) + ' · ' + t('verrou.court'))}"` : ''}>${v && id === ZONE_VERROU ? `<span class="cadenas">${ic('lock')}</span>` : q ? `<span class="bang ${q}">!</span>` : ''}<span class="dot"></span><span>${esc(nomLieu(id))}${ferme ? ' ?' : ''}</span></button>`;
   }).join('');
   ovc().innerHTML = `<div class="map"><svg viewBox="0 0 100 100" preserveAspectRatio="none">${traits}</svg>${noeuds}</div>` + (decorProvisoire() ? `<div class="ph glass">${esc(t('scene.provisoire'))}</div>` : '');
   const fermes = ids.filter(id => !lieuOuvert(id) || LIEUX[id].bientot);
   const clic = id => {
+    if (verrou(id)) return ouvrirVerrou();
     if (R[id]) return run(() => voyager(id));
     if (LIEUX[id].bientot) S.msg = tx('carte.bientot', { lieu: nomLieu(id) });
     else if (!lieuOuvert(id)) S.msg = tx('carte.ferme', { lieu: nomLieu(id) });
@@ -104,19 +105,20 @@ function renderMap() {
   };
   ovc().querySelectorAll('.node').forEach(b => b.onclick = () => clic(b.dataset.n));
   // boutons : les lieux de cette carte, et les villages des autres régions
-  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: LIEUX[id].type === 'village' ? 'home' : 'run', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(charrette(id) ? t('carte.charrette') : plume(id) && r.via.length ? t('carte.plume') : viaTxt(r.via)), bang: queteSur(id) || (ids.includes(id) ? '' : queteRegion(regionsDu(id)[0], ids)) }));
+  const opts = Object.entries(R).filter(([id]) => ids.includes(id) || LIEUX[id].type === 'village').map(([id, r]) => ({ k: id, ic: verrou(id) ? 'lock' : LIEUX[id].type === 'village' ? 'home' : 'run', cls: verrou(id) ? 'verrou' : '', label: esc(nomLieu(id)) + (ids.includes(id) ? '' : ` <small>${esc(nomCarte(regionsDu(id)[0]))}</small>`), sub: esc(verrou(id) ? t('verrou.court') : charrette(id) ? t('carte.charrette') : plume(id) && r.via.length ? t('carte.plume') : viaTxt(r.via)), bang: verrou(id) ? '' : queteSur(id) || (ids.includes(id) ? '' : queteRegion(regionsDu(id)[0], ids)) }));
   opts.push({ k: 'back', ic: 'back', label: esc(t('carte.rester')), sub: esc(ouSuisJe()), cls: 'ghost' });
   const p = $('#panel');
   p.innerHTML = `<div class="ptitle">${esc(nomCarte(reg))}</div><p class="ptext">${tx('carte.ici', { lieu: ouSuisJe() })}</p>
     ${fermes.length ? `<p class="note">${tx('carte.fermes', { lieux: fermes.map(nomLieu).join(', ') })}</p>` : ''}<div class="msgline">${S.msg || ''}</div><div class="acts">${btns(opts)}</div>`;
   S.msg = '';
-  bind(p, opts, k => { if (k === 'back') { S.screen = LIEUX[ici].type === 'village' ? 'village' : 'zone'; renderStable(); } else run(() => voyager(k)); });
+  bind(p, opts, k => { if (k === 'back') { S.screen = LIEUX[ici].type === 'village' ? 'village' : 'zone'; renderStable(); } else if (verrou(k)) ouvrirVerrou(); else run(() => voyager(k)); });
 }
 
 // aller jusqu'à un lieu en traversant les zones sur le chemin
 async function voyager(dest) {
   if (charrette(dest)) { S.loc = dest; S.screen = 'village'; logR('journal.log.charrette', { lieu: 'lieu.' + dest + '.nom' }); return; }
   const r = route(dest); if (!r) return;
+  if (trajetVerrouille(dest, r)) return ouvrirVerrou();   // garde-fou : tout trajet par le marais verrouillé
   // Plume du facteur : on arrive du côté le plus proche, sans traverser
   if (plume(dest) && r.via.length) { S.loc = r.vers; logR('journal.log.plume', { lieu: 'lieu.' + dest + '.nom' }); return entrerZone(dest); }
   for (const [z, de, vers] of r.via) { S.loc = z + '.' + de; await traverse(z, de, vers); S.loc = z + '.' + vers; }

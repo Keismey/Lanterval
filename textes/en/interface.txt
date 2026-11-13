@@ -1153,6 +1153,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.7
+End of Act 1: a golden padlock closes the Salt Marsh. Tap it to open the “The adventure continues” window; during testing, the rest unlocks for free.
 ## Version 0.7.6
 Options: “Full screen”, to play in the browser without its bar (on computers and Android; the installed game is already full screen).
 ## Version 0.7.5
@@ -1404,3 +1406,39 @@ Ember
 
 == combat.cristal.azur
 Azure
+
+# ---------- Act 2 lock (moteur/verrou.js) ----------
+
+== verrou.titre
+The adventure continues
+
+== verrou.texte
+You have finished *Act 1*. Beyond the *Salt Marsh* lie the Salvent coast and the rest of the story: three acts, new regions, new companions, new classes and quests.
+Everything you found in the valley stays open: areas, treasures, shops and quests.
+
+== verrou.test
+Test version: the rest of the game is free. Tap *Unlock the rest* to continue.
+
+== verrou.deverrouiller
+Unlock the rest
+
+== verrou.acheter
+Unlock the rest
+
+== verrou.plus.tard
+Later
+
+== verrou.plus.tard.sous
+Stay in the valley
+
+== verrou.court
+Act 2 · locked
+
+== verrou.ouvert
+The rest of the game is unlocked: the *{lieu}* awaits.
+
+== verrou.refermer
+Lock Act 2 again
+
+== verrou.refermer.sous
+Test version: to see the lock window again

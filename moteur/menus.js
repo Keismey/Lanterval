@@ -317,6 +317,8 @@ function openOptions(vue) {
       { k: 'soutien', ic: 'heart', label: esc(t('options.soutien')), sub: esc(t('options.soutien.sous')) },
       { k: 'hub', ic: 'home', label: esc(t('options.hub')), sub: esc(t('options.hub.sous')) });
     if (S && (enJeu || loadSave())) o.push({ k: 'reset', ic: 'x', label: esc(t(confirmer ? 'options.reset.confirmer' : 'options.reset')), sub: esc(t(confirmer ? 'options.reset.confirmer.sous' : 'options.reset.sous')), dis: !libre, cls: confirmer ? 'danger' : '' });
+    // version de test : pouvoir refermer l'acte 2 pour revoir la fenêtre du verrou
+    if (VERROU_ACTIF && !VERROU_ACHAT && acte2Achete()) o.push({ k: 'reverrou', ic: 'lock', label: esc(t('verrou.refermer')), sub: esc(t('verrou.refermer.sous')), cls: 'ghost' });
     if (DEBUG) o.push({ k: 'debug', ic: 'bug', label: esc(t('debug.titre')), sub: esc(t('debug.sous')), cls: 'ghost', dis: !libre });
     const sh = modal('grand', sheetHead(t('menu.options')) + `<div class="acts" id="o-list"></div><p class="note centre">Lanterval ${esc(VERSION)} · Keismey Studio</p>`);
     sh.querySelector('#mclose').onclick = fermerFenetre;
@@ -338,6 +340,7 @@ function openOptions(vue) {
         closeModal(); effacerPartie(); S = newState(); renderStable();
       }
       else if (k === 'debug') { closeModal(); openDebug(); }
+      else if (k === 'reverrou') { acte2Debloquer(false); closeModal(); if (libre && S && S.screen !== 'title') renderStable(); }
     });
   };
   draw();

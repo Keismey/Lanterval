@@ -1331,6 +1331,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.7
+Fin de l'acte 1 : un cadenas doré ferme le Marais salant. Touche-le pour ouvrir la fenêtre « La suite de l'aventure » ; pendant les tests, la suite se déverrouille gratuitement.
 ## Version 0.7.6
 Options : « Plein écran », pour jouer dans le navigateur sans sa barre (sur ordinateur et Android ; le jeu installé est déjà en plein écran).
 ## Version 0.7.5
@@ -1436,3 +1438,39 @@ Braise
 
 == combat.cristal.azur
 Azur
+
+# ---------- Verrou de l'acte 2 (moteur/verrou.js) ----------
+
+== verrou.titre
+La suite de l'aventure
+
+== verrou.texte
+Tu as terminé l'*acte 1*. Au-delà du *Marais salant* t'attendent la côte de Salvent et toute la suite de l'histoire : trois actes, de nouvelles régions, de nouveaux compagnons, de nouvelles classes et des quêtes.
+Tout ce que tu as découvert dans la vallée reste ouvert : zones, trésors, boutiques et quêtes.
+
+== verrou.test
+Version de test : la suite est offerte. Touche *Déverrouiller la suite* pour continuer.
+
+== verrou.deverrouiller
+Déverrouiller la suite
+
+== verrou.acheter
+Débloquer la suite
+
+== verrou.plus.tard
+Plus tard
+
+== verrou.plus.tard.sous
+Rester dans la vallée
+
+== verrou.court
+Acte 2 · verrouillé
+
+== verrou.ouvert
+La suite est déverrouillée : le *{lieu}* t'attend.
+
+== verrou.refermer
+Reverrouiller l'acte 2
+
+== verrou.refermer.sous
+Version de test : pour revoir la fenêtre du verrou
