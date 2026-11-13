@@ -193,6 +193,16 @@ LISTE = [
     ('perso-ilse.jpg', 'pnj/ilse.webp', 'portrait', {'boite': (180, 50, 600), 'cote': 192}),
     ('perso-aldric.jpg', 'pnj/aldric.webp', 'portrait', {'boite': (230, 50, 600), 'cote': 192}),
     ('perso-garrick.jpg', 'pnj/garrick.webp', 'portrait', {'boite': (200, 20, 620), 'cote': 192}),
+    # Carrière effondrée (0.7.9)
+    ('decor-carriere.jpg', 'decors/carriere.webp', 'decor', {'largeur': 1376}),
+    ('decor-carriere-libre.jpg', 'decors/carriere-libre.webp', 'decor', {'largeur': 1376}),
+    ('monstre-cloporte.jpg', 'monstres/cloporte.webp', 'detoure', {'largeur': 640, 'trous': 400}),
+    ('monstre-taupe-griffe.jpg', 'monstres/taupe.webp', 'detoure', {'largeur': 640, 'trous': 400}),
+    ('monstre-araignee-failles.jpg', 'monstres/araignee.webp', 'detoure', {'largeur': 640, 'trous': 400}),
+    ('monstre-tisseuse.jpg', 'monstres/tisseuse.webp', 'detoure', {'largeur': 760, 'trous': 6000}),
+    ('panorama-chevre.jpg', 'panoramas/chevre.webp', 'decor', {'largeur': 1584}),
+    ('panorama-tisseuse.jpg', 'panoramas/tisseuse.webp', 'decor', {'largeur': 1584}),
+    ('panorama-toile-feu.jpg', 'panoramas/toile-feu.webp', 'decor', {'largeur': 1584}),
 ]
 
 
