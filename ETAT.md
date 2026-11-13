@@ -1,5 +1,13 @@
 # État du projet
 
+## Version 0.7.7 (2026-11-13) : verrou de l'acte 2 (préparation Play Store)
+
+- Monétisation prévue : acte 1 gratuit, la suite payante (achat Google Play en 1.1). Verrou à l'entrée du Marais salant (`moteur/verrou.js`), seul passage vers la côte, ouvert par `fini a1.e10` ; tout le reste de la vallée reste jouable.
+- Carte : cadenas doré au-dessus du marais, boutons des trajets par le marais avec un cadenas (« Acte 2 · verrouillé ») ; toucher l'un ou l'autre ouvre la fenêtre « La suite de l'aventure » (fermable). Garde-fou dans `voyager`.
+- Version de test (`VERROU_ACTIF = true`, `VERROU_ACHAT = false`) : la fenêtre propose « Déverrouiller la suite » gratuitement ; Options › « Reverrouiller l'acte 2 » pour la revoir. En 1.1 : `VERROU_ACHAT = true` et brancher Google Play Billing dans `acheterActe2`.
+- Déblocage gardé sur l'appareil (clé `lanterval-acte2`), jamais dans la sauvegarde ; une partie qui a déjà joué l'acte 2 (étape a2+ finie, fin vue, partie+, équipe hors de la vallée) n'est jamais bloquée.
+- À venir : trailer « Ce qui t'attend pour la suite » en fin d'acte 1, avant la fenêtre.
+
 ## Version 0.6.9 (2026-10-26) : écran titre sur ordinateur
 
 - Demande de Keismey : sur PC, l'écran d'accueil était étiré (image 9:16 en `cover` sur tout l'écran, zoomée ~2,5×). Sur grand écran (`orientation:landscape` et `min-height:560px`, comme #app), `.fond` et `.voile` prennent le cadre du jeu (`--cadre` = même largeur que #app, 8 px en haut et en bas, coins de 18 px) ; les bords sont comblés par `.flou` (la même image, floutée et assombrie), posée par `fondAccueil` et dans `generique`. Logo Keismey Studio toujours en plein écran ; téléphone inchangé.
