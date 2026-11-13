@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.8.2 (2026-11-13) : découvertes derrière la toile
+
+- Retour de Keismey : « Tout est trouvé » s'affichait à 6/8 dans la carrière avant le boss. Quand des découvertes sont encore fermées (`si`) et que la zone a un texte `lieu.<zone>.cache`, le bouton Explorer l'affiche à la place (« La suite est derrière la grande toile »).
+
 ## Version 0.8.1 (2026-11-13) : bulles de la carrière
 
 - Retour de Keismey : une réplique par bulle. Les textes des quêtes de la carrière mêlaient deux personnages, ou récit et réplique, dans une même ligne (« Mira : « Évidemment. » Sol : « … » ») : chaque prise de parole a maintenant sa bulle et sa vignette.

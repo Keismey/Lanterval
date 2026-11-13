@@ -376,6 +376,9 @@ Under the rockslide lies an old quarry: rusty rails, half-cut blocks, veins of g
 == lieu.carriere.desc.libre
 The great web is nothing but soot and shreds. Behind it, the deep gallery shines with greyiron. The ground no longer shakes.
 
+== lieu.carriere.cache
+The rest lies behind the great web
+
 == lieu.carriere.intro
 ## Collapsed Quarry
 The crack in the rockslide leads down to the bottom of the quarry. The beasts here are tougher than those of the forest.
