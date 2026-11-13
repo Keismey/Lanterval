@@ -1459,29 +1459,23 @@ What awaits you next
 == trailer.acte
 Act {n}
 
-== trailer.1
+== trailer.salvent
 Salvent, the port where people forget even their own names.
 
-== trailer.2
-Beneath the waves, a wreck keeps its secrets.
-
-== trailer.3
+== trailer.phare
 The drowned lighthouse, in the Order's hands.
 
-== trailer.4
+== trailer.forgecendre
 Forgecendre, a town of smoke and forges.
 
-== trailer.5
+== trailer.braise
 In the heart of the volcano, the ember crystal.
 
-== trailer.6
-The Cloud Bridge, where only the wind decides.
-
-== trailer.7
+== trailer.aerie
 Aerie, perched on the edge of the cliffs.
 
-== trailer.8
-And, on the eve of the assault, all together.
+== trailer.feu
+And, on the eve of the assault, all gathered around the fire.
 
 == trailer.fin
 Four crystals. One lantern. One last journey.

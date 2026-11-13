@@ -1491,29 +1491,23 @@ Ce qui t'attend pour la suite
 == trailer.acte
 Acte {n}
 
-== trailer.1
+== trailer.salvent
 Salvent, le port où l'on oublie jusqu'à son nom.
 
-== trailer.2
-Sous les vagues, une épave garde ses secrets.
-
-== trailer.3
+== trailer.phare
 Le phare noyé, aux mains de l'Ordre.
 
-== trailer.4
+== trailer.forgecendre
 Forgecendre, ville de fumée et de forges.
 
-== trailer.5
+== trailer.braise
 Au cœur du volcan, le cristal de braise.
 
-== trailer.6
-Le Pont des Nuées, là où seul le vent décide.
-
-== trailer.7
+== trailer.aerie
 Aerie, perchée au bord des falaises.
 
-== trailer.8
-Et, la veille de l'assaut, tous ensemble.
+== trailer.feu
+Et, la veille de l'assaut, tous réunis autour du feu.
 
 == trailer.fin
 Quatre cristaux. Une lanterne. Un dernier voyage.
