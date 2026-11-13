@@ -2,7 +2,7 @@
 
 ## Version 0.7.8 (2026-11-13) : bande-annonce de fin d'acte 1
 
-- `moteur/trailer.js` : « Ce qui t'attend pour la suite », ~47 s. Carton d'ouverture, puis pour chaque acte (2 à 4) un carton « Acte n · titre » et deux panoramas (salvent, phare ; forgecendre, braise ; aerie, feu), chacun avec son mouvement lent (recul, glissement, montée, approche) et sa phrase en haut ou en bas ; carton de fin, musique `theme`, bouton Passer. Sans les grands retournements. Version 1 (8 images de 4,3 s qui glissaient toutes pareil) jugée trop rapide et répétitive par Keismey.
+- `moteur/trailer.js` : « Ce qui t'attend pour la suite », ~41 s, en trois temps sans gros spoil. Accroche (musique `menace`) : 3 phrases sur l'histoire, Salvent, l'épave (la sœur de Sol), Nev en fuite, le Sans-Nom qui sort du noir. Montée (flash, musique `boss`) : 7 combats en coupes rapides contre des boss des actes 2 à 4 (coup, flash, secousse, dégâts, bruitages), mots-chocs « 3 nouvelles régions », « 13 nouvelles classes », « 12 quêtes annexes », Varen, l'équipe au complet. Puis titre « Lanterval · Actes 2 à 4 ». Les plans sont décrits dans `TRAILER` (types texte, image, menace, combat, mot, equipe, noir, titre). Historique : v1 (8 panoramas qui glissent) et v2 (6 panoramas + cartons d'acte) jugées trop lentes, répétitives et centrées sur les zones par Keismey.
 - Événement `['trailer']` à la fin de a1.e10 : la bande-annonce, puis la fenêtre du verrou si la suite est fermée (`finActe1` dans verrou.js). Bouton « Revoir la bande-annonce » dans la fenêtre du verrou.
 
 ## Version 0.7.7 (2026-11-13) : verrou de l'acte 2 (préparation Play Store)

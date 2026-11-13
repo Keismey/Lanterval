@@ -1483,37 +1483,49 @@ Revoir la bande-annonce
 # ---------- Bande-annonce de fin d'acte 1 (moteur/trailer.js) ----------
 
 == trailer.surtitre
-Fin de l'acte 1
-
-== trailer.titre
 Ce qui t'attend pour la suite
 
-== trailer.acte
-Acte {n}
+== trailer.t1
+Tu as rallumé la lanterne.
+
+== trailer.t2
+Mais l'Ordre s'est emparé du cristal d'ambre.
+
+== trailer.t3
+Et ce n'était *que le début*.
 
 == trailer.salvent
-Salvent, le port où l'on oublie jusqu'à son nom.
+Une ville qui oublie jusqu'au nom de ses enfants…
 
-== trailer.phare
-Le phare noyé, aux mains de l'Ordre.
+== trailer.epave
+Une sœur disparue, quelque part sous les vagues…
 
-== trailer.forgecendre
-Forgecendre, ville de fumée et de forges.
+== trailer.nev
+Une fugitive que l'Ordre veut faire taire…
 
-== trailer.braise
-Au cœur du volcan, le cristal de braise.
+== trailer.sansnom
+Et lui… *n'en a pas fini avec toi*.
 
-== trailer.aerie
-Aerie, perchée au bord des falaises.
+== trailer.faiblesse
+Faiblesse !
 
-== trailer.feu
-Et, la veille de l'assaut, tous réunis autour du feu.
+== trailer.mot.regions
+*3* nouvelles régions
 
-== trailer.fin
-Quatre cristaux. Une lanterne. Un dernier voyage.
+== trailer.mot.classes
+*13* nouvelles classes
 
-== trailer.fin.sous
-La suite de l'aventure t'attend
+== trailer.mot.quetes
+*12* quêtes annexes
+
+== trailer.equipe
+Ensemble, jusqu'au bout du monde.
+
+== trailer.titre.actes
+Actes 2 à 4
+
+== trailer.titre.sous
+La suite de l'aventure t'attend.
 
 == trailer.passer
 Passer
