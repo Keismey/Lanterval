@@ -56,18 +56,24 @@ const SON = (() => {
   function arreter(v, duree) { v.fin = true; fondu(v, 0, duree); setTimeout(() => { v.el.pause(); v.el.removeAttribute('src'); v.el.load(); v.g.disconnect(); }, duree * 1000 + 100); }
   function boucler(v, url) { const n = nouvelleVoix(v.id, url); voix = n; n.el.play().catch(() => {}); fondu(n, 1, FONDU_BOUCLE * .6); arreter(v, FONDU_BOUCLE); }
   let demande = 0;
-  async function musique(id) {
+  // o.coupe : durée du fondu de sortie de la piste d'avant (s) ; o.fondu : durée du fondu d'entrée (s).
+  // La promesse est tenue quand la piste commence à jouer (la bande-annonce cale ses plans dessus).
+  async function musique(id, o) {
+    o = o || {};
     const p = resoudre(id);
     if (!ctx) { voulue = id; return; }
     if (voix && !voix.fin && voix.id === p) return;
     const n = ++demande;
-    if (voix) { arreter(voix, .9); voix = null; }
+    if (voix) { arreter(voix, o.coupe === undefined ? .9 : o.coupe); voix = null; }
     if (!p) return;
     let url; try { url = await charger(p); } catch (e) { return; }
     if (n !== demande) return;   // une autre piste a été demandée pendant le chargement
     const v = nouvelleVoix(p, url); voix = v;
-    v.el.play().catch(() => {}); fondu(v, 1, 1.2);
+    const pret = v.el.play().catch(() => {}); fondu(v, 1, o.fondu === undefined ? 1.2 : o.fondu);
+    await pret;
   }
+  // télécharge une piste à l'avance, pour qu'elle parte sans attendre
+  function precharger(id) { const p = resoudre(id); return p ? charger(p).catch(() => {}) : Promise.resolve(); }
   // la musique du lieu où se trouve l'équipe
   function ici() {
     if (!S || ['title', 'intro'].includes(S.screen)) return 'theme';
@@ -161,5 +167,5 @@ const SON = (() => {
     if (b) bruitage(b.disabled ? 'erreur' : b.classList.contains('main') ? 'valider' : 'clic');
   }, true);
 
-  return { musique, ambiance, panorama, combat, bruitage, jingle, volumes, demarrer };
+  return { musique, precharger, ambiance, panorama, combat, bruitage, jingle, volumes, demarrer };
 })();

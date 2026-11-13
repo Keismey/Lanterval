@@ -1453,47 +1453,83 @@ Watch the trailer again
 == trailer.surtitre
 What awaits you next
 
-== trailer.t1
+# 1. the story
+== trailer.n.lanterne
 You lit the lantern again.
 
-== trailer.t2
-But the Order has seized the amber crystal.
+== trailer.n.cristal
+But the Order stole the amber crystal.
 
-== trailer.t3
-And that was *only the beginning*.
+== trailer.c.debut
+And your adventure has *only just begun*.
 
-== trailer.salvent
-A town that forgets even the names of its children…
+== trailer.n.salvent
+Salvent. The town that forgets even its children's names.
 
-== trailer.epave
-A missing sister, somewhere beneath the waves…
+== trailer.q.sol
+“I was six. My sister was two.”
 
-== trailer.nev
-A fugitive the Order wants silenced…
+== trailer.n.quai
+Every evening, someone waits on the pier.
 
-== trailer.sansnom
-And he… *is not done with you*.
+== trailer.q.nev
+“They want to take me back. And I'm not going back.”
+
+== trailer.q.mira
+“You lied to me my whole life.”
+
+== trailer.n.sansnom
+And *he* is not done with you.
+
+# 2. the action
+== trailer.tag.region
+New region
+
+== trailer.region.cote
+Salvent Coast
+
+== trailer.region.cendre
+Cendre Plains
+
+== trailer.region.vents
+High Winds
+
+== trailer.tag.boss
+Boss · Act {n}
+
+== trailer.tag.rival
+The rival
+
+== trailer.tag.alliee
+New ally
 
 == trailer.faiblesse
 Weakness!
 
-== trailer.mot.regions
-*3* new regions
-
 == trailer.mot.classes
-*13* new classes
+new classes
 
 == trailer.mot.quetes
-*12* side quests
+side quests
 
-== trailer.equipe
-Together, to the end of the world.
+== trailer.q.varen
+“We have a score to settle.”
+
+# 3. the team, the title
+== trailer.n.equipe
+Four heroes. Four crystals.
+
+== trailer.n.voyage
+One last journey.
+
+== trailer.titre.sur
+The adventure continues
 
 == trailer.titre.actes
-Acts 2 to 4
+Acts 2 · 3 · 4
 
 == trailer.titre.sous
-The adventure continues.
+How far will you go to relight the world?
 
 == trailer.passer
 Skip

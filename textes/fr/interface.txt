@@ -1485,47 +1485,83 @@ Revoir la bande-annonce
 == trailer.surtitre
 Ce qui t'attend pour la suite
 
-== trailer.t1
+# 1. l'histoire
+== trailer.n.lanterne
 Tu as rallumé la lanterne.
 
-== trailer.t2
-Mais l'Ordre s'est emparé du cristal d'ambre.
+== trailer.n.cristal
+Mais l'Ordre a volé le cristal d'ambre.
 
-== trailer.t3
-Et ce n'était *que le début*.
+== trailer.c.debut
+Et ton aventure ne fait *que commencer*.
 
-== trailer.salvent
-Une ville qui oublie jusqu'au nom de ses enfants…
+== trailer.n.salvent
+Salvent. La ville qui oublie jusqu'au nom de ses enfants.
 
-== trailer.epave
-Une sœur disparue, quelque part sous les vagues…
+== trailer.q.sol
+« J'avais six ans. Ma sœur en avait deux. »
 
-== trailer.nev
-Une fugitive que l'Ordre veut faire taire…
+== trailer.n.quai
+Chaque soir, quelqu'un attend sur le quai.
 
-== trailer.sansnom
-Et lui… *n'en a pas fini avec toi*.
+== trailer.q.nev
+« Ils veulent me ramener. Et je ne reviendrai pas. »
+
+== trailer.q.mira
+« Tu m'as menti toute ma vie. »
+
+== trailer.n.sansnom
+Et *lui* n'en a pas fini avec toi.
+
+# 2. l'action
+== trailer.tag.region
+Nouvelle région
+
+== trailer.region.cote
+Côte de Salvent
+
+== trailer.region.cendre
+Plaines de Cendre
+
+== trailer.region.vents
+Hauts-Vents
+
+== trailer.tag.boss
+Boss · Acte {n}
+
+== trailer.tag.rival
+Le rival
+
+== trailer.tag.alliee
+Nouvelle alliée
 
 == trailer.faiblesse
 Faiblesse !
 
-== trailer.mot.regions
-*3* nouvelles régions
-
 == trailer.mot.classes
-*13* nouvelles classes
+nouvelles classes
 
 == trailer.mot.quetes
-*12* quêtes annexes
+quêtes annexes
 
-== trailer.equipe
-Ensemble, jusqu'au bout du monde.
+== trailer.q.varen
+« On a un compte à régler. »
+
+# 3. l'équipe, le titre
+== trailer.n.equipe
+Quatre héros. Quatre cristaux.
+
+== trailer.n.voyage
+Un dernier voyage.
+
+== trailer.titre.sur
+La suite de l'aventure
 
 == trailer.titre.actes
-Actes 2 à 4
+Actes 2 · 3 · 4
 
 == trailer.titre.sous
-La suite de l'aventure t'attend.
+Jusqu'où iras-tu pour rallumer le monde ?
 
 == trailer.passer
 Passer
