@@ -39,7 +39,9 @@ function renderZone() {
   const monte = L.nonRetour && cond(L.nonRetour);
   if (z && (!L.nonRetour || monte)) {
     const reste = tresorsDispos(id).filter(f => !z.found.includes(f.id)).length, peut = reste > 0 || z.rnd < L.maxEvenements;
-    opts.push({ k: 'explore', ic: 'search', label: esc(t('zone.explorer')), sub: esc(peut ? (reste ? t(reste > 1 ? 'zone.reste' : 'zone.reste.un', { n: reste }) : t('zone.tout')) : t('zone.rien')), dis: !peut });
+    // découvertes encore fermées (la galerie derrière la toile de la carrière) : on le dit au lieu de « tout est trouvé »
+    const caches = L.tresors.length - z.found.length - reste, fin = caches && existe(`lieu.${id}.cache`) ? t(`lieu.${id}.cache`) : t('zone.tout');
+    opts.push({ k: 'explore', ic: 'search', label: esc(t('zone.explorer')), sub: esc(peut ? (reste ? t(reste > 1 ? 'zone.reste' : 'zone.reste.un', { n: reste }) : fin) : caches && existe(`lieu.${id}.cache`) ? fin : t('zone.rien')), dis: !peut });
     opts.push({ k: 'hunt', ic: 'sword', label: esc(t('zone.chasser')), sub: esc(t('zone.chasser.sous')) });
     const repos = L.tresors.find(f => f.repos && z.found.includes(f.id));
     if (repos) opts.push({ k: 'rest', ic: 'drop', label: esc(t(`${id}.${repos.id}.nom`)), sub: esc(t(z.rest ? 'zone.repos.utilise' : 'zone.repos')), dis: z.rest });

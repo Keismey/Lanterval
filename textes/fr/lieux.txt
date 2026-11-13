@@ -379,6 +379,9 @@ Sous l'éboulis s'ouvre une ancienne carrière : rails rouillés, blocs à moiti
 == lieu.carriere.desc.libre
 La grande toile n'est plus que suie et lambeaux. Derrière, la galerie profonde brille de fer gris. Le sol ne tremble plus.
 
+== lieu.carriere.cache
+La suite est derrière la grande toile
+
 == lieu.carriere.intro
 ## Carrière effondrée
 La faille de l'éboulis descend jusqu'au fond de la carrière. Les bêtes d'ici sont plus coriaces que celles de la forêt.
