@@ -465,7 +465,8 @@ Hazel is perched on a boulder, bleating with all her might. Between the stones, 
 ## The big rockslide
 The ground shakes. With a roar, part of the rockslide slips away and opens a black crack.
 Panicked, Hazel leaps from rock to rock and dives straight in.
-Mira: “Of course.” Sol: “These tremors don't come from the mountain. They come from below.” [Follow the goat]
+Mira: “Of course.”
+Sol: “These tremors don't come from the mountain. They come from below.” [Follow the goat]
 
 == chevre.e1.galerie
 ## The crack
@@ -473,7 +474,8 @@ The crack opens onto hand-cut steps: an old quarry, forgotten under the rockslid
 The bell rings further down. Between the rusty rails, something is digging. [Go down]
 
 == chevre.e1.galerie.fin
-Sol lays a hand on the wall. Sol: “These tunnels are new. No beast digs galleries this straight.”
+Sol lays a hand on the wall.
+Sol: “These tunnels are new. No beast digs galleries this straight.”
 
 == chevre.e1.camp
 ## The bottom of the quarry
@@ -483,7 +485,8 @@ Mira: “The Order. Them again. What were they looking for down here?”
 
 == chevre.e1.toile
 Behind the camp, a huge web seals the whole gallery, thick as a sail. It quivers, though there isn't a breath of air.
-Mira lights a flame in her hand. Sol: “Not with a goat in our arms. Let's take her home first.”
+Mira lights a flame in her hand.
+Sol: “Not with a goat in our arms. Let's take her home first.”
 Kael notices a silvery grey dust on his boots: ore, everywhere at the bottom of the quarry.
 
 == chevre.e1.message
@@ -493,13 +496,15 @@ Bring *Hazel* back to Tilo, in the village. You kept the *Order's pick*.
 Bring Hazel back to Tilo
 
 == chevre.e2.retrouvailles
-Tilo: “HAZEL!” He throws his arms around the goat, who promptly starts eating his shirt collar.
+Tilo: “HAZEL!”
+He throws his arms around the goat, who promptly starts eating his shirt collar.
 Tilo: “Thank you, Kael! Here, that's all my savings. And Mum kept some tonics for you.”
 ? Reward: *60 gold* and *2 tonics*.
 
 == chevre.e2.hilde
 ## Lanterval
-Hilde walks past the forge, stops dead and bends over your boots. Hilde: “That grey… Greyiron. Where have you been walking?”
+Hilde walks past the forge, stops dead and bends over your boots.
+Hilde: “That grey… Greyiron. Where have you been walking?”
 Hilde: “The old quarry? My father used to say the best iron in the valley slept down there, before the rockslide.”
 Hilde: “Bring me some from three different veins and I'll forge you something that can stand up to whatever's prowling out there.” [All right]
 
@@ -548,7 +553,8 @@ Between two boulders of the rockslide, a silvery grey vein shines under the dust
 With each blow, the stone rings out. Something answers, very close. [Fight]
 
 == fer.e1.m1.fin
-Mira: “Their pick is really good. It's almost annoying.” The first chunk of greyiron is in the bag.
+Mira: “Their pick is really good. It's almost annoying.”
+The first chunk of greyiron is in the bag.
 
 == fer.e1.m1.message
 Greyiron: *1 vein of 3*.
@@ -565,7 +571,8 @@ Along the rails, the vein dives under a carved pillar. Mounds of fresh earth sur
 Claws burst out of the ground, right under your feet! [Fight]
 
 == fer.e1.m2.fin
-Sol: “The moles follow the vein. They love greyiron as much as Hilde does.” A second chunk joins the first.
+Sol: “The moles follow the vein. They love greyiron as much as Hilde does.”
+A second chunk joins the first.
 
 == fer.e1.m2.message
 Greyiron: one more vein. The finest one must be *behind the web*.
@@ -590,7 +597,8 @@ Bring the greyiron to Hilde
 
 == fer.e2.forge
 ## Hilde's forge
-Hilde lays the three chunks on the anvil and says nothing for a long while. Hilde: “Three veins, three tempers. It's perfect.”
+Hilde lays the three chunks on the anvil and says nothing for a long while.
+Hilde: “Three veins, three tempers. It's perfect.”
 All night long, the hammer rings. By morning, a grey sword shines on the workbench.
 
 == fer.e2.fin
