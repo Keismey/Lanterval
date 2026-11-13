@@ -69,6 +69,7 @@ const EVENEMENTS = {
   },
   async stop(a, ctx) { ctx.stop = true; },
   async message([cle], ctx) { if (!ctx.silencieux) S.msg = tx(cle); },
+  async trailer(a, ctx) { if (!ctx.silencieux) await finActe1(); },
   // « si » : joue la première liste si la condition est vraie, sinon la seconde (épilogues selon les quêtes finies)
   async si([c, alors, sinon], ctx, suite, id) {
     const oui = cond(c), evts = oui ? alors : sinon;

@@ -1153,6 +1153,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.7.8
+End of Act 1: a “What awaits you next” trailer, before the padlock window. You can watch it again from that window.
 ## Version 0.7.7
 End of Act 1: a golden padlock closes the Salt Marsh. Tap it to open the “The adventure continues” window; during testing, the rest unlocks for free.
 ## Version 0.7.6
@@ -1442,3 +1444,50 @@ Lock Act 2 again
 
 == verrou.refermer.sous
 Test version: to see the lock window again
+
+== verrou.trailer
+Watch the trailer again
+
+# ---------- End of Act 1 trailer (moteur/trailer.js) ----------
+
+== trailer.surtitre
+End of Act 1
+
+== trailer.titre
+What awaits you next
+
+== trailer.acte
+Act {n}
+
+== trailer.1
+Salvent, the port where people forget even their own names.
+
+== trailer.2
+Beneath the waves, a wreck keeps its secrets.
+
+== trailer.3
+The drowned lighthouse, in the Order's hands.
+
+== trailer.4
+Forgecendre, a town of smoke and forges.
+
+== trailer.5
+In the heart of the volcano, the ember crystal.
+
+== trailer.6
+The Cloud Bridge, where only the wind decides.
+
+== trailer.7
+Aerie, perched on the edge of the cliffs.
+
+== trailer.8
+And, on the eve of the assault, all together.
+
+== trailer.fin
+Four crystals. One lantern. One last journey.
+
+== trailer.fin.sous
+The adventure continues
+
+== trailer.passer
+Skip

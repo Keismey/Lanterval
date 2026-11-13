@@ -1331,6 +1331,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.7.8
+Fin de l'acte 1 : une bande-annonce « Ce qui t'attend pour la suite », avant la fenêtre du cadenas. On peut la revoir depuis cette fenêtre.
 ## Version 0.7.7
 Fin de l'acte 1 : un cadenas doré ferme le Marais salant. Touche-le pour ouvrir la fenêtre « La suite de l'aventure » ; pendant les tests, la suite se déverrouille gratuitement.
 ## Version 0.7.6
@@ -1474,3 +1476,50 @@ Reverrouiller l'acte 2
 
 == verrou.refermer.sous
 Version de test : pour revoir la fenêtre du verrou
+
+== verrou.trailer
+Revoir la bande-annonce
+
+# ---------- Bande-annonce de fin d'acte 1 (moteur/trailer.js) ----------
+
+== trailer.surtitre
+Fin de l'acte 1
+
+== trailer.titre
+Ce qui t'attend pour la suite
+
+== trailer.acte
+Acte {n}
+
+== trailer.1
+Salvent, le port où l'on oublie jusqu'à son nom.
+
+== trailer.2
+Sous les vagues, une épave garde ses secrets.
+
+== trailer.3
+Le phare noyé, aux mains de l'Ordre.
+
+== trailer.4
+Forgecendre, ville de fumée et de forges.
+
+== trailer.5
+Au cœur du volcan, le cristal de braise.
+
+== trailer.6
+Le Pont des Nuées, là où seul le vent décide.
+
+== trailer.7
+Aerie, perchée au bord des falaises.
+
+== trailer.8
+Et, la veille de l'assaut, tous ensemble.
+
+== trailer.fin
+Quatre cristaux. Une lanterne. Un dernier voyage.
+
+== trailer.fin.sous
+La suite de l'aventure t'attend
+
+== trailer.passer
+Passer
