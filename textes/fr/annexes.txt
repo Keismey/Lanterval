@@ -467,7 +467,8 @@ Noisette est perchée sur un bloc, bêlant de toutes ses forces. Entre les pierr
 ## Le grand éboulis
 Le sol tremble. Dans un grondement, un pan de l'éboulis glisse et ouvre une faille noire.
 Noisette, affolée, saute de rocher en rocher et file droit dedans.
-Mira : « Évidemment. » Sol : « Ces secousses ne viennent pas de la montagne. Elles viennent d'en dessous. » [Suivre la chèvre]
+Mira : « Évidemment. »
+Sol : « Ces secousses ne viennent pas de la montagne. Elles viennent d'en dessous. » [Suivre la chèvre]
 
 == chevre.e1.galerie
 ## La faille
@@ -475,7 +476,8 @@ La faille débouche sur des marches taillées à la main : une ancienne carrièr
 La clochette tinte plus bas. Entre les rails rouillés, quelque chose creuse. [Descendre]
 
 == chevre.e1.galerie.fin
-Sol pose la main sur la paroi. Sol : « Ces tunnels sont récents. Une bête ne creuse pas des galeries aussi droites. »
+Sol pose la main sur la paroi.
+Sol : « Ces tunnels sont récents. Une bête ne creuse pas des galeries aussi droites. »
 
 == chevre.e1.camp
 ## Le fond de la carrière
@@ -485,7 +487,8 @@ Mira : « L'Ordre. Encore eux. Qu'est-ce qu'ils venaient chercher ici ? »
 
 == chevre.e1.toile
 Derrière le camp, une toile immense ferme toute la galerie, épaisse comme une voile. Elle frémit, alors qu'il n'y a pas un souffle d'air.
-Mira allume une flamme dans sa main. Sol : « Pas avec la chèvre dans les bras. On la ramène d'abord. »
+Mira allume une flamme dans sa main.
+Sol : « Pas avec la chèvre dans les bras. On la ramène d'abord. »
 Kael remarque une poussière gris argenté sur ses bottes : du minerai, partout au fond de la carrière.
 
 == chevre.e1.message
@@ -495,13 +498,15 @@ Ramène *Noisette* à Tilo, au village. Tu as gardé la *pioche de l'Ordre*.
 Ramener Noisette à Tilo
 
 == chevre.e2.retrouvailles
-Tilo : « NOISETTE ! » Il se jette au cou de la chèvre, qui lui mange aussitôt le col de sa chemise.
+Tilo : « NOISETTE ! »
+Il se jette au cou de la chèvre, qui lui mange aussitôt le col de sa chemise.
 Tilo : « Merci, Kael ! Tiens, c'est toutes mes économies. Et maman t'a gardé des toniques. »
 ? Récompense : *60 po* et *2 toniques*.
 
 == chevre.e2.hilde
 ## Lanterval
-Hilde passe devant la forge, s'arrête net et se penche sur tes bottes. Hilde : « Ce gris-là… Du fer gris. Où as-tu marché ? »
+Hilde passe devant la forge, s'arrête net et se penche sur tes bottes.
+Hilde : « Ce gris-là… Du fer gris. Où as-tu marché ? »
 Hilde : « La vieille carrière ? Mon père disait que le meilleur fer de la vallée dormait là-dessous, avant l'éboulis. »
 Hilde : « Rapporte-m'en de trois filons différents et je te forge de quoi tenir tête à tout ce qui rôde. » [D'accord]
 
@@ -550,7 +555,8 @@ Entre deux blocs de l'éboulis, une veine gris argenté brille sous la poussièr
 À chaque coup, la pierre résonne. Quelque chose répond, tout près. [Combattre]
 
 == fer.e1.m1.fin
-Mira : « Leur pioche est vraiment bonne. C'est presque vexant. » Le premier morceau de fer gris est dans le sac.
+Mira : « Leur pioche est vraiment bonne. C'est presque vexant. »
+Le premier morceau de fer gris est dans le sac.
 
 == fer.e1.m1.message
 Fer gris : *1 filon sur 3*.
@@ -567,7 +573,8 @@ Le long des rails, la veine plonge sous un pilier taillé. Des tas de terre fra�
 Des griffes jaillissent du sol, juste sous tes pieds ! [Combattre]
 
 == fer.e1.m2.fin
-Sol : « Les taupes suivent la veine. Elles aiment le fer gris autant que Hilde. » Un deuxième morceau rejoint le premier.
+Sol : « Les taupes suivent la veine. Elles aiment le fer gris autant que Hilde. »
+Un deuxième morceau rejoint le premier.
 
 == fer.e1.m2.message
 Fer gris : un filon de plus. Le plus beau doit être *derrière la toile*.
@@ -592,7 +599,8 @@ Rapporter le fer gris à Hilde
 
 == fer.e2.forge
 ## La forge de Hilde
-Hilde pose les trois morceaux sur l'enclume et ne dit rien pendant un long moment. Hilde : « Trois veines, trois caractères. C'est parfait. »
+Hilde pose les trois morceaux sur l'enclume et ne dit rien pendant un long moment.
+Hilde : « Trois veines, trois caractères. C'est parfait. »
 Toute la nuit, le marteau sonne. Au matin, une épée grise brille sur l'établi.
 
 == fer.e2.fin

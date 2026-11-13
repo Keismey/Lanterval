@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.8.1 (2026-11-13) : bulles de la carrière
+
+- Retour de Keismey : une réplique par bulle. Les textes des quêtes de la carrière mêlaient deux personnages, ou récit et réplique, dans une même ligne (« Mira : « Évidemment. » Sol : « … » ») : chaque prise de parole a maintenant sa bulle et sa vignette.
+
 ## Version 0.8.0 (2026-11-13) : la Carrière effondrée (extension de l'acte 1)
 
 - Demande de Keismey : allonger l'acte 1 gratuit entre la fête (a1.e7) et le col, avec une vraie zone nouvelle sur l'éboulis à droite de la carte de la vallée. Zone `carriere` (côtés `e` éboulis et `f` fond), reliée à Lanterval, visible dès « La chèvre de Tilo » acceptée. Tout se joue dans la vallée, donc avant le verrou du Marais salant.
