@@ -569,8 +569,9 @@ img[src^="img/"]{image-rendering:auto!important}
 .tr-chiffre{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;background:radial-gradient(ellipse at 50% 46%,#33230a,#000 68%)}
 .tr-chiffre b{font:700 clamp(110px,36vw,220px)/.95 var(--f-title);color:var(--gold2);text-shadow:0 0 44px rgba(255,200,90,.6)}
 .tr-chiffre span{font:700 clamp(24px,7.4vw,42px)/1.1 var(--f-title);text-transform:uppercase;letter-spacing:.06em;color:#fff4d6}
-.tr-chiffre.on b{animation:trChoc .3s cubic-bezier(.2,.9,.3,1.3) both}
-.tr-chiffre.on span{animation:trEtiq .3s ease-out .1s both}
+.tr-chiffre b,.tr-chiffre span{opacity:0}
+.tr-chiffre.on b{animation:trChoc .3s cubic-bezier(.2,.9,.3,1.3) forwards}
+.tr-chiffre.on span{animation:trEtiq .3s ease-out .1s forwards}
 @keyframes trChoc{from{opacity:0;transform:scale(2.2)}to{opacity:1;transform:none}}
 .tr-classe{display:block;min-height:1.5em;margin-top:22px;padding:8px 22px;border-radius:999px;border:1.5px solid var(--gold);font:700 clamp(20px,6vw,30px)/1.3 var(--f-ui);font-style:normal;color:#fff;background:rgba(233,185,73,.12)}
 .tr-classe:empty{visibility:hidden}

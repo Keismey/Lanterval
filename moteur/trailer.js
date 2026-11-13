@@ -49,8 +49,8 @@ const TRAILER = [
   { type: 'boss', monstre: 'griffon', decor: 'decor.pic', cam: [[.6, .45, 1.05], [.6, .45, 1.15]], acte: 4, degats: 168, faiblesse: true, t: 4 },
   { type: 'boss', monstre: 'wyverne', decor: 'decor.pont', cam: [[.5, .5, 1.05], [.5, .5, 1.15]], acte: 4, degats: 241, t: 4 },
   { type: 'mot', n: '12', cle: 'trailer.mot.quetes', t: 2 },
-  { type: 'plan', img: 'pano.rosal', cam: [[.5, .45, 1.25], [.5, .45, 1.08]], vif: true, t: 2 },
-  { type: 'boss', monstre: 'varen', decor: 'decor.volcan', cam: [[.55, .45, 1.05], [.55, .45, 1.2]], rival: true, replique: 'trailer.q.varen', degats: 312, faiblesse: true, t: 6 },
+  { type: 'plan', img: 'pano.rosal', cam: [[.35, .42, 1.22], [.34, .38, 1.06]], vif: true, t: 2 },
+  { type: 'boss', monstre: 'varen', dx: -16, decor: 'decor.volcan', cam: [[.55, .45, 1.05], [.55, .45, 1.2]], rival: true, replique: 'trailer.q.varen', degats: 312, faiblesse: true, t: 6 },
   // 3. l'équipe, le dernier voyage, le titre
   { type: 'plan', img: 'pano.feu', cam: [[.515, .6, 1.3], [.515, .62, 1.02]], narr: 'trailer.n.equipe', t: 8, fondu: 500 },
   { type: 'plan', img: 'decor.escalier', cam: [[.5, .62, 1], [.56, .38, 1.25]], narr: 'trailer.n.voyage', t: 6, fondu: 500 },
@@ -71,7 +71,7 @@ function trailerPlan(p) {
   if (p.type === 'carton') return `<div class="tr-vue tr-carton"><p>${html(t(p.cle))}</p></div>`;
   if (p.type === 'region') return `<div class="tr-vue tr-region"><img class="tr-flou" alt="" src="${imgSrc(p.img)}"><div class="tr-cadre">${trCam(p.img, p.cam, 'vif')}</div><div class="tr-leg tr-etiq"><span>${esc(t('trailer.tag.region'))}</span><h3>${html(t(p.cle))}</h3></div></div>`;
   if (p.type === 'boss') return `<div class="tr-vue tr-boss${p.rival ? ' rival' : ''}"><div class="tr-cadre plein">${trCam(p.decor, p.cam)}</div>
-    <div class="tr-scene"><img class="tr-mon" alt="" src="${imgSrc('monstre.' + p.monstre)}"><i class="tr-entaille"></i>${p.faiblesse ? '<i class="tr-entaille deux"></i>' : ''}
+    <div class="tr-scene"><img class="tr-mon" alt=""${p.dx ? ` style="translate:${p.dx}% 0"` : ''} src="${imgSrc('monstre.' + p.monstre)}"><i class="tr-entaille"></i>${p.faiblesse ? '<i class="tr-entaille deux"></i>' : ''}
       <b class="tr-degats${p.faiblesse ? ' faible' : ''}">${p.faiblesse ? `<small>${esc(t('trailer.faiblesse'))}</small>` : ''}${p.degats}</b></div>
     <div class="tr-leg tr-etiq"><span>${esc(p.rival ? t('trailer.tag.rival') : t('trailer.tag.boss', { n: p.acte }))}</span><h3>${esc(t('monstre.' + p.monstre))}</h3>${p.replique ? `<p class="tr-mot-rival">${html(t(p.replique))}</p>` : ''}</div></div>`;
   if (p.type === 'alliee') return `<div class="tr-vue tr-alliee"><div class="tr-cadre plein">${trCam(p.decor, p.cam)}</div><div class="tr-scene"><img class="tr-heroine" alt="" src="${imgSrc('heros.' + p.heros)}"></div>
