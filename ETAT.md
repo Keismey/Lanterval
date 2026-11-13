@@ -1,5 +1,15 @@
 # État du projet
 
+## Version 0.8.0 (2026-11-13) : la Carrière effondrée (extension de l'acte 1)
+
+- Demande de Keismey : allonger l'acte 1 gratuit entre la fête (a1.e7) et le col, avec une vraie zone nouvelle sur l'éboulis à droite de la carte de la vallée. Zone `carriere` (côtés `e` éboulis et `f` fond), reliée à Lanterval, visible dès « La chèvre de Tilo » acceptée. Tout se joue dans la vallée, donc avant le verrou du Marais salant.
+- Trois quêtes annexes qui s'enchaînent avec deux allers-retours seulement (retour de Keismey : pas trois allers-retours, et un changement de décor justifié par l'histoire) :
+  - `chevre` (Tilo, après a1.e7) : la chèvre Noisette file dans une faille de l'éboulis ; traversée jusqu'au fond, camp abandonné de l'Ordre (objet important `pioche`), grande toile qui ferme la galerie. En ramenant Noisette, Hilde et Brann lancent les deux autres quêtes (nouvel événement `['lance', id]` : une quête démarre sans l'offre de son donneur).
+  - `fer` (Hilde) : trois filons en `parmi`, le troisième derrière la toile (`si` par morceau, nouveau). Hilde offre l'Épée de fer gris (`fergris`) et met en rayon le Bâton de quartz (`quartzb`) et la Cotte de fer gris (`cottegris`).
+  - `gronde` (Brann) : boss la Tisseuse de pierre (`tisseuse` : appel d'Araignées des failles, toile sur toute l'équipe, résiste à la Terre, craint Feu et Eau). Mira brûle la toile : drapeau `toile`, état `libre` (décor sans toile), la galerie profonde ouvre les découvertes k7 et k8 (`si` sur une découverte, nouveau : `tresorsDispos`). Récompense : Soie de roche (`soieroche`, accessoire) et 100 po.
+- Équilibrage (bot, graine 1, `node outils/bot.js 1 a1.e10` : nouvel argument pour s'arrêter à une étape) : carrière jouée au niveau 7-8, Tisseuse gagnée en 16 tours (PV min 85 %). L'équipe arrive au col au niveau 9 au lieu de 6-7 (le bot explore tout à 100 %) ; XP des nouveaux monstres réduite pour limiter l'écart.
+- Monstres : Cloporte des roches, Taupe-griffe, Araignée des failles, Tisseuse de pierre. Accessoires : Quartz fumé (découverte), Géode (palier 100 %).
+- Images définitives de Keismey (Gemini) : 2 décors, 4 monstres, 3 panoramas (sources dans outils/sources/, entrées en fin de LISTE dans outils/images.py ; Tisseuse détourée avec `trous: 150` et `garde` (ellipse où les reflets de l'abdomen restent) ; Araignée des failles avec `contour: 2` (liseré sombre) et `taille: .2` pour se détacher du décor gris). Pixel art provisoire gardé en secours.
 ## Version 0.7.9 (2026-11-13) : sceau du verrou sur la carte
 
 - Retour de Keismey : le cadenas doré au-dessus du Marais salant était très moche (boule dorée posée sur le point du lieu). Il est remplacé par un sceau à la place du point : médaillon sombre cerclé d'or, cadenas doré dessiné en SVG (`SCEAU_VERROU`, moteur/carte.js), halo qui pulse doucement, nom du lieu en doré. Toucher le sceau ouvre toujours la fenêtre du verrou. Les cadenas des boutons de trajet ne changent pas.

@@ -430,6 +430,242 @@ Fennel: “The finest trade of my life. I'll tell the story in every village.”
 == pnj.fennel
 Fennel: “Nothing to trade? Then I'll trade you some advice: never walk in the mist without a lantern.”
 
+# ---------- 4b. Tilo's goat (the Collapsed Quarry) ----------
+
+== chevre.titre
+Tilo's goat
+
+== chevre.offre
+Tilo: “Kael! Hazel ran away! Since the festival, the ground shakes every night, and last night she broke her rope.”
+Tilo: “I saw her run towards the big rockslide, on the east side of the valley. Mum won't let me go there. Will you look for her?”
+> oui : Accept | Side quest
+> non : Later
+
+== chevre.message
+Side quest: *find Hazel*, Tilo's goat, at the big rockslide. New place on the map: the *Collapsed Quarry*.
+
+== chevre.e1.titre
+Find the goat at the big rockslide
+
+== chevre.e1.bouton
+Look for Hazel
+
+== chevre.e1.attente
+Tilo: “She has a red ribbon and a little bell. If you hear it ring, that's her!”
+
+== chevre.e1.sous
+Looking for: Hazel, at the rockslide
+
+== chevre.e1.eboulis
+## The big rockslide
+A mountain of fallen rocks blocks the side of the valley. High up, a little bell rings.
+Hazel is perched on a boulder, bleating with all her might. Between the stones, grey shells unfold. [Climb]
+
+== chevre.e1.faille
+## The big rockslide
+The ground shakes. With a roar, part of the rockslide slips away and opens a black crack.
+Panicked, Hazel leaps from rock to rock and dives straight in.
+Mira: “Of course.” Sol: “These tremors don't come from the mountain. They come from below.” [Follow the goat]
+
+== chevre.e1.galerie
+## The crack
+The crack opens onto hand-cut steps: an old quarry, forgotten under the rockslide.
+The bell rings further down. Between the rusty rails, something is digging. [Go down]
+
+== chevre.e1.galerie.fin
+Sol lays a hand on the wall. Sol: “These tunnels are new. No beast digs galleries this straight.”
+
+== chevre.e1.camp
+## The bottom of the quarry
+At the bottom, Hazel is chewing a canvas bag by an abandoned camp: blankets, a cold fire, brand-new picks.
+Kael picks one up. A closed eye is branded on the handle.
+Mira: “The Order. Them again. What were they looking for down here?”
+
+== chevre.e1.toile
+Behind the camp, a huge web seals the whole gallery, thick as a sail. It quivers, though there isn't a breath of air.
+Mira lights a flame in her hand. Sol: “Not with a goat in our arms. Let's take her home first.”
+Kael notices a silvery grey dust on his boots: ore, everywhere at the bottom of the quarry.
+
+== chevre.e1.message
+Bring *Hazel* back to Tilo, in the village. You kept the *Order's pick*.
+
+== chevre.e2.titre
+Bring Hazel back to Tilo
+
+== chevre.e2.retrouvailles
+Tilo: “HAZEL!” He throws his arms around the goat, who promptly starts eating his shirt collar.
+Tilo: “Thank you, Kael! Here, that's all my savings. And Mum kept some tonics for you.”
+? Reward: *60 gold* and *2 tonics*.
+
+== chevre.e2.hilde
+## Lanterval
+Hilde walks past the forge, stops dead and bends over your boots. Hilde: “That grey… Greyiron. Where have you been walking?”
+Hilde: “The old quarry? My father used to say the best iron in the valley slept down there, before the rockslide.”
+Hilde: “Bring me some from three different veins and I'll forge you something that can stand up to whatever's prowling out there.” [All right]
+
+== chevre.e2.brann
+Brann heard everything. He takes the pick and turns it over slowly.
+Brann: “An Order camp, an hour from the village, and nobody saw a thing. And those tremors started when they left…”
+Brann: “They woke something down there. Go and see what it is, and keep the pick: I want to understand what they were after.”
+
+== chevre.e2.message
+Two new quests: *greyiron* for Hilde, and what *rumbles under the rock* for Brann. Both take place in the *Collapsed Quarry*.
+
+== chevre.apres
+Tilo: “Hazel won't go near the rockslide anymore. Neither will I. Well, maybe a little.”
+
+# ---------- 4c. Hilde's greyiron ----------
+
+== fer.titre
+Hilde's greyiron
+
+== fer.offre
+Hilde: “Greyiron, in the old quarry. Bring me some from three different veins, and I'll forge you something solid.”
+> oui : Accept | Side quest
+> non : Later
+
+== fer.message
+Side quest: bring back *greyiron* from three veins in the Collapsed Quarry.
+
+== fer.e1.titre
+Find three veins of greyiron
+
+== fer.e1.sous
+Greyiron: under the rockslide, at the bottom, behind the web
+
+== fer.e1.attente
+Hilde: “Three veins, not one less. Each vein's iron has its own temper: mixing them is what makes a good blade.”
+
+== fer.e1.m1.titre
+The vein under the rockslide
+
+== fer.e1.m1.bouton
+Clear the vein in the rockslide
+
+== fer.e1.m1.filon
+## Greyiron
+Between two boulders of the rockslide, a silvery grey vein shines under the dust. Kael attacks the rock with the Order's pick.
+With each blow, the stone rings out. Something answers, very close. [Fight]
+
+== fer.e1.m1.fin
+Mira: “Their pick is really good. It's almost annoying.” The first chunk of greyiron is in the bag.
+
+== fer.e1.m1.message
+Greyiron: *1 vein of 3*.
+
+== fer.e1.m2.titre
+The vein in the gallery
+
+== fer.e1.m2.bouton
+Follow the vein into the gallery
+
+== fer.e1.m2.filon
+## Greyiron
+Along the rails, the vein dives under a carved pillar. Mounds of fresh earth surround it.
+Claws burst out of the ground, right under your feet! [Fight]
+
+== fer.e1.m2.fin
+Sol: “The moles follow the vein. They love greyiron as much as Hilde does.” A second chunk joins the first.
+
+== fer.e1.m2.message
+Greyiron: one more vein. The finest one must be *behind the web*.
+
+== fer.e1.m3.titre
+The great vein, behind the web
+
+== fer.e1.m3.bouton
+Dig out the great vein
+
+== fer.e1.m3.filon
+## Greyiron
+In the deep gallery, the great vein runs along the whole wall, so pure it lights up the rock.
+The Order never had time to touch it. Kael breaks off a block the size of a loaf of bread.
+Mira: “Mum is going to cry. She'll never admit it, but she's going to cry.”
+
+== fer.e1.m3.message
+Greyiron: *3 veins of 3*. Take it to *Hilde*, at the forge.
+
+== fer.e2.titre
+Bring the greyiron to Hilde
+
+== fer.e2.forge
+## Hilde's forge
+Hilde lays the three chunks on the anvil and says nothing for a long while. Hilde: “Three veins, three tempers. It's perfect.”
+All night long, the hammer rings. By morning, a grey sword shines on the workbench.
+
+== fer.e2.fin
+Hilde: “That one's a gift. As for the rest, I have enough for a staff and a hauberk: come by the forge whenever you like.”
+? Reward: the *Greyiron sword*. New at Hilde's forge: *Quartz staff* and *Greyiron hauberk*.
+
+== fer.apres
+Hilde: “Greyiron holds its heat a long time. Like stubborn people.”
+
+# ---------- 4d. What rumbles under the rock (Brann) ----------
+
+== gronde.titre
+What rumbles under the rock
+
+== gronde.offre
+Brann: “The Order woke something in the old quarry. Go and see what it is, before it comes up to the village.”
+> oui : Accept | Side quest
+> non : Later
+
+== gronde.message
+Side quest: find out *what rumbles* at the bottom of the Collapsed Quarry.
+
+== gronde.e1.titre
+Find out what rumbles under the rock
+
+== gronde.e1.bouton
+Approach the great web
+
+== gronde.e1.sous
+Waiting: what rumbles at the bottom of the quarry
+
+== gronde.e1.attente
+Brann: “A web like that wasn't woven by the Order. Get well prepared before you touch it.”
+
+== gronde.e1.toile
+## The great web
+In front of the web, the ground is littered with torn bags and broken lanterns. The Order fled and left everything behind.
+Mira brings her flame closer. The threads snap taut, and the whole quarry trembles.
+
+== gronde.e1.tisseuse
+## The Stoneweaver
+Down the web comes a spider as big as a house, its shell cut like quarry stone.
+In the silk on its flank, a closed-eye badge is caught like a fly.
+Sol: “She was sleeping under the rockslide. They dug right into her nest.”
+
+== gronde.e1.conseil
+The Stoneweaver calls her young when one falls, and her web hits the whole team. She resists Earth: *Mira's Fire* and *Sol's Water* break her guard.
+
+== gronde.e1.feu
+## The web burns
+The Stoneweaver collapses with a crash of stone. Mira raises her hand, and the great web bursts into flame, from the floor to the vault.
+Behind the shreds falling in flames, a gallery opens, and at the far end a whole wall shines with greyiron.
+
+== gronde.e1.galerie
+Silence falls over the quarry. For the first time since the festival, the ground is still.
+Kael picks up the badge that fell from the silk: it belonged to a member of the Order who never came back out.
+
+== gronde.e1.message
+The quarry is calm and its *deep gallery* is open. Take the pick back to *Brann*.
+
+== gronde.e2.titre
+Tell Brann what was rumbling
+
+== gronde.e2.pioche
+Brann listens without interrupting, the pick in his hands.
+Brann: “A camp, new picks, and they were digging north, under the mountain… Towards the Stone Pass.”
+Brann: “They were looking for a way to the amber crystal from below. The Stoneweaver forced them onto the trail, out in the open. Thanks to you, we know they're many, and in a hurry.”
+
+== gronde.e2.fin
+Brann: “Here. Stoneweaver silk, braided by old Berthe. It fears neither blade nor fire. And the rest is my pay.”
+? Reward: *Stone silk* (accessory, Defence +4, HP +10, Speed +3) and *100 gold*.
+
+== gronde.apres
+Brann: “If the Order takes the pass, it won't be from below. Think about that when you climb.”
+
 # ---------- 5. The forgotten ship (Rosal) ----------
 
 == navire.titre

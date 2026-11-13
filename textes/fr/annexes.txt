@@ -431,6 +431,243 @@ Fennel : « Le plus beau troc de ma vie. Je le raconterai dans tous les villages
 == pnj.fennel
 Fennel : « Rien à troquer ? Alors je te troque un conseil : ne marche jamais dans la brume sans lanterne. »
 
+# ---------- 4b. La chèvre de Tilo (la Carrière effondrée) ----------
+# Les trois quêtes de la carrière s'enchaînent : en ramenant la chèvre, Hilde et Brann lancent les deux autres.
+
+== chevre.titre
+La chèvre de Tilo
+
+== chevre.offre
+Tilo : « Kael ! Noisette s'est sauvée ! Depuis la fête, la terre tremble toutes les nuits, et cette nuit elle a cassé sa corde. »
+Tilo : « Je l'ai vue courir vers le grand éboulis, à l'est de la vallée. Maman ne veut pas que j'y aille. Tu veux bien la chercher ? »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== chevre.message
+Quête annexe : *retrouver Noisette*, la chèvre de Tilo, au grand éboulis. Nouveau lieu sur la carte : la *Carrière effondrée*.
+
+== chevre.e1.titre
+Retrouver la chèvre au grand éboulis
+
+== chevre.e1.bouton
+Chercher Noisette
+
+== chevre.e1.attente
+Tilo : « Elle a un ruban rouge et une clochette. Si tu entends tinter, c'est elle ! »
+
+== chevre.e1.sous
+Cherche : Noisette, au grand éboulis
+
+== chevre.e1.eboulis
+## Le grand éboulis
+Une montagne de rochers écroulés barre le flanc de la vallée. Tout en haut, une clochette tinte.
+Noisette est perchée sur un bloc, bêlant de toutes ses forces. Entre les pierres, des carapaces grises se déplient. [Grimper]
+
+== chevre.e1.faille
+## Le grand éboulis
+Le sol tremble. Dans un grondement, un pan de l'éboulis glisse et ouvre une faille noire.
+Noisette, affolée, saute de rocher en rocher et file droit dedans.
+Mira : « Évidemment. » Sol : « Ces secousses ne viennent pas de la montagne. Elles viennent d'en dessous. » [Suivre la chèvre]
+
+== chevre.e1.galerie
+## La faille
+La faille débouche sur des marches taillées à la main : une ancienne carrière, oubliée sous l'éboulis.
+La clochette tinte plus bas. Entre les rails rouillés, quelque chose creuse. [Descendre]
+
+== chevre.e1.galerie.fin
+Sol pose la main sur la paroi. Sol : « Ces tunnels sont récents. Une bête ne creuse pas des galeries aussi droites. »
+
+== chevre.e1.camp
+## Le fond de la carrière
+Au fond, Noisette mâchonne un sac de toile près d'un camp abandonné : des couvertures, un feu éteint, des pioches neuves.
+Kael ramasse une pioche. Sur le manche, un œil fermé est gravé au fer rouge.
+Mira : « L'Ordre. Encore eux. Qu'est-ce qu'ils venaient chercher ici ? »
+
+== chevre.e1.toile
+Derrière le camp, une toile immense ferme toute la galerie, épaisse comme une voile. Elle frémit, alors qu'il n'y a pas un souffle d'air.
+Mira allume une flamme dans sa main. Sol : « Pas avec la chèvre dans les bras. On la ramène d'abord. »
+Kael remarque une poussière gris argenté sur ses bottes : du minerai, partout au fond de la carrière.
+
+== chevre.e1.message
+Ramène *Noisette* à Tilo, au village. Tu as gardé la *pioche de l'Ordre*.
+
+== chevre.e2.titre
+Ramener Noisette à Tilo
+
+== chevre.e2.retrouvailles
+Tilo : « NOISETTE ! » Il se jette au cou de la chèvre, qui lui mange aussitôt le col de sa chemise.
+Tilo : « Merci, Kael ! Tiens, c'est toutes mes économies. Et maman t'a gardé des toniques. »
+? Récompense : *60 po* et *2 toniques*.
+
+== chevre.e2.hilde
+## Lanterval
+Hilde passe devant la forge, s'arrête net et se penche sur tes bottes. Hilde : « Ce gris-là… Du fer gris. Où as-tu marché ? »
+Hilde : « La vieille carrière ? Mon père disait que le meilleur fer de la vallée dormait là-dessous, avant l'éboulis. »
+Hilde : « Rapporte-m'en de trois filons différents et je te forge de quoi tenir tête à tout ce qui rôde. » [D'accord]
+
+== chevre.e2.brann
+Brann a tout entendu. Il prend la pioche et la retourne lentement.
+Brann : « Un camp de l'Ordre, à une heure du village, et personne n'a rien vu. Et ces secousses qui ont commencé quand ils sont partis… »
+Brann : « Ils ont réveillé quelque chose là-dessous. Va voir ce que c'est, et garde la pioche : je veux comprendre ce qu'ils cherchaient. »
+
+== chevre.e2.message
+Deux nouvelles quêtes : le *fer gris* pour Hilde, et ce qui *gronde sous la roche* pour Brann. Les deux se jouent dans la *Carrière effondrée*.
+
+== chevre.apres
+Tilo : « Noisette ne s'approche plus de l'éboulis. Moi non plus, d'ailleurs. Enfin, peut-être un peu. »
+
+# ---------- 4c. Le fer gris de Hilde ----------
+
+== fer.titre
+Le fer gris de Hilde
+
+== fer.offre
+Hilde : « Du fer gris, dans la vieille carrière. Rapporte-m'en de trois filons différents, et je te forge quelque chose de solide. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== fer.message
+Quête annexe : rapporter le *fer gris* de trois filons de la Carrière effondrée.
+
+== fer.e1.titre
+Trouver trois filons de fer gris
+
+== fer.e1.sous
+Fer gris : sous l'éboulis, au fond, derrière la toile
+
+== fer.e1.attente
+Hilde : « Trois filons, pas un de moins. Le fer de chaque veine a son caractère : c'est en les mêlant qu'on fait une bonne lame. »
+
+== fer.e1.m1.titre
+Le filon sous l'éboulis
+
+== fer.e1.m1.bouton
+Dégager le filon de l'éboulis
+
+== fer.e1.m1.filon
+## Fer gris
+Entre deux blocs de l'éboulis, une veine gris argenté brille sous la poussière. Kael attaque la roche avec la pioche de l'Ordre.
+À chaque coup, la pierre résonne. Quelque chose répond, tout près. [Combattre]
+
+== fer.e1.m1.fin
+Mira : « Leur pioche est vraiment bonne. C'est presque vexant. » Le premier morceau de fer gris est dans le sac.
+
+== fer.e1.m1.message
+Fer gris : *1 filon sur 3*.
+
+== fer.e1.m2.titre
+Le filon de la galerie
+
+== fer.e1.m2.bouton
+Suivre la veine dans la galerie
+
+== fer.e1.m2.filon
+## Fer gris
+Le long des rails, la veine plonge sous un pilier taillé. Des tas de terre fraîche l'entourent.
+Des griffes jaillissent du sol, juste sous tes pieds ! [Combattre]
+
+== fer.e1.m2.fin
+Sol : « Les taupes suivent la veine. Elles aiment le fer gris autant que Hilde. » Un deuxième morceau rejoint le premier.
+
+== fer.e1.m2.message
+Fer gris : un filon de plus. Le plus beau doit être *derrière la toile*.
+
+== fer.e1.m3.titre
+Le grand filon, derrière la toile
+
+== fer.e1.m3.bouton
+Extraire le grand filon
+
+== fer.e1.m3.filon
+## Fer gris
+Dans la galerie profonde, le grand filon court sur toute la paroi, si pur qu'il éclaire la roche.
+L'Ordre n'a pas eu le temps d'y toucher. Kael en détache un bloc gros comme un pain.
+Mira : « Maman va pleurer. Elle ne l'avouera jamais, mais elle va pleurer. »
+
+== fer.e1.m3.message
+Fer gris : *3 filons sur 3*. Rapporte-le à *Hilde*, à la forge.
+
+== fer.e2.titre
+Rapporter le fer gris à Hilde
+
+== fer.e2.forge
+## La forge de Hilde
+Hilde pose les trois morceaux sur l'enclume et ne dit rien pendant un long moment. Hilde : « Trois veines, trois caractères. C'est parfait. »
+Toute la nuit, le marteau sonne. Au matin, une épée grise brille sur l'établi.
+
+== fer.e2.fin
+Hilde : « Celle-là, je te l'offre. Pour le reste, j'ai de quoi faire un bâton et une cotte : passe à la forge quand tu veux. »
+? Récompense : l'*Épée de fer gris*. Nouveau à la forge de Hilde : *Bâton de quartz* et *Cotte de fer gris*.
+
+== fer.apres
+Hilde : « Le fer gris garde la chaleur longtemps. Comme les gens têtus. »
+
+# ---------- 4d. Ce qui gronde sous la roche (Brann) ----------
+
+== gronde.titre
+Ce qui gronde sous la roche
+
+== gronde.offre
+Brann : « L'Ordre a réveillé quelque chose dans la vieille carrière. Va voir ce que c'est, avant que ça ne remonte jusqu'au village. »
+> oui : Accepter | Quête annexe
+> non : Plus tard
+
+== gronde.message
+Quête annexe : découvrir *ce qui gronde* au fond de la Carrière effondrée.
+
+== gronde.e1.titre
+Découvrir ce qui gronde sous la roche
+
+== gronde.e1.bouton
+Approcher de la grande toile
+
+== gronde.e1.sous
+Attend : ce qui gronde au fond de la carrière
+
+== gronde.e1.attente
+Brann : « Une toile pareille, ce n'est pas l'Ordre qui l'a tissée. Prépare-toi bien avant d'y toucher. »
+
+== gronde.e1.toile
+## La grande toile
+Devant la toile, le sol est jonché de sacs éventrés et de lanternes brisées. L'Ordre a fui en laissant tout derrière lui.
+Mira approche sa flamme. Les fils se tendent d'un coup, et toute la carrière tremble.
+
+== gronde.e1.tisseuse
+## La Tisseuse de pierre
+Du haut de la toile descend une araignée grande comme une maison, la carapace taillée comme de la pierre de carrière.
+Dans la soie de son flanc, un insigne à l'œil fermé est pris comme une mouche.
+Sol : « Elle dormait sous l'éboulis. Ils ont creusé jusqu'à son nid. »
+
+== gronde.e1.conseil
+La Tisseuse appelle ses petites quand l'une tombe, et sa toile frappe toute l'équipe. Elle résiste à la Terre : le *Feu de Mira* et l'*Eau de Sol* brisent sa garde.
+
+== gronde.e1.feu
+## La toile brûle
+La Tisseuse s'effondre dans un fracas de pierre. Mira lève la main, et la grande toile s'embrase d'un coup, du sol jusqu'à la voûte.
+Derrière les lambeaux qui tombent en flammes, une galerie s'ouvre, et au fond, une paroi entière brille de fer gris.
+
+== gronde.e1.galerie
+Le silence retombe sur la carrière. Pour la première fois depuis la fête, le sol ne tremble plus.
+Kael ramasse l'insigne tombé de la soie : celui d'un membre de l'Ordre qui n'est jamais ressorti.
+
+== gronde.e1.message
+La carrière est calme et sa *galerie profonde* est ouverte. Rapporte la pioche à *Brann*.
+
+== gronde.e2.titre
+Raconter à Brann ce qui grondait
+
+== gronde.e2.pioche
+Brann écoute sans t'interrompre, la pioche entre les mains.
+Brann : « Un camp, des pioches neuves, et ils creusent vers le nord, sous la montagne… Vers le Col des Pierres. »
+Brann : « Ils cherchaient un chemin vers le cristal d'ambre par en dessous. La Tisseuse les a forcés à passer par le sentier, et à découvert. Grâce à toi, on sait qu'ils sont nombreux et pressés. »
+
+== gronde.e2.fin
+Brann : « Tiens. De la soie de la Tisseuse, tressée par la vieille Berthe. Ça ne craint ni la lame ni le feu. Et pour le reste, c'est ma paye. »
+? Récompense : la *Soie de roche* (accessoire, Défense +4, PV +10, Vitesse +3) et *100 po*.
+
+== gronde.apres
+Brann : « Si l'Ordre prend le col, ce ne sera pas par en dessous. Pense à ça quand tu monteras. »
+
 # ---------- 5. Le navire oublié (Rosal, classe Corsaire) ----------
 
 == navire.titre

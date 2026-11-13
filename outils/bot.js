@@ -1,6 +1,6 @@
 /* Lanterval · bot de test : joue la partie entière (quête principale et quêtes annexes) dans Chromium,
    pour vérifier que tout s'enchaîne sans erreur et que les boss restent difficiles sans être injustes.
-   Usage : node outils/bot.js [graine]   (Playwright : /opt/node-tools/node_modules/playwright, ou PLAYWRIGHT_MODULE)
+   Usage : node outils/bot.js [graine] [étape]   (avec une étape, « a1.e10 » : s'arrête quand elle est finie)   (Playwright : /opt/node-tools/node_modules/playwright, ou PLAYWRIGHT_MODULE)
    Le bot explore chaque zone à 100 % avant d'y jouer une quête, se soigne à l'auberge avant chaque quête,
    achète le meilleur équipement qu'il peut et se bat avec une tactique simple (faiblesses, soins, objets).
    Il ne se déplace pas sur la carte : il se place directement au bon endroit (pas de combats de traversée).
@@ -9,7 +9,7 @@
 const path = require('path'), http = require('http'), fs = require('fs');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/node-tools/node_modules/playwright');
 const RACINE = path.join(__dirname, '..');
-const GRAINE = +(process.argv[2] || 1);
+const GRAINE = +(process.argv[2] || 1), JUSQUA = process.argv[3] || null;
 
 // petit serveur de fichiers pour la page
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.woff2': 'font/woff2', '.webmanifest': 'application/manifest+json', '.m4a': 'audio/mp4' };
@@ -101,7 +101,7 @@ function cerveau(graine) {
   // zone pas encore explorée à fond : on l'explore (et on y chasse un peu) avant d'y jouer une quête
   function aExplorer(id) {
     const z = S.z[id], L = LIEUX[id]; if (!z) return false;
-    return L.tresors.length > z.found.length || z.rnd < L.maxEvenements;
+    return tresorsDispos(id).some(f => !z.found.includes(f.id)) || z.rnd < L.maxEvenements;
   }
   async function explorerZone(pos) {
     const id = pos.split('.')[0];
@@ -187,6 +187,7 @@ function cerveau(graine) {
   let calme = 0;
   while (Date.now() - t0 < 25 * 60 * 1000) {
     const st = await page.evaluate(() => ({ busy, ecran: S.screen, fini: BOT.fini }));
+    if (JUSQUA && !st.busy && await page.evaluate(e => fini(e), JUSQUA)) break;
     if (st.busy || st.ecran === 'intro') { if (!(await repondre())) await page.waitForTimeout(5); continue; }
     // écran stable : le bot choisit sa prochaine action (elle se joue dans run(), comme un appui du joueur)
     const lance = await page.evaluate(() => { if (busy) return 'busy'; BOT.dernier = undefined; run(async () => { BOT.dernier = await BOT.pas(); }); return 'ok'; });

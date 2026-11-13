@@ -197,6 +197,107 @@ const ANNEXES = {
     ]
   },
 
+  // ---------- Carrière effondrée (acte 1, entre la fête et le col) ----------
+  // Trois quêtes qui s'enchaînent : la chèvre de Tilo ouvre la carrière ; en la ramenant, Hilde et Brann lancent
+  // les deux autres (événement lance), qui se jouent dans la même descente. Tout reste dans la vallée, avant le verrou.
+
+  // 4b. La chèvre de Tilo : la faille de l'éboulis, la carrière, la pioche de l'Ordre
+  chevre: {
+    donneur: 'tilo', ouvre: 'fini a1.e7',
+    offre: [
+      ['choix', 'chevre.offre', { oui: [['message', 'chevre.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'carriere.e', evenements: [
+        ['dialogue', 'chevre.e1.eboulis'],
+        ['combat', 'cloporte cloporte'],
+        ['panorama', 'pano.chevre'],
+        ['dialogue', 'chevre.e1.faille'],
+        ['decor'],
+        ['traversee', 'carriere.f', { milieu: [
+          ['dialogue', 'chevre.e1.galerie'],
+          ['combat', 'taupe araignee'],
+          ['dialogue', 'chevre.e1.galerie.fin']
+        ] }],
+        ['dialogue', 'chevre.e1.camp'],
+        ['gagne', 'chevre, pioche'],
+        ['dialogue', 'chevre.e1.toile'],
+        ['message', 'chevre.e1.message']
+      ] },
+      { lieu: 'tilo', evenements: [
+        ['perd', 'chevre'],
+        ['dialogue', 'chevre.e2.retrouvailles'],
+        ['gagne', '60 or, 2 tonique'],
+        ['dialogue', 'chevre.e2.hilde'],
+        ['lance', 'fer'],
+        ['dialogue', 'chevre.e2.brann'],
+        ['lance', 'gronde'],
+        ['message', 'chevre.e2.message']
+      ] }
+    ]
+  },
+
+  // 4c. Le fer gris de Hilde : trois filons, dans l'ordre qu'on veut ; le dernier est derrière la toile
+  fer: {
+    donneur: 'hilde', ouvre: 'annexe chevre 3',
+    offre: [
+      ['choix', 'fer.offre', { oui: [['message', 'fer.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { parmi: [
+        { lieu: 'carriere.e', evenements: [
+          ['dialogue', 'fer.e1.m1.filon'],
+          ['combat', 'cloporte taupe'],
+          ['dialogue', 'fer.e1.m1.fin'],
+          ['message', 'fer.e1.m1.message']
+        ] },
+        { lieu: 'carriere.f', evenements: [
+          ['dialogue', 'fer.e1.m2.filon'],
+          ['combat', 'taupe taupe araignee'],
+          ['dialogue', 'fer.e1.m2.fin'],
+          ['message', 'fer.e1.m2.message']
+        ] },
+        { lieu: 'carriere.f', si: 'drapeau toile', evenements: [
+          ['dialogue', 'fer.e1.m3.filon'],
+          ['message', 'fer.e1.m3.message']
+        ] }
+      ] },
+      { lieu: 'hilde', evenements: [
+        ['dialogue', 'fer.e2.forge'],
+        ['gagne', 'fergris'],
+        ['dialogue', 'fer.e2.fin']
+      ] }
+    ]
+  },
+
+  // 4d. Ce qui gronde sous la roche (Brann) : la Tisseuse de pierre ; Mira brûle sa toile (la carrière passe « libre »)
+  gronde: {
+    donneur: 'brann', ouvre: 'annexe chevre 3',
+    offre: [
+      ['choix', 'gronde.offre', { oui: [['message', 'gronde.message']], non: [['stop']] }]
+    ],
+    etapes: [
+      { lieu: 'carriere.f', evenements: [
+        ['dialogue', 'gronde.e1.toile'],
+        ['panorama', 'pano.tisseuse'],
+        ['dialogue', 'gronde.e1.tisseuse'],
+        ['combat', 'araignee tisseuse araignee', { boss: true, conseil: 'gronde.e1.conseil' }],
+        ['panorama', 'pano.toile-feu'],
+        ['dialogue', 'gronde.e1.feu'],
+        ['drapeau', 'toile'],
+        ['decor'],
+        ['dialogue', 'gronde.e1.galerie'],
+        ['message', 'gronde.e1.message']
+      ] },
+      { lieu: 'brann', evenements: [
+        ['perd', 'pioche'],
+        ['dialogue', 'gronde.e2.pioche'],
+        ['gagne', 'soieroche, 100 or'],
+        ['dialogue', 'gronde.e2.fin']
+      ] }
+    ]
+  },
+
   // ---------- Côte de Salvent ----------
   // 5. Le navire oublié (Rosal, classe Corsaire)
   navire: {

@@ -49,6 +49,8 @@ const EVENEMENTS = {
   async classes([liste]) { liste.split(/\s+/).forEach(unlockJob); },
   async soin() { healAll(); },
   async drapeau([id]) { S.f[id] = true; },
+  // « fer » : la quête annexe démarre sans passer par l'offre de son donneur (quêtes qui s'enchaînent)
+  async lance([id], ctx) { if (annexeEtat(id)) return; S.annexes[id] = 1; if (!ctx.silencieux) logR('journal.log.annexe', { titre: id + '.titre' }); },
   async degats([spec]) { appliquerEffet('degats ' + spec); },
   async revele([spec]) { const [id, el] = spec.split(/\s+/); if (el) { reveal(id, el); seen(id); } else revealAll(id); },
   async position([pos]) { S.loc = pos; },

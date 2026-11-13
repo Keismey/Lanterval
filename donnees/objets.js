@@ -69,6 +69,10 @@ const EQUIPEMENT = {
   cuirnoir: { place: 'armure', cadeau: true, st: { def: 20, hp: 25 } },
   marteau: { place: 'arme', type: 'marteau', cadeau: true, st: { atk: 24 } },
   tablier: { place: 'armure', cadeau: true, st: { def: 16, hp: 20 } },
+  // fer gris de la Carrière effondrée, forgé par Hilde (« Le fer gris de Hilde ») ; elle offre l'épée
+  fergris: { place: 'arme', type: 'epee', prix: 190, st: { atk: 14 } },
+  quartzb: { place: 'arme', type: 'baton', prix: 180, st: { atk: 3, mag: 13 } },
+  cottegris: { place: 'armure', prix: 170, st: { def: 12, hp: 10, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
   tunique: { place: 'armure', v: 5, st: { def: 2 } },
   cuir: { place: 'armure', v: 20, st: { def: 4, hp: 5 } },
   mailles: { place: 'armure', prix: 55, st: { def: 7, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
@@ -87,6 +91,10 @@ const EQUIPEMENT = {
   cuirvent: { place: 'armure', prix: 860, st: { def: 18, hp: 15, spd: 3 } },
   cape4: { place: 'armure', cadeau: true, st: { def: 21, hp: 20, mag: 6, spd: 5 } },
   plume: { place: 'acc', v: 25, st: { spd: 2 } },
+  // Carrière effondrée : découverte, palier 100 %, et la Soie de roche (« Ce qui gronde sous la roche »)
+  quartz: { place: 'acc', v: 35, st: { atk: 2, mag: 2 } },
+  geode: { place: 'acc', v: 60, st: { def: 3, mag: 3, hp: 8 } },
+  soieroche: { place: 'acc', cadeau: true, st: { def: 4, hp: 10, spd: 3 } },
   anneau: { place: 'acc', v: 30, st: { mag: 3 } },
   eclat: { place: 'acc', v: 40, st: { atk: 4 } },
   talisman: { place: 'acc', v: 35, st: { def: 3, hp: 8 } },
@@ -140,6 +148,9 @@ const IMPORTANTS = {
   graine: {},
   pousse: {},
   defense: {},
+  // quêtes de la Carrière effondrée : la chèvre de Tilo, la pioche de l'Ordre trouvée à côté
+  chevre: {},
+  pioche: {},
   'ecaille-orage': {},
   miel: {},
   boussole: {},

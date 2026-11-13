@@ -28,7 +28,9 @@ const LIEUX = {
       { id: 'auberge', role: 'auberge', portrait: 'aubergiste', prix: 10 },
       // Hilde part pour Forgecendre à l'acte 3 (sa forge de Lanterval ferme)
       { id: 'hilde', role: 'boutique', portrait: 'hilde', si: 'pas fini a3.e2',
-        objets: [], equipement: ['epee', 'braise', 'mailles', 'robe', ['acier', 'fini a1.e7'], ['chene', 'fini a1.e7'], ['brigandine', 'fini a1.e7'], ['cape', 'fini a1.e7']] },
+        objets: [], equipement: ['epee', 'braise', 'mailles', 'robe', ['acier', 'fini a1.e7'], ['chene', 'fini a1.e7'], ['brigandine', 'fini a1.e7'], ['cape', 'fini a1.e7'],
+          // fer gris de la Carrière effondrée (« Le fer gris de Hilde »)
+          ['fergris', 'annexe fer 3'], ['quartzb', 'annexe fer 3'], ['cottegris', 'annexe fer 3']] },
       { id: 'berthe', role: 'boutique', portrait: 'berthe',
         objets: [['herbe', 8], ['tonique', 12]], equipement: [] },
       { id: 'nell', role: 'boutique', portrait: 'nell',
@@ -116,6 +118,38 @@ const LIEUX = {
     groupes: {
       normal: [['belier'], ['harpie', 'harpie'], ['belier', 'harpie'], ['harpie', 'belier', 'harpie'], ['ombre', 'harpie']],
       vide: [['belier', 'belier'], ['harpie', 'ombre'], ['ombre', 'ombre', 'harpie'], ['belier', 'harpie', 'harpie']]
+    }
+  },
+
+  // Carrière effondrée : derrière l'éboulis, à droite de la vallée. Elle apparaît avec « La chèvre de Tilo » ;
+  // la galerie profonde (découvertes k7, k8) s'ouvre (drapeau toile) quand Mira brûle la toile de la Tisseuse (« Ce qui gronde sous la roche »).
+  carriere: {
+    type: 'zone', x: .86, y: .52, cotes: ['e', 'f'],
+    visible: 'annexe chevre 1', ouvert: 'annexe chevre 1',
+    etats: [{ id: 'libre', si: 'drapeau toile' }],
+    maxEvenements: 3,
+    tresors: [
+      { id: 'k1', type: 'tresor', gagne: '50 or' },
+      { id: 'k2', type: 'lieu', revele: 'cloporte' },
+      { id: 'k3', type: 'lieu', effet: 'soin', repos: true },
+      { id: 'k4', type: 'tresor', gagne: '2 herbe, tonique' },
+      { id: 'k5', type: 'tresor', gagne: 'quartz' },
+      { id: 'k6', type: 'lieu', revele: 'tisseuse' },
+      { id: 'k7', type: 'tresor', gagne: '120 or', si: 'drapeau toile' },
+      { id: 'k8', type: 'tresor', gagne: '2 elixir, tonique', si: 'drapeau toile' }
+    ],
+    palier50: { gagne: '2 herbe, 2 tonique' },
+    palier100: { gagne: 'geode' },
+    evenements: [
+      { id: 'combat', poids: 4, combat: true },
+      { id: 'secousse', poids: 1.5, effet: 'degats tous 7' },
+      { id: 'veine', poids: 1.5, gagne: '20 or' },
+      { id: 'source', poids: 1.5, effet: 'pp 6' },
+      { id: 'lichen', poids: 1.5, effet: 'soin 14' }
+    ],
+    groupes: {
+      normal: [['cloporte'], ['taupe', 'araignee'], ['araignee', 'araignee'], ['cloporte', 'araignee'], ['taupe', 'taupe'], ['araignee', 'cloporte', 'araignee']],
+      libre: [['cloporte', 'cloporte'], ['taupe', 'cloporte'], ['taupe', 'taupe', 'chauve'], ['chauve', 'chauve', 'taupe'], ['cloporte', 'araignee']]
     }
   },
 
@@ -486,6 +520,7 @@ const LIENS = [
   ['foret.g', 'grotte.e'],
   ['foret.g', 'col.p'],
   ['lanterval', 'marais.v'],
+  ['lanterval', 'carriere.e'],
   ['lanterval', 'champs.v'],
   // Côte de Salvent
   ['marais.c', 'salvent'],

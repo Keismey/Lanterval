@@ -25,6 +25,7 @@
      ['si', condition, [...], [...]]     joue la première liste si la condition est vraie, sinon la seconde
      ['codex']                           tous les monstres au Codex, faiblesses et résistances comprises
      ['fin_jeu']                         générique et écran de fin du jeu (voir FINAL dans acte4.js)
+     ['lance', 'fer']                    une quête annexe démarre sans l'offre de son donneur (voir annexes.js)
      ['trailer']                         bande-annonce de la suite, puis fenêtre du verrou de l'acte 2 (moteur/verrou.js) */
 
 ACTES.push({

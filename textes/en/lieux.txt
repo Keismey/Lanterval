@@ -104,6 +104,9 @@ Valley map
 == lieu.col.nom
 Stone Pass
 
+== lieu.carriere.nom
+Collapsed Quarry
+
 == lieu.marais.nom
 Salt Marsh
 
@@ -349,6 +352,104 @@ A pilgrim comes down from the pass. He gives you *25 gold* “for the lantern”
 
 == col.ev.vent
 An icy gust sweeps the mist away and clears the mind: *+6 PP* for everyone.
+
+# ================= Collapsed Quarry (act 1 side quests) =================
+
+== lieu.carriere.le
+the quarry
+
+== lieu.carriere.e
+rockslide
+
+== lieu.carriere.f
+bottom
+
+== lieu.carriere.sous
+The ground shakes
+
+== lieu.carriere.sous.libre
+The quarry is calm
+
+== lieu.carriere.desc
+Under the rockslide lies an old quarry: rusty rails, half-cut blocks, veins of greyiron. At the bottom, a huge web seals the gallery.
+
+== lieu.carriere.desc.libre
+The great web is nothing but soot and shreds. Behind it, the deep gallery shines with greyiron. The ground no longer shakes.
+
+== lieu.carriere.intro
+## Collapsed Quarry
+The crack in the rockslide leads down to the bottom of the quarry. The beasts here are tougher than those of the forest.
+
+== carriere.k1.nom
+Forgotten purse
+
+== carriere.k1.texte
+Wedged under an overturned cart, an old quarryman's purse: *50 gold*.
+
+== carriere.k2.nom
+Woodlouse moult
+
+== carriere.k2.texte
+An empty shell, split along the belly. Its plates flake away under the water dripping from the vault. *Rock woodlouse weaknesses added to the codex.*
+
+== carriere.k3.nom
+Quarrymen's shelter
+
+== carriere.k3.texte
+A room cut into the rock, with benches and a cool spring. The team *recovers fully*. You can rest here on every visit.
+
+== carriere.k4.nom
+Supply crate
+
+== carriere.k4.texte
+An Order crate, barely touched: *2 healing herbs* and *1 tonic*.
+
+== carriere.k5.nom
+Cracked geode
+
+== carriere.k5.texte
+A stone split in two, full of dark crystals. The finest fits in your palm: *Smoky quartz* (accessory, Attack +2, Magic +2).
+
+== carriere.k6.nom
+Foreman's notebook
+
+== carriere.k6.texte
+A mouldy notebook, the last page scrawled: “The queen sleeps under the rockslide. She fears fire and water. NEVER dig east.” *Stoneweaver weaknesses added to the codex.*
+
+== carriere.k7.nom
+Chest at the bottom
+
+== carriere.k7.texte
+Behind the burnt web, the old quarrymen's chest, still locked: *120 gold*.
+
+== carriere.k8.nom
+Order stockpile
+
+== carriere.k8.texte
+In a niche of the deep gallery, bags the Order never got back to: *2 elixirs* and *1 tonic*.
+
+== carriere.m50
+## 50% milestone reached
+In an old quarryman's hut: *2 healing herbs* and *2 tonics*.
+
+== carriere.m100
+## 100% milestone reached
+No corner escapes you anymore. At the heart of the deep gallery, you find a *Geode* (accessory, Defence +3, Magic +3, HP +8). Quarry mastered: crossing it will now bring only 0 to 2 fights.
+
+== carriere.ev.combat
+Pebbles roll by themselves behind you…
+
+== carriere.ev.secousse
+The ground shakes and a shower of rubble falls on the team! *Everyone loses 7 HP.*
+
+== carriere.ev.veine
+A shard of greyiron sticks out of the wall: *+20 gold*.
+
+== carriere.ev.source
+An icy spring wells up between two blocks. The water clears the mind: *+6 PP* for everyone.
+
+== carriere.ev.lichen
+A golden lichen grows under a shaft of light. Chewed, it soothes wounds: *the team recovers 14 HP*.
 
 # ================= Salt Marsh =================
 
