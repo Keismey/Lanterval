@@ -214,6 +214,15 @@ Steel sword
 == equip.chene
 Ironoak staff
 
+== equip.fergris
+Greyiron sword
+
+== equip.quartzb
+Quartz staff
+
+== equip.cottegris
+Greyiron hauberk
+
 == equip.tunique
 Tunic
 
@@ -231,6 +240,15 @@ Brigandine
 
 == equip.cape
 Wool cloak
+
+== equip.quartz
+Smoky quartz
+
+== equip.geode
+Geode
+
+== equip.soieroche
+Stone silk
 
 == equip.plume
 Firefly feather
@@ -378,6 +396,51 @@ Young lieutenant of the Order of the Eyelid. Fast, arrogant, formidable.
 
 == monstre.varen.special
 Wind blade
+
+== monstre.cloporte
+Rock woodlouse
+
+== monstre.cloporte.court
+Woodlouse
+
+== monstre.cloporte.desc
+Slow and covered in stone plates. Neither blade nor Earth can dent it: Water and Fire crack it open.
+
+== monstre.taupe
+Pickclaw mole
+
+== monstre.taupe.court
+Mole
+
+== monstre.taupe.desc
+It digs along the iron veins and strikes up through the ground with its pick-shaped claws.
+
+== monstre.taupe.special
+Pick strike
+
+== monstre.araignee
+Crevice spider
+
+== monstre.araignee.court
+Spider
+
+== monstre.araignee.desc
+Fragile but very fast. It often bites twice in a row.
+
+== monstre.tisseuse
+Stoneweaver
+
+== monstre.tisseuse.court
+Stoneweaver
+
+== monstre.tisseuse.desc
+The queen of the quarry, woken by the Order's picks. She calls her young and smothers the team in her web.
+
+== monstre.tisseuse.special
+{nom} casts her web: the whole team is caught in the silk!
+
+== monstre.tisseuse.appel
+{nom} tugs on a thread: *{renfort}* drops from the vault!
 
 == monstre.sansnom
 The Nameless
@@ -739,6 +802,18 @@ Rock Boar tusk
 
 == important.defense.desc
 As long as an arm, as hard as stone. Proof for Roxane's logbook.
+
+== important.chevre
+Hazel
+
+== important.chevre.desc
+Tilo's goat, red ribbon and little bell. She chews anything poking out of the bag.
+
+== important.pioche
+The Order's pick
+
+== important.pioche.desc
+A brand-new pick found at the bottom of the quarry, a closed eye branded on the handle. Brann wants to know what the Order was digging for.
 
 == important.ecaille-orage
 Storm scale

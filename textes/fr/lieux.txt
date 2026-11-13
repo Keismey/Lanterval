@@ -107,6 +107,9 @@ Carte de la Côte
 == lieu.col.nom
 Col des Pierres
 
+== lieu.carriere.nom
+Carrière effondrée
+
 == lieu.champs.nom
 Champs brûlés
 
@@ -352,6 +355,104 @@ Un pèlerin redescend du col. Il te donne *25 po* « pour la lanterne ».
 
 == col.ev.vent
 Une bourrasque glacée balaie la brume et l'esprit s'éclaircit : *+6 PP* pour tous.
+
+# ================= Carrière effondrée (quêtes annexes de l'acte 1) =================
+
+== lieu.carriere.le
+la carrière
+
+== lieu.carriere.e
+éboulis
+
+== lieu.carriere.f
+fond
+
+== lieu.carriere.sous
+Le sol tremble
+
+== lieu.carriere.sous.libre
+La carrière est calme
+
+== lieu.carriere.desc
+Sous l'éboulis s'ouvre une ancienne carrière : rails rouillés, blocs à moitié taillés, veines de fer gris. Au fond, une toile immense ferme la galerie.
+
+== lieu.carriere.desc.libre
+La grande toile n'est plus que suie et lambeaux. Derrière, la galerie profonde brille de fer gris. Le sol ne tremble plus.
+
+== lieu.carriere.intro
+## Carrière effondrée
+La faille de l'éboulis descend jusqu'au fond de la carrière. Les bêtes d'ici sont plus coriaces que celles de la forêt.
+
+== carriere.k1.nom
+Bourse oubliée
+
+== carriere.k1.texte
+Coincée sous un wagonnet renversé, la bourse d'un ancien carrier : *50 po*.
+
+== carriere.k2.nom
+Mue de cloporte
+
+== carriere.k2.texte
+Une carapace vide, fendue sur le ventre. Ses plaques s'écaillent sous l'eau qui goutte de la voûte. *Faiblesses du Cloporte des roches ajoutées au codex.*
+
+== carriere.k3.nom
+Abri des carriers
+
+== carriere.k3.texte
+Une salle creusée dans la roche, avec des bancs et une source fraîche. L'équipe *récupère toutes ses forces*. Tu pourras t'y reposer à chaque visite.
+
+== carriere.k4.nom
+Caisse de provisions
+
+== carriere.k4.texte
+Une caisse de l'Ordre, à peine entamée : *2 herbes médicinales* et *1 tonique*.
+
+== carriere.k5.nom
+Géode éclatée
+
+== carriere.k5.texte
+Une pierre fendue en deux, pleine de cristaux sombres. Le plus beau tient au creux de la main : le *Quartz fumé* (accessoire, Attaque +2, Magie +2).
+
+== carriere.k6.nom
+Carnet du contremaître
+
+== carriere.k6.texte
+Un carnet moisi, la dernière page griffonnée : « La reine dort sous l'éboulis. Elle craint le feu et l'eau. Ne JAMAIS creuser vers l'est. » *Faiblesses de la Tisseuse de pierre ajoutées au codex.*
+
+== carriere.k7.nom
+Coffre du fond
+
+== carriere.k7.texte
+Derrière la toile brûlée, le coffre des anciens carriers, encore fermé : *120 po*.
+
+== carriere.k8.nom
+Réserve de l'Ordre
+
+== carriere.k8.texte
+Dans une niche de la galerie profonde, des sacs que l'Ordre n'a jamais pu rejoindre : *2 élixirs* et *1 tonique*.
+
+== carriere.m50
+## Palier 50 % atteint
+Dans une vieille cabane de carrier : *2 herbes médicinales* et *2 toniques*.
+
+== carriere.m100
+## Palier 100 % atteint
+Plus aucun recoin ne t'échappe. Au cœur de la galerie profonde, tu trouves une *Géode* (accessoire, Défense +3, Magie +3, PV +8). Carrière maîtrisée : sa traversée ne donnera plus que 0 à 2 combats.
+
+== carriere.ev.combat
+Des cailloux roulent tout seuls derrière toi…
+
+== carriere.ev.secousse
+Le sol tremble et une pluie de gravats s'abat sur l'équipe ! *Tout le monde perd 7 PV.*
+
+== carriere.ev.veine
+Un éclat de fer gris dépasse de la paroi : *+20 po*.
+
+== carriere.ev.source
+Une source glacée sourd entre deux blocs. L'eau réveille l'esprit : *+6 PP* pour tous.
+
+== carriere.ev.lichen
+Un lichen doré pousse sous une faille de lumière. Mâché, il apaise les plaies : *l'équipe récupère 14 PV*.
 
 # ================= Marais salant (entre la vallée et la côte) =================
 

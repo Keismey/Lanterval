@@ -99,6 +99,8 @@ function reveal(id, el, res) { const b = best(id), a = res ? b.res : b.weak; if 
 // les classes du joueur (sans celle d'une invitée comme Hilde)
 function classesJouables() { return Object.keys(CLASSES).filter(j => !CLASSES[j].invite); }
 function unlockJob(j) { if (!S.jobs.includes(j)) S.jobs.push(j); }
+// découvertes qu'on peut faire maintenant (si : la galerie profonde de la carrière s'ouvre après le boss)
+function tresorsDispos(id) { return LIEUX[id].tresors.filter(f => !f.si || cond(f.si)); }
 function pct(id) { return Math.round(S.z[id].found.length / LIEUX[id].tresors.length * 100); }
 
 /* ---------- Gains et effets écrits dans les données ---------- */
@@ -191,7 +193,7 @@ function annexeDispos(id) {
   const x = annexeEtape(id); if (!x || (x.si && !cond(x.si))) return [];
   const ouvert = l => lieuOuvert(villageDuPnj(l) || l.split('.')[0]);
   if (!x.parmi) return ouvert(x.lieu) ? [x] : [];
-  return x.parmi.map((m, i) => ({ ...m, morceau: i })).filter(m => !morceauxFaits(id).includes(m.morceau) && ouvert(m.lieu));
+  return x.parmi.map((m, i) => ({ ...m, morceau: i })).filter(m => !morceauxFaits(id).includes(m.morceau) && (!m.si || cond(m.si)) && ouvert(m.lieu));
 }
 function annexeDispo(id) { return annexeDispos(id)[0] || null; }
 // toutes les étapes et tous les morceaux de quêtes annexes jouables maintenant : [quête, étape]

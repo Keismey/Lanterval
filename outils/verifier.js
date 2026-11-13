@@ -90,6 +90,7 @@ function evenements(evts, ou) {
       for (const k in b) { if (!ids.includes(k)) erreur(`choix « ${k} » absent du texte ${a} (${o})`); evenements(b[k], `${o} → ${k}`); }
       for (const k of ids) if (!b[k]) erreur(`réponse « ${k} » sans suite (${o})`);
     }
+    else if (type === 'lance') { if (!D.ANNEXES[a]) erreur(`quête annexe inconnue « ${a} » (${o})`); }
     else if (type === 'drapeau') { if (!/^[\w-]+$/.test(a)) erreur(`drapeau illisible « ${a} » (${o})`); }
     else if (type === 'trouve') { const [z, f] = a.split(/\s+/); if (!D.LIEUX[z] || !(D.LIEUX[z].tresors || []).some(x => x.id === f)) erreur(`découverte inconnue « ${a} » (${o})`); }
     else if (type === 'si') { condition(a, o); evenements(b, o + ' (alors)'); if (c) evenements(c, o + ' (sinon)'); }
@@ -109,7 +110,7 @@ for (const id in D.ANNEXES) {
     const ou = `${id}.e${i + 1}`;
     condition(e.si, ou); condition(e.saute, ou);
     // étape en désordre : un titre, un lieu et des événements par morceau
-    if (e.parmi) e.parmi.forEach((m, j) => { texte(`${ou}.m${j + 1}.titre`, id); lieu(m.lieu, `${ou}.m${j + 1}`); evenements(m.evenements, `${ou}.m${j + 1}`); });
+    if (e.parmi) e.parmi.forEach((m, j) => { texte(`${ou}.m${j + 1}.titre`, id); lieu(m.lieu, `${ou}.m${j + 1}`); condition(m.si, `${ou}.m${j + 1}`); evenements(m.evenements, `${ou}.m${j + 1}`); });
     else { texte(`${ou}.titre`, id); lieu(e.lieu, ou); evenements(e.evenements, ou); }
   });
 }
@@ -143,6 +144,7 @@ for (const id in D.LIEUX) {
     for (const c of L.cotes || []) texte(`lieu.${id}.${c}`, id);
     const vus = new Set();
     for (const f of L.tresors) {
+      condition(f.si, `${id}.${f.id}`);
       if (vus.has(f.id)) erreur(`trésor en double « ${f.id} » (${id})`); vus.add(f.id);
       texte(`${id}.${f.id}.nom`, id); texte(`${id}.${f.id}.texte`, id);
       if (f.gagne) gain(f.gagne, `${id}.${f.id}`); if (f.effet) effet(f.effet, `${id}.${f.id}`); if (f.revele) monstre(f.revele, `${id}.${f.id}`);

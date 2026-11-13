@@ -1,5 +1,15 @@
 # État du projet
 
+## Version 0.7.9 (2026-11-13) : la Carrière effondrée (extension de l'acte 1)
+
+- Demande de Keismey : allonger l'acte 1 gratuit entre la fête (a1.e7) et le col, avec une vraie zone nouvelle sur l'éboulis à droite de la carte de la vallée. Zone `carriere` (côtés `e` éboulis et `f` fond), reliée à Lanterval, visible dès « La chèvre de Tilo » acceptée. Tout se joue dans la vallée, donc avant le verrou du Marais salant.
+- Trois quêtes annexes qui s'enchaînent avec deux allers-retours seulement (retour de Keismey : pas trois allers-retours, et un changement de décor justifié par l'histoire) :
+  - `chevre` (Tilo, après a1.e7) : la chèvre Noisette file dans une faille de l'éboulis ; traversée jusqu'au fond, camp abandonné de l'Ordre (objet important `pioche`), grande toile qui ferme la galerie. En ramenant Noisette, Hilde et Brann lancent les deux autres quêtes (nouvel événement `['lance', id]` : une quête démarre sans l'offre de son donneur).
+  - `fer` (Hilde) : trois filons en `parmi`, le troisième derrière la toile (`si` par morceau, nouveau). Hilde offre l'Épée de fer gris (`fergris`) et met en rayon le Bâton de quartz (`quartzb`) et la Cotte de fer gris (`cottegris`).
+  - `gronde` (Brann) : boss la Tisseuse de pierre (`tisseuse` : appel d'Araignées des failles, toile sur toute l'équipe, résiste à la Terre, craint Feu et Eau). Mira brûle la toile : drapeau `toile`, état `libre` (décor sans toile), la galerie profonde ouvre les découvertes k7 et k8 (`si` sur une découverte, nouveau : `tresorsDispos`). Récompense : Soie de roche (`soieroche`, accessoire) et 100 po.
+- Monstres : Cloporte des roches, Taupe-griffe, Araignée des failles, Tisseuse de pierre. Accessoires : Quartz fumé (découverte), Géode (palier 100 %).
+- Images provisoires (pixel art pour les monstres et le décor, cadre nommé pour les 3 panoramas) ; prompts Gemini et références dans /mnt/project-files/lanterval-carriere/.
+
 ## Version 0.7.8 (2026-11-13) : bande-annonce de fin d'acte 1
 
 - `moteur/trailer.js` : « Ce qui t'attend pour la suite », ~51 s, refait de zéro (4e version). Trois temps : l'histoire (musique `menace`, fondus : lanterne, cage, Salvent, Sol et l'épave, Naïa sur le quai, Nev en fuite, Mira et Hilde, le Sans-Nom), l'action (musique `boss`, coupes franches calées sur son tempo de 160 à la minute, `TR_TEMPS` = 375 ms : 3 régions, 5 boss + Varen avec entaille, éclair, secousse et dégâts au 3e temps, Nev « nouvelle alliée », 13 classes qui défilent, 12 quêtes annexes), puis l'équipe au feu, l'Escalier et le titre. Sans les grands retournements (ni Aldric, ni Ysold, ni la fin).

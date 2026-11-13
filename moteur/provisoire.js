@@ -118,6 +118,7 @@ function dessinerSprites() {
   spritesActe2();
   spritesActe3();
   spritesActe4();
+  spritesCarriere();
   for (const k in SPR) SPRURL[k] = SPR[k].toDataURL();
 }
 
@@ -349,6 +350,23 @@ function rocSpr(vol) { return mk(vol ? 64 : 52, 48, x => {
   P(x, '#d8c890', cx - 2, 13, 5, 3); P(x, '#d8c890', cx - 1, 16, 3, 2); P(x, '#b8a870', cx, 18, 1, 1);
   for (const dx of [-4, 3]) { P(x, '#c8a040', cx + dx, 36, 2, vol ? 6 : 8); P(x, '#2a2a30', cx + dx - 2, vol ? 41 : 44, 6, 2); }
 }); }
+// Carrière effondrée (quêtes annexes de l'acte 1)
+function spritesCarriere() {
+  SPR.cloporte = mk(40, 26, x => { for (let k = 0; k < 6; k++) { const cx = 7 + k * 5, h = 9 - Math.abs(2.5 - k) * 1.2; E(x, k % 2 ? '#7a7e88' : '#8e929c', cx, 15, 4, h); P(x, '#5c6068', cx + 3, 15 - h, 1, 2 * h); }
+    for (let k = 0; k < 8; k++) P(x, '#3e4048', 6 + k * 4, 22, 1, 3); E(x, '#6c7078', 36, 17, 4, 4); P(x, '#1b1830', 37, 16, 1, 1);
+    P(x, '#5c6068', 38, 11, 1, 5); P(x, '#5c6068', 39, 10, 1, 2); P(x, '#c8d0dc', 15, 9, 2, 1); P(x, '#c8d0dc', 25, 10, 2, 1); P(x, '#6a8a4a', 11, 8, 3, 1); });
+  SPR.taupe = mk(34, 40, x => { E(x, '#6a5a4c', 17, 24, 10, 13); E(x, '#8a7868', 17, 27, 6, 8); D(x, '#6a5a4c', 17, 10, 7); E(x, '#e8a0a8', 17, 15, 3, 2);
+    P(x, '#1b1830', 14, 9, 2, 1); P(x, '#1b1830', 19, 9, 2, 1); P(x, '#4a3e34', 10, 36, 6, 3); P(x, '#4a3e34', 19, 36, 6, 3);
+    for (const [bx, d] of [[5, -1], [29, 1]]) { P(x, '#6a5a4c', bx - 2, 18, 5, 8); for (let k = 0; k < 4; k++) P(x, '#d8d0c0', bx - 3 + k * 2, 26 + (k % 2), 1, 5); } });
+  SPR.araignee = mk(40, 28, x => { for (const s of [-1, 1]) for (let k = 0; k < 4; k++) { const ox = 20 + s * (5 + k * 2); for (let j = 0; j < 8; j++) P(x, '#4a4650', ox + s * j, 12 - j + k, 1, 1); for (let j = 0; j < 10; j++) P(x, '#4a4650', ox + s * 8, 4 + k + j, 1, 1); }
+    E(x, '#7a7480', 20, 16, 8, 6); E(x, '#5c5864', 20, 10, 5, 4); for (const [cx, cy] of [[18, 9], [22, 9], [17, 11], [23, 11]]) P(x, '#f2a84a', cx, cy, 1, 1);
+    P(x, '#a8a4b0', 16, 15, 2, 1); P(x, '#a8a4b0', 23, 18, 2, 1); P(x, '#e8e8f0', 20, 22, 1, 6); });
+  SPR.tisseuse = mk(72, 56, x => { for (const s of [-1, 1]) for (let k = 0; k < 4; k++) { const ox = 36 + s * (9 + k * 3); for (let j = 0; j < 14; j++) P(x, '#3e3a44', ox + s * j, 22 - j + k * 2, 2, 2); for (let j = 0; j < 22; j++) P(x, '#3e3a44', ox + s * 14, 8 + k * 2 + j, 2, 1); }
+    E(x, '#6c6874', 36, 34, 17, 13); for (let k = 0; k < 4; k++) P(x, '#c8d0dc', 26 + k * 6, 30 + (k % 2) * 6, 4, 1); P(x, '#8a8694', 22, 24, 28, 2);
+    E(x, '#56525e', 36, 18, 10, 7); for (const [cx, cy] of [[31, 16], [35, 15], [38, 15], [42, 16], [33, 19], [40, 19]]) P(x, '#ffb84a', cx, cy, 2, 1);
+    P(x, '#2a2836', 32, 23, 2, 4); P(x, '#2a2836', 39, 23, 2, 4); D(x, '#c8ccd8', 48, 36, 3); P(x, '#1b1830', 46, 36, 5, 1);
+    for (let k = 0; k < 5; k++) P(x, 'rgba(235,235,240,.95)', 22 + k * 7, 46, 1, 7); });
+}
 function spritesActe4() {
   SPR.rapace = mk(42, 32, x => { for (let k = 0; k < 15; k++) { const hh = Math.max(2, 11 - Math.floor(k / 1.6)); P(x, k % 3 ? '#8a5a32' : '#6a4022', 15 - k, 5 + Math.floor(k / 2.5), 1, hh); P(x, k % 3 ? '#8a5a32' : '#6a4022', 26 + k, 5 + Math.floor(k / 2.5), 1, hh); }
     E(x, '#7a4a2a', 21, 17, 6, 8); E(x, '#d8b890', 21, 19, 3, 5); D(x, '#6a4022', 21, 8, 4); P(x, '#f2c14e', 23, 8, 4, 2); P(x, '#c9962e', 26, 10, 1, 1); P(x, '#ffdd55', 20, 7, 1, 1);
@@ -504,6 +522,18 @@ function bgCave(c, W, H, dark) { const r = rng(33);
   for (let x = 0; x < W;) { const w = 5 + (r() * 10 | 0), h = 4 + (r() * 14 | 0); for (let k = 0; k < h; k++) { const ww = Math.max(1, Math.round(w * (k / h))); P(c, dark ? '#221a33' : '#34326a', x + (w - ww) / 2, gy - h + k, ww, 1); } x += w + 6 + (r() * 30 | 0); }
   for (const [fx, fy, s] of [[.1, .74, 6], [.34, .44, 4], [.72, .62, 7], [.9, .36, 5], [.55, .86, 5], [.22, .2, 3]]) crystal(c, W * fx, H * fy, s, dark);
   if (dark) { for (const [fx, fy] of [[.3, .5], [.8, .3], [.62, .7]]) { P(c, '#ff3a3a', W * fx, H * fy, 1, 1); P(c, '#ff3a3a', W * fx + 3, H * fy, 1, 1); } } }
+function bgCarriere(c, W, H, libre) { const r = rng(61);
+  dgrad(c, 0, 0, W, H, libre ? ['#2a2420', '#4a3e34', '#6a5a4a'] : ['#16161e', '#2a2a36', '#3e3e4c']);
+  for (let i = 0; i < 18; i++) { const x = r() * W, y = r() * H * .7; P(c, libre ? '#5a4e42' : '#34343f', x, y, 14 + (r() * 30 | 0), 8 + (r() * 12 | 0)); P(c, libre ? '#6c6052' : '#44444f', x, y, 14 + (r() * 30 | 0), 1); }
+  for (let i = 0; i < 10; i++) { const x = r() * W, y = r() * H * .7; for (let k = 0; k < 10; k++) P(c, libre ? '#d8e0ec' : '#9aa4b4', x + k * 2, y + k, 2, 1); }
+  const cx = W * .5, cy = H * .42, rw = W * .16, rh = H * .26; E(c, libre ? '#3a2e24' : '#0c0c12', cx, cy, rw, rh);
+  if (libre) { for (let k = 0; k < 9; k++) P(c, '#c8d4e4', cx - rw * .6 + k * rw * .15, cy - rh * .2 + (k % 3) * 4, 3, rh * .5); }
+  else { for (let a = 0; a < 12; a++) { const ang = a / 12 * Math.PI * 2; for (let k = 0; k < rw; k += 2) P(c, 'rgba(230,230,236,.7)', cx + Math.cos(ang) * k, cy + Math.sin(ang) * k * rh / rw, 1, 1); }
+    for (const f of [.3, .55, .8]) for (let a = 0; a < 60; a++) { const ang = a / 60 * Math.PI * 2; P(c, 'rgba(230,230,236,.55)', cx + Math.cos(ang) * rw * f, cy + Math.sin(ang) * rh * f, 1, 1); } }
+  const gy = Math.round(H * .74); dgrad(c, 0, gy, W, H - gy, libre ? ['#5a4c3e', '#3a3028'] : ['#3a3a44', '#24242c']);
+  for (let y = gy; y < H; y += 3) { const tt = (y - gy) / (H - gy), w = W * (.05 + tt * .2); P(c, '#6a4a3a', cx - w, y, 2, 2); P(c, '#6a4a3a', cx + w, y, 2, 2); }
+  for (let i = 0; i < 14; i++) { const x = r() * W, y = gy + r() * (H - gy); E(c, libre ? '#6c6052' : '#4a4a56', x, y, 3 + (r() * 6 | 0), 2 + (r() * 3 | 0)); }
+  for (let i = 0; i < 40; i++) P(c, libre ? 'rgba(255,200,140,.35)' : 'rgba(220,220,230,.3)', r() * W, r() * H * .8, 1, 1); }
 function bgCol(c, W, H, vide) { const r = rng(47);
   dgrad(c, 0, 0, W, H, vide ? ['#4a4e5e', '#6c7080', '#8a8e9c', '#a8acb6'] : ['#3a3a6a', '#8a6a7a', '#e0a070', '#f2c88a']);
   const pics = (base, haut, col, neige, seed) => { const q = rng(seed); for (let x = -10; x < W + 10;) { const w = 18 + (q() * 30 | 0), h = haut * (.6 + q() * .5); for (let k = 0; k < h; k++) { const ww = Math.round(w * k / h); P(c, col, x + (w - ww) / 2, base - h + k, ww, 1); if (neige && k < h * .25) P(c, '#eef0f6', x + (w - ww) / 2, base - h + k, ww, 1); } x += w * .7; } };
@@ -539,6 +569,8 @@ const DECORS_PROVISOIRES = {
   'grotte-sombre': (c, w, h) => bgCave(c, w, h, true),
   'col': (c, w, h) => bgCol(c, w, h, false),
   'col-vide': (c, w, h) => bgCol(c, w, h, true),
+  'carriere': (c, w, h) => bgCarriere(c, w, h, false),
+  'carriere-libre': (c, w, h) => bgCarriere(c, w, h, true),
   'carte': bgMap
 };
 Object.assign(DECORS_PROVISOIRES, {

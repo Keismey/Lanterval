@@ -38,7 +38,7 @@ function renderZone() {
   // ses deux côtés ne se relient que par l'histoire
   const monte = L.nonRetour && cond(L.nonRetour);
   if (z && (!L.nonRetour || monte)) {
-    const reste = L.tresors.length - z.found.length, peut = reste > 0 || z.rnd < L.maxEvenements;
+    const reste = tresorsDispos(id).filter(f => !z.found.includes(f.id)).length, peut = reste > 0 || z.rnd < L.maxEvenements;
     opts.push({ k: 'explore', ic: 'search', label: esc(t('zone.explorer')), sub: esc(peut ? (reste ? t(reste > 1 ? 'zone.reste' : 'zone.reste.un', { n: reste }) : t('zone.tout')) : t('zone.rien')), dis: !peut });
     opts.push({ k: 'hunt', ic: 'sword', label: esc(t('zone.chasser')), sub: esc(t('zone.chasser.sous')) });
     const repos = L.tresors.find(f => f.repos && z.found.includes(f.id));
@@ -105,7 +105,7 @@ async function paliers(id, silencieux) {
 async function explore(id) {
   const z = S.z[id], L = LIEUX[id];
   S.st.explores++;
-  const reste = L.tresors.filter(f => !z.found.includes(f.id));
+  const reste = tresorsDispos(id).filter(f => !z.found.includes(f.id));
   let fixe;
   if (!reste.length) fixe = false;
   else if (z.rnd >= L.maxEvenements || z.streak >= 2) fixe = true;

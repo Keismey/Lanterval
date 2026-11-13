@@ -101,7 +101,7 @@ function cerveau(graine) {
   // zone pas encore explorée à fond : on l'explore (et on y chasse un peu) avant d'y jouer une quête
   function aExplorer(id) {
     const z = S.z[id], L = LIEUX[id]; if (!z) return false;
-    return L.tresors.length > z.found.length || z.rnd < L.maxEvenements;
+    return tresorsDispos(id).some(f => !z.found.includes(f.id)) || z.rnd < L.maxEvenements;
   }
   async function explorerZone(pos) {
     const id = pos.split('.')[0];

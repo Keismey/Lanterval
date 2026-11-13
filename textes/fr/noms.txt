@@ -350,6 +350,15 @@ Arc de Brann
 == equip.chene
 Bâton de chêne-fer
 
+== equip.fergris
+Épée de fer gris
+
+== equip.quartzb
+Bâton de quartz
+
+== equip.cottegris
+Cotte de fer gris
+
 == equip.tunique
 Tunique
 
@@ -367,6 +376,15 @@ Brigandine
 
 == equip.cape
 Cape de laine
+
+== equip.quartz
+Quartz fumé
+
+== equip.geode
+Géode
+
+== equip.soieroche
+Soie de roche
 
 == equip.plume
 Plume de luciole
@@ -519,6 +537,18 @@ Défense de Sanglier-roc
 == important.defense.desc
 Longue comme un bras, dure comme la pierre. La preuve pour le carnet de Roxane.
 
+== important.chevre
+Noisette
+
+== important.chevre.desc
+La chèvre de Tilo, ruban rouge et clochette. Elle mâchonne tout ce qui dépasse du sac.
+
+== important.pioche
+Pioche de l'Ordre
+
+== important.pioche.desc
+Une pioche neuve trouvée au fond de la carrière, un œil fermé gravé sur le manche. Brann veut savoir ce que l'Ordre creusait.
+
 == important.ecaille-orage
 Écaille d'orage
 
@@ -649,6 +679,51 @@ Jeune lieutenant de l'Ordre de la Paupière. Rapide, arrogant, redoutable.
 
 == monstre.varen.special
 Lame du vent
+
+== monstre.cloporte
+Cloporte des roches
+
+== monstre.cloporte.court
+Cloporte
+
+== monstre.cloporte.desc
+Lent et couvert de plaques de pierre. Ni la lame ni la Terre ne l'entament : l'Eau et le Feu le font craquer.
+
+== monstre.taupe
+Taupe-griffe
+
+== monstre.taupe.court
+Taupe
+
+== monstre.taupe.desc
+Elle creuse en suivant les veines de fer et frappe à travers le sol avec ses griffes en forme de pioche.
+
+== monstre.taupe.special
+Coup de pioche
+
+== monstre.araignee
+Araignée des failles
+
+== monstre.araignee.court
+Araignée
+
+== monstre.araignee.desc
+Fragile mais très rapide. Elle mord souvent deux fois de suite.
+
+== monstre.tisseuse
+Tisseuse de pierre
+
+== monstre.tisseuse.court
+Tisseuse
+
+== monstre.tisseuse.desc
+La reine de la carrière, réveillée par les pioches de l'Ordre. Elle appelle ses petites et couvre l'équipe de sa toile.
+
+== monstre.tisseuse.special
+{nom} projette sa toile : toute l'équipe est prise dans la soie !
+
+== monstre.tisseuse.appel
+{nom} tire sur un fil : *{renfort}* descend de la voûte !
 
 == monstre.sansnom
 Le Sans-Nom
