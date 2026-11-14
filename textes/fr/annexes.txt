@@ -1393,7 +1393,7 @@ Dans un creux de la falaise, un grand nid de cordes et de plumes, tressé par Il
 Un cri déchire le vent. Une wyverne aux écailles gris-bleu se pose devant le nid, les yeux noyés de brume. [Combattre]
 
 == wyverne.e2.conseil
-? La *Wyverne mère* résiste au *Vent*. La *Terre* et la *Lame* fendent sa garde. Quand elle prend son souffle, brise sa garde avant qu'elle ne crache la brume sur toute l'équipe.
+? La *Wyverne mère* résiste au *Vent*. L'*Eau* et la *Lame* fendent sa garde. Quand elle prend son souffle, brise sa garde avant qu'elle ne crache la brume sur toute l'équipe.
 
 == wyverne.e2.eclosion
 ## Le nid

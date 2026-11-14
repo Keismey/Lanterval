@@ -1,5 +1,8 @@
 # État du projet
 
+## Version 0.9.2 (2026-11-14)
+- Faiblesses revues (les classes ont maintenant des techniques de chaque élément) : Vent faible pour chauve, harpie, araignée, ombre, follet, pie, noyé, crapaud ; Vent résisté par bélier, taupe, sanglier ; Eau faible pour rapace, griffon, wyverne. Boss principaux inchangés. Textes de découverte et conseils mis à jour.
+
 ## Version 0.9.1 (2026-11-14)
 - Chrono dans les Options (`OPT.chrono`) : temps de jeu sous la bourse (`#hb-chrono`, mis à jour à chaque seconde dans moteur/jeu.js). Temps par acte dans `S.st.actes` (acte de la prochaine étape principale, `fin` après la fin), affiché dans le Journal ; compté seulement depuis la 0.9.1.
 - Codex : noms des armes hache, lance, marteau ; le vérificateur contrôle `codex.arme.*` pour les armes de chaque classe.

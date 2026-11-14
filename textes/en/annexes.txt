@@ -1390,7 +1390,7 @@ In a hollow of the cliff, a large nest of ropes and feathers, woven by Ilse year
 A cry tears through the wind. A blue-grey wyvern lands in front of the nest, her eyes drowned in mist. [Fight]
 
 == wyverne.e2.conseil
-? The *Wyvern mother* resists *Wind*. *Earth* and *Blade* crack her guard. When she draws breath, break her guard before she breathes mist on the whole team.
+? The *Wyvern mother* resists *Wind*. *Water* and *Blade* crack her guard. When she draws breath, break her guard before she breathes mist on the whole team.
 
 == wyverne.e2.eclosion
 ## The nest
