@@ -246,6 +246,13 @@ function ligneJournal([temps, cle, v]) {
 function queteRepliable(nom, etapes, fini) {
   return `<details class="quete ${fini ? 'finie' : ''}"><summary>${esc(nom)}</summary><ul class="qlist">${etapes.map(([titre, ok]) => `<li class="${ok ? 'done' : 'cur'}">${esc(titre)}</li>`).join('')}</ul></details>`;
 }
+// temps de jeu par acte (compté depuis la 0.9.1 : une partie plus ancienne n'a que ce qui a été joué depuis)
+function tempsParActe() {
+  const a = S.st.actes; if (!a) return '';
+  const l = ACTES.filter(x => a[x.id]).map(x => t('journal.temps.acte', { n: ACTES.indexOf(x) + 1, t: fmtH(a[x.id]) }));
+  if (a.fin) l.push(t('journal.temps.fin', { t: fmtH(a.fin) }));
+  return l.length ? `<p class="note">${esc(t('journal.temps', { liste: l.join(' · ') }))}</p>` : '';
+}
 function openJournal() {
   const st = S.st, cur = etapeCourante(), enCours = [], finies = [];
   for (const a of ACTES) {
@@ -268,7 +275,7 @@ function openJournal() {
   const zones = Object.keys(S.z).filter(id => lieuVisible(id) && S.z[id].visits).map(id => `${nomLieu(id)} ${pct(id)} %`).join(' · ');
   const sh = modal('grand', sheetHead(t('menu.journal')) + quetes + `
    <h3 class="sec">${esc(t('journal.bilan'))}</h3><div class="stats"><div class="stat"><b>${fmt(st.time)}</b><span>${esc(t('stats.temps'))}</span></div><div class="stat"><b>${st.fights}</b><span>${esc(t('stats.combats'))}</span></div><div class="stat"><b>${st.explores}</b><span>${esc(t('stats.explorations'))}</span></div><div class="stat"><b>${S.plus ? '+' + S.plus : '–'}</b><span>${esc(t('stats.plus'))}</span></div></div>
-   ${zones ? `<p class="note">${esc(zones)}</p>` : ''}
+   ${zones ? `<p class="note">${esc(zones)}</p>` : ''}${tempsParActe()}
    <div class="log">${st.log.slice().reverse().map(ligneJournal).join('') || esc(t('journal.vide'))}</div>`);
   sh.querySelector('#mclose').onclick = closeModal;
 }
@@ -313,6 +320,7 @@ function openOptions(vue) {
       { k: 'save', ic: 'save', label: esc(t('options.sauvegarde')), sub: esc(t('options.sauvegarde.sous')) },
       { k: 'texte', ic: 'scroll', label: esc(t('options.texte', { v: t('options.texte.' + OPT.texte) })), sub: esc(t('options.texte.sous')) },
       { k: 'rapide', ic: 'play', label: esc(t(OPT.rapide ? 'options.combats.rapides' : 'options.combats.normaux')), sub: esc(t('options.combats.sous')) },
+      { k: 'chrono', ic: 'clock', label: esc(t(OPT.chrono ? 'options.chrono.oui' : 'options.chrono.non')), sub: esc(t('options.chrono.sous')) },
       ...(pleinEcranPossible() ? [{ k: 'plein', ic: 'expand', label: esc(t(document.fullscreenElement ? 'options.plein.quitter' : 'options.plein')), sub: esc(t('options.plein.sous')) }] : []),
       { k: 'notes', ic: 'book', label: esc(t('options.notes')), sub: esc(t('options.notes.sous', { v: VERSION })) }
     ];
@@ -333,6 +341,7 @@ function openOptions(vue) {
       if (k === 'lang') { OPT.lang = LANG === 'fr' ? 'en' : 'fr'; sauverOptions(); choisirLangue(OPT.lang); document.documentElement.lang = LANG; hud(); if (libre) { closeModal(); renderStable(); openOptions(); } else draw(); }
       else if (k === 'texte') { OPT.texte = VITESSES[(VITESSES.indexOf(OPT.texte) + 1) % VITESSES.length]; sauverOptions(); draw(); }
       else if (k === 'rapide') { OPT.rapide = !OPT.rapide; sauverOptions(); draw(); }
+      else if (k === 'chrono') { OPT.chrono = !OPT.chrono; sauverOptions(); hud(); draw(); }
       else if (k === 'histoire') { S.histoire = !S.histoire; save(); draw(); }
       else if (k === 'plein') basculerPleinEcran();
       else if (k === 'save') { if (S && S.screen !== 'title') save(); KS.saveDialog({ jeu: 'Lanterval', keys: [CLE, CLE_SECOURS], lang: LANG }); }
