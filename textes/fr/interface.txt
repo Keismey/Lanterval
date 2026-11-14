@@ -1582,7 +1582,7 @@ Se replier
 Retour à l'auberge, sans perdre d'or, pour changer de classe ou s'équiper
 
 == defaite.texte.boss
-L'équipe s'est repliée à l'auberge de {lieu}, soignée. Ta bourse est intacte (*{or} po*) : change de classe, d'équipement ou d'objets, puis retente ta chance.
+L'équipe s'est repliée à l'auberge de {lieu}, soignée. Ta bourse est intacte (*{or} po*) : change de classe, d'équipement ou d'objets, entraîne-toi un peu, puis retente ta chance. (La difficulté *Histoire*, dans les Options, rend les monstres moins forts.)
 
 == inventaire.combat.seul
 En combat seulement.
@@ -1649,3 +1649,12 @@ Magie réduite de moitié tant que sa garde tient
 
 == aide.etats
 *États* : le poison ronge des PV à chaque tour, la brûlure réduit l'Attaque et la Magie de 30 %, la torpeur fait parfois passer son tour. Ils durent jusqu'à la fin du combat, sauf objet ou technique de soutien (Barde, Alchimiste, Sage).
+
+== options.difficulte.normal
+Difficulté : Normale
+
+== options.difficulte.histoire
+Difficulté : Histoire
+
+== options.difficulte.sous
+Histoire : monstres moins forts (PV et Attaque −25 %), pour profiter surtout de l'aventure. Se change à tout moment.

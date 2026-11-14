@@ -208,8 +208,9 @@ async function ecranVictoire(xp, gold, avant) {
   await choix;
 }
 function mkEnnemi(id, nom) {
-  const d = MONSTRES[id], fp = forcePlus(), pv = Math.round(d.pv * fp);
-  const e = { id, isEnemy: true, name: nom, hp: pv, mhp: pv, atk: Math.round(d.atk * (1 + (fp - 1) * .6)), def: d.def, spd: d.vit, shield: d.garde, mshield: d.garde, weak: d.faible, res: d.resiste,
+  // mode Histoire : PV −25 %, Attaque −25 %
+  const d = MONSTRES[id], fp = forcePlus(), h = S.histoire ? HISTOIRE : 1, pv = Math.round(d.pv * fp * h);
+  const e = { id, isEnemy: true, name: nom, hp: pv, mhp: pv, atk: Math.round(d.atk * (1 + (fp - 1) * .6) * h), def: d.def, spd: d.vit, shield: d.garde, mshield: d.garde, weak: d.faible, res: d.resiste,
     xp: Math.round(d.xp * fp), gold: Math.round(d.or * fp), broken: false, charged: false, cnt: 0, dort: false, vole: false,
     caps: [...(d.capacites || [])] };
   if (capacite(e, 'cristaux')) { e.cristal = 0; appliquerCristal(e); }
@@ -471,6 +472,7 @@ async function dmgHero(c, raw) {
 
 /* ---------- États, phase 2 des boss, carapace et voile (0.9.0) ---------- */
 const ETATS = ['poison', 'brulure', 'torpeur'];
+const HISTOIRE = .75;
 const POISON = .06, BRULURE = .3, TORPEUR = 3;
 // capacité etat : un coup du monstre peut empoisonner, brûler ou engourdir (chance) ; renvoie le texte à ajouter
 function infliger(e, c) {

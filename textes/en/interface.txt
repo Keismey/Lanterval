@@ -1550,7 +1550,7 @@ Fall back
 Back to the inn, no gold lost, to change class or gear up
 
 == defaite.texte.boss
-The team fell back to the inn in {lieu}, healed. Your purse is intact (*{or} g*): change class, gear or items, then try again.
+The team fell back to the inn in {lieu}, healed. Your purse is intact (*{or} g*): change class, gear or items, train a little, then try again. (*Story* difficulty, in Options, makes monsters weaker.)
 
 == inventaire.combat.seul
 In battle only.
@@ -1617,3 +1617,12 @@ Magic halved while its guard holds
 
 == aide.etats
 *Ailments*: poison eats HP every turn, burn cuts Attack and Magic by 30%, torpor sometimes skips a turn. They last until the end of the battle, unless cured by an item or a support technique (Bard, Alchemist, Sage).
+
+== options.difficulte.normal
+Difficulty: Normal
+
+== options.difficulte.histoire
+Difficulty: Story
+
+== options.difficulte.sous
+Story: weaker monsters (HP and Attack −25%), to enjoy the adventure. Can be changed at any time.
