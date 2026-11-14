@@ -40,7 +40,7 @@ const MONSTRES = {
     capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
   harpie: { pv: 40, atk: 13, def: 3, vit: 17, garde: 2, faible: ['T', 'L'], resiste: ['E'], xp: 13, or: 9, taille: .18, f: true,
     capacites: [{ type: 'spores', chance: .3, mult: .7 }] },
-  varen: { pv: 520, atk: 32, def: 6, vit: 15, garde: 4, faible: ['T', 'F'], resiste: ['E'], xp: 80, or: 60, taille: .3, boss: true,
+  varen: { pv: 520, atk: 36, def: 6, vit: 15, garde: 4, faible: ['T', 'F'], resiste: ['E'], xp: 80, or: 60, taille: .3, boss: true,
     capacites: [{ type: 'fort', chance: .35, mult: 1.4 }] },
   // Carrière effondrée (quêtes annexes de l'acte 1 : la chèvre de Tilo, le fer gris, ce qui gronde sous la roche)
   cloporte: { pv: 70, atk: 14, def: 11, vit: 5, garde: 3, faible: ['E', 'F'], resiste: ['L', 'T'], xp: 10, or: 11, taille: .15 },
@@ -67,11 +67,11 @@ const MONSTRES = {
     capacites: [{ type: 'double', chance: .35 }] },
   soldat: { pv: 92, atk: 35, def: 10, vit: 11, garde: 4, faible: ['F', 'E'], resiste: ['T'], xp: 24, or: 18, taille: .21, vol: 'tonique',
     capacites: [{ type: 'fort', chance: .3, mult: 1.35 }] },
-  vouivre: { pv: 950, atk: 56, def: 9, vit: 12, garde: 5, faible: ['T'], resiste: ['E', 'F'], xp: 140, or: 100, taille: .36, boss: true, voile: true, f: true, vol: 'elixir',
+  vouivre: { pv: 1050, atk: 56, def: 9, vit: 12, garde: 5, faible: ['T'], resiste: ['E', 'F'], xp: 140, or: 100, taille: .36, boss: true, voile: true, f: true, vol: 'elixir',
     capacites: [{ type: 'charge', mult: 1.5 }, { type: 'drain', chance: .25 }, { type: 'etat', etat: 'poison', chance: .3 }] },
   mere: { pv: 1450, atk: 64, def: 14, vit: 7, garde: 6, faible: ['T', 'F'], resiste: ['E', 'L'], xp: 170, or: 120, taille: .4, boss: true, carapace: true, f: true, vol: 'perle',
     capacites: [{ type: 'appel', id: 'crabe', chance: .35 }, { type: 'fort', chance: .3, mult: 1.45 }] },
-  heraut: { pv: 1900, atk: 76, def: 12, vit: 20, garde: 5, faible: ['E', 'T'], resiste: ['F'], xp: 220, or: 160, taille: .3, boss: true, voile: true, vol: 'cloche',
+  heraut: { pv: 1900, atk: 82, def: 12, vit: 20, garde: 5, faible: ['E', 'T'], resiste: ['F'], xp: 220, or: 160, taille: .3, boss: true, voile: true, vol: 'cloche',
     capacites: [{ type: 'charge', mult: 1.6 }, { type: 'fort', chance: .3, mult: 1.4 }, { type: 'etat', etat: 'torpeur', chance: .25 }] },
   // boss des quêtes annexes de la côte
   pie: { pv: 420, atk: 41, def: 6, vit: 19, garde: 4, faible: ['T', 'L'], resiste: ['E'], xp: 70, or: 60, taille: .2, f: true, vol: 'rose',
@@ -102,7 +102,7 @@ const MONSTRES = {
   esprit: { pv: 145, atk: 64, def: 6, vit: 20, garde: 3, faible: ['E'], resiste: ['F', 'L'], xp: 34, or: 24, taille: .16, vol: 'ether',
     capacites: [{ type: 'spores', chance: .35, mult: .7 }, { type: 'etat', etat: 'brulure', chance: .25 }] },
   // boss de l'acte 3
-  forgeur: { pv: 3200, atk: 86, def: 18, vit: 24, garde: 13, faible: ['E', 'V'], resiste: ['F', 'L'], xp: 260, or: 220, taille: .4, boss: true, carapace: true, vol: 'potion',
+  forgeur: { pv: 2800, atk: 86, def: 18, vit: 24, garde: 13, faible: ['E', 'V'], resiste: ['F', 'L'], xp: 260, or: 220, taille: .4, boss: true, carapace: true, vol: 'potion',
     capacites: [{ type: 'charge', mult: 1.5 }, { type: 'appel', id: 'automate', chance: .3 }, { type: 'etat', etat: 'brulure', chance: .3 }] },
   varen2: { pv: 2000, atk: 80, def: 12, vit: 30, garde: 7, faible: ['T', 'L'], resiste: ['V'], xp: 240, or: 0, taille: .3, boss: true, vol: 'ether',
     capacites: [{ type: 'fort', chance: .35, mult: 1.45 }, { type: 'double', chance: .25 }] },
