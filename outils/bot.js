@@ -195,9 +195,9 @@ function cerveau([graine, profil]) {
         if (S.gold >= e.prix + 30) { S.gold -= e.prix; ajoute(R.achatsEq, ac, e.prix); R.achete[cle] = e.prix; addEq(k); equiper(); }
         else epargne = true;
       }
-      // fioles : deux de chaque élément qui vise une faiblesse du prochain boss
+      // fioles : deux (et un flacon) de chaque élément qui vise une faiblesse du prochain boss, une fois l'équipement payé
       const visees = new Set((prochains || []).filter(([id, p]) => p > 1).flatMap(([id]) => MONSTRES[id].faible));
-      const veut = k => OBJETS[k].hp ? (epargne ? 2 : 6) : OBJETS[k].pp ? (epargne ? 1 : 4) : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el && visees.has(OBJETS[k].el) ? (APPLIQUE ? 2 : 1) : 0;
+      const veut = k => OBJETS[k].hp ? (epargne ? 2 : 6) : OBJETS[k].pp ? (epargne ? 1 : 4) : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el && visees.has(OBJETS[k].el) && !epargne ? (OBJETS[k].degats > 100 ? (APPLIQUE ? 1 : 0) : APPLIQUE ? 2 : 1) : 0;
       for (const [k, prix] of p.objets) while ((S.inv[k] || 0) < veut(k) && S.gold >= prix + 40) { S.gold -= prix; ajoute(R.achatsObj, ac, prix); addItem(k, 1); }
     }
     orAvant = S.gold;
