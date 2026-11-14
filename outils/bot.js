@@ -36,7 +36,7 @@ function cerveau([graine, profil]) {
   const st0 = window.setTimeout; window.setTimeout = (f, ms, ...a) => st0(f, Math.min(ms || 0, 2), ...a);
   window.typeIn = () => {};
   const APPLIQUE = profil !== 'presse';
-  const R = window.BOT = { profil, log: [], combats: [], etapes: 0, fini: false, objets: {}, achatsEq: {}, manque: {}, achatsObj: {}, orGagne: {}, classes: {}, entrainement: 0 };
+  const R = window.BOT = { profil, log: [], combats: [], etapes: 0, fini: false, objets: {}, achatsEq: {}, voulu: {}, achete: {}, achatsObj: {}, orGagne: {}, classes: {}, entrainement: 0 };
   const note = m => R.log.push(m);
   const acteDe = () => ((etapeCourante() || {}).id || 'a4').split('.')[0];
   const ajoute = (o, k, n) => { o[k] = (o[k] || 0) + n; };
@@ -114,7 +114,7 @@ function cerveau([graine, profil]) {
       for (const c of cibles) {
         let v = c.reduce((a, e) => a + Math.min(valeur(h, o, e), e.hp * 1.3 + (e.weak.length ? 0 : 0)), 0);
         // économie : les PP et les fioles se gardent pour les combats qui comptent
-        const cout = o.fiole ? (B.boss ? 2 : 25) : x ? x.pp : 0;
+        const cout = o.fiole ? (B.boss ? 2 : 60) : x ? x.pp : 0;
         v -= cout * (B.boss ? .3 : 1.2);
         if (x && x.poids) v /= x.poids;
         if (!mieux || v > mieux.v) mieux = { v, o, t: c.length === 1 ? c[0] : null };
@@ -162,26 +162,29 @@ function cerveau([graine, profil]) {
     return tot + st.hp * .05 + st.def * .3;
   }
   const SOIGNEURS = ['sage', 'soigneur'];
-  function choisirClasses(ennemis) {
+  function choisirClasses(ennemis, adapte) {
     const defaut = { kael: ['guerrier', 'apprenti'], mira: ['mage'], sol: ['soigneur'], nev: ['moine'] };
     for (const h of team()) {
       let j;
-      if (!APPLIQUE || !ennemis || !ennemis.length) j = h.job !== 'apprenti' && S.jobs.includes(h.job) ? h.job : defaut[h.id].find(x => S.jobs.includes(x));
+      if (!(APPLIQUE || adapte) || !ennemis || !ennemis.length) j = h.job !== 'apprenti' && S.jobs.includes(h.job) ? h.job : defaut[h.id].find(x => S.jobs.includes(x));
       else if (h.id === 'sol') j = SOIGNEURS.find(x => S.jobs.includes(x));
       else j = S.jobs.filter(x => !SOIGNEURS.includes(x) && !CLASSES[x].invite).sort((a, b) => valeurClasse(h, b, ennemis) - valeurClasse(h, a, ennemis))[0];
       if (j && h.job !== j) { h.job = j; equiper(); clampC(h); ajoute(R.classes, j, 1); }
     }
   }
-  function acheter(vid) {
+  function acheter(vid, prochains) {
     const ac = acteDe();
     for (const p of LIEUX[vid].pnj.filter(p => p.role === 'boutique' && cond(p.si))) {
       for (const k of enRayon(p)) for (const h of team()) {
         const e = EQUIPEMENT[k], cur = h.eq[e.place];
         if (!canWear(h, k) || (cur && score(k, h) <= score(cur, h) + 1)) continue;
-        if (S.gold >= e.prix + 30) { S.gold -= e.prix; ajoute(R.achatsEq, ac, e.prix); addEq(k); equiper(); }
-        else R.manque[ac + ':' + k + ':' + h.id] = e.prix;
+        // part de l'équipement voulu (une amélioration pour ce héros) qu'il a pu payer
+        const cle = k + ':' + h.id; if (!R.voulu[cle]) R.voulu[cle] = e.prix;
+        if (S.gold >= e.prix + 30) { S.gold -= e.prix; ajoute(R.achatsEq, ac, e.prix); R.achete[cle] = e.prix; addEq(k); equiper(); }
       }
-      const veut = k => OBJETS[k].hp ? 6 : OBJETS[k].pp ? 4 : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el ? (APPLIQUE ? 2 : 0) : 0;
+      // fioles : deux de chaque élément qui vise une faiblesse du prochain boss
+      const visees = new Set((prochains || []).filter(([id, p]) => p > 1).flatMap(([id]) => MONSTRES[id].faible));
+      const veut = k => OBJETS[k].hp ? 6 : OBJETS[k].pp ? 4 : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el && visees.has(OBJETS[k].el) ? (APPLIQUE ? 2 : 1) : 0;
       for (const [k, prix] of p.objets) while ((S.inv[k] || 0) < veut(k) && S.gold >= prix + 40) { S.gold -= prix; ajoute(R.achatsObj, ac, prix); addItem(k, 1); }
     }
     orAvant = S.gold;
@@ -194,7 +197,7 @@ function cerveau([graine, profil]) {
   const villageDe = pos => { const reg = regionDe(pos); return Object.keys(LIEUX).find(k => LIEUX[k].type === 'village' && lieuVisible(k) && regionsDu(k).includes(reg)) || 'lanterval'; };
   const posDe = l => { const v = villageDuPnj(l); if (v) return v; const [id, c] = l.split('.'); return c ? l : LIEUX[id].cotes ? id + '.' + LIEUX[id].cotes[0] : id; };
   function aller(pos) { suivreOr(); S.loc = pos; S.screen = LIEUX[lieuActuel()].type === 'village' ? 'village' : 'zone'; }
-  function preparer(pos, ennemis) { suivreOr(); const v = villageDe(pos); aller(v); choisirClasses(ennemis); acheter(v); equiper(); auberge(v); }
+  function preparer(pos, ennemis, adapte) { suivreOr(); const v = villageDe(pos); aller(v); choisirClasses(ennemis, adapte); acheter(v, ennemis); equiper(); auberge(v); }
 
   // zone pas encore explorée : le joueur appliqué l'explore à fond (et chasse un peu), le pressé jusqu'à la moitié
   function aExplorer(id) {
@@ -243,7 +246,7 @@ function cerveau([graine, profil]) {
     if (LIEUX[id].type === 'zone' && aExplorer(id)) await explorerZone(pos);
     // trop de défaites : on s'entraîne (la porte de sortie du joueur bloqué)
     if (essais[cle] > 1 && LIEUX[id].type === 'zone') for (let i = 0; i < 6; i++) { preparer(pos); aller(pos); await fightRandom(id, ''); R.entrainement++; }
-    preparer(pos, ennemis); aller(pos);
+    preparer(pos, ennemis, essais[cle] > 1); aller(pos);
     if (LIEUX[id].type === 'village') {
       const p = LIEUX[id].pnj.find(x => x.id === quete.lieu && cond(x.si));
       if (!p) { note(`personnage absent : ${quete.lieu}`); return false; }
