@@ -1153,6 +1153,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.9.3
+Act 1 is more demanding: less gold in the valley's treasures, and the Golem and the Stone Weaver hold their guard longer.
 ## Version 0.9.2
 Wind matters from the start: bats, harpies, spiders, shadows, will-o'-wisps, drowned ones and toads are weak to it, and a few heavy beasts resist it. Water bites harder in the High Winds.
 ## Version 0.9.1

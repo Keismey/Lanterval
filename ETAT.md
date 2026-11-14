@@ -1,5 +1,8 @@
 # État du projet
 
+## Version 0.9.3 (2026-11-14)
+- Acte 1 plus exigeant après le test de Keismey (acte 1 à 100 % en 21 min, 0 objet, 0 farm) : trésors de la vallée −40 %, or des monstres de l'acte 1 sans le bonus de 25 %, Golem (atk 37, garde 5, charge 1.7), Tisseuse (atk 38, garde 6, poison 45 %). Bot : 0 défaite, PV min médian aux boss 39 % (appliqué) / 9 % (pressé).
+
 ## Version 0.9.2 (2026-11-14)
 - Faiblesses revues (les classes ont maintenant des techniques de chaque élément) : Vent faible pour chauve, harpie, araignée, ombre, follet, pie, noyé, crapaud ; Vent résisté par bélier, taupe, sanglier ; Eau faible pour rapace, griffon, wyverne. Boss principaux inchangés. Textes de découverte et conseils mis à jour.
 

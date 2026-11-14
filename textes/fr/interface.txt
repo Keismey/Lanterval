@@ -1331,6 +1331,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.9.3
+Acte 1 plus exigeant : moins d'or dans les trésors de la vallée, le Golem et la Tisseuse de pierre tiennent mieux leur garde.
 ## Version 0.9.2
 Le Vent sert dès le début : chauves-souris, harpies, araignées, ombres, feux follets, noyés et crapauds y sont sensibles, quelques bêtes lourdes y résistent. L'Eau mord davantage dans les Hauts-Vents.
 ## Version 0.9.1
