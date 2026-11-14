@@ -2,7 +2,7 @@
 
 ## Version 0.9.0 (2026-11-14) : rééquilibrage (en test, non déployé)
 
-- Retour de Keismey (jeu fini 3 fois) : aucune difficulté même aux boss, aucun besoin de changer de classe, or toujours suffisant, Eau jamais offensive avant le Sage, objets jamais utilisés. Plan validé le 2026-11-14 ; consigne : ni fusion ni déploiement avant lecture des rapports du bot.
+- Retour de Keismey (jeu fini 3 fois) : aucune difficulté même aux boss, aucun besoin de changer de classe, or toujours suffisant, Eau jamais offensive avant le Sage, objets jamais utilisés. Plan validé le 2026-11-14 ; 9 passes de bot (CR : https://claude.ai/artifact/QGjANVNjm5XAv7rWs5JhNw) ; fusion et déploiement validés par Keismey le 2026-11-14 pour test en jeu.
 - **Bot à deux profils** (`outils/bot.js`, `--presse`, `--json=`) et **rapport** `node outils/equilibrage.js [graines]` (graines × profils en parallèle, Markdown : niveau, classes, PV min, objets, reprises par boss ; or par acte ; seuils visés). Appliqué : tout le contenu, classes choisies contre le prochain boss, Union, fioles. Pressé : quête principale seule, exploration à moitié, classes de départ, il ne s'adapte qu'après une défaite.
 - **Défaite** : contre un boss, « Réessayer » (PV, PP et sac du début du combat) ou « Se replier » (auberge, sans perte d'or) ; hors boss, 25 % de la bourse perdue au lieu de 50 % (`PERTE_DEFAITE`).
 - **Expérience** : `need(l) = 20 + 15 l + 0,5 l²`.
