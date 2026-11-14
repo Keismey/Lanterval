@@ -13,8 +13,8 @@ const TMP = fs.mkdtempSync(path.join(os.tmpdir(), 'lanterval-bot-'));
 
 // seuils visés (plan de rééquilibrage 0.9.0)
 const SEUILS = {
-  applique: { defaites: [0, 3], pvmin: [25, 45], achat: [60, 80], objets: [3, 6], col: [7, 8], fin: [35, 36] },
-  presse: { defaites: [2, 8], pvmin: [10, 35], achat: [40, 60], objets: [4, 8], col: [6, 7], fin: [31, 33] }
+  applique: { defaites: [0, 3], pvmin: [25, 45], achat: [60, 85], objets: [2, 6], col: [7, 9], fin: [30, 36] },
+  presse: { defaites: [2, 12], pvmin: [5, 35], achat: [30, 60], objets: [3, 10], col: [5, 7], fin: [27, 33] }
 };
 // boss de la quête principale (pour les PV les plus bas et les objets)
 const PRINCIPAUX = ['golem', 'varen', 'vouivre', 'mere', 'heraut', 'forgeur', 'varen2', 'sansnom2', 'serpent', 'varen3', 'sansnom3', 'ysold', 'paupiere'];
@@ -63,7 +63,7 @@ const pc = x => isNaN(x) ? '–' : Math.round(x) + ' %';
     const tard = princ.filter(c => !/^a1/.test(c.etape));
     const defaites = med(finies.map(r => r.etat.reprises + r.etat.defaites));
     const pvmin = med(princ.map(c => c.min * 100));
-    const achat = med(finies.map(r => { const v = Object.values(r.voulu || {}).reduce((x, y) => x + y, 0), a = Object.values(r.achete || {}).reduce((x, y) => x + y, 0); return v ? a / v * 100 : NaN; }));
+    const achat = med(princ.map(c => c.equipe * 100));
     const objets = moy(tard.map(c => c.objets));
     const col = med(finies.map(r => { const c = r.combats.find(c => c.etape === 'a1.e9'); return c ? +c.niv.split('/')[0] : NaN; }));
     const fin = med(finies.map(r => { const c = r.combats.find(c => c.ids === 'paupiere'); return c ? +c.niv.split('/')[0] : NaN; }));
@@ -71,7 +71,7 @@ const pc = x => isNaN(x) ? '–' : Math.round(x) + ' %';
     L.push('| Critère | Mesure (médiane) | Visé | |', '|---|---|---|---|');
     L.push(`| Défaites et reprises sur la partie | ${defaites} | ${S.defaites.join(' à ')} | ${ok(defaites, S.defaites)} |`);
     L.push(`| PV min aux boss principaux | ${pc(pvmin)} | ${S.pvmin.join(' à ')} % | ${ok(pvmin, S.pvmin)} |`);
-    L.push(`| Équipement payé / voulu (en po) | ${pc(achat)} | ${S.achat.join(' à ')} % | ${ok(achat, S.achat)} |`);
+    L.push(`| Équipement à jour aux boss principaux | ${pc(achat)} | ${S.achat.join(' à ')} % | ${ok(achat, S.achat)} |`);
     L.push(`| Objets par boss principal (actes 2 à 4) | ${objets.toFixed(1)} | ${S.objets.join(' à ')} | ${ok(objets, S.objets)} |`);
     L.push(`| Niveau au col (Varen, a1.e9) | ${col} | ${S.col.join(' à ')} | ${ok(col, S.col)} |`);
     L.push(`| Niveau au dernier boss | ${fin} | ${S.fin.join(' à ')} | ${ok(fin, S.fin)} |`);

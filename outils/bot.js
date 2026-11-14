@@ -53,6 +53,16 @@ function cerveau([graine, profil]) {
     const c = { ids: ids.join(' '), boss: !!o.boss, quete: !!o.quest, lieu: S.loc, etape: (etapeCourante() || {}).id, acte: acteDe(), niv: team().map(h => h.lvl).join('/'), classes: team().map(h => h.job).join('/'), or: S.gold, min: 1, objets: 0, reprises: 0 };
     const rep0 = S.st.reprises || 0, obj0 = Object.values(R.objets).reduce((a, b) => a + b, 0);
     c.rep0 = rep0;
+    // équipement à jour : part des (héros, place) qui portent au moins aussi bien que le meilleur article en vente
+    if (o.boss) {
+      const vente = []; for (const v in LIEUX) if (LIEUX[v].type === 'village' && lieuOuvert(v)) for (const p of LIEUX[v].pnj) if (p.role === 'boutique' && cond(p.si)) vente.push(...enRayon(p));
+      let n = 0, okk = 0;
+      for (const h of team()) for (const pl of ['arme', 'armure']) {
+        const mieux = vente.filter(k => EQUIPEMENT[k].place === pl && canWear(h, k)).sort((a, b) => score(b, h) - score(a, h))[0];
+        if (!mieux) continue; n++; if (h.eq[pl] && score(h.eq[pl], h) >= score(mieux, h) - 1) okk++;
+      }
+      c.equipe = n ? okk / n : 1;
+    }
     if (!R.cur) R.cur = c;
     const moi = R.cur === c;
     try { const r = await origBattle(ids, o); if (moi) c.res = r || 'win'; return r; }
@@ -175,16 +185,18 @@ function cerveau([graine, profil]) {
   function acheter(vid, prochains) {
     const ac = acteDe();
     for (const p of LIEUX[vid].pnj.filter(p => p.role === 'boutique' && cond(p.si))) {
+      let epargne = false;
       for (const k of enRayon(p)) for (const h of team()) {
         const e = EQUIPEMENT[k], cur = h.eq[e.place];
         if (!canWear(h, k) || (cur && score(k, h) <= score(cur, h) + 1)) continue;
         // part de l'équipement voulu (une amélioration pour ce héros) qu'il a pu payer
         const cle = k + ':' + h.id; if (!R.voulu[cle]) R.voulu[cle] = e.prix;
         if (S.gold >= e.prix + 30) { S.gold -= e.prix; ajoute(R.achatsEq, ac, e.prix); R.achete[cle] = e.prix; addEq(k); equiper(); }
+        else epargne = true;
       }
       // fioles : deux de chaque élément qui vise une faiblesse du prochain boss
       const visees = new Set((prochains || []).filter(([id, p]) => p > 1).flatMap(([id]) => MONSTRES[id].faible));
-      const veut = k => OBJETS[k].hp ? 6 : OBJETS[k].pp ? 4 : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el && visees.has(OBJETS[k].el) ? (APPLIQUE ? 2 : 1) : 0;
+      const veut = k => OBJETS[k].hp ? (epargne ? 3 : 6) : OBJETS[k].pp ? (epargne ? 2 : 4) : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el && visees.has(OBJETS[k].el) ? (APPLIQUE ? 2 : 1) : 0;
       for (const [k, prix] of p.objets) while ((S.inv[k] || 0) < veut(k) && S.gold >= prix + 40) { S.gold -= prix; ajoute(R.achatsObj, ac, prix); addItem(k, 1); }
     }
     orAvant = S.gold;
