@@ -13,7 +13,7 @@
    Boutique : equipement liste les pièces en vente ; ['acier', 'fini a1.e7'] n'arrive en rayon qu'avec la condition.
    fous : condition pendant laquelle les prix sont tirés au hasard à chaque visite ; remise : condition d'une remise de 10 %.
 
-   Gains (gagne) : « 40 or, cuir, 2 herbe » ; effets (effet) : « soin », « soin 12 », « pp », « pp 5 »,
+   Gains (gagne) : « 25 or, cuir, 2 herbe » ; effets (effet) : « soin », « soin 12 », « pp », « pp 5 »,
    « degats kael 8 », « degats tous 6 ». */
 
 const LIEUX = {
@@ -28,13 +28,13 @@ const LIEUX = {
       { id: 'auberge', role: 'auberge', portrait: 'aubergiste', prix: 10 },
       // Hilde part pour Forgecendre à l'acte 3 (sa forge de Lanterval ferme)
       { id: 'hilde', role: 'boutique', portrait: 'hilde', si: 'pas fini a3.e2',
-        objets: [], equipement: ['epee', 'braise', 'mailles', 'robe', ['acier', 'fini a1.e7'], ['chene', 'fini a1.e7'], ['brigandine', 'fini a1.e7'], ['cape', 'fini a1.e7'],
+        objets: [], equipement: ['epee', 'braise', 'mailles', 'robe', ['source', 'fini a1.e3'], ['acier', 'fini a1.e7'], ['chene', 'fini a1.e7'], ['brigandine', 'fini a1.e7'], ['cape', 'fini a1.e7'],
           // fer gris de la Carrière effondrée (« Le fer gris de Hilde »)
           ['fergris', 'annexe fer 3'], ['quartzb', 'annexe fer 3'], ['cottegris', 'annexe fer 3']] },
       { id: 'berthe', role: 'boutique', portrait: 'berthe',
-        objets: [['herbe', 8], ['tonique', 12]], equipement: [] },
+        objets: [['herbe', 8], ['tonique', 12], ['antidote', 12]], equipement: [] },
       { id: 'nell', role: 'boutique', portrait: 'nell',
-        objets: [['herbe', 7], ['tonique', 11], ['elixir', 25]], equipement: [] },
+        objets: [['herbe', 7], ['tonique', 11], ['elixir', 25], ['antidote', 12], ['fiolef', 30], ['fiolee', 30], ['fiolet', 30], ['fiolev', 30]], equipement: [] },
       { id: 'tilo', portrait: 'tilo' },
       // quêtes annexes de la vallée ; Roxane et Fennel partent à Salvent quand la ville est découverte
       { id: 'pia', portrait: 'pia', si: 'fini a1.e7' },
@@ -158,18 +158,18 @@ const LIEUX = {
     ouvert: 'fini a1.e10',
     maxEvenements: 3,
     tresors: [
-      { id: 'm1', type: 'tresor', gagne: '60 or' },
+      { id: 'm1', type: 'tresor', gagne: '35 or' },
       { id: 'm2', type: 'lieu', revele: 'crabe' },
       { id: 'm3', type: 'lieu', effet: 'soin', repos: true },
       { id: 'm4', type: 'tresor', gagne: '2 herbe, tonique' },
-      { id: 'm5', type: 'tresor', gagne: '80 or' },
+      { id: 'm5', type: 'tresor', gagne: '50 or' },
       { id: 'm6', type: 'lieu', revele: 'sangsue' }
     ],
     palier50: { gagne: '2 tonique' },
     palier100: { gagne: 'rose' },
     evenements: [
       { id: 'combat', poids: 4, combat: true },
-      { id: 'sel', poids: 1.5, gagne: '20 or' },
+      { id: 'sel', poids: 1.5, gagne: '10 or' },
       { id: 'vase', poids: 1.5, effet: 'degats tous 9' },
       { id: 'heron', poids: 1.5, effet: 'soin 15' },
       { id: 'brise', poids: 1.5, effet: 'pp 6' }
@@ -185,9 +185,9 @@ const LIEUX = {
     visible: 'fini a2.e1',
     etats: [{ id: 'libre', si: 'fini a2.e7' }],   // la lanterne du phare protège à nouveau la ville
     pnj: [
-      { id: 'maelle', role: 'auberge', portrait: 'maelle', prix: 20 },
+      { id: 'maelle', role: 'auberge', portrait: 'maelle', prix: 25 },
       { id: 'gaspard', role: 'boutique', portrait: 'gaspard', fous: 'pas annexe prix 3', remise: 'annexe prix 3',
-        objets: [['herbe', 8], ['tonique', 12], ['elixir', 25]],
+        objets: [['herbe', 8], ['tonique', 12], ['elixir', 25], ['antidote', 12], ['sel', 15], ['fiolef', 35], ['fiolee', 35], ['fiolet', 35], ['fiolev', 35]],
         equipement: ['bandes', 'coutelas', 'harpe', 'veste', ['corail', 'fini a2.e4'], ['flots', 'fini a2.e4'], ['nacre', 'fini a2.e4'], ['houle', 'fini a2.e4'], ['griffes', 'annexe prix 3']] },
       { id: 'naia', portrait: 'naia', si: 'fini a2.e4' },
       { id: 'rosal', portrait: 'rosal' },
@@ -206,7 +206,7 @@ const LIEUX = {
       { id: 'l1', type: 'tresor', gagne: '2 elixir' },
       { id: 'l2', type: 'lieu', revele: 'follet' },
       { id: 'l3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'l4', type: 'tresor', gagne: '120 or' },
+      { id: 'l4', type: 'tresor', gagne: '70 or' },
       { id: 'l5', type: 'lieu', revele: 'crapaud' },
       { id: 'l6', type: 'tresor', gagne: 'perle' }
     ],
@@ -217,7 +217,7 @@ const LIEUX = {
       { id: 'lueur', poids: 1.5, effet: 'pp 8' },
       { id: 'lucioles', poids: 1.5, effet: 'soin 18' },
       { id: 'vase', poids: 1.5, effet: 'degats tous 10' },
-      { id: 'barque', poids: 1, gagne: '30 or' }
+      { id: 'barque', poids: 1, gagne: '20 or' }
     ],
     groupes: {
       normal: [['follet', 'follet'], ['crapaud'], ['follet', 'crapaud'], ['crapaud', 'follet', 'follet'], ['sangsue', 'follet']],
@@ -235,7 +235,7 @@ const LIEUX = {
       { id: 'e3', type: 'lieu', effet: 'soin', repos: true },
       { id: 'e4', type: 'tresor', gagne: '3 tonique' },
       { id: 'e5', type: 'lieu', revele: 'poisson' },
-      { id: 'e6', type: 'tresor', gagne: '150 or' }
+      { id: 'e6', type: 'tresor', gagne: '90 or' }
     ],
     palier50: { gagne: '2 tonique, elixir' },
     palier100: { gagne: 'dent' },
@@ -243,7 +243,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'courant', poids: 1.5, effet: 'degats tous 10' },
       { id: 'bulle', poids: 1.5, effet: 'pp 8' },
-      { id: 'coquillage', poids: 1, gagne: '40 or' },
+      { id: 'coquillage', poids: 1, gagne: '25 or' },
       { id: 'algue', poids: 1.5, effet: 'soin 18' }
     ],
     groupes: {
@@ -261,7 +261,7 @@ const LIEUX = {
       { id: 'p2', type: 'lieu', revele: 'soldat' },
       { id: 'p3', type: 'lieu', effet: 'soin', repos: true },
       { id: 'p4', type: 'tresor', gagne: '3 tonique' },
-      { id: 'p5', type: 'tresor', gagne: '200 or' },
+      { id: 'p5', type: 'tresor', gagne: '120 or' },
       { id: 'p6', type: 'tresor', gagne: 'cloche' }
     ],
     palier50: { gagne: '2 elixir' },
@@ -269,7 +269,7 @@ const LIEUX = {
     evenements: [
       { id: 'combat', poids: 4, combat: true },
       { id: 'vague', poids: 1.5, effet: 'degats tous 11' },
-      { id: 'provisions', poids: 1, gagne: '45 or' },
+      { id: 'provisions', poids: 1, gagne: '25 or' },
       { id: 'phare', poids: 1.5, effet: 'pp 8' },
       { id: 'embruns', poids: 1.5, effet: 'soin 20' }
     ],
@@ -289,7 +289,7 @@ const LIEUX = {
       { id: 'b1', type: 'tresor', gagne: '2 elixir' },
       { id: 'b2', type: 'lieu', revele: 'chien' },
       { id: 'b3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'b4', type: 'tresor', gagne: '220 or' },
+      { id: 'b4', type: 'tresor', gagne: '130 or' },
       { id: 'b5', type: 'lieu', revele: 'scarabee' },
       { id: 'b6', type: 'tresor', gagne: '2 ether' }
     ],
@@ -299,7 +299,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'braises', poids: 1.5, effet: 'degats tous 14' },
       { id: 'puits', poids: 1.5, effet: 'soin 30' },
-      { id: 'grange', poids: 1, gagne: '60 or' },
+      { id: 'grange', poids: 1, gagne: '35 or' },
       { id: 'cendres', poids: 1.5, effet: 'pp 10' }
     ],
     groupes: {
@@ -312,13 +312,13 @@ const LIEUX = {
     visible: 'fini a3.e1',
     etats: [{ id: 'libre', si: 'fini a3.e5' }],   // les mineurs sont libres, l'Ordre a quitté la ville
     pnj: [
-      { id: 'goran', role: 'auberge', portrait: 'goran', prix: 30 },
+      { id: 'goran', role: 'auberge', portrait: 'goran', prix: 45 },
       { id: 'hilde', role: 'boutique', portrait: 'hilde', si: 'fini a3.e2',
         objets: [],
         equipement: ['hache', 'cendre', 'magma', 'gantelets', 'stylet', 'lyre', 'plates', 'manteau', 'salamandre',
           ['ardente', 'annexe mineurs 4'], ['cratere', 'annexe mineurs 4'], ['fendoir', 'annexe mineurs 4']] },
       { id: 'agathe', role: 'boutique', portrait: 'agathe',
-        objets: [['herbe', 8], ['tonique', 12], ['elixir', 25], ['potion', 50], ['ether', 30]], equipement: [] },
+        objets: [['herbe', 8], ['tonique', 12], ['elixir', 25], ['potion', 50], ['ether', 30], ['antidote', 12], ['onguent', 15], ['sel', 15], ['panacee', 70], ['flaconf', 110], ['flacone', 110], ['flacont', 110], ['flaconv', 110]], equipement: [] },
       { id: 'dorn', portrait: 'dorn', si: 'fini a3.e2' },
       { id: 'tobi', portrait: 'tobi', si: 'fini a3.e6' },
       // Roxane et Fennel partent pour Aerie à l'acte 4
@@ -336,7 +336,7 @@ const LIEUX = {
       { id: 'r1', type: 'tresor', gagne: '2 potion' },
       { id: 'r2', type: 'lieu', revele: 'ver' },
       { id: 'r3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'r4', type: 'tresor', gagne: '280 or' },
+      { id: 'r4', type: 'tresor', gagne: '170 or' },
       { id: 'r5', type: 'lieu', revele: 'automate' },
       { id: 'r6', type: 'tresor', gagne: '2 ether, elixir' }
     ],
@@ -345,7 +345,7 @@ const LIEUX = {
     evenements: [
       { id: 'combat', poids: 4, combat: true },
       { id: 'grisou', poids: 1.5, effet: 'degats tous 15' },
-      { id: 'pepite', poids: 1, gagne: '70 or' },
+      { id: 'pepite', poids: 1, gagne: '40 or' },
       { id: 'source', poids: 1.5, effet: 'soin 30' },
       { id: 'cristaux', poids: 1.5, effet: 'pp 10' }
     ],
@@ -363,7 +363,7 @@ const LIEUX = {
       { id: 'v1', type: 'tresor', gagne: '2 potion, ether' },
       { id: 'v2', type: 'lieu', revele: 'lezard' },
       { id: 'v3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'v4', type: 'tresor', gagne: '350 or' },
+      { id: 'v4', type: 'tresor', gagne: '210 or' },
       { id: 'v5', type: 'lieu', revele: 'esprit' },
       { id: 'v6', type: 'tresor', gagne: 'oeuf' }   // objet mystère : « L'œuf de wyverne », acte 4
     ],
@@ -373,7 +373,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'coulee', poids: 1.5, effet: 'degats tous 16' },
       { id: 'geyser', poids: 1.5, effet: 'pp 12' },
-      { id: 'obsidienne', poids: 1, gagne: '80 or' },
+      { id: 'obsidienne', poids: 1, gagne: '50 or' },
       { id: 'brise', poids: 1.5, effet: 'soin 35' }
     ],
     groupes: {
@@ -391,7 +391,7 @@ const LIEUX = {
       { id: 'n1', type: 'tresor', gagne: '2 potion, ether' },
       { id: 'n2', type: 'lieu', revele: 'rapace' },
       { id: 'n3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'n4', type: 'tresor', gagne: '420 or' },
+      { id: 'n4', type: 'tresor', gagne: '250 or' },
       { id: 'n5', type: 'lieu', revele: 'sylphe' },
       { id: 'n6', type: 'tresor', gagne: 'baume' }
     ],
@@ -401,7 +401,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'rafale', poids: 1.5, effet: 'degats tous 18' },
       { id: 'nuage', poids: 1.5, effet: 'soin 40' },
-      { id: 'sacoche', poids: 1, gagne: '90 or' },
+      { id: 'sacoche', poids: 1, gagne: '55 or' },
       { id: 'silence', poids: 1.5, effet: 'pp 12' }
     ],
     groupes: {
@@ -414,10 +414,10 @@ const LIEUX = {
     visible: 'fini a4.e1',
     pnj: [
       { id: 'tavor', portrait: 'tavor', large: true },
-      { id: 'edda', role: 'auberge', portrait: 'edda', prix: 40 },
+      { id: 'edda', role: 'auberge', portrait: 'edda', prix: 70 },
       // la boutique finale ; Pell y ajoute sa réserve à la fin du « Courrier des falaises »
       { id: 'joran', role: 'boutique', portrait: 'joran',
-        objets: [['potion', 50], ['ether', 30], ['baume', 90]],
+        objets: [['potion', 50], ['ether', 30], ['baume', 90], ['antidote', 12], ['onguent', 15], ['sel', 15], ['panacee', 70], ['flaconf', 110], ['flacone', 110], ['flacont', 110], ['flaconv', 110]],
         equipement: ['vent', 'nuee', 'zephyr', 'serres', 'eolienne', 'tempete', 'plumacier', 'soie', 'cuirvent',
           ['plumevent', 'annexe courrier 6'], ['amulette', 'annexe courrier 6'], ['lance', 'annexe wyverne 4']] },
       { id: 'pell', portrait: 'pell', si: 'fini a4.e2' },
@@ -440,7 +440,7 @@ const LIEUX = {
       { id: 'u1', type: 'tresor', gagne: '2 potion, baume' },
       { id: 'u2', type: 'lieu', revele: 'gargouille' },
       { id: 'u3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'u4', type: 'tresor', gagne: '480 or' },
+      { id: 'u4', type: 'tresor', gagne: '290 or' },
       { id: 'u5', type: 'lieu', revele: 'spectre' },
       { id: 'u6', type: 'tresor', gagne: '3 ether' }
     ],
@@ -450,7 +450,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'eboulis', poids: 1.5, effet: 'degats tous 18' },
       { id: 'cloche', poids: 1.5, effet: 'pp 12' },
-      { id: 'tronc', poids: 1, gagne: '100 or' },
+      { id: 'tronc', poids: 1, gagne: '60 or' },
       { id: 'source', poids: 1.5, effet: 'soin 40' }
     ],
     groupes: {
@@ -466,7 +466,7 @@ const LIEUX = {
       { id: 'k1', type: 'tresor', gagne: '2 baume' },
       { id: 'k2', type: 'lieu', revele: 'griffon' },
       { id: 'k3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'k4', type: 'tresor', gagne: '550 or' },
+      { id: 'k4', type: 'tresor', gagne: '330 or' },
       { id: 'k5', type: 'lieu', revele: 'givre' },
       { id: 'k6', type: 'tresor', gagne: '2 potion, 2 ether' }
     ],
@@ -476,7 +476,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'avalanche', poids: 1.5, effet: 'degats tous 20' },
       { id: 'hurlement', poids: 1.5, effet: 'pp 14' },
-      { id: 'cairn', poids: 1, gagne: '110 or' },
+      { id: 'cairn', poids: 1, gagne: '65 or' },
       { id: 'soleil', poids: 1.5, effet: 'soin 45' }
     ],
     groupes: {
@@ -495,7 +495,7 @@ const LIEUX = {
       { id: 'h1', type: 'tresor', gagne: '2 baume, 2 ether' },
       { id: 'h2', type: 'lieu', revele: 'veilleur' },
       { id: 'h3', type: 'lieu', effet: 'soin', repos: true },
-      { id: 'h4', type: 'tresor', gagne: '900 or' },
+      { id: 'h4', type: 'tresor', gagne: '540 or' },
       { id: 'h5', type: 'lieu', revele: 'nueeoubli' },
       { id: 'h6', type: 'tresor', gagne: '3 potion, 2 baume' }
     ],
@@ -505,7 +505,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'vertige', poids: 1.5, effet: 'degats tous 24' },
       { id: 'souvenir', poids: 1.5, effet: 'pp 16' },
-      { id: 'offrande', poids: 1, gagne: '150 or' },
+      { id: 'offrande', poids: 1, gagne: '90 or' },
       { id: 'lumiere', poids: 1.5, effet: 'soin 60' }
     ],
     groupes: {

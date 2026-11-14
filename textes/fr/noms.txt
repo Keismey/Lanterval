@@ -1954,3 +1954,186 @@ L'Écho du Sans-Nom lève une masse de brume… *il va frapper toute l'équipe �
 
 == monstre.echosansnom.special
 L'Écho du Sans-Nom écrase le col sous sa masse de brume !
+
+== tech.brisegarde
+Brise-garde
+
+== tech.brisegarde.desc
+Coup de Lame léger qui enlève un point de garde, même sans faiblesse.
+
+== tech.fracas
+Fracas
+
+== tech.fracas.desc
+Coup physique de Terre.
+
+== tech.bourrasque
+Bourrasque
+
+== tech.bourrasque.desc
+Sort de Vent sur un ennemi.
+
+== tech.onde
+Onde
+
+== tech.onde.desc
+Sort d'Eau sur un ennemi.
+
+== tech.flamberge
+Flamberge
+
+== tech.flamberge.desc
+Coup physique de Feu.
+
+== tech.vague
+Vague
+
+== tech.vague.desc
+Coup physique d'Eau.
+
+== tech.larcin
+Larcin
+
+== tech.larcin.desc
+Frappe, puis tente un vol.
+
+== tech.apaisement
+Apaisement
+
+== tech.apaisement.desc
+Soigne un peu l'équipe et retire poison, brûlure et torpeur.
+
+== tech.seisme
+Séisme
+
+== tech.seisme.desc
+Coup physique de Terre sur tous les ennemis. Lent.
+
+== tech.brulot
+Brûlot
+
+== tech.brulot.desc
+Sort de Feu sur un ennemi.
+
+== tech.ondine
+Ondine
+
+== tech.ondine.desc
+Invoque l'esprit des eaux sur tous les ennemis. Lent.
+
+== tech.purification
+Purification
+
+== tech.purification.desc
+Soigne l'équipe et retire poison, brûlure et torpeur.
+
+== tech.katon
+Katon
+
+== tech.katon.desc
+Sort de Feu rapide sur un ennemi.
+
+== tech.givrelame
+Lame d'eau
+
+== tech.givrelame.desc
+Coup d'Eau qui compte l'Attaque et la Magie.
+
+== tech.flechevent
+Flèche du vent
+
+== tech.flechevent.desc
+Tir de Vent sur un ennemi.
+
+== tech.mitraille
+Mitraille
+
+== tech.mitraille.desc
+Coup physique de Feu sur tous les ennemis.
+
+== tech.seve
+Sève
+
+== tech.seve.desc
+Rend des PV à toute l'équipe.
+
+== tech.drakfeu
+Lance-flamme
+
+== tech.drakfeu.desc
+Coup de lance de Feu.
+
+== objet.antidote
+Antidote
+
+== objet.antidote.desc
+Soigne le poison
+
+== objet.onguent
+Onguent
+
+== objet.onguent.desc
+Soigne la brûlure
+
+== objet.sel
+Sel d'éveil
+
+== objet.sel.desc
+Soigne la torpeur
+
+== objet.panacee
+Panacée
+
+== objet.panacee.desc
+Soigne tous les états, +120 PV
+
+== objet.fiolef
+Fiole de feu
+
+== objet.fiolef.desc
+Coup de Feu sur un ennemi (45)
+
+== objet.fiolee
+Fiole d'eau
+
+== objet.fiolee.desc
+Coup d'Eau sur un ennemi (45)
+
+== objet.fiolet
+Fiole de terre
+
+== objet.fiolet.desc
+Coup de Terre sur un ennemi (45)
+
+== objet.fiolev
+Fiole de vent
+
+== objet.fiolev.desc
+Coup de Vent sur un ennemi (45)
+
+== objet.flaconf
+Flacon de feu
+
+== objet.flaconf.desc
+Coup de Feu sur un ennemi (170)
+
+== objet.flacone
+Flacon d'eau
+
+== objet.flacone.desc
+Coup d'Eau sur un ennemi (170)
+
+== objet.flacont
+Flacon de terre
+
+== objet.flacont.desc
+Coup de Terre sur un ennemi (170)
+
+== objet.flaconv
+Flacon de vent
+
+== objet.flaconv.desc
+Coup de Vent sur un ennemi (170)
+
+== equip.source
+Bâton de source

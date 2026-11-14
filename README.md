@@ -27,8 +27,9 @@ node outils/verifier.js     # textes manquants, monstres ou objets inconnus, bul
 node outils/construire.js   # met à jour le cache hors ligne (sw.js) et l'aperçu dist/apercu.html
 ```
 
-Pour vérifier l'équilibrage, `node outils/bot.js` joue la partie entière dans Chromium (Playwright) et donne,
-pour chaque combat de quête, les niveaux de l'équipe et ses PV les plus bas.
+Pour vérifier l'équilibrage, `node outils/bot.js [graine] [étape] [--presse]` joue la partie entière dans Chromium
+(Playwright) et donne, pour chaque combat de quête, les niveaux, les classes, les PV les plus bas, les objets et les reprises.
+`node outils/equilibrage.js 3` fait jouer 3 graines × 2 profils (appliqué, pressé) et écrit `equilibrage.md`, avec les seuils visés.
 
 ## Mode test
 

@@ -119,7 +119,8 @@ function openInv(tab) {
       body = (note ? `<div class="msgline">${note}</div>` : '') + (ks.length ? `<p class="note">${esc(t(B ? 'inventaire.combat' : 'inventaire.visage'))}</p><div class="list">${ks.map(k => {
         const it = OBJETS[k];
         // la jauge qui compte pour cet objet : PV pour un soin, PP pour un tonique
-        const qui = team().map(h => {
+        // fioles et soins d'états : en combat seulement
+        const qui = !it.hp && !it.pp ? `<span class="note">${esc(t('inventaire.combat.seul'))}</span>` : team().map(h => {
           const s = stats(h), pv = it.hp && !it.pp, v = pv || it.hp ? [h.hp, s.hp, 'stat.hp'] : [h.pp, s.pp, 'stat.pp'];
           const plein = (!it.hp || h.hp >= s.hp) && (!it.pp || h.pp >= s.pp);
           return `<button class="hdon ${plein ? 'plein' : ''}" data-u="${k}" data-h="${h.id}" ${B ? 'disabled' : ''}><img alt="" src="${vignette(h)}"><span><b>${esc(nomH(h))}</b><small>${v[0]}/${v[1]} ${esc(t(v[2]))}</small></span></button>`;
@@ -218,7 +219,10 @@ function helpHtml() {
   <span><span class="elc F res">F</span></span><span>${L('resistance')}</span>
   <span><span class="pips"><b class="on"></b><b class="on"></b><b></b></span></span><span>${L('union')}</span>
   <span class="chain grasse">+</span><span>${L('chaine')}</span>
-  <span class="vert">${ic('play').replace('<svg', '<svg width="18" height="18"')}</span><span>${L('auto')}</span></div>
+  <span class="vert">${ic('play').replace('<svg', '<svg width="18" height="18"')}</span><span>${L('auto')}</span>
+  <span><span class="zz">${esc(t('combat.carapace.court'))}</span></span><span>${L('carapace')}</span>
+  <span><span class="zz">${esc(t('combat.fx.rage'))}</span></span><span>${L('furie')}</span>
+  <span><b class="etat poison">${esc(t('etat.poison.court'))}</b></span><span>${L('etats')}</span></div>
   <h3 class="sec">${esc(t('aide.stats'))}</h3><div class="list">${[...STATS, 'xp'].map(k => `<p class="note"><b class="clair">${esc(t(k === 'xp' ? 'equipe.xp' : 'stat.' + k))}</b> : ${esc(t('stat.' + k + '.aide'))}</p>`).join('')}</div>`;
 }
 function openHelp(premier) {
@@ -312,6 +316,8 @@ function openOptions(vue) {
       ...(pleinEcranPossible() ? [{ k: 'plein', ic: 'expand', label: esc(t(document.fullscreenElement ? 'options.plein.quitter' : 'options.plein')), sub: esc(t('options.plein.sous')) }] : []),
       { k: 'notes', ic: 'book', label: esc(t('options.notes')), sub: esc(t('options.notes.sous', { v: VERSION })) }
     ];
+    // difficulté de la partie (0.9.0) : Histoire = monstres moins forts, pour qui veut surtout l'aventure
+    if (enJeu) o.push({ k: 'histoire', ic: 'book', label: esc(t(S.histoire ? 'options.difficulte.histoire' : 'options.difficulte.normal')), sub: esc(t('options.difficulte.sous')), dis: !libre });
     if (enJeu) o.push({ k: 'titre', ic: 'back', label: esc(t('options.titre')), sub: esc(t('options.titre.sous')), dis: !libre });
     o.push({ k: 'bug', ic: 'bug', label: esc(t('options.bug')), sub: esc(t('options.bug.sous')) },
       { k: 'soutien', ic: 'heart', label: esc(t('options.soutien')), sub: esc(t('options.soutien.sous')) },
@@ -327,6 +333,7 @@ function openOptions(vue) {
       if (k === 'lang') { OPT.lang = LANG === 'fr' ? 'en' : 'fr'; sauverOptions(); choisirLangue(OPT.lang); document.documentElement.lang = LANG; hud(); if (libre) { closeModal(); renderStable(); openOptions(); } else draw(); }
       else if (k === 'texte') { OPT.texte = VITESSES[(VITESSES.indexOf(OPT.texte) + 1) % VITESSES.length]; sauverOptions(); draw(); }
       else if (k === 'rapide') { OPT.rapide = !OPT.rapide; sauverOptions(); draw(); }
+      else if (k === 'histoire') { S.histoire = !S.histoire; save(); draw(); }
       else if (k === 'plein') basculerPleinEcran();
       else if (k === 'save') { if (S && S.screen !== 'title') save(); KS.saveDialog({ jeu: 'Lanterval', keys: [CLE, CLE_SECOURS], lang: LANG }); }
       else if (k === 'notes') { vue = 'notes'; draw(); }

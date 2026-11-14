@@ -617,3 +617,8 @@ img[src^="img/"]{image-rendering:auto!important}
 .tr-passer{position:absolute;z-index:5;top:calc(env(safe-area-inset-top,0px) + 10px);right:max(10px,env(safe-area-inset-right,0px));min-width:84px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.4);color:rgba(242,230,201,.85);font:600 14px var(--f-ui);cursor:pointer}
 .tr-passer:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.trailer.secoue{animation:none}.tr-flash.go,.tr-flash.fort{animation:none}}
+/* états des héros (0.9.0) */
+.etat{font-weight:800;border-radius:5px;padding:0 4px;font-size:.92em}
+.etat.poison{color:#e7d4ff;background:#5b2e7a}
+.etat.brulure{color:#ffe0c9;background:#8a3414}
+.etat.torpeur{color:#d9f0ff;background:#2d4f6b}

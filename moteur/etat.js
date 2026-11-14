@@ -84,13 +84,14 @@ function healAll(n) { for (const h of team()) { if (n === undefined) fullC(h); e
 function restorePP(n) { for (const h of team()) h.pp = n === undefined ? mpp(h) : Math.min(mpp(h), h.pp + n); }
 function hurt(id, n) { const h = char(id); h.hp = Math.max(1, h.hp - n); }
 function hurtAll(n) { for (const h of team()) if (h.hp > 0) h.hp = Math.max(1, h.hp - n); }
-function need(l) { return 20 + 15 * l; }
+// expérience pour passer au niveau suivant : la part en l² ralentit la montée en fin de partie (0.9.0)
+function need(l) { return Math.round(20 + 15 * l + .5 * l * l); }
 
 /* ---------- Sac, codex, journal ---------- */
 function logR(cle, v) { S.st.log.push([S.st.time, cle, v || null]); }
 function addItem(k, n) { S.inv[k] = (S.inv[k] || 0) + n; }
 function addEq(k) { S.bag[k] = (S.bag[k] || 0) + 1; }
-function eqVal(k) { const e = EQUIPEMENT[k]; return e.cadeau ? 0 : e.v || Math.floor((e.prix || 0) / 2); }
+function eqVal(k) { const e = EQUIPEMENT[k]; return e.cadeau ? 0 : e.v || Math.floor((e.prix || 0) * .4); }
 function itemCount() { return Object.keys(OBJETS).reduce((a, k) => a + (S.inv[k] || 0), 0); }
 function best(id) { return S.best[id] || (S.best[id] = { weak: [], res: [] }); }
 function seen(id) { S.codex[id] = S.codex[id] || { kills: 0 }; }

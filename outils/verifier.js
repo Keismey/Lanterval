@@ -167,7 +167,7 @@ for (const id in D.HEROS) {
   if (h.invite) { if (!D.IMAGES['pnj.' + id]) erreur(`image manquante pnj.${id}`); continue; }
   texte(`heros.${id}.age`, id); texte(`heros.${id}.bio`, id); if (!D.IMAGES['heros.' + id]) erreur(`image manquante heros.${id}`);
 }
-for (const id in D.CLASSES) { texte('classe.' + id, 'classes'); texte(`classe.${id}.desc`, 'classes'); D.CLASSES[id].tech.forEach(t => { if (!D.TECHNIQUES[t]) erreur(`technique inconnue « ${t} »`); }); }
+for (const id in D.CLASSES) { texte('classe.' + id, 'classes'); texte(`classe.${id}.desc`, 'classes'); D.CLASSES[id].tech.forEach(t => { if (!D.TECHNIQUES[t]) erreur(`technique inconnue « ${t} »`); }); (D.CLASSES[id].armes || []).forEach(a => texte('codex.arme.' + a, 'codex, classe ' + id)); }
 for (const id in D.TECHNIQUES) { texte('tech.' + id, 'techniques'); texte(`tech.${id}.desc`, 'techniques'); }
 for (const id in D.OBJETS) { texte('objet.' + id, 'objets'); texte(`objet.${id}.desc`, 'objets'); }
 for (const id in D.EQUIPEMENT) texte('equip.' + id, 'équipement');

@@ -1935,3 +1935,186 @@ The Echo of the Nameless raises a mace of mist… *it will strike the whole team
 
 == monstre.echosansnom.special
 The Echo of the Nameless crushes the pass under its mace of mist!
+
+== tech.brisegarde
+Guard breaker
+
+== tech.brisegarde.desc
+Light Blade strike that removes a guard point, even without a weakness.
+
+== tech.fracas
+Shatter
+
+== tech.fracas.desc
+Physical Earth strike.
+
+== tech.bourrasque
+Gust
+
+== tech.bourrasque.desc
+Wind spell on one enemy.
+
+== tech.onde
+Ripple
+
+== tech.onde.desc
+Water spell on one enemy.
+
+== tech.flamberge
+Flamberge
+
+== tech.flamberge.desc
+Physical Fire strike.
+
+== tech.vague
+Wave
+
+== tech.vague.desc
+Physical Water strike.
+
+== tech.larcin
+Pilfer
+
+== tech.larcin.desc
+Strikes, then tries to steal.
+
+== tech.apaisement
+Soothing song
+
+== tech.apaisement.desc
+Heals the team a little and cures poison, burn and torpor.
+
+== tech.seisme
+Quake
+
+== tech.seisme.desc
+Physical Earth strike on all enemies. Slow.
+
+== tech.brulot
+Firebomb
+
+== tech.brulot.desc
+Fire spell on one enemy.
+
+== tech.ondine
+Undine
+
+== tech.ondine.desc
+Summons the water spirit on all enemies. Slow.
+
+== tech.purification
+Purify
+
+== tech.purification.desc
+Heals the team and cures poison, burn and torpor.
+
+== tech.katon
+Katon
+
+== tech.katon.desc
+Quick Fire spell on one enemy.
+
+== tech.givrelame
+Water blade
+
+== tech.givrelame.desc
+Water strike using both Attack and Magic.
+
+== tech.flechevent
+Wind arrow
+
+== tech.flechevent.desc
+Wind shot on one enemy.
+
+== tech.mitraille
+Grapeshot
+
+== tech.mitraille.desc
+Physical Fire strike on all enemies.
+
+== tech.seve
+Sap
+
+== tech.seve.desc
+Restores HP to the whole team.
+
+== tech.drakfeu
+Flame lance
+
+== tech.drakfeu.desc
+Fire lance strike.
+
+== objet.antidote
+Antidote
+
+== objet.antidote.desc
+Cures poison
+
+== objet.onguent
+Salve
+
+== objet.onguent.desc
+Cures burn
+
+== objet.sel
+Waking salts
+
+== objet.sel.desc
+Cures torpor
+
+== objet.panacee
+Panacea
+
+== objet.panacee.desc
+Cures all ailments, +120 HP
+
+== objet.fiolef
+Fire vial
+
+== objet.fiolef.desc
+Fire hit on one enemy (45)
+
+== objet.fiolee
+Water vial
+
+== objet.fiolee.desc
+Water hit on one enemy (45)
+
+== objet.fiolet
+Earth vial
+
+== objet.fiolet.desc
+Earth hit on one enemy (45)
+
+== objet.fiolev
+Wind vial
+
+== objet.fiolev.desc
+Wind hit on one enemy (45)
+
+== objet.flaconf
+Fire flask
+
+== objet.flaconf.desc
+Fire hit on one enemy (170)
+
+== objet.flacone
+Water flask
+
+== objet.flacone.desc
+Water hit on one enemy (170)
+
+== objet.flacont
+Earth flask
+
+== objet.flacont.desc
+Earth hit on one enemy (170)
+
+== objet.flaconv
+Wind flask
+
+== objet.flaconv.desc
+Wind hit on one enemy (170)
+
+== equip.source
+Spring staff

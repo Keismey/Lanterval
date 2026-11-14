@@ -661,7 +661,7 @@ The Union hits every enemy.
 Back to the inn
 
 == defaite.texte
-You wake up at the inn in {lieu}, healed. While fleeing, you lost half your purse: you have *{or} g* left.
+You wake up at the inn in {lieu}, healed. While fleeing, you lost part of your purse: you have *{or} g* left.
 
 == aide.titre
 Combat help
@@ -685,7 +685,7 @@ The enemy's *guard*. Each hit on a weakness removes 1 point.
 Guard at 0: the enemy loses its next turn and takes +50 % damage. A charged attack is cancelled.
 
 == aide.elements
-*Elements*: Blade, Earth, Fire, Water, Wind. Each hero has their own (Kael Earth, Mira Fire, Sol Water, Nev Wind); the normal Attack is always Blade.
+*Elements*: Blade, Earth, Fire, Water, Wind. Each hero has their own (Kael Earth, Mira Fire, Sol Water, Nev Wind) for their elemental techniques, and each class adds a technique of another element: changing class changes which weaknesses you can hit. A class technique of the hero's own element hits +20% (affinity). The normal Attack is Blade, unless the weapon has an element.
 
 == aide.inconnue
 Weakness not discovered yet. Hit it once and it stays shown, here and in the bestiary.
@@ -1153,6 +1153,13 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.9.0
+The game is more demanding, without walls: bosses fly into a fury below half HP, and some have a shell (physical hits reduced) or a veil (magic reduced) until their guard breaks.
+Each class has a 3rd technique of another element: changing class changes which weaknesses you can hit. A technique of the hero's own element hits harder (affinity). Sol finally has a Water spell: Ripple.
+Poison, burn and torpor: antidotes, salves and waking salts in shops, or the Bard, Alchemist and Sage techniques. New elemental vials to throw at an enemy.
+Boss lost: “Try again” restarts the fight as it began, or “Fall back” without losing gold. Other defeats cost a quarter of your purse.
+Gold is scarcer and fine gear pricier; experience rises a little more slowly.
+Options: “Story” difficulty, to enjoy the adventure.
 ## Version 0.7.8
 End of Act 1: a “What awaits you next” trailer, before the padlock window. You can watch it again from that window.
 ## Version 0.7.7
@@ -1533,3 +1540,105 @@ How far will you go to relight the world?
 
 == trailer.passer
 Skip
+
+== combat.defaite.boss
+The team is down… but nothing is lost.
+
+== combat.reessayer
+Try again
+
+== combat.reessayer.sous
+Restart this fight with the HP, PP and items you had at the start
+
+== combat.abandonner
+Fall back
+
+== combat.abandonner.sous
+Back to the inn, no gold lost, to change class or gear up
+
+== defaite.texte.boss
+The team fell back to the inn in {lieu}, healed. Your purse is intact (*{or} g*): change class, gear or items, train a little, then try again. (*Story* difficulty, in Options, makes monsters weaker.)
+
+== inventaire.combat.seul
+In battle only.
+
+== etat.poison.court
+Poison
+
+== etat.brulure.court
+Burn
+
+== etat.torpeur.court
+Torpor
+
+== combat.etat.poison
+*{nom} is poisoned!*
+
+== combat.etat.brulure
+*{nom} is burned!*
+
+== combat.etat.torpeur
+*{nom} grows numb!*
+
+== combat.poison
+Poison eats at {nom}: *−{n} HP*.
+
+== combat.torpeur
+{nom} is numb and *cannot act*.
+
+== combat.purge
+{nom} soothes the team: healed and ailments cured.
+
+== combat.purge.un
+{nom} feels better.
+
+== combat.purge.court
+Cured
+
+== combat.fiole
+{nom} throws {objet}:
+
+== combat.fx.rage
+FURY
+
+== combat.rage.boss
+*{nom} flies into a fury!* Its blows grow fiercer.
+
+== combat.carapace.court
+Shell
+
+== combat.carapace.titre
+Physical hits halved while its guard holds
+
+== combat.voile.court
+Veil
+
+== combat.voile.titre
+Magic halved while its guard holds
+
+== aide.carapace
+*Shell*: physical hits halved. *Veil*: magic halved. Both fall when the guard breaks.
+
+== aide.furie
+*Fury*: below half HP, a boss hits harder and faster.
+
+== aide.etats
+*Ailments*: poison eats HP every turn, burn cuts Attack and Magic by 30%, torpor sometimes skips a turn. They last until the end of the battle, unless cured by an item or a support technique (Bard, Alchemist, Sage).
+
+== options.difficulte.normal
+Difficulty: Normal
+
+== options.difficulte.histoire
+Difficulty: Story
+
+== options.difficulte.sous
+Story: weaker monsters (HP and Attack −25%), to enjoy the adventure. Can be changed at any time.
+
+== codex.arme.hache
+Axe
+
+== codex.arme.lance
+Spear
+
+== codex.arme.marteau
+Hammer

@@ -197,7 +197,7 @@ Bring the tusk to Roxane
 
 == chasse.e2.scene
 Roxane: “A Rock Boar tusk! I'll write it in the logbook: hunted by Kael, of Lanterval.”
-Roxane: “Here's your bounty, 150 coins. The next one is an eel that spits lightning, in the heart of the Lantern Marsh, on the coast.”
+Roxane: “Here's your bounty, 100 coins. The next one is an eel that spits lightning, in the heart of the Lantern Marsh, on the coast.”
 Roxane: “It strikes twice as long as its guard holds. Break it fast, or it will break you.”
 
 == chasse.e2.message
@@ -230,7 +230,7 @@ Bring the scale to Roxane
 
 == chasse.e4.scene
 Roxane: “A Thunder Eel scale, and you still have all your hair! Two beasts in the logbook.”
-Roxane: “Here are 300 coins. The third one lives in the Burnt Fields, at Cendre: a salamander queen who calls her young.”
+Roxane: “Here are 200 coins. The third one lives in the Burnt Fields, at Cendre: a salamander queen who calls her young.”
 Roxane: “I'll wait for you there. A hunter always follows the game, and you find plenty of it.”
 
 == chasse.e4.message
@@ -263,7 +263,7 @@ Bring the skin to Roxane
 
 == chasse.e6.scene
 Roxane: “A Salamander Queen's skin, still warm! Three beasts in the logbook.”
-Roxane: “Here are 500 coins. The last one is the most dangerous: a winged roc that nests under the Cloud Bridge, above the High Winds.”
+Roxane: “Here are 300 coins. The last one is the most dangerous: a winged roc that nests under the Cloud Bridge, above the High Winds.”
 Roxane: “I never dared climb up there. With you, maybe.”
 
 == chasse.e6.message
@@ -305,7 +305,7 @@ Roxane: “He says the mist copies the beasts we bring down, only worse. When al
 
 == chasse.e8.fin
 Roxane: “Take this too. The Tracker's eye, my oldest lucky charm. With it, you know where to strike before you even raise your weapon.”
-? Reward: *800 g* and the *Tracker's eye* (accessory). In combat, every monster's weaknesses and resistances are known from the start.
+? Reward: *400 g* and the *Tracker's eye* (accessory). In combat, every monster's weaknesses and resistances are known from the start.
 
 == chasse.apres
 Roxane: “Your name is in my logbook four times. Nobody else is in it more than once.”
@@ -499,7 +499,7 @@ Bring Hazel back to Tilo
 Tilo: “HAZEL!”
 He throws his arms around the goat, who promptly starts eating his shirt collar.
 Tilo: “Thank you, Kael! Here, that's all my savings. And Mum kept some tonics for you.”
-? Reward: *60 gold* and *2 tonics*.
+? Reward: *40 gold* and *2 tonics*.
 
 == chevre.e2.hilde
 ## Lanterval
@@ -669,7 +669,7 @@ Brann: “They were looking for a way to the amber crystal from below. The Stone
 
 == gronde.e2.fin
 Brann: “Here. Stoneweaver silk, braided by old Berthe. It fears neither blade nor fire. And the rest is my pay.”
-? Reward: *Stone silk* (accessory, Defence +4, HP +10, Speed +3) and *100 gold*.
+? Reward: *Stone silk* (accessory, Defence +4, HP +10, Speed +3) and *70 gold*.
 
 == gronde.apres
 Brann: “If the Order takes the pass, it won't be from below. Think about that when you climb.”
@@ -742,7 +742,7 @@ Rosal: “The Salicorne! I remember everything. My voyages, my loves, and even m
 == navire.e3.scene
 Rosal: “Come here, I'll teach you to fight like a corsair. You strike, you take, and you strike twice as hard when the other one drops their guard.”
 ## Side quest complete
-? *Secret class unlocked: Corsair*, who sometimes steals an item when striking and deals double damage on a broken guard. You receive *Rosal's sabre* (for the Corsair) and *100 gold*.
+? *Secret class unlocked: Corsair*, who sometimes steals an item when striking and deals double damage on a broken guard. You receive *Rosal's sabre* (for the Corsair) and *70 gold*.
 
 == navire.apres
 Rosal: “When the mist is gone, I'll take you to see the other end of the world. My head remembers it very well now.”
@@ -1219,7 +1219,7 @@ Ulric: “Thanks to you lot. Give me that helmet, I lost it while running. And t
 == mineurs.e3.fin
 ## Side quest complete
 Ulric: “While we were running, we found a seam of fire rock. I'll take some to Hilde: she'll know what to do with it.”
-? You receive the *Miner's lamp* (accessory: Defence +2, and exploring finds a treasure or a place more often) and *200 gold*. Hilde now sells three new weapons in Forgecendre.
+? You receive the *Miner's lamp* (accessory: Defence +2, and exploring finds a treasure or a place more often) and *140 gold*. Hilde now sells three new weapons in Forgecendre.
 
 == mineurs.apres
 Tobi: “Dad says I'll go down the mine when I'm twelve. I want to be a smith, like Hilde.”
@@ -1330,7 +1330,7 @@ Pell: “Every letter delivered? Even Dorn's? You'd make a better postman than m
 Pell: “Keep the quill, it has adopted you. And Joran will show you my stock: I leave him everything customers never came back for.”
 
 == courrier.e5.fin
-? Reward: *300 g*. *Joran*'s shop now sells the Wind feather and the Cloud amulet. You keep the Mail quill.
+? Reward: *200 g*. *Joran*'s shop now sells the Wind feather and the Cloud amulet. You keep the Mail quill.
 
 == courrier.apres
 Pell: “If you ever have a letter to send, anywhere, just tell me. For you, it's free. For life.”

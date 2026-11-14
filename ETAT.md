@@ -1,5 +1,18 @@
 # État du projet
 
+## Version 0.9.0 (2026-11-14) : rééquilibrage (en test, non déployé)
+
+- Retour de Keismey (jeu fini 3 fois) : aucune difficulté même aux boss, aucun besoin de changer de classe, or toujours suffisant, Eau jamais offensive avant le Sage, objets jamais utilisés. Plan validé le 2026-11-14 ; 9 passes de bot (CR : https://claude.ai/artifact/QGjANVNjm5XAv7rWs5JhNw) ; fusion et déploiement validés par Keismey le 2026-11-14 pour test en jeu.
+- **Bot à deux profils** (`outils/bot.js`, `--presse`, `--json=`) et **rapport** `node outils/equilibrage.js [graines]` (graines × profils en parallèle, Markdown : niveau, classes, PV min, objets, reprises par boss ; or par acte ; seuils visés). Appliqué : tout le contenu, classes choisies contre le prochain boss, Union, fioles. Pressé : quête principale seule, exploration à moitié, classes de départ, il ne s'adapte qu'après une défaite.
+- **Défaite** : contre un boss, « Réessayer » (PV, PP et sac du début du combat) ou « Se replier » (auberge, sans perte d'or) ; hors boss, 25 % de la bourse perdue au lieu de 50 % (`PERTE_DEFAITE`).
+- **Expérience** : `need(l) = 20 + 15 l + 0,5 l²`.
+- **Économie** : or des trésors, paliers et événements −40 % (textes mis à jour), primes de Roxane 100/200/300/400, autres récompenses d'annexes −30 % (sauf les Échos), pièces d'équipement à 100 po et plus +20 %, revente à 40 %, auberges 10/25/45/70.
+- **Classes et éléments** : chaque classe a une 3e technique d'un élément fixe (ou de soutien), le héros garde son élément pour ses techniques X/LX ; **affinité** +20 % quand la technique de classe est de l'élément du héros (`AFFINITE`). Exemples : Guerrier Fracas (Terre), Mage Bourrasque (Vent), Soigneur Onde (Eau), Chevalier Flamberge (Feu), Moine Vague (Eau), Barde Apaisement, Alchimiste Brûlot et objets ×1,5 (`objetsPlus`), Sage et Gardien Purification. Bâton de source (Attaque Eau) chez Hilde après la grotte.
+- **États** (`ETATS` dans combat.js) : poison (−6 % PV max par action), brûlure (Attaque et Magie −30 %), torpeur (une chance sur deux de passer son tour, 3 actions). Capacité monstre `etat`. Soins : Antidote, Onguent, Sel d'éveil, Panacée ; techniques Apaisement, Mixture, Purification. Les Soins de Sol ne les retirent pas.
+- **Fioles** (45) et **flacons** (170) de chaque élément : un coup qui compte comme une faiblesse (garde, Union).
+- **Boss** : furie sous 50 % des PV (Attaque +20 %, Vitesse +10 %, `phase2`, `rage: false`), **carapace** (physique ÷2) ou **voile** (magie ÷2) tant que la garde tient, affichés en combat et dans l'aide. PV et Attaque des boss réglés au bot.
+- **Difficulté Histoire** (Options, par partie, `S.histoire`) : monstres PV et Attaque −25 %. Proposée aussi dans le texte du repli après un boss perdu.
+
 ## Version 0.8.2 (2026-11-13) : découvertes derrière la toile
 
 - Retour de Keismey : « Tout est trouvé » s'affichait à 6/8 dans la carrière avant le boss. Quand des découvertes sont encore fermées (`si`) et que la zone a un texte `lieu.<zone>.cache`, le bouton Explorer l'affiche à la place (« La suite est derrière la grande toile »).

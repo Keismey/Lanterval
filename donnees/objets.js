@@ -1,6 +1,6 @@
 /* Lanterval · Objets de soin, équipement et objets importants.
    Les noms sont dans textes/<langue>/noms.txt (objet.<id>, equip.<id>, important.<id>).
-   v : prix de revente ; prix : prix en boutique ; cadeau : ne se vend pas. */
+   v : prix de revente ; prix : prix en boutique (revente à 40 %) ; cadeau : ne se vend pas. */
 
 const OBJETS = {
   herbe: { hp: 35, v: 4 },
@@ -10,7 +10,22 @@ const OBJETS = {
   potion: { hp: 180, v: 25 },
   ether: { pp: 30, v: 15 },
   // acte 4 (Aerie)
-  baume: { hp: 400, v: 45 }
+  baume: { hp: 400, v: 45 },
+  // 0.9.0 : soins des états (soigne) que les monstres infligent (poison, brûlure, torpeur : voir combat.js)
+  antidote: { soigne: ['poison'], v: 5 },
+  onguent: { soigne: ['brulure'], v: 7 },
+  sel: { soigne: ['torpeur'], v: 7 },
+  panacee: { soigne: ['poison', 'brulure', 'torpeur'], hp: 120, v: 30 },
+  // fioles : n'importe quel héros lance un coup de l'élément (el) sur un ennemi ; il compte comme une faiblesse s'il en est une
+  // (garde, Union). degats : avant faiblesse et résistance, sans la Défense du monstre
+  fiolef: { el: 'F', degats: 45, v: 10 },
+  fiolee: { el: 'E', degats: 45, v: 10 },
+  fiolet: { el: 'T', degats: 45, v: 10 },
+  fiolev: { el: 'V', degats: 45, v: 10 },
+  flaconf: { el: 'F', degats: 170, v: 35 },
+  flacone: { el: 'E', degats: 170, v: 35 },
+  flacont: { el: 'T', degats: 170, v: 35 },
+  flaconv: { el: 'V', degats: 170, v: 35 }
 };
 
 // les classes qui portent robes et manteaux
@@ -24,6 +39,8 @@ const EQUIPEMENT = {
   baton: { place: 'arme', type: 'baton', v: 6, st: { atk: 1, mag: 3 } },
   epee: { place: 'arme', type: 'epee', prix: 60, st: { atk: 7 } },
   braise: { place: 'arme', type: 'baton', prix: 65, st: { atk: 2, mag: 7 } },
+  // Bâton de source (0.9.0) : l'Attaque devient Eau (garde des monstres qui craignent l'Eau)
+  source: { place: 'arme', type: 'baton', prix: 85, st: { atk: 2, mag: 6 }, el: 'E' },
   acier: { place: 'arme', type: 'epee', prix: 130, st: { atk: 11 } },
   chene: { place: 'arme', type: 'baton', prix: 125, st: { atk: 3, mag: 10 } },
   arc: { place: 'arme', type: 'arc', cadeau: true, st: { atk: 9, spd: 1 } },
