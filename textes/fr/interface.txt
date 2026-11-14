@@ -810,7 +810,7 @@ Volé à {nom} : *{n} po* !
 Retour à l'auberge
 
 == defaite.texte
-Tu te réveilles à l'auberge de {lieu}, soigné. Dans la fuite, tu as perdu la moitié de ta bourse : il te reste *{or} po*.
+Tu te réveilles à l'auberge de {lieu}, soigné. Dans la fuite, tu as perdu une partie de ta bourse : il te reste *{or} po*.
 
 # ================= Aide au combat =================
 
@@ -836,7 +836,7 @@ Compris, au combat !
 Garde à 0 : l'ennemi perd son prochain tour et subit +50 % de dégâts. Une attaque chargée est annulée.
 
 == aide.elements
-*Éléments* : Lame, Terre, Feu, Eau, Vent. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau, Nev Vent) ; l'Attaque normale est toujours Lame.
+*Éléments* : Lame, Terre, Feu, Eau, Vent. Chaque héros a le sien (Kael Terre, Mira Feu, Sol Eau, Nev Vent) pour ses techniques élémentaires, et chaque classe apporte une technique d'un autre élément : changer de classe change les faiblesses qu'on peut viser. Une technique de classe de l'élément du héros frappe +20 % (affinité). L'Attaque normale est Lame, sauf arme élémentaire.
 
 == aide.inconnue
 Faiblesse pas encore découverte. Touche-la une fois et elle reste affichée, ici et dans le bestiaire.
@@ -1565,3 +1565,87 @@ Jusqu'où iras-tu pour rallumer le monde ?
 
 == trailer.passer
 Passer
+
+== combat.defaite.boss
+L'équipe est à terre… mais rien n'est perdu.
+
+== combat.reessayer
+Réessayer
+
+== combat.reessayer.sous
+Reprendre ce combat depuis le début, avec les PV, les PP et les objets du départ
+
+== combat.abandonner
+Se replier
+
+== combat.abandonner.sous
+Retour à l'auberge, sans perdre d'or, pour changer de classe ou s'équiper
+
+== defaite.texte.boss
+L'équipe s'est repliée à l'auberge de {lieu}, soignée. Ta bourse est intacte (*{or} po*) : change de classe, d'équipement ou d'objets, puis retente ta chance.
+
+== inventaire.combat.seul
+En combat seulement.
+
+== etat.poison.court
+Poison
+
+== etat.brulure.court
+Brûlure
+
+== etat.torpeur.court
+Torpeur
+
+== combat.etat.poison
+*Poison sur {nom} !*
+
+== combat.etat.brulure
+*Brûlure sur {nom} !*
+
+== combat.etat.torpeur
+*Torpeur sur {nom} !*
+
+== combat.poison
+Le poison ronge {nom} : *−{n} PV*.
+
+== combat.torpeur
+La torpeur gagne {nom} : *pas d'action ce tour*.
+
+== combat.purge
+{nom} apaise l'équipe : soins et états retirés.
+
+== combat.purge.un
+{nom} va mieux.
+
+== combat.purge.court
+Soigné
+
+== combat.fiole
+{nom} lance {objet} :
+
+== combat.fx.rage
+FURIE
+
+== combat.rage.boss
+*{nom} entre en furie !* Ses coups deviennent plus violents.
+
+== combat.carapace.court
+Carapace
+
+== combat.carapace.titre
+Coups physiques réduits de moitié tant que sa garde tient
+
+== combat.voile.court
+Voile
+
+== combat.voile.titre
+Magie réduite de moitié tant que sa garde tient
+
+== aide.carapace
+*Carapace* : coups physiques réduits de moitié. *Voile* : la magie, de même. Les deux tombent quand la garde est brisée.
+
+== aide.furie
+*Furie* : sous la moitié de ses PV, un boss frappe plus fort et plus vite.
+
+== aide.etats
+*États* : le poison ronge des PV à chaque tour, la brûlure réduit l'Attaque et la Magie de 30 %, la torpeur fait parfois passer son tour. Ils durent jusqu'à la fin du combat, sauf objet ou technique de soutien (Barde, Alchimiste, Sage).

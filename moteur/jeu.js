@@ -5,11 +5,13 @@ async function run(fn) {
   if (busy) return;
   busy = true;
   try { await fn(); }
-  catch (e) { if (e === DEFAITE) { B = null; await defaite(); } else console.error(e); }
+  catch (e) { if (e === DEFAITE || (e && e.defaite)) { B = null; await defaite(e.boss); } else console.error(e); }
   finally { busy = false; }
   renderStable();
 }
-async function defaite() {
+// part de la bourse gardée après une défaite (hors boss : un boss se réessaie, voir battle)
+const PERTE_DEFAITE = .75;
+async function defaite(boss) {
   // dans le final, l'équipe se relève au dernier palier de l'Escalier, sans perdre d'or,
   // et l'étape reprend au combat perdu (Ysold vaincue ne se rejoue pas si la Paupière l'emporte)
   if (dansLeFinal()) {
@@ -21,12 +23,12 @@ async function defaite() {
     return;
   }
   S.reprise = null; // l'étape perdue se rejoue depuis le début
-  S.gold = Math.floor(S.gold / 2); healAll(); restorePP();
+  if (!boss) S.gold = Math.floor(S.gold * PERTE_DEFAITE); healAll(); restorePP();
   const v = S.auberge && LIEUX[S.auberge] ? S.auberge : 'lanterval';   // l'auberge du dernier village visité
   S.loc = v; S.screen = 'village';
   logR('journal.log.retour', { lieu: 'lieu.' + v + '.nom' });
   setDecor(decorDuLieu(v), { lueur: lueurDuLieu(v) }); ovc().innerHTML = '';
-  await show(tx('defaite.texte', { or: S.gold, lieu: nomLieu(v) }), { title: t('defaite.titre') });
+  await show(tx(boss ? 'defaite.texte.boss' : 'defaite.texte', { or: S.gold, lieu: nomLieu(v) }), { title: t('defaite.titre') });
 }
 
 // affiche l'écran stable de la partie (là où le joueur choisit quoi faire)

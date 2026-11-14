@@ -165,7 +165,7 @@ Une stèle de chasseurs : des loups fuient devant des torches et des lames. *Fai
 Racines creuses
 
 == foret.f4.texte
-Entre les racines d'un chêne : *40 po et une Cotte de cuir* (armure, Défense +4).
+Entre les racines d'un chêne : *25 po et une Cotte de cuir* (armure, Défense +4).
 
 == foret.f5.nom
 Cercle de champignons
@@ -188,7 +188,7 @@ Des grognements dans les fourrés…
 Un buisson croule sous les baies sauvages : *+12 PV* pour tous.
 
 == foret.ev.colporteur
-Un colporteur égaré te demande la route de Lanterval et te donne *15 po* pour ta peine.
+Un colporteur égaré te demande la route de Lanterval et te donne *10 po* pour ta peine.
 
 == foret.ev.piege
 Clac ! Un vieux piège de braconnier se referme sur ta botte : *Kael perd 8 PV*.
@@ -230,7 +230,7 @@ Le cœur de cristal est tout au fond. Une fois là-bas, il faudra retraverser la
 Veine de cristal
 
 == grotte.g1.texte
-Une veine de cristal pur affleure : *40 po*.
+Une veine de cristal pur affleure : *25 po*.
 
 == grotte.g2.nom
 Coffre englouti
@@ -262,7 +262,7 @@ Plus aucun recoin ne t'échappe. Tu trouves l'*Éclat prismatique* (accessoire, 
 Des bruissements d'ailes dans le noir…
 
 == grotte.ev.filon
-Un petit filon de cristal brut : *+20 po*.
+Un petit filon de cristal brut : *+10 po*.
 
 == grotte.ev.eboulis
 Des pierres tombent du plafond ! *Tout le monde perd 6 PV.*
@@ -301,7 +301,7 @@ Le sentier monte jusqu'au sommet, où brille le cristal d'ambre. Les bêtes du c
 Cairn des voyageurs
 
 == col.c1.texte
-Sous un tas de pierres, une bourse oubliée : *60 po*.
+Sous un tas de pierres, une bourse oubliée : *35 po*.
 
 == col.c2.nom
 Gravure des bergers
@@ -351,7 +351,7 @@ Un pan de rocher se détache ! *Tout le monde perd 8 PV.*
 Des fleurs blanches poussent dans une faille. Leur parfum réchauffe : *+15 PV* pour tous.
 
 == col.ev.pelerin
-Un pèlerin redescend du col. Il te donne *25 po* « pour la lanterne ».
+Un pèlerin redescend du col. Il te donne *15 po* « pour la lanterne ».
 
 == col.ev.vent
 Une bourrasque glacée balaie la brume et l'esprit s'éclaircit : *+6 PP* pour tous.
@@ -390,7 +390,7 @@ La faille de l'éboulis descend jusqu'au fond de la carrière. Les bêtes d'ici 
 Bourse oubliée
 
 == carriere.k1.texte
-Coincée sous un wagonnet renversé, la bourse d'un ancien carrier : *50 po*.
+Coincée sous un wagonnet renversé, la bourse d'un ancien carrier : *30 po*.
 
 == carriere.k2.nom
 Mue de cloporte
@@ -426,7 +426,7 @@ Un carnet moisi, la dernière page griffonnée : « La reine dort sous l'ébouli
 Coffre du fond
 
 == carriere.k7.texte
-Derrière la toile brûlée, le coffre des anciens carriers, encore fermé : *120 po*.
+Derrière la toile brûlée, le coffre des anciens carriers, encore fermé : *70 po*.
 
 == carriere.k8.nom
 Réserve de l'Ordre
@@ -449,7 +449,7 @@ Des cailloux roulent tout seuls derrière toi…
 Le sol tremble et une pluie de gravats s'abat sur l'équipe ! *Tout le monde perd 7 PV.*
 
 == carriere.ev.veine
-Un éclat de fer gris dépasse de la paroi : *+20 po*.
+Un éclat de fer gris dépasse de la paroi : *+10 po*.
 
 == carriere.ev.source
 Une source glacée sourd entre deux blocs. L'eau réveille l'esprit : *+6 PP* pour tous.
@@ -485,7 +485,7 @@ Le marais relie la vallée à la Côte de Salvent. De l'autre côté, une nouvel
 Barque échouée
 
 == marais.m1.texte
-Sous une barque retournée, une bourse de pêcheur : *60 po*.
+Sous une barque retournée, une bourse de pêcheur : *35 po*.
 
 == marais.m2.nom
 Carapaces vides
@@ -509,7 +509,7 @@ Oublié sur un muret : *2 herbes et 1 tonique*.
 Tas de sel
 
 == marais.m5.texte
-Sous un tas de sel, une cassette de fer : *80 po*.
+Sous un tas de sel, une cassette de fer : *50 po*.
 
 == marais.m6.nom
 Mare aux sangsues
@@ -529,7 +529,7 @@ Le marais n'a plus de secret pour toi. Tu trouves une *Rose des vents* (accessoi
 La vase bouillonne…
 
 == marais.ev.sel
-Des cristaux de sel très purs, bons à vendre : *+20 po*.
+Des cristaux de sel très purs, bons à vendre : *+10 po*.
 
 == marais.ev.vase
 Une jambe s'enfonce, puis deux ! *Tout le monde perd 9 PV.*
@@ -651,7 +651,7 @@ Un ponton sec sous un auvent de roseaux. L'équipe *récupère toutes ses forces
 Coffre englouti
 
 == lanternes.l4.texte
-Un coffre à moitié dans la vase : *120 po*.
+Un coffre à moitié dans la vase : *70 po*.
 
 == lanternes.l5.nom
 Mare aux crapauds
@@ -686,7 +686,7 @@ Des lucioles se posent sur les blessures, douces et tièdes : *+18 PV* pour tous
 Le sol cède sous le groupe ! *Tout le monde perd 10 PV.*
 
 == lanternes.ev.barque
-Une barque dérive, vide. Sous le banc : *30 po*.
+Une barque dérive, vide. Sous le banc : *20 po*.
 
 # ================= Épave engloutie =================
 
@@ -746,7 +746,7 @@ Un filet tranché net, et des pierres de lest au fond. Les poissons-lames ne sav
 Trésor du capitaine
 
 == epave.e6.texte
-Sous le plancher de la cabine du capitaine : *150 po*.
+Sous le plancher de la cabine du capitaine : *90 po*.
 
 == epave.m50
 ## Palier 50 % atteint
@@ -766,7 +766,7 @@ Un courant violent secoue la bulle ! *Tout le monde perd 10 PV.*
 Une bulle d'air frais remonte du fond : *+8 PP* pour tous.
 
 == epave.ev.coquillage
-Dans un coquillage, des pièces d'or : *+40 po*.
+Dans un coquillage, des pièces d'or : *+25 po*.
 
 == epave.ev.algue
 Des algues douces s'enroulent autour des blessures : *+18 PV* pour tous.
@@ -829,7 +829,7 @@ Entre les bidons d'huile : *3 toniques*.
 Coffre de la solde
 
 == phare.p5.texte
-La solde des soldats de l'Ordre : *200 po*. Ils n'en auront plus besoin.
+La solde des soldats de l'Ordre : *120 po*. Ils n'en auront plus besoin.
 
 == phare.p6.nom
 Cloche de brume
@@ -852,7 +852,7 @@ Des bottes résonnent dans l'escalier…
 Une vague énorme frappe le rocher ! *Tout le monde perd 11 PV.*
 
 == phare.ev.provisions
-Un sac de provisions oublié par l'Ordre : *+45 po*.
+Un sac de provisions oublié par l'Ordre : *+25 po*.
 
 == phare.ev.phare
 La lumière passe sur le groupe et réchauffe le cœur : *+8 PP* pour tous.
@@ -911,7 +911,7 @@ Un vieux saule resté vert au bord d'un ruisseau. L'équipe *récupère toutes s
 Cachette du fermier
 
 == champs.b4.texte
-Une boîte en fer enterrée sous le seuil d'une ferme : *220 po*. Le fermier n'est jamais revenu la chercher.
+Une boîte en fer enterrée sous le seuil d'une ferme : *130 po*. Le fermier n'est jamais revenu la chercher.
 
 == champs.b5.nom
 Carapace fendue
@@ -943,7 +943,7 @@ Le vent rallume des braises sous la cendre ! *Tout le monde perd 14 PV.*
 Un puits encore plein d'eau fraîche : *+30 PV* pour tous.
 
 == champs.ev.grange
-Dans une grange vide, une bourse oubliée : *+60 po*.
+Dans une grange vide, une bourse oubliée : *+35 po*.
 
 == champs.ev.cendres
 Le vent tombe et le silence revient, d'un coup. L'esprit se repose : *+10 PP* pour tous.
@@ -1041,7 +1041,7 @@ Une source tiède au fond d'une galerie, où les mineurs se lavaient en secret. 
 Caisse de la paie
 
 == mines.r4.texte
-La paie que l'Ordre n'a jamais versée aux mineurs : *280 po*. Tu la rendras en dépensant à Forgecendre.
+La paie que l'Ordre n'a jamais versée aux mineurs : *170 po*. Tu la rendras en dépensant à Forgecendre.
 
 == mines.r5.nom
 Automate rouillé
@@ -1070,7 +1070,7 @@ Des cliquetis de métal approchent dans le noir…
 Une poche de gaz s'enflamme ! *Tout le monde perd 15 PV.*
 
 == mines.ev.pepite
-Une pépite brille dans la paroi : *+70 po*.
+Une pépite brille dans la paroi : *+40 po*.
 
 == mines.ev.source
 Un filet d'eau fraîche coule de la roche : *+30 PV* pour tous.
@@ -1124,7 +1124,7 @@ Une petite grotte où souffle un air frais venu de la montagne. L'équipe *récu
 Offrandes anciennes
 
 == volcan.v4.texte
-Un autel de pierre couvert de pièces d'or fondues ensemble : *350 po*.
+Un autel de pierre couvert de pièces d'or fondues ensemble : *210 po*.
 
 == volcan.v5.nom
 Flaque de vapeur
@@ -1156,7 +1156,7 @@ Une coulée de lave barre le chemin ! *Tout le monde perd 16 PV.*
 Un geyser jaillit et retombe en pluie tiède : *+12 PP* pour tous.
 
 == volcan.ev.obsidienne
-Un éclat d'obsidienne parfait, qu'un marchand paiera cher : *+80 po*.
+Un éclat d'obsidienne parfait, qu'un marchand paiera cher : *+50 po*.
 
 == volcan.ev.brise
 Une brise fraîche descend du sommet : *+35 PV* pour tous.
@@ -1209,7 +1209,7 @@ Un pilier de pierre au milieu du pont, avec un abri contre le vent. L'équipe *r
 Péage abandonné
 
 == pont.n4.texte
-La caisse d'un vieux péage, oubliée depuis des années : *420 po*.
+La caisse d'un vieux péage, oubliée depuis des années : *250 po*.
 
 == pont.n5.nom
 Ruban dans la corde
@@ -1241,7 +1241,7 @@ Une rafale secoue le pont et plaque tout le monde contre les cordes ! *Tout le m
 Un nuage tiède traverse le pont et réchauffe les mains : *+40 PV* pour tous.
 
 == pont.ev.sacoche
-Une bourse accrochée aux cordes, oubliée par un voyageur : *+90 po*.
+Une bourse accrochée aux cordes, oubliée par un voyageur : *+55 po*.
 
 == pont.ev.silence
 Le vent tombe d'un coup, et le silence est immense. L'esprit se repose : *+12 PP* pour tous.
@@ -1333,7 +1333,7 @@ Un petit jardin de moines, encore vert au bord du vide. L'équipe *récupère to
 Tronc des offrandes
 
 == ruines.u4.texte
-Le tronc des offrandes du monastère, jamais vidé : *480 po*.
+Le tronc des offrandes du monastère, jamais vidé : *290 po*.
 
 == ruines.u5.nom
 Cierges éteints
@@ -1365,7 +1365,7 @@ Une colonne s'effondre près de l'équipe ! *Tout le monde perd 18 PV.*
 Le chant du vent dans une cloche fendue apaise l'esprit : *+12 PP* pour tous.
 
 == ruines.ev.tronc
-Une pièce d'or brille entre deux dalles, puis une autre : *+100 po*.
+Une pièce d'or brille entre deux dalles, puis une autre : *+60 po*.
 
 == ruines.ev.source
 Une source coule dans un bassin de pierre : *+40 PV* pour tous.
@@ -1416,7 +1416,7 @@ Une grotte où une source chaude fait fondre la glace. L'équipe *récupère tou
 Cairn des voyageurs
 
 == pic.k4.texte
-Sous les pierres d'un cairn, les pièces laissées par les voyageurs pour la chance : *550 po*.
+Sous les pierres d'un cairn, les pièces laissées par les voyageurs pour la chance : *330 po*.
 
 == pic.k5.nom
 Flaque gelée
@@ -1448,7 +1448,7 @@ Une coulée de neige dévale la pente ! *Tout le monde perd 20 PV.*
 Le hurlement du vent devient un chant, puis se tait. L'esprit se repose : *+14 PP* pour tous.
 
 == pic.ev.cairn
-Une pièce d'or gelée dans la glace d'un cairn : *+110 po*.
+Une pièce d'or gelée dans la glace d'un cairn : *+65 po*.
 
 == pic.ev.soleil
 Un rayon de soleil perce les nuages et réchauffe tout le monde : *+45 PV* pour tous.
@@ -1504,7 +1504,7 @@ Une niche creusée dans la pierre, avec une source claire et des couvertures. L'
 Offrandes anciennes
 
 == escalier.h4.texte
-Des bols de pierre pleins de pièces, laissés par des pèlerins d'un autre temps : *900 po*.
+Des bols de pierre pleins de pièces, laissés par des pèlerins d'un autre temps : *540 po*.
 
 == escalier.h5.nom
 Brume qui recule
@@ -1536,7 +1536,7 @@ Une marche s'effrite sous vos pieds ! *Tout le monde perd 24 PV.*
 Un souvenir d'enfance passe dans la brume, doux et clair. L'esprit se repose : *+16 PP* pour tous.
 
 == escalier.ev.offrande
-Une pièce d'or brille entre deux pierres : *+150 po*.
+Une pièce d'or brille entre deux pierres : *+90 po*.
 
 == escalier.ev.lumiere
 Un rayon tombe de l'Œil et réchauffe les marches : *+60 PV* pour tous.

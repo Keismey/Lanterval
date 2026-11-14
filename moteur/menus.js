@@ -119,7 +119,8 @@ function openInv(tab) {
       body = (note ? `<div class="msgline">${note}</div>` : '') + (ks.length ? `<p class="note">${esc(t(B ? 'inventaire.combat' : 'inventaire.visage'))}</p><div class="list">${ks.map(k => {
         const it = OBJETS[k];
         // la jauge qui compte pour cet objet : PV pour un soin, PP pour un tonique
-        const qui = team().map(h => {
+        // fioles et soins d'états : en combat seulement
+        const qui = !it.hp && !it.pp ? `<span class="note">${esc(t('inventaire.combat.seul'))}</span>` : team().map(h => {
           const s = stats(h), pv = it.hp && !it.pp, v = pv || it.hp ? [h.hp, s.hp, 'stat.hp'] : [h.pp, s.pp, 'stat.pp'];
           const plein = (!it.hp || h.hp >= s.hp) && (!it.pp || h.pp >= s.pp);
           return `<button class="hdon ${plein ? 'plein' : ''}" data-u="${k}" data-h="${h.id}" ${B ? 'disabled' : ''}><img alt="" src="${vignette(h)}"><span><b>${esc(nomH(h))}</b><small>${v[0]}/${v[1]} ${esc(t(v[2]))}</small></span></button>`;
@@ -218,7 +219,10 @@ function helpHtml() {
   <span><span class="elc F res">F</span></span><span>${L('resistance')}</span>
   <span><span class="pips"><b class="on"></b><b class="on"></b><b></b></span></span><span>${L('union')}</span>
   <span class="chain grasse">+</span><span>${L('chaine')}</span>
-  <span class="vert">${ic('play').replace('<svg', '<svg width="18" height="18"')}</span><span>${L('auto')}</span></div>
+  <span class="vert">${ic('play').replace('<svg', '<svg width="18" height="18"')}</span><span>${L('auto')}</span>
+  <span><span class="zz">${esc(t('combat.carapace.court'))}</span></span><span>${L('carapace')}</span>
+  <span><span class="zz">${esc(t('combat.fx.rage'))}</span></span><span>${L('furie')}</span>
+  <span><b class="etat poison">${esc(t('etat.poison.court'))}</b></span><span>${L('etats')}</span></div>
   <h3 class="sec">${esc(t('aide.stats'))}</h3><div class="list">${[...STATS, 'xp'].map(k => `<p class="note"><b class="clair">${esc(t(k === 'xp' ? 'equipe.xp' : 'stat.' + k))}</b> : ${esc(t('stat.' + k + '.aide'))}</p>`).join('')}</div>`;
 }
 function openHelp(premier) {

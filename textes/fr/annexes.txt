@@ -197,7 +197,7 @@ Rapporter la défense à Roxane
 
 == chasse.e2.scene
 Roxane : « Une défense de Sanglier-roc ! Je l'inscris dans le carnet : chassé par Kael, de Lanterval. »
-Roxane : « Voici ta prime, 150 pièces. La suivante est une anguille qui crache la foudre, au cœur du Marais des Lanternes, sur la côte. »
+Roxane : « Voici ta prime, 100 pièces. La suivante est une anguille qui crache la foudre, au cœur du Marais des Lanternes, sur la côte. »
 Roxane : « Elle frappe deux fois tant que sa garde tient. Brise-la vite, ou elle te brisera. »
 
 == chasse.e2.message
@@ -230,7 +230,7 @@ Rapporter l'écaille à Roxane
 
 == chasse.e4.scene
 Roxane : « Une écaille d'Anguille-tonnerre, et tu as encore tous tes cheveux ! Deux bêtes dans le carnet. »
-Roxane : « Voilà 300 pièces. La troisième vit dans les Champs brûlés, à Cendre : une salamandre reine qui appelle ses petites. »
+Roxane : « Voilà 200 pièces. La troisième vit dans les Champs brûlés, à Cendre : une salamandre reine qui appelle ses petites. »
 Roxane : « Je t'attendrai là-bas. Une chasseuse suit toujours le gibier, et toi, tu en trouves beaucoup. »
 
 == chasse.e4.message
@@ -263,7 +263,7 @@ Rapporter la peau à Roxane
 
 == chasse.e6.scene
 Roxane : « Une peau de Salamandre reine, encore chaude ! Trois bêtes dans le carnet. »
-Roxane : « Voici 500 pièces. La dernière est la plus dangereuse : un roc ailé qui niche sous le Pont des Nuées, au-dessus des Hauts-Vents. »
+Roxane : « Voici 300 pièces. La dernière est la plus dangereuse : un roc ailé qui niche sous le Pont des Nuées, au-dessus des Hauts-Vents. »
 Roxane : « Je n'ai jamais osé y monter. Avec toi, peut-être. »
 
 == chasse.e6.message
@@ -305,7 +305,7 @@ Roxane : « Il dit que la brume copie les bêtes qu'on abat, en pire. Quand tout
 
 == chasse.e8.fin
 Roxane : « Prends ça aussi. L'Œil du traqueur, mon plus vieux porte-bonheur. Avec lui, tu sais où frapper avant même de lever ton arme. »
-? Récompense : *800 po* et l'*Œil du traqueur* (accessoire). En combat, les faiblesses et résistances de chaque monstre sont connues dès le début.
+? Récompense : *400 po* et l'*Œil du traqueur* (accessoire). En combat, les faiblesses et résistances de chaque monstre sont connues dès le début.
 
 == chasse.apres
 Roxane : « Ton nom est dans mon carnet quatre fois. Personne d'autre n'y est plus d'une fois. »
@@ -501,7 +501,7 @@ Ramener Noisette à Tilo
 Tilo : « NOISETTE ! »
 Il se jette au cou de la chèvre, qui lui mange aussitôt le col de sa chemise.
 Tilo : « Merci, Kael ! Tiens, c'est toutes mes économies. Et maman t'a gardé des toniques. »
-? Récompense : *60 po* et *2 toniques*.
+? Récompense : *40 po* et *2 toniques*.
 
 == chevre.e2.hilde
 ## Lanterval
@@ -671,7 +671,7 @@ Brann : « Ils cherchaient un chemin vers le cristal d'ambre par en dessous. La 
 
 == gronde.e2.fin
 Brann : « Tiens. De la soie de la Tisseuse, tressée par la vieille Berthe. Ça ne craint ni la lame ni le feu. Et pour le reste, c'est ma paye. »
-? Récompense : la *Soie de roche* (accessoire, Défense +4, PV +10, Vitesse +3) et *100 po*.
+? Récompense : la *Soie de roche* (accessoire, Défense +4, PV +10, Vitesse +3) et *70 po*.
 
 == gronde.apres
 Brann : « Si l'Ordre prend le col, ce ne sera pas par en dessous. Pense à ça quand tu monteras. »
@@ -744,7 +744,7 @@ Rosal : « La Salicorne ! Je me souviens de tout. De mes voyages, de mes amours,
 == navire.e3.scene
 Rosal : « Approche, je vais t'apprendre à te battre comme une corsaire. On frappe, on prend, et on frappe deux fois plus fort quand l'autre baisse sa garde. »
 ## Quête annexe terminée
-? *Classe secrète débloquée : Corsaire*, qui vole parfois un objet en frappant et fait des dégâts doublés sur une garde brisée. Tu reçois le *Sabre de Rosal* (pour le Corsaire) et *100 po*.
+? *Classe secrète débloquée : Corsaire*, qui vole parfois un objet en frappant et fait des dégâts doublés sur une garde brisée. Tu reçois le *Sabre de Rosal* (pour le Corsaire) et *70 po*.
 
 == navire.apres
 Rosal : « Quand la brume sera partie, je t'emmènerai voir l'autre bout du monde. Ma tête s'en souvient très bien, maintenant. »
@@ -1221,7 +1221,7 @@ Ulric : « Grâce à vous autres. Rends-moi ce casque, je l'avais perdu en fuyan
 == mineurs.e3.fin
 ## Quête annexe terminée
 Ulric : « En fuyant, on a trouvé un filon de roche de feu. Je vais en porter à Hilde : elle saura quoi en faire. »
-? Tu reçois la *Lampe de mineur* (accessoire : Défense +2, et l'exploration découvre plus souvent un trésor ou un lieu) et *200 po*. Hilde vend désormais trois nouvelles armes à Forgecendre.
+? Tu reçois la *Lampe de mineur* (accessoire : Défense +2, et l'exploration découvre plus souvent un trésor ou un lieu) et *140 po*. Hilde vend désormais trois nouvelles armes à Forgecendre.
 
 == mineurs.apres
 Tobi : « Papa dit que je descendrai à la mine quand j'aurai douze ans. Moi, je veux être forgeron, comme Hilde. »
@@ -1332,7 +1332,7 @@ Pell : « Toutes les lettres livrées ? Même celle de Dorn ? Tu ferais un meill
 Pell : « Garde la plume, elle t'a adopté. Et Joran va te montrer ma réserve : je lui confie tout ce que les clients n'ont jamais réclamé. »
 
 == courrier.e5.fin
-? Récompense : *300 po*. La boutique de *Joran* vend désormais la Plume de vent et l'Amulette des nuées. Tu gardes la Plume du facteur.
+? Récompense : *200 po*. La boutique de *Joran* vend désormais la Plume de vent et l'Amulette des nuées. Tu gardes la Plume du facteur.
 
 == courrier.apres
 Pell : « Si tu as une lettre à envoyer, n'importe où, dis-le-moi. Pour toi, c'est gratuit. À vie. »

@@ -96,7 +96,7 @@ const ANNEXES = {
       ] },
       { lieu: 'roxane', evenements: [
         ['perd', 'defense'],
-        ['gagne', '150 or'],
+        ['gagne', '100 or'],
         ['dialogue', 'chasse.e2.scene'],
         ['message', 'chasse.e2.message']
       ] },
@@ -109,7 +109,7 @@ const ANNEXES = {
       ] },
       { lieu: 'roxane', evenements: [
         ['perd', 'ecaille-orage'],
-        ['gagne', '300 or'],
+        ['gagne', '200 or'],
         ['dialogue', 'chasse.e4.scene'],
         ['message', 'chasse.e4.message']
       ] },
@@ -123,7 +123,7 @@ const ANNEXES = {
       ] },
       { lieu: 'roxane', evenements: [
         ['perd', 'peau-salamandre'],
-        ['gagne', '500 or'],
+        ['gagne', '300 or'],
         ['dialogue', 'chasse.e6.scene'],
         ['message', 'chasse.e6.message']
       ] },
@@ -138,7 +138,7 @@ const ANNEXES = {
       { lieu: 'roxane', si: 'fini a4.e2', evenements: [
         ['perd', 'serre-roc'],
         ['dialogue', 'chasse.e8.scene'],
-        ['gagne', 'traqueur, 800 or'],
+        ['gagne', 'traqueur, 400 or'],
         ['dialogue', 'chasse.e8.fin']
       ] }
     ]
@@ -227,7 +227,7 @@ const ANNEXES = {
       { lieu: 'tilo', evenements: [
         ['perd', 'chevre'],
         ['dialogue', 'chevre.e2.retrouvailles'],
-        ['gagne', '60 or, 2 tonique'],
+        ['gagne', '40 or, 2 tonique'],
         ['dialogue', 'chevre.e2.hilde'],
         ['lance', 'fer'],
         ['dialogue', 'chevre.e2.brann'],
@@ -292,7 +292,7 @@ const ANNEXES = {
       { lieu: 'brann', evenements: [
         ['perd', 'pioche'],
         ['dialogue', 'gronde.e2.pioche'],
-        ['gagne', 'soieroche, 100 or'],
+        ['gagne', 'soieroche, 70 or'],
         ['dialogue', 'gronde.e2.fin']
       ] }
     ]
@@ -326,7 +326,7 @@ const ANNEXES = {
         ['dialogue', 'navire.e3.barre'],
         ['decor'],
         ['classes', 'corsaire'],
-        ['gagne', 'sabre, 100 or'],
+        ['gagne', 'sabre, 70 or'],
         ['dialogue', 'navire.e3.scene']
       ] }
     ]
@@ -527,7 +527,7 @@ const ANNEXES = {
       { lieu: 'tobi', evenements: [
         ['perd', 'casque-mineur'],
         ['dialogue', 'mineurs.e3.scene'],
-        ['gagne', 'lampe, 200 or'],
+        ['gagne', 'lampe, 140 or'],
         ['dialogue', 'mineurs.e3.fin']
       ] }
     ]
@@ -566,7 +566,7 @@ const ANNEXES = {
       { lieu: 'pell', evenements: [
         ['perd', 'lettres'],
         ['dialogue', 'courrier.e5.scene'],
-        ['gagne', '300 or'],
+        ['gagne', '200 or'],
         ['dialogue', 'courrier.e5.fin']
       ] }
     ]

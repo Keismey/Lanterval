@@ -162,7 +162,7 @@ A hunters' stele: wolves fleeing from torches and blades. *Mist wolf weaknesses 
 Hollow roots
 
 == foret.f4.texte
-Between the roots of an oak: *40 gold and a Leather coat* (armour, Defence +4).
+Between the roots of an oak: *25 gold and a Leather coat* (armour, Defence +4).
 
 == foret.f5.nom
 Mushroom ring
@@ -185,7 +185,7 @@ Growling in the bushes…
 A bush is heavy with wild berries: *+12 HP* for everyone.
 
 == foret.ev.colporteur
-A lost peddler asks you the way to Lanterval and gives you *15 gold* for your trouble.
+A lost peddler asks you the way to Lanterval and gives you *10 gold* for your trouble.
 
 == foret.ev.piege
 Snap! An old poacher's trap closes on your boot: *Kael loses 8 HP*.
@@ -227,7 +227,7 @@ The crystal heart lies at the very end. Once there, you'll have to cross the cav
 Crystal vein
 
 == grotte.g1.texte
-A vein of pure crystal breaks the surface: *40 gold*.
+A vein of pure crystal breaks the surface: *25 gold*.
 
 == grotte.g2.nom
 Sunken chest
@@ -259,7 +259,7 @@ No corner escapes you any more. You find the *Prismatic shard* (accessory, Attac
 Wings rustling in the dark…
 
 == grotte.ev.filon
-A small seam of raw crystal: *+20 gold*.
+A small seam of raw crystal: *+10 gold*.
 
 == grotte.ev.eboulis
 Stones fall from the ceiling! *Everyone loses 6 HP.*
@@ -298,7 +298,7 @@ The path climbs to the summit, where the amber crystal shines. The beasts of the
 Travellers' cairn
 
 == col.c1.texte
-Under a pile of stones, a forgotten purse: *60 gold*.
+Under a pile of stones, a forgotten purse: *35 gold*.
 
 == col.c2.nom
 Shepherds' carving
@@ -348,7 +348,7 @@ A slab of rock breaks loose! *Everyone loses 8 HP.*
 White flowers grow in a crack. Their scent warms you: *+15 HP* for everyone.
 
 == col.ev.pelerin
-A pilgrim comes down from the pass. He gives you *25 gold* “for the lantern”.
+A pilgrim comes down from the pass. He gives you *15 gold* “for the lantern”.
 
 == col.ev.vent
 An icy gust sweeps the mist away and clears the mind: *+6 PP* for everyone.
@@ -387,7 +387,7 @@ The crack in the rockslide leads down to the bottom of the quarry. The beasts he
 Forgotten purse
 
 == carriere.k1.texte
-Wedged under an overturned cart, an old quarryman's purse: *50 gold*.
+Wedged under an overturned cart, an old quarryman's purse: *30 gold*.
 
 == carriere.k2.nom
 Woodlouse moult
@@ -423,7 +423,7 @@ A mouldy notebook, the last page scrawled: “The queen sleeps under the rocksli
 Chest at the bottom
 
 == carriere.k7.texte
-Behind the burnt web, the old quarrymen's chest, still locked: *120 gold*.
+Behind the burnt web, the old quarrymen's chest, still locked: *70 gold*.
 
 == carriere.k8.nom
 Order stockpile
@@ -446,7 +446,7 @@ Pebbles roll by themselves behind you…
 The ground shakes and a shower of rubble falls on the team! *Everyone loses 7 HP.*
 
 == carriere.ev.veine
-A shard of greyiron sticks out of the wall: *+20 gold*.
+A shard of greyiron sticks out of the wall: *+10 gold*.
 
 == carriere.ev.source
 An icy spring wells up between two blocks. The water clears the mind: *+6 PP* for everyone.
@@ -485,7 +485,7 @@ The marsh links the valley to the Salvent Coast. On the other side, a new map aw
 Beached boat
 
 == marais.m1.texte
-Under an upturned boat, a fisherman's purse: *60 gold*.
+Under an upturned boat, a fisherman's purse: *35 gold*.
 
 == marais.m2.nom
 Empty shells
@@ -509,7 +509,7 @@ Left on a low wall: *2 herbs and 1 tonic*.
 Salt heap
 
 == marais.m5.texte
-Under a heap of salt, an iron cashbox: *80 gold*.
+Under a heap of salt, an iron cashbox: *50 gold*.
 
 == marais.m6.nom
 Leech pond
@@ -529,7 +529,7 @@ The marsh has no more secrets for you. You find a *Compass rose* (accessory, Spe
 The mud starts to bubble…
 
 == marais.ev.sel
-Very pure salt crystals, good for selling: *+20 gold*.
+Very pure salt crystals, good for selling: *+10 gold*.
 
 == marais.ev.vase
 One leg sinks in, then two! *Everyone loses 9 HP.*
@@ -651,7 +651,7 @@ A dry jetty under a reed awning. The team *recovers all its strength*. You can r
 Sunken chest
 
 == lanternes.l4.texte
-A chest half buried in the mud: *120 gold*.
+A chest half buried in the mud: *70 gold*.
 
 == lanternes.l5.nom
 Toad pond
@@ -686,7 +686,7 @@ Fireflies land on the wounds, soft and warm: *+18 HP* for everyone.
 The ground gives way under the group! *Everyone loses 10 HP.*
 
 == lanternes.ev.barque
-An empty boat drifts by. Under the bench: *30 gold*.
+An empty boat drifts by. Under the bench: *20 gold*.
 
 # ================= Sunken Wreck =================
 
@@ -746,7 +746,7 @@ A net cut clean through, and ballast stones at the bottom. Bladefish can't swim 
 Captain's treasure
 
 == epave.e6.texte
-Under the floor of the captain's cabin: *150 gold*.
+Under the floor of the captain's cabin: *90 gold*.
 
 == epave.m50
 ## 50% milestone reached
@@ -766,7 +766,7 @@ A violent current shakes the bubble! *Everyone loses 10 HP.*
 A bubble of fresh air rises from the depths: *+8 PP* for everyone.
 
 == epave.ev.coquillage
-Inside a shell, gold coins: *+40 gold*.
+Inside a shell, gold coins: *+25 gold*.
 
 == epave.ev.algue
 Soft seaweed wraps around the wounds: *+18 HP* for everyone.
@@ -829,7 +829,7 @@ Between the oil cans: *3 tonics*.
 Pay chest
 
 == phare.p5.texte
-The Order soldiers' pay: *200 gold*. They won't be needing it any more.
+The Order soldiers' pay: *120 gold*. They won't be needing it any more.
 
 == phare.p6.nom
 Fog bell
@@ -852,7 +852,7 @@ Boots echo in the staircase…
 A huge wave hits the rock! *Everyone loses 11 HP.*
 
 == phare.ev.provisions
-A bag of supplies left behind by the Order: *+45 gold*.
+A bag of supplies left behind by the Order: *+25 gold*.
 
 == phare.ev.phare
 The beam passes over the group and warms their hearts: *+8 PP* for everyone.
@@ -911,7 +911,7 @@ An old willow still green by a brook. The team *recovers all its strength*. You 
 Farmer's hiding place
 
 == champs.b4.texte
-An iron box buried under a farm's doorstep: *220 gold*. The farmer never came back for it.
+An iron box buried under a farm's doorstep: *130 gold*. The farmer never came back for it.
 
 == champs.b5.nom
 Split shell
@@ -943,7 +943,7 @@ The wind rekindles embers under the ash! *Everyone loses 14 HP.*
 A well still full of cool water: *+30 HP* for everyone.
 
 == champs.ev.grange
-In an empty barn, a forgotten purse: *+60 gold*.
+In an empty barn, a forgotten purse: *+35 gold*.
 
 == champs.ev.cendres
 The wind drops and the silence comes back all at once. Minds rest: *+10 PP* for everyone.
@@ -1041,7 +1041,7 @@ A warm spring at the end of a tunnel, where the miners washed in secret. The tea
 Payroll chest
 
 == mines.r4.texte
-The wages the Order never paid the miners: *280 gold*. You'll give it back by spending it in Forgecendre.
+The wages the Order never paid the miners: *170 gold*. You'll give it back by spending it in Forgecendre.
 
 == mines.r5.nom
 Rusty automaton
@@ -1070,7 +1070,7 @@ Metal clanks approach in the dark…
 A pocket of gas catches fire! *Everyone loses 15 HP.*
 
 == mines.ev.pepite
-A nugget glints in the wall: *+70 gold*.
+A nugget glints in the wall: *+40 gold*.
 
 == mines.ev.source
 A trickle of cool water runs down the rock: *+30 HP* for everyone.
@@ -1124,7 +1124,7 @@ A small cave where fresh mountain air blows. The team *recovers all its strength
 Ancient offerings
 
 == volcan.v4.texte
-A stone altar covered in gold coins melted together: *350 gold*.
+A stone altar covered in gold coins melted together: *210 gold*.
 
 == volcan.v5.nom
 Steaming puddle
@@ -1156,7 +1156,7 @@ A lava flow blocks the path! *Everyone loses 16 HP.*
 A geyser bursts out and falls back as warm rain: *+12 PP* for everyone.
 
 == volcan.ev.obsidienne
-A perfect shard of obsidian a merchant will pay well for: *+80 gold*.
+A perfect shard of obsidian a merchant will pay well for: *+50 gold*.
 
 == volcan.ev.brise
 A cool breeze comes down from the summit: *+35 HP* for everyone.
@@ -1207,7 +1207,7 @@ A stone pillar in the middle of the bridge, with a shelter from the wind. The te
 Abandoned toll
 
 == pont.n4.texte
-The cash box of an old toll, forgotten for years: *420 g*.
+The cash box of an old toll, forgotten for years: *250 g*.
 
 == pont.n5.nom
 Ribbon in the rope
@@ -1239,7 +1239,7 @@ A gust shakes the bridge and pins everyone against the ropes! *Everyone loses 18
 A warm cloud drifts across the bridge and warms everyone's hands: *+40 HP* for everyone.
 
 == pont.ev.sacoche
-A purse caught in the ropes, forgotten by a traveller: *+90 g*.
+A purse caught in the ropes, forgotten by a traveller: *+55 g*.
 
 == pont.ev.silence
 The wind drops all at once, and the silence is immense. Minds rest: *+12 PP* for everyone.
@@ -1327,7 +1327,7 @@ A small monks' garden, still green at the edge of the void. The team *recovers a
 Offering box
 
 == ruines.u4.texte
-The monastery's offering box, never emptied: *480 g*.
+The monastery's offering box, never emptied: *290 g*.
 
 == ruines.u5.nom
 Snuffed candles
@@ -1359,7 +1359,7 @@ A column collapses next to the team! *Everyone loses 18 HP.*
 The wind singing in a cracked bell soothes the mind: *+12 PP* for everyone.
 
 == ruines.ev.tronc
-A gold coin gleams between two flagstones, then another: *+100 g*.
+A gold coin gleams between two flagstones, then another: *+60 g*.
 
 == ruines.ev.source
 A spring flows into a stone basin: *+40 HP* for everyone.
@@ -1408,7 +1408,7 @@ A cave where a hot spring melts the ice. The team *recovers all its strength*. Y
 Travellers' cairn
 
 == pic.k4.texte
-Under the stones of a cairn, coins left by travellers for luck: *550 g*.
+Under the stones of a cairn, coins left by travellers for luck: *330 g*.
 
 == pic.k5.nom
 Frozen puddle
@@ -1440,7 +1440,7 @@ A rush of snow slides down the slope! *Everyone loses 20 HP.*
 The howling of the wind becomes a song, then falls silent. Minds rest: *+14 PP* for everyone.
 
 == pic.ev.cairn
-A gold coin frozen in the ice of a cairn: *+110 g*.
+A gold coin frozen in the ice of a cairn: *+65 g*.
 
 == pic.ev.soleil
 A ray of sunlight breaks through the clouds and warms everyone: *+45 HP* for everyone.
@@ -1494,7 +1494,7 @@ An alcove carved in the rock, with a clear spring and blankets. The team *recove
 Ancient offerings
 
 == escalier.h4.texte
-Stone bowls full of coins, left by pilgrims from another age: *900 g*.
+Stone bowls full of coins, left by pilgrims from another age: *540 g*.
 
 == escalier.h5.nom
 Retreating mist
@@ -1526,7 +1526,7 @@ A step crumbles under your feet! *Everyone loses 24 HP.*
 A childhood memory drifts by in the mist, soft and clear. Minds rest: *+16 PP* for everyone.
 
 == escalier.ev.offrande
-A gold coin shines between two stones: *+150 g*.
+A gold coin shines between two stones: *+90 g*.
 
 == escalier.ev.lumiere
 A ray falls from the Eye and warms the steps: *+60 HP* for everyone.
