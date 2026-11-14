@@ -1633,3 +1633,12 @@ Difficulty: Story
 
 == options.difficulte.sous
 Story: weaker monsters (HP and Attack −25%), to enjoy the adventure. Can be changed at any time.
+
+== codex.arme.hache
+Axe
+
+== codex.arme.lance
+Spear
+
+== codex.arme.marteau
+Hammer

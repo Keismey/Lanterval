@@ -1665,3 +1665,12 @@ Difficulté : Histoire
 
 == options.difficulte.sous
 Histoire : monstres moins forts (PV et Attaque −25 %), pour profiter surtout de l'aventure. Se change à tout moment.
+
+== codex.arme.hache
+Hache
+
+== codex.arme.lance
+Lance
+
+== codex.arme.marteau
+Marteau
