@@ -322,7 +322,7 @@ Caught in the ice, a pedlar's satchel: *2 tonics and 1 elixir*.
 Harpy nest
 
 == col.c5.texte
-A nest of branches and bones, scarred by blade cuts and rockfalls. *Harpy weaknesses added to the codex.*
+A nest of branches and bones, scarred by blade cuts, half torn away by a gust of wind. *Harpy weaknesses added to the codex.*
 
 == col.c6.nom
 Split standing stone

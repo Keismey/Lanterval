@@ -325,7 +325,7 @@ Prise dans la glace, la sacoche d'un colporteur : *2 toniques et 1 élixir*.
 Nid de harpies
 
 == col.c5.texte
-Un nid de branches et d'os, marqué de coups de lame et d'éboulis. *Faiblesses de la Harpie ajoutées au codex.*
+Un nid de branches et d'os, marqué de coups de lame, à moitié arraché par une bourrasque. *Faiblesses de la Harpie ajoutées au codex.*
 
 == col.c6.nom
 Menhir fendu
