@@ -226,10 +226,16 @@ async function tournerCristal(e) {
 }
 function mkInvite(id) { const h = HEROS[id], c = { id, lvl: char('kael').lvl, xp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure, acc: null }, invite: true }; fullC(c); return c; }
 function finCombat() { for (const h of B.team) { delete h.poison; delete h.brulure; delete h.torpeur; delete h.guard; delete h.taunt; delete h.next; delete h.courage; delete h.esquive; delete h.rage; delete h.enchant; delete h.saut; delete h.oubli; delete h.echoLibre; } B = null; $('#units').innerHTML = ''; $('#app').classList.remove('inb'); SON.ambiance(); }
+// rattrapage (0.9.0) : un héros en retard sur le niveau conseillé de l'étape gagne plus d'expérience, un héros très en avance
+// en gagne moins. Le niveau conseillé est celui du bot appliqué à chaque étape de la quête principale (NIVEAU_ETAPE).
+function multXP(h) {
+  const e = etapeCourante(), cible = e ? NIVEAU_ETAPE[e.id] || h.lvl : 32, d = cible - h.lvl;
+  return d >= 2 ? Math.min(2.5, 1 + .3 * (d - 1)) : d <= -4 ? .3 : d <= -2 ? .6 : 1;
+}
 function gainXP(x) {
   const ups = [];
   for (const h of team()) {
-    const avant = stats(h); h.xp += x; let up = false;
+    const avant = stats(h); h.xp += Math.round(x * multXP(h)); let up = false;
     while (h.xp >= need(h.lvl)) { h.xp -= need(h.lvl); h.lvl++; up = true; }
     if (up) { const a = stats(h); h.hp += a.hp - avant.hp; h.pp += a.pp - avant.pp; clampC(h); ups.push(tx('combat.niveau', { nom: nomH(h), n: h.lvl })); }
   }

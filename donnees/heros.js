@@ -145,5 +145,12 @@ Object.assign(TECHNIQUES, {
   seve: { type: 'soins', pow: .8, pp: 9, cible: 'allies', poids: 1.2 },
   drakfeu: { el: 'F', type: 'phys', pow: 1.45, pp: 6, cible: 'ennemi', poids: 1.1 }
 });
+// niveau conseillé à chaque étape de la quête principale (rattrapage d'expérience, voir multXP dans combat.js)
+const NIVEAU_ETAPE = {
+  'a1.e1': 1, 'a1.e2': 2, 'a1.e3': 2, 'a1.e4': 3, 'a1.e5': 4, 'a1.e6': 5, 'a1.e7': 5, 'a1.e8': 7, 'a1.e9': 8, 'a1.e10': 8,
+  'a2.e1': 9, 'a2.e2': 10, 'a2.e3': 11, 'a2.e4': 12, 'a2.e5': 13, 'a2.e6': 13, 'a2.e7': 14, 'a2.e8': 14,
+  'a3.e1': 15, 'a3.e2': 16, 'a3.e3': 17, 'a3.e4': 17, 'a3.e5': 18, 'a3.e6': 18, 'a3.e7': 19, 'a3.e8': 20, 'a3.e9': 21, 'a3.e10': 21,
+  'a4.e1': 22, 'a4.e2': 23, 'a4.e3': 24, 'a4.e4': 25, 'a4.e5': 26, 'a4.e6': 28, 'a4.e7': 28, 'a4.e8': 29, 'a4.e9': 30, 'a4.e10': 31
+};
 // élément de chaque région (techniques du Géomancien)
 const ELEMENT_REGION = { vallee: 'T', cote: 'E', cendre: 'F', vents: 'V' };
