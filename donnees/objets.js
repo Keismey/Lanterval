@@ -1,7 +1,6 @@
 /* Lanterval · Objets de soin, équipement et objets importants.
    Les noms sont dans textes/<langue>/noms.txt (objet.<id>, equip.<id>, important.<id>).
-   v : prix de revente ; prix : prix en boutique (revente à 40 %) ; cadeau : ne se vend pas.
-   0.9.0 : les pièces à 100 po et plus coûtent 20 % de plus (besoin d'or léger). */
+   v : prix de revente ; prix : prix en boutique (revente à 40 %) ; cadeau : ne se vend pas. */
 
 const OBJETS = {
   herbe: { hp: 35, v: 4 },
@@ -42,71 +41,71 @@ const EQUIPEMENT = {
   braise: { place: 'arme', type: 'baton', prix: 65, st: { atk: 2, mag: 7 } },
   // Bâton de source (0.9.0) : l'Attaque devient Eau (garde des monstres qui craignent l'Eau)
   source: { place: 'arme', type: 'baton', prix: 85, st: { atk: 2, mag: 6 }, el: 'E' },
-  acier: { place: 'arme', type: 'epee', prix: 155, st: { atk: 11 } },
-  chene: { place: 'arme', type: 'baton', prix: 150, st: { atk: 3, mag: 10 } },
+  acier: { place: 'arme', type: 'epee', prix: 130, st: { atk: 11 } },
+  chene: { place: 'arme', type: 'baton', prix: 125, st: { atk: 3, mag: 10 } },
   arc: { place: 'arme', type: 'arc', cadeau: true, st: { atk: 9, spd: 1 } },
   // acte 2 (Salvent)
   bandes: { place: 'arme', type: 'poing', prix: 90, st: { atk: 8, spd: 1 } },
-  griffes: { place: 'arme', type: 'poing', prix: 250, st: { atk: 14, spd: 2 } },
-  coutelas: { place: 'arme', type: 'dague', prix: 170, st: { atk: 9, spd: 2 } },
-  harpe: { place: 'arme', type: 'harpe', prix: 145, st: { atk: 2, mag: 8, pp: 6 } },
-  corail: { place: 'arme', type: 'epee', prix: 290, st: { atk: 15 } },
-  flots: { place: 'arme', type: 'baton', prix: 275, st: { atk: 4, mag: 14 } },
+  griffes: { place: 'arme', type: 'poing', prix: 210, st: { atk: 14, spd: 2 } },
+  coutelas: { place: 'arme', type: 'dague', prix: 140, st: { atk: 9, spd: 2 } },
+  harpe: { place: 'arme', type: 'harpe', prix: 120, st: { atk: 2, mag: 8, pp: 6 } },
+  corail: { place: 'arme', type: 'epee', prix: 240, st: { atk: 15 } },
+  flots: { place: 'arme', type: 'baton', prix: 230, st: { atk: 4, mag: 14 } },
   sabre: { place: 'arme', type: 'sabre', cadeau: true, st: { atk: 16, spd: 2 } },
   // acte 3 (forge de Hilde à Forgecendre ; ardente et cratere après « Les mineurs disparus »)
-  hache: { place: 'arme', type: 'hache', prix: 360, st: { atk: 22, spd: -1 } },
-  cendre: { place: 'arme', type: 'epee', prix: 455, st: { atk: 21 } },
-  magma: { place: 'arme', type: 'baton', prix: 430, st: { atk: 5, mag: 19 } },
-  gantelets: { place: 'arme', type: 'poing', prix: 410, st: { atk: 19, spd: 2 } },
-  stylet: { place: 'arme', type: 'dague', prix: 385, st: { atk: 15, spd: 3 } },
-  lyre: { place: 'arme', type: 'harpe', prix: 395, st: { atk: 3, mag: 15, pp: 10 } },
-  ardente: { place: 'arme', type: 'epee', prix: 720, st: { atk: 27 } },
-  cratere: { place: 'arme', type: 'baton', prix: 695, st: { atk: 6, mag: 24 } },
-  fendoir: { place: 'arme', type: 'hache', prix: 745, st: { atk: 29, spd: -1 } },
+  hache: { place: 'arme', type: 'hache', prix: 300, st: { atk: 22, spd: -1 } },
+  cendre: { place: 'arme', type: 'epee', prix: 380, st: { atk: 21 } },
+  magma: { place: 'arme', type: 'baton', prix: 360, st: { atk: 5, mag: 19 } },
+  gantelets: { place: 'arme', type: 'poing', prix: 340, st: { atk: 19, spd: 2 } },
+  stylet: { place: 'arme', type: 'dague', prix: 320, st: { atk: 15, spd: 3 } },
+  lyre: { place: 'arme', type: 'harpe', prix: 330, st: { atk: 3, mag: 15, pp: 10 } },
+  ardente: { place: 'arme', type: 'epee', prix: 600, st: { atk: 27 } },
+  cratere: { place: 'arme', type: 'baton', prix: 580, st: { atk: 6, mag: 24 } },
+  fendoir: { place: 'arme', type: 'hache', prix: 620, st: { atk: 29, spd: -1 } },
   // armes des quêtes annexes : Bâton des marées (Sol, « La berceuse »), Bâton de Dorn (Géomancien)
   marees: { place: 'arme', type: 'baton', heros: 'sol', cadeau: true, st: { atk: 6, mag: 27, pp: 12 } },
   dorn: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 5, mag: 21, def: 3 } },
   // Cœur de forge (Mira, « Le premier moule »)
   coeurforge: { place: 'arme', type: 'baton', heros: 'mira', cadeau: true, st: { atk: 7, mag: 29, pp: 10 } },
   // acte 4 (boutique de Joran à Aerie)
-  vent: { place: 'arme', type: 'epee', prix: 985, st: { atk: 31 } },
-  nuee: { place: 'arme', type: 'baton', prix: 960, st: { atk: 7, mag: 26 } },
-  zephyr: { place: 'arme', type: 'dague', prix: 910, st: { atk: 22, spd: 4 } },
-  serres: { place: 'arme', type: 'poing', prix: 950, st: { atk: 26, spd: 3 } },
-  eolienne: { place: 'arme', type: 'harpe', prix: 925, st: { atk: 4, mag: 21, pp: 14 } },
-  tempete: { place: 'arme', type: 'hache', prix: 1055, st: { atk: 37, spd: -1 } },
+  vent: { place: 'arme', type: 'epee', prix: 820, st: { atk: 31 } },
+  nuee: { place: 'arme', type: 'baton', prix: 800, st: { atk: 7, mag: 26 } },
+  zephyr: { place: 'arme', type: 'dague', prix: 760, st: { atk: 22, spd: 4 } },
+  serres: { place: 'arme', type: 'poing', prix: 790, st: { atk: 26, spd: 3 } },
+  eolienne: { place: 'arme', type: 'harpe', prix: 770, st: { atk: 4, mag: 21, pp: 14 } },
+  tempete: { place: 'arme', type: 'hache', prix: 880, st: { atk: 37, spd: -1 } },
   // l'épée d'Aldric, reforgée par Hilde : l'arme ultime de Kael
   aldric: { place: 'arme', type: 'epee', heros: 'kael', cadeau: true, st: { atk: 36, def: 4 } },
   // Fil-de-vent, la dague du grand-père de Nev (« Le cerf-volant ») : l'arme ultime de Nev
   fildevent: { place: 'arme', type: 'dague', heros: 'nev', cadeau: true, st: { atk: 33, spd: 6 } },
   // lances du Dragonnier : celle d'Ilse (« L'œuf de wyverne »), puis celle de Joran
   lanceilse: { place: 'arme', type: 'lance', cadeau: true, st: { atk: 34, spd: 2 } },
-  lance: { place: 'arme', type: 'lance', prix: 1175, st: { atk: 31 } },
+  lance: { place: 'arme', type: 'lance', prix: 980, st: { atk: 31 } },
   // marteau et tablier de Hilde, lame courbe et cuir noir de Varen (invités, jamais dans le sac)
   courbe: { place: 'arme', type: 'sabre', cadeau: true, st: { atk: 30, spd: 3 } },
   cuirnoir: { place: 'armure', cadeau: true, st: { def: 20, hp: 25 } },
   marteau: { place: 'arme', type: 'marteau', cadeau: true, st: { atk: 24 } },
   tablier: { place: 'armure', cadeau: true, st: { def: 16, hp: 20 } },
   // fer gris de la Carrière effondrée, forgé par Hilde (« Le fer gris de Hilde ») ; elle offre l'épée
-  fergris: { place: 'arme', type: 'epee', prix: 230, st: { atk: 14 } },
-  quartzb: { place: 'arme', type: 'baton', prix: 215, st: { atk: 3, mag: 13 } },
-  cottegris: { place: 'armure', prix: 205, st: { def: 12, hp: 10, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
+  fergris: { place: 'arme', type: 'epee', prix: 190, st: { atk: 14 } },
+  quartzb: { place: 'arme', type: 'baton', prix: 180, st: { atk: 3, mag: 13 } },
+  cottegris: { place: 'armure', prix: 170, st: { def: 12, hp: 10, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
   tunique: { place: 'armure', v: 5, st: { def: 2 } },
   cuir: { place: 'armure', v: 20, st: { def: 4, hp: 5 } },
   mailles: { place: 'armure', prix: 55, st: { def: 7, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
   robe: { place: 'armure', prix: 45, st: { def: 3, mag: 3, pp: 5 }, classes: MAGES },
-  brigandine: { place: 'armure', prix: 145, st: { def: 10, hp: 10, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
-  cape: { place: 'armure', prix: 120, st: { def: 5, mag: 4, pp: 8 }, classes: MAGES },
-  veste: { place: 'armure', prix: 180, st: { def: 8, spd: 2 } },
-  plates: { place: 'armure', prix: 505, st: { def: 20, hp: 20, spd: -2 }, classes: ['guerrier', 'chevalier', 'berserker'] },
-  manteau: { place: 'armure', prix: 455, st: { def: 12, mag: 8, pp: 12 }, classes: MAGES },
-  salamandre: { place: 'armure', prix: 430, st: { def: 13, hp: 10, spd: 2 } },
-  nacre: { place: 'armure', prix: 310, st: { def: 14, hp: 15, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
-  houle: { place: 'armure', prix: 265, st: { def: 8, mag: 6, pp: 10 }, classes: MAGES },
+  brigandine: { place: 'armure', prix: 120, st: { def: 10, hp: 10, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
+  cape: { place: 'armure', prix: 100, st: { def: 5, mag: 4, pp: 8 }, classes: MAGES },
+  veste: { place: 'armure', prix: 150, st: { def: 8, spd: 2 } },
+  plates: { place: 'armure', prix: 420, st: { def: 20, hp: 20, spd: -2 }, classes: ['guerrier', 'chevalier', 'berserker'] },
+  manteau: { place: 'armure', prix: 380, st: { def: 12, mag: 8, pp: 12 }, classes: MAGES },
+  salamandre: { place: 'armure', prix: 360, st: { def: 13, hp: 10, spd: 2 } },
+  nacre: { place: 'armure', prix: 260, st: { def: 14, hp: 15, spd: -1 }, classes: ['guerrier', 'chevalier', 'berserker'] },
+  houle: { place: 'armure', prix: 220, st: { def: 8, mag: 6, pp: 10 }, classes: MAGES },
   // acte 4 (Aerie) ; la Cape des quatre vents vient du « Colporteur »
-  plumacier: { place: 'armure', prix: 1140, st: { def: 27, hp: 30, spd: -2 }, classes: ['guerrier', 'chevalier', 'berserker'] },
-  soie: { place: 'armure', prix: 1055, st: { def: 17, mag: 11, pp: 16 }, classes: MAGES },
-  cuirvent: { place: 'armure', prix: 1030, st: { def: 18, hp: 15, spd: 3 } },
+  plumacier: { place: 'armure', prix: 950, st: { def: 27, hp: 30, spd: -2 }, classes: ['guerrier', 'chevalier', 'berserker'] },
+  soie: { place: 'armure', prix: 880, st: { def: 17, mag: 11, pp: 16 }, classes: MAGES },
+  cuirvent: { place: 'armure', prix: 860, st: { def: 18, hp: 15, spd: 3 } },
   cape4: { place: 'armure', cadeau: true, st: { def: 21, hp: 20, mag: 6, spd: 5 } },
   plume: { place: 'acc', v: 25, st: { spd: 2 } },
   // Carrière effondrée : découverte, palier 100 %, et la Soie de roche (« Ce qui gronde sous la roche »)
@@ -134,8 +133,8 @@ const EQUIPEMENT = {
   nuage: { place: 'acc', v: 130, st: { def: 4, spd: 4 } },
   chapelet: { place: 'acc', v: 140, st: { mag: 7, pp: 8 } },
   crocgivre: { place: 'acc', v: 150, st: { atk: 9 } },
-  plumevent: { place: 'acc', prix: 625, st: { atk: 4, spd: 5 } },
-  amulette: { place: 'acc', prix: 650, st: { mag: 8, pp: 10 } },
+  plumevent: { place: 'acc', prix: 520, st: { atk: 4, spd: 5 } },
+  amulette: { place: 'acc', prix: 540, st: { mag: 8, pp: 10 } },
   // Fleur-lanterne (« La graine-lanterne ») : regen = part des PV max rendue à chaque action du porteur
   fleur: { place: 'acc', cadeau: true, st: { hp: 20, def: 3 }, regen: .05 },
   // Œil du traqueur (« Le carnet du chasseur ») : faiblesses et résistances des monstres connues dès le début du combat

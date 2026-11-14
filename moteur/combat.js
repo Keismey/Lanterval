@@ -230,7 +230,7 @@ function finCombat() { for (const h of B.team) { delete h.poison; delete h.brulu
 // en gagne moins. Le niveau conseillé est celui du bot appliqué à chaque étape de la quête principale (NIVEAU_ETAPE).
 function multXP(h) {
   const e = etapeCourante(), cible = e ? NIVEAU_ETAPE[e.id] || h.lvl : 32, d = cible - h.lvl;
-  return d >= 2 ? Math.min(2.5, 1 + .3 * (d - 1)) : d <= -4 ? .3 : d <= -2 ? .6 : 1;
+  return d >= 2 ? Math.min(2.5, 1 + .3 * (d - 1)) : d <= -5 ? .1 : d <= -3 ? .25 : d <= -2 ? .5 : 1;
 }
 function gainXP(x) {
   const ups = [];
