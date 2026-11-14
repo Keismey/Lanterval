@@ -183,6 +183,10 @@ document.addEventListener('click', e => { if (S && S.screen !== 'title' && e.tar
 setInterval(() => {
   if (!S || S.screen === 'title' || document.hidden) return;
   S.st.time++;
+  // temps par acte (0.9.1) : l'acte de la prochaine étape de la quête principale, « fin » une fois le jeu fini
+  const e = etapeCourante(), a = e ? acteDe(e).id : 'fin';
+  S.st.actes = S.st.actes || {}; S.st.actes[a] = (S.st.actes[a] || 0) + 1;
+  if (OPT.chrono) { const c = document.getElementById('hb-chrono'); if (c) c.lastChild.textContent = fmtH(S.st.time); }
 }, 1000);
 // on sauve aussi au passage en arrière-plan : une appli fermée depuis les applis récentes ne reçoit souvent pas pagehide,
 // et la synchro du compte (ks-studio.js) envoie à ce moment-là la dernière sauvegarde

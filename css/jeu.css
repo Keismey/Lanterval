@@ -622,3 +622,7 @@ img[src^="img/"]{image-rendering:auto!important}
 .etat.poison{color:#e7d4ff;background:#5b2e7a}
 .etat.brulure{color:#ffe0c9;background:#8a3414}
 .etat.torpeur{color:#d9f0ff;background:#2d4f6b}
+.bourse-chrono{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+.bourse-chrono .pillv{height:26px}
+.chrono{display:inline-flex;align-items:center;gap:4px;padding-left:8px;font-size:11px;line-height:1;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chrono svg{width:11px;height:11px}

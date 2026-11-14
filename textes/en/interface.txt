@@ -1153,12 +1153,15 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.9.1
+Options: a timer shows this game's play time under your purse. The Journal shows the time spent in each act.
+Codex: axes, spears and hammers finally have their names.
 ## Version 0.9.0
 The game is more demanding, without walls: bosses fly into a fury below half HP, and some have a shell (physical hits reduced) or a veil (magic reduced) until their guard breaks.
 Each class has a 3rd technique of another element: changing class changes which weaknesses you can hit. A technique of the hero's own element hits harder (affinity). Sol finally has a Water spell: Ripple.
 Poison, burn and torpor: antidotes, salves and waking salts in shops, or the Bard, Alchemist and Sage techniques. New elemental vials to throw at an enemy.
 Boss lost: “Try again” restarts the fight as it began, or “Fall back” without losing gold. Other defeats cost a quarter of your purse.
-Gold is scarcer and fine gear pricier; experience rises a little more slowly.
+Treasure holds less gold and monsters drop a little more: some hunting before a boss helps you gear up. Experience rises a little more slowly, and much more slowly when the party is ahead of the story.
 Options: “Story” difficulty, to enjoy the adventure.
 ## Version 0.7.8
 End of Act 1: a “What awaits you next” trailer, before the padlock window. You can watch it again from that window.
@@ -1642,3 +1645,21 @@ Spear
 
 == codex.arme.marteau
 Hammer
+
+== options.chrono.non
+Timer: hidden
+
+== options.chrono.oui
+Timer: shown
+
+== options.chrono.sous
+Play time of this game at the top of the screen (per act in the Journal)
+
+== journal.temps
+Time per act: {liste}
+
+== journal.temps.acte
+act {n} {t}
+
+== journal.temps.fin
+after the ending {t}

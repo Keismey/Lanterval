@@ -1,6 +1,10 @@
 # État du projet
 
-## Version 0.9.0 (2026-11-14) : rééquilibrage (en test, non déployé)
+## Version 0.9.1 (2026-11-14)
+- Chrono dans les Options (`OPT.chrono`) : temps de jeu sous la bourse (`#hb-chrono`, mis à jour à chaque seconde dans moteur/jeu.js). Temps par acte dans `S.st.actes` (acte de la prochaine étape principale, `fin` après la fin), affiché dans le Journal ; compté seulement depuis la 0.9.1.
+- Codex : noms des armes hache, lance, marteau ; le vérificateur contrôle `codex.arme.*` pour les armes de chaque classe.
+
+## Version 0.9.0 (2026-11-14) : rééquilibrage (déployé le 2026-11-14 pour test en jeu)
 
 - Retour de Keismey (jeu fini 3 fois) : aucune difficulté même aux boss, aucun besoin de changer de classe, or toujours suffisant, Eau jamais offensive avant le Sage, objets jamais utilisés. Plan validé le 2026-11-14 ; 9 passes de bot (CR : https://claude.ai/artifact/QGjANVNjm5XAv7rWs5JhNw) ; fusion et déploiement validés par Keismey le 2026-11-14 pour test en jeu.
 - **Bot à deux profils** (`outils/bot.js`, `--presse`, `--json=`) et **rapport** `node outils/equilibrage.js [graines]` (graines × profils en parallèle, Markdown : niveau, classes, PV min, objets, reprises par boss ; or par acte ; seuils visés). Appliqué : tout le contenu, classes choisies contre le prochain boss, Union, fioles. Pressé : quête principale seule, exploration à moitié, classes de départ, il ne s'adapte qu'après une défaite.

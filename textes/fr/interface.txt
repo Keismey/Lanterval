@@ -1331,12 +1331,15 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.9.1
+Options : un chrono affiche le temps de jeu de la partie sous ta bourse. Le Journal donne le temps passé dans chaque acte.
+Codex : les haches, lances et marteaux ont enfin leur nom.
 ## Version 0.9.0
 Le jeu est plus exigeant, sans murs : les boss entrent en furie sous la moitié de leurs PV, certains ont une carapace (coups physiques réduits) ou un voile (magie réduite) jusqu'à ce que leur garde cède.
 Chaque classe a une 3e technique d'un autre élément : changer de classe change les faiblesses que tu peux viser. Une technique de l'élément du héros frappe plus fort (affinité). Sol a enfin un sort d'Eau : Onde.
 Poison, brûlure et torpeur : antidotes, onguents et sels d'éveil en boutique, ou les techniques du Barde, de l'Alchimiste et du Sage. Nouvelles fioles élémentaires à lancer sur un ennemi.
 Boss perdu : « Réessayer » reprend le combat tel qu'au départ, ou « Se replier » sans perdre d'or. Les autres défaites coûtent un quart de la bourse.
-L'or est plus rare et le bel équipement plus cher ; l'expérience monte un peu moins vite.
+Les trésors rapportent moins d'or et les monstres un peu plus : un peu de chasse avant un boss aide à s'équiper. L'expérience monte un peu moins vite, et beaucoup moins quand l'équipe a de l'avance sur l'histoire.
 Options : difficulté « Histoire », pour profiter surtout de l'aventure.
 ## Version 0.7.8
 Fin de l'acte 1 : une bande-annonce « Ce qui t'attend pour la suite », avant la fenêtre du cadenas. On peut la revoir depuis cette fenêtre.
@@ -1674,3 +1677,21 @@ Lance
 
 == codex.arme.marteau
 Marteau
+
+== options.chrono.non
+Chrono : masqué
+
+== options.chrono.oui
+Chrono : affiché
+
+== options.chrono.sous
+Temps de jeu de la partie en haut de l'écran (détail par acte dans le Journal)
+
+== journal.temps
+Temps par acte : {liste}
+
+== journal.temps.acte
+acte {n} {t}
+
+== journal.temps.fin
+après la fin {t}
