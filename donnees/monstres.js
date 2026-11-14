@@ -59,9 +59,9 @@ const MONSTRES = {
     capacites: [{ type: 'drain', chance: .4 }, { type: 'etat', etat: 'poison', chance: .35 }] },
   follet: { pv: 50, atk: 27, def: 4, vit: 18, garde: 2, faible: ['E', 'V'], resiste: ['F'], xp: 18, or: 15, taille: .14, vol: 'tonique',
     capacites: [{ type: 'spores', chance: .3, mult: .7 }, { type: 'etat', etat: 'torpeur', chance: .25 }] },
-  crapaud: { pv: 78, atk: 26, def: 7, vit: 8, garde: 3, faible: ['L', 'F'], resiste: ['E'], xp: 19, or: 16, taille: .16, vol: 'herbe',
+  crapaud: { pv: 78, atk: 26, def: 7, vit: 8, garde: 3, faible: ['L', 'V'], resiste: ['E'], xp: 19, or: 16, taille: .16, vol: 'herbe',
     capacites: [{ type: 'spores', chance: .35, mult: .75 }, { type: 'etat', etat: 'poison', chance: .25 }] },
-  noye: { pv: 84, atk: 32, def: 8, vit: 9, garde: 3, faible: ['F', 'L'], resiste: ['E'], xp: 22, or: 19, taille: .21, vol: 'elixir',
+  noye: { pv: 84, atk: 32, def: 8, vit: 9, garde: 3, faible: ['V', 'L'], resiste: ['E'], xp: 22, or: 19, taille: .21, vol: 'elixir',
     capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
   poisson: { pv: 52, atk: 30, def: 5, vit: 20, garde: 2, faible: ['T'], resiste: ['E', 'F'], xp: 20, or: 16, taille: .14, vol: 'herbe',
     capacites: [{ type: 'double', chance: .35 }] },
@@ -123,7 +123,7 @@ const MONSTRES = {
     capacites: [{ type: 'drain', chance: .35 }] },
 
   // ---------- Acte 4 : Hauts-Vents ----------
-  rapace: { pv: 230, atk: 74, def: 9, vit: 26, garde: 2, faible: ['T', 'F'], resiste: ['V'], xp: 40, or: 40, taille: .17, vol: 'ether',
+  rapace: { pv: 230, atk: 74, def: 9, vit: 26, garde: 2, faible: ['E', 'F'], resiste: ['V'], xp: 40, or: 40, taille: .17, vol: 'ether',
     capacites: [{ type: 'double', chance: .3 }] },
   sylphe: { pv: 205, atk: 76, def: 6, vit: 24, garde: 3, faible: ['T', 'L'], resiste: ['V', 'E'], xp: 38, or: 35, taille: .16, f: true, vol: 'ether',
     capacites: [{ type: 'spores', chance: .35, mult: .7 }, { type: 'etat', etat: 'torpeur', chance: .25 }] },
@@ -131,7 +131,7 @@ const MONSTRES = {
     capacites: [{ type: 'fort', chance: .3, mult: 1.4 }] },
   spectre: { pv: 260, atk: 82, def: 10, vit: 16, garde: 3, faible: ['F', 'L'], resiste: ['T', 'E'], xp: 44, or: 40, taille: .21, vol: 'ether',
     capacites: [{ type: 'drain', chance: .35 }, { type: 'etat', etat: 'poison', chance: .3 }] },
-  griffon: { pv: 350, atk: 88, def: 14, vit: 20, garde: 4, faible: ['T', 'F'], resiste: ['V'], xp: 50, or: 48, taille: .23, vol: 'potion',
+  griffon: { pv: 350, atk: 88, def: 14, vit: 20, garde: 4, faible: ['T', 'E'], resiste: ['V'], xp: 50, or: 48, taille: .23, vol: 'potion',
     capacites: [{ type: 'fort', chance: .3, mult: 1.45 }] },
   givre: { pv: 300, atk: 84, def: 16, vit: 12, garde: 4, faible: ['F', 'T'], resiste: ['E', 'V'], xp: 48, or: 45, taille: .2, vol: 'ether',
     capacites: [{ type: 'charge', mult: 1.2 }, { type: 'etat', etat: 'torpeur', chance: .25 }] },
@@ -145,7 +145,7 @@ const MONSTRES = {
   rocaile: { pv: 4800, atk: 148, def: 14, vit: 26, garde: 10, faible: ['V', 'T'], resiste: ['E', 'F'], xp: 380, or: 250, taille: .36, boss: true, vol: 'potion',
     capacites: [{ type: 'envol', mult: 1.6 }, { type: 'fort', chance: .35, mult: 1.5 }] },
   // « L'œuf de wyverne » : la mère, folle de brume, au nid du Pic hurlant
-  wyverne: { pv: 6200, atk: 148, def: 16, vit: 25, garde: 9, faible: ['T', 'L'], resiste: ['V'], xp: 420, or: 325, taille: .4, f: true, boss: true, carapace: true, vol: 'baume',
+  wyverne: { pv: 6200, atk: 148, def: 16, vit: 25, garde: 9, faible: ['E', 'L'], resiste: ['V'], xp: 420, or: 325, taille: .4, f: true, boss: true, carapace: true, vol: 'baume',
     capacites: [{ type: 'charge', mult: 1.4 }, { type: 'double', chance: .25, garde: true }] },
   // « Le cerf-volant » : le prieur spectral garde la dernière bannière (combat de Nev et Varen seuls)
   prieur: { pv: 5200, atk: 180, def: 16, vit: 26, garde: 8, faible: ['F', 'L'], resiste: ['T', 'E'], xp: 300, or: 188, taille: .26, boss: true, vol: 'ether',

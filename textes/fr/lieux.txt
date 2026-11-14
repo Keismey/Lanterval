@@ -657,7 +657,7 @@ Un coffre à moitié dans la vase : *70 po*.
 Mare aux crapauds
 
 == lanternes.l5.texte
-Des crapauds fuient devant une épée plantée dans la berge. *Faiblesses du Crapaud des brumes ajoutées au codex.*
+Des crapauds fuient devant une épée plantée dans la berge, ventre plaqué au sol à chaque coup de vent. *Faiblesses du Crapaud des brumes ajoutées au codex.*
 
 == lanternes.l6.nom
 Huître géante
@@ -722,7 +722,7 @@ Une caisse étanche, bien fermée : *2 élixirs*.
 Cabine du médecin
 
 == epave.e2.texte
-Dans son carnet, le médecin du bord : « Les noyés craignent le feu et le fer. » *Faiblesses du Noyé ajoutées au codex.*
+Dans son carnet, le médecin du bord : « Les noyés craignent le fer, et le vent du large les disperse. » *Faiblesses du Noyé ajoutées au codex.*
 
 == epave.e3.nom
 Poche d'air
@@ -1197,7 +1197,7 @@ Une sacoche de voyageur accrochée à une corde, battue par le vent : *2 potions
 Nid sous les planches
 
 == pont.n2.texte
-Un nid de rapace sous le pont, plein de bijoux volés. La terre et le feu leur font peur : ils nichent loin des deux. *Faiblesses du Rapace voleur ajoutées au codex.*
+Un nid de rapace sous le pont, plein de bijoux volés. L'eau et le feu leur font peur : ils nichent loin des deux. *Faiblesses du Rapace voleur ajoutées au codex.*
 
 == pont.n3.nom
 Pilier de pierre
@@ -1404,7 +1404,7 @@ Un refuge de pierre où les bergers laissaient des provisions : *2 baumes des ve
 Plumes arrachées
 
 == pic.k2.texte
-Des plumes de griffon autour d'un rocher fendu et d'un feu éteint. La terre et le feu les tiennent à distance. *Faiblesses du Griffon des cimes ajoutées au codex.*
+Des plumes de griffon autour d'un rocher fendu et d'une flaque gelée. La terre et l'eau les tiennent à distance. *Faiblesses du Griffon des cimes ajoutées au codex.*
 
 == pic.k3.nom
 Grotte tiède
