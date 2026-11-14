@@ -234,9 +234,10 @@ function cerveau([graine, profil]) {
   // Un vrai joueur met son équipement à jour avant un boss : il chasse (en mode auto) jusqu'à pouvoir payer les améliorations
   // en vente pour chaque héros (arme, armure), puis revient au village. Durée estimée : FARM_S secondes par combat auto.
   const FARM_S = 25, FARM_MAX = 40;
-  function ameliorations() {
+  // ce que coûtent les améliorations en vente au village où le joueur se prépare (il n'achète que là)
+  function ameliorations(v) {
     let cout = 0; const vu = new Set();
-    for (const v in LIEUX) if (LIEUX[v].type === 'village' && lieuOuvert(v)) for (const p of LIEUX[v].pnj) if (p.role === 'boutique' && cond(p.si))
+    for (const p of LIEUX[v].pnj) if (p.role === 'boutique' && cond(p.si))
       for (const h of team()) for (const pl of ['arme', 'armure']) {
         const mieux = enRayon(p).filter(k => EQUIPEMENT[k].place === pl && canWear(h, k)).sort((a, b) => score(b, h) - score(a, h))[0];
         if (!mieux || (h.eq[pl] && score(mieux, h) <= score(h.eq[pl], h) + 1) || vu.has(h.id + pl)) continue;
@@ -252,15 +253,16 @@ function cerveau([graine, profil]) {
   async function farmer(pos, ennemis) {
     if (!ennemis.some(([, p]) => p > 1)) return;
     const zf = zoneDeFarm(pos); if (!zf) return;
-    const ac = acteDe(); let n = 0;
+    const ac = acteDe(), v = villageDe(pos); let n = 0;
     preparer(pos);
     while (n < FARM_MAX) {
-      const besoin = ameliorations(); if (!besoin || S.gold >= besoin + 30) break;
+      const besoin = ameliorations(v); if (!besoin || S.gold >= besoin + 30) break;
+      // l'auberge seulement quand l'équipe est entamée ; l'or du farm va à l'équipement
+      if (team().some(h => pvp(h) < .5)) preparer(pos);
       aller(zf); const or0 = S.gold;
-      if (team().some(h => pvp(h) < .5)) { preparer(zf); aller(zf); }
       await fightRandom(zf.split('.')[0], ''); n++;
       ajoute(R.farm, ac, 1); ajoute(R.farmOr, ac, Math.max(0, S.gold - or0));
-      if (n % 5 === 0) preparer(pos);
+      if (n % 5 === 0) { aller(v); acheter(v, ennemis); equiper(); }
     }
     if (n) note(`farm ${n} combats avant ${ennemis.find(([, p]) => p > 1)[0]} (${ac})`);
   }
