@@ -8,7 +8,8 @@
        héros la classe qui vise le mieux ses faiblesses (Sol reste soigneur) ; Union, fioles, soins des états.
      pressé (--presse) : quête principale seule, zones explorées à moitié, jamais de chasse ; il garde ses classes de départ
        (Guerrier, Mage, Soigneur, Moine) et n'achète ni fioles ni réserve d'objets d'état.
-   Dans les deux cas : auberge avant chaque quête, meilleur équipement qu'il peut payer, et après une défaite il s'entraîne
+   Dans les deux cas : avant un boss, il chasse (farm en auto) jusqu'à pouvoir payer l'équipement en vente (l'équipement passe
+   avant les potions) ; auberge avant chaque quête, et après une défaite il s'entraîne
    (6 combats) avant de réessayer.
    Il ne se déplace pas sur la carte : il se place directement au bon endroit (pas de combats de traversée).
    Rapport : niveaux et PV les plus bas de l'équipe à chaque combat de quête, défaites, erreurs de la page. */
@@ -36,7 +37,7 @@ function cerveau([graine, profil]) {
   const st0 = window.setTimeout; window.setTimeout = (f, ms, ...a) => st0(f, Math.min(ms || 0, 2), ...a);
   window.typeIn = () => {};
   const APPLIQUE = profil !== 'presse';
-  const R = window.BOT = { profil, log: [], combats: [], etapes: 0, fini: false, objets: {}, achatsEq: {}, voulu: {}, achete: {}, achatsObj: {}, orGagne: {}, classes: {}, entrainement: 0 };
+  const R = window.BOT = { profil, log: [], combats: [], etapes: 0, fini: false, objets: {}, achatsEq: {}, voulu: {}, achete: {}, achatsObj: {}, orGagne: {}, classes: {}, entrainement: 0, farm: {}, farmOr: {} };
   const note = m => R.log.push(m);
   const acteDe = () => ((etapeCourante() || {}).id || 'a4').split('.')[0];
   const ajoute = (o, k, n) => { o[k] = (o[k] || 0) + n; };
@@ -196,7 +197,7 @@ function cerveau([graine, profil]) {
       }
       // fioles : deux de chaque élément qui vise une faiblesse du prochain boss
       const visees = new Set((prochains || []).filter(([id, p]) => p > 1).flatMap(([id]) => MONSTRES[id].faible));
-      const veut = k => OBJETS[k].hp ? (epargne ? 3 : 6) : OBJETS[k].pp ? (epargne ? 2 : 4) : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el && visees.has(OBJETS[k].el) ? (APPLIQUE ? 2 : 1) : 0;
+      const veut = k => OBJETS[k].hp ? (epargne ? 2 : 6) : OBJETS[k].pp ? (epargne ? 1 : 4) : OBJETS[k].soigne ? (APPLIQUE ? 3 : 1) : OBJETS[k].el && visees.has(OBJETS[k].el) ? (APPLIQUE ? 2 : 1) : 0;
       for (const [k, prix] of p.objets) while ((S.inv[k] || 0) < veut(k) && S.gold >= prix + 40) { S.gold -= prix; ajoute(R.achatsObj, ac, prix); addItem(k, 1); }
     }
     orAvant = S.gold;
@@ -229,6 +230,41 @@ function cerveau([graine, profil]) {
     S.z[id].visits++;
   }
 
+  // ---------- farm avant un boss (0.9.0) ----------
+  // Un vrai joueur met son équipement à jour avant un boss : il chasse (en mode auto) jusqu'à pouvoir payer les améliorations
+  // en vente pour chaque héros (arme, armure), puis revient au village. Durée estimée : FARM_S secondes par combat auto.
+  const FARM_S = 25, FARM_MAX = 40;
+  function ameliorations() {
+    let cout = 0; const vu = new Set();
+    for (const v in LIEUX) if (LIEUX[v].type === 'village' && lieuOuvert(v)) for (const p of LIEUX[v].pnj) if (p.role === 'boutique' && cond(p.si))
+      for (const h of team()) for (const pl of ['arme', 'armure']) {
+        const mieux = enRayon(p).filter(k => EQUIPEMENT[k].place === pl && canWear(h, k)).sort((a, b) => score(b, h) - score(a, h))[0];
+        if (!mieux || (h.eq[pl] && score(mieux, h) <= score(h.eq[pl], h) + 1) || vu.has(h.id + pl)) continue;
+        vu.add(h.id + pl); cout += EQUIPEMENT[mieux].prix;
+      }
+    return cout;
+  }
+  function zoneDeFarm(pos) {
+    const id = pos.split('.')[0]; if (LIEUX[id].type === 'zone' && LIEUX[id].groupes) return pos;
+    const reg = regionDe(pos), z = Object.keys(LIEUX).filter(k => LIEUX[k].type === 'zone' && LIEUX[k].groupes && lieuOuvert(k) && regionsDu(k).includes(reg) && !LIEUX[k].nonRetour);
+    const k = z[z.length - 1]; return k ? (LIEUX[k].cotes ? k + '.' + LIEUX[k].cotes[0] : k) : null;
+  }
+  async function farmer(pos, ennemis) {
+    if (!ennemis.some(([, p]) => p > 1)) return;
+    const zf = zoneDeFarm(pos); if (!zf) return;
+    const ac = acteDe(); let n = 0;
+    preparer(pos);
+    while (n < FARM_MAX) {
+      const besoin = ameliorations(); if (!besoin || S.gold >= besoin + 30) break;
+      aller(zf); const or0 = S.gold;
+      if (team().some(h => pvp(h) < .5)) { preparer(zf); aller(zf); }
+      await fightRandom(zf.split('.')[0], ''); n++;
+      ajoute(R.farm, ac, 1); ajoute(R.farmOr, ac, Math.max(0, S.gold - or0));
+      if (n % 5 === 0) preparer(pos);
+    }
+    if (n) note(`farm ${n} combats avant ${ennemis.find(([, p]) => p > 1)[0]} (${ac})`);
+  }
+
   // ---------- ce que le bot fait ensuite ----------
   const essais = {};
   R.pas = async () => {
@@ -258,6 +294,7 @@ function cerveau([graine, profil]) {
     if (LIEUX[id].type === 'zone' && aExplorer(id)) await explorerZone(pos);
     // trop de défaites : on s'entraîne (la porte de sortie du joueur bloqué)
     if (essais[cle] > 1 && LIEUX[id].type === 'zone') for (let i = 0; i < 6; i++) { preparer(pos); aller(pos); await fightRandom(id, ''); R.entrainement++; }
+    await farmer(pos, ennemis);
     preparer(pos, ennemis, essais[cle] > 1); aller(pos);
     if (LIEUX[id].type === 'village') {
       const p = LIEUX[id].pnj.find(x => x.id === quete.lieu && cond(x.si));
@@ -321,6 +358,7 @@ function cerveau([graine, profil]) {
   console.log('Combats de quête (niveaux, classes, PV les plus bas de l\'équipe, objets, reprises) :');
   for (const c of R.combats) console.log(`  ${c.etape || '-'} · ${c.ids}${c.boss ? ' (boss)' : ''} @ ${c.lieu} · niv ${c.niv} · ${c.classes} · ${c.res} · ${c.tours} tours · PV min ${Math.round(c.min * 100)} %${c.objets ? ' · ' + c.objets + ' objets' : ''}${c.reprises ? ' · ' + c.reprises + ' reprise(s)' : ''}`);
   console.log('Or gagné par acte :', JSON.stringify(R.orGagne), '· équipement acheté :', JSON.stringify(R.achatsEq), '· objets et auberge :', JSON.stringify(R.achatsObj));
+  console.log('Farm avant les boss (combats par acte) :', JSON.stringify(R.farm), '· or gagné en farm :', JSON.stringify(R.farmOr));
   console.log('Objets utilisés :', JSON.stringify(R.objets), '· classes prises :', JSON.stringify(R.classes), '· combats d\'entraînement :', R.entrainement);
   console.log('État final :', JSON.stringify(R.etat));
   if (JSON_SORTIE) fs.writeFileSync(JSON_SORTIE, JSON.stringify({ graine: GRAINE, profil: PROFIL, erreurs, ...R }));

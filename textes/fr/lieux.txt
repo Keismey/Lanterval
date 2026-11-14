@@ -165,7 +165,7 @@ Une stèle de chasseurs : des loups fuient devant des torches et des lames. *Fai
 Racines creuses
 
 == foret.f4.texte
-Entre les racines d'un chêne : *25 po et une Cotte de cuir* (armure, Défense +4).
+Entre les racines d'un chêne : *40 po et une Cotte de cuir* (armure, Défense +4).
 
 == foret.f5.nom
 Cercle de champignons
@@ -188,7 +188,7 @@ Des grognements dans les fourrés…
 Un buisson croule sous les baies sauvages : *+12 PV* pour tous.
 
 == foret.ev.colporteur
-Un colporteur égaré te demande la route de Lanterval et te donne *10 po* pour ta peine.
+Un colporteur égaré te demande la route de Lanterval et te donne *15 po* pour ta peine.
 
 == foret.ev.piege
 Clac ! Un vieux piège de braconnier se referme sur ta botte : *Kael perd 8 PV*.
@@ -230,7 +230,7 @@ Le cœur de cristal est tout au fond. Une fois là-bas, il faudra retraverser la
 Veine de cristal
 
 == grotte.g1.texte
-Une veine de cristal pur affleure : *25 po*.
+Une veine de cristal pur affleure : *40 po*.
 
 == grotte.g2.nom
 Coffre englouti
@@ -262,7 +262,7 @@ Plus aucun recoin ne t'échappe. Tu trouves l'*Éclat prismatique* (accessoire, 
 Des bruissements d'ailes dans le noir…
 
 == grotte.ev.filon
-Un petit filon de cristal brut : *+10 po*.
+Un petit filon de cristal brut : *+20 po*.
 
 == grotte.ev.eboulis
 Des pierres tombent du plafond ! *Tout le monde perd 6 PV.*
@@ -301,7 +301,7 @@ Le sentier monte jusqu'au sommet, où brille le cristal d'ambre. Les bêtes du c
 Cairn des voyageurs
 
 == col.c1.texte
-Sous un tas de pierres, une bourse oubliée : *35 po*.
+Sous un tas de pierres, une bourse oubliée : *60 po*.
 
 == col.c2.nom
 Gravure des bergers
@@ -351,7 +351,7 @@ Un pan de rocher se détache ! *Tout le monde perd 8 PV.*
 Des fleurs blanches poussent dans une faille. Leur parfum réchauffe : *+15 PV* pour tous.
 
 == col.ev.pelerin
-Un pèlerin redescend du col. Il te donne *15 po* « pour la lanterne ».
+Un pèlerin redescend du col. Il te donne *25 po* « pour la lanterne ».
 
 == col.ev.vent
 Une bourrasque glacée balaie la brume et l'esprit s'éclaircit : *+6 PP* pour tous.
@@ -390,7 +390,7 @@ La faille de l'éboulis descend jusqu'au fond de la carrière. Les bêtes d'ici 
 Bourse oubliée
 
 == carriere.k1.texte
-Coincée sous un wagonnet renversé, la bourse d'un ancien carrier : *30 po*.
+Coincée sous un wagonnet renversé, la bourse d'un ancien carrier : *50 po*.
 
 == carriere.k2.nom
 Mue de cloporte
@@ -426,7 +426,7 @@ Un carnet moisi, la dernière page griffonnée : « La reine dort sous l'ébouli
 Coffre du fond
 
 == carriere.k7.texte
-Derrière la toile brûlée, le coffre des anciens carriers, encore fermé : *70 po*.
+Derrière la toile brûlée, le coffre des anciens carriers, encore fermé : *120 po*.
 
 == carriere.k8.nom
 Réserve de l'Ordre
@@ -449,7 +449,7 @@ Des cailloux roulent tout seuls derrière toi…
 Le sol tremble et une pluie de gravats s'abat sur l'équipe ! *Tout le monde perd 7 PV.*
 
 == carriere.ev.veine
-Un éclat de fer gris dépasse de la paroi : *+10 po*.
+Un éclat de fer gris dépasse de la paroi : *+20 po*.
 
 == carriere.ev.source
 Une source glacée sourd entre deux blocs. L'eau réveille l'esprit : *+6 PP* pour tous.

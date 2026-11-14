@@ -162,7 +162,7 @@ A hunters' stele: wolves fleeing from torches and blades. *Mist wolf weaknesses 
 Hollow roots
 
 == foret.f4.texte
-Between the roots of an oak: *25 gold and a Leather coat* (armour, Defence +4).
+Between the roots of an oak: *40 gold and a Leather coat* (armour, Defence +4).
 
 == foret.f5.nom
 Mushroom ring
@@ -185,7 +185,7 @@ Growling in the bushes…
 A bush is heavy with wild berries: *+12 HP* for everyone.
 
 == foret.ev.colporteur
-A lost peddler asks you the way to Lanterval and gives you *10 gold* for your trouble.
+A lost peddler asks you the way to Lanterval and gives you *15 gold* for your trouble.
 
 == foret.ev.piege
 Snap! An old poacher's trap closes on your boot: *Kael loses 8 HP*.
@@ -227,7 +227,7 @@ The crystal heart lies at the very end. Once there, you'll have to cross the cav
 Crystal vein
 
 == grotte.g1.texte
-A vein of pure crystal breaks the surface: *25 gold*.
+A vein of pure crystal breaks the surface: *40 gold*.
 
 == grotte.g2.nom
 Sunken chest
@@ -259,7 +259,7 @@ No corner escapes you any more. You find the *Prismatic shard* (accessory, Attac
 Wings rustling in the dark…
 
 == grotte.ev.filon
-A small seam of raw crystal: *+10 gold*.
+A small seam of raw crystal: *+20 gold*.
 
 == grotte.ev.eboulis
 Stones fall from the ceiling! *Everyone loses 6 HP.*
@@ -298,7 +298,7 @@ The path climbs to the summit, where the amber crystal shines. The beasts of the
 Travellers' cairn
 
 == col.c1.texte
-Under a pile of stones, a forgotten purse: *35 gold*.
+Under a pile of stones, a forgotten purse: *60 gold*.
 
 == col.c2.nom
 Shepherds' carving
@@ -348,7 +348,7 @@ A slab of rock breaks loose! *Everyone loses 8 HP.*
 White flowers grow in a crack. Their scent warms you: *+15 HP* for everyone.
 
 == col.ev.pelerin
-A pilgrim comes down from the pass. He gives you *15 gold* “for the lantern”.
+A pilgrim comes down from the pass. He gives you *25 gold* “for the lantern”.
 
 == col.ev.vent
 An icy gust sweeps the mist away and clears the mind: *+6 PP* for everyone.
@@ -387,7 +387,7 @@ The crack in the rockslide leads down to the bottom of the quarry. The beasts he
 Forgotten purse
 
 == carriere.k1.texte
-Wedged under an overturned cart, an old quarryman's purse: *30 gold*.
+Wedged under an overturned cart, an old quarryman's purse: *50 gold*.
 
 == carriere.k2.nom
 Woodlouse moult
@@ -423,7 +423,7 @@ A mouldy notebook, the last page scrawled: “The queen sleeps under the rocksli
 Chest at the bottom
 
 == carriere.k7.texte
-Behind the burnt web, the old quarrymen's chest, still locked: *70 gold*.
+Behind the burnt web, the old quarrymen's chest, still locked: *120 gold*.
 
 == carriere.k8.nom
 Order stockpile
@@ -446,7 +446,7 @@ Pebbles roll by themselves behind you…
 The ground shakes and a shower of rubble falls on the team! *Everyone loses 7 HP.*
 
 == carriere.ev.veine
-A shard of greyiron sticks out of the wall: *+10 gold*.
+A shard of greyiron sticks out of the wall: *+20 gold*.
 
 == carriere.ev.source
 An icy spring wells up between two blocks. The water clears the mind: *+6 PP* for everyone.

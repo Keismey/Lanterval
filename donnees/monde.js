@@ -51,7 +51,7 @@ const LIEUX = {
       { id: 'f1', type: 'tresor', gagne: '2 herbe' },
       { id: 'f2', type: 'lieu', effet: 'soin', repos: true },
       { id: 'f3', type: 'lieu', revele: 'loup' },
-      { id: 'f4', type: 'tresor', gagne: '25 or, cuir' },
+      { id: 'f4', type: 'tresor', gagne: '40 or, cuir' },
       { id: 'f5', type: 'lieu', revele: 'spore' }
     ],
     palier50: { gagne: 'herbe, tonique' },
@@ -59,7 +59,7 @@ const LIEUX = {
     evenements: [
       { id: 'combat', poids: 4, combat: true },
       { id: 'baies', poids: 1.5, effet: 'soin 12' },
-      { id: 'colporteur', poids: 1, gagne: '10 or' },
+      { id: 'colporteur', poids: 1, gagne: '15 or' },
       { id: 'piege', poids: 1.5, effet: 'degats kael 8' },
       { id: 'champignons', poids: 1.5, effet: 'pp 5' }
     ],
@@ -74,7 +74,7 @@ const LIEUX = {
     etats: [{ id: 'sombre', si: 'fini a1.e5' }],
     maxEvenements: 3,
     tresors: [
-      { id: 'g1', type: 'tresor', gagne: '25 or' },
+      { id: 'g1', type: 'tresor', gagne: '40 or' },
       { id: 'g2', type: 'tresor', gagne: 'anneau' },
       { id: 'g3', type: 'lieu', revele: 'golem' },
       { id: 'g4', type: 'lieu', effet: 'pp' }
@@ -83,7 +83,7 @@ const LIEUX = {
     palier100: { gagne: 'eclat' },
     evenements: [
       { id: 'combat', poids: 4, combat: true },
-      { id: 'filon', poids: 2, gagne: '10 or' },
+      { id: 'filon', poids: 2, gagne: '20 or' },
       { id: 'eboulis', poids: 1.5, effet: 'degats tous 6' },
       { id: 'goutte', poids: 1.5, effet: 'pp 6' }
     ],
@@ -99,7 +99,7 @@ const LIEUX = {
     etats: [{ id: 'vide', si: 'fini a1.e9' }],   // l'Ordre a emporté le cristal d'ambre
     maxEvenements: 3,
     tresors: [
-      { id: 'c1', type: 'tresor', gagne: '35 or' },
+      { id: 'c1', type: 'tresor', gagne: '60 or' },
       { id: 'c2', type: 'lieu', revele: 'belier' },
       { id: 'c3', type: 'lieu', effet: 'soin', repos: true },
       { id: 'c4', type: 'tresor', gagne: '2 tonique, elixir' },
@@ -112,7 +112,7 @@ const LIEUX = {
       { id: 'combat', poids: 4, combat: true },
       { id: 'eboulis', poids: 1.5, effet: 'degats tous 8' },
       { id: 'edelweiss', poids: 1.5, effet: 'soin 15' },
-      { id: 'pelerin', poids: 1, gagne: '15 or' },
+      { id: 'pelerin', poids: 1, gagne: '25 or' },
       { id: 'vent', poids: 1.5, effet: 'pp 6' }
     ],
     groupes: {
@@ -129,13 +129,13 @@ const LIEUX = {
     etats: [{ id: 'libre', si: 'drapeau toile' }],
     maxEvenements: 3,
     tresors: [
-      { id: 'k1', type: 'tresor', gagne: '30 or' },
+      { id: 'k1', type: 'tresor', gagne: '50 or' },
       { id: 'k2', type: 'lieu', revele: 'cloporte' },
       { id: 'k3', type: 'lieu', effet: 'soin', repos: true },
       { id: 'k4', type: 'tresor', gagne: '2 herbe, tonique' },
       { id: 'k5', type: 'tresor', gagne: 'quartz' },
       { id: 'k6', type: 'lieu', revele: 'tisseuse' },
-      { id: 'k7', type: 'tresor', gagne: '70 or', si: 'drapeau toile' },
+      { id: 'k7', type: 'tresor', gagne: '120 or', si: 'drapeau toile' },
       { id: 'k8', type: 'tresor', gagne: '2 elixir, tonique', si: 'drapeau toile' }
     ],
     palier50: { gagne: '2 herbe, 2 tonique' },
@@ -143,7 +143,7 @@ const LIEUX = {
     evenements: [
       { id: 'combat', poids: 4, combat: true },
       { id: 'secousse', poids: 1.5, effet: 'degats tous 7' },
-      { id: 'veine', poids: 1.5, gagne: '10 or' },
+      { id: 'veine', poids: 1.5, gagne: '20 or' },
       { id: 'source', poids: 1.5, effet: 'pp 6' },
       { id: 'lichen', poids: 1.5, effet: 'soin 14' }
     ],
