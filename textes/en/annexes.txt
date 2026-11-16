@@ -1639,6 +1639,8 @@ The wind tightens around it and takes the shape of a great bird of mist with bla
 ## The azure tear
 Nev touches the tear. A walkway in Aerie, a boy teaching a little girl to stand up in the wind.
 “Spread your arms,” says young Varen. “The wind won't knock you down if you're not afraid of it.”
+
+== larmes.e1.m4.varen
 Varen, beside Nev, looks away. But he doesn't leave.
 
 == larmes.e1.m4.message
@@ -1662,11 +1664,13 @@ Orvan: “I saw them fall, fifty years ago. I thought they were lost forever.”
 == larmes.e2.gardien
 ## The tears of the Eye
 Orvan raises his wrinkled hand. The tears settle in his palm and melt into a single light, soft as a lantern.
-Orvan: “I helped close that Eye. I have no right to keep it. But I can teach you to keep what it sees.”
-Orvan: “Remember one another. It's the one thing the mist can't take.”
+Orvan shuts the light inside his little lamplighter's lantern, and closes it with care.
+Orvan: “I'll keep this one close. If one day I forget, it will remember for me.”
+He breaks off a tiny shard and places it in Kael's hand.
+Orvan: “And this is for you. Remember one another. It's the one thing the mist can't take.”
 
 == larmes.e2.fin
-? Reward: ultimate hidden class *Keeper of memories*. Recall makes an ally repeat their last action without paying PP; Memory seal cuts the team's damage by a third for the monsters' next 4 actions.
+? Reward: *Tear shard*, an accessory that boosts magic, PP and defence. Orvan keeps the light of the tears in his lantern.
 
 == larmes.apres
 Tavor: “The monks used to say the Eye weeps when it is afraid to forget. Thanks to you, it is less afraid.”

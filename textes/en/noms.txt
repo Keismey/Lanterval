@@ -250,6 +250,9 @@ Geode
 == equip.soieroche
 Stone silk
 
+== equip.eclatlarme
+Tear shard
+
 == equip.plume
 Firefly feather
 
@@ -1668,7 +1671,7 @@ Keeper of memories
 The ultimate class: reminds allies of what they just did, and shields the team with the Eye's memory.
 
 == classe.souvenirs.verrou
-Secret class: the old monk of Aerie speaks of lost tears
+New Game+ class: find the six family memories, even over several playthroughs
 
 == tech.saut
 Jump

@@ -48,7 +48,8 @@ const EVENEMENTS = {
   async perd([spec]) { perdre(spec); },
   async classes([liste]) { liste.split(/\s+/).forEach(unlockJob); },
   async soin() { healAll(); },
-  async drapeau([id]) { S.f[id] = true; },
+  // « !escalier » retire le drapeau
+  async drapeau([id]) { if (id.startsWith('!')) delete S.f[id.slice(1)]; else S.f[id] = true; },
   // « fer » : la quête annexe démarre sans passer par l'offre de son donneur (quêtes qui s'enchaînent)
   async lance([id], ctx) { if (annexeEtat(id)) return; S.annexes[id] = 1; if (!ctx.silencieux) logR('journal.log.annexe', { titre: id + '.titre' }); },
   async degats([spec]) { appliquerEffet('degats ' + spec); },
@@ -79,8 +80,17 @@ const EVENEMENTS = {
   },
   // tous les monstres du Codex, faiblesses et résistances comprises (récompense des Échos)
   async codex() { for (const id in MONSTRES) revealAll(id); },
-  // fin du jeu : générique, puis l'écran de fin (retour à Aerie avant l'Escalier, partie+)
-  async fin_jeu(a, ctx) { S.fins = (S.fins || 0) + 1; S.finVue = (S.finVue || 0) + 1; S.finPartie = true; if (!ctx.silencieux) { logR('journal.log.fin'); await generique(); S.screen = 'fin'; } }
+  // au pied de l'Escalier : les quêtes familiales pas finies, qui vont se fermer (repère avec {liste})
+  async souvenirs([cle], ctx) {
+    const m = souvenirsManquants(); if (ctx.silencieux || !m.length) return;
+    const b = bulle(t(cle, { liste: m.map(id => t(id + '.titre')).join(', ') }));
+    await show(b.tuto ? encadreTuto(html(b.texte)) : html(b.texte), b.qui ? { who: b.nom, portrait: b.qui } : { title: ctx.titre });
+  },
+  // fin du jeu : souvenirs notés, générique, puis l'écran de fin (bilan, la suite du monde, partie+)
+  async fin_jeu(a, ctx) {
+    S.fins = (S.fins || 0) + 1; S.finVue = (S.finVue || 0) + 1; S.finPartie = true; noterSouvenirs();
+    if (!ctx.silencieux) { logR('journal.log.fin'); await generique(); S.screen = 'fin'; }
+  }
 };
 
 /* Point de reprise : chaque événement joué est noté dans S.reprise (sauvegardé avec la partie).
@@ -107,19 +117,36 @@ async function jouer(evts, ctx, chemin = '') {
 function reprendre() {
   const r = S.reprise; if (!r) return null;
   const [type, id, n, m] = r.k.split(':'), e = type === 'e' && toutesEtapes().find(x => x.id === id);
-  if (e && !fini(id) && etapeCourante() === e) return () => jouerEtape(e);
+  if (e && !fini(id) && etapeCourante() === e) return () => jouerEtape(e, false, n === undefined ? undefined : +n);
   if (type === 'a' && ANNEXES[id] && annexeEtat(id) === +n) return () => jouerAnnexe(id, false, m === undefined ? undefined : +m);
   if (type === 'o' && ANNEXES[id] && !annexeEtat(id)) return () => jouerOffre(id);
   S.reprise = null; return null;
 }
 
-function titreEtape(e) { return existe(e.id + '.bouton') ? t(e.id + '.bouton') : t(e.id + '.titre'); }
+// titre d'une étape (ou d'un de ses morceaux : <étape>.m<k>.titre et .bouton)
+function titreEtape(e, morceau) {
+  const c = morceau === undefined ? e.id : `${e.id}.m${morceau + 1}`;
+  return existe(c + '.bouton') ? t(c + '.bouton') : t(c + '.titre');
+}
 
-async function jouerEtape(e, silencieux) {
-  const ctx = { titre: titreEtape(e), silencieux, reprise: silencieux ? null : pointDeReprise('e:' + e.id) };
-  await jouer(e.evenements, ctx);
+// morceau : pour une étape en désordre (parmi), le morceau joué ; l'étape est finie quand tous ses morceaux le sont
+async function jouerEtape(e, silencieux, morceau) {
+  if (e.parmi && morceau === undefined) {
+    // outil de test (silencieux) : tous les morceaux d'un coup ; sinon le premier jouable
+    if (silencieux) { for (let i = 0; i < e.parmi.length; i++) await jouerEtape(e, true, i); return true; }
+    const x = etapeJouables()[0]; if (!x) return false; morceau = x.morceau;
+  }
+  const evts = e.parmi ? e.parmi[morceau].evenements : e.evenements, k = 'e:' + e.id + (e.parmi ? ':' + morceau : '');
+  const ctx = { titre: titreEtape(e, morceau), silencieux, reprise: silencieux ? null : pointDeReprise(k) };
+  await jouer(evts, ctx);
   if (!silencieux) S.reprise = null;
   if (ctx.stop) return false;
+  if (e.parmi) {
+    const cle = 'e:' + e.id, faits = (S.morceaux[cle] || []).filter(x => x !== morceau);
+    S.morceaux[cle] = [...faits, morceau];
+    if (S.morceaux[cle].length < e.parmi.length) return true;
+    delete S.morceaux[cle];
+  }
   if (!fini(e.id)) S.etapes.push(e.id);
   if (!silencieux) logR('journal.log.etape', { titre: e.id + '.titre' });
   return true;

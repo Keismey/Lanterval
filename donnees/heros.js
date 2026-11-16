@@ -56,7 +56,8 @@ const CLASSES = {
   corsaire: { mod: { hp: 1.05, atk: 1.2, spd: 1.15, mag: .7, pp: .8 }, tech: ['abordage', 'vol', 'mitraille'], armes: ['sabre', 'dague'], cachee: true, pirate: true },
   // géomancien : ses sorts prennent l'élément de la région (Terre dans la vallée, Eau sur la côte, Feu à Cendre)
   geomancien: { mod: { pp: 1.25, atk: .8, mag: 1.3 }, tech: ['terroir', 'eboulement', 'seve'], armes: ['baton'], cachee: true },
-  // acte 4 : dragonnier (« L'œuf de wyverne ») et gardien des souvenirs (« Les larmes de l'Œil », la classe ultime)
+  // acte 4 : dragonnier (« L'œuf de wyverne ») ; gardien des souvenirs : la classe des six souvenirs (les quêtes familiales,
+  // comptées sur plusieurs parties, noterSouvenirs dans etat.js), pour l'après-fin et la Partie+
   dragonnier: { mod: { hp: 1.15, atk: 1.3, def: 1.05, mag: .6, pp: .7 }, tech: ['saut', 'souffle', 'drakfeu'], armes: ['lance', 'epee'], cachee: true },
   souvenirs: { mod: { hp: 1.1, pp: 1.3, atk: .8, mag: 1.25, def: 1.15 }, tech: ['rappel', 'sceau', 'purification'], armes: ['baton', 'harpe', 'dague'], cachee: true },
   // classe d'une invitée (Hilde) : jamais débloquée, absente du Codex et du menu Équipe

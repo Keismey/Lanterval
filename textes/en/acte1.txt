@@ -261,6 +261,7 @@ The father's sword
 
 == a1.e10.brann
 Brann: “Back on your feet. You're as stubborn as your father.”
+Brann: “Your mother said the same, before the fever took her. He never got over it.”
 Brann: “The night he left into the mist, he gave me something. ‘For Kael, when he's ready,’ he said.”
 Brann: “After what you did at the pass, I think you are.”
 
@@ -297,6 +298,12 @@ Orvan: “I should never have sent you up there alone. Go and see Brann, he's wa
 Orvan: “The heart will last the season. Until then, find the amber crystal, wherever the Order takes it.”
 
 == pnj.brann
+Brann: “Be careful, Kael. The mist makes the beasts nervous.”
+
+== pnj.brann.a1.e4
+Brann: “A closed eye? Your father talked about it, after your mother died: people who promised to erase grief. I thought it was the grief talking.”
+
+== pnj.brann.a1.e7
 Brann: “Be careful, Kael. The mist makes the beasts nervous.”
 
 == pnj.tilo.a1.e1

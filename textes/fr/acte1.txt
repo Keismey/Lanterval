@@ -271,6 +271,7 @@ L'épée du père
 
 == a1.e10.brann
 Brann : « Te voilà debout. Tu as la tête dure, comme ton père. »
+Brann : « Ta mère disait pareil, avant que la fièvre l'emporte. Il ne s'en est jamais remis. »
 Brann : « La nuit où il est parti dans la brume, il m'a laissé quelque chose. "Pour Kael, quand il sera prêt", qu'il a dit. »
 Brann : « Après ce que tu as fait au col, je crois que tu l'es. »
 
@@ -308,6 +309,12 @@ Orvan : « Je n'aurais jamais dû vous envoyer seuls là-haut. Va voir Brann, il
 Orvan : « Le cœur tiendra la saison. D'ici là, retrouvez le cristal d'ambre, où que l'Ordre l'emporte. »
 
 == pnj.brann
+Brann : « Reste prudent, Kael. La brume rend les bêtes nerveuses. »
+
+== pnj.brann.a1.e4
+Brann : « Un œil fermé ? Ton père en parlait, après la mort de ta mère : des gens qui promettaient d'effacer le chagrin. Je croyais que c'était le chagrin qui parlait. »
+
+== pnj.brann.a1.e7
 Brann : « Reste prudent, Kael. La brume rend les bêtes nerveuses. »
 
 == pnj.tilo.a1.e1

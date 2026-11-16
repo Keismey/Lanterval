@@ -35,8 +35,8 @@ async function defaite(boss) {
 function renderStable() {
   $('#app').classList.remove('inb');
   if (!S) S = newState();
-  // la fin vue (écran fermé, ou partie reprise depuis le titre) : la partie revient à Aerie avant l'Escalier
-  if (!['title', 'fin', 'intro'].includes(S.screen) && dansLeFinal() && fini(FINAL.fin)) retourAvantFinal();
+  // la Paupière vaincue mais l'équipe encore « là-haut » (sauvegarde d'avant la 0.10) : elle redescend à Aerie
+  if (!['title', 'fin', 'intro'].includes(S.screen) && dansLeFinal() && fini(FINAL.fin)) { delete S.f.escalier; S.loc = S.auberge = FINAL.retour; S.screen = 'village'; }
   hud(); SON.ambiance();
   if (S.screen !== 'title') save();
   if (S.screen !== 'title') fermerAccueil();
@@ -150,20 +150,31 @@ async function commencer() {
 }
 
 /* ---------- Fin du jeu ---------- */
-// après le générique : le bilan de la partie, puis retour à Aerie avant l'Escalier, partie+ ou écran titre
+// les souvenirs (quêtes familiales) : retrouvés dans cette partie, vus dans une autre, ou à retrouver en partie+
+function blocSouvenirs() {
+  const ok = SOUVENIRS.filter(annexeFinie), avant = S.souvenirs || {};
+  const lignes = SOUVENIRS.map(id => {
+    const etat = annexeFinie(id) ? 'ok' : avant[id] ? 'avant' : 'manque';
+    return `<div class="irow"><span class="ic">${ic(etat === 'ok' ? 'star' : etat === 'avant' ? 'book' : 'lock')}</span><div><b>${esc(t(id + '.titre'))}</b><small>${esc(t('fin.souvenir.' + etat))}</small></div><span></span></div>`;
+  }).join('');
+  const reste = SOUVENIRS.length - ok.length;
+  return `<h3 class="sec">${esc(t('fin.souvenirs', { n: ok.length, total: SOUVENIRS.length }))}</h3><div class="list">${lignes}</div>
+  <p class="note">${tx(reste ? 'fin.souvenirs.plus' : 'fin.souvenirs.tous')}</p>${S.jobs.includes('souvenirs') ? `<p class="ptext">${encadreTuto(tx('fin.gardien'))}</p>` : ''}`;
+}
+// après le générique : le bilan de la partie, les souvenirs, puis la suite du monde, partie+ ou écran titre
 function renderFin() {
   setDecor('pano.oeil', { pano: true });
   ovc().innerHTML = '';
   const st = S.st, zones = Object.keys(S.z).filter(lieuVisible);
   const annexes = Object.keys(ANNEXES), finies = annexes.filter(annexeFinie).length;
-  const reste = annexes.length - finies;
+  const reste = annexes.filter(id => !annexeFinie(id) && !annexeFermee(id)).length;
   const opts = [
     { k: 'go', ic: 'run', label: esc(t('fin.continuer')), sub: esc(t(reste ? 'fin.continuer.annexes' : 'fin.continuer.zones', { n: reste })), cls: 'main' },
     { k: 'plus', ic: 'star', label: esc(t('fin.plus')), sub: esc(t('fin.plus.sous')) },
     { k: 'titre', ic: 'home', label: esc(t('options.titre')), cls: 'ghost' }
   ];
   const p = $('#panel');
-  p.innerHTML = `<div class="ptitle">${esc(t('fin.titre'))}</div><p class="ptext">${tx('fin.texte')}</p><p class="ptext">${encadreTuto(tx('fin.astuce'))}</p>
+  p.innerHTML = `<div class="ptitle">${esc(t('fin.titre'))}</div><p class="ptext">${tx('fin.texte')}</p>${blocSouvenirs()}<p class="ptext">${encadreTuto(tx('fin.astuce'))}</p>
   <div class="stats"><div class="stat"><b>${fmt(st.time)}</b><span>${esc(t('stats.temps'))}</span></div><div class="stat"><b>${st.taps}</b><span>${esc(t('stats.appuis'))}</span></div>
   <div class="stat"><b>${st.fights}</b><span>${esc(t('stats.combats.quete', { n: st.qfights }))}</span></div><div class="stat"><b>${st.autoTurns}</b><span>${esc(t('stats.auto'))}</span></div>
   <div class="stat"><b>${st.explores}</b><span>${esc(t('stats.explorations'))}</span></div><div class="stat"><b>${st.trav}</b><span>${esc(t('stats.traversees'))}</span></div>
@@ -172,8 +183,8 @@ function renderFin() {
   <div class="acts">${btns(opts)}</div>`;
   bind(p, opts, k => {
     if (k === 'plus') { partiePlus(); run(commencer); return; }
-    retourAvantFinal();
-    if (k === 'titre') S.screen = 'title';
+    // la partie continue là où la fête a eu lieu : le monde est libre
+    S.screen = k === 'titre' ? 'title' : LIEUX[lieuActuel()].type === 'village' ? 'village' : 'zone';
     save(); renderStable();
   });
 }

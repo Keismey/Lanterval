@@ -150,7 +150,7 @@ function cerveau([graine, profil]) {
   // les ennemis des combats d'une quête (pour choisir les classes avant un boss)
   function ennemisDe(q) {
     let ev = [];
-    if (q.e) ev = q.e.evenements;
+    if (q.e) ev = q.e.parmi ? q.e.parmi[q.m].evenements : q.e.evenements;
     else { const e = annexeEtape(q.a); ev = e.parmi ? e.parmi[q.m !== undefined ? q.m : annexeDispo(q.a).morceau].evenements : e.evenements; }
     const out = []; for (const x of ev) if (x[0] === 'combat' && !(x[2] && x[2].perdu)) for (const id of x[1].split(' ')) out.push([id, x[2] && x[2].boss ? (MONSTRES[id].boss ? 4 : 1) : 1]);
     return out;
@@ -271,8 +271,8 @@ function cerveau([graine, profil]) {
   const essais = {};
   R.pas = async () => {
     suivreOr();
-    // la fin vue : retour à Aerie avant l'Escalier, comme le bouton de l'écran de fin
-    if (S.screen === 'fin') { retourAvantFinal(); R.etapes++; note('fin du jeu vue'); }
+    // la fin vue : « Continuer l'aventure », le monde reste ouvert (quêtes annexes, Échos)
+    if (S.screen === 'fin') { S.screen = 'map'; R.etapes++; note('fin du jeu vue'); }
     // 1. accepter les quêtes annexes proposées (le joueur pressé n'en fait aucune)
     if (APPLIQUE) for (const a in ANNEXES) if (!annexeEtat(a) && annexeOuverte(a)) {
       const v = villageDuPnj(ANNEXES[a].donneur);
@@ -284,12 +284,13 @@ function cerveau([graine, profil]) {
     // 2. une étape de quête annexe jouable, sinon la quête principale
     let quete = null;
     if (APPLIQUE) for (const [a, x] of annexesDispos()) { quete = { a, lieu: x.lieu, m: x.morceau }; break; }
-    const e = etapeCourante();
-    // après la fin, le bot ne rejoue pas le final : il s'arrête quand il n'a plus de quête annexe
-    if (!quete && e && !S.finVue) quete = { e, lieu: e.lieu };
+    // la quête principale : l'étape en cours, ou le premier morceau jouable d'une étape en désordre (retours des cristaux)
+    const x = etapeJouables()[0];
+    // après la fin, le bot s'arrête quand il n'a plus de quête annexe
+    if (!quete && x && !S.finVue) quete = { e: x.etape, lieu: x.lieu, m: x.morceau };
     if (!quete) return false;
     const pos = posDe(quete.lieu), id = pos.split('.')[0], ennemis = ennemisDe(quete);
-    const cle = (quete.a ? quete.a + annexeEtat(quete.a) + (quete.m !== undefined ? '.' + quete.m : '') : quete.e.id);
+    const cle = (quete.a ? quete.a + annexeEtat(quete.a) + (quete.m !== undefined ? '.' + quete.m : '') : quete.e.id + (quete.m !== undefined ? '.' + quete.m : ''));
     essais[cle] = (essais[cle] || 0) + 1;
     if (essais[cle] > 6) { note(`bloqué sur ${cle}`); return false; }
     if (essais[cle] > 1) note(`nouvel essai ${essais[cle]} sur ${cle}`);
@@ -303,7 +304,7 @@ function cerveau([graine, profil]) {
       if (!p) { note(`personnage absent : ${quete.lieu}`); return false; }
       await parler(p);
     } else if (quete.a) await jouerAnnexe(quete.a, false, quete.m);
-    else await jouerEtape(e);
+    else await jouerEtape(quete.e, false, quete.m);
     return true;
   };
 }

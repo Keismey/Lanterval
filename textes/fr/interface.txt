@@ -168,6 +168,9 @@ Partir
 == village.annexe
 Quête annexe
 
+== village.souvenir
+Souvenir de famille
+
 == boutique.objet
 {prix} po · {effet} · tu en as {n}
 
@@ -1197,22 +1200,43 @@ partie+
 Fin
 
 == fin.continuer
-Revenir à Aerie
+Continuer l'aventure
 
 == fin.continuer.annexes
-Juste avant l'Escalier de brume · il reste {n} quêtes annexes
+Le monde reste ouvert · il reste {n} quêtes annexes
 
 == fin.continuer.zones
-Juste avant l'Escalier de brume · finir l'exploration des zones
+Le monde reste ouvert · finir l'exploration des zones
 
 == fin.plus
 Commencer une partie+
 
 == fin.plus.sous
-L'histoire recommence : tu gardes classes, niveaux, équipement et codex ; les monstres sont plus forts.
+L'histoire recommence : tu gardes classes, niveaux, équipement, codex et souvenirs retrouvés ; les monstres sont plus forts.
 
 == fin.chronologie
 Chronologie
+
+== fin.souvenirs
+Souvenirs retrouvés : {n} sur {total}
+
+== fin.souvenir.ok
+Retrouvé
+
+== fin.souvenir.avant
+Retrouvé dans une partie précédente
+
+== fin.souvenir.manque
+À retrouver en partie+
+
+== fin.souvenirs.plus
+Chaque souvenir de famille ajoute une scène à la fin. Ceux qui manquent t'attendent en *partie+* : finis leur quête avant de monter l'Escalier de brume.
+
+== fin.souvenirs.tous
+Tous les souvenirs de famille sont retrouvés.
+
+== fin.gardien
+Les six souvenirs sont réunis : la classe *Gardien des souvenirs* est débloquée.
 
 # ================= Options =================
 
@@ -1331,6 +1355,11 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.10.0
+Nouvelle fin : après la Paupière, l'équipe rend elle-même les quatre cristaux, dans l'ordre que tu veux, puis rentre à Lanterval pour la fête. Chaque retour joue l'épilogue d'un héros.
+Orvan, Ysold, Varen et la mère de Kael ont un vrai dénouement. Varen ne se bat plus avec l'équipe que sur l'Escalier de brume.
+Six souvenirs de famille ajoutent chacun une scène à la fin. Ils se ferment quand l'équipe monte l'Escalier, et le bilan dit lesquels retrouver en partie+.
+La quête des larmes donne maintenant l'Éclat de larme. Le Gardien des souvenirs devient la classe de partie+ : retrouve les six souvenirs, même en plusieurs parties.
 ## Version 0.9.3
 Acte 1 plus exigeant : moins d'or dans les trésors de la vallée, le Golem et la Tisseuse de pierre tiennent mieux leur garde.
 ## Version 0.9.2
@@ -1419,14 +1448,11 @@ L'équipe se relève sur l'Escalier de brume
 == journal.log.fin
 Fin de l'histoire : l'Œil s'est ouvert
 
-== journal.log.avantfinal
-Retour à Aerie, avant l'Escalier de brume
-
 == fin.texte
 L'Œil s'est ouvert, et le monde se souvient. Merci d'avoir joué à Lanterval !
 
 == fin.astuce
-Tu peux revenir à Aerie juste avant l'Escalier : tu gardes tes niveaux, ton or et ton équipement, et tu peux refaire le final. Garrick, le vieux maître de Roxane, a une dernière chasse à te proposer.
+Le monde reste ouvert après la fin : Garrick, le vieux maître de Roxane, a une dernière chasse à te proposer.
 
 == combat.oubli
 *{nom} oublie ses techniques* pendant ses 2 prochaines actions.

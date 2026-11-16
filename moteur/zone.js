@@ -12,8 +12,8 @@ function zoneOverlay(id) {
 // boutons des quêtes jouables ici. Une quête qui attend ailleurs n'emmène pas l'équipe :
 // un « ! » marque le bouton Traverser (autre côté de la zone) ou le bouton Carte (autre lieu).
 function questBtns(id) {
-  const o = [], e = etapeCourante();
-  if (e && estIci(e.lieu)) o.push({ k: 'q:main', ic: 'star', label: esc(titreEtape(e)), sub: esc(t('zone.quete.principale')), cls: 'main wide' });
+  const o = [];
+  for (const x of etapeJouables()) if (estIci(x.lieu)) o.push({ k: 'q:main' + (x.morceau !== undefined ? ':' + x.morceau : ''), ic: 'star', label: esc(titreEtape(x.etape, x.morceau)), sub: esc(t('zone.quete.principale')), cls: 'main wide' });
   for (const [a, x] of annexesDispos()) {
     if (!estIci(x.lieu)) continue;
     const c = cleEtape(a, x), cle = existe(c + '.bouton') ? c + '.bouton' : c + '.titre';
@@ -24,7 +24,7 @@ function questBtns(id) {
 // « ! » du bouton Traverser : une quête attend de l'autre côté de cette zone
 function marqueTraversee(id) {
   const autreCote = l => l && lieuDe(l) === id && l.includes('.') && !estIci(l);
-  const e = etapeCourante(); if (e && autreCote(e.lieu)) return 'main';
+  if (etapeJouables().some(x => autreCote(x.lieu))) return 'main';
   for (const [, x] of annexesDispos()) if (autreCote(x.lieu)) return 'side';
   return '';
 }
@@ -69,7 +69,7 @@ function renderZone() {
       else if (k === 'hunt') await fightRandom(id, t('zone.chasser.texte'));
       else if (k === 'rest') { const f = L.tresors.find(x => x.repos); z.rest = true; healAll(); restorePP(); S.msg = tx('zone.repos.fait', { lieu: t(`${id}.${f.id}.nom`) }); }
       else if (k === 'cross') { const autre = L.cotes.find(c => c !== cote); await traverse(id, cote, autre); S.loc = id + '.' + autre; }
-      else if (k === 'q:main') await jouerEtape(etapeCourante());
+      else if (k.startsWith('q:main')) { const m = k.split(':')[2]; await jouerEtape(etapeCourante(), false, m === undefined ? undefined : +m); }
       else if (k.startsWith('a:')) { const [, a, m] = k.split(':'); await jouerAnnexe(a, false, m === undefined ? undefined : +m); }
     });
   });

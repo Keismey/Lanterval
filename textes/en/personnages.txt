@@ -210,7 +210,7 @@ His father, Ulric, had fled the mines through an old shaft and was hiding in the
 On the eve of the assault, he didn't know whether to fight his father or bring him home. Mira told him: maybe both.
 
 == perso.mira.7
-At the Aerie campfire, she admitted she was still angry with her mother, but wanted to go home so she could stay angry with her for a long time.
+At the campfire in Aerie, she talked about her mother, and about the day she would go home to Forgecendre.
 
 == perso.sol.6
 Naïa survived the attack on Salvent and sent him a message. For her, he swore the Eye would not close.
@@ -219,7 +219,7 @@ Naïa survived the attack on Salvent and sent him a message. For her, he swore t
 He climbed all the way to Aerie to fight alongside the team. He helped close the Eye fifty years ago; he wants to help keep it open.
 
 == perso.varen.5
-Beaten by Nev at the top of the Howling Peak, he couldn't raise his blade against his sister. Ysold abandoned him, and he now fights with the team.
+Beaten by Nev at the top of the Howling Peak, he couldn't raise his blade against his sister. Ysold abandoned him, and he joined the team for the assault.
 
 == perso.naia.5
 When the Order attacked Salvent, she hid the port's children at Maëlle's. She asked Pell to tell Sol she was safe.
@@ -266,7 +266,7 @@ From a roc feather, she wove the Cloak of the four winds. Fennel is her oldest c
 # ---------- Version 0.5.2 ----------
 
 == perso.orvan.6
-At the fire in the Nest, he gathered the four tears of the Eye, which he had seen fall fifty years ago, and made a keeper of memories out of them.
+At the fire in the Nest, he gathered the four tears of the Eye, which he had seen fall fifty years ago. He keeps their light in his little lantern.
 
 == perso.varen.6
 With Nev, he mended and flew their childhood kite. For the first time in six years, his grandmother spoke to him.
@@ -295,31 +295,31 @@ She forgave Nev and Varen, and promised them to mend the rest like the sail.
 On the Stair of Mist, he lowered his weapon before the Nameless and held out the reforged sword. His father remembered him.
 
 == perso.kael.11
-At the Heart of the Eye, he kept the Eye open with his three friends. He went home to Lanterval, where the mist no longer returns.
+He returned the four crystals, then lit Lanterval's great lantern with Orvan's staff. He keeps watch on the ramparts, beside his father.
 
 == perso.mira.8
-At the Heart of the Eye, her fire split the Eyelid of the World. She has chosen to go home to Forgecendre, sooner or later.
+She returned the ember crystal to the volcano, then went home to Forgecendre, to her mother's forge.
 
 == perso.sol.7
-At the Heart of the Eye, he healed his friends until the very last blow. He settled in Salvent, near the lighthouse and his sister.
+He returned the foam crystal to his father's lighthouse. He settled in Salvent, near Naïa, who lost her memories in the shipwreck and not in the mist.
 
 == perso.orvan.7
-At the Heart of the Eye, he helped Ysold remember her family. He stayed up there with her, to make up for fifty years.
+At the Heart of the Eye, he threw himself in front of the Eyelid's shadow in the heroes' place, and forgot everything. He left far away with Ysold, and gave his lamplighter's staff to Kael.
 
 == perso.varen.7
-Struck by Ysold's Oblivion at the Heart of the Eye, he forgot even his sister's name. When the Eye opened, he remembered everything.
+He fought on the Stair of Mist up to the Nameless, then stayed on the landing with Aldric to hold back the Shadows. They held to the end.
 
 == perso.sansnom.4
-On the Stair of Mist, before his son's sword, he found his name again: Aldric. He stayed alone on the landing to hold back the Shadows.
+On the Stair of Mist, before his son's sword, he found his name again: Aldric. He stayed on the landing with Varen to hold back the Shadows.
 
 == perso.sansnom.5
-He held the Stair to the end, and came back down. He took up the guard of Lanterval again, at Kael's side.
+He held the Stair to the end, and came down with his son. He paid his respects at Elna's grave, which the Order had made him forget.
 
 == perso.nev.8
-At the Heart of the Eye, she saw her brother forget her, then remember. She went home to Aerie, where the wind still sings.
+She returned the azure crystal to the monks' sanctuary. She lives at the Nest, in Aerie, where the wind still sings.
 
 == perso.ysold.4
-At the Heart of the Eye, the Eyelid of the World crumbled to dust and the Eye opened. Ysold remembered her mother, her brother and Orvan.
+At the Heart of the Eye, Orvan took the Eyelid's shadow in her place, and forgot her. When the Eye opened, she remembered everything, and left far away with him.
 
 == perso.garrick.1
 Roxane's old teacher, in Aerie. He says the mist copies the beasts you bring down, only worse: they are called Echoes.

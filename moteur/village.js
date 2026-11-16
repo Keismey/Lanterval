@@ -7,8 +7,8 @@ function varianteLieu(id, quoi) { const e = etatLieu(id); return e && existe(`li
 // Un personnage qui a deux quêtes à offrir (Hilde) propose l'autre quand on vient d'en refuser une.
 const offresRefusees = new Set();
 function quetesDuPnj(pnj) {
-  const e = etapeCourante();
-  if (e && e.lieu === pnj) return { type: 'etape', etape: e };
+  const x = etapeJouables().find(m => m.lieu === pnj);
+  if (x) return { type: 'etape', etape: x.etape, morceau: x.morceau };
   for (const [id, a] of annexesDispos()) if (a.lieu === pnj) return { type: 'annexe', id, morceau: a.morceau, cle: cleEtape(id, a) };
   const offres = Object.keys(ANNEXES).filter(id => ANNEXES[id].donneur === pnj && annexeEtat(id) === 0 && annexeOuverte(id));
   if (!offres.length) return null;
@@ -34,7 +34,10 @@ function renderVillage() {
   saveSecours();
   const opts = V.pnj.filter(p => cond(p.si)).map(p => {
     const q = quetesDuPnj(p.id), main = q && q.type === 'etape';
-    const sub = main ? t(q.etape.id + '.titre') : q && q.type === 'offre' ? t('village.annexe') : q ? t(q.cle + '.titre') : sousDonneur(p.id) || t(p.sous || `pnj.${p.id}.sous`, { prix: p.prix });
+    // en partie+, les souvenirs de famille pas encore retrouvés sont repérés chez leur donneur
+    const souv = q && !main && S.plus && SOUVENIRS.includes(q.id) && !(S.souvenirs || {})[q.id];
+    const sub = main ? titreEtape(q.etape, q.morceau) : q && q.type === 'offre' ? t(souv ? 'village.souvenir' : 'village.annexe')
+      : q ? t(q.cle + '.titre') + (souv ? ' · ' + t('village.souvenir') : '') : sousDonneur(p.id) || t(p.sous || `pnj.${p.id}.sous`, { prix: p.prix });
     return { k: p.id, img: imgSrc('pnj.' + p.portrait), label: esc(t(`pnj.${p.id}.nom`)), sub: esc(sub), bang: q ? (main ? 'main' : 'side') : '', cls: (main ? 'main wide ' : q ? 'side ' : '') + (p.large ? 'wide' : ''), main };
   });
   // la quête principale en tête, sur toute la largeur ; les autres en deux colonnes ; « Partir » reste en bas
@@ -52,7 +55,7 @@ function renderVillage() {
 
 async function parler(pnj) {
   const q = quetesDuPnj(pnj.id);
-  if (q && q.type === 'etape') return jouerEtape(q.etape);
+  if (q && q.type === 'etape') return jouerEtape(q.etape, false, q.morceau);
   if (q && q.type === 'annexe') return jouerAnnexe(q.id, false, q.morceau);
   // une offre refusée laisse la place au métier du personnage (boutique, auberge)
   if (q && q.type === 'offre') { await jouerOffre(q.id); if (annexeEtat(q.id)) return; offresRefusees.add(q.id); if (!pnj.role) return; }

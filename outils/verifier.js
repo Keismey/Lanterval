@@ -91,7 +91,8 @@ function evenements(evts, ou) {
       for (const k of ids) if (!b[k]) erreur(`réponse « ${k} » sans suite (${o})`);
     }
     else if (type === 'lance') { if (!D.ANNEXES[a]) erreur(`quête annexe inconnue « ${a} » (${o})`); }
-    else if (type === 'drapeau') { if (!/^[\w-]+$/.test(a)) erreur(`drapeau illisible « ${a} » (${o})`); }
+    else if (type === 'souvenirs') texte(a, o);
+    else if (type === 'drapeau') { if (!/^!?[\w-]+$/.test(a)) erreur(`drapeau illisible « ${a} » (${o})`); }
     else if (type === 'trouve') { const [z, f] = a.split(/\s+/); if (!D.LIEUX[z] || !(D.LIEUX[z].tresors || []).some(x => x.id === f)) erreur(`découverte inconnue « ${a} » (${o})`); }
     else if (type === 'si') { condition(a, o); evenements(b, o + ' (alors)'); if (c) evenements(c, o + ' (sinon)'); }
     else if (!['decor', 'soin', 'stop', 'fin_jeu', 'codex', 'trailer'].includes(type)) erreur(`événement inconnu « ${type} » (${ou})`);
@@ -100,7 +101,12 @@ function evenements(evts, ou) {
 for (const a of D.ACTES) {
   texte(a.id + '.titre', a.id);
   evenements(a.ouverture, a.id + ' ouverture');
-  for (const e of a.etapes) { texte(e.id + '.titre', e.id); lieu(e.lieu, e.id); evenements(e.evenements, e.id); }
+  for (const e of a.etapes) {
+    texte(e.id + '.titre', e.id);
+    // étape en désordre (les retours des cristaux) : un titre, un lieu et des événements par morceau
+    if (e.parmi) e.parmi.forEach((m, j) => { const ou = `${e.id}.m${j + 1}`; texte(ou + '.titre', e.id); lieu(m.lieu, ou); condition(m.si, ou); evenements(m.evenements, ou); });
+    else { lieu(e.lieu, e.id); evenements(e.evenements, e.id); }
+  }
 }
 for (const id in D.ANNEXES) {
   const A = D.ANNEXES[id];

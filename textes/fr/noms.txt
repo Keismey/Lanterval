@@ -386,6 +386,9 @@ Géode
 == equip.soieroche
 Soie de roche
 
+== equip.eclatlarme
+Éclat de larme
+
 == equip.plume
 Plume de luciole
 
@@ -1687,7 +1690,7 @@ Gardien des souvenirs
 La classe ultime : il rappelle aux alliés ce qu'ils viennent de faire, et protège l'équipe avec la mémoire de l'Œil.
 
 == classe.souvenirs.verrou
-Classe secrète : le vieux moine d'Aerie parle de larmes perdues
+Classe de partie+ : retrouve les six souvenirs de famille, même en plusieurs parties
 
 == tech.saut
 Saut
