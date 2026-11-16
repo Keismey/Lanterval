@@ -344,7 +344,8 @@ function cerveau([graine, profil]) {
   }
   const t0 = Date.now();
   let calme = 0;
-  while (Date.now() - t0 < 45 * 60 * 1000) {
+  // durée maximale : 45 min, ou BOT_MINUTES
+  while (Date.now() - t0 < (+process.env.BOT_MINUTES || 45) * 60 * 1000) {
     const st = await page.evaluate(() => ({ busy, ecran: S.screen, fini: BOT.fini }));
     if (JUSQUA && !st.busy && await page.evaluate(e => fini(e), JUSQUA)) break;
     if (st.busy || st.ecran === 'intro') { if (!(await repondre())) await page.waitForTimeout(5); continue; }
