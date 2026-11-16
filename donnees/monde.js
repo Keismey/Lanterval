@@ -96,7 +96,7 @@ const LIEUX = {
   col: {
     type: 'zone', x: .47, y: .15, cotes: ['p', 's'],
     ouvert: 'fini a1.e7',
-    etats: [{ id: 'vide', si: 'fini a1.e9' }],   // l'Ordre a emporté le cristal d'ambre
+    etats: [{ id: 'vide', si: 'fini a1.e9 et pas fini a4.e12' }],   // l'Ordre a emporté le cristal d'ambre (rendu à la fin)
     maxEvenements: 3,
     tresors: [
       { id: 'c1', type: 'tresor', gagne: '35 or' },
@@ -426,7 +426,7 @@ const LIEUX = {
       { id: 'fennel', portrait: 'fennel', si: 'fini a4.e2' },
       // Liss, la grand-mère de Nev et Varen (« Le cerf-volant ») ; Orvan, arrivé pour le feu de camp
       { id: 'liss', portrait: 'liss', si: 'fini a4.e2' },
-      { id: 'orvan', portrait: 'orvan', si: 'fini a4.e7', sous: 'pnj.orvan.sous.aerie' },
+      { id: 'orvan', portrait: 'orvan', si: 'fini a4.e7 et pas fini a4.e8', sous: 'pnj.orvan.sous.aerie' },
       // Garrick, le vieux maître de Roxane (« Les Échos », après la fin)
       { id: 'garrick', portrait: 'garrick', si: 'fini a4.e2' }
     ]
@@ -488,7 +488,7 @@ const LIEUX = {
   // ni de traversée libre jusqu'à la fin ; avant, on n'y explore pas. Ses deux côtés ne se relient que par l'histoire.
   escalier: {
     type: 'zone', region: 'vents', x: .84, y: .12, cotes: ['b', 's'],
-    visible: 'fini a4.e6', ouvert: 'fini a4.e7', nonRetour: 'drapeau escalier',
+    visible: 'fini a4.e6 et pas fini a4.e10', ouvert: 'fini a4.e7', nonRetour: 'drapeau escalier',
     etats: [{ id: 'sommet', si: 'fini a4.e9' }],
     maxEvenements: 3,
     tresors: [

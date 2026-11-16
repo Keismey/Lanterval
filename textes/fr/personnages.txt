@@ -210,7 +210,7 @@ Son père, Ulric, avait fui les mines par un vieux puits et se cachait dans les 
 La veille de l'assaut, il ne savait pas s'il devait combattre son père ou le ramener. Mira lui a répondu : les deux, peut-être.
 
 == perso.mira.7
-Au feu de camp d'Aerie, elle a avoué qu'elle en voulait encore à sa mère, mais qu'elle voulait rentrer pour pouvoir lui en vouloir longtemps.
+Au feu de camp d'Aerie, elle a parlé de sa mère, et du jour où elle rentrerait à Forgecendre.
 
 == perso.sol.6
 Naïa a survécu à l'attaque de Salvent et lui a fait passer un message. Pour elle, il a juré que l'Œil ne se fermerait pas.
@@ -219,7 +219,7 @@ Naïa a survécu à l'attaque de Salvent et lui a fait passer un message. Pour e
 Il est monté jusqu'à Aerie pour se battre aux côtés de l'équipe. Il a aidé à fermer l'Œil il y a cinquante ans ; il veut aider à le garder ouvert.
 
 == perso.varen.5
-Battu par Nev au sommet du Pic hurlant, il n'a pas pu lever sa lame sur sa sœur. Ysold l'a abandonné, et il se bat désormais avec l'équipe.
+Battu par Nev au sommet du Pic hurlant, il n'a pas pu lever sa lame sur sa sœur. Ysold l'a abandonné, et il a rejoint l'équipe pour l'assaut.
 
 == perso.naia.5
 Quand l'Ordre a attaqué Salvent, elle a caché les enfants du port chez Maëlle. Elle a demandé à Pell de dire à Sol qu'elle allait bien.
@@ -266,7 +266,7 @@ D'une plume de roc, elle a tissé la Cape des quatre vents. Fennel est son plus 
 # ---------- Version 0.5.2 ----------
 
 == perso.orvan.6
-Au feu du Nid, il a réuni les quatre larmes de l'Œil, qu'il avait vues tomber il y a cinquante ans, et en a fait un gardien des souvenirs.
+Au feu du Nid, il a réuni les quatre larmes de l'Œil, qu'il avait vues tomber il y a cinquante ans. Il garde leur lumière dans sa petite lanterne.
 
 == perso.varen.6
 Avec Nev, il a réparé et fait voler leur cerf-volant d'enfants. Pour la première fois depuis six ans, sa grand-mère lui a parlé.
@@ -295,31 +295,31 @@ Elle a pardonné à Nev et Varen, et leur a promis de réparer le reste comme la
 Sur l'Escalier de brume, il a baissé son arme devant le Sans-Nom et lui a tendu l'épée reforgée. Son père s'est souvenu de lui.
 
 == perso.kael.11
-Au Cœur de l'Œil, il a gardé l'Œil ouvert avec ses trois amis. Il est rentré à Lanterval, où la brume ne revient plus.
+Il a rendu les quatre cristaux, puis allumé la grande lanterne de Lanterval avec le bâton d'Orvan. Il monte la garde sur les remparts, aux côtés de son père.
 
 == perso.mira.8
-Au Cœur de l'Œil, son feu a fendu la Paupière du monde. Elle a choisi de rentrer, un jour ou l'autre, à Forgecendre.
+Elle a rendu le cristal de braise au volcan, puis elle est rentrée à Forgecendre, devant la forge de sa mère.
 
 == perso.sol.7
-Au Cœur de l'Œil, il a soigné ses amis jusqu'au dernier coup. Il s'est installé à Salvent, près du phare et de sa sœur.
+Il a rendu le cristal d'écume au phare de son père. Il s'est installé à Salvent, près de Naïa, qui a perdu ses souvenirs dans le naufrage et pas dans la brume.
 
 == perso.orvan.7
-Au Cœur de l'Œil, il a aidé Ysold à se souvenir de sa famille. Il est resté là-haut avec elle, pour rattraper cinquante ans.
+Au Cœur de l'Œil, il s'est jeté devant l'ombre de la Paupière à la place des héros, et il a tout oublié. Il est parti au loin avec Ysold, et a laissé son bâton de lanternier à Kael.
 
 == perso.varen.7
-Frappé par l'Oubli d'Ysold au Cœur de l'Œil, il a oublié jusqu'au nom de sa sœur. Quand l'Œil s'est ouvert, il s'est souvenu de tout.
+Il s'est battu sur l'Escalier de brume jusqu'au Sans-Nom, puis il est resté sur le palier avec Aldric pour retenir les Ombres. Ils ont tenu jusqu'au bout.
 
 == perso.sansnom.4
-Sur l'Escalier de brume, devant l'épée de son fils, il a retrouvé son nom : Aldric. Il est resté seul sur le palier pour retenir les Ombres.
+Sur l'Escalier de brume, devant l'épée de son fils, il a retrouvé son nom : Aldric. Il est resté sur le palier avec Varen pour retenir les Ombres.
 
 == perso.sansnom.5
-Il a tenu l'Escalier jusqu'au bout, et il en est redescendu. Il a repris la garde de Lanterval, aux côtés de Kael.
+Il a tenu l'Escalier jusqu'au bout, et il en est redescendu avec son fils. Il s'est recueilli sur la tombe d'Elna, que l'Ordre lui avait fait oublier.
 
 == perso.nev.8
-Au Cœur de l'Œil, elle a vu son frère l'oublier, puis se souvenir d'elle. Elle est rentrée à Aerie, où le vent chante encore.
+Elle a rendu le cristal d'azur au sanctuaire des moines. Elle vit au Nid, à Aerie, où le vent chante encore.
 
 == perso.ysold.4
-Au Cœur de l'Œil, la Paupière du monde est tombée en poussière et l'Œil s'est ouvert. Ysold s'est souvenue de sa mère, de son frère et d'Orvan.
+Au Cœur de l'Œil, Orvan a pris l'ombre de la Paupière à sa place, et il l'a oubliée. Quand l'Œil s'est ouvert, elle s'est souvenue de tout, et elle est partie au loin avec lui.
 
 == perso.garrick.1
 Le vieux maître de Roxane, à Aerie. Il dit que la brume copie les bêtes qu'on abat, en pire : ce sont les Échos.

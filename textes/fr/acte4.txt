@@ -222,7 +222,7 @@ Varen : « Ysold ne laisse jamais de témoins. Battons-nous ensemble. Juste cett
 Les ombres s'effacent dans le vent. Varen regarde ses mains comme s'il ne les reconnaissait pas.
 Nev : « Juste cette fois, hein ? »
 Varen : « … Peut-être deux. »
-? *Varen* se bat maintenant avec l'équipe, dans tous les combats sauf les duels. Il n'est pas dans le menu Équipe et ne gagne pas d'expérience : il est toujours au niveau de Kael.
+? *Varen* se battra avec l'équipe sur l'*Escalier de brume*, quand l'heure de l'assaut viendra. Il n'est pas dans le menu Équipe et ne gagne pas d'expérience : il sera toujours au niveau de Kael.
 
 == a4.e6.message
 *Varen* a changé de camp. Ysold a les quatre cristaux. Retourne à *Aerie* avant l'assaut.
@@ -252,10 +252,20 @@ Mira : « Les deux, peut-être. Tu as bien ramené une lanterne, une fois. »
 Mira : « Avant de partir de Forgecendre, ma mère m'a serrée dans ses bras. Je l'ai laissée faire. »
 Mira : « Je lui en veux encore. Mais je veux rentrer pour pouvoir lui en vouloir longtemps. »
 
+== a4.e7.mira.forge
+## Mira
+Mira : « Avant de partir de Forgecendre, ma mère m'a serrée dans ses bras. Cette fois, je l'ai serrée aussi. »
+Mira : « On a refait le moule ensemble. Je veux rentrer pour qu'on en fasse d'autres. »
+
 == a4.e7.sol
 ## Sol
 Sol : « Naïa ne sait toujours pas qui je suis. Ou peut-être qu'elle le sait, et qu'elle attend que je le dise. »
 Sol : « Si l'Œil se ferme, elle ne s'en souviendra jamais. Alors il ne se fermera pas. »
+
+== a4.e7.sol.naia
+## Sol
+Sol : « Naïa sait qui je suis, maintenant. Elle chante la berceuse en réparant les filets. »
+Sol : « Si l'Œil se ferme, elle l'oubliera. Alors il ne se fermera pas. »
 
 == a4.e7.nev
 ## Nev
@@ -287,10 +297,13 @@ Derrière le sommet du Pic, des marches de pierre pâle montent dans le vide, et
 Orvan : « Il y a cinquante ans, je suis monté ici avec elle. Je suis redescendu seul. »
 Nev : « Si on monte, on va jusqu'au bout. Personne ne fera demi-tour. »
 
+== a4.e8.souvenirs
+? *Souvenirs de famille* encore ouverts : {liste}. Ils se fermeront quand l'équipe montera l'Escalier. Tu pourras les retrouver en partie+.
+
 == a4.e8.choix
 ## L'Escalier de brume
 Kael pose le pied sur la première marche, et regarde les autres.
-? *Point de non-retour.* Une fois l'Escalier gravi, plus de carte ni de village jusqu'à la fin : finis d'abord ce que tu veux finir. Après la fin, tu reviendras à Aerie juste avant l'Escalier.
+? *Point de non-retour.* Une fois l'Escalier gravi, plus de carte ni de village jusqu'au sommet. Les quêtes de famille pas finies se fermeront : finis d'abord ce que tu veux finir.
 > monter : Monter | On va jusqu'au bout
 > non : Pas encore
 
@@ -360,6 +373,14 @@ Aldric : « Ysold les a lâchées derrière vous. Montez. Moi, je tiens l'Escali
 Kael : « Je viens à peine de te retrouver ! »
 Aldric : « Alors dépêche-toi de finir, et reviens me chercher. Va, mon fils. »
 
+== a4.e9.varen
+## Le dernier palier
+Varen s'avance et se met à côté d'Aldric, la lame à la main.
+Varen : « Je reste avec lui. Deux lames, ce n'est pas de trop. »
+Nev : « Varen… »
+Varen : « Va, petite sœur. Cette fois, je sais de quel côté je suis. »
+? *Varen* reste sur le palier avec Aldric : il ne se bat plus avec l'équipe.
+
 == a4.e9.montee
 ## L'Escalier de brume
 Derrière eux, l'épée d'Aldric brille dans la brume, et les Ombres reculent marche après marche. Kael ne se retourne qu'une fois.
@@ -395,18 +416,21 @@ Orvan : « Ysold. Tu as dit la même chose il y a cinquante ans. » [Combattre]
 
 == a4.e10.paupiere
 ## Le Cœur de l'Œil
-Les cristaux se fendent, un par un. Ysold tombe à genoux, puis lève la main vers l'Œil.
+Ysold tombe à genoux. Les quatre cristaux s'arrêtent de tourner et restent suspendus au-dessus d'elle, intacts.
 Ysold : « Alors fermez-vous, toutes les mémoires. Toutes en même temps. »
-La paupière de pierre gronde et commence à descendre. Une ombre en coule, et frappe Varen en plein cœur.
+La paupière de pierre gronde et commence à descendre. Une ombre en coule, et fonce sur les quatre héros.
+Orvan se jette devant eux. L'ombre le frappe en plein cœur.
 
-== a4.e10.varen
+== a4.e10.orvan
 ## Le Cœur de l'Œil
-Varen : « Nev ? Qui… qui es-tu ? »
-Orvan le rattrape avant qu'il ne tombe et l'emmène à l'écart.
-Orvan : « Je le garde. Allez-y, tous les quatre. Ce qu'on a oublié, l'Œil peut le rendre, s'il reste ouvert. » [Combattre]
+Ysold : « Orvan ! »
+Orvan se relève lentement. Il la regarde, sans la reconnaître.
+Orvan : « Pardon, madame… On se connaît ? »
+Ysold reste figée. Pour la première fois, ses mains tremblent.
+Ysold : « Arrêtez la Paupière. Je vous en prie, arrêtez-la. » [Combattre]
 
 == a4.e10.conseil2
-? La *Paupière du monde* ne craint que les quatre éléments : *Terre*, *Feu*, *Eau* et *Vent* brisent sa garde, la *Lame* ne lui fait presque rien. Son ombre fait oublier ses techniques à un héros pendant 2 actions. Le *Sceau de mémoire* du Gardien des souvenirs protège toute l'équipe.
+? La *Paupière du monde* ne craint que les quatre éléments : *Terre*, *Feu*, *Eau* et *Vent* brisent sa garde, la *Lame* ne lui fait presque rien. Son ombre fait oublier ses techniques à un héros pendant 2 actions. Le *Sceau de mémoire* du Gardien des souvenirs, la classe de partie+, protège toute l'équipe.
 
 == a4.e10.oeil
 ## L'Œil s'ouvre
@@ -415,76 +439,235 @@ La lumière coule vers les quatre régions, comme sur les fresques du monastère
 
 == a4.e10.souvenir
 ## L'Œil s'ouvre
-Varen se redresse en clignant des yeux. Il regarde Nev, et sourit.
-Varen : « Petite sœur. J'ai cru que je t'avais perdue pour de bon. »
-Ysold, à genoux, regarde la lumière. Ses mains tremblent.
-
-== a4.e10.adieu
-## L'Œil s'ouvre
+La lumière touche Ysold. Elle ferme les yeux, et pleure sans bruit.
 Ysold : « Je me souviens. Ma mère chantait en tissant, mon frère avait peur de l'orage. Et Orvan avait vingt ans. »
-Orvan s'assoit près d'elle, au bord de la plateforme, sans rien dire.
-Orvan : « Rentrez, vous autres. Moi, j'ai cinquante ans de retard à rattraper. »
+Elle se tourne vers Orvan. Il regarde la lumière, et ses yeux restent vides.
 
-== a4.e10.ep.kael.aldric
-## Kael
-Un mois plus tard, Aldric redescend l'Escalier, appuyé sur l'épaule de son fils. À Lanterval, Brann pleure comme un enfant.
-Aldric reprend la garde du village. Kael, lui, monte la garde à côté de lui, tous les soirs, sur les remparts.
+== a4.e10.orvan.larmes
+## L'Œil s'ouvre
+À la ceinture d'Orvan, la petite lanterne où il a gardé la lumière des larmes s'allume toute seule.
+Orvan cligne des yeux. Puis il regarde Ysold, longtemps.
+Orvan : « Ysold. Tu as toujours détesté le froid. Qu'est-ce que tu fais si haut ? »
+Ysold : « Je t'attendais, je crois. Depuis cinquante ans. »
+Orvan : « Alors partons loin, tous les deux. Que le monde nous oublie, pour une fois. »
 
-== a4.e10.ep.kael.seul
-## Kael
-Kael redescend l'Escalier. Sur le dernier palier, il ne trouve que la lanterne de garde, éteinte, et plus aucune Ombre.
-Kael : « Tu as tenu l'Escalier, papa. Maintenant, c'est moi qui tiens Lanterval. »
-Il devient capitaine de la garde. Chaque soir, il allume une lanterne de plus, au cas où quelqu'un rentrerait.
+== a4.e10.orvan.brume
+## L'Œil s'ouvre
+Orvan était trop près de l'Œil. La brume qui l'a touché était trop pure, et rien ne lui revient.
+Ysold s'agenouille devant lui et prend ses mains.
+Ysold : « Tu ne te souviens pas de moi. Alors je te raconterai tout, depuis le début. »
+Ysold : « J'ai voulu faire oublier le monde entier. Je vais passer le reste de ma vie à aider un seul homme à se souvenir. »
 
-== a4.e10.ep.mira.forge
-## Mira
-Mira rentre à Forgecendre. La forge de Hilde ne s'éteint plus : elles y travaillent à deux, et elles se disputent beaucoup.
+== a4.e10.cristaux
+## L'Œil s'ouvre
+Les quatre cristaux descendent doucement, chacun vers un héros : l'ambre vers Kael, la braise vers Mira, l'écume vers Sol, l'azur vers Nev.
+Ysold : « Ils ne m'appartiennent pas. Rendez-les là où on les a pris. »
+Nev : « On les ramène chez eux. Tous les quatre. »
+
+== a4.e10.descente
+## L'Escalier de brume
+L'équipe redescend. Ysold et Orvan les suivent un moment, puis disparaissent par un autre sentier.
+Sur le dernier palier, plus une seule Ombre. Aldric et Varen sont assis sur les marches, couverts de bleus, et ils rient.
+Aldric : « Tu es revenu me chercher. Comme promis. »
+Varen : « Petite sœur. Vous l'avez fait. »
+Nev : « On l'a fait. Maintenant, on rentre. »
+
+== a4.e10.message
+L'Œil est ouvert. Rends les cristaux là où ils dormaient, dans l'ordre que tu veux : l'*azur* aux *Ruines du monastère*, la *braise* au *Volcan endormi*, l'*écume* au *Phare noyé*. L'*ambre* ira en dernier au *Col des Pierres*.
+
+== a4.e11.titre
+Rendre les cristaux
+
+== a4.e11.m1.titre
+Rendre le cristal d'azur
+
+== a4.e11.m1.bouton
+Reposer l'azur au sanctuaire
+
+== a4.e11.m1.pose
+## Le sanctuaire
+Nev pose le cristal d'azur sur l'autel. Il s'élève tout seul et reprend sa place, au-dessus du pilier.
+Tavor : « Les moines auraient pleuré de joie. Moi, je me contente de sourire. »
+Nev : « Rentrons au Nid. Grand-mère doit nous attendre. »
+
+== a4.e11.m1.liss
+## Aerie
+Sur la plateforme du Nid, Liss attend, la main sur le grand cerf-volant bleu. Varen est à côté d'elle.
+Liss : « Mes deux petits-enfants, rentrés tous les deux. Je n'en demandais pas tant. »
+Varen : « Je reste, grand-mère. Il y a des toiles à réparer, et je sais coudre, maintenant. »
+Nev : « Moi aussi, je reste. Tavor a besoin d'une moinesse du vent. »
+Le soir, Varen et Nev font voler le cerf-volant bleu. Liss les regarde jusqu'à la nuit.
+
+== a4.e11.m1.route
+## Aerie
+Liss attend sur la plateforme du Nid. Varen s'arrête au bout de la passerelle, sans oser avancer.
+Liss : « Bonjour, Varen. »
+Varen : « Je ne reste pas, grand-mère. Je pars sur les routes réparer ce que l'Ordre a cassé, village après village. »
+Varen : « Je reviendrai quand j'aurai le droit de m'asseoir à ta table. »
+Nev reste au Nid. Chaque soir, elle regarde la route, comme Liss regardait le Pic.
+
+== a4.e11.m1.message
+Le cristal d'*azur* est rendu. L'*ambre* ira au *Col des Pierres* quand les trois autres cristaux seront rendus.
+
+== a4.e11.m2.titre
+Rendre le cristal de braise
+
+== a4.e11.m2.bouton
+Reposer la braise au cratère
+
+== a4.e11.m2.pose
+## Le cratère
+Mira pose le cristal de braise au fond du cratère. La roche se réchauffe, et le volcan pousse un long soupir de fumée.
+Mira : « Dors bien, toi. Et ne te réveille pas trop vite. »
+Sol : « On parle aux volcans, maintenant ? »
+Mira : « Je parle à qui je veux. Allez, on descend à Forgecendre. »
+
+== a4.e11.m2.forge
+## Forgecendre
+La forge de Hilde ronfle comme au premier jour. Mira entre sans frapper, et Hilde lui lance un tablier.
 Hilde : « Tu frappes trop fort. »
-Mira : « Tu dis ça depuis que j'ai six ans. » Et elles rient, toutes les deux.
+Mira : « Tu dis ça depuis que j'ai six ans. »
+Elles rient toutes les deux. La forge ne s'éteint plus : elles y travaillent à deux, et elles se disputent beaucoup.
 
-== a4.e10.ep.mira.pardon
-## Mira
-Mira rentre à Forgecendre et frappe à la porte de la forge. Hilde ouvre, et Mira la serre dans ses bras la première.
-Il leur reste beaucoup de choses à se dire. Elles ont le temps, maintenant.
+== a4.e11.m2.pardon
+## Forgecendre
+Mira frappe à la porte de la forge. Hilde ouvre, et c'est Mira qui la serre dans ses bras la première.
+Hilde : « Tu restes un peu ? »
+Mira : « Un peu. Il nous reste beaucoup de choses à nous dire. »
+Elles ont le temps, maintenant.
 
-== a4.e10.ep.mira.plustard
-## Mira
-Mira ne rentre pas tout de suite à Forgecendre. Elle reste à Lanterval, à la forge du village.
-Mira : « J'irai voir ma mère. Plus tard. Quand je saurai quoi lui dire. »
-Chaque semaine, une lettre de Hilde arrive. Mira les garde toutes, sans les ouvrir encore.
+== a4.e11.m2.plustard
+## Forgecendre
+Mira s'arrête devant la forge de Hilde. Elle lève la main pour frapper, puis la baisse.
+Elle glisse un mot sous la porte. Trois mots seulement : je suis rentrée.
+Mira : « Pas aujourd'hui. Mais bientôt, quand je saurai quoi lui dire. »
+Derrière la porte, le marteau de Hilde s'arrête un long moment. Puis il reprend, plus doucement.
 
-== a4.e10.ep.sol.naia
-## Sol
-À Salvent, le phare brille à nouveau sur une mer claire. Sol et Naïa réparent la vieille barque de leurs parents.
-Naïa : « Chante-la encore, la berceuse. Je veux être sûre de ne plus jamais l'oublier. »
+== a4.e11.m2.message
+Le cristal de *braise* est rendu. L'*ambre* ira au *Col des Pierres* quand les trois autres cristaux seront rendus.
 
-== a4.e10.ep.sol.attente
-## Sol
-Sol s'installe à Salvent, près du phare. Naïa le salue chaque matin comme un voisin poli.
-Sol : « Elle ne se souvient pas de moi. Pas encore. Mais l'Œil est ouvert, maintenant. »
-Il apprend à pêcher avec Erwan, et il attend.
+== a4.e11.m3.titre
+Rendre le cristal d'écume
 
-== a4.e10.ep.nev.liss
-## Nev
-À Aerie, Varen reste chez Liss. Il répare les toiles des cerfs-volants et ne parle plus jamais de l'Ordre.
-Nev, elle, devient moinesse du vent, comme Tavor. Chaque soir, les deux petits-enfants de Liss font voler le grand cerf-volant bleu.
+== a4.e11.m3.bouton
+Reposer l'écume au phare
 
-== a4.e10.ep.nev.route
-## Nev
-Varen ne reste pas à Aerie. Il part sur les routes, réparer ce que l'Ordre a cassé, village après village.
-Varen : « Grand-mère ne m'a pas encore pardonné. Moi non plus. Je reviendrai quand ce sera fait. »
-Nev reste au Nid, et regarde la route chaque soir, comme Liss regardait le Pic.
+== a4.e11.m3.pose
+## Le phare
+Sol replace le cristal d'écume dans la grande lanterne du phare. La lumière part sur la mer, jusqu'à l'horizon.
+Sol : « Papa allumait ce phare tous les soirs. Maintenant, il ne s'éteindra plus. »
 
-== a4.e10.ep.lanterval.fleur
+== a4.e11.m3.naia
+## Salvent
+Sur le port, Naïa attend Sol, assise sur la vieille barque de leurs parents.
+Naïa : « Je ne me souviens toujours pas du naufrage. J'avais deux ans. La mer a gardé le reste. »
+Naïa : « Mais la berceuse, je la connais par cœur, maintenant. Chante-la encore, grand frère. »
+Sol chante. Le soir même, ils commencent à réparer la barque, tous les deux.
+
+== a4.e11.m3.frere
+## Salvent
+Naïa salue Sol sur le port, comme un voisin poli.
+Naïa : « Tout le monde retrouve des souvenirs, depuis que l'Œil s'est ouvert. Moi, rien. »
+Naïa : « Ce n'est pas la brume qui me les a pris, c'est le naufrage. J'avais deux ans. La mer a gardé le reste. »
+Sol : « Un jour, je te chanterai une berceuse. Peut-être que celle-là, la mer l'a rendue. »
+Sol s'installe à Salvent, près du phare. Il attend le bon moment pour lui dire qui il est.
+
+== a4.e11.m3.message
+Le cristal d'*écume* est rendu. L'*ambre* ira au *Col des Pierres* quand les trois autres cristaux seront rendus.
+
+== a4.e12.titre
+Rendre le cristal d'ambre
+
+== a4.e12.bouton
+Reposer l'ambre au sommet du col
+
+== a4.e12.pose
+## Le Col des Pierres
+Au sommet du col, Kael pose le cristal d'ambre au centre du cercle de pierres. Aldric est à côté de lui.
+Aldric : « La dernière fois que je suis monté ici, je portais un masque. »
+Kael : « Cette fois, tu redescends avec moi. »
+
+== a4.e12.carnet
+## Le Col des Pierres
+Kael sort le carnet de son manteau et le rend à son père.
+Aldric le feuillette lentement. Sur la dernière page, il ajoute une ligne, et le referme.
+Aldric : « Je suis rentré. Mon fils m'a ramené. »
+
+== a4.e12.fete
 ## Lanterval
-Au pied de la grande lanterne, la fleur de Pia a fait des petits. Toute la place brille, même en plein jour.
+Trois jours plus tard, Lanterval fait la fête. La grande lanterne attend sur la place, et la brume ne revient pas.
+Brann voit Aldric passer la porte du village. Il pleure comme un enfant, et ne s'en cache pas.
+Brann : « Capitaine. Dix ans que je garde votre place au chaud. »
+Aldric : « Garde-la encore un peu, Brann. J'ai un fils à rattraper. »
+
+== a4.e12.fete.hilde
+## Lanterval
+Hilde est descendue de Forgecendre avec une charrette de lanternes en fer forgé. Mira l'aide à les accrocher.
+Hilde : « Une pour chaque maison. C'est Mira qui a dessiné le modèle. »
+Mira : « Et c'est toi qui as tout refait, parce que je frappe trop fort. »
+
+== a4.e12.fete.mot
+## Lanterval
+Une charrette de lanternes en fer forgé arrive de Forgecendre, sans Hilde. Un mot est attaché à la première, pour Mira.
+Mira le lit deux fois, puis le range dans sa poche.
+Mira : « Elle dit qu'elle attendra. Aussi longtemps qu'il faudra. »
+
+== a4.e12.tombe
+## La colline
+À l'écart de la fête, une petite tombe sous un pommier. Elna, la mère de Kael, emportée par la fièvre il y a onze ans.
+Aldric : « Elna. Je suis rentré. Pardon d'avoir mis si longtemps. »
+Aldric : « L'Ordre m'avait proposé de t'oublier. J'ai refusé. Ils me l'ont pris quand même, et notre fils me l'a rendu. »
+Kael pose une fleur sur la pierre. Pour la première fois depuis longtemps, il se souvient de son rire.
+
+== a4.e12.pell
+## Lanterval
+Pell atterrit sur la place avec son planeur, une lettre à la main et un long bâton sous le bras.
+Pell : « Courrier pour Kael. Et ça, on m'a dit de le donner au nouveau gardien de la lanterne. »
+Kael reconnaît le bâton. C'est le bâton de lanternier d'Orvan.
+
+== a4.e12.lettre.orvan
+## La lettre d'Orvan
+Orvan : « Kael, quand tu liras ceci, nous serons loin, Ysold et moi. Je me souviens de tout, maintenant. Du meilleur et du pire. »
+Orvan : « Le monde a le droit d'oublier ce qu'elle a fait, et ce que j'ai fait il y a cinquante ans. Laissez-nous être oubliés. »
+Orvan : « La lanterne est à toi, maintenant. Allume-la ce soir. Ton vieil ami, Orvan. »
+
+== a4.e12.lettre.ysold
+## La lettre d'Ysold
+Ysold : « Kael. Orvan ne se souvient pas encore de vous. Je lui raconte tout, un peu chaque jour. »
+Ysold : « Hier, il a ri en entendant l'histoire du feu de camp. Il a dit que ce garçon devait être quelqu'un de bien. »
+Ysold : « Nous partons loin, là où personne ne me connaît. Il lui faut du calme, et à moi, du temps. »
+Ysold : « Il voulait que tu aies son bâton. Ça, il ne l'a pas oublié. »
+
+== a4.e12.lanterne
+## La grande lanterne
+La nuit tombe. Tout le village se tourne vers Kael.
+Brann : « À toi, Kael. Ce soir, c'est toi le lanternier. » [Allumer la lanterne]
+
+== a4.e12.fleur
+## Lanterval
+La flamme monte, et au pied de la grande lanterne, la fleur de Pia s'ouvre d'un coup. Ses petites fleurs brillent dans toute la place.
 Pia : « Grand-mère avait raison. Il suffisait d'une graine. »
-La brume ne revient plus jamais sur Lanterval.
+Toute la vallée s'illumine, les champs, la forêt, jusqu'au col.
 
-== a4.e10.ep.lanterval
+== a4.e12.lanterval
 ## Lanterval
-La grande lanterne de Lanterval brille sur une vallée claire. Pour la première fois depuis cinquante ans, la brume ne revient pas.
-Sur la place, on fait la fête trois jours et trois nuits. On raconte déjà l'histoire de quatre amis qui ont gardé l'Œil ouvert.
+La flamme monte, et la grande lanterne brille sur une vallée claire. Pour la première fois depuis cinquante ans, la brume ne revient pas.
+On fait la fête trois jours et trois nuits. On raconte déjà l'histoire de quatre amis qui ont gardé l'Œil ouvert.
+
+== a4.e12.kael
+## Kael
+Plus tard dans la nuit, Kael monte sur les remparts. Aldric y est déjà, une lanterne de garde à la main.
+Aldric : « Brann dit que tu feras un bon capitaine. »
+Kael : « Brann dit beaucoup de choses. Il disait aussi que j'étais trop petit pour la garde. »
+Aldric rit. Ils montent la garde ensemble, jusqu'au matin.
+
+== a4.e12.adieu
+## Le matin
+Au matin, les quatre amis se retrouvent sous la grande lanterne. Mira repart vers Forgecendre, Sol vers Salvent, Nev vers Aerie.
+Mira : « On se reverra. Ce n'est pas comme si on pouvait s'oublier. »
+Sol : « Plus maintenant. »
+Nev : « Le vent passe par Lanterval, tu sais. Je t'enverrai des nouvelles. »
+Kael les regarde partir. Loin, sur un sentier de montagne, deux silhouettes marchent côte à côte.
 
 # ---------- Ce que disent les gens selon l'avancée ----------
 # pnj.<qui>.<étape en cours> : si l'étape n'a pas de texte, le jeu prend celui de l'étape d'avant.
@@ -521,3 +704,31 @@ Roxane : « Aerie ! Mon vieux maître vit ici. Garrick ne sort plus beaucoup, ma
 
 == pnj.fennel.a4.e2
 Fennel : « J'ai pris le planeur de Pell pour monter. Plus jamais. Mon estomac est resté au milieu du pont. »
+
+
+== pnj.tavor.a4.e11
+Tavor : « L'Œil est ouvert, et le vent sent la pluie d'été. Je l'avais oublié, ce parfum-là. »
+
+== pnj.liss.a4.e11
+Liss : « Varen est revenu de l'Escalier avec des bleus partout. Je l'ai soigné sans rien dire. C'est un début. »
+
+== pnj.naia.a4.e11
+Naïa : « La mer est claire jusqu'au fond, depuis ce matin. On voit même les vieilles épaves. »
+
+== pnj.brann.a4.e11
+Brann : « On dit qu'Aldric est redescendu de l'Escalier ! Ramène-le vite, Kael. Je ne tiens plus en place. »
+
+== pnj.hilde.accueil.a4.e11
+Hilde : « La brume s'est levée sur Forgecendre. On voit le volcan jusqu'au sommet, pour la première fois depuis des années. »
+
+== pnj.brann.fin
+Brann : « Le capitaine est rentré, la lanterne brille, et toi, tu trouves encore le moyen de traîner sur les routes. Bon sang, Kael. »
+
+== pnj.tavor.fin
+Tavor : « J'ai rouvert le monastère. Deux novices, déjà. Les fresques ont une nouvelle histoire à raconter : la vôtre. »
+
+== pnj.naia.fin
+Naïa : « Les bateaux reviennent à Salvent. Le phare les guide tous, même les vieux pêcheurs qui n'y croyaient plus. »
+
+== pnj.liss.fin
+Liss : « Le vent est doux, ces temps-ci. Je crois qu'il est content, lui aussi. »

@@ -83,7 +83,8 @@ document.addEventListener('click', e => { const x = e.target.closest('#ov [data-
 // o : { zone, canFlee, quest, boss, equipe, perdu, invitee }. Renvoie 'win', 'fled' ou 'perdu' (combat perdu d'avance) ;
 // lance DEFAITE si l'équipe tombe dans un combat normal. equipe : ids des seuls héros qui se battent ;
 // invitee : un personnage (Hilde) qui se bat avec l'équipe le temps du combat, au niveau de Kael, sans gagner d'expérience.
-// Varen (drapeau varen, acte 4) se bat ainsi dans tous les combats, sauf les duels (equipe) et ceux d'une autre invitée.
+// Varen (drapeau varen, acte 4) se bat ainsi sur l'Escalier de brume jusqu'au Sans-Nom (drapeau varenreste : il tient
+// l'Escalier avec Aldric), sauf dans les duels (equipe) ; ailleurs, seulement là où une quête l'invite (le cerf-volant).
 async function battle(ids, o) {
   const t0 = S.st.time, cnt = {}, vus = {};
   // état de l'équipe et du sac au début du combat (pour réessayer un boss)
@@ -93,7 +94,7 @@ async function battle(ids, o) {
   ids.forEach(id => { cnt[id] = (cnt[id] || 0) + 1; seen(id); });
   const T = o.equipe ? team().filter(h => o.equipe.includes(h.id)) : team();
   if (o.invitee) T.push(mkInvite(o.invitee));
-  else if (S.f.varen && !o.equipe) T.push(mkInvite('varen'));
+  else if (S.f.varen && !S.f.varenreste && !o.equipe && lieuActuel() === 'escalier') T.push(mkInvite('varen'));
   B = { zone: o.zone, canFlee: o.canFlee !== false, boss: !!o.boss, quest: !!o.quest, perdu: !!o.perdu, union: 0, streak: 0, turns: 0, cur: null, targeting: false, team: T, st: {}, auto: false, wall: null, sceau: 0, dernier: {},
     enemies: ids.map(id => {
       vus[id] = (vus[id] || 0) + 1;

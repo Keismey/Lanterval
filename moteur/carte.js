@@ -47,8 +47,8 @@ function ouSuisJe() { const c = coteActuel(); return nomLieu(lieuActuel()) + (c 
 
 // les lieux où une quête attend l'équipe, quête principale d'abord : [lieu ou personnage, 'main' ou 'side']
 function lieuxQuete() {
-  const e = etapeCourante(), lieux = [];
-  if (e) lieux.push([e.lieu, 'main']);
+  const lieux = [];
+  for (const x of etapeJouables()) lieux.push([x.lieu, 'main']);
   for (const [, x] of annexesDispos()) lieux.push([x.lieu, 'side']);
   return lieux;
 }
@@ -70,7 +70,7 @@ function queteRegion(reg, ids) {
 // « ! » du bouton Carte : la quête principale (sinon une quête annexe) attend dans un autre lieu
 function marqueCarte(ici) {
   const lieuQ = l => villageDuPnj(l) || lieuDe(l);
-  const e = etapeCourante(); if (e && lieuQ(e.lieu) !== ici) return 'main';
+  if (etapeJouables().some(x => lieuQ(x.lieu) !== ici)) return 'main';
   for (const [, x] of annexesDispos()) if (lieuQ(x.lieu) !== ici) return 'side';
   return '';
 }

@@ -1642,6 +1642,8 @@ Le vent se resserre autour d'elle et prend la forme d'un grand oiseau de brume, 
 ## La larme d'azur
 Nev touche la larme. Une passerelle d'Aerie, un garçon qui apprend à une petite fille à tenir debout dans le vent.
 « Écarte les bras », dit le petit Varen. « Le vent ne te fera pas tomber si tu n'as pas peur de lui. »
+
+== larmes.e1.m4.varen
 Varen, à côté de Nev, détourne les yeux. Mais il ne s'en va pas.
 
 == larmes.e1.m4.message
@@ -1665,11 +1667,13 @@ Orvan : « Je les ai vues tomber, il y a cinquante ans. J'ai cru qu'elles étaie
 == larmes.e2.gardien
 ## Les larmes de l'Œil
 Orvan lève sa main ridée. Les larmes se posent dans sa paume et se fondent en une seule lumière, douce comme une lanterne.
-Orvan : « J'ai aidé à fermer cet Œil. Je n'ai pas le droit de le garder. Mais je peux vous apprendre à garder ce qu'il voit. »
-Orvan : « Souvenez-vous les uns des autres. C'est la seule chose que la brume ne sait pas prendre. »
+Orvan enferme la lumière dans sa petite lanterne de lanternier, et la referme avec soin.
+Orvan : « Celle-là, je la garde près de moi. Si un jour j'oublie, elle se souviendra pour moi. »
+Il en détache un éclat, minuscule, et le pose dans la main de Kael.
+Orvan : « Et ça, c'est pour toi. Souvenez-vous les uns des autres. C'est la seule chose que la brume ne sait pas prendre. »
 
 == larmes.e2.fin
-? Récompense : classe cachée ultime *Gardien des souvenirs*. Rappel relance la dernière action d'un allié, sans qu'il paie de PP ; Sceau de mémoire réduit d'un tiers les dégâts de l'équipe pendant les 4 prochaines actions des monstres.
+? Récompense : *Éclat de larme*, un accessoire qui renforce la magie, les PP et la défense. Orvan garde la lumière des larmes dans sa lanterne.
 
 == larmes.apres
 Tavor : « Les moines disaient que l'Œil pleure quand il a peur d'oublier. Grâce à toi, il a moins peur. »

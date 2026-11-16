@@ -159,6 +159,9 @@ Leave
 == village.annexe
 Side quest
 
+== village.souvenir
+Family memory
+
 == boutique.objet
 {prix} g · {effet} · you have {n}
 
@@ -1024,22 +1027,43 @@ new game+
 The End
 
 == fin.continuer
-Back to Aerie
+Continue the adventure
 
 == fin.continuer.annexes
-Just before the Stair of Mist · {n} side quests left
+The world stays open · {n} side quests left
 
 == fin.continuer.zones
-Just before the Stair of Mist · finish exploring the zones
+The world stays open · finish exploring the zones
 
 == fin.plus
 Start a new game+
 
 == fin.plus.sous
-The story starts over: you keep classes, levels, gear and codex; monsters are stronger.
+The story starts over: you keep classes, levels, gear, codex and recovered memories; monsters are stronger.
 
 == fin.chronologie
 Timeline
+
+== fin.souvenirs
+Memories recovered: {n} of {total}
+
+== fin.souvenir.ok
+Recovered
+
+== fin.souvenir.avant
+Recovered in a previous playthrough
+
+== fin.souvenir.manque
+To find in New Game+
+
+== fin.souvenirs.plus
+Each family memory adds a scene to the ending. The missing ones await you in *New Game+*: finish their quest before climbing the Stair of Mist.
+
+== fin.souvenirs.tous
+All family memories are recovered.
+
+== fin.gardien
+All six memories are gathered: the *Keeper of memories* class is unlocked.
 
 == options.langue
 Language: English
@@ -1153,6 +1177,11 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.10.0
+New ending: after the Eyelid, the team returns the four crystals themselves, in any order, then goes home to Lanterval for the celebration. Each return plays a hero's epilogue.
+Orvan, Ysold, Varen and Kael's mother get a real resolution. Varen now only fights with the team on the Stair of Mist.
+Six family memories each add a scene to the ending. They close when the team climbs the Stair, and the summary tells you which ones to find in New Game+.
+The tears quest now gives the Tear shard. The Keeper of memories becomes the New Game+ class: find the six memories, even over several playthroughs.
 ## Version 0.9.3
 Act 1 is more demanding: less gold in the valley's treasures, and the Golem and the Stoneweaver hold their guard longer.
 ## Version 0.9.2
@@ -1387,14 +1416,11 @@ The team gets back up on the Stair of Mist
 == journal.log.fin
 End of the story: the Eye has opened
 
-== journal.log.avantfinal
-Back to Aerie, before the Stair of Mist
-
 == fin.texte
 The Eye has opened, and the world remembers. Thank you for playing Lanterval!
 
 == fin.astuce
-You can return to Aerie just before the Stair: you keep your levels, gold and gear, and you can replay the finale. Garrick, Roxane's old teacher, has one last hunt for you.
+The world stays open after the ending: Garrick, Roxane's old teacher, has one last hunt for you.
 
 == combat.oubli
 *{nom} forgets their techniques* for their next 2 actions.

@@ -1,5 +1,15 @@
 # État du projet
 
+## Version 0.10.0 (2026-11-16) : la nouvelle fin
+- Après la Paupière, l'équipe redescend (a4.e10), retrouve Aldric et Varen sur le palier et rentre à Aerie. L'Escalier disparaît de la carte (drapeau escalier retiré).
+- a4.e11 (étape en désordre, `parmi` dans la quête principale) : rendre l'azur (ruines.s), la braise (volcan.c), l'écume (phare.s) ; chaque retour joue l'épilogue d'un héros sur place, sans combat. a4.e12 au Col des Pierres puis la fête à Lanterval (Hilde, tombe d'Elna, lettre d'Orvan ou d'Ysold, lanterne allumée par Kael), le générique.
+- Plus de retour dans le temps après la fin : le monde reste ouvert (annexes, Échos). `retourAvantFinal` supprimé.
+- Souvenirs de famille (aldric, moule, berceuse, cerfvolant, larmes, graine) : fermés quand l'équipe monte l'Escalier (avertissement `souvenirs` au pied), bilan « Souvenirs retrouvés x/6 » à l'écran de fin, cumulés entre parties dans `S.souvenirs` (gardés en partie+). Les six réunis débloquent le Gardien des souvenirs (classe de partie+, kit à repenser). En partie+, leurs donneurs sont repérés au village.
+- Orvan prend l'ombre de la Paupière à la place des héros et oublie tout ; la quête des larmes décide de son épilogue (avec : il se souvient et part avec Ysold, lettre d'Orvan ; sans : Ysold part avec lui pour qu'il se souvienne, lettre d'Ysold). Elle donne maintenant l'Éclat de larme (accessoire).
+- Varen ne se bat avec l'équipe que sur l'Escalier (Veilleurs, montée, Sans-Nom), puis reste tenir l'Escalier avec Aldric (drapeau varenreste).
+- Mère de Kael (Elna) morte de fièvre : évoquée par Brann (a1.e10, réplique après l'insigne), tombe à la fête. Naïa : amnésie due au naufrage, dite à la fin.
+- Moteur : `parmi` pour les étapes principales (etapeJouables), événement `souvenirs`, `drapeau !x` retire un drapeau. Vérificateur et bot à jour.
+
 ## Version 0.9.3 (2026-11-14)
 - Acte 1 plus exigeant après le test de Keismey (acte 1 à 100 % en 21 min, 0 objet, 0 farm) : trésors de la vallée −40 %, or des monstres de l'acte 1 sans le bonus de 25 %, Golem (atk 37, garde 5, charge 1.7), Tisseuse (atk 38, garde 6, poison 45 %). Bot : 0 défaite, PV min médian aux boss 39 % (appliqué) / 9 % (pressé).
 

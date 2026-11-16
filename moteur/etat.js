@@ -57,6 +57,7 @@ function partiePlus() {
   const old = S, s = newState();
   s.plus = (old.plus || 0) + 1; s.fins = old.fins || 0; s.finVue = old.finVue || 0;
   s.jobs = [...old.jobs]; s.best = old.best; s.codex = old.codex; s.bag = old.bag; s.vus = old.vus || {};
+  s.souvenirs = { ...(old.souvenirs || {}) };   // épilogues complets déjà vus, cumulés d'une partie à l'autre
   for (const id of ORDRE_HEROS) { const o = old.chars[id], c = s.chars[id]; c.lvl = o.lvl; c.xp = o.xp; c.job = o.job; c.eq = { ...o.eq }; fullC(c); }
   S = s; return s;
 }
@@ -153,17 +154,32 @@ function cond(c) {
 }
 
 /* ---------- Le final (donnees/acte4.js, FINAL) ----------
-   Une fois monté à l'Escalier de brume (drapeau escalier), on ne redescend plus avant la fin.
-   Après la fin, la partie revient à Aerie juste avant l'Escalier : l'histoire du final est rejouable,
-   mais les niveaux, l'or, les objets et l'équipement gagnés là-haut sont gardés. */
+   Une fois monté à l'Escalier de brume (drapeau escalier), on ne redescend plus avant d'avoir vaincu la Paupière.
+   L'équipe redescend ensuite à Aerie (fin de a4.e10) et rapporte les cristaux (a4.e11, a4.e12) ; le générique
+   vient à la fin de a4.e12, et la partie continue après, sans retour dans le temps. */
 function dansLeFinal() { return !!S.f.escalier; }
-function retourAvantFinal() {
-  const ids = toutesEtapes().map(e => e.id), i = ids.indexOf(FINAL.depart);
-  S.etapes = S.etapes.filter(id => ids.indexOf(id) < i);
-  S.f.escalier = false; S.reprise = null;
-  S.loc = S.auberge = FINAL.retour; S.screen = 'village';
-  healAll(); restorePP();
-  logR('journal.log.avantfinal');
+
+/* ---------- Souvenirs : les six quêtes familiales ----------
+   Chacune change un épilogue. Elles se ferment quand l'équipe monte l'Escalier (drapeau escalier, puis a4.e8 finie).
+   S.souvenirs garde, d'une partie à l'autre, celles qu'on a finies avant d'arriver à la fin. */
+const SOUVENIRS = ['aldric', 'moule', 'berceuse', 'cerfvolant', 'larmes', 'graine'];
+function souvenirsFermes() { return !!S.f.escalier || fini(FINAL.depart); }
+function annexeFermee(id) { return SOUVENIRS.includes(id) && !annexeFinie(id) && souvenirsFermes(); }
+function souvenirsManquants() { return SOUVENIRS.filter(id => !annexeFinie(id)); }
+// à la fin : on note les souvenirs de cette partie ; tous réunis (sur plusieurs parties), le Gardien des souvenirs s'ouvre
+function noterSouvenirs() {
+  S.souvenirs = S.souvenirs || {};
+  for (const id of SOUVENIRS) if (annexeFinie(id)) S.souvenirs[id] = 1;
+  if (SOUVENIRS.every(id => S.souvenirs[id])) unlockJob('souvenirs');
+}
+
+/* ---------- Quête principale : une étape peut se jouer en désordre (parmi, comme les larmes de l'Œil) ----------
+   S.morceaux['e:' + id] = les morceaux déjà faits. Ce qui est jouable maintenant : [{ etape, lieu, morceau }] */
+function etapeJouables() {
+  const e = etapeCourante(); if (!e) return [];
+  if (!e.parmi) return [{ etape: e, lieu: e.lieu }];
+  const faits = S.morceaux['e:' + e.id] || [];
+  return e.parmi.map((m, i) => ({ etape: e, lieu: m.lieu, morceau: i, si: m.si })).filter(m => !faits.includes(m.morceau) && (!m.si || cond(m.si)));
 }
 function etatLieu(id) { const L = LIEUX[id]; let e = null; for (const x of L.etats || []) if (cond(x.si)) e = x.id; return e; }
 function lieuVisible(id) { return cond(LIEUX[id].visible); }
@@ -177,7 +193,7 @@ function persoNouveau(id) { return infosPerso(id).length > (S.perso[id] || 0); }
 function persoNouveautes() { return persoConnus().some(persoNouveau); }
 
 function annexeEtat(id) { return S.annexes[id] || 0; }
-function annexeOuverte(id) { return cond(ANNEXES[id].ouvre); }
+function annexeOuverte(id) { return cond(ANNEXES[id].ouvre) && !annexeFermee(id); }
 function annexeFinie(id) { return annexeEtat(id) > ANNEXES[id].etapes.length; }
 // une étape avec saute se passe toute seule quand sa condition est vraie (l'œuf de wyverne déjà trouvé en explorant)
 function annexeEtape(id) {
@@ -191,7 +207,7 @@ function morceauxFaits(id) { return S.morceaux[id] || []; }
 // ce qui peut se jouer maintenant (lieu ouvert, condition si remplie) : l'étape, ou chacun de ses morceaux pas encore faits ;
 // sinon rien, et pas de « ! »
 function annexeDispos(id) {
-  const x = annexeEtape(id); if (!x || (x.si && !cond(x.si))) return [];
+  const x = annexeEtape(id); if (!x || (x.si && !cond(x.si)) || annexeFermee(id)) return [];
   const ouvert = l => lieuOuvert(villageDuPnj(l) || l.split('.')[0]);
   if (!x.parmi) return ouvert(x.lieu) ? [x] : [];
   return x.parmi.map((m, i) => ({ ...m, morceau: i })).filter(m => !morceauxFaits(id).includes(m.morceau) && (!m.si || cond(m.si)) && ouvert(m.lieu));

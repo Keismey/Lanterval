@@ -644,7 +644,7 @@ const ANNEXES = {
     ]
   },
 
-  // 15. Les larmes de l'Œil (Tavor ; classe ultime Gardien des souvenirs). Les quatre larmes se cherchent dans l'ordre
+  // 15. Les larmes de l'Œil (Tavor ; épilogue d'Orvan, Éclat de larme). Les quatre larmes se cherchent dans l'ordre
   // qu'on veut (étape parmi) ; chacune a son gardien et montre le souvenir d'un héros.
   // Orvan, monté à Aerie pour le feu de camp, remet la classe (après a4.e7, même si les larmes sont réunies avant).
   larmes: {
@@ -680,6 +680,8 @@ const ANNEXES = {
           ['combat', 'larmev', { boss: true, conseil: 'larmes.e1.m4.conseil' }],
           ['gagne', 'larme-azur'],
           ['dialogue', 'larmes.e1.m4.souvenir'],
+          // Varen n'est là qu'une fois passé du côté de l'équipe (a4.e6)
+          ['si', 'drapeau varen', [['dialogue', 'larmes.e1.m4.varen']]],
           ['message', 'larmes.e1.m4.message']
         ] }
       ] },
@@ -689,7 +691,8 @@ const ANNEXES = {
         ['dialogue', 'larmes.e2.feu'],
         ['dialogue', 'larmes.e2.gardien'],
         ['decor'],
-        ['classes', 'souvenirs'],
+        // 0.10 : la quête est l'épilogue d'Orvan ; le Gardien des souvenirs devient la classe des six souvenirs (Partie+)
+        ['gagne', 'eclatlarme'],
         ['dialogue', 'larmes.e2.fin']
       ] }
     ]

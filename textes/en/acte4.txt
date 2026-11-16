@@ -222,7 +222,7 @@ Varen: “Ysold never leaves witnesses. Let's fight together. Just this once.”
 The shadows fade into the wind. Varen looks at his hands as if he didn't recognise them.
 Nev: “Just this once, huh?”
 Varen: “… Maybe twice.”
-? *Varen* now fights with the team, in every battle except duels. He isn't in the Team menu and doesn't gain experience: he is always at Kael's level.
+? *Varen* will fight with the team on the *Stair of Mist*, when the time for the assault comes. He isn't in the Team menu and doesn't gain experience: he will always be at Kael's level.
 
 == a4.e6.message
 *Varen* has changed sides. Ysold has all four crystals. Go back to *Aerie* before the assault.
@@ -252,10 +252,20 @@ Mira: “Both, maybe. You brought a lantern home once.”
 Mira: “Before we left Forgecendre, my mother hugged me. I let her.”
 Mira: “I'm still angry with her. But I want to come back so I can stay angry with her for a long time.”
 
+== a4.e7.mira.forge
+## Mira
+Mira: “Before we left Forgecendre, my mother hugged me. This time, I hugged her back.”
+Mira: “We remade the mould together. I want to come back so we can make more.”
+
 == a4.e7.sol
 ## Sol
 Sol: “Naïa still doesn't know who I am. Or maybe she knows, and she's waiting for me to say it.”
 Sol: “If the Eye closes, she'll never remember. So it won't close.”
+
+== a4.e7.sol.naia
+## Sol
+Sol: “Naïa knows who I am now. She sings the lullaby while she mends the nets.”
+Sol: “If the Eye closes, she'll forget it. So it won't close.”
 
 == a4.e7.nev
 ## Nev
@@ -287,10 +297,13 @@ Behind the top of the Peak, pale stone steps climb into the void and vanish in t
 Orvan: “Fifty years ago, I climbed up here with her. I came back down alone.”
 Nev: “If we climb, we go all the way. Nobody turns back.”
 
+== a4.e8.souvenirs
+? *Family memories* still open: {liste}. They will close when the team climbs the Stair. You can find them again in New Game+.
+
 == a4.e8.choix
 ## The Stair of Mist
 Kael sets foot on the first step and looks at the others.
-? *Point of no return.* Once you climb the Stair, no more map or village until the end: first finish whatever you want to finish. After the end, you will come back to Aerie just before the Stair.
+? *Point of no return.* Once you climb the Stair, no more map or village until the summit. Unfinished family quests will close: first finish whatever you want to finish.
 > monter : Climb | We go all the way
 > non : Not yet
 
@@ -360,6 +373,14 @@ Aldric: “Ysold set them loose behind you. Go up. I'll hold the Stair.”
 Kael: “I've only just found you again!”
 Aldric: “Then hurry up and finish, and come back for me. Go, son.”
 
+== a4.e9.varen
+## The last landing
+Varen steps forward and stands beside Aldric, blade in hand.
+Varen: “I'm staying with him. Two blades won't be too many.”
+Nev: “Varen…”
+Varen: “Go, little sister. This time, I know which side I'm on.”
+? *Varen* stays on the landing with Aldric: he no longer fights with the team.
+
 == a4.e9.montee
 ## The Stair of Mist
 Behind them, Aldric's sword shines in the mist, and the Shadows fall back step after step. Kael looks back only once.
@@ -395,18 +416,21 @@ Orvan: “Ysold. You said the same thing fifty years ago.” [Fight]
 
 == a4.e10.paupiere
 ## The Heart of the Eye
-The crystals crack, one by one. Ysold falls to her knees, then raises her hand towards the Eye.
+Ysold falls to her knees. The four crystals stop spinning and hang above her, intact.
 Ysold: “Then close, all memories. All at once.”
-The stone eyelid rumbles and starts to come down. A shadow pours from it and strikes Varen full in the chest.
+The stone eyelid rumbles and starts to come down. A shadow pours from it and rushes at the four heroes.
+Orvan throws himself in front of them. The shadow strikes him full in the chest.
 
-== a4.e10.varen
+== a4.e10.orvan
 ## The Heart of the Eye
-Varen: “Nev? Who… who are you?”
-Orvan catches him before he falls and leads him aside.
-Orvan: “I've got him. Go on, the four of you. What we forget, the Eye can give back, if it stays open.” [Fight]
+Ysold: “Orvan!”
+Orvan slowly gets up. He looks at her without recognising her.
+Orvan: “Forgive me, madam… Do we know each other?”
+Ysold freezes. For the first time, her hands are shaking.
+Ysold: “Stop the Eyelid. Please, stop it.” [Fight]
 
 == a4.e10.conseil2
-The *Eyelid of the World* only fears the four elements: *Earth*, *Fire*, *Water* and *Wind* break its guard, while the *Blade* barely scratches it. Its shadow makes a hero forget their techniques for 2 actions. The Memory Keeper's *Memory seal* protects the whole team.
+The *Eyelid of the World* only fears the four elements: *Earth*, *Fire*, *Water* and *Wind* break its guard, while the *Blade* barely scratches it. Its shadow makes a hero forget their techniques for 2 actions. The *Memory seal* of the Keeper of memories, the New Game+ class, protects the whole team.
 
 == a4.e10.oeil
 ## The Eye opens
@@ -415,76 +439,235 @@ The light flows towards the four regions, like on the monastery frescoes. Everyw
 
 == a4.e10.souvenir
 ## The Eye opens
-Varen gets up, blinking. He looks at Nev, and smiles.
-Varen: “Little sister. I thought I had lost you for good.”
-Ysold, on her knees, looks at the light. Her hands are shaking.
-
-== a4.e10.adieu
-## The Eye opens
+The light touches Ysold. She closes her eyes and weeps without a sound.
 Ysold: “I remember. My mother sang while she wove, my brother was afraid of storms. And Orvan was twenty.”
-Orvan sits beside her, at the edge of the platform, without a word.
-Orvan: “Go home, all of you. I have fifty years to catch up on.”
+She turns to Orvan. He looks at the light, and his eyes stay empty.
 
-== a4.e10.ep.kael.aldric
-## Kael
-A month later, Aldric climbs down the Stair, leaning on his son's shoulder. In Lanterval, Brann cries like a child.
-Aldric takes up the village guard again. Kael stands watch beside him every evening, on the ramparts.
+== a4.e10.orvan.larmes
+## The Eye opens
+At Orvan's belt, the little lantern where he kept the light of the tears lights up on its own.
+Orvan blinks. Then he looks at Ysold for a long time.
+Orvan: “Ysold. You always hated the cold. What are you doing up so high?”
+Ysold: “Waiting for you, I think. For fifty years.”
+Orvan: “Then let's go far away, the two of us. Let the world forget us, for once.”
 
-== a4.e10.ep.kael.seul
-## Kael
-Kael climbs down the Stair. On the last landing, he finds only the guard's lantern, gone out, and not a single Shadow left.
-Kael: “You held the Stair, Dad. Now I'm the one who holds Lanterval.”
-He becomes captain of the guard. Every evening, he lights one more lantern, in case someone comes home.
+== a4.e10.orvan.brume
+## The Eye opens
+Orvan was too close to the Eye. The mist that touched him was too pure, and nothing comes back to him.
+Ysold kneels in front of him and takes his hands.
+Ysold: “You don't remember me. Then I'll tell you everything, from the beginning.”
+Ysold: “I wanted to make the whole world forget. I'll spend the rest of my life helping one man remember.”
 
-== a4.e10.ep.mira.forge
-## Mira
-Mira goes home to Forgecendre. Hilde's forge never goes out now: they work in it together, and they argue a lot.
+== a4.e10.cristaux
+## The Eye opens
+The four crystals float gently down, each towards a hero: the amber to Kael, the ember to Mira, the foam to Sol, the azure to Nev.
+Ysold: “They don't belong to me. Take them back where they were taken from.”
+Nev: “We'll bring them home. All four of them.”
+
+== a4.e10.descente
+## The Stair of Mist
+The team climbs down. Ysold and Orvan follow them for a while, then vanish down another path.
+On the last landing, not a single Shadow is left. Aldric and Varen sit on the steps, covered in bruises, laughing.
+Aldric: “You came back for me. As promised.”
+Varen: “Little sister. You did it.”
+Nev: “We did it. Now we go home.”
+
+== a4.e10.message
+The Eye is open. Take the crystals back where they slept, in any order: the *azure* to the *Monastery ruins*, the *ember* to the *Sleeping Volcano*, the *foam* to the *Drowned Lighthouse*. The *amber* goes last, to the *Stone Pass*.
+
+== a4.e11.titre
+Return the crystals
+
+== a4.e11.m1.titre
+Return the azure crystal
+
+== a4.e11.m1.bouton
+Set the azure back in the sanctuary
+
+== a4.e11.m1.pose
+## The sanctuary
+Nev sets the azure crystal on the altar. It rises on its own and takes its place again, above the pillar.
+Tavor: “The monks would have wept for joy. I'll settle for a smile.”
+Nev: “Let's go back to the Nest. Grandmother must be waiting.”
+
+== a4.e11.m1.liss
+## Aerie
+On the Nest's platform, Liss is waiting, one hand on the big blue kite. Varen stands beside her.
+Liss: “My two grandchildren, both home. I wasn't asking for that much.”
+Varen: “I'm staying, grandmother. There are sails to mend, and I can sew now.”
+Nev: “I'm staying too. Tavor needs a wind monk.”
+In the evening, Varen and Nev fly the blue kite. Liss watches them until nightfall.
+
+== a4.e11.m1.route
+## Aerie
+Liss is waiting on the Nest's platform. Varen stops at the end of the walkway, not daring to come closer.
+Liss: “Hello, Varen.”
+Varen: “I'm not staying, grandmother. I'm taking to the roads to repair what the Order broke, village after village.”
+Varen: “I'll come back when I've earned a seat at your table.”
+Nev stays at the Nest. Every evening, she watches the road, the way Liss used to watch the Peak.
+
+== a4.e11.m1.message
+The *azure* crystal is back. The *amber* goes to the *Stone Pass* once the other three crystals are returned.
+
+== a4.e11.m2.titre
+Return the ember crystal
+
+== a4.e11.m2.bouton
+Set the ember back in the crater
+
+== a4.e11.m2.pose
+## The crater
+Mira sets the ember crystal at the bottom of the crater. The rock warms up, and the volcano lets out a long sigh of smoke.
+Mira: “Sleep well, you. And don't wake up too soon.”
+Sol: “We talk to volcanoes now?”
+Mira: “I talk to whoever I like. Come on, down to Forgecendre.”
+
+== a4.e11.m2.forge
+## Forgecendre
+Hilde's forge roars like on the first day. Mira walks in without knocking, and Hilde throws her an apron.
 Hilde: “You hit too hard.”
-Mira: “You've been saying that since I was six.” And they both laugh.
+Mira: “You've been saying that since I was six.”
+They both laugh. The forge never goes out now: they work in it together, and they argue a lot.
 
-== a4.e10.ep.mira.pardon
-## Mira
-Mira goes home to Forgecendre and knocks on the forge door. Hilde opens it, and Mira is the first to hug her.
-They still have a lot to say to each other. They have time now.
+== a4.e11.m2.pardon
+## Forgecendre
+Mira knocks on the forge door. Hilde opens it, and Mira is the first to hug her.
+Hilde: “Will you stay a while?”
+Mira: “A while. We still have a lot to say to each other.”
+They have time now.
 
-== a4.e10.ep.mira.plustard
-## Mira
-Mira does not go back to Forgecendre right away. She stays in Lanterval, at the village forge.
-Mira: “I'll go and see my mother. Later. When I know what to say to her.”
-Every week, a letter from Hilde arrives. Mira keeps them all, not yet opened.
+== a4.e11.m2.plustard
+## Forgecendre
+Mira stops in front of Hilde's forge. She raises her hand to knock, then lowers it.
+She slips a note under the door. Just three words: I'm back home.
+Mira: “Not today. But soon, when I know what to say to her.”
+Behind the door, Hilde's hammer stops for a long moment. Then it starts again, more gently.
 
-== a4.e10.ep.sol.naia
-## Sol
-In Salvent, the lighthouse shines again over a clear sea. Sol and Naïa are repairing their parents' old boat.
-Naïa: “Sing the lullaby again. I want to be sure I never forget it again.”
+== a4.e11.m2.message
+The *ember* crystal is back. The *amber* goes to the *Stone Pass* once the other three crystals are returned.
 
-== a4.e10.ep.sol.attente
-## Sol
-Sol settles in Salvent, near the lighthouse. Every morning, Naïa greets him like a polite neighbour.
-Sol: “She doesn't remember me. Not yet. But the Eye is open now.”
-He learns to fish with Erwan, and he waits.
+== a4.e11.m3.titre
+Return the foam crystal
 
-== a4.e10.ep.nev.liss
-## Nev
-In Aerie, Varen stays at Liss's. He mends kite sails and never speaks of the Order again.
-Nev becomes a wind monk, like Tavor. Every evening, Liss's two grandchildren fly the big blue kite.
+== a4.e11.m3.bouton
+Set the foam back in the lighthouse
 
-== a4.e10.ep.nev.route
-## Nev
-Varen does not stay in Aerie. He takes to the roads, to repair what the Order broke, village after village.
-Varen: “Grandmother hasn't forgiven me yet. Neither have I. I'll come back when it's done.”
-Nev stays at the Nest, and watches the road every evening, the way Liss used to watch the Peak.
+== a4.e11.m3.pose
+## The lighthouse
+Sol puts the foam crystal back in the lighthouse's great lantern. The light sweeps out over the sea, all the way to the horizon.
+Sol: “Dad lit this lighthouse every evening. Now it will never go out.”
 
-== a4.e10.ep.lanterval.fleur
+== a4.e11.m3.naia
+## Salvent
+On the harbour, Naïa is waiting for Sol, sitting on their parents' old boat.
+Naïa: “I still don't remember the shipwreck. I was two. The sea kept the rest.”
+Naïa: “But I know the lullaby by heart now. Sing it again, big brother.”
+Sol sings. That same evening, they start repairing the boat together.
+
+== a4.e11.m3.frere
+## Salvent
+Naïa greets Sol on the harbour, like a polite neighbour.
+Naïa: “Everyone's getting memories back since the Eye opened. Not me.”
+Naïa: “It wasn't the mist that took mine, it was the shipwreck. I was two. The sea kept the rest.”
+Sol: “One day, I'll sing you a lullaby. Maybe the sea gave that one back.”
+Sol settles in Salvent, near the lighthouse. He waits for the right moment to tell her who he is.
+
+== a4.e11.m3.message
+The *foam* crystal is back. The *amber* goes to the *Stone Pass* once the other three crystals are returned.
+
+== a4.e12.titre
+Return the amber crystal
+
+== a4.e12.bouton
+Set the amber back atop the pass
+
+== a4.e12.pose
+## The Stone Pass
+At the top of the pass, Kael sets the amber crystal in the middle of the stone circle. Aldric stands beside him.
+Aldric: “The last time I climbed up here, I wore a mask.”
+Kael: “This time, you're coming down with me.”
+
+== a4.e12.carnet
+## The Stone Pass
+Kael takes the notebook from his coat and gives it back to his father.
+Aldric leafs through it slowly. On the last page, he adds a line, and closes it.
+Aldric: “I'm home. My son brought me back.”
+
+== a4.e12.fete
 ## Lanterval
-At the foot of the great lantern, Pia's flower has spread. The whole square glows, even in broad daylight.
+Three days later, Lanterval celebrates. The great lantern waits on the square, and the mist does not come back.
+Brann sees Aldric walk through the village gate. He cries like a child, and doesn't hide it.
+Brann: “Captain. Ten years I've kept your place warm.”
+Aldric: “Keep it a little longer, Brann. I have a son to catch up with.”
+
+== a4.e12.fete.hilde
+## Lanterval
+Hilde has come down from Forgecendre with a cart of wrought-iron lanterns. Mira helps her hang them.
+Hilde: “One for every house. Mira drew the design.”
+Mira: “And you redid them all, because I hit too hard.”
+
+== a4.e12.fete.mot
+## Lanterval
+A cart of wrought-iron lanterns arrives from Forgecendre, without Hilde. A note is tied to the first one, for Mira.
+Mira reads it twice, then puts it in her pocket.
+Mira: “She says she'll wait. As long as it takes.”
+
+== a4.e12.tombe
+## The hill
+Away from the celebration, a small grave under an apple tree. Elna, Kael's mother, taken by fever eleven years ago.
+Aldric: “Elna. I'm home. Forgive me for taking so long.”
+Aldric: “The Order offered to make me forget you. I refused. They took you from me anyway, and our son gave you back.”
+Kael lays a flower on the stone. For the first time in a long while, he remembers her laugh.
+
+== a4.e12.pell
+## Lanterval
+Pell lands on the square in his glider, a letter in his hand and a long staff under his arm.
+Pell: “Mail for Kael. And this, I was told to give to the new keeper of the lantern.”
+Kael recognises the staff. It's Orvan's lamplighter's staff.
+
+== a4.e12.lettre.orvan
+## Orvan's letter
+Orvan: “Kael, by the time you read this, Ysold and I will be far away. I remember everything now. The best and the worst.”
+Orvan: “The world has the right to forget what she did, and what I did fifty years ago. Let us be forgotten.”
+Orvan: “The lantern is yours now. Light it tonight. Your old friend, Orvan.”
+
+== a4.e12.lettre.ysold
+## Ysold's letter
+Ysold: “Kael. Orvan doesn't remember you yet. I tell him everything, a little every day.”
+Ysold: “Yesterday, he laughed at the story of the campfire. He said that boy must be a good man.”
+Ysold: “We are going far away, where no one knows me. He needs peace, and I need time.”
+Ysold: “He wanted you to have his staff. That, he didn't forget.”
+
+== a4.e12.lanterne
+## The great lantern
+Night falls. The whole village turns towards Kael.
+Brann: “Your turn, Kael. Tonight, you're the lamplighter.” [Light the lantern]
+
+== a4.e12.fleur
+## Lanterval
+The flame rises, and at the foot of the great lantern, Pia's flower bursts open. Its little blooms glow all over the square.
 Pia: “Grandma was right. All it took was a seed.”
-The mist never comes back to Lanterval.
+The whole valley lights up, the fields, the forest, all the way to the pass.
 
-== a4.e10.ep.lanterval
+== a4.e12.lanterval
 ## Lanterval
-The great lantern of Lanterval shines over a clear valley. For the first time in fifty years, the mist does not come back.
-On the square, they celebrate for three days and three nights. People already tell the story of four friends who kept the Eye open.
+The flame rises, and the great lantern shines over a clear valley. For the first time in fifty years, the mist does not come back.
+They celebrate for three days and three nights. People already tell the story of four friends who kept the Eye open.
+
+== a4.e12.kael
+## Kael
+Later that night, Kael climbs onto the ramparts. Aldric is already there, a guard's lantern in his hand.
+Aldric: “Brann says you'll make a good captain.”
+Kael: “Brann says a lot of things. He also said I was too small for the guard.”
+Aldric laughs. They keep watch together until morning.
+
+== a4.e12.adieu
+## Morning
+In the morning, the four friends meet under the great lantern. Mira heads back to Forgecendre, Sol to Salvent, Nev to Aerie.
+Mira: “We'll see each other again. It's not like we could forget each other.”
+Sol: “Not anymore.”
+Nev: “The wind passes through Lanterval, you know. I'll send you news.”
+Kael watches them go. Far away, on a mountain path, two figures walk side by side.
 
 # ---------- What people say as the story moves on ----------
 # pnj.<who>.<current step>: if the step has no text, the game uses the one from the step before.
@@ -521,3 +704,31 @@ Roxane: “Aerie! My old master lives here. Garrick doesn't go out much, but he 
 
 == pnj.fennel.a4.e2
 Fennel: “I took Pell's glider to get up here. Never again. My stomach stayed in the middle of the bridge.”
+
+
+== pnj.tavor.a4.e11
+Tavor: “The Eye is open, and the wind smells of summer rain. I had forgotten that scent.”
+
+== pnj.liss.a4.e11
+Liss: “Varen came back from the Stair covered in bruises. I tended him without a word. It's a start.”
+
+== pnj.naia.a4.e11
+Naïa: “The sea has been clear to the bottom since this morning. You can even see the old wrecks.”
+
+== pnj.brann.a4.e11
+Brann: “They say Aldric came down from the Stair! Bring him home quickly, Kael. I can't sit still.”
+
+== pnj.hilde.accueil.a4.e11
+Hilde: “The mist has lifted over Forgecendre. You can see the volcano to its peak, for the first time in years.”
+
+== pnj.brann.fin
+Brann: “The captain is home, the lantern shines, and you still find a way to wander the roads. Honestly, Kael.”
+
+== pnj.tavor.fin
+Tavor: “I've reopened the monastery. Two novices already. The frescoes have a new story to tell: yours.”
+
+== pnj.naia.fin
+Naïa: “Boats are coming back to Salvent. The lighthouse guides them all, even the old fishermen who had stopped believing.”
+
+== pnj.liss.fin
+Liss: “The wind is gentle these days. I think it's happy too.”

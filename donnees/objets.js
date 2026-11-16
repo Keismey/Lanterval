@@ -112,6 +112,8 @@ const EQUIPEMENT = {
   quartz: { place: 'acc', v: 35, st: { atk: 2, mag: 2 } },
   geode: { place: 'acc', v: 60, st: { def: 3, mag: 3, hp: 8 } },
   soieroche: { place: 'acc', cadeau: true, st: { def: 4, hp: 10, spd: 3 } },
+  // « Les larmes de l'Œil » : un éclat de la lumière qu'Orvan garde dans sa lanterne
+  eclatlarme: { place: 'acc', cadeau: true, st: { mag: 5, pp: 12, def: 3 } },
   anneau: { place: 'acc', v: 30, st: { mag: 3 } },
   eclat: { place: 'acc', v: 40, st: { atk: 4 } },
   talisman: { place: 'acc', v: 35, st: { def: 3, hp: 8 } },
