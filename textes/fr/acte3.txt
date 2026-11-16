@@ -61,7 +61,7 @@ Nev : « Toute la ville travaille pour l'Ordre. Ceux qui refusent descendent au 
 Une charrette grince sur les pavés. Sur le banc, une femme aux tresses rousses tient les rênes.
 Mira : « Maman ? Qu'est-ce que tu fais là ? »
 Hilde : « Je t'avais dit que je viendrais. Je ne laisse pas ma fille entrer seule dans cette ville. »
-Un vieux mineur s'arrête et la dévisage. « Hilde la forgeronne ? On te croyait morte depuis dix-huit ans. »
+Un vieux mineur s'arrête et la dévisage. Hilde la forgeronne, qu'on croyait morte depuis dix-huit ans.
 
 == a3.e2.ville
 ## L'auberge de Goran
@@ -113,7 +113,8 @@ Suivre les rails vers le fond
 ## Mines rouges
 Hilde vous attend au bord des rails, une lampe à la main.
 Hilde : « Je connais ces galeries mieux que personne. Je viens avec vous jusqu'en bas. »
-Mira : « Tu connais aussi les cages, maman ? » Hilde ne répond pas. [Descendre]
+Mira : « Tu connais aussi les cages, maman ? »
+Hilde ne répond pas. [Descendre]
 
 == a3.e4.atelier
 ## L'atelier
@@ -270,7 +271,8 @@ Duel à deux : *Kael et Nev* contre Varen. Varen est faible à la *Terre* et à 
 == a3.e8.fuite
 ## Le cratère
 Varen recule, une main sur l'épaule. Il regarde Nev longtemps.
-Varen : « Tu as appris à te battre. Pas grâce à moi. » Il siffle, et ses soldats se replient vers le haut du cratère.
+Varen : « Tu as appris à te battre. Pas grâce à moi. »
+Il siffle, et ses soldats se replient vers le haut du cratère.
 Kael : « Il est parti trop vite. Comme s'il savait que quelque chose d'autre arrive. »
 
 == a3.e8.repos
@@ -306,13 +308,14 @@ Le Sans-Nom est faible au *Feu* et au *Vent*, et résiste à la Terre et à l'Ea
 Le dernier coup de Kael fend le masque d'acier. Il tombe en deux morceaux dans la cendre.
 Dessous, un visage fatigué, une barbe grise, des yeux qui ne savent plus où ils sont.
 Kael : « Non… Papa ? »
-L'homme le regarde sans le reconnaître. « Je n'ai pas de nom. Je n'ai pas de fils. »
+Sans-Nom : « Je n'ai pas de nom. Je n'ai pas de fils. »
 
 == a3.e9.fuite
 ## Le cratère
 Pendant que Kael reste figé, le Sans-Nom brise la cage d'un coup de masse et arrache le cristal de braise.
 Il disparaît dans la fumée, vers le nord. Personne ne le poursuit.
-Mira : « Kael… » Kael ne répond pas. Il ramasse les deux morceaux du masque.
+Mira : « Kael… »
+Kael ne répond pas. Il ramasse les deux morceaux du masque.
 
 == a3.e9.message
 L'Ordre a emporté le cristal de braise. Rentre à *Forgecendre*, à la forge de Hilde.
@@ -335,7 +338,8 @@ Hilde remet le feu dans la forge. Mira prend le soufflet sans qu'on lui demande.
 ## La forge
 Au matin, l'épée brille d'un éclat neuf. Sur la garde, Hilde a gravé une lanterne.
 Hilde : « Le métal est le sien, la lanterne est la tienne. S'il voit les deux, peut-être qu'il se souviendra. »
-Mira : « Merci, maman. » Hilde sourit, et ne dit rien pour ne pas gâcher le moment.
+Mira : « Merci, maman. »
+Hilde sourit, et ne dit rien pour ne pas gâcher le moment.
 
 == a3.e10.nev
 ## La forge

@@ -61,7 +61,7 @@ Nev: “The whole town works for the Order. Those who refuse go down to the bott
 A cart creaks over the cobblestones. On the bench, a woman with red braids holds the reins.
 Mira: “Mum? What are you doing here?”
 Hilde: “I told you I'd come. I'm not letting my daughter walk into this town alone.”
-An old miner stops and stares at her. “Hilde the smith? We thought you'd been dead for eighteen years.”
+An old miner stops and stares at her. Hilde the smith, whom everyone thought dead for eighteen years.
 
 == a3.e2.ville
 ## Goran's inn
@@ -113,7 +113,8 @@ Follow the rails down
 ## Red Mines
 Hilde is waiting by the rails, a lamp in her hand.
 Hilde: “I know these tunnels better than anyone. I'm coming with you all the way down.”
-Mira: “Do you know the cages too, Mum?” Hilde doesn't answer. [Go down]
+Mira: “Do you know the cages too, Mum?”
+Hilde doesn't answer. [Go down]
 
 == a3.e4.atelier
 ## The workshop
@@ -270,7 +271,8 @@ Two-on-one duel: *Kael and Nev* against Varen. Varen is weak to *Earth* and *Bla
 == a3.e8.fuite
 ## The crater
 Varen steps back, a hand on his shoulder. He looks at Nev for a long time.
-Varen: “You learned to fight. Not from me.” He whistles, and his soldiers fall back to the top of the crater.
+Varen: “You learned to fight. Not from me.”
+He whistles, and his soldiers fall back to the top of the crater.
 Kael: “He left too quickly. As if he knew something else was coming.”
 
 == a3.e8.repos
@@ -306,13 +308,14 @@ The Nameless is weak to *Fire* and *Wind*, and resists Earth and Water. He charg
 Kael's last blow splits the steel mask. It falls in two pieces into the ash.
 Beneath it, a tired face, a grey beard, eyes that no longer know where they are.
 Kael: “No… Dad?”
-The man looks at him without recognising him. “I have no name. I have no son.”
+Nameless: “I have no name. I have no son.”
 
 == a3.e9.fuite
 ## The crater
 While Kael stands frozen, the Nameless smashes the cage with his mace and tears out the ember crystal.
 He disappears into the smoke, heading north. Nobody follows him.
-Mira: “Kael…” Kael doesn't answer. He picks up the two halves of the mask.
+Mira: “Kael…”
+Kael doesn't answer. He picks up the two halves of the mask.
 
 == a3.e9.message
 The Order has taken the ember crystal. Go back to *Forgecendre*, to Hilde's forge.
@@ -335,7 +338,8 @@ Hilde stokes the forge. Mira takes the bellows without being asked. They work al
 ## The forge
 By morning, the sword shines like new. On the guard, Hilde has engraved a lantern.
 Hilde: “The metal is his, the lantern is yours. If he sees both, maybe he'll remember.”
-Mira: “Thank you, Mum.” Hilde smiles, and says nothing so as not to spoil the moment.
+Mira: “Thank you, Mum.”
+Hilde smiles, and says nothing so as not to spoil the moment.
 
 == a3.e10.nev
 ## The forge

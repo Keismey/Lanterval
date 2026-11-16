@@ -52,7 +52,8 @@ In a clearing, Mira has her back to a tree and holds three wolves at bay with fl
 Mira: “Kael?! Don't just stand there!” [Help Mira]
 
 == a1.e2.merci
-Mira: “Not bad, for an apprentice guard.” She blows on her still-smoking fingers.
+Mira blows on her still-smoking fingers.
+Mira: “Not bad, for an apprentice guard.”
 
 == a1.e2.insigne
 Something glints in the trampled grass: a metal badge shaped like a closed eye.
@@ -164,7 +165,8 @@ You made it out of the cave. Bring the heart back to *Elder Orvan*.
 Bring the heart back to the Elder
 
 == a1.e7.coeur
-Orvan: “The heart! You found it!” The Elder takes it in both hands and places it in the lantern's cage.
+Orvan: “The heart! You found it!”
+The Elder takes it in both hands and places it in the lantern's cage.
 
 == a1.e7.fete
 ## The lantern
@@ -174,7 +176,8 @@ Reward: *100 gold* and the *Lanterval medallion* (accessory, HP +10). The team i
 == a1.e7.aveu
 Orvan: “Thank you, all three of you. But I must be honest: this heart will only last one season.”
 Orvan: “The valley's true crystal, the amber crystal, rests at the Stone Pass, to the north. If the Order is looking for it too, you must reach it before them.”
-Mira: “Then we leave tomorrow.” Sol nods without a word.
+Mira: “Then we leave tomorrow.”
+Sol nods without a word.
 
 == a1.e7.message
 New path on the map: the *Stone Pass*.
@@ -261,7 +264,7 @@ The father's sword
 
 == a1.e10.brann
 Brann: “Back on your feet. You're as stubborn as your father.”
-Brann: “Your mother said the same, before the fever took her. He never got over it.”
+Brann: “Your mother used to tell him so, before the fever took her. He never got over it.”
 Brann: “The night he left into the mist, he gave me something. ‘For Kael, when he's ready,’ he said.”
 Brann: “After what you did at the pass, I think you are.”
 
@@ -324,6 +327,9 @@ Tilo: “The fireflies are back in the forest! And Mum says the harpies at the p
 == pnj.tilo.a1.e10
 Tilo: “You came back on a cart, all pale… I was scared, you know.”
 
+== pnj.tilo.fin
+Tilo: “Captain Aldric taught me how to hold a sword! Well, a stick. But a big stick.”
+
 == pnj.tilo.a2.e1
 Tilo: “Are you going to see the sea? Bring me back a shell!”
 
@@ -336,7 +342,7 @@ Hilde: “Has Mira gone off without a word again? If you see her, bring her back
 Hilde: “Thank you for bringing my daughter back. She takes after me: she charges first and thinks later.”
 
 == pnj.hilde.accueil.a1.e4
-Hilde: “They say you found a badge with a closed eye.” She grips her hammer a little too tightly. “Don't show it to anyone else.”
+Hilde: “They say you found a badge with a closed eye. Don't show it to anyone else.”
 
 == pnj.hilde.accueil.a1.e8
 Hilde: “The pass, already? I've pulled some new pieces out of the fire. Take what you need, I don't want to stitch you back up.”
@@ -345,4 +351,4 @@ Hilde: “The pass, already? I've pulled some new pieces out of the fire. Take w
 Hilde: “You're up, good. Mira is still asleep, let her rest.”
 
 == pnj.hilde.accueil.a2.e1
-Hilde: “Salvent…” She stays silent for a moment. “Take care of her, Kael.”
+Hilde: “Salvent… Take care of her, Kael.”

@@ -255,7 +255,7 @@ Mira: “I'm still angry with her. But I want to come back so I can stay angry w
 == a4.e7.mira.forge
 ## Mira
 Mira: “Before we left Forgecendre, my mother hugged me. This time, I hugged her back.”
-Mira: “We remade the mould together. I want to come back so we can make more.”
+Mira: “We threw the old mould into the volcano, and forged something new. I want to come back so we can forge more.”
 
 == a4.e7.sol
 ## Sol
@@ -486,7 +486,7 @@ Set the azure back in the sanctuary
 
 == a4.e11.m1.pose
 ## The sanctuary
-Nev sets the azure crystal on the altar. It rises on its own and takes its place again, above the pillar.
+Tavor is waiting in the sanctuary. Nev sets the azure crystal on the altar, and it takes its place again above the pillar.
 Tavor: “The monks would have wept for joy. I'll settle for a smile.”
 Nev: “Let's go back to the Nest. Grandmother must be waiting.”
 
@@ -555,11 +555,11 @@ Set the foam back in the lighthouse
 == a4.e11.m3.pose
 ## The lighthouse
 Sol puts the foam crystal back in the lighthouse's great lantern. The light sweeps out over the sea, all the way to the horizon.
-Sol: “Dad lit this lighthouse every evening. Now it will never go out.”
+Sol: “Erwan will light this lighthouse every evening. Now it will never go out.”
 
 == a4.e11.m3.naia
 ## Salvent
-On the harbour, Naïa is waiting for Sol, sitting on their parents' old boat.
+On the harbour, Naïa is waiting for Sol, sitting on Erwan's old boat.
 Naïa: “I still don't remember the shipwreck. I was two. The sea kept the rest.”
 Naïa: “But I know the lullaby by heart now. Sing it again, big brother.”
 Sol sings. That same evening, they start repairing the boat together.
@@ -595,7 +595,7 @@ Aldric: “I'm home. My son brought me back.”
 
 == a4.e12.fete
 ## Lanterval
-Three days later, Lanterval celebrates. The great lantern waits on the square, and the mist does not come back.
+That same evening, Lanterval celebrates. Garlands run from house to house, all the way to the great lantern.
 Brann sees Aldric walk through the village gate. He cries like a child, and doesn't hide it.
 Brann: “Captain. Ten years I've kept your place warm.”
 Aldric: “Keep it a little longer, Brann. I have a son to catch up with.”
@@ -640,7 +640,7 @@ Ysold: “He wanted you to have his staff. That, he didn't forget.”
 
 == a4.e12.lanterne
 ## The great lantern
-Night falls. The whole village turns towards Kael.
+Night falls. For the first time in fifty years, it won't be Orvan who lights the lantern. The whole village turns towards Kael.
 Brann: “Your turn, Kael. Tonight, you're the lamplighter.” [Light the lantern]
 
 == a4.e12.fleur

@@ -1806,7 +1806,7 @@ Garrick : « Le cinquième t'attend au Col des Pierres. Prépare-toi bien, petit
 
 == echos.e2.col
 ## Les Échos
-Au sommet du col, près du socle vide, la brume prend une forme immense. Une masse, un masque, et rien dedans.
+Au sommet du col, au milieu du cercle de pierres, la brume prend une forme immense. Une masse, un masque, et rien dedans.
 Kael : « Le Sans-Nom. Mais mon père n'est plus là-dedans. C'est seulement sa peur. »
 Kael : « Alors on peut le battre pour de bon. » [Combattre]
 

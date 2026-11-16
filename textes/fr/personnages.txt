@@ -301,7 +301,7 @@ Il a rendu les quatre cristaux, puis allumé la grande lanterne de Lanterval ave
 Elle a rendu le cristal de braise au volcan, puis elle est rentrée à Forgecendre, devant la forge de sa mère.
 
 == perso.sol.7
-Il a rendu le cristal d'écume au phare de son père. Il s'est installé à Salvent, près de Naïa, qui a perdu ses souvenirs dans le naufrage et pas dans la brume.
+Il a rendu le cristal d'écume au phare d'Erwan. Il s'est installé à Salvent, près de Naïa, qui a perdu ses souvenirs dans le naufrage et pas dans la brume.
 
 == perso.orvan.7
 Au Cœur de l'Œil, il s'est jeté devant l'ombre de la Paupière à la place des héros, et il a tout oublié. Il est parti au loin avec Ysold, et a laissé son bâton de lanternier à Kael.
