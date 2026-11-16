@@ -1803,7 +1803,7 @@ Garrick: “The fifth is waiting for you at the Stone Pass. Prepare well, kid. T
 
 == echos.e2.col
 ## The Echoes
-At the top of the pass, near the empty pedestal, the mist takes on a huge shape. A mace, a mask, and nothing inside.
+At the top of the pass, in the middle of the stone circle, the mist takes on a huge shape. A mace, a mask, and nothing inside.
 Kael: “The Nameless. But my father isn't in there any more. It's only his fear.”
 Kael: “So we can beat it for good.” [Fight]
 

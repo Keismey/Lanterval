@@ -62,7 +62,8 @@ Dans une clairière, Mira est dos à un arbre et tient trois loups en respect av
 Mira : « Kael ?! Ne reste pas planté là ! » [Aider Mira]
 
 == a1.e2.merci
-Mira : « Pas mal, pour un apprenti garde. » Elle souffle sur ses doigts encore fumants.
+Mira souffle sur ses doigts encore fumants.
+Mira : « Pas mal, pour un apprenti garde. »
 
 == a1.e2.insigne
 Dans l'herbe piétinée, quelque chose brille : un insigne de métal en forme d'œil fermé.
@@ -174,7 +175,8 @@ Tu es sorti de la grotte. Rapporte le cœur à *l'Ancien Orvan*.
 Rapporter le cœur à l'Ancien
 
 == a1.e7.coeur
-Orvan : « Le cœur ! Tu l'as trouvé ! » L'Ancien le prend à deux mains et le dépose dans la cage de la lanterne.
+Orvan : « Le cœur ! Tu l'as trouvé ! »
+L'Ancien le prend à deux mains et le dépose dans la cage de la lanterne.
 
 == a1.e7.fete
 ## La lanterne
@@ -184,7 +186,8 @@ Récompense : *100 po* et le *Médaillon de Lanterval* (accessoire, PV +10). L'�
 == a1.e7.aveu
 Orvan : « Merci à vous trois. Mais je dois être honnête : ce cœur ne tiendra qu'une saison. »
 Orvan : « Le vrai cristal de la vallée, le cristal d'ambre, repose au Col des Pierres, au nord. Si l'Ordre le cherche aussi, il faut l'atteindre avant eux. »
-Mira : « Alors on part demain. » Sol hoche la tête sans un mot.
+Mira : « Alors on part demain. »
+Sol hoche la tête sans un mot.
 
 == a1.e7.message
 Nouveau chemin sur la carte : le *Col des Pierres*.
@@ -271,7 +274,7 @@ L'épée du père
 
 == a1.e10.brann
 Brann : « Te voilà debout. Tu as la tête dure, comme ton père. »
-Brann : « Ta mère disait pareil, avant que la fièvre l'emporte. Il ne s'en est jamais remis. »
+Brann : « Ta mère le lui disait souvent, avant que la fièvre l'emporte. Il ne s'en est jamais remis. »
 Brann : « La nuit où il est parti dans la brume, il m'a laissé quelque chose. "Pour Kael, quand il sera prêt", qu'il a dit. »
 Brann : « Après ce que tu as fait au col, je crois que tu l'es. »
 
@@ -335,6 +338,9 @@ Tilo : « Les lucioles sont revenues dans la forêt ! Et au col, maman dit que l
 == pnj.tilo.a1.e10
 Tilo : « Vous êtes revenus sur une charrette, tout pâles… J'ai eu peur, tu sais. »
 
+== pnj.tilo.fin
+Tilo : « Le capitaine Aldric m'a appris à tenir une épée ! Enfin, une branche. Mais une grosse branche. »
+
 == pnj.tilo.a2.e1
 Tilo : « Tu vas voir la mer ? Rapporte-moi un coquillage ! »
 
@@ -347,7 +353,7 @@ Hilde : « Mira est encore partie sans prévenir ? Si tu la croises, ramène-la-
 Hilde : « Merci d'avoir ramené ma fille. Elle tient de moi : elle fonce d'abord, elle réfléchit après. »
 
 == pnj.hilde.accueil.a1.e4
-Hilde : « On raconte que vous avez trouvé un insigne à l'œil fermé. » Elle serre son marteau un peu trop fort. « Ne le montre à personne d'autre. »
+Hilde : « On raconte que vous avez trouvé un insigne à l'œil fermé. Ne le montre à personne d'autre. »
 
 == pnj.hilde.accueil.a1.e8
 Hilde : « Le col, déjà ? J'ai sorti de nouvelles pièces du feu. Prenez ce qu'il faut, je n'ai pas envie de vous recoudre. »
@@ -356,4 +362,4 @@ Hilde : « Le col, déjà ? J'ai sorti de nouvelles pièces du feu. Prenez ce qu
 Hilde : « Tu es debout, c'est bien. Mira dort encore, laisse-la se reposer. »
 
 == pnj.hilde.accueil.a2.e1
-Hilde : « Salvent… » Elle reste un moment sans rien dire. « Prends soin d'elle, Kael. »
+Hilde : « Salvent… Prends soin d'elle, Kael. »

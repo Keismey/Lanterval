@@ -255,7 +255,7 @@ Mira : « Je lui en veux encore. Mais je veux rentrer pour pouvoir lui en vouloi
 == a4.e7.mira.forge
 ## Mira
 Mira : « Avant de partir de Forgecendre, ma mère m'a serrée dans ses bras. Cette fois, je l'ai serrée aussi. »
-Mira : « On a refait le moule ensemble. Je veux rentrer pour qu'on en fasse d'autres. »
+Mira : « On a jeté le vieux moule dans le volcan, et forgé quelque chose de neuf. Je veux rentrer pour qu'on en forge d'autres. »
 
 == a4.e7.sol
 ## Sol
@@ -486,7 +486,7 @@ Reposer l'azur au sanctuaire
 
 == a4.e11.m1.pose
 ## Le sanctuaire
-Nev pose le cristal d'azur sur l'autel. Il s'élève tout seul et reprend sa place, au-dessus du pilier.
+Tavor les attend dans le sanctuaire. Nev pose le cristal d'azur sur l'autel, et il reprend sa place au-dessus du pilier.
 Tavor : « Les moines auraient pleuré de joie. Moi, je me contente de sourire. »
 Nev : « Rentrons au Nid. Grand-mère doit nous attendre. »
 
@@ -555,11 +555,11 @@ Reposer l'écume au phare
 == a4.e11.m3.pose
 ## Le phare
 Sol replace le cristal d'écume dans la grande lanterne du phare. La lumière part sur la mer, jusqu'à l'horizon.
-Sol : « Papa allumait ce phare tous les soirs. Maintenant, il ne s'éteindra plus. »
+Sol : « Erwan rallumera ce phare tous les soirs. Maintenant, il ne s'éteindra plus. »
 
 == a4.e11.m3.naia
 ## Salvent
-Sur le port, Naïa attend Sol, assise sur la vieille barque de leurs parents.
+Sur le port, Naïa attend Sol, assise sur la vieille barque d'Erwan.
 Naïa : « Je ne me souviens toujours pas du naufrage. J'avais deux ans. La mer a gardé le reste. »
 Naïa : « Mais la berceuse, je la connais par cœur, maintenant. Chante-la encore, grand frère. »
 Sol chante. Le soir même, ils commencent à réparer la barque, tous les deux.
@@ -595,7 +595,7 @@ Aldric : « Je suis rentré. Mon fils m'a ramené. »
 
 == a4.e12.fete
 ## Lanterval
-Trois jours plus tard, Lanterval fait la fête. La grande lanterne attend sur la place, et la brume ne revient pas.
+Le soir même, Lanterval fait la fête. Des guirlandes courent d'une maison à l'autre, jusqu'à la grande lanterne.
 Brann voit Aldric passer la porte du village. Il pleure comme un enfant, et ne s'en cache pas.
 Brann : « Capitaine. Dix ans que je garde votre place au chaud. »
 Aldric : « Garde-la encore un peu, Brann. J'ai un fils à rattraper. »
@@ -640,7 +640,7 @@ Ysold : « Il voulait que tu aies son bâton. Ça, il ne l'a pas oublié. »
 
 == a4.e12.lanterne
 ## La grande lanterne
-La nuit tombe. Tout le village se tourne vers Kael.
+La nuit tombe. Pour la première fois depuis cinquante ans, ce n'est pas Orvan qui allumera la lanterne. Tout le village se tourne vers Kael.
 Brann : « À toi, Kael. Ce soir, c'est toi le lanternier. » [Allumer la lanterne]
 
 == a4.e12.fleur
