@@ -489,7 +489,7 @@ const LIEUX = {
   escalier: {
     type: 'zone', region: 'vents', x: .84, y: .12, cotes: ['b', 's'],
     visible: 'fini a4.e6 et pas fini a4.e10', ouvert: 'fini a4.e7', nonRetour: 'drapeau escalier',
-    etats: [{ id: 'sommet', si: 'fini a4.e9' }],
+    etats: [{ id: 'sommet', si: 'fini a4.e9' }, { id: 'ouvert', si: 'drapeau oeilouvert' }],
     maxEvenements: 3,
     tresors: [
       { id: 'h1', type: 'tresor', gagne: '2 baume, 2 ether' },
