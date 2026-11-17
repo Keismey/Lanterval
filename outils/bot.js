@@ -331,6 +331,8 @@ function cerveau([graine, profil]) {
   // les dialogues : on choisit la première réponse qui n'est pas « Plus tard » ; les fenêtres se ferment
   async function repondre() {
     return page.evaluate(() => {
+      // le générique de fin : un appui affiche tout, un second le ferme
+      const g = document.querySelector('.generique'); if (g) { g.click(); return true; }
       const m = document.querySelector('#modal .modal');
       if (m) { const x = m.querySelector('#mclose') || m.querySelector('button'); if (x) { x.click(); return true; } }
       const b = [...document.querySelectorAll('#panel button[data-i]:not([disabled])')];
