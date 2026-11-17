@@ -1355,6 +1355,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.10.3
+Nouveau menu des classes, dans l'onglet Classe de l'Équipe : les classes rangées par rôle avec les éléments qu'elles frappent, la fiche de la classe touchée (statistiques, techniques, armes), et la bande « L'équipe frappe » qui montre ce qu'un changement ajoute ou fait perdre.
 ## Version 0.10.2
 Six nouveaux panoramas : le Héraut au sommet du phare, le Forgeur de cages, Mira et Hilde le soir de la fête, Tobi et son père, le Serpent d'azur, le pied de l'Escalier de brume.
 Ulric, le père de Tobi, a enfin son portrait.
@@ -1740,3 +1742,36 @@ après la fin {t}
 
 == options.echos.sous
 Les Échos se battent au niveau de ton équipe +5 ; en difficile, +10 et 30 % de PV en plus
+
+== role.defense
+Défense
+
+== role.frappe
+Frappe
+
+== role.magie
+Magie
+
+== role.soutien
+Soutien
+
+== equipe.frappe
+L'équipe frappe
+
+== equipe.region
+Région
+
+== equipe.sans.element
+Sans élément
+
+== equipe.armes
+Armes : {liste}.
+
+== equipe.vers.sac
+Retournerait au sac : {liste}.
+
+== equipe.devenir
+Devenir {classe}
+
+== equipe.classe.actuelle
+Classe actuelle

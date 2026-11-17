@@ -1177,6 +1177,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.10.3
+New class menu, in the Team's Class tab: classes sorted by role with the elements they strike, a sheet for the class you tap (stats, techniques, weapons), and a "Team strikes" strip showing what a change adds or loses.
 ## Version 0.10.2
 Six new panoramas: the Herald at the top of the lighthouse, the Cage Forger, Mira and Hilde on the night of the feast, Tobi and his father, the Azure Serpent, the foot of the Stair of Mist.
 Ulric, Tobi's father, finally has his portrait.
@@ -1708,3 +1710,36 @@ Echoes: hard
 
 == options.echos.sous
 Echoes fight at your party level +5; on hard, +10 and 30% more HP
+
+== role.defense
+Defence
+
+== role.frappe
+Offence
+
+== role.magie
+Magic
+
+== role.soutien
+Support
+
+== equipe.frappe
+Team strikes
+
+== equipe.region
+Region
+
+== equipe.sans.element
+No element
+
+== equipe.armes
+Weapons: {liste}.
+
+== equipe.vers.sac
+Would go back to the bag: {liste}.
+
+== equipe.devenir
+Become {classe}
+
+== equipe.classe.actuelle
+Current class
