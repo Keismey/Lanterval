@@ -106,7 +106,8 @@ async function jouer(evts, ctx, chemin = '') {
     if (ctx.stop) return;
     const [type, ...args] = evts[i], id = chemin + i, r = ctx.reprise;
     if (!EVENEMENTS[type]) { console.warn('Événement inconnu :', type); continue; }
-    if (r && r.fait.includes(id)) continue;
+    // les décors ne sont jamais sautés (même si une mise à jour a décalé les numéros d'événements)
+    if (r && r.fait.includes(id) && !VISUELS.includes(type)) continue;
     // un dialogue suivi d'un combat (sans conseil) se termine par le bouton « Combattre »
     const n = evts[i + 1], suite = n && n[0] === 'combat' && !(n[2] && n[2].conseil) ? 'combat' : null;
     await EVENEMENTS[type](args, ctx, suite, id);
