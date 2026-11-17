@@ -222,7 +222,7 @@ const IMAGES = {
   'pano.orvan': { fichier: 'img/panoramas/orvan.webp', sujet: 'Au Cœur de l\'Œil, Orvan se jette devant les quatre héros et prend l\'ombre de la Paupière en pleine poitrine ; Ysold à genoux, les cristaux intacts' },
   'pano.ysold': { fichier: 'img/panoramas/ysold.webp', sujet: 'Au Cœur de l\'Œil, Ysold flotte au-dessus d\'une plateforme de pierre, fusionnée aux quatre cristaux qui tournent autour d\'elle' },
   'pano.oeil': { fichier: 'img/panoramas/oeil.webp', sujet: 'L\'Œil du monde s\'ouvre au-dessus des nuages : la paupière de pierre se fend, la lumière coule vers les quatre régions' },
-  'pano.epilogue.kael': { fichier: 'img/panoramas/epilogue-kael.webp', sujet: 'Épilogue de Kael : Lanterval au matin, Kael en garde sur les remparts, l\'épée à la lanterne au côté, la vallée claire sans brume' },
+  'pano.epilogue.kael': { fichier: 'img/panoramas/epilogue-kael.webp', sujet: 'Épilogue de Kael : Lanterval au matin, Kael et Aldric côte à côte sur les remparts après une nuit de garde, la vallée claire sans brume' },
   'pano.epilogue.mira': { fichier: 'img/panoramas/epilogue-mira.webp', sujet: 'Épilogue de Mira : la forge de Forgecendre au matin, une flamme dans l\'âtre, Mira sur le pas de la porte' },
   'pano.epilogue.sol': { fichier: 'img/panoramas/epilogue-sol.webp', sujet: 'Épilogue de Sol : le port de Salvent sous un ciel clair, Sol au bout du quai, le phare qui brille' },
   'pano.epilogue.nev': { fichier: 'img/panoramas/epilogue-nev.webp', sujet: 'Épilogue de Nev : Aerie au vent, des cerfs-volants dans le ciel, Nev sur une plateforme au bord des falaises' },
