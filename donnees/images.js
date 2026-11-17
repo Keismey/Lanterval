@@ -217,6 +217,7 @@ const IMAGES = {
   'pnj.aldric': { fichier: 'img/pnj/aldric.webp', portrait: 'img/pnj/aldric.webp', provisoire: 'f_aldric', sujet: 'Aldric, père de Kael, la quarantaine, cheveux blonds grisonnants, barbe courte, armure noire de l\'Ordre fendue, sans masque' },
   'pnj.garrick': { fichier: 'img/pnj/garrick.webp', portrait: 'img/pnj/garrick.webp', provisoire: 'f_garrick', sujet: 'Garrick, vieux chasseur d\'Aerie, cheveux gris en bataille, bandeau sur un œil, manteau de plumes et de fourrure' },
   'pano.aldric': { fichier: 'img/panoramas/aldric.webp', sujet: 'Sur l\'Escalier de brume, Aldric sans masque et Varen, côte à côte, retiennent une marée d\'Ombres pour laisser passer l\'équipe' },
+  'pano.lanterne.fin': { fichier: 'img/panoramas/lanterne-fin.webp', sujet: 'Le soir de la fête, Kael allume la grande lanterne de Lanterval avec le bâton d\'Orvan, devant Aldric, Brann, Mira, Sol, Nev et le village' },
   'pano.orvan': { fichier: 'img/panoramas/orvan.webp', sujet: 'Au Cœur de l\'Œil, Orvan se jette devant les quatre héros et prend l\'ombre de la Paupière en pleine poitrine ; Ysold à genoux, les cristaux intacts' },
   'pano.ysold': { fichier: 'img/panoramas/ysold.webp', sujet: 'Au Cœur de l\'Œil, Ysold flotte au-dessus d\'une plateforme de pierre, fusionnée aux quatre cristaux qui tournent autour d\'elle' },
   'pano.oeil': { fichier: 'img/panoramas/oeil.webp', sujet: 'L\'Œil du monde s\'ouvre au-dessus des nuages : la paupière de pierre se fend, la lumière coule vers les quatre régions' },
