@@ -213,6 +213,7 @@ ACTES.push({
       ['position', 'lanterval'],
       ['dialogue', 'a4.e12.fete'],
       ['si', 'annexe moule 4 ou drapeau pardon', [['dialogue', 'a4.e12.fete.hilde']], [['dialogue', 'a4.e12.fete.mot']]],
+      ['panorama', 'pano.tombe'],
       ['dialogue', 'a4.e12.tombe'],
       ['dialogue', 'a4.e12.pell'],
       ['si', 'annexe larmes 3', [['dialogue', 'a4.e12.lettre.orvan']], [['dialogue', 'a4.e12.lettre.ysold']]],
