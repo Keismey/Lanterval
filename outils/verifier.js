@@ -211,6 +211,9 @@ for (const f of fs.readdirSync(path.join(RACINE, 'moteur'))) {
 // bulles : 3 phrases au plus, 5 bulles au plus ; noms des personnages
 const PARLE = { fr: {}, en: {} };
 for (const lg of ['fr', 'en']) for (const k in TXT[lg]) if (k.startsWith('parle.')) PARLE[lg][TXT[lg][k].l.join(' ')] = 1;
+// chaque personnage qui parle a un visage (heros.<id> ou pnj.<id>), sinon sa bulle a une vignette vide
+for (const k in TXT.fr) if (k.startsWith('parle.') && !D.IMAGES['heros.' + k.slice(6)] && !D.IMAGES['pnj.' + k.slice(6)])
+  averti(`${k} : pas de portrait (ajoute pnj.${k.slice(6)} dans donnees/images.js)`);
 for (const lg of ['fr', 'en']) for (const [k, { f, l }] of Object.entries(TXT[lg])) {
   if (!/^(a\d|prologue|loup|navire|prix|berceuse|graine|chasse|colporteur|pierre|mineurs|moule|aldric|courrier|wyverne|cerfvolant|larmes|echos|pnj\.\w+\.(a\d|fin)|pnj\.brann$|pnj\.\w+\.accueil)/.test(k)) continue;
   const bulles = l.filter(x => !x.startsWith('##') && !x.startsWith('>'));
