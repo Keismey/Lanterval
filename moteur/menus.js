@@ -326,6 +326,8 @@ function openOptions(vue) {
     ];
     // difficulté de la partie (0.9.0) : Histoire = monstres moins forts, pour qui veut surtout l'aventure
     if (enJeu) o.push({ k: 'histoire', ic: 'book', label: esc(t(S.histoire ? 'options.difficulte.histoire' : 'options.difficulte.normal')), sub: esc(t('options.difficulte.sous')), dis: !libre });
+    // Échos (0.10.1) : difficulté à part, dès que les Échos existent (fin vue ou partie+)
+    if (enJeu && (S.plus || S.finVue)) o.push({ k: 'echos', ic: 'star', label: esc(t(S.echosDur ? 'options.echos.dur' : 'options.echos.normal')), sub: esc(t('options.echos.sous')), dis: !libre });
     if (enJeu) o.push({ k: 'titre', ic: 'back', label: esc(t('options.titre')), sub: esc(t('options.titre.sous')), dis: !libre });
     o.push({ k: 'bug', ic: 'bug', label: esc(t('options.bug')), sub: esc(t('options.bug.sous')) },
       { k: 'soutien', ic: 'heart', label: esc(t('options.soutien')), sub: esc(t('options.soutien.sous')) },
@@ -343,6 +345,7 @@ function openOptions(vue) {
       else if (k === 'rapide') { OPT.rapide = !OPT.rapide; sauverOptions(); draw(); }
       else if (k === 'chrono') { OPT.chrono = !OPT.chrono; sauverOptions(); hud(); draw(); }
       else if (k === 'histoire') { S.histoire = !S.histoire; save(); draw(); }
+      else if (k === 'echos') { S.echosDur = !S.echosDur; save(); draw(); }
       else if (k === 'plein') basculerPleinEcran();
       else if (k === 'save') { if (S && S.screen !== 'title') save(); KS.saveDialog({ jeu: 'Lanterval', keys: [CLE, CLE_SECOURS], lang: LANG }); }
       else if (k === 'notes') { vue = 'notes'; draw(); }

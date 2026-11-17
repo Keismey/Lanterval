@@ -59,10 +59,18 @@ function partiePlus() {
   s.jobs = [...old.jobs]; s.best = old.best; s.codex = old.codex; s.bag = old.bag; s.vus = old.vus || {};
   s.souvenirs = { ...(old.souvenirs || {}) };   // épilogues complets déjà vus, cumulés d'une partie à l'autre
   for (const id of ORDRE_HEROS) { const o = old.chars[id], c = s.chars[id]; c.lvl = o.lvl; c.xp = o.xp; c.job = o.job; c.eq = { ...o.eq }; fullC(c); }
+  // les Échos rôdent dès le début : chacun apparaît près de son original une fois celui-ci abattu
+  s.echosDur = !!old.echosDur; s.annexes.echos = 1;
   S = s; return s;
 }
-// les monstres sont plus forts en partie+
+// partie+ (0.10.1) : on garde tout et on roule sur le jeu ; seuls l'or et l'XP des monstres montent (+35 % par partie+).
+// Le défi est dans les Échos, placés dans leurs actes.
 function forcePlus() { return 1 + .35 * (S.plus || 0); }
+// Échos : réglés pour une équipe de niveau ECHO_REF ; ils se battent au niveau moyen de l'équipe + ECHO_ECART
+// (+ECHO_ECART de plus en difficulté Échos difficile, avec ECHO_DUR fois plus de PV)
+const ECHO_REF = 40, ECHO_ECART = 5, ECHO_DUR = 1.3;
+function niveauEcho() { const l = team().map(h => h.lvl); return Math.round(l.reduce((a, b) => a + b, 0) / l.length) + ECHO_ECART * (S.echosDur ? 2 : 1); }
+function forceEcho() { return niveauEcho() / ECHO_REF; }
 
 /* ---------- Équipe et statistiques ---------- */
 const STATS = ['hp', 'pp', 'atk', 'mag', 'def', 'spd'];

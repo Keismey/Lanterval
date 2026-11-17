@@ -30,6 +30,7 @@ node outils/construire.js   # met à jour le cache hors ligne (sw.js) et l'aper�
 Pour vérifier l'équilibrage, `node outils/bot.js [graine] [étape] [--presse]` joue la partie entière dans Chromium
 (Playwright) et donne, pour chaque combat de quête, les niveaux, les classes, les PV les plus bas, les objets et les reprises.
 `node outils/equilibrage.js 3` fait jouer 3 graines × 2 profils (appliqué, pressé) et écrit `equilibrage.md`, avec les seuils visés.
+`node outils/echos.js 40 6 [--dur]` simule les combats contre les Échos avec une équipe de niveau 40 et tout l'équipement.
 
 ## Mode test
 

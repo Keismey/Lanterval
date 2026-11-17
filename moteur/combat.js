@@ -210,8 +210,9 @@ async function ecranVictoire(xp, gold, avant) {
 }
 function mkEnnemi(id, nom) {
   // mode Histoire : PV −25 %, Attaque −25 %
-  const d = MONSTRES[id], fp = forcePlus(), h = S.histoire ? HISTOIRE : 1, pv = Math.round(d.pv * fp * h);
-  const e = { id, isEnemy: true, name: nom, hp: pv, mhp: pv, atk: Math.round(d.atk * (1 + (fp - 1) * .6) * h), def: d.def, spd: d.vit, shield: d.garde, mshield: d.garde, weak: d.faible, res: d.resiste,
+  // Échos : leur force suit le niveau de l'équipe (voir forceEcho), en partie+ comme après la fin
+  const d = MONSTRES[id], fp = forcePlus(), h = S.histoire ? HISTOIRE : 1, k = d.echo ? forceEcho() : 1, pv = Math.round(d.pv * k * (d.echo && S.echosDur ? ECHO_DUR : 1) * h);
+  const e = { id, isEnemy: true, name: nom, hp: pv, mhp: pv, atk: Math.round(d.atk * k * h), def: Math.round(d.def * k), spd: d.vit, shield: d.garde, mshield: d.garde, weak: d.faible, res: d.resiste,
     xp: Math.round(d.xp * fp), gold: Math.round(d.or * fp), broken: false, charged: false, cnt: 0, dort: false, vole: false,
     caps: [...(d.capacites || [])] };
   if (capacite(e, 'cristaux')) { e.cristal = 0; appliquerCristal(e); }

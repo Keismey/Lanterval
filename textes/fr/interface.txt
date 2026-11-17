@@ -1355,6 +1355,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.10.1
+Partie+ : on garde tout et on revit l'aventure sans pression, les monstres ne sont plus renforcés. Le défi, ce sont les Échos : chacun apparaît près de son original dès qu'il est abattu, se bat toujours au-dessus du niveau de ton équipe et garde une pièce d'équipement unique.
+Options : difficulté des Échos, normale ou difficile.
 ## Version 0.10.0
 Nouvelle fin : après la Paupière, l'équipe rend elle-même les quatre cristaux, dans l'ordre que tu veux, puis rentre à Lanterval pour la fête. Chaque retour joue l'épilogue d'un héros.
 Orvan, Ysold, Varen et la mère de Kael ont un vrai dénouement. Varen ne se bat plus avec l'équipe que sur l'Escalier de brume.
@@ -1725,3 +1728,12 @@ acte {n} {t}
 
 == journal.temps.fin
 après la fin {t}
+
+== options.echos.normal
+Échos : normal
+
+== options.echos.dur
+Échos : difficile
+
+== options.echos.sous
+Les Échos se battent au niveau de ton équipe +5 ; en difficile, +10 et 30 % de PV en plus

@@ -176,14 +176,14 @@ const MONSTRES = {
   paupiere: { pv: 9500, atk: 172, def: 20, vit: 22, garde: 16, faible: ['T', 'F', 'E', 'V'], resiste: ['L'], xp: 600, or: 0, taille: .44, f: true, boss: true, voile: true, vol: 'baume',
     capacites: [{ type: 'charge', mult: 1.5 }, { type: 'oubli', chance: .35 }, { type: 'double', chance: .25, garde: true }] },
   // « Les Échos » (après la fin) : la brume copie les grands monstres abattus, en pire
-  echogolem: { pv: 6000, atk: 128, def: 22, vit: 18, garde: 12, faible: ['T', 'E'], resiste: ['F', 'L'], xp: 500, or: 375, taille: .38, boss: true, carapace: true, vol: 'baume',
+  echogolem: { pv: 6600, atk: 216, def: 22, vit: 18, garde: 12, faible: ['T', 'E'], resiste: ['F', 'L'], xp: 500, or: 375, taille: .38, boss: true, echo: true, carapace: true, vol: 'baume',
     capacites: [{ type: 'charge', mult: 1.6 }, { type: 'double', chance: .25, garde: true }] },
-  echovouivre: { pv: 7000, atk: 176, def: 16, vit: 22, garde: 10, faible: ['T'], resiste: ['E', 'F'], xp: 500, or: 375, taille: .36, f: true, boss: true, voile: true, vol: 'baume',
+  echovouivre: { pv: 7000, atk: 158, def: 16, vit: 22, garde: 10, faible: ['T'], resiste: ['E', 'F'], xp: 500, or: 375, taille: .36, f: true, boss: true, echo: true, voile: true, vol: 'baume',
     capacites: [{ type: 'charge', mult: 1.5 }, { type: 'drain', chance: .3 }, { type: 'etat', etat: 'poison', chance: .3 }] },
-  echoforgeur: { pv: 8200, atk: 215, def: 22, vit: 22, garde: 13, faible: ['E', 'V'], resiste: ['F', 'L'], xp: 500, or: 375, taille: .4, boss: true, carapace: true, vol: 'baume',
+  echoforgeur: { pv: 8200, atk: 296, def: 22, vit: 22, garde: 13, faible: ['E', 'V'], resiste: ['F', 'L'], xp: 500, or: 375, taille: .4, boss: true, echo: true, carapace: true, vol: 'baume',
     capacites: [{ type: 'charge', mult: 1.5 }, { type: 'appel', id: 'automate', chance: .3 }, { type: 'etat', etat: 'brulure', chance: .3 }] },
-  echoheraut: { pv: 7000, atk: 150, def: 18, vit: 24, garde: 10, faible: ['E', 'T'], resiste: ['F'], xp: 500, or: 375, taille: .3, boss: true, voile: true, vol: 'baume',
+  echoheraut: { pv: 7000, atk: 226, def: 18, vit: 24, garde: 10, faible: ['E', 'T'], resiste: ['F'], xp: 500, or: 375, taille: .3, boss: true, echo: true, voile: true, vol: 'baume',
     capacites: [{ type: 'charge', mult: 1.6 }, { type: 'double', chance: .3 }, { type: 'etat', etat: 'torpeur', chance: .25 }] },
-  echosansnom: { pv: 15000, atk: 225, def: 22, vit: 24, garde: 16, faible: ['F', 'V'], resiste: ['T', 'E'], xp: 800, or: 625, taille: .42, boss: true, vol: 'baume',
+  echosansnom: { pv: 15000, atk: 203, def: 22, vit: 24, garde: 16, faible: ['F', 'V'], resiste: ['T', 'E'], xp: 800, or: 625, taille: .42, boss: true, echo: true, vol: 'baume',
     capacites: [{ type: 'charge', mult: 1.7 }, { type: 'double', chance: .25, garde: true }, { type: 'drain', chance: .25 }] }
 };

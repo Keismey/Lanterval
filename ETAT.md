@@ -1,5 +1,11 @@
 # État du projet
 
+## Version 0.10.1 (2026-11-17) : Partie+ « plaisir », les Échos dans leurs actes
+- Partie+ : plus de renfort des monstres (forcePlus ne touche plus que l'or et l'XP). La quête des Échos est lancée dès le début (`partiePlus`, message `echos.plus.message`) ; chaque Écho (`parmi` avec `si`) apparaît après son boss d'origine (a1.e5, a2.e3, a3.e5, a2.e7), l'Écho du Sans-Nom après a4.e5. Après la fin d'une première partie, la quête de Garrick reste comme avant.
+- Force des Échos (`echo: true` dans monstres.js, `forceEcho` dans etat.js) : PV, Attaque, Défense × (niveau moyen de l'équipe + 5) / 40 ; option « Échos : difficile » (`S.echosDur`) : +10 niveaux et PV ×1,3.
+- Pièces uniques : Pierre d'écho (acc), Écaille d'écho (acc), Lame d'écho (épée), Manteau d'écho (armure), Bâton d'écho ; Garrick donne toujours le Talisman de l'écho.
+- `node outils/echos.js [niveau] [combats] [--dur]` : le cerveau du bot contre chaque Écho, équipe au niveau donné avec tout l'équipement.
+
 ## Version 0.10.0 (2026-11-16) : la nouvelle fin
 - Après la Paupière, l'équipe redescend (a4.e10), retrouve Aldric et Varen sur le palier et rentre à Aerie. L'Escalier disparaît de la carte (drapeau escalier retiré).
 - a4.e11 (étape en désordre, `parmi` dans la quête principale) : rendre l'azur (ruines.s), la braise (volcan.c), l'écume (phare.s) ; chaque retour joue l'épilogue d'un héros sur place, sans combat. a4.e12 au Col des Pierres puis la fête à Lanterval (Hilde, tombe d'Elna, lettre d'Orvan ou d'Ysold, lanterne allumée par Kael), le générique.

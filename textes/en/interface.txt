@@ -1177,6 +1177,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.10.1
+New Game+: keep everything and relive the adventure without pressure; monsters are no longer boosted. The challenge is the Echoes: each one appears near its original as soon as it falls, always fights above your party's level and guards a unique piece of equipment.
+Options: Echo difficulty, normal or hard.
 ## Version 0.10.0
 New ending: after the Eyelid, the team returns the four crystals themselves, in any order, then goes home to Lanterval for the celebration. Each return plays a hero's epilogue.
 Orvan, Ysold, Varen and Kael's mother get a real resolution. Varen now only fights with the team on the Stair of Mist.
@@ -1693,3 +1696,12 @@ act {n} {t}
 
 == journal.temps.fin
 after the ending {t}
+
+== options.echos.normal
+Echoes: normal
+
+== options.echos.dur
+Echoes: hard
+
+== options.echos.sous
+Echoes fight at your party level +5; on hard, +10 and 30% more HP

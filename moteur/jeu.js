@@ -146,6 +146,8 @@ function renderTitle() {
 async function commencer() {
   S.screen = 'intro';
   await jouer(ACTES[0].ouverture, { titre: t(ACTES[0].id + '.titre') });
+  // partie+ : les Échos rôdent déjà (quête lancée dans partiePlus)
+  if (S.plus) await jouer([['message', 'echos.plus.message']], {});
   S.screen = 'village';
 }
 

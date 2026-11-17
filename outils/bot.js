@@ -267,6 +267,9 @@ function cerveau([graine, profil]) {
     if (n) note(`farm ${n} combats avant ${ennemis.find(([, p]) => p > 1)[0]} (${ac})`);
   }
 
+  // pour outils/echos.js : préparer une équipe contre un combat donné
+  R.prep = { choisirClasses, equiper };
+
   // ---------- ce que le bot fait ensuite ----------
   const essais = {};
   R.pas = async () => {
