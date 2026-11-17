@@ -121,12 +121,6 @@ Eau
 
 # ================= Classes =================
 
-== classe.apprenti
-Apprenti
-
-== classe.apprenti.desc
-Polyvalent, sans spécialité.
-
 == classe.guerrier
 Guerrier
 
@@ -1957,12 +1951,6 @@ L'Écho du Sans-Nom lève une masse de brume… *il va frapper toute l'équipe �
 
 == monstre.echosansnom.special
 L'Écho du Sans-Nom écrase le col sous sa masse de brume !
-
-== tech.brisegarde
-Brise-garde
-
-== tech.brisegarde.desc
-Coup de Lame léger qui enlève un point de garde, même sans faiblesse.
 
 == tech.fracas
 Fracas

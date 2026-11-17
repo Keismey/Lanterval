@@ -40,7 +40,7 @@ Orvan : « Ce cristal reconnaît les cœurs vaillants. Il t'apprendra d'autres f
 
 == a1.e1.classes
 ## Classes
-? *Nouvelles classes : Guerrier, Mage, Soigneur.* Change de classe et d'équipement à tout moment hors combat, avec le bouton Équipe en haut de l'écran.
+? *Nouvelles classes : Mage, Soigneur.* Change de classe et d'équipement à tout moment hors combat, avec le bouton Équipe en haut de l'écran.
 ? Chaque personnage garde son élément : Kael frappe avec la Terre quelle que soit sa classe.
 
 == a1.e1.message

@@ -1355,6 +1355,8 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.10.4
+L'Apprenti disparaît : Kael commence en Guerrier. Brise-garde disparaît avec lui ; pour briser une garde, vise les faiblesses en changeant de classe. Une partie en cours passe Kael en Guerrier automatiquement.
 ## Version 0.10.3
 Nouveau menu des classes, dans l'onglet Classe de l'Équipe : les classes rangées par rôle avec les éléments qu'elles frappent, la fiche de la classe touchée (statistiques, techniques, armes), et la bande « L'équipe frappe » qui montre ce qu'un changement ajoute ou fait perdre.
 ## Version 0.10.2

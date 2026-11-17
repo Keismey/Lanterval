@@ -19,7 +19,7 @@ function mkZ() { return { found: [], rnd: 0, streak: 0, visits: 0, m50: false, m
 function mkC(id) { const h = HEROS[id]; const c = { id, lvl: 1, xp: 0, hp: 0, pp: 0, job: h.classe, eq: { arme: h.arme, armure: h.armure || 'tunique', acc: null }, joined: false }; fullC(c); return c; }
 function newState() {
   const s = { v: FORMAT, version: VERSION, gold: 40, inv: { herbe: 3, tonique: 1 }, bag: {}, imp: [],
-    etapes: [], annexes: {}, f: {}, jobs: ['apprenti'], chars: {}, z: {}, loc: 'lanterval', screen: 'title',
+    etapes: [], annexes: {}, f: {}, jobs: ['guerrier'], chars: {}, z: {}, loc: 'lanterval', screen: 'title',
     best: {}, codex: {}, vus: {}, auto: false, msg: '', plus: 0, fins: 0, auberge: 'lanterval', perso: {}, morceaux: {},
     st: { time: 0, fights: 0, qfights: 0, explores: 0, trav: 0, taps: 0, autoTurns: 0, log: [] } };
   for (const id of ORDRE_HEROS) s.chars[id] = mkC(id);
@@ -47,6 +47,9 @@ function migrer(s) {
     const c = s.chars[id], e = c.eq && EQUIPEMENT[c.eq[p]];
     if (e && e.heros && e.heros !== id) { s.bag[c.eq[p]] = (s.bag[c.eq[p]] || 0) + 1; c.eq[p] = null; }
   }
+  // 0.10.4 : l'Apprenti disparaît, Kael commence en Guerrier (une arme qu'il ne peut plus porter retourne au sac)
+  if (s.jobs.includes('apprenti')) s.jobs = [...new Set(s.jobs.map(j => j === 'apprenti' ? 'guerrier' : j))];
+  for (const id in s.chars) { const c = s.chars[id]; if (c.job === 'apprenti') { c.job = 'guerrier'; if (c.eq.arme && !CLASSES.guerrier.armes.includes(EQUIPEMENT[c.eq.arme].type)) { s.bag[c.eq.arme] = (s.bag[c.eq.arme] || 0) + 1; c.eq.arme = null; } } }
   s.v = FORMAT; s.version = VERSION;
   return s;
 }

@@ -1177,6 +1177,8 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.10.4
+The Apprentice class is gone: Kael now starts as a Warrior. Guard Breaker goes with it; to break a guard, aim for weaknesses by switching classes. A game in progress moves Kael to Warrior automatically.
 ## Version 0.10.3
 New class menu, in the Team's Class tab: classes sorted by role with the elements they strike, a sheet for the class you tap (stats, techniques, weapons), and a "Team strikes" strip showing what a change adds or loses.
 ## Version 0.10.2

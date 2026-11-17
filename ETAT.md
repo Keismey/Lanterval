@@ -1,5 +1,8 @@
 # État du projet
 
+## Version 0.10.4 (2026-11-17) : plus d'Apprenti
+- Classe Apprenti et technique Brise-garde supprimées (choix de Keismey : briser une garde passe par les faiblesses, donc par les changements de classe). Kael commence en Guerrier (`HEROS.kael.classe`, `S.jobs` initial) ; a1.e1 ne débloque plus que Mage et Soigneur. `migrer` convertit Apprenti en Guerrier (la classe et `S.jobs`), un Bâton porté retourne au sac. Bot : plus de cas Apprenti.
+
 ## Version 0.10.3 (2026-11-17) : menu des classes
 - L'onglet Classe de l'Équipe devient le menu de changement (plus d'écran « Changer de classe ») : bande « L'équipe frappe » (`couvertureEquipe`, ajouts en vert, pertes barrées), classes rangées par `role` (nouveau champ de CLASSES : defense, frappe, magie, soutien), fiche de la classe touchée (stats avec écart, techniques avec leur élément résolu pour le héros, armes, pièce qui retournerait au sac), bouton « Devenir ». Code : `menuClasses` dans moteur/menus.js, styles `.cj-*`.
 - Maquette validée : /mnt/project-files/lanterval-classes/maquette-menu-classes-mix.html (sans conseil sur les boss, voulu).
