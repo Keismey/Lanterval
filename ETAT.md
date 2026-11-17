@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.10.2 (2026-11-17) : images manquantes
+- Portrait d'Ulric (père de Tobi, `pnj.ulric`), seul personnage qui parlait sans visage. Le vérificateur avertit maintenant pour tout `parle.<id>` sans `heros.<id>` ni `pnj.<id>`.
+- Six panoramas (Gemini, Keismey) : `pano.heraut` (a2.e7), `pano.forgeur` (a3.e5), `pano.mira-hilde` (a3.e6, musique émotion), `pano.ulric` (mineurs, 3e étape, musique émotion), `pano.serpent` (a4.e5), `pano.escalier` (a4.e8). Sources dans outils/sources/, entrées en fin de LISTE dans outils/images.py.
+
 ## Version 0.10.1 (2026-11-17) : Partie+ « plaisir », les Échos dans leurs actes
 - Partie+ : plus de renfort des monstres (forcePlus ne touche plus que l'or et l'XP). La quête des Échos est lancée dès le début (`partiePlus`, message `echos.plus.message`) ; chaque Écho (`parmi` avec `si`) apparaît après son boss d'origine (a1.e5, a2.e3, a3.e5, a2.e7), l'Écho du Sans-Nom après a4.e5. Après la fin d'une première partie, la quête de Garrick reste comme avant.
 - Force des Échos (`echo: true` dans monstres.js, `forceEcho` dans etat.js) : PV, Attaque, Défense × (niveau moyen de l'équipe + 5) / 40 ; option « Échos : difficile » (`S.echosDur`) : +10 niveaux et PV ×1,3.

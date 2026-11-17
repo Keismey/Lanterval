@@ -1177,6 +1177,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.10.2
+Six new panoramas: the Herald at the top of the lighthouse, the Cage Forger, Mira and Hilde on the night of the feast, Tobi and his father, the Azure Serpent, the foot of the Stair of Mist.
+Ulric, Tobi's father, finally has his portrait.
 ## Version 0.10.1
 New Game+: keep everything and relive the adventure without pressure; monsters are no longer boosted. The challenge is the Echoes: each one appears near its original as soon as it falls, always fights above your party's level and guards a unique piece of equipment.
 Options: Echo difficulty, normal or hard.

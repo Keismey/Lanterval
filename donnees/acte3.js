@@ -58,6 +58,7 @@ ACTES.push({
     ] },
 
     { id: 'a3.e5', lieu: 'mines.g', evenements: [
+      ['panorama', 'pano.forgeur'],
       ['dialogue', 'a3.e5.forgeur'],
       ['combat', 'automate forgeur automate', { boss: true, conseil: 'a3.e5.conseil' }],
       ['decor'],
@@ -69,11 +70,13 @@ ACTES.push({
     { id: 'a3.e6', lieu: 'goran', evenements: [
       ['soin'],
       ['dialogue', 'a3.e6.fete'],
+      ['panorama', 'pano.mira-hilde'],
       ['dialogue', 'a3.e6.mira'],
       ['choix', 'a3.e6.choix', {
         maintenant: [['drapeau', 'pardon'], ['dialogue', 'a3.e6.maintenant']],
         plustard: [['dialogue', 'a3.e6.plustard']]
       }],
+      ['decor'],
       ['dialogue', 'a3.e6.volcan'],
       ['message', 'a3.e6.message']
     ] },

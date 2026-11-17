@@ -68,8 +68,10 @@ ACTES.push({
     ] },
 
     { id: 'a4.e5', lieu: 'ruines.s', evenements: [
+      ['panorama', 'pano.serpent'],
       ['dialogue', 'a4.e5.serpent'],
       ['combat', 'serpent', { boss: true, conseil: 'a4.e5.conseil' }],
+      ['decor'],
       ['dialogue', 'a4.e5.cristal'],
       ['classes', 'sage ninja lamemage'],
       ['dialogue', 'a4.e5.classes'],
@@ -113,13 +115,15 @@ ACTES.push({
 
     // L'Escalier de brume : le point de non-retour, la garde de la Paupière, puis le Sans-Nom sur le palier
     { id: 'a4.e8', lieu: 'escalier.b', evenements: [
+      ['panorama', 'pano.escalier'],
       ['dialogue', 'a4.e8.pied'],
       // les quêtes familiales pas finies, qui se ferment en montant (SOUVENIRS dans etat.js)
       ['souvenirs', 'a4.e8.souvenirs'],
       ['choix', 'a4.e8.choix', {
         monter: [['drapeau', 'escalier'], ['dialogue', 'a4.e8.monter']],
-        non: [['dialogue', 'a4.e8.pasencore'], ['stop']]
+        non: [['dialogue', 'a4.e8.pasencore'], ['decor'], ['stop']]
       }],
+      ['decor'],
       ['dialogue', 'a4.e8.garde'],
       ['combat', 'veilleur nueeoubli veilleur'],
       ['dialogue', 'a4.e8.palier'],
