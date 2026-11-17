@@ -29,7 +29,7 @@ const OBJETS = {
 };
 
 // les classes qui portent robes et manteaux
-const MAGES = ['apprenti', 'mage', 'soigneur', 'barde', 'alchimiste', 'invocateur', 'geomancien', 'sage'];
+const MAGES = ['mage', 'soigneur', 'barde', 'alchimiste', 'invocateur', 'geomancien', 'sage'];
 
 const EQUIPEMENT = {
   // place : arme, armure ou acc (accessoire) ; type : famille d'arme ; st : bonus ; classes : qui peut porter cette armure ;

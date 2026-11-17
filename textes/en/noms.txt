@@ -70,12 +70,6 @@ Fire
 == element.E
 Water
 
-== classe.apprenti
-Apprentice
-
-== classe.apprenti.desc
-Versatile, no speciality.
-
 == classe.guerrier
 Warrior
 
@@ -1938,12 +1932,6 @@ The Echo of the Nameless raises a mace of mist… *it will strike the whole team
 
 == monstre.echosansnom.special
 The Echo of the Nameless crushes the pass under its mace of mist!
-
-== tech.brisegarde
-Guard breaker
-
-== tech.brisegarde.desc
-Light Blade strike that removes a guard point, even without a weakness.
 
 == tech.fracas
 Shatter

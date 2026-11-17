@@ -4,7 +4,7 @@
 
 const HEROS = {
   // base : statistiques au niveau 1 ; gain : ce qui s'ajoute à chaque niveau ; armure : armure de départ (tunique sinon)
-  kael: { el: 'T', classe: 'apprenti', arme: 'dague',
+  kael: { el: 'T', classe: 'guerrier', arme: 'dague',
     base: { hp: 60, pp: 10, atk: 11, mag: 6, def: 7, spd: 10 }, gain: { hp: 8, pp: 2, atk: 2.4, mag: 1, def: 1.4, spd: .7 } },
   mira: { el: 'F', classe: 'mage', arme: 'baton',
     base: { hp: 48, pp: 18, atk: 8, mag: 12, def: 5, spd: 11 }, gain: { hp: 6, pp: 3, atk: 1.2, mag: 2.4, def: 1, spd: .8 } },
@@ -32,7 +32,6 @@ const ORDRE_HEROS = ['kael', 'mira', 'sol', 'nev'];
 const AFFINITE = 1.2;
 const CLASSES = {
   // role : rangement dans le menu Équipe (defense, frappe, magie, soutien) ; mod : multiplicateurs de statistiques ; tech : techniques ; armes : types d'armes portables
-  apprenti: { role: 'frappe', mod: {}, tech: ['frappe', 'brisegarde'], armes: ['dague', 'epee', 'baton'] },
   guerrier: { role: 'defense', mod: { hp: 1.2, atk: 1.25, mag: .7, def: 1.1, pp: .6 }, tech: ['frappe', 'provoc', 'fracas'], armes: ['dague', 'epee'] },
   mage: { role: 'magie', mod: { hp: .85, pp: 1.4, atk: .7, mag: 1.35, def: .85 }, tech: ['sort', 'deluge', 'bourrasque'], armes: ['dague', 'baton'] },
   soigneur: { role: 'soutien', mod: { pp: 1.3, atk: .8, mag: 1.15, def: 1.05 }, tech: ['soin', 'soins', 'onde'], armes: ['baton'] },
@@ -126,7 +125,6 @@ const TECHNIQUES = {
 };
 // 3es techniques des classes (0.9.0) : un élément fixe, ou un soutien (purge : retire poison, brûlure et torpeur)
 Object.assign(TECHNIQUES, {
-  brisegarde: { el: 'L', type: 'phys', pow: .7, pp: 3, cible: 'ennemi', poids: 1, corrode: true },
   fracas: { el: 'T', type: 'phys', pow: 1.25, pp: 4, cible: 'ennemi', poids: 1 },
   bourrasque: { el: 'V', type: 'mag', pow: 1.2, pp: 4, cible: 'ennemi', poids: 1 },
   onde: { el: 'E', type: 'mag', pow: 1.1, pp: 3, cible: 'ennemi', poids: 1 },

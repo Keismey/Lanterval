@@ -41,7 +41,7 @@ ACTES.push({
     { id: 'a1.e1', lieu: 'orvan', evenements: [
       ['dialogue', 'a1.e1.scene'],
       ['gagne', 'eclat-lanterne'],
-      ['classes', 'guerrier mage soigneur'],
+      ['classes', 'mage soigneur'],
       ['dialogue', 'a1.e1.classes'],
       ['message', 'a1.e1.message']
     ] },

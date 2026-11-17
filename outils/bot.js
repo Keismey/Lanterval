@@ -174,10 +174,10 @@ function cerveau([graine, profil]) {
   }
   const SOIGNEURS = ['sage', 'soigneur'];
   function choisirClasses(ennemis, adapte) {
-    const defaut = { kael: ['guerrier', 'apprenti'], mira: ['mage'], sol: ['soigneur'], nev: ['moine'] };
+    const defaut = { kael: ['guerrier'], mira: ['mage'], sol: ['soigneur'], nev: ['moine'] };
     for (const h of team()) {
       let j;
-      if (!(APPLIQUE || adapte) || !ennemis || !ennemis.length) j = h.job !== 'apprenti' && S.jobs.includes(h.job) ? h.job : defaut[h.id].find(x => S.jobs.includes(x));
+      if (!(APPLIQUE || adapte) || !ennemis || !ennemis.length) j = S.jobs.includes(h.job) ? h.job : defaut[h.id].find(x => S.jobs.includes(x));
       else if (h.id === 'sol') j = SOIGNEURS.find(x => S.jobs.includes(x));
       else j = S.jobs.filter(x => !SOIGNEURS.includes(x) && !CLASSES[x].invite).sort((a, b) => valeurClasse(h, b, ennemis) - valeurClasse(h, a, ennemis))[0];
       if (j && h.job !== j) { h.job = j; equiper(); clampC(h); ajoute(R.classes, j, 1); }
