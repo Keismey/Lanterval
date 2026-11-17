@@ -224,6 +224,7 @@ ACTES.push({
       ['panorama', 'pano.epilogue.kael'],
       ['dialogue', 'a4.e12.kael'],
       ['dialogue', 'a4.e12.adieu'],
+      ['panorama', 'pano.silhouettes'],
       ['decor'],
       ['fin_jeu']
     ] }
