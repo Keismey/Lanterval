@@ -56,6 +56,7 @@ LISTE = [
     ('panorama-aldric.jpg', 'panoramas/aldric.webp', 'decor', {'largeur': 1584}),
     ('panorama-orvan.jpg', 'panoramas/orvan.webp', 'decor', {'largeur': 1584}),
     ('panorama-lanterne-fin.jpg', 'panoramas/lanterne-fin.webp', 'decor', {'largeur': 1584}),
+    ('panorama-tombe.jpg', 'panoramas/tombe.webp', 'decor', {'largeur': 1584}),
     ('panorama-ysold.jpg', 'panoramas/ysold.webp', 'decor', {'largeur': 1584}),
     ('panorama-oeil.jpg', 'panoramas/oeil.webp', 'decor', {'largeur': 1584}),
     ('panorama-epilogue-kael.jpg', 'panoramas/epilogue-kael.webp', 'decor', {'largeur': 1584}),
