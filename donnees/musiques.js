@@ -26,7 +26,7 @@ const MUSIQUE_FINAL = ['ysold', 'paupiere'];   // le dernier combat a sa propre 
 // panoramas de récit qui changent la musique jusqu'au retour au lieu (événement `decor`, fin de la scène ou combat)
 const PANO_MUSIQUE = {
   vision: 'emotion', masque: 'emotion', berceuse: 'emotion', carnet: 'emotion', 'cage-hilde': 'emotion', feu: 'emotion',
-  larmes: 'emotion', cerfvolant: 'emotion', aldric: 'emotion', fleur: 'emotion',
+  larmes: 'emotion', cerfvolant: 'emotion', aldric: 'emotion', fleur: 'emotion', ulric: 'emotion', 'mira-hilde': 'emotion',
   insigne: 'menace', cage: 'menace', phare: 'menace', 'nev-champs': 'menace', 'ysold-azur': 'menace', ysold: 'menace', oeil: 'menace', echo: 'menace',
   'epilogue.kael': 'epilogue', 'epilogue.mira': 'epilogue', 'epilogue.sol': 'epilogue', 'epilogue.nev': 'epilogue'
 };

@@ -526,7 +526,9 @@ const ANNEXES = {
       ] },
       { lieu: 'tobi', evenements: [
         ['perd', 'casque-mineur'],
+        ['panorama', 'pano.ulric'],
         ['dialogue', 'mineurs.e3.scene'],
+        ['decor'],
         ['gagne', 'lampe, 140 or'],
         ['dialogue', 'mineurs.e3.fin']
       ] }

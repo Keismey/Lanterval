@@ -85,6 +85,13 @@ const IMAGES = {
   'pano.wyverne': { fichier: 'img/panoramas/wyverne.webp', sujet: 'Au pied du Pic hurlant, une wyverne gris-bleu et son petit tout juste éclos volent au-dessus d\'un grand nid de cordes et de plumes accroché à la falaise' },
   'pano.cerfvolant': { fichier: 'img/panoramas/cerfvolant.webp', sujet: 'Au sommet enneigé du Pic hurlant, Nev et Varen de dos tiennent ensemble la ficelle d\'un grand cerf-volant bleu qui monte dans les nuages' },
   'pano.larmes': { fichier: 'img/panoramas/larmes.webp', sujet: 'La nuit, au feu de camp d\'Aerie, quatre larmes de lumière (cristal, écume, braise, azur) flottent autour du vieil Orvan, au-dessus des flammes' },
+  // images manquantes (0.10.2)
+  'pano.heraut': { fichier: 'img/panoramas/heraut.webp', sujet: 'Au sommet du phare, le Héraut devant la cage du cristal d\'écume, Kael, Mira et Sol en haut de l\'escalier, Erwan attaché au garde-fou' },
+  'pano.forgeur': { fichier: 'img/panoramas/forgeur.webp', sujet: 'Au fond des Mines rouges, le Forgeur de cages se tourne vers l\'équipe et Hilde, devant la grande forge' },
+  'pano.mira-hilde': { fichier: 'img/panoramas/mira-hilde.webp', sujet: 'La nuit de la fête des mineurs, Mira assise sur les marches de l\'auberge à côté de Kael, Hilde arrêtée à trois pas' },
+  'pano.ulric': { fichier: 'img/panoramas/ulric.webp', sujet: 'À Forgecendre libérée, Ulric soulève Tobi à bout de bras, les mineurs applaudissent' },
+  'pano.serpent': { fichier: 'img/panoramas/serpent.webp', sujet: 'Le Serpent d\'azur enroulé autour d\'un pilier du sanctuaire, le cristal d\'azur au-dessus de l\'autel, les héros et Tavor' },
+  'pano.escalier': { fichier: 'img/panoramas/escalier.webp', sujet: 'Au pied de l\'Escalier de brume, Kael pose le pied sur la première marche, les autres héros, Varen et Orvan derrière lui' },
   'pano.fleur': { fichier: 'img/panoramas/fleur.webp', sujet: 'La fleur-lanterne qui brille au pied de la lanterne de Lanterval, Pia à genoux à côté' },
 
   // ---------- Héros (tournés vers la gauche) ----------
@@ -127,6 +134,7 @@ const IMAGES = {
   'pnj.pell': { fichier: 'img/pnj/pell.webp', portrait: 'img/pnj/pell.webp', provisoire: 'f_pell', sujet: 'Pell, facteur en planeur, jeune homme roux, casquette de cuir, lunettes de vol, sacoche de lettres' },
   'pnj.liss': { fichier: 'img/pnj/liss.webp', portrait: 'img/pnj/liss.webp', provisoire: 'f_liss', sujet: 'Liss, grand-mère de Nev et Varen, vieille femme d\'Aerie aux cheveux blancs tressés, châle bleu, regard sévère et doux' },
   'pnj.ilse': { fichier: 'img/pnj/ilse.webp', portrait: 'img/pnj/ilse.webp', provisoire: 'f_ilse', sujet: 'Ilse, dresseuse de wyvernes et tisserande, la cinquantaine, tresse grise, cicatrices de griffes sur les bras' },
+  'pnj.ulric': { fichier: 'img/pnj/ulric.webp', portrait: 'img/pnj/ulric.webp', sujet: 'Ulric, père de Tobi, mineur de Forgecendre, moustache en balai, couvert de cendre' },
   'pnj.ysold': { fichier: 'img/pnj/ysold.webp', portrait: 'img/pnj/ysold.webp', provisoire: 'f_ysold', sujet: 'Ysold, fondatrice de l\'Ordre, femme au regard calme, cheveux argentés, robe violette (vue jeune dans une vision)' },
 
   // ---------- Monstres (tournés vers la droite) ----------

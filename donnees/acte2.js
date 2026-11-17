@@ -92,6 +92,7 @@ ACTES.push({
     ] },
 
     { id: 'a2.e7', lieu: 'phare.s', evenements: [
+      ['panorama', 'pano.heraut'],
       ['dialogue', 'a2.e7.heraut'],
       ['combat', 'heraut', { boss: true, conseil: 'a2.e7.conseil' }],
       ['decor'],

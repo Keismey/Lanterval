@@ -207,6 +207,14 @@ LISTE = [
     ('panorama-chevre.jpg', 'panoramas/chevre.webp', 'decor', {'largeur': 1584}),
     ('panorama-tisseuse.jpg', 'panoramas/tisseuse.webp', 'decor', {'largeur': 1584}),
     ('panorama-toile-feu.jpg', 'panoramas/toile-feu.webp', 'decor', {'largeur': 1584}),
+    # Images manquantes (0.10.2) : Ulric et six panoramas
+    ('perso-ulric.jpg', 'pnj/ulric.webp', 'portrait', {'boite': (220, 70, 600), 'cote': 192}),
+    ('panorama-ulric.jpg', 'panoramas/ulric.webp', 'decor', {'largeur': 1584}),
+    ('panorama-heraut.jpg', 'panoramas/heraut.webp', 'decor', {'largeur': 1584}),
+    ('panorama-forgeur.jpg', 'panoramas/forgeur.webp', 'decor', {'largeur': 1584}),
+    ('panorama-mira-hilde.jpg', 'panoramas/mira-hilde.webp', 'decor', {'largeur': 1584}),
+    ('panorama-serpent.jpg', 'panoramas/serpent.webp', 'decor', {'largeur': 1584}),
+    ('panorama-escalier.jpg', 'panoramas/escalier.webp', 'decor', {'largeur': 1584}),
 ]
 
 

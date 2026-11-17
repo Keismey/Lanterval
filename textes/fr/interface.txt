@@ -1355,6 +1355,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.10.2
+Six nouveaux panoramas : le Héraut au sommet du phare, le Forgeur de cages, Mira et Hilde le soir de la fête, Tobi et son père, le Serpent d'azur, le pied de l'Escalier de brume.
+Ulric, le père de Tobi, a enfin son portrait.
 ## Version 0.10.1
 Partie+ : on garde tout et on revit l'aventure sans pression, les monstres ne sont plus renforcés. Le défi, ce sont les Échos : chacun apparaît près de son original dès qu'il est abattu, se bat toujours au-dessus du niveau de ton équipe et garde une pièce d'équipement unique.
 Options : difficulté des Échos, normale ou difficile.
