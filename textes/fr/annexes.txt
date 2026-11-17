@@ -1837,3 +1837,6 @@ Garrick : « Et ça. Mon talisman. Il m'a toujours fait tirer le premier. »
 
 == echos.apres
 Garrick : « Tu reviens me voir ? Il n'y a plus d'Échos, petit. Grâce à toi, la brume n'a plus rien à copier. »
+
+== echos.plus.message
+Partie+ : la brume se souvient de tes victoires. Chaque grand monstre que tu abats laisse un *Écho* près de l'endroit où il est tombé : *Forêt des Murmures*, *Marais des Lanternes*, *Champs brûlés*, *Pont des Nuées*, puis le *Col des Pierres*. Ils se battent toujours un peu au-dessus de ton équipe, et chacun garde une pièce d'équipement unique.

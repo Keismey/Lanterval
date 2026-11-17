@@ -2121,3 +2121,18 @@ Wind hit on one enemy (170)
 
 == equip.source
 Spring staff
+
+== equip.pierrecho
+Echo stone
+
+== equip.ecaillecho
+Echo scale
+
+== equip.lamecho
+Echo blade
+
+== equip.manteaucho
+Echo mantle
+
+== equip.batoncho
+Echo staff

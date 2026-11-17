@@ -698,8 +698,9 @@ const ANNEXES = {
     ]
   },
 
-  // 16. Les Échos (Garrick, le vieux maître de Roxane, à Aerie). Seulement après la fin (finvue, gardé en partie+)
-  // et le carnet du chasseur fini. Quatre Échos dans l'ordre qu'on veut, puis l'Écho du Sans-Nom au Col des Pierres.
+  // 16. Les Échos (Garrick, le vieux maître de Roxane, à Aerie). Après la fin (finvue) et le carnet du chasseur fini ;
+  // en partie+, la quête est lancée dès le début (partiePlus) et chaque Écho apparaît une fois son original abattu.
+  // Chaque Écho laisse une pièce d'équipement unique ; leur force suit le niveau de l'équipe (forceEcho). Quatre Échos dans l'ordre qu'on veut, puis l'Écho du Sans-Nom au Col des Pierres.
   echos: {
     donneur: 'garrick', ouvre: 'finvue et annexe chasse 9',
     offre: [
@@ -707,36 +708,41 @@ const ANNEXES = {
     ],
     etapes: [
       { parmi: [
-        { lieu: 'foret', evenements: [
+        { lieu: 'foret', si: 'fini a1.e5', evenements: [
           ['dialogue', 'echos.e1.m1.brume'],
           ['combat', 'echogolem', { boss: true, conseil: 'echos.e1.m1.conseil' }],
+          ['gagne', 'pierrecho'],
           ['dialogue', 'echos.e1.m1.fin'],
           ['message', 'echos.e1.m1.message']
         ] },
-        { lieu: 'lanternes', evenements: [
+        { lieu: 'lanternes', si: 'fini a2.e3', evenements: [
           ['dialogue', 'echos.e1.m2.brume'],
           ['combat', 'echovouivre', { boss: true, conseil: 'echos.e1.m2.conseil' }],
+          ['gagne', 'ecaillecho'],
           ['dialogue', 'echos.e1.m2.fin'],
           ['message', 'echos.e1.m2.message']
         ] },
-        { lieu: 'champs', evenements: [
+        { lieu: 'champs', si: 'fini a3.e5', evenements: [
           ['dialogue', 'echos.e1.m3.brume'],
           ['combat', 'echoforgeur', { boss: true, conseil: 'echos.e1.m3.conseil' }],
+          ['gagne', 'lamecho'],
           ['dialogue', 'echos.e1.m3.fin'],
           ['message', 'echos.e1.m3.message']
         ] },
-        { lieu: 'pont', evenements: [
+        { lieu: 'pont', si: 'fini a2.e7', evenements: [
           ['dialogue', 'echos.e1.m4.brume'],
           ['combat', 'echoheraut', { boss: true, conseil: 'echos.e1.m4.conseil' }],
+          ['gagne', 'manteaucho'],
           ['dialogue', 'echos.e1.m4.fin'],
           ['message', 'echos.e1.m4.message']
         ] }
       ] },
-      { lieu: 'col.s', evenements: [
+      { lieu: 'col.s', si: 'fini a4.e5', evenements: [
         ['panorama', 'pano.echo'],
         ['dialogue', 'echos.e2.col'],
         ['decor'],
         ['combat', 'echosansnom', { boss: true, conseil: 'echos.e2.conseil' }],
+        ['gagne', 'batoncho'],
         ['dialogue', 'echos.e2.fin'],
         ['message', 'echos.e2.message']
       ] },

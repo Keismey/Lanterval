@@ -2140,3 +2140,18 @@ Coup de Vent sur un ennemi (170)
 
 == equip.source
 Bâton de source
+
+== equip.pierrecho
+Pierre d'écho
+
+== equip.ecaillecho
+Écaille d'écho
+
+== equip.lamecho
+Lame d'écho
+
+== equip.manteaucho
+Manteau d'écho
+
+== equip.batoncho
+Bâton d'écho

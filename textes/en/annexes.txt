@@ -1834,3 +1834,6 @@ Garrick: “And this. My talisman. It always let me shoot first.”
 
 == echos.apres
 Garrick: “Back to see me? There are no more Echoes, kid. Thanks to you, the mist has nothing left to copy.”
+
+== echos.plus.message
+New Game+: the mist remembers your victories. Every great monster you slay leaves an *Echo* near where it fell: *Whispering Forest*, *Lantern Marsh*, *Burnt Fields*, *Cloud Bridge*, then *Stone Pass*. They always fight a little above your party, and each one guards a unique piece of equipment.

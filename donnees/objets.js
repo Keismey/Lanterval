@@ -144,7 +144,13 @@ const EQUIPEMENT = {
   // le final : palier de l'Escalier de brume ; Talisman de l'écho (« Les Échos ») : le porteur agit le premier
   // et sa première technique de chaque combat ne coûte pas de PP (voir battle dans combat.js)
   etoile: { place: 'acc', v: 200, st: { atk: 6, mag: 6, def: 4 } },
-  talecho: { place: 'acc', cadeau: true, st: { atk: 6, mag: 6, spd: 4 }, echo: true }
+  talecho: { place: 'acc', cadeau: true, st: { atk: 6, mag: 6, spd: 4 }, echo: true },
+  // pièces uniques des Échos (0.10.1) : un peu au-dessus du meilleur équipement du jeu
+  pierrecho: { place: 'acc', cadeau: true, st: { def: 10, hp: 40 } },
+  ecaillecho: { place: 'acc', cadeau: true, st: { mag: 10, pp: 14 } },
+  lamecho: { place: 'arme', type: 'epee', cadeau: true, st: { atk: 40, def: 4 } },
+  manteaucho: { place: 'armure', cadeau: true, st: { def: 23, hp: 25, mag: 8, spd: 5 } },
+  batoncho: { place: 'arme', type: 'baton', cadeau: true, st: { atk: 8, mag: 33, pp: 12 } }
 };
 
 // Objets importants (onglet « Importants » de l'inventaire), dans l'ordre d'affichage.
