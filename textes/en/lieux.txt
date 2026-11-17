@@ -1463,6 +1463,9 @@ Above the Howling Peak
 == lieu.escalier.sous.sommet
 Before the Heart of the Eye
 
+== lieu.escalier.sous.ouvert
+Beneath the open Eye
+
 == lieu.escalier.ferme
 After the campfire in Aerie
 
@@ -1471,6 +1474,9 @@ Pale stone steps climb into the mist, higher than the clouds. Those who came bac
 
 == lieu.escalier.desc.sommet
 The last step opens onto a stone platform. Above it, a huge eye of light, half hidden under an eyelid of stone.
+
+== lieu.escalier.desc.ouvert
+The stone eyelid has lifted. The open Eye lights the clouds, and the violet mist is gone from the steps.
 
 == escalier.h1.nom
 Pilgrim's bag

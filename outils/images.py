@@ -111,6 +111,7 @@ LISTE = [
     ('decor-pic.jpg', 'decors/pic.webp', 'decor', {'largeur': 1376}),
     ('decor-escalier.jpg', 'decors/escalier.webp', 'decor', {'largeur': 1376}),
     ('decor-escalier-sommet.jpg', 'decors/escalier-sommet.webp', 'decor', {'largeur': 1376}),
+    ('decor-escalier-ouvert.jpg', 'decors/escalier-ouvert.webp', 'decor', {'largeur': 1376}),
     ('decor-carte-vents.jpg', 'decors/carte-vents.webp', 'decor', {'largeur': 1376}),
     ('monstre-belier-roches.jpg', 'monstres/belier.webp', 'detoure', {'largeur': 640}),
     ('monstre-harpie-col.jpg', 'monstres/harpie.webp', 'detoure', {'largeur': 640, 'trous': 400}),

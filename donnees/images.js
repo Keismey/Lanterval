@@ -212,6 +212,7 @@ const IMAGES = {
   // ---------- Le final (0.5.3) : l'Escalier de brume, le Cœur de l'Œil, les épilogues, les Échos ----------
   'decor.escalier': { fichier: 'img/decors/escalier.webp', provisoire: 'escalier', sujet: 'Escalier de brume, marches de pierre pâle qui montent dans les nuages au-dessus du Pic, brume violette, piliers brisés' },
   'decor.escalier.sommet': { fichier: 'img/decors/escalier-sommet.webp', provisoire: 'escalier-sommet', sujet: 'Sommet de l\'Escalier de brume, plateforme de pierre devant un œil de lumière immense à demi fermé par une paupière de pierre' },
+  'decor.escalier.ouvert': { fichier: 'img/decors/escalier-ouvert.webp', sujet: 'Sommet de l\'Escalier après la bataille : l\'Œil ouvert et apaisé, plus de brume violette, ruisseaux d\'eau claire, nuages dorés sous un ciel d\'aube' },
   'monstre.veilleur': { fichier: 'img/monstres/veilleur.webp', provisoire: 'veilleur', sujet: 'Veilleur de la Paupière, grand chevalier de l\'Ordre en armure grise, heaume à l\'œil fermé, hallebarde' },
   'monstre.nueeoubli': { fichier: 'img/monstres/nueeoubli.webp', provisoire: 'nueeoubli', sujet: 'Nuée d\'oubli, nuage de brume violette avec des visages effacés, longs filaments' },
   'monstre.sansnom3': { fichier: 'img/monstres/sansnom.webp', provisoire: 'sansnom', sujet: 'Le Sans-Nom, colosse masqué et sa masse (même image que monstre.sansnom)' },

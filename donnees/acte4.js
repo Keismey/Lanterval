@@ -165,6 +165,7 @@ ACTES.push({
       ['panorama', 'pano.orvan'],
       ['dialogue', 'a4.e10.orvan'],
       ['combat', 'paupiere', { boss: true, equipe: 'kael mira sol nev', conseil: 'a4.e10.conseil2' }],
+      ['drapeau', 'oeilouvert'],
       ['panorama', 'pano.oeil'],
       ['dialogue', 'a4.e10.oeil'],
       ['dialogue', 'a4.e10.souvenir'],
