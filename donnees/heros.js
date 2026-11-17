@@ -31,35 +31,35 @@ const ORDRE_HEROS = ['kael', 'mira', 'sol', 'nev'];
    Classes alchimiste : objets 50 % plus efficaces (objetsPlus). */
 const AFFINITE = 1.2;
 const CLASSES = {
-  // mod : multiplicateurs de statistiques ; tech : techniques ; armes : types d'armes portables
-  apprenti: { mod: {}, tech: ['frappe', 'brisegarde'], armes: ['dague', 'epee', 'baton'] },
-  guerrier: { mod: { hp: 1.2, atk: 1.25, mag: .7, def: 1.1, pp: .6 }, tech: ['frappe', 'provoc', 'fracas'], armes: ['dague', 'epee'] },
-  mage: { mod: { hp: .85, pp: 1.4, atk: .7, mag: 1.35, def: .85 }, tech: ['sort', 'deluge', 'bourrasque'], armes: ['dague', 'baton'] },
-  soigneur: { mod: { pp: 1.3, atk: .8, mag: 1.15, def: 1.05 }, tech: ['soin', 'soins', 'onde'], armes: ['baton'] },
-  chevalier: { mod: { hp: 1.3, atk: 1.2, def: 1.35, mag: .7, spd: .9, pp: .7 }, tech: ['sacree', 'rempart', 'flamberge'], armes: ['epee'] },
+  // role : rangement dans le menu Équipe (defense, frappe, magie, soutien) ; mod : multiplicateurs de statistiques ; tech : techniques ; armes : types d'armes portables
+  apprenti: { role: 'frappe', mod: {}, tech: ['frappe', 'brisegarde'], armes: ['dague', 'epee', 'baton'] },
+  guerrier: { role: 'defense', mod: { hp: 1.2, atk: 1.25, mag: .7, def: 1.1, pp: .6 }, tech: ['frappe', 'provoc', 'fracas'], armes: ['dague', 'epee'] },
+  mage: { role: 'magie', mod: { hp: .85, pp: 1.4, atk: .7, mag: 1.35, def: .85 }, tech: ['sort', 'deluge', 'bourrasque'], armes: ['dague', 'baton'] },
+  soigneur: { role: 'soutien', mod: { pp: 1.3, atk: .8, mag: 1.15, def: 1.05 }, tech: ['soin', 'soins', 'onde'], armes: ['baton'] },
+  chevalier: { role: 'defense', mod: { hp: 1.3, atk: 1.2, def: 1.35, mag: .7, spd: .9, pp: .7 }, tech: ['sacree', 'rempart', 'flamberge'], armes: ['epee'] },
   // acte 2 : débloquées par le cristal d'écume
   // la dague s'ajoute au Moine et au Berserker à l'acte 4, pour la dague ultime de Nev (Fil-de-vent)
-  moine: { mod: { hp: 1.15, atk: 1.2, spd: 1.1, mag: .6, pp: .7 }, tech: ['rafale', 'meditation', 'vague'], armes: ['poing', 'baton', 'dague'] },
-  voleur: { mod: { hp: .9, atk: 1.05, def: .9, spd: 1.45, mag: .8, pp: .8 }, tech: ['vol', 'esquive', 'larcin'], armes: ['dague'] },
-  barde: { mod: { hp: .9, atk: .8, mag: 1.2, pp: 1.3 }, tech: ['courage', 'berceuse', 'apaisement'], armes: ['harpe', 'dague'] },
+  moine: { role: 'frappe', mod: { hp: 1.15, atk: 1.2, spd: 1.1, mag: .6, pp: .7 }, tech: ['rafale', 'meditation', 'vague'], armes: ['poing', 'baton', 'dague'] },
+  voleur: { role: 'soutien', mod: { hp: .9, atk: 1.05, def: .9, spd: 1.45, mag: .8, pp: .8 }, tech: ['vol', 'esquive', 'larcin'], armes: ['dague'] },
+  barde: { role: 'soutien', mod: { hp: .9, atk: .8, mag: 1.2, pp: 1.3 }, tech: ['courage', 'berceuse', 'apaisement'], armes: ['harpe', 'dague'] },
   // acte 3 : débloquées par le cristal de braise
-  berserker: { mod: { hp: 1.25, atk: 1.4, def: .8, mag: .5, pp: .6 }, tech: ['furie', 'rage', 'seisme'], armes: ['hache', 'epee', 'dague'] },
-  alchimiste: { mod: { pp: 1.2, atk: .9, mag: 1.15 }, objetsPlus: 1.5, tech: ['corrosion', 'mixture', 'brulot'], armes: ['dague', 'baton'] },
-  invocateur: { mod: { hp: .85, pp: 1.5, atk: .6, mag: 1.45, def: .85, spd: .9 }, tech: ['invocation', 'offrande', 'ondine'], armes: ['baton', 'harpe'] },
+  berserker: { role: 'frappe', mod: { hp: 1.25, atk: 1.4, def: .8, mag: .5, pp: .6 }, tech: ['furie', 'rage', 'seisme'], armes: ['hache', 'epee', 'dague'] },
+  alchimiste: { role: 'soutien', mod: { pp: 1.2, atk: .9, mag: 1.15 }, objetsPlus: 1.5, tech: ['corrosion', 'mixture', 'brulot'], armes: ['dague', 'baton'] },
+  invocateur: { role: 'magie', mod: { hp: .85, pp: 1.5, atk: .6, mag: 1.45, def: .85, spd: .9 }, tech: ['invocation', 'offrande', 'ondine'], armes: ['baton', 'harpe'] },
   // acte 4 : débloquées par le cristal d'azur
-  sage: { mod: { hp: .95, pp: 1.4, atk: .7, mag: 1.35 }, tech: ['priere', 'jugement', 'purification'], armes: ['baton', 'harpe'] },
-  ninja: { mod: { hp: .95, atk: 1.25, def: .9, spd: 1.4, mag: .9, pp: .8 }, tech: ['kunai', 'ninjutsu', 'katon'], armes: ['dague', 'poing'] },
-  lamemage: { mod: { hp: 1.1, atk: 1.15, mag: 1.15 }, tech: ['tranchesort', 'enchant', 'givrelame'], armes: ['epee', 'dague'] },
+  sage: { role: 'soutien', mod: { hp: .95, pp: 1.4, atk: .7, mag: 1.35 }, tech: ['priere', 'jugement', 'purification'], armes: ['baton', 'harpe'] },
+  ninja: { role: 'frappe', mod: { hp: .95, atk: 1.25, def: .9, spd: 1.4, mag: .9, pp: .8 }, tech: ['kunai', 'ninjutsu', 'katon'], armes: ['dague', 'poing'] },
+  lamemage: { role: 'magie', mod: { hp: 1.1, atk: 1.15, mag: 1.15 }, tech: ['tranchesort', 'enchant', 'givrelame'], armes: ['epee', 'dague'] },
   // classes cachées (quêtes annexes)
-  rodeur: { mod: { hp: .95, atk: 1.15, spd: 1.3, def: .9, pp: .8 }, tech: ['double', 'lynx', 'flechevent'], armes: ['dague', 'arc'], cachee: true },
+  rodeur: { role: 'frappe', mod: { hp: .95, atk: 1.15, spd: 1.3, def: .9, pp: .8 }, tech: ['double', 'lynx', 'flechevent'], armes: ['dague', 'arc'], cachee: true },
   // corsaire : vole parfois en frappant, dégâts doublés sur une garde brisée (pirate dans combat.js)
-  corsaire: { mod: { hp: 1.05, atk: 1.2, spd: 1.15, mag: .7, pp: .8 }, tech: ['abordage', 'vol', 'mitraille'], armes: ['sabre', 'dague'], cachee: true, pirate: true },
+  corsaire: { role: 'frappe', mod: { hp: 1.05, atk: 1.2, spd: 1.15, mag: .7, pp: .8 }, tech: ['abordage', 'vol', 'mitraille'], armes: ['sabre', 'dague'], cachee: true, pirate: true },
   // géomancien : ses sorts prennent l'élément de la région (Terre dans la vallée, Eau sur la côte, Feu à Cendre)
-  geomancien: { mod: { pp: 1.25, atk: .8, mag: 1.3 }, tech: ['terroir', 'eboulement', 'seve'], armes: ['baton'], cachee: true },
+  geomancien: { role: 'magie', mod: { pp: 1.25, atk: .8, mag: 1.3 }, tech: ['terroir', 'eboulement', 'seve'], armes: ['baton'], cachee: true },
   // acte 4 : dragonnier (« L'œuf de wyverne ») ; gardien des souvenirs : la classe des six souvenirs (les quêtes familiales,
   // comptées sur plusieurs parties, noterSouvenirs dans etat.js), pour l'après-fin et la Partie+
-  dragonnier: { mod: { hp: 1.15, atk: 1.3, def: 1.05, mag: .6, pp: .7 }, tech: ['saut', 'souffle', 'drakfeu'], armes: ['lance', 'epee'], cachee: true },
-  souvenirs: { mod: { hp: 1.1, pp: 1.3, atk: .8, mag: 1.25, def: 1.15 }, tech: ['rappel', 'sceau', 'purification'], armes: ['baton', 'harpe', 'dague'], cachee: true },
+  dragonnier: { role: 'frappe', mod: { hp: 1.15, atk: 1.3, def: 1.05, mag: .6, pp: .7 }, tech: ['saut', 'souffle', 'drakfeu'], armes: ['lance', 'epee'], cachee: true },
+  souvenirs: { role: 'defense', mod: { hp: 1.1, pp: 1.3, atk: .8, mag: 1.25, def: 1.15 }, tech: ['rappel', 'sceau', 'purification'], armes: ['baton', 'harpe', 'dague'], cachee: true },
   // classe d'une invitée (Hilde) : jamais débloquée, absente du Codex et du menu Équipe
   forgeronne: { mod: { hp: 1.2, atk: 1.2, def: 1.2, mag: .7 }, tech: ['marteau', 'trempe'], armes: ['marteau'], invite: true },
   // classe de Varen (invité)

@@ -30,8 +30,46 @@ function optimiser(h) {
 }
 function mieuxDansSac(h, p) { return Object.keys(S.bag).some(k => S.bag[k] > 0 && EQUIPEMENT[k].place === p && canWear(h, k) && valeurPour(h, { ...h.eq, [p]: k }) > valeurPour(h, h.eq) + 1e-9); }
 
+/* Onglet Classe : la couverture des éléments de l'équipe, les classes rangées par rôle, puis la fiche de la classe touchée */
+const ROLES_CLASSE = ['defense', 'frappe', 'magie', 'soutien'];
+// éléments que frappent les techniques d'une classe pour ce héros (Z : l'élément de la région)
+function elementsClasse(j, hid) {
+  const he = HEROS[hid].el, r = [];
+  for (const id of CLASSES[j].tech) { const e = TECHNIQUES[id].el; if (!e) continue; for (const x of e === 'X' ? [he] : e === 'LX' ? ['L', he] : [e]) if (!r.includes(x)) r.push(x); }
+  return r;
+}
+function puceEl(e, cls) { return `<span class="cj-el ${cls || ''}"><i class="${e === 'Z' ? 'z' : ''}" style="${e === 'Z' ? '' : `background:var(--el-${e})`}"></i>${esc(e === 'Z' ? t('equipe.region') : t('element.' + e))}</span>`; }
+function couvertureEquipe(jobs) { const m = new Set(); for (const x of team()) for (const e of elementsClasse(jobs[x.id] || x.job, x.id)) if (e !== 'L') m.add(e); return m; }
+function menuClasses(h, jsel) {
+  const j = jsel || h.job, J = CLASSES[j], ouverte = S.jobs.includes(j), s = stats(h);
+  const avant = couvertureEquipe({}), apres = ouverte ? couvertureEquipe({ [h.id]: j }) : avant;
+  const bande = ['T', 'F', 'E', 'V'].map(e => { const a = avant.has(e), b = apres.has(e); return puceEl(e, !a && !b ? 'off' : !a ? 'neuf' : !b ? 'perdu' : ''); }).join('');
+  const carte = k => {
+    const K = CLASSES[k], vu = S.jobs.includes(k);
+    if (!vu && K.cachee) return `<button class="cj-c lock ${k === j ? 'on' : ''}" data-j="${k}"><b>${ic('lock')} ???</b></button>`;
+    if (!vu) return `<button class="cj-c lock ${k === j ? 'on' : ''}" data-j="${k}"><b>${ic('lock')} ${esc(t('classe.' + k))}</b></button>`;
+    const els = elementsClasse(k, h.id);
+    return `<button class="cj-c ${k === j ? 'on' : ''} ${k === h.job ? 'cur' : ''}" data-j="${k}"><b>${esc(t('classe.' + k))}${k === h.job ? ' <span class="cj-etoile">★</span>' : ''}</b><span class="cj-els">${els.length ? els.map(e => puceEl(e)).join('') : `<span class="note">${esc(t('equipe.sans.element'))}</span>`}</span></button>`;
+  };
+  const liste = ROLES_CLASSE.map(r => { const js = classesJouables().filter(k => CLASSES[k].role === r); return js.length ? `<div class="cj-role"><h5>${esc(t('role.' + r))}</h5><div class="cj-grille">${js.map(carte).join('')}</div></div>` : ''; }).join('');
+  let fiche;
+  if (!ouverte) fiche = `<div class="cj-fiche"><div class="cj-tete"><h4>${esc(J.cachee ? '???' : t('classe.' + j))}</h4><span class="cj-role-t">${esc(t('role.' + J.role))}</span></div><p class="note">${esc(existe('classe.' + j + '.verrou') ? t('classe.' + j + '.verrou') : t('equipe.verrouillee'))}</p></div>`;
+  else {
+    const tmp = { ...h, job: j, eq: { ...h.eq } };
+    for (const p of ['arme', 'armure']) if (tmp.eq[p] && !canWear(tmp, tmp.eq[p], j)) tmp.eq[p] = null;
+    const n = stats(tmp), sac = ['arme', 'armure'].filter(p => h.eq[p] && !tmp.eq[p]).map(p => nomEq(h.eq[p]));
+    fiche = `<div class="cj-fiche"><div class="cj-tete"><h4>${esc(t('classe.' + j))}</h4><span class="cj-role-t">${esc(t('role.' + J.role))}</span></div><p class="note">${esc(t('classe.' + j + '.desc'))}</p>
+      ${j === h.job ? '' : `<div class="cj-stats">${STATS.map(k => { const d = n[k] - s[k]; return `<div><span>${esc(t('stat.' + k))}</span><b>${n[k]}${d ? `<small class="${d > 0 ? 'up' : 'dn'}">${d > 0 ? '+' : ''}${d}</small>` : ''}</b></div>`; }).join('')}</div>`}
+      ${J.tech.map(id => { const x = TECHNIQUES[id], els = !x.el ? [] : x.el === 'X' ? [HEROS[h.id].el] : x.el === 'LX' ? ['L', HEROS[h.id].el] : [x.el];
+        return `<div class="ctech${els.length ? ' el-' + els[els.length - 1].replace('Z', 'L') : ''}"><span class="ic">${ic(icTech(x))}</span><div><b>${esc(t('tech.' + id))} ${els.map(e => puceEl(e)).join(' ')}</b><small>${esc(`${x.pp} ${t('stat.pp')} · ${t('tech.' + id + '.desc')}`)}</small></div></div>`; }).join('')}
+      <p class="note">${esc(t('equipe.armes', { liste: J.armes.map(a => t('codex.arme.' + a)).join(', ') }))}${sac.length ? ` <b class="cj-sac">${esc(t('equipe.vers.sac', { liste: sac.join(', ') }))}</b>` : ''}</p>
+      <button class="btn ${j === h.job ? 'ghost' : 'main'} wide" id="m-devenir" ${j === h.job ? 'disabled' : ''}><span class="ic">${ic('star')}</span><span class="tx"><span>${esc(j === h.job ? t('equipe.classe.actuelle') : t('equipe.devenir', { classe: t('classe.' + j) }))}</span></span></button></div>`;
+  }
+  return `<div class="cj-couv"><span class="note">${esc(t('equipe.frappe'))}</span>${bande}</div><div class="cj-liste">${liste}</div>${fiche}`;
+}
+
 function openParty() {
-  const T = team(); let cur = T[0].id, vue = 'main', place = null, note = '', onglet = 'eq';
+  const T = team(); let cur = T[0].id, vue = 'main', place = null, note = '', onglet = 'eq', jsel = null, jhaut = 0;
   const draw = () => {
     const h = char(cur), s = stats(h), el = HEROS[cur].el, nom = t('parle.' + cur);
     let body = '';
@@ -42,19 +80,15 @@ function openParty() {
       <p class="note" id="m-stinfo">${esc(t('equipe.stat.toucher'))}</p>
       ${note ? `<div class="msgline">${note}</div>` : ''}
       <div class="tabs souso">${[['eq', 'equipe.equipement'], ['job', 'equipe.classe.techniques']].map(([k, c]) => `<button class="tab txt ${onglet === k ? 'on' : ''}" data-o="${k}">${esc(t(c))}</button>`).join('')}</div>
-      ${onglet === 'job' ? `<div class="cls"><h4>${esc(t('classe.' + h.job))}</h4><p>${esc(t('classe.' + h.job + '.desc'))}</p>${CLASSES[h.job].tech.map(id => {
-        const x = TECHNIQUES[id], c = x.el ? ' el-' + x.el.slice(-1) : '';
-        return `<div class="ctech${c}"><span class="ic">${ic(icTech(x))}</span><div><b>${esc(t('tech.' + id))}</b><small>${esc(`${x.pp} ${t('stat.pp')} · ${t('tech.' + id + '.desc')}`)}</small></div></div>`;
-      }).join('')}</div>
-      <div class="acts bas"><button class="btn side wide" id="m-job"><span class="ic">${ic('star')}</span><span class="tx"><span>${esc(t('equipe.changer.classe'))}</span></span></button></div>` : `<div class="acts" id="m-list"></div>
+      ${onglet === 'job' ? menuClasses(h, jsel) : `<div class="acts" id="m-list"></div>
       <div class="acts bas"><button class="btn side wide" id="m-opt"><span class="ic">${ic('star')}</span><span class="tx"><span>${esc(t('equipe.optimiser', { nom }))}</span></span></button></div>`}`;
-    } else body = `<p class="note">${vue === 'job' ? tx('equipe.classe.aide', { nom, el: t('element.' + el) }) : tx('equipe.place.aide', { place: t('place.' + place), nom, classe: t('classe.' + h.job) })}</p><div class="acts" id="m-list"></div>
+    } else body = `<p class="note">${tx('equipe.place.aide', { place: t('place.' + place), nom, classe: t('classe.' + h.job) })}</p><div class="acts" id="m-list"></div>
       <div class="acts"><button class="btn ghost wide" id="m-back"><span class="ic">${ic('back')}</span><span class="tx"><span>${esc(t('retour'))}</span></span></button></div>`;
-    const titre = vue === 'main' ? t('menu.equipe') : vue === 'job' ? t('equipe.changer.classe') : t('equipe.changer', { place: t('place.' + place) });
+    const titre = vue === 'main' ? t('menu.equipe') : t('equipe.changer', { place: t('place.' + place) });
     const sh = modal('grand', sheetHead(titre) + `<div class="tabs">${T.map(x => `<button class="tab ${x.id === cur ? 'on' : ''}" data-c="${x.id}">${av(x.id, 'sm')}${esc(t('parle.' + x.id))}</button>`).join('')}</div>` + body);
     note = '';
     sh.querySelector('#mclose').onclick = fermerFenetre;
-    sh.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { cur = b.dataset.c; vue = 'main'; draw(); });
+    sh.querySelectorAll('[data-c]').forEach(b => b.onclick = () => { cur = b.dataset.c; vue = 'main'; jsel = null; jhaut = 0; draw(); });
     if (vue !== 'main') sh.querySelector('#m-back').onclick = () => { vue = 'main'; draw(); };
     const ml = sh.querySelector('#m-list');
     if (vue === 'main') {
@@ -68,24 +102,17 @@ function openParty() {
         ml.innerHTML = btns(eo); bind(ml, eo, k => { place = k; vue = 'place'; draw(); });
         sh.querySelector('#m-opt').onclick = () => { const pris = optimiser(h); note = esc(pris.length ? t('equipe.optimise', { nom, liste: pris.join(', ') }) : t('equipe.optimise.rien', { nom })); draw(); };
       }
-      if (onglet === 'job') sh.querySelector('#m-job').onclick = () => { vue = 'job'; draw(); };
-    }
-    if (vue === 'job') {
-      {
-        const o = classesJouables().map(j => {
-          const J = CLASSES[j];
-          if (!S.jobs.includes(j)) return { k: j, ic: 'lock', label: esc(J.cachee ? '???' : t('classe.' + j)), sub: esc(existe('classe.' + j + '.verrou') ? t('classe.' + j + '.verrou') : t('equipe.verrouillee')), dis: true };
-          const tmp = { ...h, job: j, eq: { ...h.eq } };
-          for (const p of ['arme', 'armure']) if (tmp.eq[p] && !canWear(tmp, tmp.eq[p], j)) tmp.eq[p] = null;
-          return { k: j, ic: 'star', label: esc(t('classe.' + j)) + (j === h.job ? ' ' + esc(t('equipe.actuelle')) : ''), sub: esc(t('classe.' + j + '.desc')) + (j === h.job ? '' : ' ' + diffTxt(s, stats(tmp))), cls: j === h.job ? 'main' : '' };
-        });
-        ml.innerHTML = btns(o);
-        bind(ml, o, j => {
-          if (j === h.job) return;
+      if (onglet === 'job') {
+        const li = sh.querySelector('.cj-liste'), haut = () => li ? li.scrollTop : 0;
+        if (li && jhaut) li.scrollTop = jhaut;
+        sh.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { jhaut = haut(); jsel = b.dataset.j; draw(); const f = $('#modal .cj-fiche'); if (f) f.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
+        const go = sh.querySelector('#m-devenir');
+        if (go) go.onclick = () => {
+          const j = jsel; jhaut = haut(); if (!j || j === h.job || !S.jobs.includes(j)) return;
           h.job = j; let msg = '';
           for (const p of ['arme', 'armure']) { const id = h.eq[p]; if (id && !canWear(h, id)) { addEq(id); h.eq[p] = null; msg += ' ' + t('equipe.retour.sac', { nom: nomEq(id) }); } }
-          clampC(h); save(); note = esc(t('equipe.devient', { nom, classe: t('classe.' + j) }) + msg); vue = 'main'; draw();
-        });
+          clampC(h); save(); note = esc(t('equipe.devient', { nom, classe: t('classe.' + j) }) + msg); draw();
+        };
       }
     }
     if (vue === 'place') {

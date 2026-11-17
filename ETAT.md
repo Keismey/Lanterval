@@ -1,5 +1,9 @@
 # État du projet
 
+## Version 0.10.3 (2026-11-17) : menu des classes
+- L'onglet Classe de l'Équipe devient le menu de changement (plus d'écran « Changer de classe ») : bande « L'équipe frappe » (`couvertureEquipe`, ajouts en vert, pertes barrées), classes rangées par `role` (nouveau champ de CLASSES : defense, frappe, magie, soutien), fiche de la classe touchée (stats avec écart, techniques avec leur élément résolu pour le héros, armes, pièce qui retournerait au sac), bouton « Devenir ». Code : `menuClasses` dans moteur/menus.js, styles `.cj-*`.
+- Maquette validée : /mnt/project-files/lanterval-classes/maquette-menu-classes-mix.html (sans conseil sur les boss, voulu).
+
 ## Version 0.10.2 (2026-11-17) : images manquantes
 - Portrait d'Ulric (père de Tobi, `pnj.ulric`), seul personnage qui parlait sans visage. Le vérificateur avertit maintenant pour tout `parle.<id>` sans `heros.<id>` ni `pnj.<id>`.
 - Six panoramas (Gemini, Keismey) : `pano.heraut` (a2.e7), `pano.forgeur` (a3.e5), `pano.mira-hilde` (a3.e6, musique émotion), `pano.ulric` (mineurs, 3e étape, musique émotion), `pano.serpent` (a4.e5), `pano.escalier` (a4.e8). Sources dans outils/sources/, entrées en fin de LISTE dans outils/images.py.
