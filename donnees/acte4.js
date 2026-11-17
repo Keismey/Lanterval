@@ -165,11 +165,11 @@ ACTES.push({
       ['panorama', 'pano.orvan'],
       ['dialogue', 'a4.e10.orvan'],
       ['combat', 'paupiere', { boss: true, equipe: 'kael mira sol nev', conseil: 'a4.e10.conseil2' }],
-      ['drapeau', 'oeilouvert'],
       ['panorama', 'pano.oeil'],
       ['dialogue', 'a4.e10.oeil'],
       ['dialogue', 'a4.e10.souvenir'],
-      ['si', 'annexe larmes 3', [['dialogue', 'a4.e10.orvan.larmes']], [['dialogue', 'a4.e10.orvan.brume']]],
+      // le drapeau est posé dans les deux branches pour ne pas décaler les numéros d'événements (points de reprise)
+      ['si', 'annexe larmes 3', [['dialogue', 'a4.e10.orvan.larmes'], ['drapeau', 'oeilouvert']], [['dialogue', 'a4.e10.orvan.brume'], ['drapeau', 'oeilouvert']]],
       ['dialogue', 'a4.e10.cristaux'],
       ['decor'],
       ['dialogue', 'a4.e10.descente'],
