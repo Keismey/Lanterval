@@ -1177,6 +1177,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.10.5
+The Crystal Guardian, the Marsh Wyvern and the Herald no longer fear Earth but Wind: the Mage's Gust becomes precious, and Kael has good reason to switch classes.
+An imported save past Act 1 asks you to unlock the rest before resuming.
 ## Version 0.10.4
 The Apprentice class is gone: Kael now starts as a Warrior. Guard Breaker goes with it; to break a guard, aim for weaknesses by switching classes. A game in progress moves Kael to Warrior automatically.
 ## Version 0.10.3

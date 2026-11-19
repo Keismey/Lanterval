@@ -239,7 +239,7 @@ A half-flooded chest: the *Wave ring* (accessory, Magic +3).
 Guardian fresco
 
 == grotte.g3.texte
-A crystal giant brought down by villagers armed with maces and buckets of water. *Guardian weaknesses added to the codex.*
+A crystal giant knocked over by a gust of wind, while villagers douse it with buckets of water. *Guardian weaknesses added to the codex.*
 
 == grotte.g4.nom
 Light well

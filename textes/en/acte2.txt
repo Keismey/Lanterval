@@ -109,7 +109,7 @@ The water rises. A wyvern spreads wings of moss and hisses.
 Kael: “She's the one keeping the mist here.”
 
 == a2.e3.conseil
-The *Marsh Wyvern* prepares a breath that hits the whole team. Break her guard with *Earth* (Kael) to stop it. She resists Fire and Water.
+The *Marsh Wyvern* prepares a breath that hits the whole team. Break her guard with *Wind* to stop it: the Mage's Gust, for instance. She resists Fire and Water.
 
 == a2.e3.troisieme
 ## The heart of the marsh
@@ -248,7 +248,7 @@ Kael: “You're taking their memories. That isn't peace, it's emptiness.”
 Herald: “Then close your eyes with them.”
 
 == a2.e7.conseil
-The *Herald* prepares “Eyelid Shut”, a blow on the whole team. Break his guard with *Water* (Sol) or *Earth* (Kael) to cancel it. He resists Fire.
+The *Herald* prepares “Eyelid Shut”, a blow on the whole team. Break his guard with *Water* (Sol) or *Wind* to cancel it. He resists Fire.
 
 == a2.e7.cristal
 ## The sea-foam crystal
