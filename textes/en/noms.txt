@@ -526,7 +526,7 @@ Secret class: hidden in a side quest
 Flurry
 
 == tech.rafale.desc
-Three quick blows on one enemy: ideal to break a guard.
+Three quick blows on one enemy. Together they remove at most two guard points.
 
 == tech.meditation
 Meditation
@@ -1662,7 +1662,7 @@ Secret class: a wyvern keeper in Aerie is waiting for news of an egg
 Keeper of memories
 
 == classe.souvenirs.desc
-The ultimate class: reminds allies of what they just did, and shields the team with the Eye's memory.
+The ultimate class: a bulwark that repeats its allies' moves, strikes what the Codex remembers and shields the team with the Eye's memory.
 
 == classe.souvenirs.verrou
 New Game+ class: find the six family memories, even over several playthroughs
@@ -1683,7 +1683,7 @@ The wyvern hatchling breathes a cutting wind on every enemy.
 Recall
 
 == tech.rappel.desc
-An ally repeats their last action without paying PP.
+Repeats an ally's last technique, with that ally's element. The Keeper pays its PP.
 
 == tech.sceau
 Memory seal
@@ -2124,3 +2124,9 @@ Echo mantle
 
 == equip.batoncho
 Echo staff
+
+== tech.souvenir
+Remembrance
+
+== tech.souvenir.desc
+A blow that strikes the target's weakness already noted in the Codex (neutral if none). Uses Attack and Magic.

@@ -58,7 +58,7 @@ const CLASSES = {
   // acte 4 : dragonnier (« L'œuf de wyverne ») ; gardien des souvenirs : la classe des six souvenirs (les quêtes familiales,
   // comptées sur plusieurs parties, noterSouvenirs dans etat.js), pour l'après-fin et la Partie+
   dragonnier: { role: 'frappe', mod: { hp: 1.15, atk: 1.3, def: 1.05, mag: .6, pp: .7 }, tech: ['saut', 'souffle', 'drakfeu'], armes: ['lance', 'epee'], cachee: true },
-  souvenirs: { role: 'defense', mod: { hp: 1.1, pp: 1.3, atk: .8, mag: 1.25, def: 1.15 }, tech: ['rappel', 'sceau', 'purification'], armes: ['baton', 'harpe', 'dague'], cachee: true },
+  souvenirs: { role: 'defense', mod: { hp: 1.3, pp: 1.1, def: 1.3, spd: .9 }, tech: ['rappel', 'sceau', 'souvenir'], armes: ['epee', 'baton', 'harpe', 'dague'], cachee: true },
   // classe d'une invitée (Hilde) : jamais débloquée, absente du Codex et du menu Équipe
   forgeronne: { mod: { hp: 1.2, atk: 1.2, def: 1.2, mag: .7 }, tech: ['marteau', 'trempe'], armes: ['marteau'], invite: true },
   // classe de Varen (invité)
@@ -73,7 +73,7 @@ const TECHNIQUES = {
   //         offrande (le héros donne 15 % de ses PV, l'allié gagne 15 PP),
   //         enchant (l'Attaque du héros prend son élément pendant 3 actions),
   //         saut (le héros disparaît jusqu'à son prochain tour, puis retombe sur sa cible, même en l'air),
-  //         rappel (relance la dernière action d'un allié, sans PP pour lui), sceau (l'équipe subit un tiers de dégâts en moins
+  //         rappel (le héros refait la dernière technique d'un allié, avec l'élément de l'allié, et en paie les PP), sceau (l'équipe subit un tiers de dégâts en moins
   //         pendant les « tours » prochaines actions des monstres)
   // recul : part des PV max que le héros perd en frappant ; corrode : enlève un point de garde même sans faiblesse ;
   // mixte : coup physique qui compte aussi la Magie (moyenne de l'Attaque et de la Magie)
@@ -114,7 +114,10 @@ const TECHNIQUES = {
   // classes cachées de l'acte 4
   saut: { el: 'LX', type: 'saut', pow: 2.2, pp: 6, cible: 'ennemi', poids: .7 },
   souffle: { el: 'V', type: 'phys', pow: .9, pp: 7, cible: 'tous', poids: 1.1 },
-  rappel: { type: 'rappel', pp: 8, cible: 'allie', poids: 1.1 },
+  // Rappel (0.10.6) : le Gardien refait lui-même la dernière technique d'un allié, avec l'élément de cet allié, ses propres
+  // statistiques, et il en paie les PP ; Souvenir : el C = la faiblesse de la cible déjà notée au Codex (neutre sinon)
+  rappel: { type: 'rappel', pp: 0, cible: 'allie', poids: 1 },
+  souvenir: { el: 'C', type: 'phys', mixte: true, pow: 1.35, pp: 6, cible: 'ennemi', poids: 1 },
   sceau: { type: 'sceau', pp: 10, cible: 'allies', poids: 1, tours: 4 },
   // Hilde (invitée)
   marteau: { el: 'L', type: 'phys', pow: 1.6, pp: 4, cible: 'ennemi', poids: 1.1, corrode: true },

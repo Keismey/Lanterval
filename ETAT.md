@@ -1,5 +1,10 @@
 # État du projet
 
+## Version 0.10.6 (2026-11-19) : Gardien des souvenirs tank, garde des coups multiples
+- Gardien (`souvenirs`) : mod PV ×1,3, Déf ×1,3, PP ×1,1, Vit ×0,9 ; épée en plus, armures lourdes. Techniques : Rappel (pp 0 ; le Gardien refait la dernière technique de l'allié choisi avec l'élément de l'allié, `a.elDe`, ses stats, et en paie les PP), Sceau, Souvenir (el `C` : `elsCodex`, première faiblesse notée au Codex, mixte, pow 1,35, 6 PP). Purification retirée.
+- `strike(…, garde)` : une technique à plusieurs coups (Rafale, Double tir) enlève au plus deux points de garde et ne charge l'Union qu'une fois par cible et par action (avec un seul point, le Sans-Nom de l'acte 3 devenait un mur pour le bot pressé).
+- Bot : Sceau contre les boss, Rappel évalué comme la technique copiée. `outils/echos.js --equipe=kael:souvenirs,…` impose des classes ; le Codex est rempli (partie+).
+
 ## Version 0.10.5 (2026-11-19) : Vent sur trois boss, verrou de l'acte 2 fermé aux codes importés
 - Faiblesses : Golem T,E → V,E ; Vouivre T → V ; Héraut E,T → E,V (et leurs Échos). But : tous les boss des actes 1-2 étaient faibles à la Terre de Kael, donc personne ne changeait de classe. Vent disponible tôt : Bourrasque (Mage, a1.e1), Flèche-vent (Rôdeur, quête de Brann). Conseils a2.e3/a2.e7 et fresque grotte.g3 réécrits.
 - Verrou (moteur/verrou.js) : `acte2Verrouille` ne dépend plus de la sauvegarde ; `acte2Bloque` (sauvegarde passée l'acte 1 sans la clé de l'appareil) fait ouvrir la fenêtre du verrou au bouton Continuer et à la Partie+ (`acte2Passage`, jeu.js). `acte2Anciens` : au premier lancement de 0.10.5, une partie déjà avancée sur l'appareil est débloquée une fois (clé `lanterval-acte2-anciens`), pour les testeurs.

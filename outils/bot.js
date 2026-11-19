@@ -81,13 +81,15 @@ function cerveau([graine, profil]) {
   function valeur(h, opt, e) {
     const st = hs(h);
     if (opt.fiole) { const it = OBJETS[opt.fiole], w = e.weak.includes(it.el), r = !w && e.res.includes(it.el); return (it.degats * (CLASSES[h.job].objetsPlus || 1)) * (w ? 1.5 : r ? .5 : 1) * (e.broken ? 1.5 : 1) + (w && !e.broken ? e.mhp * .08 : 0); }
-    const sk = opt.sk === 'attaque' ? { el: elArme(h), type: 'phys', pow: 1 } : TECHNIQUES[opt.sk];
-    const els = elsTech(h, opt.sk);
+    // Rappel (Gardien) : la technique de l'allié, avec l'élément de l'allié ; Souvenir : la faiblesse notée au Codex
+    const id = opt.copie || opt.sk, qui = opt.de ? { id: opt.de } : h;
+    const sk = id === 'attaque' ? { el: elArme(h), type: 'phys', pow: 1 } : TECHNIQUES[id];
+    const els = sk.el === 'C' ? elsCodex(e) : elsTech(qui, id);
     if (e.air && !els.includes('V')) return 0;
     const w = els.some(x => e.weak.includes(x)), r = !w && els.some(x => e.res.includes(x));
     let base = sk.mixte ? (st.atk + st.mag) / 2 * sk.pow - e.def * .45 : sk.type !== 'mag' ? st.atk * sk.pow - e.def * .6 : st.mag * sk.pow - e.def * .3;
     base = Math.max(2, base * armure(e, sk)) * (sk.coups || 1) * (h.brulure ? .7 : 1);
-    const aff = sk.el && sk.el.length === 1 && sk.el === HEROS[h.id].el && opt.sk !== 'attaque' ? AFFINITE : 1;
+    const aff = sk.el && sk.el.length === 1 && sk.el === HEROS[qui.id].el && id !== 'attaque' ? AFFINITE : 1;
     // briser la garde vaut cher : un tour perdu pour le monstre et +50 % de dégâts ensuite
     return base * aff * (w ? 1.5 : r ? .5 : 1) * (e.broken ? 1.5 : 1) + (w && !e.broken ? Math.max(base, e.mhp * (e.shield <= 1 ? .12 : .06)) : 0);
   }
@@ -114,14 +116,21 @@ function cerveau([graine, profil]) {
     if (h.pp < 4 && Math.random() < .5) for (const it of ['ether', 'tonique']) if (S.inv[it] > 0) return objet(it, h);
     // Union : toute l'équipe frappe (le joueur appliqué s'en sert)
     if (APPLIQUE && B.union >= 3 && T.length >= 2 && (B.boss || E.length >= 2)) return { type: 'union' };
+    // Sceau de mémoire (Gardien) : contre un boss, dès qu'il n'agit plus
+    if (tech('sceau') && B.boss && !(B.sceau > 0)) return { type: 'skill', sk: 'sceau' };
     // la meilleure option offensive
     const opts = [{ sk: 'attaque' }];
     for (const sk of CLASSES[h.job].tech) { const x = TECHNIQUES[sk]; if (tech(sk) && ['phys', 'mag', 'saut'].includes(x.type)) opts.push({ sk }); }
+    // Rappel (Gardien) : refaire la dernière technique offensive d'un allié
+    if (tech('rappel')) for (const c of T) {
+      const d = c !== h && B.dernier[c.id], x = d && TECHNIQUES[d.sk];
+      if (x && ['phys', 'mag'].includes(x.type) && h.pp >= x.pp) opts.push({ sk: 'rappel', copie: d.sk, de: c.id, allie: c, cible: d.t && d.t.hp > 0 ? d.t : null });
+    }
     if (APPLIQUE || B.boss) for (const it of Object.keys(OBJETS)) if (OBJETS[it].el && S.inv[it] > 0) opts.push({ fiole: it });
     let mieux = null;
     for (const o of opts) {
-      const x = o.sk && o.sk !== 'attaque' ? TECHNIQUES[o.sk] : null;
-      const cibles = x && x.cible === 'tous' ? [E] : E.map(e => [e]);
+      const x = o.copie ? TECHNIQUES[o.copie] : o.sk && o.sk !== 'attaque' ? TECHNIQUES[o.sk] : null;
+      const cibles = x && x.cible === 'tous' ? [E] : o.cible ? [[o.cible]] : E.map(e => [e]);
       for (const c of cibles) {
         let v = c.reduce((a, e) => a + Math.min(valeur(h, o, e), e.hp * 1.3 + (e.weak.length ? 0 : 0)), 0);
         // économie : les PP et les fioles se gardent pour les combats qui comptent
@@ -134,6 +143,7 @@ function cerveau([graine, profil]) {
     if (!mieux) return { type: 'garde' };
     if (mieux.o.fiole) return objet(mieux.o.fiole, mieux.t);
     if (mieux.o.sk === 'saut') return { type: 'skill', sk: 'saut', t: mieux.t };
+    if (mieux.o.copie) return { type: 'skill', sk: 'rappel', t: mieux.o.allie };
     return { type: 'skill', sk: mieux.o.sk, t: mieux.t || undefined };
   };
 

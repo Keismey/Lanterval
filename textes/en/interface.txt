@@ -1177,6 +1177,9 @@ Test mode
 Jump to a step, give gold…
 
 == notes.version
+## Version 0.10.6
+Keeper of memories reworked as a bulwark: more HP and Defence, swords and heavy armour. Recall makes them repeat an ally's last technique, with that ally's element; Remembrance strikes the weakness the Codex knows.
+Multi-hit techniques (Flurry, Double shot) now remove at most two guard points per target and per action, and fill Union only once.
 ## Version 0.10.5
 The Crystal Guardian, the Marsh Wyvern and the Herald no longer fear Earth but Wind: the Mage's Gust becomes precious, and Kael has good reason to switch classes.
 An imported save past Act 1 asks you to unlock the rest before resuming.
@@ -1383,7 +1386,7 @@ Airborne
 Recall
 
 == combat.rappel
-{nom} reminds {cible} of their last move: *{tech}*, without paying PP!
+{nom} remembers {cible}'s move: *{tech}*!
 
 == combat.rappel.rien
 {nom} looks for a memory to remind {cible} of, but there is none yet.
@@ -1748,3 +1751,9 @@ Become {classe}
 
 == equipe.classe.actuelle
 Current class
+
+== combat.rappel.pp
+{nom} lacks the PP to repeat *{tech}*.
+
+== equipe.codex
+Codex

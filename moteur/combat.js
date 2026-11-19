@@ -287,15 +287,17 @@ async function heroCommand(h) {
 /* ---------- Coups et effets ---------- */
 function heroFx(h, texte, cls) { if (cls === 'heal') SON.bruitage(/^\+\d+$/.test(texte) ? 'soin' : 'bonus'); const c = document.querySelector(`.pcard[data-h="${h.id}"]`); if (!c) return; const d = document.createElement('div'); d.className = 'fnum ' + (cls || ''); d.innerHTML = texte; c.appendChild(d); setTimeout(() => d.remove(), 1000); }
 // corrode (Corrosion de l'Alchimiste) : enlève un point de garde même sans faiblesse ; aerien : touche un monstre en l'air (Saut)
-async function strike(e, els, base, mult, brise = 1.5, corrode = false, aerien = false) {
+// technique à plusieurs coups sur la même cible (0.10.6) : deux points de garde au plus (garde) et une seule charge
+// d'Union pour la faiblesse (union) par cible et par action
+async function strike(e, els, base, mult, brise = 1.5, corrode = false, aerien = false, garde = true, union = true) {
   if (e.dort) e.dort = false;
   // en l'air (envol) : seul le Vent l'atteint, ou un héros qui saute
   if (e.air && !els.includes('V') && !aerien) { const [x, y] = epos(e); fx(x, y, esc(t('combat.fx.rate')), 'res'); SON.bruitage('rate'); return esc(t('combat.air.rate', { nom: e.name })); }
   const weak = els.some(x => e.weak.includes(x)), res = !weak && els.some(x => e.res.includes(x));
   let m = mult, cls = '', tag = '';
-  if (weak) { m *= 1.5; els.filter(x => e.weak.includes(x)).forEach(x => reveal(e.id, x)); cls = 'weak'; tag = t('combat.faiblesse') + ' '; if (!e.broken) { e.shield--; if (!B.inUnion) B.union = Math.min(3, B.union + 1); } }
+  if (weak) { m *= 1.5; els.filter(x => e.weak.includes(x)).forEach(x => reveal(e.id, x)); cls = 'weak'; tag = t('combat.faiblesse') + ' '; if (!e.broken && garde) { e.shield--; if (!B.inUnion && union) B.union = Math.min(3, B.union + 1); } }
   else if (res) { m *= .5; els.forEach(x => { if (e.res.includes(x)) reveal(e.id, x, true); }); cls = 'res'; tag = t('combat.resiste') + ' '; }
-  if (corrode && !weak && !e.broken && !MONSTRES[e.id].intouchable) { e.shield--; tag += t('combat.corrode') + ' '; }
+  if (corrode && garde && !weak && !e.broken && !MONSTRES[e.id].intouchable) { e.shield--; tag += t('combat.corrode') + ' '; }
   if (e.broken) m *= brise;
   const dmg = Math.max(1, Math.round(base * rnd(.9, 1.1) * m));
   e.hp = Math.max(MONSTRES[e.id].intouchable || MONSTRES[e.id].fin ? 1 : 0, e.hp - dmg);
@@ -316,7 +318,9 @@ async function strike(e, els, base, mult, brise = 1.5, corrode = false, aerien =
 // élément de l'Attaque : celui de l'arme si elle en a un, sinon Lame
 // Enchantement (Lame-mage) : l'Attaque prend l'élément du héros pendant 3 actions
 function elArme(h) { if (h.enchant > 0) return HEROS[h.id].el; const a = h.eq.arme && EQUIPEMENT[h.eq.arme]; return (a && a.el) || 'L'; }
-function elsOf(h, el) { const he = HEROS[h.id].el; return el === 'X' ? [he] : el === 'LX' ? ['L', he] : el === 'Z' ? [elRegion()] : [el]; }
+function elsOf(h, el) { const he = HEROS[h.id].el; return el === 'X' ? [he] : el === 'LX' ? ['L', he] : el === 'Z' ? [elRegion()] : el === 'C' ? [] : [el]; }
+// Souvenir (Gardien des souvenirs) : la première faiblesse de la cible déjà notée au Codex, qu'elle a encore (cristaux)
+function elsCodex(e) { const k = ((S.best[e.id] || {}).weak || []).filter(x => e.weak.includes(x)); return k.length ? [k[0]] : []; }
 // élément de la région où l'équipe se trouve (techniques du Géomancien)
 function elRegion() { return ELEMENT_REGION[regionDe(S.loc)] || 'T'; }
 // Vol (Voleur, Corsaire) : l'objet du monstre (vol dans monstres.js), sinon de l'or. Une seule fois par monstre.
@@ -379,8 +383,8 @@ async function heroAct(h, a) {
     bMsg(lines.filter(l => l.includes('<b>') || /vaincu/.test(l)).join(' ') || esc(t('combat.union.fin'))); bDraw(); await wait(500); return 1.2;
   }
   const sk = a.sk === 'attaque' ? { el: elArme(h), type: 'phys', pow: 1, pp: 0, cible: 'ennemi', poids: 1 } : TECHNIQUES[a.sk], nomT = t('tech.' + a.sk);
-  // Rappel (Gardien des souvenirs) : relance la dernière action d'un allié, sans qu'il paie de PP (gratuit)
-  if (a.sk !== 'rappel') B.dernier[h.id] = { type: 'skill', sk: a.sk, t: a.t };
+  // Rappel (Gardien des souvenirs) : refait la dernière technique d'un allié (B.dernier)
+  if (a.sk !== 'rappel' && !a.elDe) B.dernier[h.id] = { type: 'skill', sk: a.sk, t: a.t };
   const libre = h.echoLibre && sk.pp > 0; if (libre) h.echoLibre = false;
   if (!a.gratuit && !libre) h.pp -= sk.pp; bCards();
   if (h.enchant > 0 && a.sk !== 'enchant') h.enchant--;
@@ -405,12 +409,17 @@ async function heroAct(h, a) {
   if (sk.type === 'vol') { bMsg(voler(a.t)); await wait(750); return sk.poids; }
   if (sk.type === 'enchant') { h.enchant = 3; heroFx(h, esc(t('combat.enchant.court')), ''); bMsg(tx('combat.enchant', { nom: nm, el: t('element.' + HEROS[h.id].el) })); bCards(); await wait(600); return sk.poids; }
   if (sk.type === 'rappel') {
-    const c = a.t, d = B.dernier[c.id];
-    if (!d || c.hp <= 0) { bMsg(esc(t('combat.rappel.rien', { nom: nm, cible: nomH(c) }))); await wait(650); return sk.poids; }
-    bMsg(tx('combat.rappel', { nom: nm, cible: nomH(c), tech: t('tech.' + d.sk) })); heroFx(c, esc(t('combat.rappel.court')), 'heal'); await wait(600);
-    const r = { ...d, gratuit: true };
-    if (r.t && !r.t.isEnemy && r.t.hp <= 0) r.t = aliveH().reduce((x, y) => x.hp / hs(x).hp < y.hp / hs(y).hp ? x : y);
-    await heroAct(c, r); return sk.poids;
+    const c = a.t, d = B.dernier[c.id], x = d && (d.sk === 'attaque' ? { pp: 0 } : TECHNIQUES[d.sk]);
+    if (!d || !x) { bMsg(esc(t('combat.rappel.rien', { nom: nm, cible: nomH(c) }))); await wait(650); return sk.poids; }
+    if (h.pp < x.pp) { bMsg(tx('combat.rappel.pp', { nom: nm, tech: t('tech.' + d.sk) })); await wait(650); return sk.poids; }
+    bMsg(tx('combat.rappel', { nom: nm, cible: nomH(c), tech: t('tech.' + d.sk) })); heroFx(h, esc(t('combat.rappel.court')), 'heal'); await wait(600);
+    const r = { type: 'skill', sk: d.sk, t: d.t, elDe: c.id };
+    // la cible du souvenir est tombée : un autre monstre, ou l'allié le plus blessé
+    if (r.t && r.t.isEnemy && r.t.hp <= 0) { const al = aliveE(); r.t = al.length ? pick(al) : null; }
+    else if (r.t && !r.t.isEnemy && r.t.hp <= 0) r.t = aliveH().reduce((p, q) => p.hp / hs(p).hp < q.hp / hs(q).hp ? p : q);
+    // une technique sur soi (Méditation, Provocation…) s'applique au Gardien
+    if (r.t === c && TECHNIQUES[d.sk] && TECHNIQUES[d.sk].cible === 'soi') r.t = h;
+    return await heroAct(h, r);
   }
   // Sceau de mémoire : l'équipe subit un tiers de dégâts en moins pendant les prochaines actions des monstres
   if (sk.type === 'sceau') { B.sceau = sk.tours; for (const c of aliveH()) heroFx(c, esc(t('combat.sceau.court')), 'heal'); bMsg(tx('combat.sceau', { nom: nm, n: sk.tours })); bOverlay(); await wait(650); return sk.poids; }
@@ -439,15 +448,19 @@ async function heroAct(h, a) {
     bOverlay(); await wait(700); return sk.poids;
   }
   const mult = 1 + .15 * Math.min(B.streak, 3); B.streak++;
-  const lines = [], els = elsOf(h, sk.el), pirate = CLASSES[h.job].pirate, brise = pirate ? 2 : 1.5;
+  // Rappel : la technique garde l'élément de l'allié dont c'est le souvenir (a.elDe)
+  const qui = a.elDe ? { id: a.elDe } : h;
+  const lines = [], els = elsOf(qui, sk.el), pirate = CLASSES[h.job].pirate, brise = pirate ? 2 : 1.5;
   // affinité : technique d'un élément fixe qui est aussi celui du héros
-  const aff = sk.el && sk.el.length === 1 && 'LTFEV'.includes(sk.el) && sk.el === HEROS[h.id].el && a.sk !== 'attaque' ? AFFINITE : 1;
+  const aff = sk.el && sk.el.length === 1 && 'LTFEV'.includes(sk.el) && sk.el === HEROS[qui.id].el && a.sk !== 'attaque' ? AFFINITE : 1;
   const cibles = sk.cible === 'tous' ? aliveE() : sk.cible === 'hasard2' ? [null, null] : Array(sk.coups || 1).fill(a.t);
+  const touches = new Map();
   for (let e of cibles) {
     if (!e) { const al = aliveE(); if (!al.length) break; e = pick(al); }
     if (e.hp <= 0) continue;
+    const n = touches.get(e) || 0; touches.set(e, n + 1);
     const base = sk.mixte ? (s.atk + s.mag) / 2 * sk.pow - e.def * .45 : sk.type === 'phys' ? s.atk * sk.pow - e.def * .6 : s.mag * sk.pow - e.def * .3;
-    lines.push(await strike(e, els, Math.max(2, base * armure(e, sk)), mult * aff, brise, !!sk.corrode));
+    lines.push(await strike(e, sk.el === 'C' ? elsCodex(e) : els, Math.max(2, base * armure(e, sk)), mult * aff, brise, !!sk.corrode, false, n < 2, n === 0));
   }
   // Furie (Berserker) : le héros perd une part de ses PV en frappant
   if (sk.recul) { const r = Math.min(h.hp - 1, Math.round(s.hp * sk.recul)); if (r > 0) { h.hp -= r; heroFx(h, r, ''); lines.push(esc(t('combat.recul', { nom: nm, n: r }))); } }

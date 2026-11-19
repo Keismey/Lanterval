@@ -718,7 +718,7 @@ En l'air
 Rappel
 
 == combat.rappel
-{nom} rappelle à {cible} son dernier geste : *{tech}*, sans payer de PP !
+{nom} se souvient du geste de {cible} : *{tech}* !
 
 == combat.rappel.rien
 {nom} cherche un souvenir à rappeler à {cible}, mais il n'y en a pas encore.
@@ -1355,6 +1355,9 @@ Sauter à une étape, donner de l'or…
 # Une ligne par point ; « ## » ouvre une version.
 
 == notes.version
+## Version 0.10.6
+Gardien des souvenirs repensé en rempart : plus de PV et de Défense, épées et armures lourdes. Rappel lui fait refaire la dernière technique d'un allié, avec l'élément de cet allié ; Souvenir frappe la faiblesse que le Codex connaît.
+Les techniques à plusieurs coups (Rafale, Double tir) enlèvent au plus deux points de garde par cible et par action, et ne remplissent l'Union qu'une fois.
 ## Version 0.10.5
 Le Gardien de cristal, la Vouivre des marais et le Héraut ne craignent plus la Terre mais le Vent : la Bourrasque du Mage devient précieuse, et Kael a intérêt à changer de classe.
 Une sauvegarde importée qui a dépassé l'acte 1 demande de débloquer la suite avant de reprendre.
@@ -1780,3 +1783,9 @@ Devenir {classe}
 
 == equipe.classe.actuelle
 Classe actuelle
+
+== combat.rappel.pp
+{nom} n'a pas assez de PP pour refaire *{tech}*.
+
+== equipe.codex
+Codex

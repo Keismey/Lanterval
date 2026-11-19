@@ -12,6 +12,8 @@ const RACINE = path.join(__dirname, '..');
 const ARGS = process.argv.slice(2).filter(a => !a.startsWith('--')), OPT = process.argv.slice(2).filter(a => a.startsWith('--'));
 const NIVEAU = +(ARGS[0] || 40), PARTIES = +(ARGS[1] || 5), DUR = OPT.includes('--dur');
 const JSON_SORTIE = (OPT.find(a => a.startsWith('--json=')) || '').slice(7);
+// --equipe=kael:souvenirs,mira:invocateur,… : classes imposées (sinon le bot choisit contre chaque Écho)
+const EQUIPE = Object.fromEntries((OPT.find(a => a.startsWith('--equipe=')) || '').slice(9).split(',').filter(Boolean).map(x => x.split(':')));
 const ECHOS = [['echogolem', 'foret', 3], ['echovouivre', 'lanternes', 3], ['echoheraut', 'pont', 3], ['echoforgeur', 'champs', 4], ['echosansnom', 'col.s', 4]];
 
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.woff2': 'font/woff2', '.webmanifest': 'application/manifest+json', '.m4a': 'audio/mp4' };
@@ -47,7 +49,7 @@ const CERVEAU = src.slice(src.indexOf('function cerveau'), src.indexOf('\n(async
   });
   const res = [];
   for (const [id, lieu, nb] of ECHOS) for (let g = 1; g <= PARTIES; g++) {
-    await page.evaluate(([id, lieu, nb, niv, dur, g]) => {
+    await page.evaluate(([id, lieu, nb, niv, dur, g, equipe]) => {
       let s = g * 7919 + id.length; Math.random = () => { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; };
       S = newState(); S.plus = 1; S.finVue = 1; S.echosDur = dur; S.f.tuto = true;
       S.jobs = Object.keys(CLASSES).filter(j => !CLASSES[j].invite);
@@ -55,11 +57,14 @@ const CERVEAU = src.slice(src.indexOf('function cerveau'), src.indexOf('\n(async
       const exclus = ['pierrecho', 'ecaillecho', 'lamecho', 'manteaucho', 'batoncho', 'talecho'];
       for (const k of Object.keys(EQUIPEMENT)) if (!exclus.includes(k)) S.bag[k] = 4;
       Object.assign(S.inv, { baume: 5, elixir: 3, ether: 5, tonique: 3, sel: 3, antidote: 3, onguent: 3, panacee: 2, fiolef: 2, fiolee: 2, fiolet: 2, fiolev: 2, flaconf: 1, flacone: 1, flacont: 1, flaconv: 1 });
-      BOT.prep.choisirClasses([[id, 4]], true); BOT.prep.equiper();
+      BOT.prep.choisirClasses([[id, 4]], true);
+      for (const h of team()) if (equipe[h.id]) h.job = equipe[h.id];
+      for (const m of Object.keys(MONSTRES)) revealAll(m);   // en partie+, le Codex est rempli
+      BOT.prep.equiper();
       for (const h of team()) fullC(h);
       S.loc = lieu; S.screen = 'zone'; renderStable(); BOT.combats = []; BOT.objets = {};
       run(async () => { await battle([id], { boss: true }); });
-    }, [id, lieu, nb, NIVEAU, DUR, g]);
+    }, [id, lieu, nb, NIVEAU, DUR, g, EQUIPE]);
     const t0 = Date.now();
     while (Date.now() - t0 < 120000) {
       const fini = await page.evaluate(() => !busy && BOT.combats.length > 0);
