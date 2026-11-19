@@ -242,7 +242,7 @@ Un coffre à moitié noyé : l'*Anneau d'onde* (accessoire, Magie +3).
 Fresque du Gardien
 
 == grotte.g3.texte
-Un géant de cristal terrassé par des villageois armés de masses et de seaux d'eau. *Faiblesses du Gardien ajoutées au codex.*
+Un géant de cristal renversé par une bourrasque, pendant que des villageois l'arrosent à grands seaux d'eau. *Faiblesses du Gardien ajoutées au codex.*
 
 == grotte.g4.nom
 Puits de lumière

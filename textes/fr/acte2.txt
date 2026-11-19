@@ -109,7 +109,7 @@ L'eau se soulève. Une vouivre déploie ses ailes de mousse et siffle.
 Kael : « C'est elle qui garde la brume ici. »
 
 == a2.e3.conseil
-La *Vouivre des marais* prépare un souffle qui touche toute l'équipe. Brise sa garde avec la *Terre* (Kael) pour l'arrêter. Elle résiste au Feu et à l'Eau.
+La *Vouivre des marais* prépare un souffle qui touche toute l'équipe. Brise sa garde avec le *Vent* pour l'arrêter : la Bourrasque du Mage, par exemple. Elle résiste au Feu et à l'Eau.
 
 == a2.e3.troisieme
 ## Le cœur du marais
@@ -248,7 +248,7 @@ Kael : « Vous lui prenez ses souvenirs. Ce n'est pas la paix, c'est le vide. »
 Héraut : « Alors fermez les yeux avec eux. »
 
 == a2.e7.conseil
-Le *Héraut* prépare « Paupière close », un coup sur toute l'équipe. Brise sa garde avec l'*Eau* (Sol) ou la *Terre* (Kael) pour l'annuler. Il résiste au Feu.
+Le *Héraut* prépare « Paupière close », un coup sur toute l'équipe. Brise sa garde avec l'*Eau* (Sol) ou le *Vent* pour l'annuler. Il résiste au Feu.
 
 == a2.e7.cristal
 ## Le cristal d'écume

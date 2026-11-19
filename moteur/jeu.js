@@ -131,8 +131,9 @@ function renderTitle() {
     opts.push({ k: 'opt', ic: 'gear', label: esc(t('menu.options')), cls: 'gris' });
     bas.innerHTML = `<div class="acts">${btns(opts)}</div><p class="version">${esc(t('titre.version', { v: VERSION }))}</p>`;
     if (document.activeElement === document.body) bas.querySelector('button').focus({ preventScroll: true });   // clavier
-    bind(bas, opts, k => {
+    bind(bas, opts, async k => {
       if (k === 'opt') { openOptions(); return; }
+      if ((k === 'go' || (k === 'plus' && confirmer === 'plus')) && !await acte2Passage()) { confirmer = null; draw(); return; }
       if (k === 'go') { fermerAccueil(); const ici = LIEUX[lieuActuel()]; S.screen = ici.type === 'village' ? 'village' : 'zone'; renderStable(); const f = reprendre(); if (f) run(f); return; }
       if (partieEnCours() && confirmer !== k) { confirmer = k; draw(); return; }
       fermerAccueil();
@@ -246,6 +247,7 @@ function confirmer(cle, oui) {
   dessinerSprites();
   S = loadSave() || newState();
   S.screen = 'title';
+  acte2Anciens();
   KSBack.init({
     back: retour,
     lang: () => LANG,
