@@ -38,7 +38,8 @@ function elementsClasse(j, hid) {
   for (const id of CLASSES[j].tech) { const e = TECHNIQUES[id].el; if (!e) continue; for (const x of e === 'X' ? [he] : e === 'LX' ? ['L', he] : [e]) if (!r.includes(x)) r.push(x); }
   return r;
 }
-function puceEl(e, cls) { return `<span class="cj-el ${cls || ''}"><i class="${e === 'Z' ? 'z' : ''}" style="${e === 'Z' ? '' : `background:var(--el-${e})`}"></i>${esc(e === 'Z' ? t('equipe.region') : t('element.' + e))}</span>`; }
+// Z : l'élément de la région (Géomancien) ; C : la faiblesse notée au Codex (Gardien des souvenirs)
+function puceEl(e, cls) { const multi = e === 'Z' || e === 'C'; return `<span class="cj-el ${cls || ''}"><i class="${multi ? 'z' : ''}" style="${multi ? '' : `background:var(--el-${e})`}"></i>${esc(e === 'Z' ? t('equipe.region') : e === 'C' ? t('equipe.codex') : t('element.' + e))}</span>`; }
 function couvertureEquipe(jobs) { const m = new Set(); for (const x of team()) for (const e of elementsClasse(jobs[x.id] || x.job, x.id)) if (e !== 'L') m.add(e); return m; }
 function menuClasses(h, jsel) {
   const j = jsel || h.job, J = CLASSES[j], ouverte = S.jobs.includes(j), s = stats(h);

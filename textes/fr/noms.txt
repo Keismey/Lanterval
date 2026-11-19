@@ -263,7 +263,7 @@ Révèle les faiblesses d'un ennemi. Très rapide.
 Rafale
 
 == tech.rafale.desc
-Trois coups rapides sur un ennemi : idéal pour briser une garde.
+Trois coups rapides sur un ennemi. À eux trois, ils enlèvent au plus deux points de garde.
 
 == tech.meditation
 Méditation
@@ -1681,7 +1681,7 @@ Classe secrète : une dresseuse d'Aerie attend des nouvelles d'un œuf
 Gardien des souvenirs
 
 == classe.souvenirs.desc
-La classe ultime : il rappelle aux alliés ce qu'ils viennent de faire, et protège l'équipe avec la mémoire de l'Œil.
+La classe ultime : un rempart qui refait les gestes de ses alliés, frappe ce que le Codex a retenu et protège l'équipe avec la mémoire de l'Œil.
 
 == classe.souvenirs.verrou
 Classe de partie+ : retrouve les six souvenirs de famille, même en plusieurs parties
@@ -1702,7 +1702,7 @@ Le petit de la wyverne souffle un vent coupant sur tous les ennemis.
 Rappel
 
 == tech.rappel.desc
-Un allié refait sa dernière action, sans payer de PP.
+Refait la dernière technique d'un allié, avec l'élément de cet allié. Le Gardien en paie les PP.
 
 == tech.sceau
 Sceau de mémoire
@@ -2143,3 +2143,9 @@ Manteau d'écho
 
 == equip.batoncho
 Bâton d'écho
+
+== tech.souvenir
+Souvenir
+
+== tech.souvenir.desc
+Coup qui frappe la faiblesse de la cible déjà notée au Codex (neutre si aucune). Compte l'Attaque et la Magie.
