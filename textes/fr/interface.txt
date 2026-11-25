@@ -99,6 +99,15 @@ Tu quittes Lanterval pour le hub Keismey Studio. Ta partie est sauvegardée.
 == retour.hub.oui
 Aller au hub
 
+== retour.quitter
+Quitter Lanterval ?
+
+== retour.quitter.texte
+Ta partie est sauvegardée.
+
+== retour.quitter.oui
+Quitter
+
 == retour.titre
 Revenir à l'écran titre ?
 

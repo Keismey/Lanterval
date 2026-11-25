@@ -3,6 +3,8 @@
 
 const VERSION = '0.10.6';
 const ACTES = [];   // rempli par donnees/acte1.js, acte2.js…
+// version appli Android (outils/appli.js met window.LV_APPLI) : pas de hub, pas de lien de soutien, plein écran natif
+const APPLI = !!window.LV_APPLI;
 
 const $ = s => document.querySelector(s);
 const rnd = (a, b) => a + Math.random() * (b - a);

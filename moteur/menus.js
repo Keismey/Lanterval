@@ -311,7 +311,7 @@ function openJournal() {
 /* ---------- Options ---------- */
 // plein écran : seulement dans le navigateur (le jeu installé l'est déjà) et là où il existe (pas sur iPhone)
 // (display-mode: fullscreen) est aussi vrai pendant notre propre plein écran : on garde alors le bouton pour en sortir
-function pleinEcranPossible() { return !!document.fullscreenElement || (!!document.fullscreenEnabled && !matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches); }
+function pleinEcranPossible() { return !APPLI && (!!document.fullscreenElement || (!!document.fullscreenEnabled && !matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches)); }
 function basculerPleinEcran() {
   const p = document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen({ navigationUI: 'hide' });
   return Promise.resolve(p).catch(() => {});
@@ -357,8 +357,9 @@ function openOptions(vue) {
     // Échos (0.10.1) : difficulté à part, dès que les Échos existent (fin vue ou partie+)
     if (enJeu && (S.plus || S.finVue)) o.push({ k: 'echos', ic: 'star', label: esc(t(S.echosDur ? 'options.echos.dur' : 'options.echos.normal')), sub: esc(t('options.echos.sous')), dis: !libre });
     if (enJeu) o.push({ k: 'titre', ic: 'back', label: esc(t('options.titre')), sub: esc(t('options.titre.sous')), dis: !libre });
-    o.push({ k: 'bug', ic: 'bug', label: esc(t('options.bug')), sub: esc(t('options.bug.sous')) },
-      { k: 'soutien', ic: 'heart', label: esc(t('options.soutien')), sub: esc(t('options.soutien.sous')) },
+    o.push({ k: 'bug', ic: 'bug', label: esc(t('options.bug')), sub: esc(t('options.bug.sous')) });
+    // dans l'appli Android : ni lien de soutien (règles de paiement du Play Store) ni hub
+    if (!APPLI) o.push({ k: 'soutien', ic: 'heart', label: esc(t('options.soutien')), sub: esc(t('options.soutien.sous')) },
       { k: 'hub', ic: 'home', label: esc(t('options.hub')), sub: esc(t('options.hub.sous')) });
     if (S && (enJeu || loadSave())) o.push({ k: 'reset', ic: 'x', label: esc(t(confirmer ? 'options.reset.confirmer' : 'options.reset')), sub: esc(t(confirmer ? 'options.reset.confirmer.sous' : 'options.reset.sous')), dis: !libre, cls: confirmer ? 'danger' : '' });
     // version de test : pouvoir refermer l'acte 2 pour revoir la fenêtre du verrou

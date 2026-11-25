@@ -94,6 +94,15 @@ You're leaving Lanterval for the Keismey Studio hub. Your game is saved.
 == retour.hub.oui
 Go to the hub
 
+== retour.quitter
+Quit Lanterval?
+
+== retour.quitter.texte
+Your game is saved.
+
+== retour.quitter.oui
+Quit
+
 == retour.titre
 Back to the title screen?
 
