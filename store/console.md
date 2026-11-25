@@ -2,7 +2,7 @@
 
 Tout ce qu'il faut recopier dans la Play Console, section par section. Les textes de la fiche sont dans `fr.md` et `en.md`.
 
-Ces réponses valent pour la 1.0 (test fermé, tout gratuit, verrou de l'acte 2 ouvert par le bouton « Déverrouiller »). **À revoir en 1.1** : achat Google Play de la suite (Achats intégrés : Oui ; Classification : Achats numériques : Oui ; page de confidentialité déjà prête pour ça).
+Ces réponses valent pour la 1.0 (test fermé, tout gratuit, verrou de l'acte 2 ouvert par le bouton « Déverrouiller »). **À revoir en 1.1** : achat Google Play de la suite (Informations de connexion : Oui, avec un accès examinateur ; Achats intégrés : Oui ; Classification : Achats numériques : Oui ; page de confidentialité déjà prête pour ça).
 
 ## Créer l'application
 
@@ -32,7 +32,7 @@ Ces réponses valent pour la 1.0 (test fermé, tout gratuit, verrou de l'acte 2 
 |---|---|
 | Règles de confidentialité | https://keismey.github.io/confidentialite-lanterval.html |
 | Annonces | **Non, l'appli ne contient pas d'annonces** |
-| Accès à l'appli | Toutes les fonctionnalités sont disponibles sans accès spécial (pas de compte) |
+| Informations de connexion (ex-« Accès à l'appli ») | **1.0 : Non** (pas de compte, et l'acte 2 s'ouvre gratuitement avec « Déverrouiller »). **À partir de la 1.1 : Oui**, car la suite est payante : Google ne peut pas faire d'achat pour examiner l'appli, il faudra lui donner un moyen d'ouvrir l'acte 2 sans payer (accès examinateur à prévoir dans le jeu avant la 1.1) et les instructions pour y arriver |
 | Public cible | 13-15, 16-17, 18 ans et plus. **Ne pas cocher les moins de 13 ans** (sinon le jeu entre dans le programme Familles, avec des règles bien plus strictes) |
 | L'appli peut-elle attirer les enfants ? | Non (RPG avec combats, ton et thèmes pour ados et adultes : deuil, oubli, disparitions) |
 | Appli d'actualités | Non |
