@@ -36,7 +36,7 @@ Pour chaque mise à jour plus tard : même chose avec un numéro plus grand (1.0
 Sur le **Tableau de bord**, section « Configurer votre application », ouvre chaque tâche une par une. Toutes les réponses sont dans `console.md` › « Contenu de l'application ».
 
 1. **Règles de confidentialité** : `https://keismey.github.io/confidentialite-lanterval.html`.
-2. **Accès à l'application** : toutes les fonctionnalités sont disponibles sans restriction.
+2. **Informations de connexion** (ex-« Accès à l'application ») : **Non** pour la 1.0. En 1.1, quand la suite deviendra payante, ce sera Oui, avec un accès pour l'examinateur.
 3. **Annonces** : Non.
 4. **Classification du contenu** : e-mail du studio, catégorie **Jeu**, puis le questionnaire (tableau « Classification » de `console.md`). **Enregistrer** › **Envoyer**.
 5. **Public cible et contenu** : 13-15, 16-17, 18 et plus. Attrait pour les enfants : Non.
