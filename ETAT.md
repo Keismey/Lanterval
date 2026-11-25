@@ -1,5 +1,10 @@
 # État du projet
 
+## Appli Android et fiche Play Store (2026-11-25, sans changement de version du jeu)
+- `node outils/appli.js DOSSIER` : version appli (sans service worker ni Cloudflare, `window.LV_APPLI`, `android-app/ks-back.js`, ks-studio avec `DIR = 'Lanterval'`, synchro coupée, bug ouvert sur le hub dans le navigateur, pas de bouton « Télécharger le fichier »). `APPLI` (moteur/base.js) : pas de Soutien ni de Hub dans les Options, pas de bouton Plein écran, retour sur l'écran titre = « Quitter Lanterval ? » (`retour.quitter`).
+- `android-app/` (Capacitor `com.keismey.lanterval`, plein écran Android, icônes), workflows « Appli Android » (APK de test sans clé, AAB + APK signés avec `KEYSTORE_BASE64` et `KEYSTORE_PASSWORD`) et « Créer la clé Android (une seule fois) ».
+- `store/` : fiche FR/EN, `console.md` (réponses Play Console : pas de pub, aucune donnée collectée), `guide-console.md` (pas à pas), `graphismes/` (icône, présentation, 7 captures FR et EN). Confidentialité : keismey.github.io/confidentialite-lanterval.html.
+
 ## Version 0.10.6 (2026-11-19) : Gardien des souvenirs tank, garde des coups multiples
 - Gardien (`souvenirs`) : mod PV ×1,3, Déf ×1,3, PP ×1,1, Vit ×0,9 ; épée en plus, armures lourdes. Techniques : Rappel (pp 0 ; le Gardien refait la dernière technique de l'allié choisi avec l'élément de l'allié, `a.elDe`, ses stats, et en paie les PP), Sceau, Souvenir (el `C` : `elsCodex`, première faiblesse notée au Codex, mixte, pow 1,35, 6 PP). Purification retirée.
 - `strike(…, garde)` : une technique à plusieurs coups (Rafale, Double tir) enlève au plus deux points de garde et ne charge l'Union qu'une fois par cible et par action (avec un seul point, le Sans-Nom de l'acte 3 devenait un mur pour le bot pressé).

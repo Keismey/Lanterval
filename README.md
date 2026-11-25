@@ -32,6 +32,11 @@ Pour vérifier l'équilibrage, `node outils/bot.js [graine] [étape] [--presse]`
 `node outils/equilibrage.js 3` fait jouer 3 graines × 2 profils (appliqué, pressé) et écrit `equilibrage.md`, avec les seuils visés.
 `node outils/echos.js 40 6 [--dur]` simule les combats contre les Échos avec une équipe de niveau 40 et tout l'équipement.
 
+## Appli Android (Google Play)
+
+`android-app/` et `store/` : voir `store/LISEZMOI.md` et `store/guide-console.md`. L'appli se fabrique sur GitHub (Actions › « Appli Android »),
+à partir de `node outils/appli.js app/www`.
+
 ## Mode test
 
 Ajoute `?debug=1` à l'adresse (jamais actif sur keismey.github.io), puis Options › Mode test :

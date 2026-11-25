@@ -224,7 +224,7 @@ function retour() {
   const rb = [...$('#panel').querySelectorAll('button[data-back]')].filter(b => !b.disabled).pop();
   if (rb) { if (TW) TW(); rb.click(); return; }
   if (busy || B || !S) return;
-  if (S.screen === 'title') { confirmer('retour.hub', () => KSBack.toHub()); return; }
+  if (S.screen === 'title') { confirmer(APPLI ? 'retour.quitter' : 'retour.hub', () => KSBack.toHub()); return; }
   if (S.screen === 'map') { S.screen = LIEUX[lieuActuel()].type === 'village' ? 'village' : 'zone'; renderStable(); return; }
   confirmer('retour.titre', () => { save(); S.screen = 'title'; renderStable(); });
 }

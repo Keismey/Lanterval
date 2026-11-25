@@ -1,0 +1,11 @@
+{
+  "appId": "com.keismey.lanterval",
+  "appName": "Lanterval",
+  "webDir": "www",
+  "backgroundColor": "#0b0d1a",
+  "plugins": {
+    "SystemBars": {
+      "hidden": true
+    }
+  }
+}

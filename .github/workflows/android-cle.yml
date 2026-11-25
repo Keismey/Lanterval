@@ -1,0 +1,31 @@
+# A lancer UNE SEULE FOIS : crée la clé de signature de l'appli.
+# Avant : créer le secret KEYSTORE_PASSWORD (Settings > Secrets and variables > Actions).
+name: Créer la clé Android (une seule fois)
+on: workflow_dispatch
+
+jobs:
+  cle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Générer la clé
+        env:
+          PASS: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          if [ -z "$PASS" ]; then echo "::error::Crée d'abord le secret KEYSTORE_PASSWORD"; exit 1; fi
+          keytool -genkeypair -keystore upload.jks -storetype PKCS12 -alias upload \
+            -keyalg RSA -keysize 2048 -validity 10000 -storepass "$PASS" -keypass "$PASS" \
+            -dname "CN=Keismey Studio, O=Keismey Studio, C=FR"
+          base64 -w0 upload.jks > KEYSTORE_BASE64.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cle-android
+          path: |
+            upload.jks
+            KEYSTORE_BASE64.txt
+          retention-days: 1
